@@ -4,10 +4,10 @@
    "content":{
       "metaDataVersion":"1.0.0",
       "name":"com.microchip.mplabx.project.dpsk3-power-buck-voltage-mode-control",
-      "version":"x.x.x",
-      "displayName":"xxxxxxxxxxxxxxx",
+      "version":"1.0.0",
+      "displayName":"DPSK3 Synchronous Buck Converter Voltage Mode Control",
       "projectName":"dpsk3-power-buck-voltage-mode-control",
-      "shortDescription":"xxxxxxxxxxxxxxx",
+      "shortDescription":"Digital control loop implementation of a simple voltage mode controller regulating the output voltage of a synchronous buck converter",
       "ide":{
          "name":"MPLABX",
          "semverRange":">=5.40.0"
@@ -17,8 +17,8 @@
          "semverRange":"^1.50.0"
       },
       "dfp":{
-         "name":"xxxxxxxxxxxxxxx",
-         "semverRange":">=x.x.x"
+         "name":"dsPIC33CK-MP_DFP",
+         "semverRange":">=1.4.102"
       },
 	  "configurator": {
          "name": "MCC",
@@ -30,17 +30,30 @@
          "content":{
             "metaDataVersion":"1.0.0",
             "category":"com.microchip.device",
-            "name":"xxxxxxxxxxxxxxx",
+            "name":"dsPIC33CK256MP505",
             "versionRange":"*"
          }
       },
       "peripherals":[
          "GPIO",
-         "UART"
+         "UART",
+         "PWM",
+         "ADC",
+         "Timer",
+         "SPI"
       ],
-      "keywords":[
-         "GPIO",
-         "UART"
-      ]
-   }
+      "subcategories": [
+         "Power"
+       ],
+       "keywords": [
+         "dsc",
+         "dspic",
+         "power",
+         "power-conversion",
+         "power-supply",
+         "smps",
+         "Digital Power",
+         "Digital Signal Processing"
+       ]
+     }
 }
