@@ -1,8 +1,8 @@
 ; **********************************************************************************
-;  SDK Version: PowerSmart™ Digital Control Library Designer v0.9.12.645
-;  CGS Version: Code Generator Script v3.0.1 (12/16/2020)
+;  SDK Version: PowerSmart™ Digital Control Library Designer v0.9.12.650
+;  CGS Version: Code Generator Script v3.0.2 (01/05/2021)
 ;  Author:      M91406
-;  Date/Time:   01/09/2021 03:24:53
+;  Date/Time:   01/09/2021 03:58:38
 ; **********************************************************************************
 ;  4P4Z Control Library File (Fast Floating Point Coefficient Scaling Mode)
 ; **********************************************************************************
@@ -53,11 +53,14 @@
     mov w6, [w10 + #2]                      ; move buffered value one tick down the delay line
     
 ;------------------------------------------------------------------------------
-; Read data from input source and calculate error input to transfer function
+; Read data from input source
     mov [w0 + #ptrSourceRegister], w2       ; load pointer to input source register
     mov [w2], w1                            ; move value from input source into working register
     mov [w0 + #ptrDProvControlInputComp], w2 ; load pointer address of target buffer of most recent, compensated controller input from data structure
     mov w1, [w2]                            ; copy most recent controller input value to given data buffer target
+    
+;------------------------------------------------------------------------------
+; Load reference and calculate error input to transfer function
     mov [w0 + #ptrControlReference], w2     ; move pointer to control reference into working register
     subr w1, [w2], w1                       ; calculate error (=reference - input)
     mov [w0 + #normPreShift], w2            ; move error input scaler into working register
@@ -277,11 +280,14 @@
     bra V_LOOP_PTERM_LOOP_BYPASS            ; if ENABLED bit is cleared, jump to end of control code
     
 ;------------------------------------------------------------------------------
-; Read data from input source and calculate error input to transfer function
+; Read data from input source
     mov [w0 + #ptrSourceRegister], w2       ; load pointer to input source register
     mov [w2], w1                            ; move value from input source into working register
     mov [w0 + #ptrDProvControlInputComp], w2 ; load pointer address of target buffer of most recent, compensated controller input from data structure
     mov w1, [w2]                            ; copy most recent controller input value to given data buffer target
+    
+;------------------------------------------------------------------------------
+; Load reference and calculate error input to transfer function
     mov [w0 + #ptrControlReference], w2     ; move pointer to control reference into working register
     subr w1, [w2], w1                       ; calculate error (=reference - input)
     mov [w0 + #normPreShift], w2            ; move error input scaler into working register

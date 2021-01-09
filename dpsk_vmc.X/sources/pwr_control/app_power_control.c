@@ -406,8 +406,16 @@ volatile uint16_t appPowerSupply_ControllerInitialize(void)
     buck.v_loop.controller->DataProviders.ptrDProvControlOutput = &buck.data.control_output; //NULL;
     
     // Cascaded Function Configuration
-    buck.v_loop.controller->CascadeTrigger.ptrCascadedFunction = NULL;
-    buck.v_loop.controller->CascadeTrigger.CascadedFunctionParam = 0;
+    buck.v_loop.controller->ExtensionHooks.ptrExtHookStartFunction = NULL;
+    buck.v_loop.controller->ExtensionHooks.ExtHookStartFunctionParam = 0;
+    buck.v_loop.controller->ExtensionHooks.ptrExtHookSourceFunction = NULL;
+    buck.v_loop.controller->ExtensionHooks.ExtHookSourceFunctionParam = 0;
+    buck.v_loop.controller->ExtensionHooks.ptrExtHookTargetFunction = NULL;
+    buck.v_loop.controller->ExtensionHooks.ExtHookTargetFunctionParam = 0;
+    buck.v_loop.controller->ExtensionHooks.ptrExtHookStopFunction = NULL;
+    buck.v_loop.controller->ExtensionHooks.ExtHookStopFunctionParam = 0;
+    buck.v_loop.controller->ExtensionHooks.ptrExtHookEndFunction = NULL;
+    buck.v_loop.controller->ExtensionHooks.ExtHookEndFunctionParam = 0;
     
     // Initialize Advanced Control Settings (not used in this code example)
     buck.v_loop.controller->GainControl.AgcFactor = 0x7FFF; // Adaptive Gain Control factor fractional
@@ -415,10 +423,14 @@ volatile uint16_t appPowerSupply_ControllerInitialize(void)
     buck.v_loop.controller->GainControl.AgcMedian = 0x0000; // Q15 number representing normalized Nominal Operating Point
 
     // Custom Advanced Control Settings
+    buck.v_loop.controller->Advanced.usrParam0 = 0; // No additional advanced control options used
     buck.v_loop.controller->Advanced.usrParam1 = 0; // No additional advanced control options used
     buck.v_loop.controller->Advanced.usrParam2 = 0; // No additional advanced control options used
     buck.v_loop.controller->Advanced.usrParam3 = 0; // No additional advanced control options used
     buck.v_loop.controller->Advanced.usrParam4 = 0; // No additional advanced control options used
+    buck.v_loop.controller->Advanced.usrParam5 = 0; // No additional advanced control options used
+    buck.v_loop.controller->Advanced.usrParam6 = 0; // No additional advanced control options used
+    buck.v_loop.controller->Advanced.usrParam7 = 0; // No additional advanced control options used
     
     // Reset Controller Status
     buck.v_loop.controller->status.bits.enabled = false; // Keep controller disabled

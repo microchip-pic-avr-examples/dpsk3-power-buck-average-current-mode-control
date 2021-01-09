@@ -1,5 +1,5 @@
 /* *********************************************************************************
- * PowerSmart™ Digital Control Library Designer, Version 0.9.12.645
+ * PowerSmart™ Digital Control Library Designer, Version 0.9.12.650
  * *********************************************************************************
  * 4p4z controller function declarations and compensation filter coefficients
  * derived for following operating conditions:
@@ -12,11 +12,11 @@
  *  Input Gain:         0.5
  *
  * *********************************************************************************
- * CGS Version:         3.0.1
- * CGS Date:            12/16/2020
+ * CGS Version:         3.0.2
+ * CGS Date:            01/05/2021
  * *********************************************************************************
  * User:                M91406
- * Date/Time:           01/09/2021 03:24:53
+ * Date/Time:           01/09/2021 03:58:38
  * ********************************************************************************/
 
 // This is a guard condition so that contents of this file are not included
