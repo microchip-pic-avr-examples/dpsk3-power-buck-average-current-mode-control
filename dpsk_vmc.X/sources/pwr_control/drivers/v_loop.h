@@ -1,5 +1,5 @@
 /* *********************************************************************************
- * z-Domain Control Loop Designer, Version 0.9.12.642
+ * PowerSmart™ Digital Control Library Designer, Version 0.9.12.645
  * *********************************************************************************
  * 4p4z controller function declarations and compensation filter coefficients
  * derived for following operating conditions:
@@ -12,11 +12,11 @@
  *  Input Gain:         0.5
  *
  * *********************************************************************************
- * CGS Version:         3.0.0
- * CGS Date:            09/07/2020
+ * CGS Version:         3.0.1
+ * CGS Date:            12/16/2020
  * *********************************************************************************
  * User:                M91406
- * Date/Time:           10/30/2020 12:21:07
+ * Date/Time:           01/09/2021 03:24:53
  * ********************************************************************************/
 
 // This is a guard condition so that contents of this file are not included
@@ -29,7 +29,7 @@
 #include <stdint.h>                               // include standard integer number data types
 #include <stdbool.h>                              // include standard boolean data types (true/false)
 
-#include "./pwr_control/drivers/npnz16b.h"        // include NPNZ library header file
+#include "npnz16b.h"                              // include NPNZ library header file
 
 /* *******************************************************************************
  * Data Arrays:
