@@ -35,25 +35,27 @@
          }
       },
       "peripherals":[
-         "GPIO",
          "UART",
          "PWM",
+         "SMPS PWM",
          "ADC",
-         "Timer",
-         "SPI"
+         "TIMER",
+         "SPI",
+         "LCD"
       ],
       "subcategories": [
          "Power"
        ],
        "keywords": [
-         "dsc",
-         "dspic",
-         "power",
-         "power-conversion",
-         "power-supply",
-         "smps",
+         "dsPIC",
+         "Closed Loop Control",
+         "DSC",
          "Digital Power",
-         "Digital Signal Processing"
+         "Digital Signal Processing/ Filters",
+         "Power",
+         "Power Conversion",
+         "Power Management",
+         "Power Supply"
        ]
      }
 }
