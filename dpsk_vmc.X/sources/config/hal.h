@@ -20,10 +20,11 @@
  */
 
 /* 
- * File:   
- * Author: 
- * Comments:
+ * File:   hal.h
+ * Author: M91406
+ * Comments: Hardware Abstaction Layer (HAL) main header file
  * Revision history: 
+ *   1.0    initial release
  */
 
 // This is a guard condition so that contents of this file are not included
