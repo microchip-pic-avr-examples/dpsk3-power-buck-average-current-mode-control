@@ -9,32 +9,19 @@
 #include "config/hal.h"
 #include "app_power_control.h"
 
-/*!Power Converter Control Loop Interrupt
- * **************************************************************************************************
- * 
- * **************************************************************************************************/
-
-/* @@_BUCK_VLOOP_Interrupt
- * ********************************************************************************
- * Summary: Main Control Interrupt
- * 
- * Parameters:
- *  (none)
- * 
- * Returns:
- *  (none)
- * 
- * Description:
+/*********************************************************************************
+ * @fn      void _BUCK_VLOOP_Interrupt(void)
+ * @ingroup app-layer-power-control-events
+ * @brief   Main Control Interrupt
+ * @param   void
+ * @return  void
+ *   
+ * @details
  * The control interrupt is calling the control loop. The point in time where
  * this interrupt is thrown is determined by selecting the BUCK_VOUT_TRIGGER_MODE
  * option. 
  * 
- * ********************************************************************************/
-
-/*!Power Converter Control Loop Interrupt
- * **************************************************************************************************
- * 
- * **************************************************************************************************/
+ *********************************************************************************/
 
 void __attribute__((__interrupt__, no_auto_psv, context))_BUCK_VLOOP_Interrupt(void)
 {
@@ -51,3 +38,5 @@ DBGPIN_2_SET;
 
 DBGPIN_2_CLEAR;
 }
+
+// end of file

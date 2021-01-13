@@ -38,24 +38,17 @@
 
 #include "pwr_control/devices/dev_buck_typedef.h"
 
-#ifdef	__cplusplus
-extern "C" {
-#endif /* __cplusplus */
-
 // PUBLIC DATA OBJECT DECLARATIONS
 extern volatile struct BUCK_POWER_CONTROLLER_s buck;
 
 // PUBLIC FUNCTION PROTOTYPE DECLARATIONS
 extern volatile uint16_t appPowerSupply_Initialize(void);
-extern volatile uint16_t appPowerSupply_Dispose(void);
 extern volatile uint16_t appPowerSupply_Execute(void);
+extern volatile uint16_t appPowerSupply_Start(void);
+extern volatile uint16_t appPowerSupply_Stop(void);
 extern volatile uint16_t appPowerSupply_Suspend(void);
 extern volatile uint16_t appPowerSupply_Resume(void);
 
-
-#ifdef	__cplusplus
-}
-#endif /* __cplusplus */
 
 #else
 #pragma message "drv_buck_converter.h has been recalled"
