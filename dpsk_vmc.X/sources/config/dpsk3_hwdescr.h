@@ -87,6 +87,24 @@ extern "C" {
 #define MAIN_EXECUTION_PERIOD   (float)100.0e-6     // main state machine pace period in [sec]
 #define MAIN_EXEC_PER           (uint16_t)((CPU_FREQUENCY * MAIN_EXECUTION_PERIOD)-1)
 
+/**
+ * @ingroup state-machine-mcal
+ * @{
+ * @brief Global state-machine peripheral assignments
+ * 
+ * @details
+ * The main task scheduler time base required a timer interrupt to separate high-priority
+ * from low-priority tasks. The high priority task timer interrupt is configured here.
+ */
+
+#define _OsTimerInterrupt      _T1Interrupt ///< Interrupt serivce routine label 
+#define _OSTIMER_IP            _T1IP ///< interrupt priority register
+#define _OSTIMER_IE            _T1IE ///< interrupt enable bit
+#define _OSTIMER_IF            _T1IF ///< interrupt flag bit
+#define _OSTIMER_PRIORITY       2    ///< interrupt priority (1 ... 7, default = 2)
+    
+
+/** @} */ // end of group state-machine-mcal ~~~~~~~~~~
     
 /*!Hardware Abstraction
  * *************************************************************************************************
@@ -569,6 +587,7 @@ extern "C" {
 #define BUCK_VOUT_TRIG_ADC  1   // Buck VOUT control loop is called in ADC interrupt
 
 #define BUCK_VOUT_TRIGGER_MODE  BUCK_VOUT_TRIG_PWM
+#define BUCK_VOUT_ISR_PRIORITY  5     ///< Voltage loop interrupt vector priority (valid settings between 0...6 with 6 being the highest priority)
     
 #if (BUCK_VOUT_TRIGGER_MODE == BUCK_VOUT_TRIG_ADC)    
   #define _BUCK_VLOOP_Interrupt     _ADCAN13Interrupt   
