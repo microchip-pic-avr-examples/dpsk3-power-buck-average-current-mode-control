@@ -21,10 +21,10 @@
 ;  TERMS.
 ; **********************************************************************************
 ; **********************************************************************************
-;  SDK Version: PowerSmart™ Digital Control Library Designer v0.9.12.650
+;  SDK Version: PowerSmart™ Digital Control Library Designer v0.9.12.652
 ;  CGS Version: Code Generator Script v3.0.2 (01/05/2021)
 ;  Author:      M91406
-;  Date/Time:   01/09/2021 03:58:38
+;  Date/Time:   01/13/2021 21:22:33
 ; **********************************************************************************
     
 ;------------------------------------------------------------------------------
@@ -91,20 +91,22 @@
     .equ ExtHookStartFunctionParam,     98  ; parameter group ExtensionHooks: 16-bit wide function parameter variable or pointer to a parameter variable or data structure of extension function
     .equ ptrExtHookSourceFunction,      100 ; parameter group ExtensionHooks: pointer to external extension function which will be called by this controller after the most recent controller input has been read and compensated but before the most recent error is calculated.
     .equ ExtHookSourceFunctionParam,    102 ; parameter group ExtensionHooks: 16-bit wide function parameter variable or pointer to a parameter variable or data structure of extension function
-    .equ ptrExtHookTargetFunction,      104 ; parameter group ExtensionHooks: pointer to external extension function which will be called by this controller before the most recent controller output is written to target, after the value has passed through anti-windup clamping.
-    .equ ExtHookTargetFunctionParam,    106 ; parameter group ExtensionHooks: 16-bit wide function parameter variable or pointer to a parameter variable or data structure of extension function
-    .equ ptrExtHookStopFunction,        108 ; parameter group ExtensionHooks: pointer to external extension function which will be called by this controller after the compensation loop computation has been completed. This function call will be bypassed when the controller is disabled.
-    .equ ExtHookStopFunctionParam,      110 ; parameter group ExtensionHooks: 16-bit wide function parameter variable or pointer to a parameter variable or data structure of extension function
-    .equ ptrExtHookEndFunction,         112 ; parameter group ExtensionHooks: pointer to external extension function which will be called by this controller after the compensation loop computation has been completed, regardless of the loop execution being bypassed or not
-    .equ ExtHookEndFunctionParam,       114 ; parameter group ExtensionHooks: 16-bit wide function parameter variable or pointer to a parameter variable or data structure of extension function
-    .equ usrParam0,                     116 ; parameter group Advanced: generic 16-bit wide, user-defined parameter #1 for user-defined, advanced control options
-    .equ usrParam1,                     118 ; parameter group Advanced: generic 16-bit wide, user-defined parameter #2 for user-defined, advanced control options
-    .equ usrParam2,                     120 ; parameter group Advanced: generic 16-bit wide, user-defined parameter #3 for user-defined, advanced control options
-    .equ usrParam3,                     122 ; parameter group Advanced: generic 16-bit wide, user-defined parameter #4 for user-defined, advanced control options
-    .equ usrParam4,                     124 ; parameter group Advanced: generic 16-bit wide, user-defined parameter #5 for user-defined, advanced control options
-    .equ usrParam5,                     126 ; parameter group Advanced: generic 16-bit wide, user-defined parameter #6 for user-defined, advanced control options
-    .equ usrParam6,                     128 ; parameter group Advanced: generic 16-bit wide, user-defined parameter #7 for user-defined, advanced control options
-    .equ usrParam7,                     130 ; parameter group Advanced: generic 16-bit wide, user-defined parameter #8 for user-defined, advanced control options
+    .equ ptrExtHookPreAntiWindupFunction, 104 ; parameter group ExtensionHooks: pointer to external extension function which will be called by this controller after the most recent compensation filter result has been computed and before  anti-windup clamping is applied
+    .equ ExtHookPreAntiWindupFunctionParam, 106 ; parameter group ExtensionHooks: 16-bit wide function parameter variable or pointer to a parameter variable or data structure of extension function
+    .equ ptrExtHookTargetFunction,      108 ; parameter group ExtensionHooks: pointer to external extension function which will be called by this controller before the most recent controller output is written to target, after the value has passed through anti-windup clamping.
+    .equ ExtHookTargetFunctionParam,    110 ; parameter group ExtensionHooks: 16-bit wide function parameter variable or pointer to a parameter variable or data structure of extension function
+    .equ ptrExtHookStopFunction,        112 ; parameter group ExtensionHooks: pointer to external extension function which will be called by this controller after the compensation loop computation has been completed. This function call will be bypassed when the controller is disabled.
+    .equ ExtHookStopFunctionParam,      114 ; parameter group ExtensionHooks: 16-bit wide function parameter variable or pointer to a parameter variable or data structure of extension function
+    .equ ptrExtHookEndFunction,         116 ; parameter group ExtensionHooks: pointer to external extension function which will be called by this controller after the compensation loop computation has been completed, regardless of the loop execution being bypassed or not
+    .equ ExtHookEndFunctionParam,       118 ; parameter group ExtensionHooks: 16-bit wide function parameter variable or pointer to a parameter variable or data structure of extension function
+    .equ usrParam0,                     120 ; parameter group Advanced: generic 16-bit wide, user-defined parameter #1 for user-defined, advanced control options
+    .equ usrParam1,                     122 ; parameter group Advanced: generic 16-bit wide, user-defined parameter #2 for user-defined, advanced control options
+    .equ usrParam2,                     124 ; parameter group Advanced: generic 16-bit wide, user-defined parameter #3 for user-defined, advanced control options
+    .equ usrParam3,                     126 ; parameter group Advanced: generic 16-bit wide, user-defined parameter #4 for user-defined, advanced control options
+    .equ usrParam4,                     128 ; parameter group Advanced: generic 16-bit wide, user-defined parameter #5 for user-defined, advanced control options
+    .equ usrParam5,                     130 ; parameter group Advanced: generic 16-bit wide, user-defined parameter #6 for user-defined, advanced control options
+    .equ usrParam6,                     132 ; parameter group Advanced: generic 16-bit wide, user-defined parameter #7 for user-defined, advanced control options
+    .equ usrParam7,                     134 ; parameter group Advanced: generic 16-bit wide, user-defined parameter #8 for user-defined, advanced control options
     
 ;------------------------------------------------------------------------------
 ;end of include of NPNZ16B_t data structure and global constants

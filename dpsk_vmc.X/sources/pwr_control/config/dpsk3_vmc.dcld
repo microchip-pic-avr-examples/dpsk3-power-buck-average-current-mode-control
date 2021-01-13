@@ -1,16 +1,16 @@
 [GUI]
 CreateDate=08/26/2020 14:07:37
-SaveDate=01/09/2021 03:58:46
+SaveDate=01/13/2021 21:22:37
 Name=PowerSmart™ Digital Control Library Designer
-Version=0.9.12.650
+Version=0.9.12.652
 VersionKey=912
 AGS Version=2.0.23
 CGS Version=3.0.2
-WindoWState=0
-Top=60
-Left=268
-Height=950
-Width=1500
+WindoWState=2
+Top=-8
+Left=-8
+Height=1066
+Width=1936
 TabHeight=288
 [ControlSetup]
 ControlType=3
@@ -111,6 +111,8 @@ AddUserHookStart=0
 AddUserHookStartParam=0
 AddUserHookSource=0
 AddUserHookSourceParam=0
+AddUserHookPreAntiWindup=0
+AddUserHookPreAntiWindupParam=0
 AddUserHookTarget=0
 AddUserHookTargetParam=0
 AddUserHookStop=0
@@ -159,14 +161,9 @@ PWMDutyCycle=40.7e+0
 ControlLoopLatency=190e+0
 UserTriggerPosition=20e+0
 TriggerPlacement=1
-[generator_history]
-count=6
-active_item=6
-1=2020-09-01 14:16:40||M91406||Optimized 4P4Z VMC Buck Converter Controller, fx = 20 kHz||3; 3; 12; 0.5; 1; 0; 0; 500000; 604; 82540; 104860; 250000; 250000; 250000; 2021; 3833; 49866; 50000; 50000
-2=2020-10-07 09:19:02||M91406||(Autosave) [4P4Z, Scaling 4, 500kHz]||3; 3; 12; 0.5; 1; 0; 0; 500000; 604; 82540; 104860; 250000; 250000; 250000; 2021; 3833; 49866; 50000; 50000
-3=2020-10-30 12:21:11||M91406||(Autosave) [4P4Z, Scaling 4, 500kHz]||3; 3; 12; 0.5; 1; 0; 0; 500000; 604; 82540; 104860; 250000; 250000; 250000; 2021; 3833; 49866; 50000; 50000
-4=2021-01-09 03:07:40||M91406||(Autosave) [4P4Z, Scaling 4, 500kHz]||3; 3; 12; 0.5; 1; 0; 0; 500000; 604; 82540; 104860; 250000; 250000; 250000; 2021; 3833; 49866; 50000; 50000
-5=2021-01-09 03:25:05||M91406||(Autosave) [4P4Z, Scaling 4, 500kHz]||3; 3; 12; 0.5; 1; 0; 0; 500000; 604; 82540; 104860; 250000; 250000; 250000; 2021; 3833; 49866; 50000; 50000
-6=2021-01-09 03:58:44||M91406||(Autosave) [4P4Z, Scaling 4, 500kHz]||3; 3; 12; 0.5; 1; 0; 0; 500000; 604; 82540; 104860; 250000; 250000; 250000; 2021; 3833; 49866; 50000; 50000
 [SimulationToolSupport]
 SimplisSchematics=
+[generator_history]
+count=1
+active_item=1
+1=2020-09-01 14:16:40||M91406||Optimized 4P4Z VMC Buck Converter Controller, fx = 20 kHz||3; 3; 12; 0.5; 1; 0; 0; 500000; 604; 82540; 104860; 250000; 250000; 250000; 2021; 3833; 49866; 50000; 50000

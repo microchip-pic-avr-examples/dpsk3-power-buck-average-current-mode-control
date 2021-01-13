@@ -1,5 +1,5 @@
 /* *********************************************************************************
- * PowerSmart™ Digital Control Library Designer, Version 0.9.12.650
+ * PowerSmart™ Digital Control Library Designer, Version 0.9.12.652
  * *********************************************************************************
  * Generic library header for z-domain compensation filter assembly functions
  * CGS Version: 3.0.2
@@ -314,6 +314,9 @@ typedef struct NPNZ_EXTENSION_HOOKS_s{
 
     volatile uint16_t ptrExtHookSourceFunction;   // Pointer to Function which will be called after the source has been read and compensated
     volatile uint16_t ExtHookSourceFunctionParam; // Parameter of function called (can be a variable or a pointer to a data structure)
+
+    volatile uint16_t ptrExtHookPreAntiWindupFunction; // Pointer to Function which will be called after the compensation filter computation is complete and before anti-windup clamping is applied
+    volatile uint16_t ExtHookPreAntiWindupFunctionParam; // Parameter of function called (can be a variable or a pointer to a data structure)
 
     volatile uint16_t ptrExtHookTargetFunction;   // Pointer to Function which will be called before the most recent control output is written to target
     volatile uint16_t ExtHookTargetFunctionParam; // Parameter of function called (can be a variable or a pointer to a data structure)
