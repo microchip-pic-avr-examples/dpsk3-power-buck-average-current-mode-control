@@ -69,9 +69,9 @@ volatile uint16_t appFaultMonitor_Initialize(void)
 
 volatile uint16_t appFaultMonitor_Dispose(void) 
 {
-    fltobj_BuckUVLO = fltobjClear; // Delete Under Voltage Lock Out object
-    fltobj_BuckOVLO = fltobjClear; // Delete Over Voltage Lock Out object
-    fltobj_BuckRegErr = fltobjClear; // Delete Regulation Error object
+    fltobj_BuckUVLO = fltObjectClear; // Delete Under Voltage Lock Out object
+    fltobj_BuckOVLO = fltObjectClear; // Delete Over Voltage Lock Out object
+    fltobj_BuckRegErr = fltObjectClear; // Delete Regulation Error object
     
     return(1);
 }
@@ -152,7 +152,7 @@ volatile uint16_t uvlo_FaultInitialize(void)
     volatile uint16_t retval=1;
     
     // Initialize UVLO fault object
-    fltobj_BuckUVLO = fltobjClear;  // Pre-initialize fault object
+    fltobj_BuckUVLO = fltObjectClear;  // Pre-initialize fault object
     
     fltobj_BuckUVLO.SourceObject.ptrObject = &buck.data.v_in;   // Set pointer to variable to monitor
     fltobj_BuckUVLO.SourceObject.bitMask = 0xFFFF;      // Compare all bits of SOURCE (no bit filter)
@@ -197,7 +197,7 @@ volatile uint16_t ovlo_FaultInitialize(void)
     volatile uint16_t retval=1;
 
     // Initialize OVLO fault object
-    fltobj_BuckOVLO = fltobjClear;  // Pre-initialize fault object
+    fltobj_BuckOVLO = fltObjectClear;  // Pre-initialize fault object
 
     fltobj_BuckOVLO.SourceObject.ptrObject = &buck.data.v_in;   // Set pointer to variable to monitor
     fltobj_BuckOVLO.SourceObject.bitMask = 0xFFFF;    // Compare all bits of SOURCE (no bit filter)
@@ -241,7 +241,7 @@ volatile uint16_t regerr_FaultInitialize(void)
     volatile uint16_t retval=1;
 
     // Initialize regulation error fault object
-    fltobj_BuckRegErr = fltobjClear;  // Pre-initialize fault object
+    fltobj_BuckRegErr = fltObjectClear;  // Pre-initialize fault object
 
     fltobj_BuckRegErr.SourceObject.ptrObject = &buck.data.v_out; // Set pointer to variable to monitor
     fltobj_BuckRegErr.SourceObject.bitMask = 0xFFFF; // Compare all bits of SOURCE (no bit filter)
