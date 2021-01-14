@@ -20,9 +20,9 @@
  */
 
 /* 
- * File:    dpsk3_hwdescr.h
- * Author:  M91406
- * Comments: DPSK3 Hardware Descriptor header file
+ * @file   dpsk3_hwdescr.h
+ * Author: M91406
+ * @brief  DPSK3 Hardware Descriptor header file
  * Revision history: 
  */
 
@@ -97,10 +97,10 @@
 #define PWM_CLOCK_HIGH_RESOLUTION   true
     
 #if (PWM_CLOCK_HIGH_RESOLUTION)
-    #define PWM_CLOCK_FREQUENCY (float)4.0e+9   // PWM Clock Frequency in [Hz]
+    #define PWM_CLOCK_FREQUENCY (float)4.0e+9   ///< PWM Clock Frequency in [Hz]
     #define PWM_CLOCK_PERIOD    (float)(1.0/PWM_CLOCK_FREQUENCY) // PWM Clock Period in [sec]
 #else
-    #define PWM_CLOCK_FREQUENCY (float)500.0e+6   // PWM Clock Frequency in [Hz]
+    #define PWM_CLOCK_FREQUENCY (float)500.0e+6   ///< PWM Clock Frequency in [Hz]
     #define PWM_CLOCK_PERIOD    (float)(1.0/PWM_CLOCK_FREQUENCY) // PWM Clock Period in [sec]
 #endif
 
@@ -183,17 +183,17 @@
     #define DBGPIN4_Init()      { _LATB2 = 0; _TRISB2 = 0; }
 
     // TP48 on DPSK3
-    #define PWRGOOD_PORT    0   // GPIO port declaration where 0=A, 1=B, 2=C, etc.
-    #define PWRGOOD_PIN     4   // GPIO port pin declaration where 0=Rx0, 1=Rx1, 2=Rx3, etc.
+    #define PWRGOOD_PORT        0   // GPIO port declaration where 0=A, 1=B, 2=C, etc.
+    #define PWRGOOD_PIN         4   // GPIO port pin declaration where 0=Rx0, 1=Rx1, 2=Rx3, etc.
     #define PWRGOOD_Set()       { _LATA4 = 1; }
     #define PWRGOOD_Clear()     { _LATA4 = 0; }
     #define PWRGOOD_Toggle()	{ _LATA4 ^= 1; }
     #define PWRGOOD_Init()      { _ANSELA4 = 0; _LATA4 = 0; _TRISA4 = 0; }
     
     // User Switch Input
-    #define SW_USER_TRISx   _TRISD1
-    #define SW_USER_LATx    _LATD1
-    #define SW_USER_PORTx   _RD1
+    #define SW_USER_TRISx       _TRISD1
+    #define SW_USER_LATx        _LATD1
+    #define SW_USER_PORTx       _RD1
     #define SW_USER_Init()      { SW_USER_LATx = 1; SW_USER_TRISx = 1; }
 
 #endif
@@ -214,9 +214,6 @@
 #define SWITCHING_PERIOD        (float)(1.0/SWITCHING_FREQUENCY)    // Switching period in [sec]
 #define SWITCHING_PHASE_SHIFT   (float)0.0        // Phase Shift of PWM output in [sec]
 
-/* CUSTOM RUNTIME OPTIONS */
-#define PLANT_MEASUREMENT   false
-    
 /*!Fundamental PWM Settings
  * *************************************************************************************************
  * Summary:
@@ -327,8 +324,8 @@
     
 // ~ conversion macros end ~~~~~~~~~~~~~~~~~
     
-#define _BUCK_VIN_ADCInterrupt      _ADCAN12Interrupt   
-#define _BUCK_VIN_ADCISR_IF         _ADCAN12IF
+#define _BUCK_VIN_ADCInterrupt  _ADCAN12Interrupt // Interrupt service routine of input voltage
+#define _BUCK_VIN_ADCISR_IF     _ADCAN12IF  // Interrupt flag bit of input voltage
 
 #define BUCK_VIN_ANSEL          _ANSELC0    // GPIO analog function mode enable bit
 #define BUCK_VIN_ADCCORE        8           // 0=Dedicated Core #0, 1=Dedicated Core #1, ... , 8=Shared ADC Core
@@ -357,12 +354,12 @@
 #define BUCK_VOUT_ADC_TRG_DELAY     (float)(20.0e-9) // Trigger delay in [sec]
 
 // Peripheral Assignments
-#define BUCK_VOUT_ANSEL             _ANSELC1    // GPIO analog function mode enable bit
-#define BUCK_VOUT_ADCCORE           8           // 0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core
-#define BUCK_VOUT_ADCIN             13          // Analog input number (e.g. '5' for 'AN5')
-#define BUCK_VOUT_ADCBUF            ADCBUF13    // ADC input buffer of this ADC channel
-#define BUCK_VOUT_ADCTRIG           PG1TRIGA    // Register used for trigger placement
-#define BUCK_VOUT_TRGSRC            BUCK_PWM_TRGSRC_TRG1 // PWM1 (=PG2) Trigger 1 via PGxTRIGA
+#define BUCK_VOUT_ANSEL         _ANSELC1    // GPIO analog function mode enable bit
+#define BUCK_VOUT_ADCCORE       8           // 0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core
+#define BUCK_VOUT_ADCIN         13          // Analog input number (e.g. '5' for 'AN5')
+#define BUCK_VOUT_ADCBUF        ADCBUF13    // ADC input buffer of this ADC channel
+#define BUCK_VOUT_ADCTRIG       PG1TRIGA    // Register used for trigger placement
+#define BUCK_VOUT_TRGSRC        BUCK_PWM_TRGSRC_TRG1 // PWM1 (=PG2) Trigger 1 via PGxTRIGA
     
 // ~ conversion macros ~~~~~~~~~~~~~~~~~~~~~
 

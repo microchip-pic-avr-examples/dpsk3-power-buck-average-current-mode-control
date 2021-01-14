@@ -38,5 +38,6 @@
 #include "config/init/init_timer1.h" // include Timer1 initialization driver
 #include "config/init/init_gpio.h"   // include GPIO initialization driver
 
+
 #endif	/* DEVICE_CONFIGURATION_INCLUDE_H */
 

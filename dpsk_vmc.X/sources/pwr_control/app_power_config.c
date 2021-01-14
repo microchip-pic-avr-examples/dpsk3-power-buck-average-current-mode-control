@@ -297,13 +297,13 @@ volatile uint16_t appPowerSupply_ControllerInitialize(void)
     buck.v_loop.controller->ADCTriggerControl.ptrADCTriggerARegister = &BUCK_VOUT_ADCTRIG;
     buck.v_loop.controller->ADCTriggerControl.ADCTriggerAOffset = buck.v_loop.trigger_offset;
     buck.v_loop.controller->ADCTriggerControl.ptrADCTriggerBRegister = &BUCK_VIN_ADCTRIG;
-    buck.v_loop.controller->ADCTriggerControl.ADCTriggerBOffset = BUCK_ISNS_ADC_TRGDLY; //buck.v_loop.trigger_offset;
+    buck.v_loop.controller->ADCTriggerControl.ADCTriggerBOffset = BUCK_ISNS_ADC_TRGDLY; 
     
     // Data Provider Configuration
-    buck.v_loop.controller->DataProviders.ptrDProvControlInput = &buck.data.control_input; //NULL;
+    buck.v_loop.controller->DataProviders.ptrDProvControlInput = &buck.data.control_input; 
     buck.v_loop.controller->DataProviders.ptrDProvControlInputCompensated = &buck.data.v_out; 
-    buck.v_loop.controller->DataProviders.ptrDProvControlError = &buck.data.control_error; //NULL;
-    buck.v_loop.controller->DataProviders.ptrDProvControlOutput = &buck.data.control_output; //NULL;
+    buck.v_loop.controller->DataProviders.ptrDProvControlError = &buck.data.control_error; 
+    buck.v_loop.controller->DataProviders.ptrDProvControlOutput = &buck.data.control_output;
     
     // Cascaded Function Configuration
     buck.v_loop.controller->ExtensionHooks.ptrExtHookStartFunction = NULL;
