@@ -65,8 +65,8 @@ int main(void) {
     _T1IF = 0;  // Reset interrupt flag bit
     _T1IE = 1;  // Disable Timer1 interrupt
     
-    DBGPIN_2_CLEAR; // Clear debug pin #2
-    DBGPIN_3_CLEAR; // Clear debug pin #3
+    DBGPIN2_Clear(); // Clear debug pin #2
+    DBGPIN3_Clear(); // Clear debug pin #3
     
     while (1) {
 
@@ -75,14 +75,14 @@ int main(void) {
         LOW_PRIORITY_GO = false;
         timeout = 0;    // Reset timeout counter
 
-        DBGPIN_3_SET; // Set DEBUG-PIN
+        DBGPIN3_Set(); // Set DEBUG-PIN
 
         // Execute non-time critical, low-priority tasks
         appLCD_Execute();
         appLED_Execute();
         appSwitch_Execute();
         
-        DBGPIN_3_CLEAR; // Clear DEBUG-PIN
+        DBGPIN3_Clear(); // Clear DEBUG-PIN
         Nop();
     }
 
@@ -112,7 +112,7 @@ int main(void) {
 
 void __attribute__((__interrupt__, no_auto_psv)) _T1Interrupt(void)
 {
-    DBGPIN_1_SET; // Set DEBUG-PIN
+    DBGPIN1_Set(); // Set DEBUG-PIN
     
     // Execute high priority, time critical tasks
     appPowerSupply_Execute(); // Execute power supply state machine
@@ -121,7 +121,7 @@ void __attribute__((__interrupt__, no_auto_psv)) _T1Interrupt(void)
     LOW_PRIORITY_GO = true; // Set GO trigger for low priority tasks
     
     _T1IF = 0; // Reset the interrupt flag bit
-    DBGPIN_1_CLEAR; // Clear DEBUG-PIN
+    DBGPIN1_Clear(); // Clear DEBUG-PIN
 }
 
 

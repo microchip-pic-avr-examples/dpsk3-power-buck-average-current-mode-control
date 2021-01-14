@@ -40,6 +40,40 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif /* __cplusplus */
+/**************************************************************************************************
+ * @ingroup hardware-id-macro
+ * @{
+ * @brief Global macro identifying the hardware version supported by 
+ * 
+ * @details
+ * This global macro is used to identify the hardware version supported by this hardware 
+ * abstraction layer header file. 
+ * 
+ **************************************************************************************************/
+
+#ifndef __DPSK3_R30__
+  #define __DPSK3_R30__
+#endif
+
+/** @} */ // end of group hardware-id-macro
+
+/**************************************************************************************************
+ * @ingroup special-options
+ * @{
+ * @brief Global defines used to enable/disable special firmware options
+ * 
+ * @details
+ * This section is used to enable/disable special options of the firmware. 
+ * 
+ **************************************************************************************************/
+
+/* CUSTOM RUNTIME OPTIONS */
+#define PLANT_MEASUREMENT   false ///< If enabled, replaces the common voltage control loop by a simple P-control loop to perform measurements of the plant transfer function.
+
+#define DBGPIN1_ENABLE      true ///< Enables debug pin indicating control loop execution timing
+#define DBGPIN2_ENABLE      true ///< Enables debug pin indicating control loop execution timing
+#define DBGPIN3_ENABLE      true ///< Enables debug pin indicating task scheduler execution timing
+#define DBGPIN4_ENABLE      true ///< Enables debug pin indicating task scheduler execution timing
 
 
 /*!Microcontroller Abstraction
@@ -121,49 +155,49 @@ extern "C" {
 #ifdef __DPSK3_R30__
     
     // TP51 on DPSK3 (Red LED)
-    #define DBGLED_SET		{ _LATB6 = 1; }
-    #define DBGLED_CLEAR	{ _LATB6 = 0; }
-    #define DBGLED_TOGGLE	{ _LATB6 ^= 1; }
-    #define DBGLED_INIT		{ _LATB6 = 0; _TRISB6 = 0; }
-    #define DBGLED_DISPOSE  { _LATB6 = 1; _TRISB6 = 1; }
+    #define DBGLED_Set()        { _LATB6 = 1; }
+    #define DBGLED_Clear()      { _LATB6 = 0; }
+    #define DBGLED_Toggle()     { _LATB6 ^= 1; }
+    #define DBGLED_Init()       { _LATB6 = 0; _TRISB6 = 0; }
+    #define DBGLED_Dispose()    { _LATB6 = 1; _TRISB6 = 1; }
     
     // TP50 on DPSK3
-    #define DBGPIN_1_SET	{ _LATB5 = 1; }
-    #define DBGPIN_1_CLEAR	{ _LATB5 = 0; }
-    #define DBGPIN_1_TOGGLE	{ _LATB5 ^= 1; }
-    #define DBGPIN_1_INIT	{ _LATB5 = 0; _TRISB5 = 0; }
+    #define DBGPIN1_Set()       { _LATB5 = 1; }
+    #define DBGPIN1_Clear()     { _LATB5 = 0; }
+    #define DBGPIN1_Toggle()	{ _LATB5 ^= 1; }
+    #define DBGPIN1_Init()      { _LATB5 = 0; _TRISB5 = 0; }
 
     // TP52 on DPSK3
-    #define DBGPIN_2_SET	{ _LATB11 = 1; }
-    #define DBGPIN_2_CLEAR	{ _LATB11 = 0; }
-    #define DBGPIN_2_TOGGLE	{ _LATB11 ^= 1; }
-    #define DBGPIN_2_INIT	{ _LATB11 = 0; _TRISB11 = 0; }
+    #define DBGPIN2_Set()       { _LATB11 = 1; }
+    #define DBGPIN2_Clear()     { _LATB11 = 0; }
+    #define DBGPIN2_Toggle()	{ _LATB11 ^= 1; }
+    #define DBGPIN2_Init()      { _LATB11 = 0; _TRISB11 = 0; }
 
     // TP53 on DPSK3
-    #define DBGPIN_3_SET	{ _LATB12 = 1; }
-    #define DBGPIN_3_CLEAR	{ _LATB12 = 0; }
-    #define DBGPIN_3_TOGGLE	{ _LATB12 ^= 1; }
-    #define DBGPIN_3_INIT	{ _LATB12 = 0; _TRISB12 = 0; }
+    #define DBGPIN3_Set()       { _LATB12 = 1; }
+    #define DBGPIN3_Clear()     { _LATB12 = 0; }
+    #define DBGPIN3_Toggle()	{ _LATB12 ^= 1; }
+    #define DBGPIN3_Init()      { _LATB12 = 0; _TRISB12 = 0; }
 
     // TP49 on DPSK3
-    #define DBGPIN_4_SET	{ _LATB2 = 1; }
-    #define DBGPIN_4_CLEAR	{ _LATB2 = 0; }
-    #define DBGPIN_4_TOGGLE	{ _LATB2 ^= 1; }
-    #define DBGPIN_4_INIT	{ _LATB2 = 0; _TRISB2 = 0; }
+    #define DBGPIN4_Set()       { _LATB2 = 1; }
+    #define DBGPIN4_Clear()     { _LATB2 = 0; }
+    #define DBGPIN4_Toggle()	{ _LATB2 ^= 1; }
+    #define DBGPIN4_Init()      { _LATB2 = 0; _TRISB2 = 0; }
 
     // TP48 on DPSK3
     #define PWRGOOD_PORT    0   // GPIO port declaration where 0=A, 1=B, 2=C, etc.
     #define PWRGOOD_PIN     4   // GPIO port pin declaration where 0=Rx0, 1=Rx1, 2=Rx3, etc.
-    #define PWRGOOD_SET     { _LATA4 = 1; }
-    #define PWRGOOD_CLEAR	{ _LATA4 = 0; }
-    #define PWRGOOD_TOGGLE	{ _LATA4 ^= 1; }
-    #define PWRGOOD_INIT	{ _ANSELA4 = 0; _LATA4 = 0; _TRISA4 = 0; }
+    #define PWRGOOD_Set()       { _LATA4 = 1; }
+    #define PWRGOOD_Clear()     { _LATA4 = 0; }
+    #define PWRGOOD_Toggle()	{ _LATA4 ^= 1; }
+    #define PWRGOOD_Init()      { _ANSELA4 = 0; _LATA4 = 0; _TRISA4 = 0; }
     
     // User Switch Input
     #define SW_USER_TRISx   _TRISD1
     #define SW_USER_LATx    _LATD1
     #define SW_USER_PORTx   _RD1
-    #define SW_USER_INIT    { SW_USER_LATx = 1; SW_USER_TRISx = 1; }
+    #define SW_USER_Init()      { SW_USER_LATx = 1; SW_USER_TRISx = 1; }
 
 #endif
     

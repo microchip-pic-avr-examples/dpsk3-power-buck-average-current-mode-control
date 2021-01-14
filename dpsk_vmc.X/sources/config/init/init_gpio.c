@@ -19,10 +19,10 @@ volatile uint16_t Gpio_Initialize(void) {
     ANSELD = 0x0000;
     
     // Initialize debugging Pins
-    DBGPIN_1_INIT;
-    DBGPIN_2_INIT;
-    DBGPIN_3_INIT;
-    DBGPIN_4_INIT;
+    DBGPIN1_Init();
+    DBGPIN2_Init();
+    DBGPIN3_Init();
+    DBGPIN4_Init();
     
     return(1);
 }

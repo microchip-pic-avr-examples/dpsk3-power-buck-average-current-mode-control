@@ -22,7 +22,7 @@ volatile uint16_t appLED_Initialize(void)
     if(debug_led.period == 0)
         debug_led.period = TGL_INTERVAL;
     
-    DBGLED_INIT;
+    DBGLED_Init();
 
     return(retval);
 }
@@ -33,7 +33,7 @@ volatile uint16_t appLED_Execute(void)
 
 	// Toggle LED, refresh LCD and reset toggle counter
 	if (tgl_cnt++ > debug_led.period) { // Count n loops until LED toggle interval is exceeded
-		DBGLED_TOGGLE;
+		DBGLED_Toggle();
 		tgl_cnt = 0;
 	} 
 
@@ -45,7 +45,7 @@ volatile uint16_t appLED_Dispose(void)
     volatile uint16_t retval = 1;
     
     debug_led.period = 0;
-    DBGLED_DISPOSE;
+    DBGLED_Dispose();
 
     return(retval);
 }

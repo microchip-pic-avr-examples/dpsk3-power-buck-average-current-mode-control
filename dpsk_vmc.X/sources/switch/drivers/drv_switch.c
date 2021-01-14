@@ -15,7 +15,7 @@ volatile uint16_t drv_Switch_Initialize(volatile SWITCH_OBJECT_t* swbtn)
 {
     volatile uint16_t retval = 1;
     
-    SW_USER_INIT;   // Initialize GPIO used to read switch
+    SW_USER_Init();   // Initialize GPIO used to read switch
 
     // Initializing switch object 
     swbtn->debounce_delay = 0;              // Clear debounce delay
@@ -105,7 +105,7 @@ volatile uint16_t drv_Switch_Dispose(volatile SWITCH_OBJECT_t* swbtn)
     swbtn->status.bits.pressed = false;
     swbtn->status.bits.long_press = false;
     swbtn->status.bits.enabled = false;
-    SW_USER_INIT;
+    SW_USER_Init();
 
     return(retval);
 }

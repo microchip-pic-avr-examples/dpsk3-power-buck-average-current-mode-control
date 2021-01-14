@@ -25,7 +25,7 @@
 
 void __attribute__((__interrupt__, no_auto_psv, context))_BUCK_VLOOP_Interrupt(void)
 {
-DBGPIN_2_SET;
+DBGPIN2_Set();
 
     buck.status.bits.adc_active = true;
     #if (PLANT_MEASUREMENT == false)
@@ -36,7 +36,7 @@ DBGPIN_2_SET;
     PG1STATbits.UPDREQ = 1;  // Force PWM timing update
     _BUCK_VLOOP_ISR_IF = 0;  // Clear the ADCANx interrupt flag 
 
-DBGPIN_2_CLEAR;
+DBGPIN2_Clear();
 }
 
 // end of file
