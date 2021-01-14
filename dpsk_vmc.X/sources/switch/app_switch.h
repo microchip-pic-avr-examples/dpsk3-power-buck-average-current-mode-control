@@ -38,10 +38,6 @@
 
 #include "switch/drivers/drv_switch.h"
 
-#ifdef	__cplusplus
-extern "C" {
-#endif /* __cplusplus */
-    
 // PUBLIC VARIABLE DECLARATION
 extern volatile SWITCH_OBJECT_t switch_button;
     
@@ -55,10 +51,6 @@ extern volatile uint16_t appSwitch_EventButtonDown(void);
 extern volatile uint16_t appSwitch_EventButtonPressed(void);
 extern volatile uint16_t appSwitch_EventButtonLongPress(void);
 extern volatile uint16_t appSwitch_EventButtonUp(void);
-
-#ifdef	__cplusplus
-}
-#endif /* __cplusplus */
 
 #endif	/* APPLICATION_LAYER_DEBUGGING_LED_H */
 

@@ -37,10 +37,6 @@
 #include <stddef.h> // include standard definition data types
 
 
-#ifdef	__cplusplus
-extern "C" {
-#endif /* __cplusplus */
-
 // CUSTOM DECLARATIONS
 #define DBGLED_PERIOD_FAST      2499
 #define DBGLED_PERIOD_DEFAULT   4999
@@ -58,10 +54,6 @@ extern volatile DEBUGGING_LED_t debug_led;
 extern volatile uint16_t appLED_Initialize(void);
 extern volatile uint16_t appLED_Execute(void);
 extern volatile uint16_t appLED_Dispose(void);
-
-#ifdef	__cplusplus
-}
-#endif /* __cplusplus */
 
 #endif	/* APPLICATION_LAYER_DEBUGGING_LED_H */
 

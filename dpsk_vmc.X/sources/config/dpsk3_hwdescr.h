@@ -37,9 +37,6 @@
 #include <stddef.h> // include standard definition data types
 #include <math.h> // include standard math functions library
 
-#ifdef	__cplusplus
-extern "C" {
-#endif /* __cplusplus */
 /**************************************************************************************************
  * @ingroup hardware-id-macro
  * @{
@@ -635,11 +632,6 @@ extern "C" {
   #define _BUCK_VLOOP_ISR_IE        _PWM1IE
 #endif
 
-
-
-#ifdef	__cplusplus
-}
-#endif /* __cplusplus */
 
 #endif	/* DPSK3_HARDWARE_DESCRIPTOR_H */
 

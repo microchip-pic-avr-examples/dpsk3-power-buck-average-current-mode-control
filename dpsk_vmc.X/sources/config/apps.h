@@ -44,15 +44,6 @@
 #include "lcd/app_lcd.h"
 #include "switch/app_switch.h"
 
-#ifdef	__cplusplus
-extern "C" {
-#endif /* __cplusplus */
-
-
-    
-#ifdef	__cplusplus
-}
-#endif /* __cplusplus */
 
 #endif	/* APPLICATION_GLOBALS_HEADER_H */
 

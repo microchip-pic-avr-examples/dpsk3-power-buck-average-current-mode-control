@@ -21,9 +21,6 @@
 
 #include "lcd/drivers/drv_lcd_interface.h"
 
-#ifdef	__cplusplus
-extern "C" {
-#endif
     
 #define TEMPSTR_LCD_SIZE    40
     
@@ -75,10 +72,6 @@ extern void Dev_Lcd_WriteString(const char *str);
 //======================================================================================================================
 extern void Dev_Lcd_WriteStringXY(uint8_t column_index, uint8_t line_index, const char *str);
 
-
-#ifdef	__cplusplus
-}
-#endif
 
 #endif	// _Dev_LCD_H_
 

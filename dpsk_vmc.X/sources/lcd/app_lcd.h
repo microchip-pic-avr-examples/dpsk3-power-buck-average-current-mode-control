@@ -39,10 +39,6 @@
 #include "lcd/devices/dev_lcd.h"
 
 
-#ifdef	__cplusplus
-extern "C" {
-#endif /* __cplusplus */
-
 // PUBLIC TYPE DECLARATIONS
 typedef struct {
     volatile bool enabled;
@@ -57,10 +53,6 @@ extern volatile LCD_t lcd;
 extern volatile uint16_t appLCD_Initialize(void);
 extern volatile uint16_t appLCD_Execute(void);
 extern volatile uint16_t appLCD_Dispose(void);
-
-#ifdef	__cplusplus
-}
-#endif /* __cplusplus */
 
 #endif	/* APPLICATION_LAYER_LC_DISPLAY_H */
 

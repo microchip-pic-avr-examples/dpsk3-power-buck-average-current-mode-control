@@ -37,15 +37,11 @@
 #include <stddef.h> // include standard definition data types
 
 
-#ifdef	__cplusplus
-extern "C" {
-#endif /* __cplusplus */
-
-    typedef enum {
-        SWITCH_STAT_PRESSED    = 0b1100000000000001,
-        SWITCH_STAT_LONG_PRESS = 0b1110000000000001,
-        SWITCH_STAT_RELEASED   = 0b1000000000000001
-    } SWITCH_STATUS_FLAGS_e;
+typedef enum {
+    SWITCH_STAT_PRESSED    = 0b1100000000000001,
+    SWITCH_STAT_LONG_PRESS = 0b1110000000000001,
+    SWITCH_STAT_RELEASED   = 0b1000000000000001
+} SWITCH_STATUS_FLAGS_e;
     
 typedef union {
     struct{
@@ -84,10 +80,6 @@ typedef struct {
 extern volatile uint16_t drv_Switch_Initialize(volatile SWITCH_OBJECT_t* swbtn);
 extern volatile uint16_t drv_Switch_Execute(volatile SWITCH_OBJECT_t* swbtn);
 extern volatile uint16_t drv_Switch_Dispose(volatile SWITCH_OBJECT_t* swbtn);
-
-#ifdef	__cplusplus
-}
-#endif /* __cplusplus */
 
 #endif	/* SWITCH_BUTTON_DRIVER_H */
 

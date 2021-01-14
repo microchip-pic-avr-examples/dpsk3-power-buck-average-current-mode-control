@@ -27,9 +27,6 @@
 //#include <xc.h>
 //#include "delay.h"
 
-#ifdef	__cplusplus
-extern "C" {
-#endif
 
 //======================================================================================================================
 //	defines to access the pins
@@ -64,8 +61,5 @@ extern void Drv_Lcd_Interface_SendCmd(const uint8_t cmd);
 //======================================================================================================================
 extern void Drv_Lcd_Interface_SendChar(const char c);
 
-#ifdef	__cplusplus
-}
-#endif
 
 #endif // _Dev_LCD_INTERFACE_H_
