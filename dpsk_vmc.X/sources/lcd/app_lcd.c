@@ -57,11 +57,11 @@ volatile uint16_t appLCD_Execute(void)
         temp = ((float)(buck.data.temp - BUCK_FB_TEMP_ZERO) / BUCK_FB_TEMP_SLOPE); // Scale ADC value to physical unit
         temp = (float)(int)(100.0 * temp);  // Rounding operation required to prevent display 
         temp /= 100.0;                      // rounding issues around 9.99 and 10.0 V
-        vi = ((buck.data.v_in << 3) * ADC_GRAN); // Scale ADC value to physical unit
+        vi = ((buck.data.v_in << 3) * ADC_GRANULARITY); // Scale ADC value to physical unit
         vi = (float)(int)(100.0 * vi);      // Rounding operation required to prevent display
         vi /= 100.0;                        // rounding issues around 9.99 and 10.0 ° C
-        vo = ((buck.data.v_out << 1) * ADC_GRAN); // Scale ADC value to physical unit
-        isns = (((buck.data.i_out - BUCK_ISNS_FEEDBACK_OFFSET) * ADC_GRAN) /  BUCK_ISNS_FEEDBACK_GAIN);; // Scale ADC value to physical unit
+        vo = ((buck.data.v_out << 1) * ADC_GRANULARITY); // Scale ADC value to physical unit
+        isns = (((buck.data.i_out - BUCK_ISNS_FEEDBACK_OFFSET) * ADC_GRANULARITY) /  BUCK_ISNS_FEEDBACK_GAIN);; // Scale ADC value to physical unit
         
         // Input voltage display
         if((double)vi < 10.000)

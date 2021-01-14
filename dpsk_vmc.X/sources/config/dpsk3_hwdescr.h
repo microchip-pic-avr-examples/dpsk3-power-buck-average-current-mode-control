@@ -73,26 +73,48 @@
 #define DBGPIN4_ENABLE      true ///< Enables debug pin indicating task scheduler execution timing
 
 
-/*!Microcontroller Abstraction
- * *************************************************************************************************
- * Summary:
- * Global defines for device specific parameters
+/**************************************************************************************************
+ * @ingroup device-abstraction-settings
+ * @{ 
+ * @brief Fundamental microcontroller device settings
  * 
- * Description:
+ * @details
  * This section is used to define device specific parameters like ADC reference and
- * resolution. Pre-compiler macros are used to translate physical values into binary 
- * (integer) numbers to be written to SFRs
+ * resolution, main execution clock frequency and peripheral time base settings. 
+ * All parameters are defined using physical quantities. 
  * 
- * *************************************************************************************************/
-#define CPU_FREQUENCY       (float)100000000.0  // CPU frequency in [Hz]
-#define CPU_TCY             (float)(1.0/CPU_FREQUENCY) // Instruction period
+ **************************************************************************************************/
+#define CPU_FREQUENCY       (float)100000000.0  ///< CPU frequency in [Hz]
 
 // ADC(DAC Reference and Resolution Settings    
-#define ADC_REF             (float)3.300 // ADC reference voltage in V
-#define ADC_RES             (float)12.0  // ADC resolution in [bit]
-#define ADC_GRAN            (float)(ADC_REF / pow(2.0, ADC_RES)) // ADC granularity in [V/tick]
-#define ADC_VALUE_MAX       (uint16_t) (pow(2.0, ADC_RES) - 1.0)
-    
+#define ADC_REFERENCE       (float)3.300 ///< ADC reference voltage in V
+#define ADC_RESOLUTION      (float)12.0  ///< ADC resolution in [bit]
+
+// PWM/ADC Clock Settings    
+#define PWM_CLOCK_FREQUENCY (float)4.0e+9   ///< PWM Clock Frequency in [Hz]
+
+
+/** @} */ // end of group device-abstraction-settings
+
+/**
+ * @ingroup device-abstraction-macros
+ * @{ 
+ * @brief Conversion macros of fundamental microcontroller device settings
+ * 
+ * @details
+ * This section is used to convert device specific parameters like ADC reference and
+ * resolution, main execution clock frequency and peripheral time base settings, declared 
+ * in physical quantities, into binary (integer) numbers to be written to variables and SFRs.
+ */
+
+#define CPU_TCY             (float)(1.0/CPU_FREQUENCY) ///< Instruction period
+#define ADC_GRANULARITY     (float)(ADC_REFERENCE / pow(2.0, ADC_RESOLUTION)) ///< ADC granularity in [V/tick]
+#define ADC_VALUE_MAX       (uint16_t) (pow(2.0, ADC_RESOLUTION) - 1.0) // DO NOT CHANGE
+#define PWM_CLOCK_PERIOD    (float)(1.0/PWM_CLOCK_FREQUENCY) ///< PWM Clock Period in [sec]
+
+/** @} */ // end of group device-abstraction-macros
+
+
 // PWM/ADC Clock Settings  
 #define PWM_CLOCK_HIGH_RESOLUTION   true
     
@@ -305,16 +327,16 @@
     
 // ~ conversion macros ~~~~~~~~~~~~~~~~~~~~~
     
-#define BUCK_VIN_MIN            (uint16_t)(BUCK_VIN_MINIMUM * BUCK_VIN_FEEDBACK_GAIN / ADC_GRAN)   // Minimum input voltage
-#define BUCK_VIN_NOM            (uint16_t)(BUCK_VIN_NOMINAL * BUCK_VIN_FEEDBACK_GAIN / ADC_GRAN)   // Nominal input voltage
-#define BUCK_VIN_MAX            (uint16_t)(BUCK_VIN_MAXIMUM * BUCK_VIN_FEEDBACK_GAIN / ADC_GRAN)   // Maximum input voltage
-#define BUCK_VIN_HYST           (uint16_t)(BUCK_VIN_HYSTERESIS * BUCK_VIN_FEEDBACK_GAIN / ADC_GRAN)  // Over Voltage LOck Out voltage    
-#define BUCK_VIN_UVLO_TRIP      (uint16_t)(BUCK_VIN_UNDER_VOLTAGE * BUCK_VIN_FEEDBACK_GAIN / ADC_GRAN) // Under Voltage LOck Out voltage
-#define BUCK_VIN_UVLO_RELEASE   (uint16_t)((BUCK_VIN_UNDER_VOLTAGE + BUCK_VIN_HYSTERESIS) * BUCK_VIN_FEEDBACK_GAIN / ADC_GRAN) // Under Voltage LOck Out voltage
-#define BUCK_VIN_OVLO_TRIP      (uint16_t)(BUCK_VIN_OVER_VOLTAGE * BUCK_VIN_FEEDBACK_GAIN / ADC_GRAN)  // Over Voltage LOck Out voltage
-#define BUCK_VIN_OVLO_RELEASE   (uint16_t)((BUCK_VIN_OVER_VOLTAGE - BUCK_VIN_HYSTERESIS) * BUCK_VIN_FEEDBACK_GAIN / ADC_GRAN)  // Over Voltage LOck Out voltage
+#define BUCK_VIN_MIN            (uint16_t)(BUCK_VIN_MINIMUM * BUCK_VIN_FEEDBACK_GAIN / ADC_GRANULARITY)   // Minimum input voltage
+#define BUCK_VIN_NOM            (uint16_t)(BUCK_VIN_NOMINAL * BUCK_VIN_FEEDBACK_GAIN / ADC_GRANULARITY)   // Nominal input voltage
+#define BUCK_VIN_MAX            (uint16_t)(BUCK_VIN_MAXIMUM * BUCK_VIN_FEEDBACK_GAIN / ADC_GRANULARITY)   // Maximum input voltage
+#define BUCK_VIN_HYST           (uint16_t)(BUCK_VIN_HYSTERESIS * BUCK_VIN_FEEDBACK_GAIN / ADC_GRANULARITY)  // Over Voltage LOck Out voltage    
+#define BUCK_VIN_UVLO_TRIP      (uint16_t)(BUCK_VIN_UNDER_VOLTAGE * BUCK_VIN_FEEDBACK_GAIN / ADC_GRANULARITY) // Under Voltage LOck Out voltage
+#define BUCK_VIN_UVLO_RELEASE   (uint16_t)((BUCK_VIN_UNDER_VOLTAGE + BUCK_VIN_HYSTERESIS) * BUCK_VIN_FEEDBACK_GAIN / ADC_GRANULARITY) // Under Voltage LOck Out voltage
+#define BUCK_VIN_OVLO_TRIP      (uint16_t)(BUCK_VIN_OVER_VOLTAGE * BUCK_VIN_FEEDBACK_GAIN / ADC_GRANULARITY)  // Over Voltage LOck Out voltage
+#define BUCK_VIN_OVLO_RELEASE   (uint16_t)((BUCK_VIN_OVER_VOLTAGE - BUCK_VIN_HYSTERESIS) * BUCK_VIN_FEEDBACK_GAIN / ADC_GRANULARITY)  // Over Voltage LOck Out voltage
 #define BUCK_VIN_ADC_TRGDLY     (uint16_t)(BUCK_VIN_ADC_TRG_DELAY / PWM_CLOCK_PERIOD) // Input voltage ADC trigger delay
-#define BUCK_VIN_OFFSET         (uint16_t)(BUCK_VIN_FEEDBACK_OFFSET / ADC_GRAN) // Input voltage feedback offset
+#define BUCK_VIN_OFFSET         (uint16_t)(BUCK_VIN_FEEDBACK_OFFSET / ADC_GRANULARITY) // Input voltage feedback offset
 
 #define BUCK_VIN_NORM_INV_G     (float)(1.0/BUCK_VIN_FEEDBACK_GAIN) // Inverted feedback gain required for value normalization
 #define BUCK_VIN_NORM_SCALER    (int16_t)(ceil(log(BUCK_VIN_NORM_INV_G)) + 1) // VIN normalization  
@@ -363,11 +385,11 @@
     
 // ~ conversion macros ~~~~~~~~~~~~~~~~~~~~~
 
-#define BUCK_VOUT_REF           (uint16_t)(BUCK_VOUT_NOMINAL * BUCK_VOUT_FEEDBACK_GAIN / ADC_GRAN)
+#define BUCK_VOUT_REF           (uint16_t)(BUCK_VOUT_NOMINAL * BUCK_VOUT_FEEDBACK_GAIN / ADC_GRANULARITY)
 #define BUCK_VOUT_NOM           BUCK_VOUT_REF
-#define BUCK_VOUT_DEV_TRIP      (uint16_t)(BUCK_VOUT_TOLERANCE_MAX * BUCK_VOUT_FEEDBACK_GAIN / ADC_GRAN)
-#define BUCK_VOUT_DEV_RELEASE   (uint16_t)(BUCK_VOUT_TOLERANCE_MIN * BUCK_VOUT_FEEDBACK_GAIN / ADC_GRAN)
-#define BUCK_VOUT_OFFSET        (uint16_t)(BUCK_VOUT_FEEDBACK_OFFSET / ADC_GRAN)
+#define BUCK_VOUT_DEV_TRIP      (uint16_t)(BUCK_VOUT_TOLERANCE_MAX * BUCK_VOUT_FEEDBACK_GAIN / ADC_GRANULARITY)
+#define BUCK_VOUT_DEV_RELEASE   (uint16_t)(BUCK_VOUT_TOLERANCE_MIN * BUCK_VOUT_FEEDBACK_GAIN / ADC_GRANULARITY)
+#define BUCK_VOUT_OFFSET        (uint16_t)(BUCK_VOUT_FEEDBACK_OFFSET / ADC_GRANULARITY)
 #define BUCK_VOUT_ADC_TRGDLY    (uint16_t)(BUCK_VOUT_ADC_TRG_DELAY / PWM_CLOCK_PERIOD)
 
 #define BUCK_VOUT_NORM_INV_G    (float)(1.0/BUCK_VOUT_FEEDBACK_GAIN) // Inverted feedback gain required for value normalization
@@ -457,12 +479,12 @@
 
 // ~ conversion macros ~~~~~~~~~~~~~~~~~~~~~
 
-#define BUCK_ISNS_MIN           (uint16_t)(BUCK_ISNS_MINIMUM * BUCK_ISNS_FEEDBACK_GAIN / ADC_GRAN)  // Minimum Current Limit
-#define BUCK_ISNS_OCP           (uint16_t)(BUCK_ISNS_MAXIMUM * BUCK_ISNS_FEEDBACK_GAIN / ADC_GRAN)  // Over Current Limit
-#define BUCK_ISNS_OCP_RELEASE   (uint16_t)(BUCK_ISNS_MINIMUM * BUCK_ISNS_FEEDBACK_GAIN / ADC_GRAN)  // Over Current Limit Release Level
-#define BUCK_ISNS_REF           (uint16_t)(BUCK_ISNS_REFERENCE * BUCK_ISNS_FEEDBACK_GAIN / ADC_GRAN)  // Output Current Reference
-#define BUCK_ISNS1_OFFFSET      (uint16_t)(BUCK_ISNS_FEEDBACK_OFFSET / ADC_GRAN)
-#define BUCK_ISNS2_OFFFSET      (uint16_t)(BUCK_ISNS_FEEDBACK_OFFSET / ADC_GRAN)
+#define BUCK_ISNS_MIN           (uint16_t)(BUCK_ISNS_MINIMUM * BUCK_ISNS_FEEDBACK_GAIN / ADC_GRANULARITY)  // Minimum Current Limit
+#define BUCK_ISNS_OCP           (uint16_t)(BUCK_ISNS_MAXIMUM * BUCK_ISNS_FEEDBACK_GAIN / ADC_GRANULARITY)  // Over Current Limit
+#define BUCK_ISNS_OCP_RELEASE   (uint16_t)(BUCK_ISNS_MINIMUM * BUCK_ISNS_FEEDBACK_GAIN / ADC_GRANULARITY)  // Over Current Limit Release Level
+#define BUCK_ISNS_REF           (uint16_t)(BUCK_ISNS_REFERENCE * BUCK_ISNS_FEEDBACK_GAIN / ADC_GRANULARITY)  // Output Current Reference
+#define BUCK_ISNS1_OFFFSET      (uint16_t)(BUCK_ISNS_FEEDBACK_OFFSET / ADC_GRANULARITY)
+#define BUCK_ISNS2_OFFFSET      (uint16_t)(BUCK_ISNS_FEEDBACK_OFFSET / ADC_GRANULARITY)
 #define BUCK_ISNS_ADC_TRGDLY    (uint16_t)(BUCK_ISNS_ADC_TRG_DELAY / PWM_CLOCK_PERIOD)
 
 #define BUCK_ISNS_NORM_INV_G    (float)(1.0/BUCK_ISNS_FEEDBACK_GAIN) // Inverted feedback gain required for value normalization
@@ -488,8 +510,8 @@
 
 // ~ conversion macros ~~~~~~~~~~~~~~~~~~~~~
     
-#define BUCK_FB_TEMP_ZERO       (uint16_t)(BUCK_TEMPCAL_ZERO / ADC_GRAN)
-#define BUCK_FB_TEMP_SLOPE      (float)(BUCK_TEMPCAL_SLOPE / ADC_GRAN)
+#define BUCK_FB_TEMP_ZERO       (uint16_t)(BUCK_TEMPCAL_ZERO / ADC_GRANULARITY)
+#define BUCK_FB_TEMP_SLOPE      (float)(BUCK_TEMPCAL_SLOPE / ADC_GRANULARITY)
     
 // ~ conversion macros end ~~~~~~~~~~~~~~~~~
     
@@ -577,14 +599,14 @@
  * 
  * *************************************************************************************************/
     
-#define BUCK_UVLO_TRIP_DELAY         (float) 5e-3   // under voltage lock out trip delay in [sec]
-#define BUCK_UVLO_RECOVERY_DELAY     (float) 250e-3 // under voltage lock out recovery delay in [sec]
-#define BUCK_OVLO_TRIP_DELAY         (float) 5e-3   // over voltage lock out trip delay in [sec]
-#define BUCK_OVLO_RECOVERY_DELAY     (float) 250e-3 // over voltage lock out recovery delay in [sec]
-#define BUCK_REGERR_TRIP_DELAY       (float) 25e-3  // regulation error trip delay in [sec]
-#define BUCK_REGERR_RECOVERY_DELAY   (float) 250e-3 // regulation error recovery delay in [sec]
-#define BUCK_OCP_TRIP_DELAY          (float) 2e-3   // over current proection trip delay in [sec]
-#define BUCK_OCP_RECOVERY_DELAY      (float) 250e-3 // over current proection recovery delay in [sec]
+#define BUCK_UVLO_TRIP_DELAY         (float) 5e-3   ///< under voltage lock out trip delay in [sec]
+#define BUCK_UVLO_RECOVERY_DELAY     (float) 250e-3 ///< under voltage lock out recovery delay in [sec]
+#define BUCK_OVLO_TRIP_DELAY         (float) 5e-3   ///< over voltage lock out trip delay in [sec]
+#define BUCK_OVLO_RECOVERY_DELAY     (float) 250e-3 ///< over voltage lock out recovery delay in [sec]
+#define BUCK_REGERR_TRIP_DELAY       (float) 25e-3  ///< regulation error trip delay in [sec]
+#define BUCK_REGERR_RECOVERY_DELAY   (float) 250e-3 ///< regulation error recovery delay in [sec]
+#define BUCK_OCP_TRIP_DELAY          (float) 2e-3   ///< over current proection trip delay in [sec]
+#define BUCK_OCP_RECOVERY_DELAY      (float) 250e-3 ///< over current proection recovery delay in [sec]
 
 // ~ conversion macros ~~~~~~~~~~~~~~~~~~~~~
 
@@ -611,8 +633,8 @@
 
     
 // Hardware-dependent defines
-#define BUCK_VOUT_TRIG_PWM  0   // Buck VOUT control loop is called in PWM interrupt
-#define BUCK_VOUT_TRIG_ADC  1   // Buck VOUT control loop is called in ADC interrupt
+#define BUCK_VOUT_TRIG_PWM  0   ///< Buck VOUT control loop is called in PWM interrupt
+#define BUCK_VOUT_TRIG_ADC  1   ///< Buck VOUT control loop is called in ADC interrupt
 
 #define BUCK_VOUT_TRIGGER_MODE  BUCK_VOUT_TRIG_PWM
 #define BUCK_VOUT_ISR_PRIORITY  5     ///< Voltage loop interrupt vector priority (valid settings between 0...6 with 6 being the highest priority)
