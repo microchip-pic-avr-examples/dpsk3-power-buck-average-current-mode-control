@@ -305,7 +305,28 @@ volatile uint16_t appPowerSupply_ControllerInitialize(void)
     buck.v_loop.controller->DataProviders.ptrDProvControlError = &buck.data.control_error; 
     buck.v_loop.controller->DataProviders.ptrDProvControlOutput = &buck.data.control_output;
     
-    // Cascaded Function Configuration
+    // User Extension Function Configuration
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     * 
+     * PowerSmart DCLD allows users to create and call user extension 
+     * functions from specific locations of the main control loop to 
+     * cover design-specific requirements and features which are not
+     * supported by the main controller by default.
+     * 
+     * Control Loop User Extension Declaration Example:
+     * 
+     *  buck.v_loop.controller->ExtensionHooks.ptrExtHookStartFunction = (uint16_t)&my_function; 
+     * 
+     * Control Loop User Extension Parameter Declaration Example (optional):
+     * 
+     *  buck.v_loop.controller->ExtensionHooks.ExtHookStartFunctionParam = 512;
+     * 
+     * Please refer to the PowerSmart DCLD User Guide for more details about
+     * how to use this feature, its requirements and limitations.
+     * 
+     * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    */
+    
     buck.v_loop.controller->ExtensionHooks.ptrExtHookStartFunction = NULL;
     buck.v_loop.controller->ExtensionHooks.ExtHookStartFunctionParam = 0;
     buck.v_loop.controller->ExtensionHooks.ptrExtHookSourceFunction = NULL;
