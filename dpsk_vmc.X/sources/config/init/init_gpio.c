@@ -21,8 +21,6 @@ volatile uint16_t Gpio_Initialize(void) {
     // Initialize debugging Pins
     DBGPIN1_Init();
     DBGPIN2_Init();
-    DBGPIN3_Init();
-    DBGPIN4_Init();
     
     return(1);
 }

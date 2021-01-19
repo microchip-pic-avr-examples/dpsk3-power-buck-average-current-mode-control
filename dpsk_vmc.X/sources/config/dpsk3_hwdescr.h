@@ -193,24 +193,12 @@
     #define DBGPIN2_Init()      { _LATB11 = 0; _TRISB11 = 0; }
 
     // TP53 on DPSK3
-    #define DBGPIN3_Set()       { _LATB12 = 1; }
-    #define DBGPIN3_Clear()     { _LATB12 = 0; }
-    #define DBGPIN3_Toggle()	{ _LATB12 ^= 1; }
-    #define DBGPIN3_Init()      { _LATB12 = 0; _TRISB12 = 0; }
-
-    // TP49 on DPSK3
-    #define DBGPIN4_Set()       { _LATB2 = 1; }
-    #define DBGPIN4_Clear()     { _LATB2 = 0; }
-    #define DBGPIN4_Toggle()	{ _LATB2 ^= 1; }
-    #define DBGPIN4_Init()      { _LATB2 = 0; _TRISB2 = 0; }
-
-    // TP48 on DPSK3
-    #define PWRGOOD_PORT        0   // GPIO port declaration where 0=A, 1=B, 2=C, etc.
-    #define PWRGOOD_PIN         4   // GPIO port pin declaration where 0=Rx0, 1=Rx1, 2=Rx3, etc.
-    #define PWRGOOD_Set()       { _LATA4 = 1; }
-    #define PWRGOOD_Clear()     { _LATA4 = 0; }
-    #define PWRGOOD_Toggle()	{ _LATA4 ^= 1; }
-    #define PWRGOOD_Init()      { _ANSELA4 = 0; _LATA4 = 0; _TRISA4 = 0; }
+    #define PWRGOOD_PORT        1   // GPIO port declaration where 0=A, 1=B, 2=C, etc.
+    #define PWRGOOD_PIN         12  // GPIO port pin declaration where 0=Rx0, 1=Rx1, 2=Rx3, etc.
+    #define PWRGOOD_Set()       { _LATB12 = 1; }
+    #define PWRGOOD_Clear()     { _LATB12 = 0; }
+    #define PWRGOOD_Toggle()	{ _LATB12 ^= 1; }
+    #define PWRGOOD_Init()      { _ANSELB12 = 0; _LATB12 = 0; _TRISB12 = 0; }
     
     // User Switch Input
     #define SW_USER_TRISx       _TRISD1

@@ -49,6 +49,11 @@ int main(void) {
     retval &= Dsp_Initialize();         // Set up DSP for compensator computation
     retval &= Timer1_Initialize();      // Set up Timer1 as scheduler time base
     retval &= Gpio_Initialize();        // Initialize common device GPIOs
+
+    // Set Debugging I/Os
+    DBGLED_Set();    // Turn on DEbugging LED
+    DBGPIN1_Clear(); // Clear debug pin #1
+    DBGPIN2_Clear(); // Clear debug pin #2
     
     // Initialize firmware modules
     retval &= appLCD_Initialize(); // Initialize LC Display task
@@ -57,7 +62,6 @@ int main(void) {
     retval &= appPowerSupply_Initialize(); // Initialize BUCK converter object and state machine
     retval &= appFaultMonitor_Initialize(); // Initialize fault objects and fault handler task
     
-    
     // Enable Timer1 generating the task execution clock
     T1CONbits.TON = 1; 
 
@@ -65,8 +69,6 @@ int main(void) {
     _T1IF = 0;  // Reset interrupt flag bit
     _T1IE = 1;  // Disable Timer1 interrupt
     
-    DBGPIN2_Clear(); // Clear debug pin #2
-    DBGPIN3_Clear(); // Clear debug pin #3
     
     while (1) {
 
@@ -75,15 +77,11 @@ int main(void) {
         LOW_PRIORITY_GO = false;
         timeout = 0;    // Reset timeout counter
 
-        DBGPIN3_Set(); // Set DEBUG-PIN
-
         // Execute non-time critical, low-priority tasks
         appLCD_Execute();
         appLED_Execute();
         appSwitch_Execute();
         
-        DBGPIN3_Clear(); // Clear DEBUG-PIN
-        Nop();
     }
 
 
