@@ -1,8 +1,8 @@
 ; **********************************************************************************
-;  SDK Version: PowerSmart™ Digital Control Library Designer v0.9.12.652
+;  SDK Version: PowerSmart™ Digital Control Library Designer v0.9.12.660
 ;  CGS Version: Code Generator Script v3.0.2 (01/05/2021)
 ;  Author:      M91406
-;  Date/Time:   01/13/2021 21:22:33
+;  Date/Time:   01/19/2021 09:13:39
 ; **********************************************************************************
 ;  4P4Z Control Library File (Fast Floating Point Coefficient Scaling Mode)
 ; **********************************************************************************
@@ -73,22 +73,21 @@
     
 ;------------------------------------------------------------------------------
 ; Compute compensation filter B-term
-    clr b, [w8]+=2, w5                      ; clear both accumulators and prefetch first operands
-    clr a, [w8]+=4, w4, [w10]+=2, w6
-    mpy w4*w6, a, [w8]+=4, w4, [w10]+=2, w6 ; multiply control output (n-%INDEX%) from the delay line with coefficient X%INDEX%
-    sftac a, w5                             ; shift accumulator to post-scale floating number
-    add b                                   ; add accumulator a to accumulator b
-
-    mov [w8 - #6], w5                       ; load scaler into working register
-    mpy w4*w6, a, [w8]+=4, w4, [w10]+=2, w6 ; multiply control output (n-0) from the delay line with coefficient X0
+    clr b, [w8]+=2, w5                      ; clear accumulator B and prefetch first error operand
+    clr a, [w8]+=4, w4, [w10]+=2, w6        ; clear accumulator A and prefetch first coefficient operand including number scaler
+    mpy w4*w6, a, [w8]+=4, w4, [w10]+=2, w6 ; multiply first control output of the delay line with first coefficient
     sftac a, w5                             ; shift accumulator to post-scale floating number
     add b                                   ; add accumulator a to accumulator b
     mov [w8 - #6], w5                       ; load scaler into working register
-    mpy w4*w6, a, [w8]+=4, w4, [w10]+=2, w6 ; multiply control output (n-1) from the delay line with coefficient X1
+    mpy w4*w6, a, [w8]+=4, w4, [w10]+=2, w6 ; multiply control output (n-1) from the delay line with coefficient B1
     sftac a, w5                             ; shift accumulator to post-scale floating number
     add b                                   ; add accumulator a to accumulator b
     mov [w8 - #6], w5                       ; load scaler into working register
-    mpy w4*w6, a, [w8]+=4, w4, [w10]+=2, w6 ; multiply control output (n-2) from the delay line with coefficient X2
+    mpy w4*w6, a, [w8]+=4, w4, [w10]+=2, w6 ; multiply control output (n-2) from the delay line with coefficient B2
+    sftac a, w5                             ; shift accumulator to post-scale floating number
+    add b                                   ; add accumulator a to accumulator b
+    mov [w8 - #6], w5                       ; load scaler into working register
+    mpy w4*w6, a, [w8]+=4, w4, [w10]+=2, w6 ; multiply control output (n-3) from the delay line with coefficient B3
     sftac a, w5                             ; shift accumulator to post-scale floating number
     add b                                   ; add accumulator a to accumulator b
     mov [w8 - #6], w5                       ; load scaler into working register
@@ -107,17 +106,16 @@
 ;------------------------------------------------------------------------------
 ; Compute compensation filter A-term
     movsac b, [w8]+=2, w5                   ; leave contents of accumulator B unchanged
-    clr a, [w8]+=4, w4, [w10]+=2, w6        ; clear accumulator A and prefetch first operands
-    mpy w4*w6, a, [w8]+=4, w4, [w10]+=2, w6 ; multiply control output (n-%INDEX%) from the delay line with coefficient X%INDEX%
-    sftac a, w5                             ; shift accumulator to post-scale floating number
-    add b                                   ; add accumulator a to accumulator b
-
-    mov [w8 - #6], w5                       ; load scaler into working register
-    mpy w4*w6, a, [w8]+=4, w4, [w10]+=2, w6 ; multiply control output (n-1) from the delay line with coefficient X1
+    clr a, [w8]+=4, w4, [w10]+=2, w6        ; clear accumulator A and prefetch first coefficient operand including number scaler
+    mpy w4*w6, a, [w8]+=4, w4, [w10]+=2, w6 ; multiply first control output of the delay line with first coefficient
     sftac a, w5                             ; shift accumulator to post-scale floating number
     add b                                   ; add accumulator a to accumulator b
     mov [w8 - #6], w5                       ; load scaler into working register
-    mpy w4*w6, a, [w8]+=4, w4, [w10]+=2, w6 ; multiply control output (n-2) from the delay line with coefficient X2
+    mpy w4*w6, a, [w8]+=4, w4, [w10]+=2, w6 ; multiply control output (n-2) from the delay line with coefficient A2
+    sftac a, w5                             ; shift accumulator to post-scale floating number
+    add b                                   ; add accumulator a to accumulator b
+    mov [w8 - #6], w5                       ; load scaler into working register
+    mpy w4*w6, a, [w8]+=4, w4, [w10]+=2, w6 ; multiply control output (n-3) from the delay line with coefficient A3
     sftac a, w5                             ; shift accumulator to post-scale floating number
     add b                                   ; add accumulator a to accumulator b
     mov [w8 - #6], w5                       ; load scaler into working register

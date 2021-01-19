@@ -1,5 +1,5 @@
 /* *********************************************************************************
- * PowerSmart™ Digital Control Library Designer, Version 0.9.12.652
+ * PowerSmart™ Digital Control Library Designer, Version 0.9.12.660
  * *********************************************************************************
  * 4p4z controller function declarations and compensation filter coefficients
  * derived for following operating conditions:
@@ -16,7 +16,7 @@
  * CGS Date:            01/05/2021
  * *********************************************************************************
  * User:                M91406
- * Date/Time:           01/13/2021 21:22:33
+ * Date/Time:           01/19/2021 09:13:39
  * ********************************************************************************/
 
 #include "v_loop.h"

@@ -1,5 +1,5 @@
 /* *********************************************************************************
- * PowerSmart™ Digital Control Library Designer, Version 0.9.12.652
+ * PowerSmart™ Digital Control Library Designer, Version 0.9.12.660
  * *********************************************************************************
  * Generic library header for z-domain compensation filter assembly functions
  * CGS Version: 3.0.2
