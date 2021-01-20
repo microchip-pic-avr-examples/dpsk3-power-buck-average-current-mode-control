@@ -69,9 +69,24 @@
 
 #define DBGPIN1_ENABLE      true ///< Enables debug pin indicating control loop execution timing
 #define DBGPIN2_ENABLE      true ///< Enables debug pin indicating control loop execution timing
-#define DBGPIN3_ENABLE      true ///< Enables debug pin indicating task scheduler execution timing
-#define DBGPIN4_ENABLE      true ///< Enables debug pin indicating task scheduler execution timing
 
+/*********************************************************************************
+ * @ingroup special-options
+ * @def BUCK_ISNS_OFFSET_CALIBRATION_ENABLE
+ * @brief  Enables/Disables Current Sense Offset Calibration
+ * @details
+ * Flag indicating if the signal offset of the current sense feedback needs to be calibrated.
+ * The calibration procedure is available as Special Function of the power controller and will be 
+ * called automatically when the option BUCK_ISNS_NEED_CALIBRATION is set to 'true' 
+ * @note
+ * Standby current sense feedback offset calibration is not supported by the MCP6C02 shunt amplifier
+ * device on DPSK3 due to its limited common mode range, which starts above 2.5 V DC. However,
+ * its auto-zero self tuning and high sensing precision makes calibration negligible.
+ * The second current sense device used on DPSK3 is a current sense transformer, which does not
+ * require any calibration either.
+ **********************************************************************************/
+
+#define BUCK_ISNS_OFFSET_CALIBRATION_ENABLE  false ///< Current Sense Offset Calibration is disabled (see notes)
 
 /**************************************************************************************************
  * @ingroup device-abstraction-settings
@@ -553,7 +568,7 @@
  * 
  * *************************************************************************************************/
 
-// On EPC9143 Rev 4 it takes roughly 50 ms until the auxiliary power has been started
+// On DPSK3 it takes roughly 50 ms until the auxiliary power has been started
 // and the controller completes self-test and peripheral configuration. After this period
 // the controller starts to execute the power control state machine.
     

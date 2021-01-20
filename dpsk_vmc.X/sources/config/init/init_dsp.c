@@ -34,7 +34,7 @@ volatile uint16_t Dsp_Initialize(void) {
     dsp_config.bits.RND = CORCON_RND_UNBIASED;   // Rounding Mode Selection: Unbiased (convergent) rounding is enabled
     dsp_config.bits.SATA = CORCON_SATA_ON;       // ACCA Saturation Enable: Accumulator A saturation is enabled
     dsp_config.bits.SATB = CORCON_SATB_ON;       // ACCB Saturation Enable: Accumulator B saturation is enabled
-    dsp_config.bits.SATDW = CORCON_SATDW_ON;     // Data Space Write from DSP Engine Saturation Enable: Data Space write saturation is enabled
+    dsp_config.bits.SATDW = CORCON_SATDW_OFF;    // Data Space Write from DSP Engine Saturation Enable: Data Space write saturation is disabled
     dsp_config.bits.US = CORCON_US_SIGNED;       // DSP Multiply Unsigned/Signed Control: DSP engine multiplies are signed
     dsp_config.bits.VAR = CORCON_VAR_FIXED;      // Variable Exception Processing Latency Control: Fixed exception processing is enabled
 

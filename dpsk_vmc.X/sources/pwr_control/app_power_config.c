@@ -39,7 +39,7 @@ volatile uint16_t appPowerSupply_ConverterObjectInitialize(void)
     buck.status.bits.pwm_active = false; // clear PWM STARTED flag
     buck.status.bits.fault_active = true; // Set global FAULT flag
     
-    buck.status.bits.cs_calib_enable = false; // Disable current sense feedback calibration
+    buck.status.bits.cs_calib_enable = BUCK_ISNS_OFFSET_CALIBRATION_ENABLE; // Disable current sense feedback calibration
     buck.status.bits.async_mode = false; // Start up converter in synchronous mode
     buck.status.bits.autorun = true;    // Allow the buck converter to start automatically when cleared of faults
     buck.status.bits.enabled = false; // Disable buck converter

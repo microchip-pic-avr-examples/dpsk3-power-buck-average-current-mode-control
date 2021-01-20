@@ -15,6 +15,17 @@ volatile uint16_t tgl_cnt = 0;  // local counter of LED toggle loops
 
 volatile DEBUGGING_LED_t debug_led;
 
+/*********************************************************************************
+ * @ingroup GROUP_NAME
+ * @fn volatile uint16_t appLED_Initialize(void)
+ * @brief  Initializes the LED driving GPIO
+ * @param  void
+ * @return unsigned int (0=failure, 1=success)
+ * @details
+ *  This routine configures the driving GPIO as output and sets the initial
+ *  toggle interval
+ **********************************************************************************/
+
 volatile uint16_t appLED_Initialize(void) 
 {
     volatile uint16_t retval = 1;
