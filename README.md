@@ -1,7 +1,7 @@
 ![image](images/microchip.png) 
 
 --- 
-# dsPIC33C Digital Power Starter Kit
+## dsPIC33C Digital Power Starter Kit
 ### Synchronous Buck Converter: Voltage Mode Control
 
 

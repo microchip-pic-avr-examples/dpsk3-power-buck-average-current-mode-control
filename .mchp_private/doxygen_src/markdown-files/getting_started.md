@@ -122,7 +122,7 @@ Hence, aligning low and high priority processes requires to break up the longer,
 <span id="sfw_2"></span>
 ### 2) Buck Converter State Machine
 
-The state machine managing the interleaved synchronous buck converter ot the EPC9143 1/16th brick power module reference design is implemented as high priority task in the task execution scheme described above. This state machine is tuned for constant voltage regulation. Hence, it offers user-programmable soft-start support including power on-delay, ramp up slope and power good delay, which allows users to tune the startup behavior and include this module in a larger sequencing scheme. The state machine further supports hardware triggered events such as an external ENABLE pin and a POWER GOOD output. Both active pins can be configured in push-pull or open drain mode.
+The state machine managing the power converter of the development board is implemented as high priority task in the task execution scheme described above. This state machine is tuned for constant voltage regulation. Hence, it offers user-programmable soft-start support including power on-delay, ramp up slope and power good delay, which allows users to tune the startup behavior and include this module in a larger sequencing scheme. The state machine further supports hardware triggered events such as an external ENABLE pin and a POWER GOOD output. Both active pins can be configured in push-pull or open drain mode.
 
 The startup configuration can be configured as shown in the following drawing:
 
@@ -171,7 +171,7 @@ After the Power-On delay has expired, input and output voltage will be measured.
 
 <span id="sfw_2f"></span>
 #### f) Voltage Ramp-Up
-Now the digital feedback loop and PWM are enabled and the closed loop system reference value is incremented with every execution of the state machine (100 µsec interval). The control loop has been adjusted to operate with a cross-over frequency of >10 kHz matching the maximum perturbation frequency allowed to keep the control system stable.  
+Now the digital feedback loop and PWM are enabled and the closed loop system reference value is incremented with every execution of the state machine (typical 100 µsec interval). The control loop has been adjusted to operate with a cross-over frequency of >10 kHz matching the maximum perturbation frequency allowed to keep the control system stable.  
 
 [[back](#startDoc)]
 
@@ -205,7 +205,7 @@ The fault handler is an independent firmware task, based on a fault monitor libr
 - Within Range
 - Out Of Range
 
-Fault Monitor source values are either compared against a user-defined constant (static threshold), or another variable (dynamic threshold). THe Fault Monitor further supports two thresholds, one defining the Fault Trip Level and a second Fault REcovery Level. Depending on the type of comparison selected, the range between both thresholds is either interpreted as hysteresis or range. (see **Fault Handler Library** for details)
+Fault Monitor source values are either compared against a user-defined constant (static threshold), or another variable (dynamic threshold). THe Fault Monitor further supports two thresholds, one defining the Fault Trip Level and a second Fault Recovery Level. Depending on the type of comparison selected, the range between both thresholds is either interpreted as hysteresis or range. (see **Fault Handler Library** for details)
 
 The fundamental mechanism of detecting fault conditions and creating trip and recovery responses is based on a simple, adjustable detection filter, which does not influence the monitored value but delays the response of the software. Depending on the type of value monitored, the firmware may need to react sooner or later while the fault detection sensitivity needs to be adjusted accordingly to prevent the power supply from unintended shut downs.
 
@@ -227,19 +227,29 @@ Recovering from a fault condition uses the same mechanism, but provides its indi
 </p>
 <p><center><i>Fault Recovery</i></center></p>
 
-The most recent firmware version supports the following fault objects:
+#### The most recent firmware version supports the following fault objects:
 
 - **Under Voltage Lock Out (UVLO)**
   When the input voltage drops below the specified minimum voltage, the power supply is shut down, waiting for the input voltage to recover. If the power has been cut, the power supply will remain off until all capacitors are discharged and the microcontroller (MCU) shuts down. The PWM inputs of teh FET driver are pulled low until that point. The MCU drops out at voltages below 2.9V, which is below the UVLO level of teh FET driver. Hence, the gate drive signals remain pulled to off-state continuously without the chance to accidentally turn on.
-
+<br>
 - **Over Voltage Lock Out (UVLO)**
   When the input voltage exceeds the specified absolute maximum value, the power supply is shut down. waiting for the input voltage to drop back into the specified range. Auxiliary power supply, feedback voltage dividers and the power FETs support input voltages of up to 20V above the specified maximum to allow proper tracking of the input voltage even under fault conditions.
-
-- **Over Current Protection (OCP)**
-  The over current protection requires a very fast response in comparison to voltage monitors. Hence, two successive threshold violations are enough to trip an over current fault condition, shutting down the power supply. As an over current fault condition disappears instantly when the power supply has been shut down, the recovery delay needs to be significantly expended to result in a decent fault response behavior of the end-product.
-
+<br>
 - **Regulation Error (RegErr)**
-  This fault object continuously monitors the deviation between output voltage and control reference. With a small deviation and a time delay, which allows normal voltage drops and overshoots during load transients, this fault object is the last line of defense. Any fault condition whcih cannot be detected by the other fault objects, such as internal short circuits, oscillating feedback loops or failing components, will inevitably result in larger deviations of the output voltage from the given reference and will lead to a protective shut down of the power supply.
+  This fault object continuously monitors the deviation between output voltage and control reference. With a small deviation and a time delay, which allows normal voltage drops and overshoots during load transients, this fault object is the last line of defense. Any fault condition which cannot be detected by the other fault objects, such as internal short circuits, oscillating feedback loops or failing components, will inevitably result in larger deviations of the output voltage from the given reference and will lead to a protective shut down of the power supply.
+<br>
+
+#### Optional fault objects:
+
+- **Over Current Protection (OCP)** *(optional)*
+  The over current protection requires a very fast response in comparison to voltage monitors. Hence, two successive threshold violations are enough to trip an over current fault condition, shutting down the power supply. As an over current fault condition disappears instantly when the power supply has been shut down, the recovery delay needs to be significantly expended to result in a decent fault response behavior of the end-product.
+<br>
+- **Over Temperature Warning (OTW)** *(optional)*
+  The over temperature warning is commonly triggered when the board or system temperature exceeds a threshold value, which is still within the safe operating area but is higher than under commonly expected conditions. The warning allows state machines to take counter measures (e.g. power derating, partial load drop) if possible helping to reduce power losses. In systems where active counter measures are not an option, communication with the load could prevent fatal system failures. However, any measures taken are highly application dependent and have to be implemented as proprietary user functions.
+<br>
+- **Over Temperature Protection (OTP)** *(optional)*
+  The over temperature protection is triggered when the board or system temperature exceeds a absolute maximum threshold value, at which the system has to be shut down to prevent permanent damage. It is recommended to include a wide hysteresis to allow the board to cool down significantly before initiating a restart attempt to prevent the power converter from ending up in a frequent shut-down/restart cycle.
+<br>
 
 [[back](#startDoc)]
 
@@ -249,34 +259,34 @@ The most recent firmware version supports the following fault objects:
 This firmware utilizes a so-called hardware abstraction layer, allowing users to quickly change fundamental system parameters, adopt pin-out and hardware changes and even migrating the
 firmware across different designs without having to modify the actual source code. 
 
-Any change to the firmware and fundamental operation of the reference design, including reprogramming of the nominal output voltage can be done by editing the hardware-specific values in the hardware description header file **'epc9143_r40_hwdescr.h'** located in **'Project Manager => Header Files/Config'**
+Any change to the firmware and fundamental operation of the reference design or development board, including reprogramming of the nominal output voltage can be done by editing the hardware-specific values in the hardware description header file **'[Board-ID]_hwdescr.h'** located in **'Project Manager => Header Files/Config'**
 
 Converter settings in this file are defined as physical values such as Volt, Ampere, Ohm, etc. Each defined value is converted into binary numbers by so-called macros, at compile time. Thus, users do not have to convert values manually.
 
 A detailed description of all available settings, their valid range and purpose can be found in chapter **Hardware Abstraction Layer** in this documentation.
 
 #### Example:
-To program the converter to provide a nominal output voltage different from the 12 V DC default setting, follow these steps:
+To program the converter to provide a nominal output voltage different from the default setting, follow these steps:
 
-  - Open the project in MPLAB X® IDE
-  - Navigate to 'Header Files/Config/epc9143_r40_hwdescr.h' using the Project Manager on the left side of the main window
-  - Go to line #483 (see below)
-  - Change the given settings as desired
+  - Open the project in MPLAB&reg; X IDE
+  - Navigate to 'Header Files/Config/[Board-ID]_hwdescr.h' using the Project Manager on the left side of the main window
+  - Check section *Software Overview/Hardware Abstraction Layer* on the left of this document to identify the desired code line
+  - Change the given setting as desired
   - Build the program
-  - Remove power from the input of the EPC9531 test fixture
-  - Connect a valid ICSP programming device (e.g. MPLAB ICD4, MPLAB PICkit4) to the PC and the EPC9531 test fixture (see [EPC9531 Quick Start Guide](https://epc-co.com/epc/documents/guides/EPC9531_qsg.pdf) for details)
+  - Remove power from the input of the power converter of the development board
+  - Connect a valid ICSP programming device (e.g. MPLAB&reg; ICD4, MPLAB&reg; PICkit4) to the PC and the development board
   - Program the device with the target device being powered by the debugger/programmer
-  - Disconnect the ICSP programming device from the EPC9531 test fixture
-  - Apply valid input voltage across the input terminals of EPC9531 and observe the output of the EPC9143 reference design
+  - Disconnect the ICSP programming device from the development board
+  - Apply valid input voltage across the input terminals of the development board power converter and observe the output voltage
 
 The setting for the nominal output voltage is found in lines #484 through #486.
 
-    #define BUCK_VOUT_NOMINAL           (float)12.000  // Nominal output voltage
+    #define BUCK_VOUT_NOMINAL           (float)3.300   // Nominal output voltage
     #define BUCK_VOUT_TOLERANCE_MAX     (float)0.500   // Output voltage tolerance [+/-]
     #define BUCK_VOUT_TOLERANCE_MIN     (float)0.100   // Output voltage tolerance [+/-]
 
 ##### Please note:
-The tolerance settings above include the transient response at a maximum load step. The value for maximum output voltage tolerance 'BUCK_VOUT_TOLERANCE_MAX' is observed by the fault handler. Should the output voltage reading divert from the most recent reference voltage value by more than the given range, the converter will be shut down and a REGULATION ERROR will be indicated. The power supply will automatically recover as soon as the fault condition has been cleared and the recover delay period specified by BUCK_REGERR_RECOVERY_DELAY in line #749 of the EPC9143 hardware description header file has expired.
+The tolerance settings above include the transient response at a maximum load step. The value for maximum output voltage tolerance (e.g. 'BUCK_VOUT_TOLERANCE_MAX') is monitored by the fault handler. Should the output voltage reading divert from the most recent reference voltage value by more than the given range, the converter will be shut down and a REGULATION ERROR will be indicated. The power supply will automatically recover as soon as the fault condition has been cleared and the recover delay period specified by BUCK_REGERR_RECOVERY_DELAY in the hardware description header file has expired.
 
 (line numbers given may be subject to change)
 
@@ -285,13 +295,13 @@ The tolerance settings above include the transient response at a maximum load st
 <span id="sfw_5"></span>
 ### 5) Digital Controller Design
 
-The control loop source code is configured and generated by the PowerSmart&trade; - Digital Control Library Designer (DCLD) software.
+The control loop source code is configured and generated by the PowerSmart&trade; - Digital Control Library Designer (PS-DCLD) software.
 
 This additional design software is available for download on Github Pages:
 
   - [PowerSmart&trade; Digital Control Library Designer Github Page](https://areiter128.github.io/DCLD)
 
-Once installed, the controller configuration can be modified. The most recent configuration can be opened from within the MPLAB X® IDE by right-clicking on the file **'v_loop.dcld'** located in the Important Files folder of the Project Manager. When right-clicked, select **'Open In System'** to open the configuration in PowerSmart&trade; DCLD. 
+Once installed, the controller configuration can be modified. The most recent configuration can be opened from within the MPLAB&reg; X IDE by right-clicking on the file (e.g. **'v_loop.dcld'**) located in the **Important Files** folder of the **MPLAB&reg; X Project Manager**. When right-clicked, select **Open In System** to open the configuration in PowerSmart&trade; DCLD. 
 
 Please refer to the user guide of PowerSmart&trade; DCLD which is included in the software and can be opened from the help menu of the application.
 
@@ -300,15 +310,19 @@ Please refer to the user guide of PowerSmart&trade; DCLD which is included in th
 <span id="sfw_6"></span>
 ### 6) Power Plant Measurement Support
 
-This code examples includes an alternative, proportional control loop which is commonly used during measurements of the frequency response of the power plant. When the following define is set to **true**, the common main control loop is replaced by the proportional controller.
+This code examples includes an alternative, proportional control loop which is commonly used during measurements of the frequency response of the power plant. When the following define is set to **true**, the common main control loop is replaced by the proportional controller. The code has to be rebuilt and programmed to run the measurement.
 
-    app_power_control.c, line 33:   #define PLANT_MEASUREMENT   false
+    [Board-ID]_hwdescr.h:   #define PLANT_MEASUREMENT   false
 
 
-###### PLEASE NOTE:
-PROPORTIONAL CONTROLLERS ARE BY DEFAULT UNSTABLE AND NOT SUITED TO REGULATE THE OUTPUT OF A POWER SUPPLY UNDER NORMAL OPERATING CONDITIONS. DURING A PLANT MEASUREMENT IT IS MANDATORY THAT INPUT VOLTAGE AND LOAD REMAIN STABLE AND DO NOT CHANGE. 
+<span style="color:red">
+<p><u><b>PLEASE NOTE:</b></u></p>
+<p>
+PROPORTIONAL CONTROLLERS ARE BY DEFAULT UNSTABLE AND NOT SUITED TO REGULATE THE OUTPUT OF A POWER SUPPLY UNDER NORMAL OPERATING CONDITIONS. DURING A PLANT MEASUREMENT IT IS MANDATORY THAT INPUT VOLTAGE AND LOAD REMAIN STABLE AND DO NOT CHANGE. </p>
+<p>
+FOR MORE INFORMATION ABOUT HOW TO CONDUCT A POWER PLANT MEASUREMENT, PLEASE READ THE SECTIONS IN THE PowerSmart&trade; DCLD USER GUIDE.</p>
+</span>
 
-FOR MORE INFORMATION ABOUT HOW TO CONDUCT A POWER PLANT MEASUREMENT, PLEASE READ THE SECTIONS IN THE PowerSmart&trade; DCLD USER GUIDE.
 
 [[back](#startDoc)]
 
