@@ -160,7 +160,7 @@ volatile uint16_t appPowerSupply_ConverterObjectInitialize(void)
 
     buck.feedback.ad_isns[0].scaling.factor = BUCK_ISNS_NORM_FACTOR;
     buck.feedback.ad_isns[0].scaling.scaler = BUCK_ISNS_NORM_SCALER;
-    buck.feedback.ad_isns[0].scaling.offset = BUCK_ISNS1_OFFFSET;
+    buck.feedback.ad_isns[0].scaling.offset = BUCK_ISNS_FB_OFFSET;
 
     BUCK_ISNS_ANSEL = buck.feedback.ad_isns[0].enabled;
     

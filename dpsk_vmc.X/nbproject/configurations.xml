@@ -68,6 +68,7 @@
             <itemPath>sources/switch/app_switch.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f2" displayName="drivers" projectFiles="true">
+            <itemPath>sources/switch/drivers/drv_switch.h</itemPath>
           </logicalFolder>
         </logicalFolder>
       </logicalFolder>
@@ -150,7 +151,6 @@
           <logicalFolder name="f3" displayName="drivers" projectFiles="true">
             <itemPath>sources/switch/drivers/drv_switch.c</itemPath>
           </logicalFolder>
-          <itemPath>sources/switch/drivers/drv_switch.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <itemPath>sources/main.c</itemPath>
