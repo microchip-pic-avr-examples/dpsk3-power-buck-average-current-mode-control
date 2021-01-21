@@ -42,7 +42,7 @@ volatile uint16_t drv_Switch_Execute(volatile SWITCH_OBJECT_t* swbtn)
     }
     
 	// Trigger on a PRESSED event with applied debouncing
-	if ((!SW_USER_PORTx) && (!swbtn->status.bits.pressed)) { 
+	if ((!SW_USER_Get()) && (!swbtn->status.bits.pressed)) { 
 		
         // switch button PRESSED event
         if (++press_cnt > swbtn->debounce_delay) {
@@ -52,7 +52,7 @@ volatile uint16_t drv_Switch_Execute(volatile SWITCH_OBJECT_t* swbtn)
         }
 	}
 	// Trigger on a LONG PRESS event with applied debouncing
-    else if ((!SW_USER_PORTx) && (swbtn->status.bits.pressed)) {
+    else if ((!SW_USER_Get()) && (swbtn->status.bits.pressed)) {
 
         // switch button LONG PRESS event
         if (++press_cnt > swbtn->long_press_delay) {
@@ -71,7 +71,7 @@ volatile uint16_t drv_Switch_Execute(volatile SWITCH_OBJECT_t* swbtn)
         
     }
     // Trigger on a RELEASE event with applied debouncing
-	else if ((SW_USER_PORTx) && (swbtn->status.bits.pressed)) {  
+	else if ((SW_USER_Get()) && (swbtn->status.bits.pressed)) {  
         
         // switch button RELEASE event
         if (++release_cnt > swbtn->debounce_delay) {
