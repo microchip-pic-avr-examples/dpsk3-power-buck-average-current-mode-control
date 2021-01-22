@@ -1,8 +1,8 @@
-/*
- * File:   faults.c
+/* 
+ * @file   app_fault_monitor.c
  * Author: M91406
- *
- * Created on March 12, 2020, 11:38 AM
+ * @brief  Fault monitor application layer source file
+ * Revision history: 
  */
 
 #include <stddef.h>
@@ -11,83 +11,63 @@
 #include "drivers/drv_fault_handler.h"
 #include "pwr_control/app_power_control.h"
 
+/**
+ * @var struct FAULT_OBJECT_s fltobj_BuckUVLO  
+ * @ingroup app-layer-fault-monitor-properties-public
+ * @brief Under Voltage Lock Out Fault Object
+ * @details
+ * This fault object monitors the input voltage of the power supply
+ * scanning for conditions violating the minimum required input
+ * voltage level for the specified amount of time.
+
+ * @var struct FAULT_OBJECT_s fltobj_BuckOVLO  
+ * @ingroup app-layer-fault-monitor-properties-public
+ * @brief Over Voltage Lock Out Fault Object
+ * @details
+ * This fault object monitors the input voltage of the power supply
+ * scanning for conditions exceeding the maximum allowed input
+ * voltage level for the specified amount of time.
+
+ * @var struct FAULT_OBJECT_s fltobj_BuckOCP  
+ * @ingroup app-layer-fault-monitor-properties-public
+ * @brief Over Current Protection Fault Object
+ * @details
+ * This fault object monitors the average output current of the
+ * power supply scanning for conditions exceeding the maximum
+ * allowed output current level for the specified amount of time.
+
+ * @var struct FAULT_OBJECT_s fltobj_BuckRegErr  
+ * @ingroup app-layer-fault-monitor-properties-public
+ * @brief Regulation Error Fault Object
+ * @details
+ * This fault object monitors the deviation between voltage reference
+ * and most recent output voltage of the power supply scanning for
+ * conditions where a maximum allowed deviation is exceeded for the
+ * specified amount of time.
+
+ */ 
 
 // Define fault objects
 volatile struct FAULT_OBJECT_s fltobj_BuckUVLO;
 volatile struct FAULT_OBJECT_s fltobj_BuckOVLO;
+volatile struct FAULT_OBJECT_s fltobj_BuckOCP;
 volatile struct FAULT_OBJECT_s fltobj_BuckRegErr;
 
 // Declare private function prototypes 
 volatile uint16_t __attribute__((always_inline)) uvlo_FaultInitialize(void);
 volatile uint16_t __attribute__((always_inline)) ovlo_FaultInitialize(void);
+volatile uint16_t __attribute__((always_inline)) ocp_FaultInitialize(void);
 volatile uint16_t __attribute__((always_inline)) regerr_FaultInitialize(void);
 
-/* @@appFaults_Initialize
- * ********************************************************************************
- * Summary:
- *   Initialization of user-defined fault objects
- * 
- * Parameters:
- *   (none)
- * 
- * Returns:
- *   unsigned integer   (0=failure, 1=success)
- * 
- * Description:
- * 
- * ********************************************************************************/
 
-volatile uint16_t appFaultMonitor_Initialize(void) 
-{
-    volatile uint16_t retval=1;
-    
-    // Initialize user fault objects
-    retval &= uvlo_FaultInitialize();
-    retval &= ovlo_FaultInitialize();
-    retval &= regerr_FaultInitialize();
-    
-    return(retval);
-}
-
-/* @@appFaults_Dispose
- * ********************************************************************************
- * Summary:
- *   Function clearing all fault object settings
+/*********************************************************************************
+ * @fn uint16_t appFaultMonitor_Execute(void)  
+ * @ingroup app-layer-fault-handler-functions-public
+ * @brief Application wide fault object monitoring routine
+ * @return 0=failure 
+ * @return 1=success
  * 
- * Parameters:
- *   (none)
- * 
- * Returns:
- *   unsigned integer   (0=failure, 1=success)
- * 
- * Description:
- *   This function is used to clear all fault objects settings. Once cleared,
- *   the fault objects are detached from memory addresses and cannot be used
- *   for fault monitoring anymore until they have been re-initialized.
- * 
- * ********************************************************************************/
-
-volatile uint16_t appFaultMonitor_Dispose(void) 
-{
-    fltobj_BuckUVLO = fltObjectClear; // Delete Under Voltage Lock Out object
-    fltobj_BuckOVLO = fltObjectClear; // Delete Over Voltage Lock Out object
-    fltobj_BuckRegErr = fltObjectClear; // Delete Regulation Error object
-    
-    return(1);
-}
-
-/* @@appFaultMonitor_Execute
- * ********************************************************************************
- * Summary:
- *   Application wide fault object monitoring routine
- * 
- * Parameters:
- *   (none)
- * 
- * Returns:
- *   unsigned integer   (0=failure, 1=success)
- * 
- * Description:
+ * @details
  *   In this function all user-defined fault objects are monitored for 
  *   threshold violations. While fault responses are triggered by each 
  *   fault object individually, system recovery from a fault condition is 
@@ -95,7 +75,7 @@ volatile uint16_t appFaultMonitor_Dispose(void)
  *   individual fault status bits are combined into a common fault bit, 
  *   which needs to be cleared to allow the power supply to start-up again.
  * 
- * ********************************************************************************/
+ *********************************************************************************/
 
 volatile uint16_t appFaultMonitor_Execute(void) 
 {
@@ -106,12 +86,14 @@ volatile uint16_t appFaultMonitor_Execute(void)
     retval &= drv_FaultHandler_CheckObject(&fltobj_BuckUVLO);
     retval &= drv_FaultHandler_CheckObject(&fltobj_BuckOVLO);
     retval &= drv_FaultHandler_CheckObject(&fltobj_BuckRegErr);
+    retval &= drv_FaultHandler_CheckObject(&fltobj_BuckOCP);
 
     // Combine individual fault bits to a common fault indicator
     buck.status.bits.fault_active = (bool) (
         fltobj_BuckUVLO.Status.bits.FaultStatus | 
         fltobj_BuckOVLO.Status.bits.FaultStatus |
-        fltobj_BuckRegErr.Status.bits.FaultStatus  
+        fltobj_BuckRegErr.Status.bits.FaultStatus |
+        fltobj_BuckOCP.Status.bits.FaultStatus 
         );
     
     // If system has recovered from a global fault condition, 
@@ -126,26 +108,74 @@ volatile uint16_t appFaultMonitor_Execute(void)
     return (retval);
 }
 
+/*********************************************************************************
+ * @fn uint16_t appFaultMonitor_Initialize(void)
+ * @ingroup app-layer-fault-handler-functions-public
+ * @brief  Initialization of user-defined fault objects
+ * @return 0=failure 
+ * @return 1=success
+ * 
+ * @details
+ * This function initializes the user-defined fault objects like the setpoints, 
+ * fault conditions and ADC sources for Under-voltage Lockout, 
+ * Over-voltage lockout, Output current protection and Regulation error. 
+ *********************************************************************************/
+
+volatile uint16_t appFaultMonitor_Initialize(void) 
+{
+    volatile uint16_t retval=1;
+    
+    // Initialize user fault objects
+    retval &= uvlo_FaultInitialize();
+    retval &= ovlo_FaultInitialize();
+    retval &= ocp_FaultInitialize();
+    retval &= regerr_FaultInitialize();
+    
+    return(retval);
+}
+
+/*********************************************************************************
+ * @fn uint16_t appFaultMonitor_Dispose(void) 
+ * @ingroup app-layer-fault-handler-functions-public
+ * @brief Function clearing all fault object settings
+ * @return 0=failure 
+ * @return 1=success
+ * 
+ * @details
+ *   This function is used to clear all fault objects settings. Once cleared,
+ *   the fault objects are detached from memory addresses and cannot be used
+ *   for fault monitoring anymore until they have been re-initialized.
+ * 
+ *********************************************************************************/
+
+volatile uint16_t appFaultMonitor_Dispose(void) 
+{
+    fltobj_BuckUVLO = fltObjectClear; // Delete Under Voltage Lock Out object
+    fltobj_BuckOVLO = fltObjectClear; // Delete Over Voltage Lock Out object
+    fltobj_BuckRegErr = fltObjectClear; // Delete Regulation Error object
+    fltobj_BuckOCP = fltObjectClear; // Delete Over Current Protection object
+    
+    return(1);
+}
+
 
 /* *********************************************************************************
  * PRIVATE FUNCTIONS
  * ********************************************************************************/
 
-
-/* @@uvlo_FaultInitialize
- * ********************************************************************************
- * Summary:
+/*********************************************************************************
+ * @fn uint16_t uvlo_FaultInitialize(void)
+ * @ingroup app-layer-fault-monitor-functions-private
+ * @brief Initializes the user-defined fault objects for under-voltage lockout
+ * @return 0=failure
+ * @return 1=success
  * 
- * Parameters:
- *   (none)
- * 
- * Returns:
- *   unsigned integer   (0=failure, 1=success)
- * 
- * Description:
- * 
- * 
- * ********************************************************************************/
+ * @details
+ * In this function all user-defined fault objects are initialize and set to the
+ * threshold violations for under-voltage lockout. The ADC channel that monitors the
+ * voltage from the circuit is set in SourceObject while the threshold violation and
+ * recovery are set by TripResponse and RecoveryResponse objects.
+ *********************************************************************************/
 
 volatile uint16_t uvlo_FaultInitialize(void)
 {
@@ -178,19 +208,19 @@ volatile uint16_t uvlo_FaultInitialize(void)
     
 }
 
-/* @@ovlo_FaultInitialize
- * ********************************************************************************
- * Summary:
+/*********************************************************************************
+ * @fn uint16_t ovlo_FaultInitialize(void)
+ * @ingroup app-layer-fault-monitor-functions-private
+ * @brief Initializes the user-defined fault objects for overvoltage lockout
+ * @return 0=failure
+ * @return 1=success
  * 
- * Parameters:
- *   (none)
- * 
- * Returns:
- *   unsigned integer   (0=failure, 1=success)
- * 
- * Description:
- * 
- * ********************************************************************************/
+ * @details
+ * In this function all user-defined fault objects are initialize and set the
+ * threshold violations for overvoltage lockout. The ADC channel that monitors the
+ * voltage from the circuit is set in SourceObject while the threshold violation and
+ * recovery are set by TripResponse and RecoveryResponse objects.
+ *********************************************************************************/
 
 volatile uint16_t ovlo_FaultInitialize(void)
 {
@@ -222,20 +252,19 @@ volatile uint16_t ovlo_FaultInitialize(void)
     
 }
     
-/* @@regerr_FaultInitialize
- * ********************************************************************************
- * Summary:
+/*********************************************************************************
+ * @fn uint16_t regerr_FaultInitialize(void)
+ * @ingroup app-layer-fault-monitor-functions-private
+ * @brief Initializes the user-defined fault objects for regulation error
+ * @return 0=failure
+ * @return 1=success
  * 
- * Parameters:
- *   (none)
- * 
- * Returns:
- *   unsigned integer   (0=failure, 1=success)
- * 
- * Description:
- * 
- * ********************************************************************************/
-
+ * @details
+ * In this function all user-defined fault objects are initialize and set to the 
+ * threshold violations for Regulation Error. The ADC channel that monitors the 
+ * voltage from the circuit is set in SourceObject while the threshold violation 
+ * and recovery are set by TripResponse and RecoveryResponse objects.   
+ *********************************************************************************/
 volatile uint16_t regerr_FaultInitialize(void)
 {
     volatile uint16_t retval=1;
@@ -266,6 +295,47 @@ volatile uint16_t regerr_FaultInitialize(void)
     
 }
     
+/*********************************************************************************
+ * @fn uint16_t ocp_FaultInitialize(void)
+ * @ingroup app-layer-fault-monitor-functions-private
+ * @brief Initializes the user-defined fault objects for overcurrent protection
+ * @return 0=failure
+ * @return 1=success
+ * 
+ * @details
+ * In this function all user-defined fault objects are initialize and set to the 
+ * thresholds for overcurrent protection. The ADC channel that monitors the 
+ * voltage from the circuit is set in SourceObject while the threshold violation 
+ * and recovery are set by TripResponse and RecoveryResponse objects.   
+ *********************************************************************************/
+volatile uint16_t ocp_FaultInitialize(void)
+{
+    volatile uint16_t retval=1;
 
+    // Initialize OCP fault object
+    fltobj_BuckOCP = fltObjectClear;  // Pre-initialize fault object
+
+    fltobj_BuckOCP.SourceObject.ptrObject = &buck.data.i_out;   // Set pointer to variable to monitor
+    fltobj_BuckOCP.SourceObject.bitMask = 0xFFFF;  // Compare all bits of SOURCE (no bit filter)
+    fltobj_BuckOCP.ReferenceObject.ptrObject = NULL;  // Clear pointer to "compare against" variable 
+    fltobj_BuckOCP.ReferenceObject.bitMask = 0xFFFF;  // Compare all bits of SOURCE (no bit filter)
+    fltobj_BuckOCP.Status.bits.CompareType = FLTCMP_GREATER_THAN; // Select Compare-Type
+
+    fltobj_BuckOCP.TripResponse.compareThreshold = BUCK_ISNS_OCL;    // Set fault trip level
+    fltobj_BuckOCP.TripResponse.eventThreshold = BUCK_OCP_TDLY;    // Set counter level at which a FAULT condition will be tripped
+    fltobj_BuckOCP.TripResponse.ptrResponseFunction = &appPowerSupply_Suspend; // Set pointer to user-function which should be called when a FAULT is tripped
+
+    fltobj_BuckOCP.RecoveryResponse.compareThreshold = BUCK_ISNS_OCL_RELEASE;   // Set fault recovery level
+    fltobj_BuckOCP.RecoveryResponse.eventThreshold = BUCK_OCP_RDLY;     // Set counter level at which a FAULT condition will be cleared
+    fltobj_BuckOCP.RecoveryResponse.ptrResponseFunction = NULL; // Clear recovery function pointer
     
-// END OF FILE
+    fltobj_BuckOCP.Counter = 0;        // Clear fault event counter
+    fltobj_BuckOCP.Status.bits.FaultActive = true; // Set fault condition flag (must be cleared by fault check)
+    fltobj_BuckOCP.Status.bits.FaultStatus = true; // Set fault flag (must be cleared by fault check)
+    fltobj_BuckOCP.Status.bits.Enabled = true; // Enable fault checks    
+
+    return(retval);
+    
+}
+
+// end of file
