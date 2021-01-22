@@ -70,22 +70,7 @@
 #define DBGPIN1_ENABLE      true ///< Enables debug pin indicating control loop execution timing
 #define DBGPIN2_ENABLE      true ///< Enables debug pin indicating control loop execution timing
 
-/*********************************************************************************
- * @ingroup special-options
- * @def BUCK_ISNS_OFFSET_CALIBRATION_ENABLE
- * @brief  Enables/Disables Current Sense Offset Calibration
- * @details
- * Flag indicating if the signal offset of the current sense feedback needs to be calibrated.
- * The calibration procedure is available as Special Function of the power controller and will be 
- * called automatically when the option BUCK_ISNS_NEED_CALIBRATION is set to 'true' 
- * @note
- * Standby current sense feedback offset calibration is not supported by the MCP6C02 shunt amplifier
- * device on DPSK3 due to its limited common mode range, which starts above 2.5 V DC. However,
- * its auto-zero self tuning and high sensing precision makes calibration negligible.
- * The second current sense device used on DPSK3 is a current sense transformer, which does not
- * require any calibration either.
- **********************************************************************************/
-
+/** @} */ // end of group special-options
 
 /**************************************************************************************************
  * @ingroup device-abstraction-settings
@@ -101,18 +86,16 @@
 #define CPU_FREQUENCY       (float)100000000.0  ///< CPU frequency in [Hz]
 
 // ADC(DAC Reference and Resolution Settings    
-#define ADC_REFERENCE       (float)3.300 ///< ADC reference voltage in V
+#define ADC_REFERENCE       (float)3.300 ///< ADC reference voltage in [V]
 #define ADC_RESOLUTION      (float)12.0  ///< ADC resolution in [bit]
 
 // PWM/ADC Clock Settings   
 #define PWM_CLOCK_HIGH_RESOLUTION   true ///< Enables/disables the PWM generator high resolution mode of 250 ps versus 2 ns
 
 #if (PWM_CLOCK_HIGH_RESOLUTION)
-    #define PWM_CLOCK_FREQUENCY (float)4.0e+9   ///< PWM Clock Frequency in [Hz]
-    #define PWM_CLOCK_PERIOD    (float)(1.0/PWM_CLOCK_FREQUENCY) // PWM Clock Period in [sec]
+#define PWM_CLOCK_FREQUENCY (float)4.0e+9 ///< PWM Clock Frequency in [Hz]
 #else
-    #define PWM_CLOCK_FREQUENCY (float)500.0e+6   ///< PWM Clock Frequency in [Hz]
-    #define PWM_CLOCK_PERIOD    (float)(1.0/PWM_CLOCK_FREQUENCY) // PWM Clock Period in [sec]
+#define PWM_CLOCK_FREQUENCY (float)500.0e+6 ///< PWM Clock Frequency in [Hz]
 #endif
 
 /** @} */ // end of group device-abstraction-settings
@@ -568,8 +551,8 @@
  */
 
 // Phase Current Feedback Settings Conversion Macros
-#define BUCK_ISNS_OCL           (uint16_t)((BUCK_ISNS_MAXIMUM * BUCK_ISNS_FEEDBACK_GAIN + BUCK_ISNS1_FEEDBACK_OFFSET + BUCK_ISNS2_FEEDBACK_OFFSET) / ADC_GRANULARITY)  ///< Over Current Limit
-#define BUCK_ISNS_OCL_RELEASE   (uint16_t)((BUCK_ISNS_RELEASE * BUCK_ISNS_FEEDBACK_GAIN + BUCK_ISNS1_FEEDBACK_OFFSET + BUCK_ISNS2_FEEDBACK_OFFSET) / ADC_GRANULARITY)  ///< Over Current Release Level
+#define BUCK_ISNS_OCL           (uint16_t)((BUCK_ISNS_MAXIMUM * BUCK_ISNS_FEEDBACK_GAIN + BUCK_ISNS_FEEDBACK_OFFSET) / ADC_GRANULARITY)  ///< Over Current Limit
+#define BUCK_ISNS_OCL_RELEASE   (uint16_t)((BUCK_ISNS_RELEASE * BUCK_ISNS_FEEDBACK_GAIN + BUCK_ISNS_FEEDBACK_OFFSET) / ADC_GRANULARITY)  ///< Over Current Release Level
 #define BUCK_ISNS_REF           (uint16_t)(BUCK_ISNS_REFERENCE * BUCK_ISNS_FEEDBACK_GAIN / ADC_GRANULARITY)  ///< Output Current Reference
 #define BUCK_ISNS_FB_OFFSET     (uint16_t)(BUCK_ISNS_FEEDBACK_OFFSET / ADC_GRANULARITY)
 #define BUCK_ISNS_ADC_TRGDLY    (uint16_t)(BUCK_ISNS_ADC_TRG_DELAY / PWM_CLOCK_PERIOD)
@@ -644,6 +627,8 @@
 #define BUCK_TEMPCAL_ZERO       (float) 0.500   // Temperature sense signal zero point voltage in [V]
 #define BUCK_TEMPCAL_SLOPE      (float) 0.010   // Temperature sense signal slope in [V/K]
 
+/** @} */ // end of group temperature-feedback-settings
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /** 
  * @ingroup temperature-feedback-macros
@@ -657,6 +642,8 @@
 
 #define BUCK_FB_TEMP_ZERO       (uint16_t)(BUCK_TEMPCAL_ZERO / ADC_GRANULARITY)
 #define BUCK_FB_TEMP_SLOPE      (float)(BUCK_TEMPCAL_SLOPE / ADC_GRANULARITY)
+
+/** @} */ // end of group temperature-feedback-macros
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /** 
@@ -680,6 +667,7 @@
 #define BUCK_TEMP_ADCTRIG           PG1TRIGB    ///< Register used for trigger placement
 #define BUCK_TEMP_TRGSRC            BUCK_PWM_TRGSRC_TRG2    // PWM1 Trigger 2
     
+/** @} */ // end of group temperature-feedback-mcal
 
 /**************************************************************************************************
  * @ingroup adaptive-control
