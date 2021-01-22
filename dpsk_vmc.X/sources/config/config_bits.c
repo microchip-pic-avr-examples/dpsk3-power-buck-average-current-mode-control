@@ -7,7 +7,7 @@
 
 
 #include <xc.h>
-#include "config/dpsk3_hwdescr.h"
+#include "hal.h"
 
 // Configuration bits: selected in the GUI
 
