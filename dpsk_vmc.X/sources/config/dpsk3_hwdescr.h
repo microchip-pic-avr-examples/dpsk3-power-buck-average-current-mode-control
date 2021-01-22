@@ -293,8 +293,8 @@
  */
 #define BUCK_PWM_CHANNEL            1U ///< PWM Instance Index (e.g. 1=PWM1, 2=PWM2, etc.)
 #define BUCK_PWM_GPIO_INSTANCE      1U ///< Number indicating device port, where 0=Port RA, 0=Port RB, 0=Port RC, etc.
-#define BUCK_PWM_GPIO_PORT_PINH     12U ///< Port Pin Number
-#define BUCK_PWM_GPIO_PORT_PINL     13U ///< Port Pin Number
+#define BUCK_PWM_GPIO_PORT_PINH     14U ///< Port Pin Number
+#define BUCK_PWM_GPIO_PORT_PINL     15U ///< Port Pin Number
     
 #define BUCK_PWM_PDC                PG1DC    ///< PWM Instance Duty Cycle Register
 #define BUCK_PWMH_TRIS              _TRISB14 ///< Device Port TRIS register
@@ -599,8 +599,8 @@
     #define _BUCK_ISNS_ADCISR_IF        _ADCAN0IF   ///< Interrupt Service Routine Flag Bit
 
     #define BUCK_ISNS_ANSEL             _ANSELA0    ///< GPIO analog function mode enable bit
-    #define BUCK_ISNS_ADCCORE           1           ///< 0=Dedicated Core #0, 1=Dedicated Core #1, 2=Shared ADC Core
-    #define BUCK_ISNS_ADCIN             1           ///< Analog input number (e.g. '5' for 'AN5')
+    #define BUCK_ISNS_ADCCORE           0           ///< 0=Dedicated Core #0, 1=Dedicated Core #1, 2=Shared ADC Core
+    #define BUCK_ISNS_ADCIN             0           ///< Analog input number (e.g. '5' for 'AN5')
     #define BUCK_ISNS_ADCBUF            ADCBUF0     ///< ADC input buffer of this ADC channel
     #define BUCK_ISNS_ADCTRIG           PG1TRIGB    ///< Register used for trigger placement
     #define BUCK_ISNS_TRGSRC            BUCK_PWM_TRGSRC_TRG2 ///< PWM1 (=PG1) Trigger 2 via PGxTRIGB
@@ -849,17 +849,17 @@
 
 #if (BUCK_VOUT_TRIGGER_MODE == BUCK_VOUT_TRIG_ADC)    
 
-  #define _BUCK_VLOOP_Interrupt     _ADCAN0Interrupt ///< Interrupt vector function call label
-  #define _BUCK_VLOOP_ISR_IP        _ADCAN0IP ///< Interupt vector priority register bits
-  #define _BUCK_VLOOP_ISR_IF        _ADCAN0IF ///< Interupt vector flag bit register bit
-  #define _BUCK_VLOOP_ISR_IE        _ADCAN0IE ///< Interupt vector enable bit register bit
+  #define _BUCK_VLOOP_Interrupt     _ADCAN13Interrupt ///< Interrupt vector function call label
+  #define _BUCK_VLOOP_ISR_IP        _ADCAN13IP ///< Interupt vector priority register bits
+  #define _BUCK_VLOOP_ISR_IF        _ADCAN13IF ///< Interupt vector flag bit register bit
+  #define _BUCK_VLOOP_ISR_IE        _ADCAN13IE ///< Interupt vector enable bit register bit
 
 #elif (BUCK_VOUT_TRIGGER_MODE == BUCK_VOUT_TRIG_PWM)
 
-  #define _BUCK_VLOOP_Interrupt     _PWM2Interrupt ///< Interrupt vector function call label
-  #define _BUCK_VLOOP_ISR_IP        _PWM2IP ///< Interupt vector priority register
-  #define _BUCK_VLOOP_ISR_IF        _PWM2IF ///< Interupt vector flag bit register bit
-  #define _BUCK_VLOOP_ISR_IE        _PWM2IE ///< Interupt vector enable bit register bit
+  #define _BUCK_VLOOP_Interrupt     _PWM1Interrupt ///< Interrupt vector function call label
+  #define _BUCK_VLOOP_ISR_IP        _PWM1IP ///< Interupt vector priority register
+  #define _BUCK_VLOOP_ISR_IF        _PWM1IF ///< Interupt vector flag bit register bit
+  #define _BUCK_VLOOP_ISR_IE        _PWM1IE ///< Interupt vector enable bit register bit
 
 #endif
 
