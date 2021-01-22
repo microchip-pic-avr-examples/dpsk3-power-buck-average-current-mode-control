@@ -1,5 +1,5 @@
 /*
- * File:   switch.c
+ * File:   app_push_button.c
  * Author: M91406
  *
  * Created on March 12, 2020, 12:10 PM
@@ -86,8 +86,8 @@ volatile uint16_t appPushButton_Execute(void)
 }
 
 /*********************************************************************************
- * @ingroup app-layer-push-button-functions-private
- * @fn volatile uint16_t appPushButton_EventButtonUp(void)
+ * @ingroup app-layer-push-button-functions-public
+ * @fn volatile uint16_t appPushButton_Dispose(void)
  * @brief  Unloads the push button data object and frees its resources
  * @param  void
  * @return unsigned int (0=failure, 1=success)
