@@ -14,6 +14,7 @@
         </logicalFolder>
         <itemPath>sources/config/hal.h</itemPath>
         <itemPath>sources/config/apps.h</itemPath>
+        <itemPath>sources/config/system.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f4" displayName="tasks" projectFiles="true">
         <logicalFolder name="f4" displayName="fault_monitor" projectFiles="true">
@@ -65,15 +66,16 @@
             <itemPath>sources/pwr_control/drivers/npnz16b.inc</itemPath>
           </logicalFolder>
         </logicalFolder>
-        <logicalFolder name="f8" displayName="switch" projectFiles="true">
+        <logicalFolder name="f8" displayName="push_button" projectFiles="true">
           <logicalFolder name="f1" displayName="app" projectFiles="true">
-            <itemPath>sources/switch/app_switch.h</itemPath>
+            <itemPath>sources/push_button/app_push_button.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f2" displayName="drivers" projectFiles="true">
-            <itemPath>sources/switch/drivers/drv_switch.h</itemPath>
+            <itemPath>sources/push_button/drivers/drv_push_button.h</itemPath>
           </logicalFolder>
         </logicalFolder>
       </logicalFolder>
+      <itemPath>sources/main.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -86,6 +88,7 @@
         <itemPath>sources/common/p33c_pral/p33c_pwm.c</itemPath>
         <itemPath>sources/common/p33c_pral/p33c_gpio.c</itemPath>
         <itemPath>sources/common/p33c_pral/p33c_dsp.c</itemPath>
+        <itemPath>sources/common/p33c_pral/p33c_osc.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="init" projectFiles="true">
@@ -95,6 +98,7 @@
           <itemPath>sources/config/init/init_dsp.c</itemPath>
         </logicalFolder>
         <itemPath>sources/config/config_bits.c</itemPath>
+        <itemPath>sources/config/system.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f4" displayName="tasks" projectFiles="true">
         <logicalFolder name="f5" displayName="fault_monitor" projectFiles="true">
@@ -146,12 +150,12 @@
             <itemPath>sources/pwr_control/drivers/v_loop_extensions.s</itemPath>
           </logicalFolder>
         </logicalFolder>
-        <logicalFolder name="f2" displayName="switch" projectFiles="true">
+        <logicalFolder name="f2" displayName="push_button" projectFiles="true">
           <logicalFolder name="f1" displayName="app" projectFiles="true">
-            <itemPath>sources/switch/app_switch.c</itemPath>
+            <itemPath>sources/push_button/app_push_button.c</itemPath>
           </logicalFolder>
           <logicalFolder name="f3" displayName="drivers" projectFiles="true">
-            <itemPath>sources/switch/drivers/drv_switch.c</itemPath>
+            <itemPath>sources/push_button/drivers/drv_push_button.c</itemPath>
           </logicalFolder>
         </logicalFolder>
       </logicalFolder>
@@ -166,10 +170,7 @@
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
-    <Elem>sources/pwr_control</Elem>
-    <Elem>sources/fault_handler/drivers</Elem>
-    <Elem>sources/switch/drivers</Elem>
-    <Elem>sources/config/hal</Elem>
+    <Elem>sources</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>

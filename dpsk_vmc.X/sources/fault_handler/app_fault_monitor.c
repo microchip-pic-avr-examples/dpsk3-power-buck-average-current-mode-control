@@ -8,8 +8,9 @@
 #include <stddef.h>
 
 #include "config/hal.h"
-#include "drivers/drv_fault_handler.h"
-#include "pwr_control/app_power_control.h"
+#include "config/apps.h"
+//#include "drivers/drv_fault_handler.h"
+//#include "pwr_control/app_power_control.h"
 
 /**
  * @var struct FAULT_OBJECT_s fltobj_BuckUVLO  

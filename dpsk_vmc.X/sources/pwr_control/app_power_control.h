@@ -71,7 +71,7 @@ extern volatile uint16_t appPowerSupply_Resume(void);
 // extern void __attribute__((near)) my_function(void); // Control Loop User Extension Example
 
 
-#else
-  #pragma message "drv_buck_converter.h has been recalled"
+//#else
+//  #pragma message "app_power_control.h inclusion bypassed"
 #endif	/* APPLICATION_LAYER_POWER_CONTROL_H */
 
