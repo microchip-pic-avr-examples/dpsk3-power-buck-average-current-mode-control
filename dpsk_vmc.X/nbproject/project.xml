@@ -16,6 +16,7 @@
                 <sourceRootElem>sources/pwr_control</sourceRootElem>
                 <sourceRootElem>sources/fault_handler/drivers</sourceRootElem>
                 <sourceRootElem>sources/switch/drivers</sourceRootElem>
+                <sourceRootElem>sources/config/hal</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
