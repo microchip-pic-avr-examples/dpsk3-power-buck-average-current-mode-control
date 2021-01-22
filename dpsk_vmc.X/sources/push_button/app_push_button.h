@@ -20,37 +20,32 @@
  */
 
 /* 
- * File:   app_switch.h
+ * File:   app_push_button.h
  * Author: M91406
- * Comments: switch button application layer
+ * Comments: push button application layer
  * Revision history: 
  */
 
 // This is a guard condition so that contents of this file are not included
 // more than once.  
-#ifndef APPLICATION_LAYER_SWITCH_BUTTON_H
-#define	APPLICATION_LAYER_SWITCH_BUTTON_H
+#ifndef APPLICATION_LAYER_PUSH_BUTTON_H
+#define	APPLICATION_LAYER_PUSH_BUTTON_H
 
 #include <xc.h> // include processor files - each processor file is guarded.  
 #include <stdint.h> // include standard integer data types
 #include <stdbool.h> // include standard boolean data types
 #include <stddef.h> // include standard definition data types
 
-#include "switch/drivers/drv_switch.h"
+#include "push_button/drivers/drv_push_button.h"
 
 // PUBLIC VARIABLE DECLARATION
-extern volatile SWITCH_OBJECT_t switch_button;
+extern volatile PUSH_BUTTON_OBJECT_t push_button;
     
 // PUBLIC FUNCTION PROTOTYPE DECLARATION
-extern volatile uint16_t appSwitch_Initialize(void);
-extern volatile uint16_t appSwitch_Execute(void);
-extern volatile uint16_t appSwitch_Dispose(void);
+extern volatile uint16_t appPushButton_Initialize(void);
+extern volatile uint16_t appPushButton_Execute(void);
+extern volatile uint16_t appPushButton_Dispose(void);
 
-// Switch Button Events
-extern volatile uint16_t appSwitch_EventButtonDown(void);
-extern volatile uint16_t appSwitch_EventButtonPressed(void);
-extern volatile uint16_t appSwitch_EventButtonLongPress(void);
-extern volatile uint16_t appSwitch_EventButtonUp(void);
 
-#endif	/* APPLICATION_LAYER_DEBUGGING_LED_H */
+#endif	/* APPLICATION_LAYER_PUSH_BUTTON_H */
 
