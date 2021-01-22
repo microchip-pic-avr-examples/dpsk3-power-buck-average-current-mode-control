@@ -40,12 +40,25 @@
 
 
 // PUBLIC TYPE DECLARATIONS
-typedef struct {
+
+/***********************************************************************************
+ * @ingroup app-layer-lcd-properties-public
+ * @struct LCD_s
+ * @brief Declaration of public LC display data object
+ * @details
+ *  The struct LCD_s data structure defines data fields for all publicly 
+ *  accessible user settings required to configure and drive an on-board LC 
+ *  display.
+ **********************************************************************************/
+
+typedef struct LCD_s{
     volatile bool enabled;
     volatile uint16_t refresh;
     volatile uint16_t screen;
 }LCD_t;
     
+
+
 // PUBLIC VARIABLE DECLARATION
 extern volatile LCD_t lcd;
     

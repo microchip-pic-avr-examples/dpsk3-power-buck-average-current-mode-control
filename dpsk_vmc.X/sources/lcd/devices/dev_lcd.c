@@ -15,22 +15,31 @@
 
 //======================================================================================================================
 // @file dev_lcd.c
-//
-// @brief driver for the lcd screen
+// @author M91406
+// @brief LC display device driver source file
 //
 //======================================================================================================================
 
-#include <stdint.h>
-#include "stdbool.h"
-#include <xc.h>
+#include <xc.h> // include processor files - each processor file is guarded.  
+#include <stdint.h> // include standard integer types header file
+#include <stdbool.h> // include standard boolean types header file
+
 #include "common/delay.h"
 #include "lcd/drivers/drv_lcd_interface.h" 
 
-//======================================================================================================================
-//  defines commands for the Newhaven NHD-C0216CZ-FSW-FBW lcd controller
-//======================================================================================================================
+/*********************************************************************************
+ * @ingroup lib-layer-lcd-properties-private
+ * @{
+ * @brief  Newhaven NHD-C0216CZ-FSW-FBW LCD controller command set
+ * @details
+ *  Defines for the command set of a Newhaven NHD-C0216CZ-FSW-FBW LCD controller
+ **********************************************************************************/
 
-//there is a difference in real display size and display memory
+//==================================================================================
+// Private defines
+//==================================================================================
+
+// there is a difference in real display size and display memory
 #define LCD_ADDRESS_LINE_1 0x00
 #define LCD_ADDRESS_LINE_2 0x40
 
@@ -91,90 +100,124 @@
 #define LCD_BUSY_FLAG_MASK 0x80
 #define LCD_ADDRESS_MASK   0x7F
 
-//======================================================================================================================
-//	variables
-//======================================================================================================================
-const uint8_t line_address[] = {LCD_ADDRESS_LINE_1,LCD_ADDRESS_LINE_2};
+//==================================================================================
+// Private Variables
+//==================================================================================
+
+const uint8_t line_address[] = {LCD_ADDRESS_LINE_1, LCD_ADDRESS_LINE_2};
 uint8_t pos_x = 0;
 uint8_t pos_y = 0;
 uint8_t change_position = false;
 
-//======================================================================================================================
-// @brief initializes the LCD Device, needs to be called once at bootup before that device can be used
-//======================================================================================================================
-void Dev_Lcd_Init(void)
+/** @} */ // lib-layer-lcd-properties-private
+
+
+/*********************************************************************************
+ * @ingroup lib-layer-lcd-functions-public
+ * @fn void dev_Lcd_Initialize(void)
+ * @brief  Initializes the LCD Device
+ * @param  void
+ * @return void
+ * @details
+ *  This function initializes the LCD Device Driver. It needs to be called 
+ *  once at boot-up before that device can be used.
+ **********************************************************************************/
+
+void dev_Lcd_Initialize(void)
 {
-    Drv_Lcd_Interface_Init();
-    Drv_Lcd_Interface_Reset();
+    drv_LcdInterface_Initialize();
+    drv_LcdInterface_Reset();
     
-    Drv_Lcd_Interface_SendCmd(LCD_FUNCTION | FUNCTION_8BITS | FUNCTION_1_HIGH | FUNCTION_1_LINE | FUNCTION_nIS);   //function set
+    drv_LcdInterface_SendCmd(LCD_FUNCTION | FUNCTION_8BITS | FUNCTION_1_HIGH | FUNCTION_1_LINE | FUNCTION_nIS);   //function set
  
     __delay_ms(25);
 
-    Drv_Lcd_Interface_SendCmd(LCD_FUNCTION | FUNCTION_8BITS | FUNCTION_1_HIGH | FUNCTION_1_LINE | FUNCTION_nIS);   //function set
-    Drv_Lcd_Interface_SendCmd(LCD_FUNCTION | FUNCTION_8BITS | FUNCTION_1_HIGH | FUNCTION_1_LINE | FUNCTION_nIS);   //function set
+    drv_LcdInterface_SendCmd(LCD_FUNCTION | FUNCTION_8BITS | FUNCTION_1_HIGH | FUNCTION_1_LINE | FUNCTION_nIS);   //function set
+    drv_LcdInterface_SendCmd(LCD_FUNCTION | FUNCTION_8BITS | FUNCTION_1_HIGH | FUNCTION_1_LINE | FUNCTION_nIS);   //function set
 
     // Enter the second page of instructions
-    Drv_Lcd_Interface_SendCmd(LCD_FUNCTION | FUNCTION_8BITS | FUNCTION_1_HIGH | FUNCTION_2_LINE | FUNCTION_IS);   //function set
-    Drv_Lcd_Interface_SendCmd(LCD_OSC_FREQ | BIAS_1_5 | FREQ_CNTRL(4));   //internal osc frequency
-    Drv_Lcd_Interface_SendCmd(LCD_PWR_CONTROL | nICON | BOOSTLCD | CONTRAST(2));   //power control
-    Drv_Lcd_Interface_SendCmd(LCD_FOLLOWER_ON | FOLLOWER_GAIN(5));   //follower control
-    Drv_Lcd_Interface_SendCmd(LCD_CONTRAST(0));   //contrast
+    drv_LcdInterface_SendCmd(LCD_FUNCTION | FUNCTION_8BITS | FUNCTION_1_HIGH | FUNCTION_2_LINE | FUNCTION_IS);   //function set
+    drv_LcdInterface_SendCmd(LCD_OSC_FREQ | BIAS_1_5 | FREQ_CNTRL(4));   //internal osc frequency
+    drv_LcdInterface_SendCmd(LCD_PWR_CONTROL | nICON | BOOSTLCD | CONTRAST(2));   //power control
+    drv_LcdInterface_SendCmd(LCD_FOLLOWER_ON | FOLLOWER_GAIN(5));   //follower control
+    drv_LcdInterface_SendCmd(LCD_CONTRAST(0));   //contrast
     // leave second instruction page
 
-    //Dev_Lcd_WriteCommand(LCD_FUNCTION | FUNCTION_8BITS | FUNCTION_1_HIGH | FUNCTION_2_LINE | FUNCTION_nIS);   //function set
-    Drv_Lcd_Interface_SendCmd(LCD_DISPLAY_ON | CURSOR_OFF | BLINK_OFF);           //display on
-    Drv_Lcd_Interface_SendCmd(LCD_ENTRY_MODE | CURSOR_nSHIFT | DATA_INCREMENT);   //entry mode
-    Drv_Lcd_Interface_SendCmd(LCD_CLEAR);   //clear
+    //drv_Lcd_WriteCommand(LCD_FUNCTION | FUNCTION_8BITS | FUNCTION_1_HIGH | FUNCTION_2_LINE | FUNCTION_nIS);   //function set
+    drv_LcdInterface_SendCmd(LCD_DISPLAY_ON | CURSOR_OFF | BLINK_OFF);           //display on
+    drv_LcdInterface_SendCmd(LCD_ENTRY_MODE | CURSOR_nSHIFT | DATA_INCREMENT);   //entry mode
+    drv_LcdInterface_SendCmd(LCD_CLEAR);   //clear
 
     __delay_ms(150);
 }
 
+/*********************************************************************************
+ * @ingroup lib-layer-lcd-functions-public
+ * @fn void dev_Lcd_Clear(void)
+ * @brief  Clears the LC Display Screen
+ * @param  void
+ * @return void
+ * @details
+ *  This function clears the LCD screen and sets the cursor position at 0,0 
+ *  (left upper corner). Instead of calling this function, clearing the screen
+ *  can also be achieved by sending the character '\f' within a string
+ **********************************************************************************/
 
-//======================================================================================================================
-// @brief clears the lcd screen and sets the cursor position at 0,0 (left upper corner))
-// @note this can also be achieved by sending the character '\f' within a string
-//======================================================================================================================
-void Dev_Lcd_Clear(void)
+void dev_Lcd_Clear(void)
 {
-    Drv_Lcd_Interface_SendCmd(LCD_CLEAR);
+    drv_LcdInterface_SendCmd(LCD_CLEAR);
     __delay_ms(1);
 }
 
+/*********************************************************************************
+ * @ingroup lib-layer-lcd-functions-public
+ * @fn void dev_Lcd_GotoXY(volatile uint8_t x, volatile uint8_t y)
+ * @brief  Sets the cursor position to the given x- and y-coordinates
+ * @param  x: x-coordinate for the new cursor position starting with zero
+ * @param  y: y-coordinate for the new cursor position starting with zero
+ * @return void
+ * @details
+ *  This function sets the cursor position to the given x- and y-coordinates
+ *  starting at (0, 0) in the upper left corner.
+ **********************************************************************************/
 
-//======================================================================================================================
-// @brief   sets the cursor position to the given x- and y-coordinates starting with zero
-// @param   x x-coordinates for the new cursor position starting with zero
-// @param   y y-coordinates for the new cursor position starting with zero
-//======================================================================================================================
-void Dev_Lcd_GotoXY(uint8_t x,uint8_t y)
+void dev_Lcd_GotoXY(volatile uint8_t x, volatile uint8_t y)
 {
-    Drv_Lcd_Interface_SendCmd(LCD_DDRAM_ADDRESS((line_address[y] + x)));
+    drv_LcdInterface_SendCmd(LCD_DDRAM_ADDRESS((line_address[y] + x)));
     pos_x = x;
     pos_y = y;
     change_position = false;
 }
 
+/*********************************************************************************
+ * @ingroup lib-layer-lcd-functions-public
+ * @fn void dev_Lcd_WriteChar(const char ch)
+ * @brief  Writes a character on the LCD screen
+ * @param  character be written to the LCD screen
+ * @return void
+ * @details
+ *  This function writes the single character 'ch' to the currently 
+ *  selected position on LCD screen. The following special characters 
+ *  will result in a specific response of the LCD:
+ * 
+ * - Character '\f' clears the screen and positions the cursor on the upper left corner
+ * - Character '\r' sets the x position of the cursor to 0
+ * - Character '\n' puts the cursor on the next line (without changing the x-position)
+ * 
+ **********************************************************************************/
 
-//======================================================================================================================
-// @brief   writes the character on the lcd screen
-// @param    ch is the charactert be written on the lcd screen
-// @note    '\f' clears the screen and positions the cursor on the upper left corner,
-// @note    '\r' sets the x position of the cursor to 0
-// @note    '\n' poairiona the cursor on the next line (without changing the x-position)
-//======================================================================================================================
-void Dev_Lcd_WriteChar(const char ch)
+void dev_Lcd_WriteChar(const char ch)
 {
     if (change_position)
     {
-        Dev_Lcd_GotoXY(pos_x, pos_y);
+        dev_Lcd_GotoXY(pos_x, pos_y);
         change_position = false;
     }
                 
     switch (ch)
     {
         case '\f':          //sets position to 0,0 after clearing the screen. this is slow (1ms)!
-            Dev_Lcd_Clear();
+            dev_Lcd_Clear();
             pos_x = 0;
             pos_y = 0;
             change_position = false;
@@ -194,7 +237,7 @@ void Dev_Lcd_WriteChar(const char ch)
             break;
         default:
             if (pos_x < LCD_DISPLAYSIZE_X && pos_y < LCD_DISPLAYSIZE_Y)
-                Drv_Lcd_Interface_SendChar(ch);
+                drv_LcdInterface_SendChar(ch);
             if (++pos_x >= LCD_DISPLAYSIZE_X)
             {
                 pos_x = 0;
@@ -205,35 +248,64 @@ void Dev_Lcd_WriteChar(const char ch)
     }
 }
 
+/*********************************************************************************
+ * @ingroup lib-layer-lcd-functions-public
+ * @fn void dev_Lcd_WriteString(const char *str)
+ * @brief  Writes a complete string on the LCD screen
+ * @param  string to be written on the LCD screen
+ * @return void
+ * @details
+ *  This function writes a complete string 'str' to the currently 
+ *  selected position on LCD screen. If the length of the string
+ *  exceeds the available number display digits, the position will
+ *  overrun and start again from position (0, 0).
+ *  
+ *  The following special characters within the string will result in a 
+ *  specific response of the LCD:
+ * 
+ * - Character '\f' clears the screen and positions the cursor on the upper left corner
+ * - Character '\r' sets the x position of the cursor to 0
+ * - Character '\n' puts the cursor on the next line (without changing the x-position)
+ * 
+ **********************************************************************************/
 
-//======================================================================================================================
-// @brief   writes the given string on the lcd screen
-// @param   str is the string to be written on the lcd screen
-// @note    '\f' clears the screen and positions the cursor on the upper left corner,
-// @note    '\r' sets the x position of the cursor to 0
-// @note    '\n' poairiona the cursor on the next line (without changing the x-position)
-//======================================================================================================================
-void Dev_Lcd_WriteString(const char *str)
+void dev_Lcd_WriteString(const char *str)
 {
     while(*str)
     {
-        Dev_Lcd_WriteChar(*str);
+        dev_Lcd_WriteChar(*str);
         str++;
     }
 }
 
-//======================================================================================================================
-// @brief   sets the cursor position to the given x- and y-coordinates and writes the given string on the lcd screen
-// @param   x x-coordinates for the new cursor position starting with zero
-// @param   y y-coordinates for the new cursor position starting with zero
-// @param   str is the string to be written on the lcd screen
-// @note    '\f' clears the screen and positions the cursor on the upper left corner,
-// @note    '\r' sets the x position of the cursor to 0
-// @note    '\n' poairiona the cursor on the next line (without changing the x-position)
-//======================================================================================================================
-void Dev_Lcd_WriteStringXY(uint8_t column_index, uint8_t line_index, const char *str)
+/*********************************************************************************
+ * @ingroup lib-layer-lcd-functions-public
+ * @fn void dev_Lcd_WriteStringXY(uint8_t column_index, uint8_t line_index, const char *str)
+ * @brief  Sets the cursor position to the given x- and y-coordinates and writes the given string on the lcd screen
+ * @param  x: x-coordinates for the new cursor position starting with zero
+ * @param  y: y-coordinates for the new cursor position starting with zero
+ * @param  string to be written on the LCD screen
+ * @return void
+ * @details
+ *  This function positions the cursor at the location defined by parameters
+ *  x and y and writes a complete string 'str' to the newly selected 
+ *  position on LCD screen. If the length of the string exceeds the available 
+ *  number display digits, the position will overrun and start again from position 
+ *  (0, 0) in the upper left corner.
+ *  
+ *  The following special characters within the string will result in a 
+ *  specific response of the LCD:
+ * 
+ * - Character '\f' clears the screen and positions the cursor on the upper left corner
+ * - Character '\r' sets the x position of the cursor to 0
+ * - Character '\n' puts the cursor on the next line (without changing the x-position)
+ * 
+ **********************************************************************************/
+
+void dev_Lcd_WriteStringXY(volatile uint8_t column_index, volatile uint8_t line_index, const char *str)
 {
-    Dev_Lcd_GotoXY(column_index, line_index);
-    Dev_Lcd_WriteString(str);    
+    dev_Lcd_GotoXY(column_index, line_index);
+    dev_Lcd_WriteString(str);    
 }
 
+// end of file

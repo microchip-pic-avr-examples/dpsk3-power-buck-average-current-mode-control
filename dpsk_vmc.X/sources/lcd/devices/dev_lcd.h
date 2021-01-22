@@ -21,56 +21,41 @@
 
 #include "lcd/drivers/drv_lcd_interface.h"
 
-    
+/*********************************************************************************
+ * @ingroup lib-layer-lcd-properties-public
+ * @def TEMPSTR_LCD_SIZE
+ * @brief  Defines the total string length of the LC display
+ * @details
+ *  This defines the total number of characters which can be displayed 
+ *  on the LC display. This number may be subject to change if another
+ *  LC display type is used.
+ **********************************************************************************/
 #define TEMPSTR_LCD_SIZE    40
     
+/*********************************************************************************
+ * @ingroup lib-layer-lcd-properties-public
+ * @def PrintLcd
+ * @brief  Writes a complete line to the LC display
+ * @details
+ *  This macro can be used to write a complete line to the LC display.
+ *  If the length of the string exceeds the available number of characters
+ *  in one line, the position will overflow into the next line.
+ **********************************************************************************/
+
 #define PrintLcd(LINE, ...) \
     do{ \
         char __print_utils_string[TEMPSTR_LCD_SIZE]; \
         sprintf(__print_utils_string, __VA_ARGS__); \
-        Dev_Lcd_WriteStringXY(0, LINE, __print_utils_string); \
+        dev_Lcd_WriteStringXY(0, LINE, __print_utils_string); \
     } while(0)
-    
-//======================================================================================================================
-// @brief initializes the LCD Device, needs to be called once at bootup before that device can be used
-//======================================================================================================================
-extern void Dev_Lcd_Init(void);
 
-//======================================================================================================================
-// @brief   sets the cursor position to the given x- and y-coordinates starting with zero
-// @param   x x-coordinates for the new cursor position starting with zero
-// @param   y y-coordinates for the new cursor position starting with zero
-//======================================================================================================================
-extern void Dev_Lcd_GotoXY(uint8_t x,uint8_t y);
 
-//======================================================================================================================
-// @brief   writes the character on the lcd screen
-// @param    ch is the charactert be written on the lcd screen
-// @note    '\f' clears the screen and positions the cursor on the upper left corner,
-// @note    '\r' sets the x position of the cursor to 0
-// @note    '\n' poairiona the cursor on the next line (without changing the x-position)
-//======================================================================================================================
-extern void Dev_Lcd_WriteChar(const char ch);
 
-//======================================================================================================================
-// @brief   writes the given string on the lcd screen
-// @param   str is the string to be written on the lcd screen
-// @note    '\f' clears the screen and positions the cursor on the upper left corner,
-// @note    '\r' sets the x position of the cursor to 0
-// @note    '\n' poairiona the cursor on the next line (without changing the x-position)
-//======================================================================================================================
-extern void Dev_Lcd_WriteString(const char *str);
-
-//======================================================================================================================
-// @brief   sets the cursor position to the given x- and y-coordinates and writes the given string on the lcd screen
-// @param   x x-coordinates for the new cursor position starting with zero
-// @param   y y-coordinates for the new cursor position starting with zero
-// @param   str is the string to be written on the lcd screen
-// @note    '\f' clears the screen and positions the cursor on the upper left corner,
-// @note    '\r' sets the x position of the cursor to 0
-// @note    '\n' poairiona the cursor on the next line (without changing the x-position)
-//======================================================================================================================
-extern void Dev_Lcd_WriteStringXY(uint8_t column_index, uint8_t line_index, const char *str);
+extern void dev_Lcd_Initialize(void);
+extern void dev_Lcd_GotoXY(volatile uint8_t x, volatile uint8_t y);
+extern void dev_Lcd_WriteChar(const char ch);
+extern void dev_Lcd_WriteString(const char *str);
+extern void dev_Lcd_WriteStringXY(volatile uint8_t column_index, volatile uint8_t line_index, const char *str);
 
 
 #endif	// _Dev_LCD_H_

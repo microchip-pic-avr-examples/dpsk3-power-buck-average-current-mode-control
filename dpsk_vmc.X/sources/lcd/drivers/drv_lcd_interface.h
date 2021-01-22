@@ -20,46 +20,15 @@
 //
 //======================================================================================================================
 
-#ifndef _Dev_LCD_INTERFACE_H_
-#define	_Dev_LCD_INTERFACE_H_
+#ifndef _DRV_LCD_INTERFACE_H_
+#define	_DRV_LCD_INTERFACE_H_
 
 #include <stdint.h>
-//#include <xc.h>
-//#include "delay.h"
+
+extern void drv_LcdInterface_Initialize(void);
+extern void drv_LcdInterface_Reset(void);
+extern void drv_LcdInterface_SendCmd(const uint8_t cmd);
+extern void drv_LcdInterface_SendChar(const char c);
 
 
-//======================================================================================================================
-//	defines to access the pins
-//======================================================================================================================
-/*
-#define LCD_RS_COMMAND     LCD_RS_SetLow
-#define LCD_RS_DATA        LCD_RS_SetHigh
-
-#define LCD_CS_nSELECTED   LCD_CS_SetHigh
-#define LCD_CS_SELECTED    LCD_CS_SetLow
-*/
-
-//======================================================================================================================
-//  @brief  this function initialized the lcd interface driver
-//  @note   use this one time after booting up your system to initialize before calling something else
-//======================================================================================================================
-extern void Drv_Lcd_Interface_Init(void);
-
-//======================================================================================================================
-//  @brief  this function resets the lcd controller
-//  @note   use this one time after booting up your system to reset the lcd controller and get into a defined state
-//======================================================================================================================
-extern void Drv_Lcd_Interface_Reset(void);
-
-//======================================================================================================================
-//  @brief  this functions sends a command to the lcd controller
-//======================================================================================================================
-extern void Drv_Lcd_Interface_SendCmd(const uint8_t cmd);
-
-//======================================================================================================================
-//  @brief this function sends one character to the display controller to be displayed on the ldc screen
-//======================================================================================================================
-extern void Drv_Lcd_Interface_SendChar(const char c);
-
-
-#endif // _Dev_LCD_INTERFACE_H_
+#endif // _DRV_LCD_INTERFACE_H_
