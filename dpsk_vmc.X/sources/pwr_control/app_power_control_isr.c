@@ -23,20 +23,32 @@
  * 
  *********************************************************************************/
 
-void __attribute__((__interrupt__, no_auto_psv, context))_BUCK_VLOOP_Interrupt(void)
+void __attribute__((__interrupt__, auto_psv, context))_BUCK_VLOOP_Interrupt(void)
 {
-DBGPIN2_Set();
-
+    #if (DBGPIN2_ENABLE)
+    DBGPIN2_Set();
+    #endif
+    
+    // Set flag bit indication ADC interrupt activity
     buck.status.bits.adc_active = true;
+    
+    // Call feedback loop
     #if (PLANT_MEASUREMENT == false)
     buck.v_loop.ctrl_Update(buck.v_loop.controller);
     #else
     v_loop_PTermUpdate(&v_loop);
     #endif
-    PG1STATbits.UPDREQ = 1;  // Force PWM timing update
-    _BUCK_VLOOP_ISR_IF = 0;  // Clear the ADCANx interrupt flag 
 
-DBGPIN2_Clear();
+    // Set PWM register update bit
+    PG1STATbits.UPDREQ = 1;  // Force PWM timing update
+    
+    // Clear the interrupt flag bit allowing the next interrupt to trip
+    _BUCK_VLOOP_ISR_IF = 0;
+
+    #if (DBGPIN2_ENABLE)
+    DBGPIN2_Clear();
+    #endif
+
 }
 
 // end of file
