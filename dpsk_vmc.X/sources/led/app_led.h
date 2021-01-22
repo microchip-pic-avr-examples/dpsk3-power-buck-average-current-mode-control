@@ -41,12 +41,22 @@
 #define DBGLED_PERIOD_FAST      2499
 #define DBGLED_PERIOD_DEFAULT   4999
 #define DBGLED_PERIOD_STANDBY   9999
-    
-// CUSTOM DATA TYPE DECLARATIONS
-typedef struct {
+
+/***********************************************************************************
+ * @ingroup app-layer-debug-led-properties-public
+ * @struct DEBUGGING_LED_s
+ * @brief Debugging LED settings data object
+ * @details
+ *  This data structure holds all adjustable parameters used by the debugging 
+ *  LED driver required to tailor the driver functions to specific application
+ *  requirements. 
+ **********************************************************************************/
+
+typedef struct DEBUGGING_LED_s{
     volatile uint16_t period;
 }DEBUGGING_LED_t;    
-    
+
+
 // PUBLIC VARIABLE DECLARATION
 extern volatile DEBUGGING_LED_t debug_led;
 

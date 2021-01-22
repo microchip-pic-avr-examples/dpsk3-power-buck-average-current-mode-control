@@ -16,14 +16,14 @@ volatile uint16_t tgl_cnt = 0;  // local counter of LED toggle loops
 volatile DEBUGGING_LED_t debug_led;
 
 /*********************************************************************************
- * @ingroup GROUP_NAME
+ * @ingroup app-layer-debug-led-functions-public
  * @fn volatile uint16_t appLED_Initialize(void)
  * @brief  Initializes the LED driving GPIO
  * @param  void
  * @return unsigned int (0=failure, 1=success)
  * @details
  *  This routine configures the driving GPIO as output and sets the initial
- *  toggle interval
+ *  toggle interval of the debugging LED.
  **********************************************************************************/
 
 volatile uint16_t appLED_Initialize(void) 
@@ -38,6 +38,17 @@ volatile uint16_t appLED_Initialize(void)
     return(retval);
 }
 
+/*********************************************************************************
+ * @ingroup app-layer-debug-led-functions-public
+ * @fn volatile uint16_t appLED_Execute(void)
+ * @brief  Executes the debugging LED driver
+ * @param  void
+ * @return unsigned int (0=failure, 1=success)
+ * @details
+ *  This routine executes the debugging LED driver controlling the toggling 
+ *  interval of the debugging LED.
+ **********************************************************************************/
+
 volatile uint16_t appLED_Execute(void) 
 {
     volatile uint16_t retval = 1;
@@ -51,6 +62,17 @@ volatile uint16_t appLED_Execute(void)
     return(retval);
 }
 
+/*********************************************************************************
+ * @ingroup app-layer-debug-led-functions-public
+ * @fn volatile uint16_t appLED_Dispose(void)
+ * @brief  Frees the resources of the debugging LED driver
+ * @param  void
+ * @return unsigned int (0=failure, 1=success)
+ * @details
+ *  This routine is used to end the debugging LED driver task and frees
+ *  its resources.
+ **********************************************************************************/
+
 volatile uint16_t appLED_Dispose(void) 
 {
     volatile uint16_t retval = 1;
@@ -60,3 +82,5 @@ volatile uint16_t appLED_Dispose(void)
 
     return(retval);
 }
+
+// end of file
