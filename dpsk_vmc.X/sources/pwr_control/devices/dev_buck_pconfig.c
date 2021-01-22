@@ -469,7 +469,7 @@ volatile uint16_t buckADC_ModuleInitialize(void)
     
     // ADCON4H: ADC CONTROL REGISTER 4 HIGH
     ADCON4Hbits.C0CHS = 0b00; // Dedicated ADC Core 0 Input Channel Selection: AN0
-    ADCON4Hbits.C1CHS = 0b01; // Dedicated ADC Core 1 Input Channel Selection: ANA1
+    ADCON4Hbits.C1CHS = 0b00; // Dedicated ADC Core 1 Input Channel Selection: AN1
 
     // ADCON5L: ADC CONTROL REGISTER 5 LOW
     // ADCON5Lbits.SHRRDY: Shared ADC Core Ready Flag (read only)
