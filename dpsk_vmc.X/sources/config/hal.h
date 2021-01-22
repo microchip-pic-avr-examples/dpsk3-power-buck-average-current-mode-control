@@ -37,6 +37,10 @@
 #include <stdbool.h> // include standard boolean data types
 #include <stddef.h> // include standard definition data types
 
+// MICROCONTROLLER ABSTRACTION LAYER HEADER FILES
+#include "xc16_pral.h"
+
+// HARDWARE ABSTRACTION LAYER HEADER FILES
 #if defined (__DPSK3_R30__)
   #include "config/hal/dpsk3_hwdescr.h" // include hardware description declarations of DPSK3 (DM330017-3)
   #include "config/hal/dpsk3_devcfg.h" // include MCU initialization header of DPSK3 (DM330017-3)
