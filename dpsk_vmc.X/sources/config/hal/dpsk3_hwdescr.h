@@ -851,9 +851,54 @@
 
 #endif
 
-/** @} */ // end of group
+/** @} */ // end of group control-interrupt-vector-declarations
 
+/**************************************************************************************************
+ * @ingroup lcd-interface-declarations
+ * @{
+ * @brief LC Display Interface Declarations
+ * @details
+ * The LCD device driver is controlling the on-board LC display via a SPI interface. The required
+ * SPI interface device pin assignments are declared here.
+ * 
+ * *************************************************************************************************/
 
+#define LCD_SCL_SetHigh()           _LATC5 = 1
+#define LCD_SCL_SetLow()            _LATC5 = 0
+#define LCD_SCL_Toggle()            _LATC5 ^= 1
+#define LCD_SCL_GetValue()          _RC5
+#define LCD_SCL_SetDigitalInput()   _TRISC5 = 1
+#define LCD_SCL_SetDigitalOutput()  _TRISC5 = 0
+
+#define LCD_SDI_SetHigh()           _LATC4 = 1
+#define LCD_SDI_SetLow()            _LATC4 = 0
+#define LCD_SDI_Toggle()            _LATC4 ^= 1
+#define LCD_SDI_GetValue()          _RC4
+#define LCD_SDI_SetDigitalInput()   _TRISC4 = 1
+#define LCD_SDI_SetDigitalOutput()  _TRISC4 = 0
+
+#define LCD_CS_SetHigh()            _LATD8 = 1
+#define LCD_CS_SetLow()             _LATD8 = 0
+#define LCD_CS_Toggle()             _LATD8 ^= 1
+#define LCD_CS_GetValue()           _RD8
+#define LCD_CS_SetDigitalInput()    _TRISD8 = 1
+#define LCD_CS_SetDigitalOutput()   _TRISD8 = 0
+
+#define LCD_RST_SetHigh()           _LATC8 = 1
+#define LCD_RST_SetLow()            _LATC8 = 0
+#define LCD_RST_Toggle()            _LATC8 ^= 1
+#define LCD_RST_GetValue()          _RC8
+#define LCD_RST_SetDigitalInput()   _TRISC8 = 1
+#define LCD_RST_SetDigitalOutput()  _TRISC8 = 0
+
+#define LCD_RS_SetHigh()            _LATC9 = 1
+#define LCD_RS_SetLow()             _LATC9 = 0
+#define LCD_RS_Toggle()             _LATC9 ^= 1
+#define LCD_RS_GetValue()           _RC9
+#define LCD_RS_SetDigitalInput()    _TRISC9 = 1
+#define LCD_RS_SetDigitalOutput()   _TRISC9 = 0
+
+/** @} */ // end of group lcd-interface-declarations
 
 
 #endif	/* DPSK3_HARDWARE_DESCRIPTOR_H */
