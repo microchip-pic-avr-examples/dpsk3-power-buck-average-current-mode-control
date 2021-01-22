@@ -256,6 +256,15 @@
 @brief 
 */
 
+//LC Display Interface Declarations
+/**
+@defgroup lcd-interface-declarations LC Display Interface Declarations
+@ingroup abstraction-layer
+@brief LC display SPI interface GPIO declarations
+@details
+*/
+
+
 // Special Firmware Options
 /**
 @defgroup special-options Special Firmware Options

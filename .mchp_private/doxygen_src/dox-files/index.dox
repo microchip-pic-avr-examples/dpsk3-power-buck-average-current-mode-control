@@ -136,16 +136,6 @@ process of the firmware.
  being called on the defined priority level (default = 2). The interrupt service routine utiilzes an alternate
  working register set for optimum coontext management. By default, alternate working register set #1 is reserved
  for high priority tasks.
-
-@defgroup task-layer Task Layer
-@ingroup firmware-flow
-@brief Task Layer
-@details
- The task layer covers all user tasks executed by the task scheduler. Each task is an independent entity 
- called on its respective priority level defined by the user. Tasks are proprietary user code modules 
- representing specific funcitons of the application or end-product. 
-
-
 */
 
 //Device Start-Up Sub-Index
@@ -290,6 +280,18 @@ process of the firmware.
  associated microcontroller peripheral instances and features.
 */
 
+// Application Layer Sub-Index 
+/**
+@defgroup task-layer Application Layer
+@brief Task Layer
+@details
+ The task layer covers all user tasks executed by the task scheduler. Each task is an independent entity 
+ called on its respective priority level defined by the user. Tasks are proprietary user code modules 
+ representing specific funcitons of the application or end-product. 
+
+
+*/
+
 
 // Library Layer
 /**
@@ -303,4 +305,17 @@ process of the firmware.
 
   Please refer to the specific device driver libraries for more information on public functions and
   properties provided to tailor and apply the supported features.
+
+@defgroup lib-driver-layer Library Driver Layer 
+@brief Generic Library Driver Layer
+@details
+  Library drivers are generic function libraries providing specific sub-functions for library modules. 
+  Each library driver is widely self-contained and includes functional software routines and resource 
+  management functions. Because of their generic nature, each library driver requires to be configured 
+  by proprietary user code to tailor their function to a specific application. The settings required to 
+  set up the library driver data objects are routed through the overlaying device driver, which also provides
+  the API and public data objects holding the library driver settings.
+
+  Please refer to the specific library driver for more information.
+
 */ 
