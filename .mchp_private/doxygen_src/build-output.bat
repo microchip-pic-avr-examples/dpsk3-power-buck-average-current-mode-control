@@ -76,6 +76,8 @@ doxygen doxyfile
 echo. 
 echo Copying Image Folder:
 Xcopy /e /i /c /r /y ..\..\images ..\..\docs\images
+if exist ".\markdown-files\images" Xcopy /e /i /c /r /y .\markdown-files\images ..\..\docs\images
+if exist ".\images" Xcopy /e /i /c /r /y .\images ..\..\docs\images
 echo. 
 echo ##############  D O N E  ##############
 echo. 
