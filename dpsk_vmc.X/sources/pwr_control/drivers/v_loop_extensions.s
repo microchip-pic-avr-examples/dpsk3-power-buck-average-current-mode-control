@@ -72,6 +72,29 @@ _my_function:                               ; local function label (placeholder)
     nop
     nop
     
+    mov #0x88B8, w4
+    
+    nop                                     ; place your code here
+    nop
+    nop
+
+    
+    lsr w4, w2
+    
+    ; Check for upper limit violation
+    mov [w0 + #MaxOutput], w6               ; load upper limit value
+    lsr w6, w3               ; load upper limit value, shifted one bit to the right
+    cpslt w2, w3                            ; compare values and skip next instruction if control output is within operating range (control output < upper limit)
+    mov w6, w4                              ; override controller output
+
+    ; Check for lower limit violation
+    mov [w0 + #MinOutput], w6               ; load lower limit value
+    lsr w6, w3               ; load upper limit value, shifted one bit to the right
+    cpsgt w2, w3                            ; compare values and skip next instruction if control output is within operating range (control output > lower limit)
+    mov w6, w4                              ; override controller output
+
+    
+    
 ;------------------------------------------------------------------------------
 ; End of routine
     return                                  ; end of function; return to caller
