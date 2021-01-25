@@ -5,6 +5,7 @@
  * Created on November 12, 2020, 10:33 AM
  */
 
+#include "apps.h"
 #include "hal.h"
 #include "system.h"
 

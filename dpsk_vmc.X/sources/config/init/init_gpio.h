@@ -36,8 +36,6 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#include "main.h"
-
 extern volatile uint16_t sysGpio_Initialize(void);
 
 #endif	/* SYSTEM_INITIALIZE_GPIO_H */
