@@ -48,11 +48,12 @@
 		 "Power Management and Conversion"
        ],
        "keywords": [
-         "dsPIC",
-         "Closed Loop Control",
+		 "dsPIC",
+         "DSP & Signal Conditioning",
          "DSC",
+		 "Power Conversion & Charging"
          "Digital Power Conversion",
-         "Digital Signal Processing/ Filters",
+         "Digital Filters",
          "Power Conversion",
          "Power Supply",
 		 "SMPS"
