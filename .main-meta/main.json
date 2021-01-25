@@ -44,16 +44,18 @@
          "LCD"
       ],
       "subcategories": [
-         "Power"
+         "Power",
+		 "Power Management and Conversion"
        ],
        "keywords": [
          "dsPIC",
          "Closed Loop Control",
          "DSC",
-         "Digital Power",
+         "Digital Power Conversion",
          "Digital Signal Processing/ Filters",
          "Power Conversion",
-         "Power Supply"
+         "Power Supply",
+		 "SMPS"
        ]
      }
 }
