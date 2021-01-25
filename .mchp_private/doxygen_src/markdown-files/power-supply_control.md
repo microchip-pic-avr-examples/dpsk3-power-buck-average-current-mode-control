@@ -5,6 +5,7 @@
 <div style="text-align:left">
     <img src="images/startbanner.png" alt="Firmware Quick-Start Guide" height="70">
 </div>
+<br>
 
 
 ### DPSK3 Buck Converter voltage Mode Control Loop Implementation
@@ -15,27 +16,68 @@ This firmware demonstrates the implementation of a simple, single loop voltage m
 
 The following image shows the block diagram of the buck converter voltage mode controller, where the ADC input is used to sample the most recent output voltage feedback signal. Once converted, the value is then compared against the internal reference and the inverse of the deviation is pushed through the discrete compensation filter. 
 
-In the Anti-Windup block, the output of the compensation filter is checked against user-specified minimum thresholds. Should any of these thresholds be exceeded, the controller output will be overwritten with the respective threshold value before being written to the PWM duty cycle register of the PWM logic.
+In the Anti-Windup block, the output of the compensation filter is checked against user-specified minimum and maximum thresholds. Should any of these thresholds be exceeded, the controller output will be overwritten with the respective threshold value before being written directly to the PWM duty cycle register of the PWM logic.
 
-In this example the duty cycle of the PWM output signal will be updated immediately when a new value is written to the PWM logic to ensure a minimum response time of the feedback loop.
-
-<div style="text-align:left">
+<div style="text-align:center">
     <img src="images/voltage-mode-control.png" alt="Firmware Quick-Start Guide" width="800">
+    <br><i>Figure 1: Control Loop Block Diagram</i><br>
 </div>
+<br>
+
+#### Control Loop Timing
+
+The single voltage loop controller is triggered by the PWM counter at the same time as the ADC is triggered. The control loop is executing the overhead code of calculating parts of the filter term until the most recent ADC sample is available and being processed in the later part of the filter term computation. This approach helps to shorten the overall response time of the controller measured between ADC trigger and write back of the next controller result to the PWM module. The the new duty cycle value will be updated immediately when a new value is written to the PWM logic. By placing the ADC trigger point at 50% of the off time, the control response is  less than half a switching period response delay resulting in minimized phase erosion. 
+
+<div style="text-align:center">
+    <img src="images/control_timing.png" alt="Firmware Quick-Start Guide" width="800">
+    <br><i>Figure 2: Control Loop Timing</i><br>
+</div>
+<br>
+
+#### Control Loop Flow Chart
+
+The following graph shows a typical flow chart of a discrete software feedback loop called at the desired control frequency. It covers the loop path from ADC input to PWM output in the block diagram shown above (see *Figure 2*) while supporting additional features like an *Enable/Disable Bypass Switch* or advanced features like *Adaptive Gain Control (AGC)*.
+
+- <span style="color:green"> <b>[green]</b></span> boxes represent default building blocks
+- <span style="color:grey"> <b>[grey]</b> </span> boxes represent unused optional features 
+- <span style="color:blue"> <b>[blue]</b> </span> boxes represent active optional features 
+
+<div style="text-align:center">
+    <img src="images/npnz16b-flowchart.png" alt="Firmware Quick-Start Guide" width="460">
+    <br><i>Figure 3: Control Loop Flow Chart</i><br>
+</div>
+<br>
+<!---
+<br>
+The compensation filter is based on an Infinite-Impulse-Response (IIR) filter computation, which breaks into two elements:
+-->
 
 
+#### Control Loop Firmware Implementation
 
-#### Control Loop Implementation
+The diagram below shows a typical implementation of the power converter state machine and the high-speed control loop in a task scheduler based firmware environment.
 
-The control loop is called in an independent high priority interrupt by the PWM module synchronized to the most recent ADC trigger point.
+- <span style="color:darkorange"> <b>Real Time Control Loop and Low Level Drivers</b> </span>
+The control loop is called in an independent high priority Interrupt Service Routine (ISR) by the PWM module simultaneously with triggering the ADC input. Thus, the control loop is tightly coupled to the PWM switching signal and synchronized to the most recent ADC conversion process, allowing a highly deterministic arrangement of code execution, peripheral module activity and external analog circuit operation. The interrupt priority needs to be high enough to override all other software tasks of the firmware to ensure jitter-free execution of the control loop. 
+<br>
+- <span style="color:green"> <b>Topology-Specific State Machine Library</b></span>
+Each converter topology requires a specifically tailored configuration of related chip resources as well as start-up, control and monitoring procedures. *Topology State Machine Libraries* support a wide range of circuit configurations, control modes and functional features. Build-in peripheral configuration drivers are used to ease the configuration of required chip resources, such as number of PWM channels and their signal configuration, number of Analog-to-Digital (ADC) inputs, analog comparators, Digital-to-Analog Converter (DAC) channels, etc. 
+All user configurations of a topology specific power converter are encapsulated in a comprehensive data object. This approach allows the definition of multiple power supplies of the same type being included, monitored and run independently from each other. Each of these power converter objects also include the declaration of the high-speed control loop object described above, enabling it to control peripherals and control loop code to be synchronized to time-critical states.
+<br>
+- <span style="color:darkblue"> <b>Application Layer of the Power Supply Control Task</b> </span>
+The application layer of this task is the proprietary firmware component covering the application-specific configuration of library data objects and high-speed control loops. It also allows to add and tailor functions, which are not covered by the default features of library modules.
+<br>
+- <span style="color:grey"> <b>Scheduler Level</b> </span>
+The scheduler level organizes all tasks of the firmware. Besides the power control and related fault handler task, this DPSK3 code example includes the on-board LC display data output, the on-board push-button control of the LC display screens and the on-board debugging LED, which are considered  less time critical, low-priority tasks. The main task scheduler in this firmware example therefore supports two priority levels, one for power control and fault handling, executed at a rate of 10 kHz (= 100 us interval) and the low priority tasks, executed at rates between 0.5 ms and 250 ms. 
+<br>
 
-
-<div style="text-align:left">
+<div style="text-align:center">
     <img src="images/control-flow-chart.png" alt="Firmware Quick-Start Guide" width="960">
+    <br><i>Figure 4: Control Loop Firmware Implementation</i><br>
 </div>
 
 
-
+More detailed information on the library implementation, such as task and library APIs, can be found in the chapter *Software Overview* on the left.
 
 
 _________________________________________________
