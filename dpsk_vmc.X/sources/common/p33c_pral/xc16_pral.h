@@ -49,6 +49,7 @@
 
 #if defined (__P33SMPS_CK__) || defined (__P33SMPS_CH__)
 
+#include "p33c_adc.h"  ///< include Capture/Compare instance SFR abstraction driver file
 #include "p33c_ccp.h"  ///< include Capture/Compare instance SFR abstraction driver file
 #include "p33c_dac.h"  ///< include Digital-to-Analog Converter module & instance SFR abstraction driver file
 #include "p33c_dsp.h"  ///< include Digital Signal Processor configuration SFR abstraction driver file
