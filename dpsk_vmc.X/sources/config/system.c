@@ -45,25 +45,29 @@ volatile uint16_t SYSTEM_Initialize(void)
  * @return unsigned integer (0=failure, 1=success)
  * 
  * @details
- * The EPC9143 16th brick power module reference design uses further on-chip 
- * resources to provide a programmable/tunable reference voltage to external 
- * current sense shunt amplifier devices. This reference voltage is provided
- * by one of the free on-chip Digital-To-Analog converter (DAC) instances. 
+ * The Digital Power Starter Kit 3 supports a Test Point allowing to observe
+ * the DAC output of the dsPIC33C device. Using this feature requires the 
+ * configuration of further on-chip resources. This configuration is static
+ * and not related to any other task or function of the application and therefore
+ * needs to be added and placed manually. 
+ * For this kind of Special Features, The startup procedure offers the following 
+ * default function call allowing to place proprietary user code for individual
+ * device configurations beyond the default setup. 
  **********************************************************************************/
 volatile uint16_t sysUserPeriperhals_Initialize(void) {
 
     volatile uint16_t retval=1;
     
     // Initialize op-amp
-//    retval &= sysOpAmp_Initialize(ISENSE_REF_BUFFER_OPA_INSTANCE, true); // Initialize op-amp #2 used to drive the reference voltage for current sense amplifiers
-//    
-//    // Initialize DAC
-//    retval &= sysDacModule_Initialize();  // Initialize DAC module
-//    retval &= sysDacOutput_Initialize(ISENSE_REF_DAC_INSTANCE); // Initialize DAC #1 used to generate the reference voltage for current sense amplifiers
-//    retval &= sysDacOutput_Enable(ISENSE_REF_DAC_INSTANCE); // Enable DAC providing reference to current sense amplifiers
-//
-//    // Enable op-amp
-//    retval &= sysOpAmp_ModuleEnable(); // Enable the operational amplifier module
+    retval &= sysOpAmp_Initialize(ISENSE_REF_BUFFER_OPA_INSTANCE, true); // Initialize op-amp #2 used to drive the reference voltage for current sense amplifiers
+    
+    // Initialize DAC
+    retval &= sysDacModule_Initialize();  // Initialize DAC module
+    retval &= sysDacOutput_Initialize(ISENSE_REF_DAC_INSTANCE); // Initialize DAC #1 used to generate the reference voltage for current sense amplifiers
+    retval &= sysDacOutput_Enable(ISENSE_REF_DAC_INSTANCE); // Enable DAC providing reference to current sense amplifiers
+
+    // Enable op-amp
+    retval &= sysOpAmp_ModuleEnable(); // Enable the operational amplifier module
     
     // Initialize debugging Pins
     #ifdef DBGPIN1_PIN
