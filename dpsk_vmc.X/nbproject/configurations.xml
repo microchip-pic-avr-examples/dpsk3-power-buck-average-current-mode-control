@@ -89,6 +89,8 @@
         <itemPath>sources/common/p33c_pral/p33c_gpio.c</itemPath>
         <itemPath>sources/common/p33c_pral/p33c_dsp.c</itemPath>
         <itemPath>sources/common/p33c_pral/p33c_osc.c</itemPath>
+        <itemPath>sources/common/p33c_pral/p33c_dac.c</itemPath>
+        <itemPath>sources/common/p33c_pral/p33c_opa.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="init" projectFiles="true">
@@ -96,6 +98,8 @@
           <itemPath>sources/config/init/init_gpio.c</itemPath>
           <itemPath>sources/config/init/init_timer1.c</itemPath>
           <itemPath>sources/config/init/init_dsp.c</itemPath>
+          <itemPath>sources/config/init/init_opa.c</itemPath>
+          <itemPath>sources/config/init/init_dac.c</itemPath>
         </logicalFolder>
         <itemPath>sources/config/config_bits.c</itemPath>
         <itemPath>sources/config/system.c</itemPath>

@@ -75,7 +75,7 @@ int main(void) {
 
     volatile uint16_t retval = 1;
     volatile uint16_t timeout = 0;
-
+    
 // Initialize basic system configuration
     retval &= SYSTEM_Initialize();
     
@@ -93,6 +93,7 @@ int main(void) {
     if (!retval)
         CPU_RESET();        // reset the CPU and try again
 
+
     // Main program execution
     while (run_main) {
 
@@ -105,7 +106,7 @@ int main(void) {
         // Execute non-time critical, low-priority tasks
             
         retval &= sysLowPriorityTasks_Execute();
-            
+        
         // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     }
