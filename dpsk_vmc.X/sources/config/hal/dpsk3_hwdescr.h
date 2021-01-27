@@ -71,6 +71,8 @@
 #define DBGPIN1_ENABLE      true ///< Enables debug pin indicating control loop execution timing
 #define DBGPIN2_ENABLE      true ///< Enables debug pin indicating control loop execution timing
 
+#define DBGDAC_ENABLE       true ///< Enables debug DAC output pin reproduing control loop output as analog signal
+
 /** @} */ // end of group special-options
 
 /**************************************************************************************************
