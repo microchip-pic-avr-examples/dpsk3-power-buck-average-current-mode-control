@@ -37,8 +37,7 @@
     #define __PSDCLD_VERSION    912
 #endif
 
-/*@@NPNZ_STATUS_t data object
- * *************************************************************************************************
+/***************************************************************************************************
  * Summary:
  * Common Controller Status and Control Flag Bits
  *
@@ -71,76 +70,159 @@
 #define NPNZ16_CONTROL_ENABLE_OFF       0b0000000000000000
 #define NPNZ16_CONTROL_ENABLE_ON        0b1000000000000000
 
-/* Status flags (bit-field) */
-typedef enum {
-    NPNZ_SAT_CLEAR   = 0b0,                       // No saturation condition detected
-    NPNZ_SAT_ACTIVE = 0b1,                        // Saturation limit violation detected
-}NPNZ_CONTROL_STATUS_SATURATION_e;                // NPNZ output saturation status bits
-extern volatile NPNZ_CONTROL_STATUS_SATURATION_e npnzEnumControlStatusSaturation;
+/***************************************************************************************************
+ * @enum    NPNZ_CONTROL_STATUS_SATURATION_e
+ * @brief   Enumeration of control loop saturation status bits
+ **************************************************************************************************/
+enum NPNZ_CONTROL_STATUS_SATURATION_e {
+    NPNZ_SAT_CLEAR   = 0b0,                       ///< No saturation condition detected
+    NPNZ_SAT_ACTIVE = 0b1,                        ///< Saturation limit violation detected
+};
 
-/* Control flags (bit-field) */
-typedef enum {
-    NPNZ_AGC_DISABLED   = 0b0,                    // Adaptive Gain Modulation is disabled
-    NPNZ_AGC_ENABLED = 0b1                        // Adaptive Gain Modulation is enabled
-}NPNZ_CONTROL_AGC_ENABLE_e;                       // Adaptive Gain Modulation control bits
-extern volatile NPNZ_CONTROL_AGC_ENABLE_e npnzEnumControlAgcEnable;
+typedef enum NPNZ_CONTROL_STATUS_SATURATION_e NPNZ_CONTROL_STATUS_SATURATION_t; ///< NPNZ output saturation status bits
+extern volatile enum NPNZ_CONTROL_STATUS_SATURATION_e npnzEnumControlStatusSaturation;
 
-typedef enum {
-    NPNZ_SOURCE_DEFAULT = 0b0,                    // Controller source ports are not swapped, primary source is active input
-    NPNZ_SOURCE_SWAPED = 0b1                      // Controller source ports are swapped, alternate source is active input
-}NPNZ_CONTROL_SOURCE_SWAP_e;                      // NPNZ Source Port Swap Control bits
-extern volatile NPNZ_CONTROL_SOURCE_SWAP_e npnzEnumControlSourceSwap;
+/***************************************************************************************************
+ * @enum    NPNZ_CONTROL_AGC_ENABLE_e
+ * @brief   Enumeration of Adaptive Gain Modulation enable/disable control bits
+ **************************************************************************************************/
+enum NPNZ_CONTROL_AGC_ENABLE_e {
+    NPNZ_AGC_DISABLED   = 0b0,                    ///< Adaptive Gain Modulation is disabled
+    NPNZ_AGC_ENABLED = 0b1                        ///< Adaptive Gain Modulation is enabled
+};
 
-typedef enum {
-    NPNZ_TARGET_DEFAULT = 0b0,                    // Controller target ports are not swapped, primary source is active output
-    NPNZ_TARGET_SWAPED = 0b1                      // Controller target ports are swapped, alternate target is active output
-}NPNZ_CONTROL_TARGET_SWAP_e;                      // NPNZ Target Port Swap Control bits
-extern volatile NPNZ_CONTROL_TARGET_SWAP_e npnzEnumControlTargetSwap;
+typedef enum NPNZ_CONTROL_AGC_ENABLE_e NPNZ_CONTROL_AGC_ENABLE_t; ///< Adaptive Gain Modulation control bits
+extern volatile enum NPNZ_CONTROL_AGC_ENABLE_e npnzEnumControlAgcEnable;
 
-typedef enum {
-    NPNZ_INPUT_DEFAULT = 0b0,                     // Controller error value is not inverted
-    NPNZ_INPUT_INVERTED = 0b1                     // Controller error value is inverted
-}NPNZ_CONTROL_INPUT_INV_e;                        // NPNZ Error Value Inversion Control bit
-extern volatile NPNZ_CONTROL_INPUT_INV_e npnzEnumControlInputInversion;
+/***************************************************************************************************
+ * @enum    NPNZ_CONTROL_SOURCE_SWAP_e
+ * @brief   Enumeration of control input port swap control bits
+ **************************************************************************************************/
+enum NPNZ_CONTROL_SOURCE_SWAP_e {
+    NPNZ_SOURCE_DEFAULT = 0b0,                    ///< Controller source ports are not swapped, primary source is active input
+    NPNZ_SOURCE_SWAPED = 0b1                      ///< Controller source ports are swapped, alternate source is active input
+};
 
-typedef enum {
-    NPNZ_DISABLED = 0b0,                          // Controller error value is not inverted
-    NPNZ_ENABLED = 0b1                            // Controller error value is inverted
-}NPNZ_CONTROL_ENABLE_e;                           // NPNZ Controller Enable Control bit
-extern volatile NPNZ_CONTROL_ENABLE_e npnzEnumControlEnable;
+typedef enum NPNZ_CONTROL_SOURCE_SWAP_e NPNZ_CONTROL_SOURCE_SWAP_t; ///< NPNZ Source Port Swap Control bits
+extern volatile enum NPNZ_CONTROL_SOURCE_SWAP_e npnzEnumControlSourceSwap;
 
-/* Controller status data structure */
-typedef struct NPNZ_STATUS_s {
+/***************************************************************************************************
+ * @enum    NPNZ_CONTROL_TARGET_SWAP_e
+ * @brief   Enumeration of control output port swap control bits
+ **************************************************************************************************/
+enum NPNZ_CONTROL_TARGET_SWAP_e{
+    NPNZ_TARGET_DEFAULT = 0b0,                    ///< Controller target ports are not swapped, primary source is active output
+    NPNZ_TARGET_SWAPED = 0b1                      ///< Controller target ports are swapped, alternate target is active output
+};
+
+typedef enum NPNZ_CONTROL_TARGET_SWAP_e NPNZ_CONTROL_TARGET_SWAP_t; ///< NPNZ Target Port Swap Control bits
+extern volatile enum NPNZ_CONTROL_TARGET_SWAP_e npnzEnumControlTargetSwap;
+
+/***************************************************************************************************
+ * @enum    NPNZ_CONTROL_INPUT_INV_e
+ * @brief   Enumeration of input value inversion control bits
+ **************************************************************************************************/
+enum NPNZ_CONTROL_INPUT_INV_e {
+    NPNZ_INPUT_DEFAULT = 0b0,                     ///< Controller error value is not inverted
+    NPNZ_INPUT_INVERTED = 0b1                     ///< Controller error value is inverted
+};
+
+typedef enum NPNZ_CONTROL_INPUT_INV_e NPNZ_CONTROL_INPUT_INV_t; ///< NPNZ Error Value Inversion Control bit
+extern volatile enum NPNZ_CONTROL_INPUT_INV_e npnzEnumControlInputInversion;
+
+/***************************************************************************************************
+ * @enum    NPNZ_CONTROL_ENABLE_e
+ * @brief   Enumeration of control loop enable/disable control bits
+ **************************************************************************************************/
+enum NPNZ_CONTROL_ENABLE_e {
+    NPNZ_DISABLED = 0b0,                          ///< Controller error value is not inverted
+    NPNZ_ENABLED = 0b1                            ///< Controller error value is inverted
+};
+
+typedef enum NPNZ_CONTROL_ENABLE_e NPNZ_CONTROL_ENABLE_t;   ///< NPNZ Controller Enable Control bit
+extern volatile enum NPNZ_CONTROL_ENABLE_e npnzEnumControlEnable;
+
+/***************************************************************************************************
+ * @struct  NPNZ_STATUS_s
+ * @brief   NPNZ16b controller object status and control word
+ * @extends NPNZ16b_s
+ * 
+ * @details
+ * The NPNZ16b_s status word is providing status flag bits for monitoring and controlling the 
+ * NPNZ16b control library code execution from outside the library module.
+ * 
+ * 1) Status Byte
+ * The low byte of the NPNZ16b_s status word is used for READ ONLY status flags, set and cleared 
+ * automatically by the control loop library routine.
+ * 
+ * 2) Control Byte
+ * The high byte of the status word is used for control flags, through which users can control
+ * the control loop execution. This includes enabling/disabling the control loop execution, 
+ * switch between different input and output sources, invert input values or enable/disable 
+ * advanced functions. 
+ **************************************************************************************************/
+
+struct NPNZ_STATUS_s {
     union {
     struct {
-        volatile bool lower_saturation_event : 1; // Bit 0: control loop is clamped at minimum output level
-        volatile bool upper_saturation_event : 1; // Bit 1: control loop is clamped at maximum output level
-        volatile unsigned : 1;                    // Bit 2: reserved
-        volatile unsigned : 1;                    // Bit 3: reserved
-        volatile unsigned : 1;                    // Bit 4: reserved
-        volatile unsigned : 1;                    // Bit 5: reserved
-        volatile unsigned : 1;                    // Bit 6: reserved
-        volatile unsigned : 1;                    // Bit 7: reserved
-        volatile unsigned : 1;                    // Bit 8: reserved
-        volatile unsigned : 1;                    // Bit 9: reserved
-        volatile unsigned : 1;                    // Bit 11: reserved
-        volatile bool agc_enabled: 1;             // Bit 11: when set, Adaptive Gain Control Modulation is enabled
-        volatile bool swap_target: 1;             // Bit 12: when set, AltTarget is used as data output of controller
-        volatile bool swap_source: 1;             // Bit 13: when set, AltSource is used as data input to controller
-        volatile bool invert_input: 1;            // Bit 14: when set, most recent error input value to controller is inverted
-        volatile bool enabled : 1;                // Bit 15: enables/disables control loop execution
-    } __attribute__((packed))bits;                // Controller status bit-field for direct bit access
-    volatile uint16_t value;                      // Controller status full register access
-    };
-} __attribute__((packed)) NPNZ_STATUS_t;          // Controller status word data structure allowing bit-wise access to status and control bits
+    volatile bool lower_saturation_event : 1; ///< Bit 0: control loop is clamped at minimum output level
+    volatile bool upper_saturation_event : 1; ///< Bit 1: control loop is clamped at maximum output level
+    volatile unsigned : 1;                    ///< Bit 2: reserved
+    volatile unsigned : 1;                    ///< Bit 3: reserved
+    volatile unsigned : 1;                    ///< Bit 4: reserved
+    volatile unsigned : 1;                    ///< Bit 5: reserved
+    volatile unsigned : 1;                    ///< Bit 6: reserved
+    volatile unsigned : 1;                    ///< Bit 7: reserved
 
-/*@@NPNZ_PORTS_t data object
- * *************************************************************************************************
- * Summary:
- * Filter Coefficient Arrays, Number Format Handling and Input/Output History Parameters
- *
- * Description:
- * The NPNZ_PORTS_t data object holds a list of nested NPNZ_PORT_t data objects, each
+    volatile unsigned : 1;                    ///< Bit 8: reserved
+    volatile unsigned : 1;                    ///< Bit 9: reserved
+    volatile unsigned : 1;                    ///< Bit 11: reserved
+    volatile bool agc_enabled: 1;             ///< Bit 11: when set, Adaptive Gain Control Modulation is enabled
+    volatile bool swap_target: 1;             ///< Bit 12: when set, AltTarget is used as data output of controller
+    volatile bool swap_source: 1;             ///< Bit 13: when set, AltSource is used as data input to controller
+    volatile bool invert_input: 1;            ///< Bit 14: when set, most recent error input value to controller is inverted
+    volatile bool enabled : 1;                ///< Bit 15: enables/disables control loop execution
+    } __attribute__((packed)) bits;           ///< Controller status bit-field for direct bit access
+    volatile uint16_t value;                  ///< Controller status full register access
+    };
+} __attribute__((packed));          
+
+typedef struct NPNZ_STATUS_s NPNZ_STATUS_t;     ///< Controller status word data structure allowing bit-wise access to status and control bits
+
+
+/***************************************************************************************************
+ * @struct  NPNZ_PORT_s
+ * @brief   Data Input/Output Port declaration of memory addresses, signal offsets and normalization settings
+ * @extends NPNZ_PORTS_s
+ * 
+ * @details
+ * The NPNZ_PORT_s data object defines the basic parameters required to read data from or write
+ * data to user-defined memory addresses as well as offers data fields for additional settings
+ * like normalization scaling factors or signal offsets, which can be used to compensate analog
+ * offsets and normalize raw ADC data to other ADC input values and their respective physical 
+ * quantity.
+ * *************************************************************************************************/
+
+/* Controller Input/Output Port */
+struct NPNZ_PORT_s {
+
+    volatile uint16_t* ptrAddress;                ///< Pointer to register or variable where the value is read from (e.g. ADCBUFx) or written to (e.g. PGxDC)
+    volatile int16_t   NormScaler;                ///< Bit-shift scaler of the Q15 normalization factor
+    volatile fractional NormFactor;               ///< Q15 normalization factor
+    volatile int16_t   Offset;                    ///< Value/signal offset of this port
+
+} __attribute__((packed));
+
+typedef struct NPNZ_PORT_s NPNZ_PORT_t;            ///< Data structure defining parameters of a controller input or output port
+
+
+/***************************************************************************************************
+ * @struct  NPNZ_PORTS_s
+ * @brief   Data Input/Output declaration of memory addresses, signal offsets and normalization settings
+ * @extends NPNZ16b_s
+ * 
+ * @details
+ * The NPNZ_PORTS_s data object holds a list of nested NPNZ_PORT_t data objects, each
  * defining an individual controller input or output port. The NPNZ16b_t data objects defines
  * up to two input and two output ports of type struct NPNZ_PORT_t and one additional
  * pointer to an external, user-defined 16-bit reference source variable. Each port of type
@@ -155,72 +237,67 @@ typedef struct NPNZ_STATUS_s {
  *
  * *************************************************************************************************/
 
-/* Controller Input/Output Port */
-typedef struct NPNZ_PORT_s{
-
-    volatile uint16_t* ptrAddress;                // Pointer to register or variable where the value is read from (e.g. ADCBUFx) or written to (e.g. PGxDC)
-    volatile int16_t   NormScaler;                // Bit-shift scaler of the Q15 normalization factor
-    volatile fractional NormFactor;               // Q15 normalization factor
-    volatile int16_t   Offset;                    // Value/signal offset of this port
-
-} __attribute__((packed)) NPNZ_PORT_t;            // Data structure defining parameters of a controller input or output port
-
 /* List of Controller Input/Output Ports */
-typedef struct NPNZ_PORTS_s{
+struct NPNZ_PORTS_s {
 
-    volatile struct NPNZ_PORT_s Source;           // Primary data input port declaration
-    volatile struct NPNZ_PORT_s AltSource;        // Secondary data input port declaration
-    volatile struct NPNZ_PORT_s Target;           // Primary data output port declaration
-    volatile struct NPNZ_PORT_s AltTarget;        // Secondary data output port declaration
-    volatile uint16_t* ptrControlReference;       // Pointer to global variable of input register holding the controller reference value (e.g. uint16_t my_ref)
+    volatile struct NPNZ_PORT_s Source;           ///< Primary data input port declaration
+    volatile struct NPNZ_PORT_s AltSource;        ///< Secondary data input port declaration
+    volatile struct NPNZ_PORT_s Target;           ///< Primary data output port declaration
+    volatile struct NPNZ_PORT_s AltTarget;        ///< Secondary data output port declaration
+    volatile uint16_t* ptrControlReference;       ///< Pointer to global variable of input register holding the controller reference value (e.g. uint16_t my_ref)
 
-} __attribute__((packed)) NPNZ_PORTS_t;           // Data structure merging all defined controller input and output ports
+} __attribute__((packed));
 
-/*@@NPNZ_FILTER_PARAMS_t data object
- * *************************************************************************************************
- * Summary:
- * Filter Coefficient Arrays, Number Format Handling and Input/Output History Parameters
- *
- * Description:
- * The NPNZ_FILTER_PARAMS_t data object holds all configuration parameters of the compensation
+typedef struct NPNZ_PORTS_s NPNZ_PORTS_t;         ///< Data structure merging all defined controller input and output ports
+
+/***************************************************************************************************
+ * @struct  NPNZ_FILTER_PARAMS_s
+ * @brief   Filter Coefficient Arrays, Number Format Handling and Input/Output History Parameters
+ * @extends NPNZ16b_s
+ * 
+ * @details
+ * The NPNZ_FILTER_PARAMS_s data object holds all configuration parameters of the compensation
  * filter. These parameters include pointers to external arrays of filter coefficients, error
  * and control history as well as number format normalization parameters like pre- and post-
  * scalers.
  *
  * *************************************************************************************************/
 
-typedef struct NPNZ_FILTER_PARAMS_s{
+struct NPNZ_FILTER_PARAMS_s {
 
-    volatile int32_t* ptrACoefficients;           // Pointer to A coefficients located in X-space
-    volatile int32_t* ptrBCoefficients;           // Pointer to B coefficients located in X-space
-    volatile fractional* ptrControlHistory;       // Pointer to n delay-line samples located in Y-space with first sample being the most recent
-    volatile fractional* ptrErrorHistory;         // Pointer to n+1 delay-line samples located in Y-space with first sample being the most recent
+    volatile int32_t* ptrACoefficients;           ///< Pointer to A coefficients located in X-space
+    volatile int32_t* ptrBCoefficients;           ///< Pointer to B coefficients located in X-space
+    volatile fractional* ptrControlHistory;       ///< Pointer to n delay-line samples located in Y-space with first sample being the most recent
+    volatile fractional* ptrErrorHistory;         ///< Pointer to n+1 delay-line samples located in Y-space with first sample being the most recent
 
-    // Array size information
-    volatile uint16_t ACoefficientsArraySize;     // Size of the A coefficients array in X-space
-    volatile uint16_t BCoefficientsArraySize;     // Size of the B coefficients array in X-space
-    volatile uint16_t ControlHistoryArraySize;    // Size of the control history array in Y-space
-    volatile uint16_t ErrorHistoryArraySize;      // Size of the error history array in Y-space
+    ///< Array size information
+    volatile uint16_t ACoefficientsArraySize;     ///< Size of the A coefficients array in X-space
+    volatile uint16_t BCoefficientsArraySize;     ///< Size of the B coefficients array in X-space
+    volatile uint16_t ControlHistoryArraySize;    ///< Size of the control history array in Y-space
+    volatile uint16_t ErrorHistoryArraySize;      ///< Size of the error history array in Y-space
 
-    // Feedback scaling Input/Output Normalization
-    volatile int16_t normPreShift;                // Normalization of ADC-resolution to Q15 (R/W)
-    volatile int16_t normPostShiftA;              // Normalization of A-term control output to Q15 (R/W)
-    volatile int16_t normPostShiftB;              // Normalization of B-term control output to Q15 (R/W)
-    volatile int16_t normPostScaler;              // Control output normalization factor (Q15) (R/W)
+    ///< Feedback scaling Input/Output Normalization
+    volatile int16_t normPreShift;                ///< Normalization of ADC-resolution to Q15 (R/W)
+    volatile int16_t normPostShiftA;              ///< Normalization of A-term control output to Q15 (R/W)
+    volatile int16_t normPostShiftB;              ///< Normalization of B-term control output to Q15 (R/W)
+    volatile int16_t normPostScaler;              ///< Control output normalization factor (Q15) (R/W)
 
-    // P-Term Coefficients (for plant measurements only)
-    volatile int16_t PTermScaler;                 // Q15 P-Term Coefficient Bit-Shift Scaler (R/W)
-    volatile int16_t PTermFactor;                 // Q15 P-Term Coefficient Factor (R/W)
+    ///< P-Term Coefficients (for plant measurements only)
+    volatile int16_t PTermScaler;                 ///< Q15 P-Term Coefficient Bit-Shift Scaler (R/W)
+    volatile int16_t PTermFactor;                 ///< Q15 P-Term Coefficient Factor (R/W)
 
-} __attribute__((packed)) NPNZ_FILTER_PARAMS_t;   // Data structure for filter parameters such as pointer to history and coefficient arrays and number scaling factors
+} __attribute__((packed));
 
-/*@@NPNZ_LIMITS_t data object
- * *************************************************************************************************
- * Summary:
- * System Anti-Windup (Output Clamping) Thresholds
- *
- * Description:
- * The NPNZ_LIMITS_t data object holds all parameters required to automatically clamp the
+typedef struct NPNZ_FILTER_PARAMS_s NPNZ_FILTER_PARAMS_t;   ///< Data structure for filter parameters such as pointer to history and coefficient arrays and number scaling factors
+
+
+/***************************************************************************************************
+ * @struct  NPNZ_LIMITS_s
+ * @brief   System Anti-Windup (Output Clamping) Thresholds
+ * @extends NPNZ16b_s
+ * 
+ * @details
+ * The NPNZ_LIMITS_s data object holds all parameters required to automatically clamp the
  * most recent control output to user-defined thresholds. This data type allows the
  * definition of individual minimum and maximum output values for the NPNZ controller primary
  * and alternate output port.
@@ -230,22 +307,24 @@ typedef struct NPNZ_FILTER_PARAMS_s{
  *
  * *************************************************************************************************/
 
-typedef struct NPNZ_LIMITS_s{
+struct NPNZ_LIMITS_s {
 
-    volatile int16_t MinOutput;                   // Minimum output value used for clamping (R/W)
-    volatile int16_t MaxOutput;                   // Maximum output value used for clamping (R/W)
-    volatile int16_t AltMinOutput;                // Alternate minimum output value used for clamping (R/W)
-    volatile int16_t AltMaxOutput;                // Alternate maximum output value used for clamping (R/W)
+    volatile int16_t MinOutput;                   ///< Minimum output value used for clamping (R/W)
+    volatile int16_t MaxOutput;                   ///< Maximum output value used for clamping (R/W)
+    volatile int16_t AltMinOutput;                ///< Alternate minimum output value used for clamping (R/W)
+    volatile int16_t AltMaxOutput;                ///< Alternate maximum output value used for clamping (R/W)
 
-} __attribute__((packed)) NPNZ_LIMITS_t;          // Data strucure holding control output clamping threshold values
+} __attribute__((packed));
 
-/*@@NPNZ_ADC_TRGCTRL_t data object
- * *************************************************************************************************
- * Summary:
- * Automated ADC Trigger handling
- *
- * Description:
- * The NPNZ_ADC_TRGCTRL_t data object holds all parameters required to automatically position
+typedef struct NPNZ_LIMITS_s NPNZ_LIMITS_t;          ///< Data strucure holding control output clamping threshold values
+
+/***************************************************************************************************
+ * @struct  NPNZ_ADC_TRGCTRL_s
+ * @brief   Automated ADC Trigger handling
+ * @extends NPNZ16b_s
+ * 
+ * @details
+ * The NPNZ_ADC_TRGCTRL_s data object holds all parameters required to automatically position
  * ADC triggers based on the most recent control output. This feature is used in voltage or
  * average current mode control to automatically track average values in triangular feedback
  * signal waveforms.
@@ -255,22 +334,24 @@ typedef struct NPNZ_LIMITS_s{
  *
  * *************************************************************************************************/
 
-typedef struct NPNZ_ADC_TRGCTRL_s{
+struct NPNZ_ADC_TRGCTRL_s {
 
-    volatile uint16_t* ptrADCTriggerARegister;    // Pointer to ADC trigger #1 register (e.g. TRIG1)
-    volatile uint16_t ADCTriggerAOffset;          // ADC trigger #1 offset to compensate propagation delays
-    volatile uint16_t* ptrADCTriggerBRegister;    // Pointer to ADC trigger #2 register (e.g. TRIG2)
-    volatile uint16_t ADCTriggerBOffset;          // ADC trigger #2 offset to compensate propagation delays
+    volatile uint16_t* ptrADCTriggerARegister;    ///< Pointer to ADC trigger #1 register (e.g. TRIG1)
+    volatile uint16_t ADCTriggerAOffset;          ///< ADC trigger #1 offset to compensate propagation delays
+    volatile uint16_t* ptrADCTriggerBRegister;    ///< Pointer to ADC trigger #2 register (e.g. TRIG2)
+    volatile uint16_t ADCTriggerBOffset;          ///< ADC trigger #2 offset to compensate propagation delays
 
-} __attribute__((packed)) NPNZ_ADC_TRGCTRL_t;     // Automatic ADC trigger placement parameters for primary ADC trigger A and secondary trigger B
+} __attribute__((packed));
 
-/*@@NPNZ_DATA_PROVIDERS_t data object
- * *************************************************************************************************
- * Summary:
- * Data Provider Target Memory Addresses
- *
- * Description:
- * The NPNZ_DATA_PROVIDERS_t data object holds pointers to external, user-defined, global
+typedef struct NPNZ_ADC_TRGCTRL_s NPNZ_ADC_TRGCTRL_t; ///< Automatic ADC trigger placement parameters for primary ADC trigger A and secondary trigger B
+
+/***************************************************************************************************
+ * @struct  NPNZ_DATA_PROVIDERS_s
+ * @brief   Data Provider Target Memory Addresses
+ * @extends NPNZ16b_s
+ * 
+ * @details
+ * The NPNZ_DATA_PROVIDERS_s data object holds pointers to external, user-defined, global
  * variables allowing the NPNZ controller to push internal data to external, user-defined,
  * global variables during the execution of the NPNZ controller, resulting in an automated
  * updated of user-code variable values during runtime.
@@ -280,21 +361,23 @@ typedef struct NPNZ_ADC_TRGCTRL_s{
  *
  * *************************************************************************************************/
 
-typedef struct NPNZ_DATA_PROVIDERS_s{
+struct NPNZ_DATA_PROVIDERS_s { 
 
-    volatile uint16_t* ptrDProvControlInput;      // Pointer to external data buffer of most recent, raw control input
-    volatile uint16_t* ptrDProvControlInputCompensated; // Pointer to external data buffer of most recent, compensated control input
-    volatile uint16_t* ptrDProvControlError;      // Pointer to external data buffer of most recent control error
-    volatile uint16_t* ptrDProvControlOutput;     // Pointer to external data buffer of most recent control output
+    volatile uint16_t* ptrDProvControlInput;      ///< Pointer to external data buffer of most recent, raw control input
+    volatile uint16_t* ptrDProvControlInputCompensated; ///< Pointer to external data buffer of most recent, compensated control input
+    volatile uint16_t* ptrDProvControlError;      ///< Pointer to external data buffer of most recent control error
+    volatile uint16_t* ptrDProvControlOutput;     ///< Pointer to external data buffer of most recent control output
 
-} __attribute__((packed)) NPNZ_DATA_PROVIDERS_t;  // Automated data provider pointers used to push most recent data points to user-defined variables
+} __attribute__((packed));
 
-/*@@NPNZ_EXTENSION_HOOKS_t data object
- * *************************************************************************************************
- * Summary:
- * User Extension Function Call Parameters
- *
- * Description:
+typedef struct NPNZ_DATA_PROVIDERS_s NPNZ_DATA_PROVIDERS_t; ///< Automated data provider pointers used to push most recent data points to user-defined variables
+
+/***************************************************************************************************
+ * @struct NPNZ_EXTENSION_HOOKS_s
+ * @brief  User Extension Function Call Parameters
+ * @extends NPNZ16b_s
+ * 
+ * @details
  * The NPNZ_EXTENSION_HOOKS_t data object holds all parameters required to call user-defined extension
  * functions supporting advanced use cases, which are not covered by the standard functions provided.
  * When enabled, the NPNZ controller can automatically call user-defined functions at specific points
@@ -307,35 +390,37 @@ typedef struct NPNZ_DATA_PROVIDERS_s{
  *
  * *************************************************************************************************/
 
-typedef struct NPNZ_EXTENSION_HOOKS_s{
+struct NPNZ_EXTENSION_HOOKS_s{
 
-    volatile uint16_t ptrExtHookStartFunction;    // Pointer to Function which will be called at the beginning of the control loop
-    volatile uint16_t ExtHookStartFunctionParam;  // Parameter of function called (can be a variable or pointer to a data structure)
+    volatile uint16_t ptrExtHookStartFunction;    ///< Pointer to Function which will be called at the beginning of the control loop
+    volatile uint16_t ExtHookStartFunctionParam;  ///< Parameter of function called (can be a variable or pointer to a data structure)
 
-    volatile uint16_t ptrExtHookSourceFunction;   // Pointer to Function which will be called after the source has been read and compensated
-    volatile uint16_t ExtHookSourceFunctionParam; // Parameter of function called (can be a variable or a pointer to a data structure)
+    volatile uint16_t ptrExtHookSourceFunction;   ///< Pointer to Function which will be called after the source has been read and compensated
+    volatile uint16_t ExtHookSourceFunctionParam; ///< Parameter of function called (can be a variable or a pointer to a data structure)
 
-    volatile uint16_t ptrExtHookPreAntiWindupFunction; // Pointer to Function which will be called after the compensation filter computation is complete and before anti-windup clamping is applied
-    volatile uint16_t ExtHookPreAntiWindupFunctionParam; // Parameter of function called (can be a variable or a pointer to a data structure)
+    volatile uint16_t ptrExtHookPreAntiWindupFunction; ///< Pointer to Function which will be called after the compensation filter computation is complete and before anti-windup clamping is applied
+    volatile uint16_t ExtHookPreAntiWindupFunctionParam; ///< Parameter of function called (can be a variable or a pointer to a data structure)
 
-    volatile uint16_t ptrExtHookTargetFunction;   // Pointer to Function which will be called before the most recent control output is written to target
-    volatile uint16_t ExtHookTargetFunctionParam; // Parameter of function called (can be a variable or a pointer to a data structure)
+    volatile uint16_t ptrExtHookTargetFunction;   ///< Pointer to Function which will be called before the most recent control output is written to target
+    volatile uint16_t ExtHookTargetFunctionParam; ///< Parameter of function called (can be a variable or a pointer to a data structure)
 
-    volatile uint16_t ptrExtHookStopFunction;     // Pointer to Function which is called at the end of the control loop but will be bypassed when the control loop is disabled
-    volatile uint16_t ExtHookStopFunctionParam;   // Parameter of function called (can be a variable or a pointer to a data structure)
+    volatile uint16_t ptrExtHookStopFunction;     ///< Pointer to Function which is called at the end of the control loop but will be bypassed when the control loop is disabled
+    volatile uint16_t ExtHookStopFunctionParam;   ///< Parameter of function called (can be a variable or a pointer to a data structure)
 
-    volatile uint16_t ptrExtHookEndFunction;      // Pointer to Function which is called at the end of the control loop and will also be called when the control loop is disabled
-    volatile uint16_t ExtHookEndFunctionParam;    // Parameter of function called (can be a variable or a pointer to a data structure)
+    volatile uint16_t ptrExtHookEndFunction;      ///< Pointer to Function which is called at the end of the control loop and will also be called when the control loop is disabled
+    volatile uint16_t ExtHookEndFunctionParam;    ///< Parameter of function called (can be a variable or a pointer to a data structure)
 
-} __attribute__((packed)) NPNZ_EXTENSION_HOOKS_t; // Function pointers and parameters used to tie in user-defined, external extension functions at specific points of the control loop execution
+} __attribute__((packed));
 
-/*@@NPNZ_GAIN_CONTROL_t data object
- * *************************************************************************************************
- * Summary:
- * Adaptive Gain Control Modulation Parameters
- *
- * Description:
- * The NPNZ_GAIN_CONTROL_t data object holds all parameters required to perform real-time
+typedef struct NPNZ_EXTENSION_HOOKS_s NPNZ_EXTENSION_HOOKS_t; ///< Function pointers and parameters used to tie in user-defined, external extension functions at specific points of the control loop execution
+
+/***************************************************************************************************
+ * @struct NPNZ_GAIN_CONTROL_s
+ * @brief  Adaptive Gain Control Modulation Parameters
+ * @extends NPNZ16b_s
+ * 
+ * @details
+ * The NPNZ_GAIN_CONTROL_s data object holds all parameters required to perform real-time
  * gain modulation of the z-domain feedback loop. The loop gain is modulated by multiplying
  * the result of the NPNZ controller B-term with an additional scaling factor. This scaling
  * factor is represented by a fast floating point number, consisting of a factional factor
@@ -346,46 +431,50 @@ typedef struct NPNZ_EXTENSION_HOOKS_s{
  *
  * *************************************************************************************************/
 
-typedef struct NPNZ_GAIN_CONTROL_s{
+struct NPNZ_GAIN_CONTROL_s{     ///< Data structure holding parameters required for adaptive or manual loop gain manipulation during runtime
 
-    volatile uint16_t AgcScaler;                  // Bit-shift scaler of Adaptive Gain Modulation factor
-    volatile fractional AgcFactor;                // Q15 value of Adaptive Gain Modulation factor
-    volatile fractional AgcMedian;                // Q15 value of Adaptive Gain Modulation nominal operating point
-    volatile uint16_t ptrAgcObserverFunction;     // Function Pointer to Observer function updating the AGC modulation factor
+    volatile uint16_t AgcScaler;                  ///< Bit-shift scaler of Adaptive Gain Modulation factor
+    volatile fractional AgcFactor;                ///< Q15 value of Adaptive Gain Modulation factor
+    volatile fractional AgcMedian;                ///< Q15 value of Adaptive Gain Modulation nominal operating point
+    volatile uint16_t ptrAgcObserverFunction;     ///< Function Pointer to Observer function updating the AGC modulation factor
 
-} __attribute__((packed)) NPNZ_GAIN_CONTROL_t;    // Data structure holding parameters required for adaptive or manual loop gain manipulation during runtime
+} __attribute__((packed));    
 
-/*@@NPNZ_USER_DATA_BUFFER_t data object
- * *************************************************************************************************
- * Summary:
- * User Data Space for Advanced Control Functions
- *
- * Description:
- * The NPNZ_USER_DATA_BUFFER_t data object reserves four word of additional data space for
+typedef struct NPNZ_GAIN_CONTROL_s NPNZ_GAIN_CONTROL_t;
+
+/***************************************************************************************************
+ * @struct  NPNZ_USER_DATA_BUFFER_s
+ * @brief   User Data Space for Advanced Control Functions
+ * @extends NPNZ16b_s
+ * @memberof NPNZ16b_s
+ * 
+ * @details
+ * The NPNZ_USER_DATA_BUFFER_s data object reserves four word of additional data space for
  * user parameters. These parameters may be handled by user code and are not assigned to any
  * specific, pre-defined functions.
  *
  * *************************************************************************************************/
 
-typedef struct NPNZ_USER_DATA_BUFFER_s{
+struct NPNZ_USER_DATA_BUFFER_s{
 
-    volatile uint16_t usrParam0;                  // generic 16-bit wide, user-defined parameter #1 for advanced control options
-    volatile uint16_t usrParam1;                  // generic 16-bit wide, user-defined parameter #2 for advanced control options
-    volatile uint16_t usrParam2;                  // generic 16-bit wide, user-defined parameter #3 for advanced control options
-    volatile uint16_t usrParam3;                  // generic 16-bit wide, user-defined parameter #4 for advanced control options
-    volatile uint16_t usrParam4;                  // generic 16-bit wide, user-defined parameter #5 for advanced control options
-    volatile uint16_t usrParam5;                  // generic 16-bit wide, user-defined parameter #6 for advanced control options
-    volatile uint16_t usrParam6;                  // generic 16-bit wide, user-defined parameter #7 for advanced control options
-    volatile uint16_t usrParam7;                  // generic 16-bit wide, user-defined parameter #8 for advanced control options
+    volatile uint16_t usrParam0;                  ///< generic 16-bit wide, user-defined parameter #1 for advanced control options
+    volatile uint16_t usrParam1;                  ///< generic 16-bit wide, user-defined parameter #2 for advanced control options
+    volatile uint16_t usrParam2;                  ///< generic 16-bit wide, user-defined parameter #3 for advanced control options
+    volatile uint16_t usrParam3;                  ///< generic 16-bit wide, user-defined parameter #4 for advanced control options
+    volatile uint16_t usrParam4;                  ///< generic 16-bit wide, user-defined parameter #5 for advanced control options
+    volatile uint16_t usrParam5;                  ///< generic 16-bit wide, user-defined parameter #6 for advanced control options
+    volatile uint16_t usrParam6;                  ///< generic 16-bit wide, user-defined parameter #7 for advanced control options
+    volatile uint16_t usrParam7;                  ///< generic 16-bit wide, user-defined parameter #8 for advanced control options
 
-} __attribute__((packed)) NPNZ_USER_DATA_BUFFER_t; // Generic data buffer for undetermined use. These data buffers may be used by advanced control algorithms or be used by proprietary user code modules
+}__attribute__((packed)); ///< Generic data buffer for undetermined use. These data buffers may be used by advanced control algorithms or be used by proprietary user code modules
 
-/*@@NPNZ16b_t data structure
- * *************************************************************************************************
- * Summary:
- * Global NPNZ controller data object
- *
- * Description:
+typedef struct NPNZ_USER_DATA_BUFFER_s NPNZ_USER_DATA_BUFFER_t;
+
+/***************************************************************************************************
+ * @struct  NPNZ16b_s
+ * @brief   Global NPNZ controller data object
+ * 
+ * @details
  * The NPNZ16b_t data object holds all configuration, status, control and monitoring values
  * of a z-domain lead-lag compensator based controller. All data types of this data object,
  * including floating, are scaled to a 16 bit number space, optimized for code execution on
@@ -394,21 +483,24 @@ typedef struct NPNZ_USER_DATA_BUFFER_s{
  *
  * *************************************************************************************************/
 
-typedef struct NPNZ16b_s {
+struct NPNZ16b_s {
 
-    volatile struct NPNZ_STATUS_s status;         // Control Loop Status and Control flags
-    volatile struct NPNZ_PORTS_s Ports;           // Controller input and output ports
-    volatile struct NPNZ_FILTER_PARAMS_s Filter;  // Filter parameters such as pointer to history and coefficient arrays and number scaling
-    volatile struct NPNZ_GAIN_CONTROL_s GainControl; // Parameter section for advanced control options
-    volatile struct NPNZ_LIMITS_s Limits;         // Input and output clamping values
-    volatile struct NPNZ_ADC_TRGCTRL_s ADCTriggerControl; // Automatic ADC trigger placement options for ADC Trigger A and B
-    volatile struct NPNZ_DATA_PROVIDERS_s DataProviders; // Automated data sources pushing recent data points to user-defined variables
-    volatile struct NPNZ_EXTENSION_HOOKS_s ExtensionHooks; // User extension function triggers using function pointers with parameters
-    volatile struct NPNZ_USER_DATA_BUFFER_s Advanced; // Parameter section for advanced user control options
+    volatile struct NPNZ_STATUS_s status;         ///< Control Loop Status and Control flags
+    volatile struct NPNZ_PORTS_s Ports;           ///< Controller input and output ports
+    volatile struct NPNZ_FILTER_PARAMS_s Filter;  ///< Filter parameters such as pointer to history and coefficient arrays and number scaling
+    volatile struct NPNZ_GAIN_CONTROL_s GainControl; ///< Parameter section for advanced control options
+    volatile struct NPNZ_LIMITS_s Limits;         ///< Input and output clamping values
+    volatile struct NPNZ_ADC_TRGCTRL_s ADCTriggerControl; ///< Automatic ADC trigger placement options for ADC Trigger A and B
+    volatile struct NPNZ_DATA_PROVIDERS_s DataProviders; ///< Automated data sources pushing recent data points to user-defined variables
+    volatile struct NPNZ_EXTENSION_HOOKS_s ExtensionHooks; ///< User extension function triggers using function pointers with parameters
+    volatile struct NPNZ_USER_DATA_BUFFER_s Advanced; ///< Parameter section for advanced user control options
 
-} __attribute__((packed)) NPNZ16b_t;              // Generic NPNZ16b Controller Object. This data structure is the main API data object providing single-point access to all controller settings and parameters
+} __attribute__((packed));
+
+typedef struct NPNZ16b_s NPNZ16b_t; ///< Generic NPNZ16b Controller Object. This data structure is the main API data object providing single-point access to all controller settings and parameters
 
 /* ********************************************************************************/
+
 #endif                                            // end of __SPECIAL_FUNCTION_LAYER_LIB_NPNZ16B_H__ header file section
 
 
