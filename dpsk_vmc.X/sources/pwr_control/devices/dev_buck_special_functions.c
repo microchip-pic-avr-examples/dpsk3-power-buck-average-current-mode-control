@@ -16,8 +16,8 @@
 
 /***********************************************************************************
  * @ingroup lib-layer-buck-specialfn-properties-private-data-types
- * @struct CS_CALIBRATION_s
- * @brief  Current sense calibration data structure
+ * @struct  CS_CALIBRATION_s
+ * @brief   Current sense calibration data structure
  **********************************************************************************/
 typedef struct CS_CALIBRATION_s 
 {
@@ -29,8 +29,8 @@ typedef struct CS_CALIBRATION_s
 
 /*********************************************************************************
  * @ingroup lib-layer-buck-specialfn-properties-private-variables
- * @var struct CS_CALIBRATION_s calib_cs[BUCK_MPHASE_COUNT]
- * @brief  Array of current sense calibration data objects of type CS_CALIBRATION_t
+ * @var     struct CS_CALIBRATION_s calib_cs[BUCK_MPHASE_COUNT]
+ * @brief   Array of current sense calibration data objects of type CS_CALIBRATION_t
  * @details
  *  The current sense feedback offset calibration requires a data space to 
  *  accumulate and average the static feedback offset value. The final result
@@ -45,9 +45,8 @@ volatile struct CS_CALIBRATION_s calib_cs[BUCK_MPHASE_COUNT];
 
 /*********************************************************************************
  * @ingroup lib-layer-buck-specialfn-properties-private-defines
- * @def CS_CALIB_STEPS
- * @brief  Number of signal oversampling steps used to determine the calibration value
- *  
+ * @def     CS_CALIB_STEPS
+ * @brief   Number of signal oversampling steps used to determine the calibration value
  **********************************************************************************/
 // Current Sense
 #define CS_CALIB_STEPS  8
@@ -159,11 +158,11 @@ volatile uint16_t drv_BuckConverter_SpecialFunctionExecute(
  ******************************************************************************/
 
 /*******************************************************************************
- * @fn	   uint16_t CurrentSenseOffsetCalibration(volatile struct BUCK_POWER_CONTROLLER_s *buckInstance) 
+ * @fn	    uint16_t CurrentSenseOffsetCalibration(volatile struct BUCK_POWER_CONTROLLER_s *buckInstance) 
  * @ingroup lib-layer-buck-specialfn-functions-private
- * @brief  Performs an offset calibration of the current sense feedback signal(s)
- * @param  struct BUCK_POWER_CONTROLLER_s *buckInstance
- * @return unsigned integer (0=failure, 1=success)
+ * @brief   Performs an offset calibration of the current sense feedback signal(s)
+ * @param   struct BUCK_POWER_CONTROLLER_s *buckInstance
+ * @return  unsigned integer (0=failure, 1=success)
  *  
  * @details
  * This function performs a current sense feedback channel zero-offset 

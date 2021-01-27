@@ -443,10 +443,14 @@
  */  
 #define P33C_PGxCONL_HRES_EN    0x0080  
 /**
- * @def P33C_PGxIOCONL_OVREN
- * @brief control bits in PGxIOCONL enabling/disabling the PWM output override
+ * @def P33C_PGxIOCONL_OVREN_SYNC
+ * @brief control bits in PGxIOCONL enabling/disabling the PWM output override in synchronous mode
  */  
 #define P33C_PGxIOCONL_OVREN_SYNC   0x3000  
+/**
+ * @def P33C_PGxIOCONL_OVREN_ASYNC
+ * @brief control bits in PGxIOCONL enabling/disabling the PWM output override in asynchronous mode
+ */  
 #define P33C_PGxIOCONL_OVREN_ASYNC  0x2000  
 /**
  * @def P33C_PGxIOCONH_PEN
