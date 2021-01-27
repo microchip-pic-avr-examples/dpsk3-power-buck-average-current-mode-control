@@ -628,7 +628,7 @@
     #define _BUCK_ISNS_ADCInterrupt     _ADCAN1Interrupt ///< Interrupt Service Routine function name
     #define _BUCK_ISNS_ADCISR_IF        _ADCAN1IF   ///< Interrupt Service Routine Flag Bit
 
-    #define BUCK_ISNS_ANSEL             _ANSELB2    ///< GPIO analog function mode enable bit
+    #define BUCK_ISNS_ANSEL             _ANSELA1    ///< GPIO analog function mode enable bit
     #define BUCK_ISNS_ADCCORE           1           ///< 0=Dedicated Core #0, 1=Dedicated Core #1, 7=Shared ADC Core
     #define BUCK_ISNS_ADCIN             1           ///< Analog input number (e.g. '5' for 'AN5')
     #define BUCK_ISNS_ADCBUF            ADCBUF1     ///< ADC input buffer of this ADC channel
