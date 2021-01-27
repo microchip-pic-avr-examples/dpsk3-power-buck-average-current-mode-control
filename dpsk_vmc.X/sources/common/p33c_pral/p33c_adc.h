@@ -29,15 +29,16 @@
 #include <stdbool.h> // include standard boolean types header file
 #include <math.h> // include standard math library header file
 
-#if defined (__MA330049_dsPIC33CH_DPPIM__) || defined (__MA330048_dsPIC33CK_DPPIM__)
+#include "p33smps_devices.h"
+
+//#if defined (__MA330049_dsPIC33CH_DPPIM__) || defined (__MA330048_dsPIC33CK_DPPIM__)
+
+#if defined (__P33SMPS_CH__) || defined (__P33SMPS_CK__)
 
 
-/*!p33SMPS_hsadc.h
- * ************************************************************************************************
- * Summary:
- * Header file with additional defines for the dsPIC33FxxGS-ADC SFRs
- *
- * Description:
+/**************************************************************************************************
+ * @brief Header file with additional defines for the dsPIC33FxxGS-ADC SFRs
+ * @details
  * The SMPS ADC module offers a number of registers and configuration options. This additional
  * header file contains defines for all required bit-settings. This additional
  * header file contains defines for all required bit-settings of all related registers.
@@ -4703,4 +4704,4 @@ extern volatile uint16_t ADC_ADFilter_Initialize(volatile uint16_t index, volati
 #endif /* dsPIC33CH/CK only */
 #endif /* end of MCAL_P33SMPS_HSADC_H */
 
-// END OF FILE
+// end of files

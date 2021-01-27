@@ -5,18 +5,12 @@
  * Created on October 12, 2020, 5:41 PM
  */
 
-/*@@p33c_ccp.h
- * ************************************************************************************************
- * Summary:
- * Generic Capture Compare Driver Module (header file)
- *
- * Description:
+/*************************************************************************************************
+ * @brief Generic Capture Compare Driver Module (header file)
+ * @details
  * This additional header file contains defines for all required bit-settings of all related 
  * special function registers of a peripheral module and/or instance. 
  * This file is an additional header file on top of the generic device header file.
- * 
- * See Also:
- *	p33c_ccp.c
  * ***********************************************************************************************/
 
 #ifndef P33C_CCP_SFR_ABSTRACTION_H

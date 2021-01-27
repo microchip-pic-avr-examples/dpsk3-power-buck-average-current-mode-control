@@ -93,30 +93,31 @@ typedef enum AUX_PLL_DEFAULTS_e
 } AUX_PLL_DEFAULTS_t;  // Default Auxiliary PLL output frequency settings 
 
 
-/*!System OSCILLATOR_SYSTEM_FREQUENCIES_t
- * ************************************************************************************************
- * Summary:
- * Global data structure holding system frequencies of different clock domains
+/**************************************************************************************************
+ * @struct OSCILLATOR_SYSTEM_FREQUENCIES_s
+ * @brief  Global data structure holding system frequencies of different clock domains
  *
- * Description:
+ * @details
  * The data structure "system_frequencies" of type OSCILLATOR_SYSTEM_FREQUENCIES_t is used
  * to broadcast most recent system frequencies of multiple clock domains. Contents of this data 
  * structure are NOT updated automatically. 
  * 
- * The function osc_get_frequencies() must be called from user code to update/refresh the 
+ * The function p33c_Osc_GetFrequencies() must be called from user code to update/refresh the 
  * contents of this data structure every time a oscillator configuration has been changed.
  *
- * Example:
+ * <p><b>Example:</b></p>
  * The following code lines initialize the internal FRC oscillator for 100 MIPS operation and
  * the auxiliary PLL for 500 MHz to support 250ps resolution of the PWM module. After both 
  * configurations have been set, the function 'osc_get_frequencies()' is used to update the 
  * most recent frequencies of multiple clock domains.
  * 
+ * @code{.c}
  *      init_FRCCLK_Defaults(CPU_SPEED_100_MIPS);   // Initialize FRC for 100 MIPS operation
  *      init_AUXCLK_500MHz();                       // Initialize AuxPLL for 500 MHz clock output
  *      osc_get_frequencies(0);                     // Update system frequencies data structure
+ * @endcode
  * 
- * Please note: 
+ * @note
  * When an external oscillator is used, the function osc_get_frequencies() must be called 
  * to set the external frequency value in [Hz] and update all related frequencies accordingly.
  * If only the internal FRC oscillator is used, this parameter should be set = 0.
