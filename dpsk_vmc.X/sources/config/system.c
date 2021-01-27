@@ -59,12 +59,12 @@ volatile uint16_t sysUserPeriperhals_Initialize(void) {
     volatile uint16_t retval=1;
     
     // Initialize op-amp
-    retval &= sysOpAmp_Initialize(ISENSE_REF_BUFFER_OPA_INSTANCE, true); // Initialize op-amp #2 used to drive the reference voltage for current sense amplifiers
+    retval &= sysOpAmp_Initialize(DAC_BUFFER_OPA_INSTANCE, true); // Initialize op-amp #2 used to drive the reference voltage for current sense amplifiers
     
     // Initialize DAC
     retval &= sysDacModule_Initialize();  // Initialize DAC module
-    retval &= sysDacOutput_Initialize(ISENSE_REF_DAC_INSTANCE); // Initialize DAC #1 used to generate the reference voltage for current sense amplifiers
-    retval &= sysDacOutput_Enable(ISENSE_REF_DAC_INSTANCE); // Enable DAC providing reference to current sense amplifiers
+    retval &= sysDacOutput_Initialize(DAC_OUTPUT_INSTANCE, DAC_OUTPUT_INIT_VALUE); // Initialize DAC #1 used to generate the reference voltage for current sense amplifiers
+    retval &= sysDacOutput_Enable(DAC_OUTPUT_INSTANCE); // Enable DAC providing reference to current sense amplifiers
 
     // Enable op-amp
     retval &= sysOpAmp_ModuleEnable(); // Enable the operational amplifier module
