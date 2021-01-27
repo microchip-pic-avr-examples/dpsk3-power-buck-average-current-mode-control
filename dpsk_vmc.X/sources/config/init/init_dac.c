@@ -67,7 +67,7 @@ volatile uint16_t sysDacModule_Initialize(void)
  *
  **********************************************************************************/
 
-volatile uint16_t sysDacOutput_Initialize(volatile uint16_t dacInstance)
+volatile uint16_t sysDacOutput_Initialize(volatile uint16_t dacInstance, volatile uint16_t initial_value)
 {
     volatile uint16_t retval=1;
     volatile struct P33C_DAC_INSTANCE_s* dac;
@@ -77,7 +77,7 @@ volatile uint16_t sysDacOutput_Initialize(volatile uint16_t dacInstance)
     
     dac->DACxCONL.bits.DACOEN = 1; // Enable DAC output pin
     dac->DACxCONH.bits.TMCB  = BUCK_LEB_PERIOD;
-    dac->DACxDATH.value = 0x07FF; // Set board current reference to VDD/2 (~1.650 V)
+    dac->DACxDATH.value = initial_value; // Set DAC output to initial value
     
     return (retval);
 }

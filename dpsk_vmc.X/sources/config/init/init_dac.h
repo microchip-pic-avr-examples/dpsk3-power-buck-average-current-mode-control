@@ -32,11 +32,12 @@
 #define	SYSTEM_INITIALIZE_DIGITAL_TO_ANALOG_CONVERTER_H
 
 #include <xc.h> // include processor files - each processor file is guarded.  
-#include <stdint.h>
-#include <stdbool.h>
+#include <stdint.h> // include standard integer data types
+#include <stdbool.h> // include standard boolean data types
+
 
 extern volatile uint16_t sysDacModule_Initialize(void);
-extern volatile uint16_t sysDacOutput_Initialize(volatile uint16_t dacInstance);
+extern volatile uint16_t sysDacOutput_Initialize(volatile uint16_t dacInstance, volatile uint16_t initial_value);
 extern volatile uint16_t sysDacOutput_Enable(volatile uint16_t dacInstance);
 extern volatile uint16_t sysDacOutput_Disable(volatile uint16_t dacInstance);
 
