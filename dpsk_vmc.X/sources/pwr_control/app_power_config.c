@@ -386,7 +386,7 @@ volatile uint16_t appPowerSupply_PeripheralsInitialize(void)
     volatile uint16_t retval=1;
     
     retval &= drv_BuckConverter_Initialize(&buck);
- 
+    
     return(retval);
 }
 

@@ -1,16 +1,16 @@
 [GUI]
 CreateDate=08/26/2020 14:07:37
-SaveDate=01/19/2021 10:29:09
+SaveDate=01/26/2021 17:56:57
 Name=PowerSmart™ Digital Control Library Designer
 Version=0.9.12.660
 VersionKey=912
 AGS Version=2.0.23
 CGS Version=3.0.2
-WindoWState=0
-Top=60
-Left=268
-Height=950
-Width=1500
+WindoWState=2
+Top=-8
+Left=1912
+Height=1066
+Width=1936
 TabHeight=288
 [ControlSetup]
 ControlType=3
@@ -97,7 +97,7 @@ DataProviderSource=1
 AddDataProviderControlInput=0
 AddDataProviderControlInputComp=1
 AddDataProviderErrorInput=0
-AddDataProviderControlOutput=0
+AddDataProviderControlOutput=1
 AntiWindup=1
 AntiWindupLimitDebouncing=0
 AddAntiWindupMaximumClamping=1
@@ -164,7 +164,8 @@ TriggerPlacement=1
 [SimulationToolSupport]
 SimplisSchematics=
 [generator_history]
-count=2
-active_item=2
+count=3
+active_item=3
 1=2020-09-01 14:16:40||M91406||Optimized 4P4Z VMC Buck Converter Controller, fx = 20 kHz||3; 3; 12; 0.5; 1; 0; 0; 500000; 604; 82540; 104860; 250000; 250000; 250000; 2021; 3833; 49866; 50000; 50000
 2=2021-01-19 09:13:46||M91406||Regenerated firmware with PS-DCLD version 0.9.12.660||3; 3; 12; 0.5; 1; 0; 0; 500000; 604; 82540; 104860; 250000; 250000; 250000; 2021; 3833; 49866; 50000; 50000
+3=2021-01-26 12:54:42||M91406||Enabled control output data provider for enhanced debugging||3; 3; 12; 0.5; 1; 0; 0; 500000; 604; 82540; 104860; 250000; 250000; 250000; 2021; 3833; 49866; 50000; 50000

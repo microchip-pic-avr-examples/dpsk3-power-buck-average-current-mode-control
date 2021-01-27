@@ -139,8 +139,11 @@
     
 ;------------------------------------------------------------------------------
 ; Write control output value to target
+bclr _LATB, #11
     mov [w0 + #ptrTargetRegister], w8       ; capture pointer to target in working register
     mov w4, [w8]                            ; move control output to target address
+    mov [w0 + #ptrDProvControlOutput], w2   ; load pointer address of target buffer of most recent controller output value from data structure
+    mov w4, [w2]                            ; copy most recent controller output value to given data buffer target
     
 ;------------------------------------------------------------------------------
 ; Update ADC trigger locations
@@ -155,6 +158,8 @@
     add w6, w8, w10                         ; add user-defined ADC trigger A offset to half of control output
     mov [w0 + #ptrADCTriggerARegister], w8  ; load pointer to ADC trigger A register into working register
     mov w10, [w8]                           ; push new ADC trigger value to ADC trigger A register
+    
+bset _LATB, #11
     
 ;------------------------------------------------------------------------------
 ; Load pointer to first element of control history array
@@ -178,6 +183,8 @@
     mov [w2], w1                            ; move value from input source into working register
     mov [w0 + #ptrDProvControlInputComp], w2 ; load pointer address of target buffer of most recent, compensated controller input from data structure
     mov w1, [w2]                            ; copy most recent controller input value to given data buffer target
+    mov [w0 + #ptrDProvControlOutput], w2   ; load pointer address of target buffer of most recent controller output value from data structure
+    clr [w2]                                ; copy most recent controller output value to given data buffer target
     V_LOOP_LOOP_EXIT:                       ; Exit control loop branch target
     
 ;------------------------------------------------------------------------------
@@ -318,6 +325,8 @@
 ; Write control output value to target
     mov [w0 + #ptrTargetRegister], w8       ; capture pointer to target in working register
     mov w4, [w8]                            ; move control output to target address
+    mov [w0 + #ptrDProvControlOutput], w2   ; load pointer address of target buffer of most recent controller output value from data structure
+    mov w4, [w2]                            ; copy most recent controller output value to given data buffer target
     
 ;------------------------------------------------------------------------------
 ; Update ADC trigger locations
@@ -341,6 +350,8 @@
     mov [w2], w1                            ; move value from input source into working register
     mov [w0 + #ptrDProvControlInputComp], w2 ; load pointer address of target buffer of most recent, compensated controller input from data structure
     mov w1, [w2]                            ; copy most recent controller input value to given data buffer target
+    mov [w0 + #ptrDProvControlOutput], w2   ; load pointer address of target buffer of most recent controller output value from data structure
+    clr [w2]                                ; copy most recent controller output value to given data buffer target
     V_LOOP_PTERM_LOOP_EXIT:                 ; Exit P-Term control loop branch target
     
 ;------------------------------------------------------------------------------
