@@ -39,8 +39,10 @@ void __attribute__((__interrupt__, auto_psv, context))_BUCK_VLOOP_Interrupt(void
     v_loop_PTermUpdate(&v_loop);
     #endif
 
-    // Set PWM register update bit
-    PG1STATbits.UPDREQ = 1;  // Force PWM timing update
+    // Copy most recent control output to DAC output for debugging
+    #if (DBGDAC_ENABLE)
+    DACOUT_Set(buck.data.control_output);
+    #endif
     
     // Clear the interrupt flag bit allowing the next interrupt to trip
     _BUCK_VLOOP_ISR_IF = 0;
