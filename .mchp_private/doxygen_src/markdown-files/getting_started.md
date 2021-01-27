@@ -5,7 +5,7 @@
     <img src="images/startbanner.png" alt="Firmware Quick-Start Guide" height="70">
 </div>
 
-#### Table of Contents
+## Table of Contents
 
 - [Microchip SMPS Firmware Framework Architecture Overview](#sfw_1)
   - [Overall Process Alignment](#sfw_1a)
@@ -29,12 +29,13 @@
 - [Power Plant Measurement Support](#sfw_6)
 
 <span id="sfw_1"> </span>
-### 1) Microchip SMPS Firmware Framework Architecture Overview
+
+## 1) Microchip SMPS Firmware Framework Architecture Overview
 
 This introduction covers common aspects of the firmware architecture and provides guidance on specific firmware module documentation included in this document.
 
 <span id="sfw_1a"> </span>
-#### a) Overall Process Alignment
+### a) Overall Process Alignment
 
 Establishing a digital control system for a switched-mode power supply using a programmable microcontroller requires some specific considerations. Foremost, it is vital to allow the switching signal generation and high-speed real-time control loop to run freely and uninterrupted while background activity of additional, less time critical functions such as communication and housekeeping also gets enough bandwidth to be executed within their required timing tolerances.
 
@@ -46,7 +47,7 @@ This arrangement of different function blocks with different degrees of independ
 [[back](#startDoc)]
 
 <span id="sfw_1b"></span>
-#### b) Software Task Alignment
+### b) Software Task Alignment
 
 The critical component is where CPU activity needs to get shared between different software-driven processes such as housekeeping background tasks, processing communication protocols and the software-based real-time feedback loop. As the CPU can only execute one instruction at the time, this process alignment is managed by the multi-priority level interrupt controller mentioned above.
 
@@ -59,7 +60,7 @@ Depending on how many priority levels are staggered for simultaneous execution, 
 [[back](#startDoc)]
 
 
-##### Example A: Single Interrupt
+#### Example A: Single Interrupt
 
 The CPU is running executing the main loop of the program on priority level #0. This routine is interrupted by another process called on priority level #2. Hence, the level #0 process is suspended until the process on priority level #2 has been executed and the CPU returns to priority level #0. 
 
@@ -74,7 +75,7 @@ The CPU is running executing the main loop of the program on priority level #0. 
 While the total execution time of the process on priority level #2 t(p2) in this example is deterministic, as it will be executed uninterrupted, the total execution time of the process on priority level #0 t(p0) will now be the sum of both processes t(p0) + t(p2). Hence, the priority level #2 process will behave more deterministic than the priority level #0 task.
 
 [[back](#startDoc)]
-##### Example B: Two Interrupts
+#### Example B: Two Interrupts
 
 However, if a even higher priority level #6 process is called while the process on priority level #2 is still active, the priority level #2 process gets also interrupted and suspended until the execution of the priority level #6 process has been completed. 
 
@@ -89,7 +90,7 @@ Now the execution time of priority level #6 process is deterministic while the e
 
 [[back](#startDoc)]
 
-##### Example C: Mixed Interrupt Priorities
+#### Example C: Mixed Interrupt Priorities
 
 To make things even more complex, we now introduce a fourth, simultaneous process on interrupt level #5, which occurs while the higher interrupt priority level #6 is still active. As priority #6 is higher than level #5, the priority level #5 process will be pending until the higher priority level #6 process has been completed. However, instead of stepping back down to the suspended priority level #2 process, the newly occurred priority level #5 process is executed first before the priority level #2 process is continued. The main program will be resumed once all higher priority levels have been completed.
 
@@ -103,7 +104,7 @@ To make things even more complex, we now introduce a fourth, simultaneous proces
 [[back](#startDoc)]
 
 <span id="sfw_1c"></span>
-#### c) Software Process Priority Guidelines
+### c) Software Process Priority Guidelines
 
 As stated above, in a switched-mode power supply the real-time control loop always requires to have the highest priority in the system to ensure stable operation of the digital compensation filter including all potentially necessary real-time responses applied to the switching operation. In multi-loop control systems such as average current mode, multiple high-priority processes are usually triggered by the switching signal generator (i.e. PWM module) being distributed across a switching cycle to ensure uninterrupted, collision-free execution of each feedback loop.
 
@@ -120,7 +121,7 @@ Hence, aligning low and high priority processes requires to break up the longer,
 [[back](#startDoc)]
 
 <span id="sfw_2"></span>
-### 2) Buck Converter State Machine
+## 2) Buck Converter State Machine
 
 The state machine managing the power converter of the development board is implemented as high priority task in the task execution scheme described above. This state machine is tuned for constant voltage regulation. Hence, it offers user-programmable soft-start support including power on-delay, ramp up slope and power good delay, which allows users to tune the startup behavior and include this module in a larger sequencing scheme. The state machine further supports hardware triggered events such as an external ENABLE pin and a POWER GOOD output. Both active pins can be configured in push-pull or open drain mode.
 
@@ -139,62 +140,62 @@ During execution, it goes through the following steps in chronological order:
 [[back](#startDoc)]
 
 <span id="sfw_2a"></span>
-#### a) Initialization
+### a) Initialization
 
 In this step the control loop parameters are reset to their defaults, PWM outputs are turned off but the PWM is still running, continuously triggering the ADC to keep sampling input and output voltage as well as board temperature.
 
 [[back](#startDoc)]
 
 <span id="sfw_2b"></span>
-#### b) Reset
+### b) Reset
 This is the 'fall-back' state from which the buck converter will be restarted once it has been started successfully and has been shut down due to a fault condition (e.g. input under/over voltage or over temperature condition)
 
 [[back](#startDoc)]
 
 <span id="sfw_2c"></span>
-#### c) Standby
+### c) Standby
 After RESET, the state machine waits for all fault flags to be cleared and the enable and GO bits to be set.
 
 [[back](#startDoc)]
 
 <span id="sfw_2d"></span>
-#### d) Power-On Delay (POD)
+### d) Power-On Delay (POD)
 Once the buck converter has been cleared the state machine will execute the startup procedure starting with the Power On Delay. This is just a simple delay during which the converter will remain inactive but the fault handler will observe the values generated by the ADC for occurring fault conditions.
 
 [[back](#startDoc)]
 
 <span id="sfw_2e"></span>
-#### e) Launch Voltage Ramp
+### e) Launch Voltage Ramp
 After the Power-On delay has expired, input and output voltage will be measured. In case the converter output is pre-biased (voltage = non-zero), the power controller will be 'pre-charged' with an artificial control history and PWM output to softly ramp up the output voltage from its most recent level. 
 
 [[back](#startDoc)]
 
 <span id="sfw_2f"></span>
-#### f) Voltage Ramp-Up
+### f) Voltage Ramp-Up
 Now the digital feedback loop and PWM are enabled and the closed loop system reference value is incremented with every execution of the state machine (typical 100 µsec interval). The control loop has been adjusted to operate with a cross-over frequency of >10 kHz matching the maximum perturbation frequency allowed to keep the control system stable.  
 
 [[back](#startDoc)]
 
 <span id="sfw_2g"></span>
-#### g) Power Good Delay (PGD)
+### g) Power Good Delay (PGD)
 After the reference voltage has been increased to the pre-defined nominal level, the state machine switches over into the Power Good Delay period. This is another, simple delay where the control loop is in steady state waiting for the delay period to expire.
 
 [[back](#startDoc)]
 
 <span id="sfw_2h"></span>
-#### h) Online
+### h) Online
 After the Power Good Delay has expired, the converter drops into nominal operation. In this condition it continuously observes the reference value for changes. Should any other part of the firmware change the controller reference, the state machine will softly tune into the new level instead of hard-switching the reference. 
 
 [[back](#startDoc)]
 
 <span id="sfw_2i"></span>
-#### i) Suspend/Error
+### i) Suspend/Error
 If the power controller is shut down and reset by external commands (e.g. fault handler detecting a fault condition or through user-interaction), the state machine is switching into the SUSPEND state, which disables the PWM outputs and control loop execution, clears the control histories and resets the state machine back to RESET
 
 [[back](#startDoc)]
 
 <span id="sfw_3"></span>
-### 3) Fault Monitor
+## 3) Fault Monitor
 
 The fault handler is an independent firmware task, based on a fault monitor library, which is used to define certain so-called Fault Objects. A 'Fault Object' represents a value of a special function register or global user variable, which will monitored and validated by the Fault Monitor Library. The Library supports different comparisons for validation, such as 
 
@@ -254,7 +255,7 @@ Recovering from a fault condition uses the same mechanism, but provides its indi
 [[back](#startDoc)]
 
 <span id="sfw_4"></span>
-### 4) Evaluation, Customization and Code Migration
+## 4) Evaluation, Customization and Code Migration
 
 This firmware utilizes a so-called hardware abstraction layer, allowing users to quickly change fundamental system parameters, adopt pin-out and hardware changes and even migrating the
 firmware across different designs without having to modify the actual source code. 
@@ -285,7 +286,7 @@ The setting for the nominal output voltage is found in lines #484 through #486.
     #define BUCK_VOUT_TOLERANCE_MAX     (float)0.500   // Output voltage tolerance [+/-]
     #define BUCK_VOUT_TOLERANCE_MIN     (float)0.100   // Output voltage tolerance [+/-]
 
-##### Please note:
+#### Please note:
 The tolerance settings above include the transient response at a maximum load step. The value for maximum output voltage tolerance (e.g. 'BUCK_VOUT_TOLERANCE_MAX') is monitored by the fault handler. Should the output voltage reading divert from the most recent reference voltage value by more than the given range, the converter will be shut down and a REGULATION ERROR will be indicated. The power supply will automatically recover as soon as the fault condition has been cleared and the recover delay period specified by BUCK_REGERR_RECOVERY_DELAY in the hardware description header file has expired.
 
 (line numbers given may be subject to change)
@@ -293,7 +294,7 @@ The tolerance settings above include the transient response at a maximum load st
 [[back](#startDoc)]
 
 <span id="sfw_5"></span>
-### 5) Digital Controller Design
+## 5) Digital Controller Design
 
 The control loop source code is configured and generated by the PowerSmart&trade; - Digital Control Library Designer (PS-DCLD) software.
 
@@ -308,7 +309,7 @@ Please refer to the user guide of PowerSmart&trade; DCLD which is included in th
 [[back](#startDoc)]
 
 <span id="sfw_6"></span>
-### 6) Power Plant Measurement Support
+## 6) Power Plant Measurement Support
 
 This code examples includes an alternative, proportional control loop which is commonly used during measurements of the frequency response of the power plant. When the following define is set to **true**, the common main control loop is replaced by the proportional controller. The code has to be rebuilt and programmed to run the measurement.
 
@@ -327,8 +328,6 @@ FOR MORE INFORMATION ABOUT HOW TO CONDUCT A POWER PLANT MEASUREMENT, PLEASE READ
 [[back](#startDoc)]
 
 
-
-
 _________________________________________________
-(c) 2020, Microchip Technology Inc.
+(c) 2021, Microchip Technology Inc.
 

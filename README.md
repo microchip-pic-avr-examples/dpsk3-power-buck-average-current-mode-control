@@ -1,7 +1,7 @@
 ![image](images/microchip.png) 
 
 --- 
-## dsPIC33C Digital Power Starter Kit
+# dsPIC33C Digital Power Starter Kit
 ### Synchronous Buck Converter: Voltage Mode Control
 
 
@@ -47,8 +47,17 @@ This code example also includes the LCD driver allowing users to observe runtime
 ## Supported Target Devices
 - 48-pin [dsPIC33CK256MP505](https://www.microchip.com/dsPIC33CK256MP505)
 
-- - -
 
+## Security and Safety Requirements
+
+Unattended operating power supplies are always a potential safety risk as short circuits or failures of power components can occur at any time where even seemingly small power converters can cause fire or damage connected equipment.
+
+* This development board has not been FCC approved nor certified and must not be used outside a laboratory environment
+* Never operate the board unattended
+* Only use power supplies delivered with the board or equal, approved laboratory equipment
+* Read the user guide for detailed operating instructions to prevent damage to the board or connected equipment
+
+- - -
 ## Setup
 - Connect dsPIC33C Digital Power Starter Kit to the PC using the micro-USB cable
 - Open and compile the firmware; program the target device
@@ -60,6 +69,7 @@ This code example also includes the LCD driver allowing users to observe runtime
 DPSK3 Buck Converter Test Points
 </center>
 
+- - -
 
 ## Operation
 After the device has been programmed and the target device starts up, the LC display will show the startup screen for approx. 3 seconds before switching to the runtime data display, showing the most recent input and output voltages.
