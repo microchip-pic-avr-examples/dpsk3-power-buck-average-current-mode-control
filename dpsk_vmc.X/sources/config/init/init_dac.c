@@ -34,9 +34,6 @@
  * Neither, built-in comparator nor Pulse-Density Modulator (PDM) ramp generator
  * are used.
  *
- * <p><b>Remarks:</b></p>
- * ADD_REMARKS_HERE
- *
  **********************************************************************************/
 
 volatile uint16_t sysDacModule_Initialize(void) 
@@ -59,16 +56,14 @@ volatile uint16_t sysDacModule_Initialize(void)
  * @return unsigned integer (0=failure, 1=success)
  * 
  * @details
- * ADD_DESCRIPTION_HERE
- *
- * <p><b>Example:</b></p>
- *
- * <code>
- * ADD_CODE_EXAMPLE_HERE
- * </code>
- *
- * <p><b>Remarks:</b></p>
- * ADD_REMARKS_HERE
+ * This function clears all registers of the declared DAC instance and 
+ * initializes the registers required by a static Digital-to-Analog Converter
+ * output with the given default values.
+ * 
+ * @note
+ * The initialization function does not enable the DAC instance. Please use
+ * function sysDacOutput_Enable() to turn on the DAC instance at the appropriate
+ * time.
  *
  **********************************************************************************/
 
@@ -94,16 +89,9 @@ volatile uint16_t sysDacOutput_Initialize(volatile uint16_t dacInstance)
  * @return unsigned integer (0=failure, 1=success)
  * 
  * @details
- * ADD_DESCRIPTION_HERE
- *
- * <p><b>Example:</b></p>
- *
- * <code>
- * ADD_CODE_EXAMPLE_HERE
- * </code>
- *
- * <p><b>Remarks:</b></p>
- * ADD_REMARKS_HERE
+ * This function enables the DAC output and DAC module specified in parameter
+ * dacInstance. This function should be called after the DAC instance has been 
+ * initialized by calling function sysDacOutput_Initialize().
  *
  **********************************************************************************/
 
@@ -132,16 +120,8 @@ volatile uint16_t sysDacOutput_Enable(volatile uint16_t dacInstance) {
  * @return unsigned integer (0=failure, 1=success)
  * 
  * @details
- * ADD_DESCRIPTION_HERE
- *
- * <p><b>Example:</b></p>
- *
- * <code>
- * ADD_CODE_EXAMPLE_HERE
- * </code>
- *
- * <p><b>Remarks:</b></p>
- * ADD_REMARKS_HERE
+ * This function disables the DAC output and DAC module specified in parameter
+ * dacInstance. 
  *
  **********************************************************************************/
 

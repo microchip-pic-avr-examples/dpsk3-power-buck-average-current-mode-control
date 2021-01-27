@@ -38,7 +38,7 @@
 
 /***********************************************************************************
  * @ingroup lib-layer-push-button-properties-public
- * @enum enum SWITCH_STATUS_FLAGS_e
+ * @enum  SWITCH_STATUS_FLAGS_e
  * @brief Enumeration of push button states
  * @details
  *  This enumeration lists the different conditions of the push button connected 

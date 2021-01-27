@@ -60,7 +60,8 @@
  * @brief Global defines used to enable/disable special firmware options
  * 
  * @details
- * This section is used to enable/disable special options of the firmware. 
+ * This section is used to enable/disable special options useful during development, debugging, 
+ * troubleshooting the recent firmware or to tailor special functions of this application. 
  * 
  **************************************************************************************************/
 
@@ -85,7 +86,7 @@
  **************************************************************************************************/
 #define CPU_FREQUENCY       (float)100000000.0  ///< CPU frequency in [Hz]
 
-// ADC(DAC Reference and Resolution Settings    
+// ADC/DAC Reference and Resolution Settings    
 #define ADC_REFERENCE       (float)3.300 ///< ADC reference voltage in [V]
 #define ADC_RESOLUTION      (float)12.0  ///< ADC resolution in [bit]
 
@@ -235,6 +236,38 @@
 
 
 /** @} */ // end of group circuit-gpio-mcal
+
+/**************************************************************************************************
+ * @ingroup circuit-peripheral-mcal
+ * @{
+ * @brief Special Function chip resources declarations
+ * 
+ * @details
+ * Some applications may require additional chip resources, which are not supported by
+ * default library modules used in this project. For static configurations, these chip 
+ * resources are initialized in function \ref sysUserPeriperhals_Initialize during system 
+ * startup. Any specific declarations required for abstracting hardware or microcontroller
+ * features is placed in this section
+ * 
+ **************************************************************************************************/
+
+#define DAC_OUTPUT_INSTANCE     1U ///< Digital-To-Analog Converter instance used for enhanced debugging
+#define DAC_BUFFER_OPA_INSTANCE 3U ///< Operational amplifier instance used to buffer DAC output
+#define DAC_OUTPUT_INIT_VALUE   0U ///< initial value of the Digital-To-Analog Converter debugging output
+
+
+#if (DAC_OUTPUT_INSTANCE == 1U)
+  #define DACOUT_Set(x) { DAC1DATH=x; } ///< Direct SFR Write Access Macro for Digital-To-Analog Converter instance #1
+  #define DACOUT_Get()    DAC1DATH      ///< Direct SFR Read Access Macro for Digital-To-Analog Converter instance #1
+#elif (DAC_OUTPUT_INSTANCE == 2U)
+  #define DACOUT_Set(x) { DAC2DATH=x; } ///< Direct SFR Write Access Macro for Digital-To-Analog Converter instance #2
+  #define DACOUT_Get()    DAC2DATH      ///< Direct SFR Read Access Macro for Digital-To-Analog Converter instance #2
+#elif (DAC_OUTPUT_INSTANCE == 3U)
+  #define DACOUT_Set(x) { DAC3DATH=x; } ///< Direct SFR Write Access Macro for Digital-To-Analog Converter instance #3
+  #define DACOUT_Get()    DAC3DATH      ///< Direct SFR Read Access Macro for Digital-To-Analog Converter instance #3
+#endif
+
+/** @} */ // end of group circuit-peripheral-mcal
 
 /**************************************************************************************************
  * @ingroup pwm-settings

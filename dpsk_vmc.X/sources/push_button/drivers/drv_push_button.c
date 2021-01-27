@@ -16,7 +16,7 @@
  * @ingroup lib-layer-push-button-functions-public
  * @fn volatile uint16_t drv_PushButton_Initialize(volatile struct PUSH_BUTTON_OBJECT_s* pushbtn)
  * @brief  Initializes the push button device driver
- * @param  PUSH_BUTTON_OBJECT_s* pushbtn
+ * @param  pushbtn: push button object of type struct PUSH_BUTTON_OBJECT_s*
  * @return unsigned int (0=failure, 1=success)
  * @details
  *  The push button driver offers typical functions of a human-machine interface
@@ -53,10 +53,11 @@ volatile uint16_t drv_PushButton_Initialize(volatile struct PUSH_BUTTON_OBJECT_s
 
 /*********************************************************************************
  * @ingroup lib-layer-push-button-functions-public
- * @fn volatile uint16_t drv_PushButton_Execute(volatile struct PUSH_BUTTON_OBJECT_s* pushbtn)
+ * @fn     volatile uint16_t drv_PushButton_Execute(volatile struct PUSH_BUTTON_OBJECT_s *pushbtn)
  * @brief  Initializes the push button device driver
- * @param  PUSH_BUTTON_OBJECT_s* pushbtn
+ * @param  *pushbtn: pointer to push button data object of type struct PUSH_BUTTON_OBJECT_s 
  * @return unsigned int (0=failure, 1=success)
+ * 
  * @details
  *  This function has to be called by a task scheduler at a constant frequency.
  *  With ever function call the state of the digital I/O is scanned and monitoring 
@@ -138,7 +139,7 @@ volatile uint16_t drv_PushButton_Execute(volatile struct PUSH_BUTTON_OBJECT_s* p
  * @ingroup lib-layer-push-button-functions-public
  * @fn volatile uint16_t drv_PushButton_Dispose(volatile struct PUSH_BUTTON_OBJECT_s* pushbtn)
  * @brief  Initializes the push button device driver
- * @param  PUSH_BUTTON_OBJECT_s* pushbtn
+ * @param  pushbtn: push button object of type struct PUSH_BUTTON_OBJECT_s*
  * @return unsigned int (0=failure, 1=success)
  * @details
  *  This function will unload the push-button function driver and free its 
