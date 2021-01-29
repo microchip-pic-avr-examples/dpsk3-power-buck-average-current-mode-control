@@ -1,8 +1,8 @@
 ; **********************************************************************************
-;  SDK Version: PowerSmart™ Digital Control Library Designer v0.9.12.660
-;  CGS Version: Code Generator Script v3.0.2 (01/05/2021)
+;  SDK Version: PowerSmart(TM) Digital Control Library Designer v0.9.12.660
+;  CGS Version: Code Generator Script v3.0.4 (01/27/2021)
 ;  Author:      M91406
-;  Date/Time:   01/19/2021 09:13:39
+;  Date/Time:   01/29/2021 01:17:26
 ; **********************************************************************************
 ;  4P4Z Control Library File (Fast Floating Point Coefficient Scaling Mode)
 ; **********************************************************************************
@@ -139,7 +139,6 @@
     
 ;------------------------------------------------------------------------------
 ; Write control output value to target
-bclr _LATB, #11
     mov [w0 + #ptrTargetRegister], w8       ; capture pointer to target in working register
     mov w4, [w8]                            ; move control output to target address
     mov [w0 + #ptrDProvControlOutput], w2   ; load pointer address of target buffer of most recent controller output value from data structure
@@ -158,8 +157,6 @@ bclr _LATB, #11
     add w6, w8, w10                         ; add user-defined ADC trigger A offset to half of control output
     mov [w0 + #ptrADCTriggerARegister], w8  ; load pointer to ADC trigger A register into working register
     mov w10, [w8]                           ; push new ADC trigger value to ADC trigger A register
-    
-bset _LATB, #11
     
 ;------------------------------------------------------------------------------
 ; Load pointer to first element of control history array

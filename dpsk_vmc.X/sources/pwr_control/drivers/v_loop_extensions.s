@@ -1,5 +1,5 @@
 ; **********************************************************************************
-;  SDK Version: PowerSmart? Digital Control Library Designer v0.9.12.660
+;  SDK Version: PowerSmart(TM) Digital Control Library Designer v0.9.12.660
 ;  CGS Version: Code Generator Script v3.0.2 (01/05/2021)
 ;  Author:      M91406
 ;  Date/Time:   01/12/2021 21:22:33
