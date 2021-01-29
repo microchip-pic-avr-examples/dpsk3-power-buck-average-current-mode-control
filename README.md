@@ -10,9 +10,17 @@
 <img src="images/dm330017-3-1.jpg" alt="dsPIC33C Digital Power Starter Kit" width="400">
 &nbsp; 
 <img src="images/dm330017-3-2.jpg" width="400"></p>
-<p>dsPIC33C Digital Power Starter Kit (DPSK3) (Part-No. DM330017-3)</p>
 </a>
-</center></p>
+</center>
+</p>
+
+<p>
+<center>
+<a target="_blank" href="https://www.microchip.com/DM330017-3" rel="nofollow">
+dsPIC33C Digital Power Starter Kit (DPSK3) (Part-No. DM330017-3)
+</a>
+</center>
+</p>
 
 - - -
 
