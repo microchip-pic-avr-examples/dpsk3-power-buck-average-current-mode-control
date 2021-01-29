@@ -50,9 +50,10 @@ volatile uint16_t sysDacModule_Initialize(void)
 }
 
 /***********************************************************************************
- * @fn uint16_t sysDacOutput_Initialize
+ * @fn uint16_t sysDacOutput_Initialize(volatile uint16_t dacInstance, volatile uint16_t initValue)
  * @brief  Initializes a user specified DAC instance with DAC output enabled
- * @param  unsigned integer dacInstance
+ * @param  dacInstance Index of the selected DAC Instance (1=DAC1, 2=DAC2, etc.)
+ * @param  initValue Integer value at startup of the DAC peripheral instance
  * @return unsigned integer (0=failure, 1=success)
  * 
  * @details
@@ -67,7 +68,7 @@ volatile uint16_t sysDacModule_Initialize(void)
  *
  **********************************************************************************/
 
-volatile uint16_t sysDacOutput_Initialize(volatile uint16_t dacInstance, volatile uint16_t initial_value)
+volatile uint16_t sysDacOutput_Initialize(volatile uint16_t dacInstance, volatile uint16_t initValue)
 {
     volatile uint16_t retval=1;
     volatile struct P33C_DAC_INSTANCE_s* dac;
@@ -76,8 +77,8 @@ volatile uint16_t sysDacOutput_Initialize(volatile uint16_t dacInstance, volatil
     retval &= p33c_DacInstance_Dispose(dacInstance);
     
     dac->DACxCONL.bits.DACOEN = 1; // Enable DAC output pin
-    dac->DACxCONH.bits.TMCB  = BUCK_LEB_PERIOD;
-    dac->DACxDATH.value = initial_value; // Set DAC output to initial value
+    dac->DACxCONH.bits.TMCB  = BUCK_LEB_PERIOD; // Set Leading Edge blanking interval period
+    dac->DACxDATH.value = initValue; // Set DAC output to initial value
     
     return (retval);
 }
@@ -85,7 +86,7 @@ volatile uint16_t sysDacOutput_Initialize(volatile uint16_t dacInstance, volatil
 /***********************************************************************************
  * @fn uint16_t sysDacOutput_Enable
  * @brief  Enables a user specified DAC output
- * @param  unsigned integer dacInstance
+ * @param  dacInstance Index of the selected DAC Instance (1=DAC1, 2=DAC2, etc.)
  * @return unsigned integer (0=failure, 1=success)
  * 
  * @details
@@ -116,7 +117,7 @@ volatile uint16_t sysDacOutput_Enable(volatile uint16_t dacInstance) {
 /***********************************************************************************
  * @fn uint16_t sysDacOutput_Disable
  * @brief  Disables a user specified DAC output
- * @param  unsigned integer dacInstance
+ * @param  dacInstance Index of the selected DAC Instance (1=DAC1, 2=DAC2, etc.)
  * @return unsigned integer (0=failure, 1=success)
  * 
  * @details

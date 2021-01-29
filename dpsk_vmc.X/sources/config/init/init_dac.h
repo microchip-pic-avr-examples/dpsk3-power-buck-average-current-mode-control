@@ -20,9 +20,9 @@
  */
 
 /* 
- * File:   
- * Author: 
- * Comments:
+ * File:     init_dac.h
+ * Author:   M91406
+ * Comments: 
  * Revision history: 
  */
 
@@ -37,7 +37,7 @@
 
 
 extern volatile uint16_t sysDacModule_Initialize(void);
-extern volatile uint16_t sysDacOutput_Initialize(volatile uint16_t dacInstance, volatile uint16_t initial_value);
+extern volatile uint16_t sysDacOutput_Initialize(volatile uint16_t dacInstance, volatile uint16_t initValue);
 extern volatile uint16_t sysDacOutput_Enable(volatile uint16_t dacInstance);
 extern volatile uint16_t sysDacOutput_Disable(volatile uint16_t dacInstance);
 
