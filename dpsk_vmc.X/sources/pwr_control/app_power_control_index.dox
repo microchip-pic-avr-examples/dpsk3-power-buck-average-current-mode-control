@@ -15,7 +15,7 @@
 @brief Public functions of the application layer of the power control task
 @details 
   The power control application layer is the proprietary user code used to configure the generic
-  power controller device driver defined in dev_buck_typedef.h. This applicaiton layer further provides
+  power controller device driver defined in dev_buck_typedef.h. This application layer further provides
   a subset of function calls allowing external software functions to control and monitor the processes
   of the power control device driver, such as the system-wide fault monitor or communication drivers.
 
@@ -31,7 +31,7 @@
 @ingroup app-layer-power-control
 @brief Public events of the application layer of the power control task
 @details 
-  This is the event level of the first applicaiton layer task. 
+  This is the event level of the first application layer task. 
 
 @defgroup app-layer-power-control-functions-private Private Functions
 @ingroup app-layer-power-control

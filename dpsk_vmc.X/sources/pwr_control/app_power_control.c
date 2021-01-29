@@ -16,16 +16,16 @@
 
 /**************************************************************************************************
  * @ingroup app-layer-power-control-properties-public
- * @var volatile struct BUCK_POWER_CONTROLLER_s  buck
+ * @var volatile struct BUCK_CONVERTER_s  buck
  * @brief Global data object for a BUCK CONVERTER 
  * 
  * @details
  * The 'buck' data object holds all status, control and monitoring values of the BUCK power 
- * controller. The BUCK_POWER_CONTROLLER_s data structure is defined in dev_buck_converter.h.
+ * controller. The BUCK_CONVERTER_s data structure is defined in dev_buck_converter.h.
  * Please refer to the comments on top of this file for further information.
  * 
  **************************************************************************************************/
-volatile struct BUCK_POWER_CONTROLLER_s buck;
+volatile struct BUCK_CONVERTER_s buck;
 
 /* PRIVATE FUNCTION PROTOTYPES */
 extern volatile uint16_t appPowerSupply_ConverterObjectInitialize(void);

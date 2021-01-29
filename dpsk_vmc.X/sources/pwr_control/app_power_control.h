@@ -39,7 +39,7 @@
 #include "pwr_control/devices/dev_buck_typedef.h"
 
 // PUBLIC DATA OBJECT DECLARATIONS
-extern volatile struct BUCK_POWER_CONTROLLER_s buck;
+extern volatile struct BUCK_CONVERTER_s buck;
 
 // PUBLIC FUNCTION PROTOTYPE DECLARATIONS
 extern volatile uint16_t appPowerSupply_Initialize(void);
