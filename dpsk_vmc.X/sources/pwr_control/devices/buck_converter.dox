@@ -179,7 +179,7 @@
 		/**
 		@defgroup lib-layer-buck-state-machine-properties-variables Variables & Constants
 		@ingroup  lib-layer-buck-state-machine-properties
-		@brief    Valiables of the buck converter state machine
+		@brief    Variables of the buck converter state machine
 		*/
 		/**
 		@defgroup lib-layer-buck-state-machine-properties-data-types Data Types
