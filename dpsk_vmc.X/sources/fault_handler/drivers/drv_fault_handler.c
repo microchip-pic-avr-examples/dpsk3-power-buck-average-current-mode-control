@@ -73,11 +73,10 @@ volatile struct FAULT_OBJECT_s fltObjectClear =
     };
 
 /*******************************************************************************
- * @fn	uint16_t drv_FaultHandler_CheckObject(volatile struct FAULT_OBJECT_s* fltObject)
+ * @fn	volatile uint16_t drv_FaultHandler_CheckObject(volatile struct FAULT_OBJECT_s* fltObject)
  * @ingroup lib-layer-fault-functions-public
- * @param	struct FAULT_OBJECT_s* fltObject
- * @return 0=failure 
- * @return 1=success
+ * @param	fltObject Pointer to a Fault Monitoring Object of type struct FAULT_OBJECT_s
+ * @return  unsigned integer (0=failure, 1=success)
  *
  * @brief Check current fault status of a user-defined fault object
  *
@@ -96,47 +95,40 @@ volatile struct FAULT_OBJECT_s fltObjectClear =
  * has been RSTCNT_MAX times below the RECOVERY_LEVEL threshold, the fault 
  * will automatically be cleared.
  * 
- * @note If the value is within normal operating conditions, the fault 
- *      counter will be cleared. Thus fault events must occur successively 
- *      incrementing the fault event counter high enough to eventually 
- *      trip a fault event. Thus the fault event counter can be used to 
- *      adjust the sensitivity of the fault response.
- * 
- * 
  * a) Comparison Types
  * 
  * The fault handler offers the following different comparison methods:
- *  - Greater Than:
+ *      - Greater Than:
  *          - performs comparison SOURCE > TRIP_LEVEL
  * 
  *          - TRIP_LEVEL is greater than RECOVERY_LEVEL. The difference between 
  *          TRIP_LEVEL and RECOVERY_LEVEL is the hysteresis of the defined
  *          threshold.
  * 
- *  - Less Than:
+ *      - Less Than:
  *          - performs comparison SOURCE < TRIP_LEVEL
  * 
  *          - TRIP_LEVEL is less than RECOVERY_LEVEL. The difference between 
  *          TRIP_LEVEL and RECOVERY_LEVEL is the hysteresis of the defined
  *          threshold.
  *
- * - Is Equal:
+ *      - Is Equal:
  *          - performs comparison SOURCE == TRIP_LEVEL
  *
  *          - RECOVERY_LEVEL is ignored.
  *
- * - Is Not Equal:
+ *      - Is Not Equal:
  *          - performs comparison SOURCE != TRIP_LEVEL
  *
  *          - RECOVERY_LEVEL is ignored.
  *
- * - Between:
+ *      - Between:
  *          - performs comparison RECOVERY_LEVEL < SOURCE < TRIP_LEVEL
  *
  *          - min/max of the FAULT range is defined by the range between
  *          RECOVERY_LEVEL (min) and TRIP_LEVEL (max)
  *
- * - Outside:
+ *      - Outside:
  *          - performs comparison (SOURCE < RECOVERY_LEVEL) or (TRIP_LEVEL < SOURCE)
  *
  *          - min/max of the allowed operating range is defined by the range 
@@ -164,6 +156,12 @@ volatile struct FAULT_OBJECT_s fltObjectClear =
  *    condition has been tripped or reset.
  *    I no user-defined function should be called, these pointers can be 
  *    set = NULL (NULL-pointer)
+ * 
+ * @note If the value is within normal operating conditions, the fault 
+ *      counter will be cleared. Thus fault events must occur successively 
+ *      incrementing the fault event counter high enough to eventually 
+ *      trip a fault event. Thus the fault event counter can be used to 
+ *      adjust the sensitivity of the fault response.
  * 
  *****************************************************************************/
 
