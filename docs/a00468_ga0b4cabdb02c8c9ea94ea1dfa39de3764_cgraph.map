@@ -1,0 +1,4 @@
+<map id="appPowerSupply_ControllerInitialize" name="appPowerSupply_ControllerInitialize">
+<area shape="rect" id="node1" title="This function initializes the control system feedback loop objects." alt="" coords="5,5,187,47"/>
+<area shape="rect" id="node2" href="$a00508.html#ga62d45a18f3dd47fa691fbb463f90e051" title="Initializes controller coefficient arrays and normalization." alt="" coords="235,13,347,39"/>
+</map>
