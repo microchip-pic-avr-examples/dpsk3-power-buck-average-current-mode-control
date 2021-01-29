@@ -2,9 +2,8 @@
 
 <span id="startDoc"> </span> <!-- start tag for internal references -->
 <div style="text-align:left">
-    <img src="images/startbanner.png" alt="Firmware Quick-Start Guide" height="70">
+    <img src="images/startbanner.png" alt="Firmware Quick-Start Guide" height="70" width="880">
 </div>
-<br>
 
 ## Table of Contents
 
@@ -17,14 +16,14 @@
 
 <span id="vmc_1"> </span>
 
-## DPSK3 Buck Converter Voltage Mode Control Loop Implementation
+## 1) DPSK3 Buck Converter Voltage Mode Control Loop Implementation
 
 This firmware demonstrates the implementation of a simple, single loop voltage mode controller used to regulate the constant output voltage of the on-board  step-down converter of the Digital Power Starter Kit 3 (DPSK3). The implementation of the Voltage Feedback Loop requires one Analog-to-Digital Converter (ADC) input oversampling the output voltage of the converter and two PWM outputs (PWM high and PWM low) to drive the power converter half-bridge switch node in synchronous mode. 
 
 [[back](#startDoc)]
 <span id="vmc_2"> </span>
 
-## Control Loop Block Diagram
+## 2) Control Loop Block Diagram
 
 *Figure 1* shows the block diagram of the buck converter voltage mode controller, where the ADC input is used to sample the most recent level of the output voltage feedback signal. Once converted, the value is then compared against the internal reference value and the inverse of the deviation between reference and feedback (= *error*) is pushed through the discrete compensation filter. 
 
@@ -39,7 +38,7 @@ In the Anti-Windup block, the output of the compensation filter is checked again
 [[back](#startDoc)]
 <span id="vmc_3"> </span> 
 
-## Control Loop Timing
+## 3) Control Loop Timing
 
 The single voltage loop controller is triggered by the PWM counter at the same time as the ADC is triggered. The control loop is executing the overhead code of calculating the first part of the compensation filter term (= *A-Term*) until the most recent ADC sample is available to be processed in the later part of the compensation filter term computation (= *B-Term*). This approach helps to shorten the overall response time of the controller measured between ADC trigger and write back event of the most recent controller result to the duty cycle register of the PWM generator. The new controller output value will then be divided by two and added to half of the period value to place the new ADC trigger point at 50% of the off-time. If the user has specified an additional offset to compensate FET driver propagation delays, this constant time-offset is also added before the ADC trigger location is updated. The the new duty cycle value will be updated immediately when the new value of the ADC trigger location is written to the PWM generator logic. By placing the ADC trigger point at 50% of the off time, the total control response is less than half a switching period, resulting in minimized phase erosion. 
 
@@ -52,7 +51,7 @@ The single voltage loop controller is triggered by the PWM counter at the same t
 [[back](#startDoc)]
 <span id="vmc_4"> </span>
 
-## Control Loop Flow Chart
+## 4) Control Loop Flow Chart
 
 *Figure 3* shows a typical flow chart of a discrete software feedback loop called at the desired control frequency. It covers the loop path from ADC trigger to PWM output shown in the block diagram above (see *Figure 2*) while supporting additional features like an *Enable/Disable Bypass Switch* or advanced features like *Adaptive Gain Control (AGC)*.
 
@@ -74,7 +73,7 @@ The compensation filter is based on an Infinite-Impulse-Response (IIR) filter co
 [[back](#startDoc)]
 <span id="vmc_5"> </span>
 
-## Control Loop Firmware Implementation
+## 5) Control Loop Firmware Implementation
 
 *Figure 4* shows a typical implementation of the power converter state machine and the high-speed control loop in a task scheduler based firmware environment.
 
