@@ -19,19 +19,18 @@
  * MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE 
  * TERMS. 
  * ***************************************************************************/
-/*!p33SMPS_oscillator.h
- * ***************************************************************************
+
+/*****************************************************************************
  *
- * File:    p33c_osc.h
- * Author:  M91406
- * Created: October 27, 2017, 11:24 AM
+ * @file    p33c_osc.h
+ * @author  M91406
+ * @date    October 27, 2017, 11:24 AM
  * 
  * History:
  * 10/27/17 initial release
  * 07/07/18 separation of FJ, EP and CH/CK device families
  * 
  * Know limitations in this release:
- * 
  * - REFCLK is not supported
  * ***************************************************************************/
 
@@ -44,8 +43,8 @@
 
 #include "p33smps_devices.h" // DEVICES header to derive device-dependent properties
 
-/*!System Frequencies
- * ************************************************************************************************
+/**************************************************************************************************
+ * System Frequencies
  * Summary:
  * Set of defines, data types and data structures for system frequency adaption
  *
@@ -64,7 +63,7 @@
  * 
  *      init_FRCCLK_Defaults(CPU_SPEED_80_MIPS);    // Configuring FRC for 80 MIPS operation
  * 
- * ***********************************************************************************************/
+ *************************************************************************************************/
 
 typedef enum CPU_SPEED_DEFAULTS_e
 {

@@ -19,23 +19,19 @@
  * TERMS. 
  */
 
-/*@@p33c_gpio.h
- * ************************************************************************************************
- * Summary:
- * Generic Digital Signal Processor Driver Module (header file)
- *
- * Description:
+/**************************************************************************************************
+ * @file p33c_gpio.h
+ * @see  p33c_gpio.c
+ * @brief Generic Digital Signal Processor Driver Module (header file)
+ * @details
  * This additional header file contains defines for all required bit-settings of all related 
  * special function registers of a peripheral module and/or instance. 
  * This file is an additional header file on top of the generic device header file.
  * 
- * See Also:
- *	p33c_gpio.c
- * 
- * ***********************************************************************************************#
- * Revision history: 
+ *************************************************************************************************/
+/* Revision history: 
  * 12/10/20     1.0     initial release
- * ***********************************************************************************************/
+ *************************************************************************************************/
 
 // This is a guard condition so that contents of this file are not included
 // more than once.  
@@ -52,7 +48,7 @@
 // DO NOT REORDER ELEMENTS AS THEY MAP ONTO DEVICE REGISTER MEMORY !!!
 #ifndef P33C_GPIO_INSTANCE_s
 
-    typedef struct P33C_GPIO_INSTANCE_s {
+    struct P33C_GPIO_INSTANCE_s {
         union {   
             volatile struct tagLATABITS bits; // Register bit-field
             volatile uint16_t value; // 16-bit wide register value
@@ -101,8 +97,9 @@
             volatile struct tagLATABITS bits; // Register bit-field
             volatile uint16_t value; // 16-bit wide register value
         }CNFx; // CNFx: CHANGE NOTIFICATION INTERRUPT FLAG FOR PORTx REGISTER
-    } __attribute__((packed)) P33C_GPIO_INSTANCE_t; // GPIO REGISTER SET
-
+    } __attribute__((packed)); // GPIO REGISTER SET
+	typedef struct P33C_GPIO_INSTANCE_s  P33C_GPIO_INSTANCE_t;
+	
     #define P33C_GPIO_SFR_OFFSET  ((volatile uint16_t)&ANSELB - (volatile uint16_t)&ANSELA)
 
 #endif

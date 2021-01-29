@@ -107,7 +107,7 @@ volatile struct P33C_OPA_MODULE_s p33c_OpaModule_ConfigRead(void)
  * @fn uint16_t p33c_OpaModule_ConfigWrite(volatile struct P33C_OPA_MODULE_s opaModuleConfig)
  * @ingroup lib-layer-pral-functions-public-opa
  * @brief Writes a user-defined configuration to the op-amp module base registers
- * @param  struct P33C_OPA_MODULE_s opaModuleConfig
+ * @param  opaModuleConfig Operation Amplifier Peripheral SFR data object of type struct P33C_OPA_MODULE_s
  * @return unsigned integer
  * @return 0 = failure, writing op-amp module was not successful
  * @return 1 = success, writing op-amp module was successful

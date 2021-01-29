@@ -31,8 +31,8 @@
  * @fn struct P33C_GPIO_INSTANCE_s* p33c_GpioInstance_GetHandle(volatile uint16_t gpioInstance)
  * @ingroup lib-layer-pral-functions-public-gpio
  * @brief Gets pointer to GPIO Instance SFR set
- * @param uint16_t gpioInstance: Index of the selected GPIO Instance (1=Port A, 2=Port B, etc.)
- * @return struct P33C_GPIO_INSTANCE_s: GPIO instance object of the selected GPIO instance
+ * @param gpioInstance Index of the selected GPIO Instance (1=Port A, 2=Port B, etc.)
+ * @return Pointer to GPIO instance object of type struct P33C_GPIO_INSTANCE_s of the selected GPIO instance
  *  
  * @details
  *    This function returns the pointer to a GPIO instance register set in 
@@ -57,7 +57,7 @@ volatile struct P33C_GPIO_INSTANCE_s* p33c_GpioInstance_GetHandle(volatile uint1
  * @fn uint16_t p33c_GpioInstance_Dispose(volatile uint16_t gpioInstance)
  * @ingroup lib-layer-pral-functions-public-gpio
  * @brief Resets all GPIO Instance registers to their RESET default values
- * @param  uint16_t gpioInstance
+ * @param  gpioInstance Index of the selected GPIO Instance (1=Port A, 2=Port B, etc.)
  * @return 0 = failure, disposing GPIO instance was not successful
  * @return 1 = success, disposing GPIO instance was successful
  * 
@@ -87,7 +87,7 @@ volatile uint16_t p33c_GpioInstance_Dispose(volatile uint16_t gpioInstance)
  * @fn struct P33C_GPIO_INSTANCE_s p33c_GpioInstance_ConfigRead(volatile uint16_t gpioInstance)
  * @ingroup lib-layer-pral-functions-public-gpio
  * @brief Read the current configuration from the GPIO instance registers  
- * @param  uint16_t gpioInstance
+ * @param  gpioInstance Index of the selected GPIO Instance (1=Port A, 2=Port B, etc.)
  * @return 0 = failure, reading GPIO instance was not successful (returns NULL)
  * @return n = success, reading GPIO instance was successful (returns 16-bit wide pointer)
  * 
@@ -115,8 +115,8 @@ volatile struct P33C_GPIO_INSTANCE_s p33c_GpioInstance_ConfigRead(volatile uint1
  * @fn uint16_t p33c_GpioInstance_ConfigWrite(volatile uint16_t gpioInstance,volatile struct P33C_GPIO_INSTANCE_s gpioConfig)
  * @ingroup lib-layer-pral-functions-public-gpio
  * @brief  Writes a user-defined configuration to the GPIO instance registers
- * @param  uint16_t gpioInstance
- * @param  struct P33C_GPIO_INSTANCE_s gpioConfig
+ * @param  gpioInstance Index of the selected GPIO Instance (1=Port A, 2=Port B, etc.)
+ * @param  gpioConfig GPIO peripheral instance SFR object of type struct P33C_GPIO_INSTANCE_s
  * @return 0 = failure, writing GPIO instance was not successful
  * @return 1 = success, writing GPIO instance was successful
  * 
