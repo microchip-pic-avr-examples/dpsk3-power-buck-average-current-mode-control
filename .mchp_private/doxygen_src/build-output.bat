@@ -48,6 +48,7 @@ echo skipped
 goto skip_delete_output
 :delete_output
 del /F /Q *.*
+if exist ".\search" del /F /Q search\*.*
 echo done
 :skip_delete_output
 echo. 
@@ -58,7 +59,7 @@ set yesno="n"
 echo skipped
 goto skip_delete_images
 :delete_images
-del /F /Q images\*.*
+if exist ".\images" del /F /Q images\*.*
 echo done
 :skip_delete_images
 echo. 
