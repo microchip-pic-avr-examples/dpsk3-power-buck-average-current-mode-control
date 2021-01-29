@@ -1,5 +1,5 @@
-P33C_CE200: Closed Loop Voltage Mode Control 
-============================================
+DPSK3 Closed Loop Voltage Mode Control 
+======================================
 
 This code example establishes a closed loop control system using voltage mode control
 of the buck converter of the Digital Power Starter Kit 3 (Part-No. DM330017-3).
@@ -72,9 +72,9 @@ Tool-Chain:
 -----------
 
     MPLAB X IDE v5.40:  http://www.microchip.com/mplabx
-    MPLAB X XC16 v1.60: https://www.microchip.com/mplab/compilers
+    MPLAB X XC16 v1.50: https://www.microchip.com/mplab/compilers
     MPLAB DPSK3 v3.0:   http://www.microchip.com/DM330017-3
-    DCLD v0.9.10.501:   https://areiter128.github.io/DCLD
+    DCLD v0.9.10.660:   https://areiter128.github.io/DCLD
 
 
 _________________________________________________
@@ -242,5 +242,5 @@ OF  POWER SUPPLY UNDER NORMAL OPERATING CONDITIONS. PLEASE READ THE SECTIONS IN 
 DCLD USER GUIDE FOR MORE INFORMATION ABOUT HOW TO CONDUCT A POWER PLANT MEASUREMENT.
 
 _________________________________________________
-(c) 2020, Microchip Technology Inc.
+(c) 2021, Microchip Technology Inc.
 
