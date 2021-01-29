@@ -44,19 +44,18 @@
          "LCD"
       ],
       "subcategories": [
-         "Power",
-		 "Power Management and Conversion"
+		   "Power Management and Conversion"
        ],
        "keywords": [
-		 "dsPIC",
+		   "dsPIC",
          "DSP & Signal Conditioning",
          "DSC",
-		 "Power Conversion & Charging",
+		   "Power Conversion & Charging",
          "Digital Power Conversion",
          "Digital Filters",
          "Power Conversion",
          "Power Supply",
-		 "SMPS"
+		   "SMPS"
        ]
      }
 }
