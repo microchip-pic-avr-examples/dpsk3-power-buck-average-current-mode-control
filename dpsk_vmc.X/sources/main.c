@@ -20,10 +20,10 @@ volatile bool LOW_PRIORITY_GO = false;  // Flag allowing low priority tasks to b
 /* PRIVATE FUNCTION CALL PROTOTYPES */
 volatile uint16_t sysLowPriorityTasks_Execute(void);
 volatile uint16_t __attribute__((always_inline)) sysHighPriorityTasks_Execute(void);
-
+  
 
 /*******************************************************************************
- * @fn int main(void)
+ * @fn     int main(void)
  * @ingroup firmware-flow
  * @brief  Application main function executed after device comes out of RESET
  * @return Signed Integer (0=failure, 1=success)
