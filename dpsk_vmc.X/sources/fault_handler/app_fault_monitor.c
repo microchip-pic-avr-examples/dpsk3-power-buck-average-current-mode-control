@@ -9,8 +9,6 @@
 
 #include "config/hal.h"
 #include "config/apps.h"
-//#include "drivers/drv_fault_handler.h"
-//#include "pwr_control/app_power_control.h"
 
 /**
  * @var struct FAULT_OBJECT_s fltobj_BuckUVLO  
@@ -62,9 +60,9 @@ volatile uint16_t __attribute__((always_inline)) regerr_FaultInitialize(void);
 
 
 /*********************************************************************************
- * @fn uint16_t appFaultMonitor_Execute(void)  
+ * @fn     volatile uint16_t appFaultMonitor_Execute(void)  
  * @ingroup app-layer-fault-handler-functions-public
- * @brief Application wide fault object monitoring routine
+ * @brief  Application wide fault object monitoring routine
  * @return 0=failure 
  * @return 1=success
  * 
@@ -110,7 +108,7 @@ volatile uint16_t appFaultMonitor_Execute(void)
 }
 
 /*********************************************************************************
- * @fn uint16_t appFaultMonitor_Initialize(void)
+ * @fn     volatile uint16_t appFaultMonitor_Initialize(void)
  * @ingroup app-layer-fault-handler-functions-public
  * @brief  Initialization of user-defined fault objects
  * @return 0=failure 
@@ -136,9 +134,9 @@ volatile uint16_t appFaultMonitor_Initialize(void)
 }
 
 /*********************************************************************************
- * @fn uint16_t appFaultMonitor_Dispose(void) 
+ * @fn     volatile uint16_t appFaultMonitor_Dispose(void) 
  * @ingroup app-layer-fault-handler-functions-public
- * @brief Function clearing all fault object settings
+ * @brief  Function clearing all fault object settings
  * @return 0=failure 
  * @return 1=success
  * 
@@ -165,9 +163,9 @@ volatile uint16_t appFaultMonitor_Dispose(void)
  * ********************************************************************************/
 
 /*********************************************************************************
- * @fn uint16_t uvlo_FaultInitialize(void)
+ * @fn     volatile uint16_t uvlo_FaultInitialize(void)
  * @ingroup app-layer-fault-monitor-functions-private
- * @brief Initializes the user-defined fault objects for under-voltage lockout
+ * @brief  Initializes the user-defined fault objects for under-voltage lockout
  * @return 0=failure
  * @return 1=success
  * 
@@ -210,9 +208,9 @@ volatile uint16_t uvlo_FaultInitialize(void)
 }
 
 /*********************************************************************************
- * @fn uint16_t ovlo_FaultInitialize(void)
+ * @fn     volatile uint16_t ovlo_FaultInitialize(void)
  * @ingroup app-layer-fault-monitor-functions-private
- * @brief Initializes the user-defined fault objects for overvoltage lockout
+ * @brief  Initializes the user-defined fault objects for overvoltage lockout
  * @return 0=failure
  * @return 1=success
  * 
@@ -254,9 +252,9 @@ volatile uint16_t ovlo_FaultInitialize(void)
 }
     
 /*********************************************************************************
- * @fn uint16_t regerr_FaultInitialize(void)
+ * @fn     volatile uint16_t regerr_FaultInitialize(void)
  * @ingroup app-layer-fault-monitor-functions-private
- * @brief Initializes the user-defined fault objects for regulation error
+ * @brief  Initializes the user-defined fault objects for regulation error
  * @return 0=failure
  * @return 1=success
  * 
@@ -297,9 +295,9 @@ volatile uint16_t regerr_FaultInitialize(void)
 }
     
 /*********************************************************************************
- * @fn uint16_t ocp_FaultInitialize(void)
+ * @fn     volatile uint16_t ocp_FaultInitialize(void)
  * @ingroup app-layer-fault-monitor-functions-private
- * @brief Initializes the user-defined fault objects for overcurrent protection
+ * @brief  Initializes the user-defined fault objects for overcurrent protection
  * @return 0=failure
  * @return 1=success
  * 
