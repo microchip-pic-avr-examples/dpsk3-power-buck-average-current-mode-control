@@ -28,7 +28,8 @@ volatile uint16_t appPushButton_EventButtonUp(void);
  * @fn volatile uint16_t appPushButton_Initialize(void)
  * @brief  Initializes the USER push button on DPSK3
  * @param  void
- * @return unsigned int (0=failure, 1=success)
+ * @return unsigned integer (0=failure, 1=success)
+ * 
  * @details
  *  DPSK3 has one on-board push button labeled 'USER' which is used in this 
  *  application example to switch between different LCD screens allowing the 
@@ -64,7 +65,8 @@ volatile uint16_t appPushButton_Initialize(void)
  * @fn volatile uint16_t appPushButton_Execute(void)
  * @brief  Executes the USER push button monitor
  * @param  void
- * @return unsigned int (0=failure, 1=success)
+ * @return unsigned integer (0=failure, 1=success)
+ * 
  * @details
  *  DPSK3 has one on-board push button labeled 'USER' which is used in this 
  *  application example to switch between different LCD screens allowing the 
@@ -90,7 +92,8 @@ volatile uint16_t appPushButton_Execute(void)
  * @fn volatile uint16_t appPushButton_Dispose(void)
  * @brief  Unloads the push button data object and frees its resources
  * @param  void
- * @return unsigned int (0=failure, 1=success)
+ * @return unsigned integer (0=failure, 1=success)
+ * 
  * @details
  *  This function is used to unload all push button function driver data 
  *  objects and free their resources. 
@@ -118,7 +121,8 @@ volatile uint16_t appPushButton_Dispose(void)
  * @fn volatile uint16_t appPushButton_EventButtonDown(void)
  * @brief  Push button event raised at the "pressed" transition
  * @param  void
- * @return unsigned int (0=failure, 1=success)
+ * @return unsigned integer (0=failure, 1=success)
+ * 
  * @details
  *  This function is called when the push button detects a transition event from 
  *  'not being pressed' to 'being pressed'. Enabling this interrupt requires to 
@@ -140,6 +144,7 @@ volatile uint16_t appPushButton_EventButtonDown(void)
  * @brief  Push button event raised at the "not pressed" transition
  * @param  void
  * @return unsigned int (0=failure, 1=success)
+ * 
  * @details
  *  This function is called when the push button detects a transition event from 
  *  'being pressed' to 'not being pressed'. Enabling this interrupt requires to 
@@ -161,6 +166,7 @@ volatile uint16_t appPushButton_EventButtonUp(void)
  * @brief  Push button event raised at the "is pressed" detection
  * @param  void
  * @return unsigned int (0=failure, 1=success)
+ * 
  * @details
  *  This function is called after the push button detects a transition event from 
  *  'not being pressed' to 'being pressed'. Enabling this interrupt requires to 
@@ -182,6 +188,7 @@ volatile uint16_t appPushButton_EventButtonPressed(void)
  * @brief  Push button event raised at the "is long pressed" detection
  * @param  void
  * @return unsigned int (0=failure, 1=success)
+ * 
  * @details
  *  This function is called after the push button event PRESSED has been detected 
  *  and the Long Press Delay has expired without detecting a Button Up event.
