@@ -173,8 +173,8 @@ void dev_Lcd_Clear(void)
  * @ingroup lib-layer-lcd-functions-public
  * @fn void dev_Lcd_GotoXY(volatile uint8_t x, volatile uint8_t y)
  * @brief  Sets the cursor position to the given x- and y-coordinates
- * @param  x: x-coordinate for the new cursor position starting with zero
- * @param  y: y-coordinate for the new cursor position starting with zero
+ * @param  x  x-coordinate for the new cursor position starting with zero
+ * @param  y  y-coordinate for the new cursor position starting with zero
  * @return void
  * @details
  *  This function sets the cursor position to the given x- and y-coordinates
@@ -193,7 +193,7 @@ void dev_Lcd_GotoXY(volatile uint8_t x, volatile uint8_t y)
  * @ingroup lib-layer-lcd-functions-public
  * @fn void dev_Lcd_WriteChar(const char ch)
  * @brief  Writes a character on the LCD screen
- * @param  character be written to the LCD screen
+ * @param  ch character be written to the LCD screen
  * @return void
  * @details
  *  This function writes the single character 'ch' to the currently 
@@ -252,7 +252,7 @@ void dev_Lcd_WriteChar(const char ch)
  * @ingroup lib-layer-lcd-functions-public
  * @fn void dev_Lcd_WriteString(const char *str)
  * @brief  Writes a complete string on the LCD screen
- * @param  string to be written on the LCD screen
+ * @param  str Pointer to a string variable to be written on the LCD screen
  * @return void
  * @details
  *  This function writes a complete string 'str' to the currently 
@@ -282,9 +282,9 @@ void dev_Lcd_WriteString(const char *str)
  * @ingroup lib-layer-lcd-functions-public
  * @fn void dev_Lcd_WriteStringXY(uint8_t column_index, uint8_t line_index, const char *str)
  * @brief  Sets the cursor position to the given x- and y-coordinates and writes the given string on the lcd screen
- * @param  x: x-coordinates for the new cursor position starting with zero
- * @param  y: y-coordinates for the new cursor position starting with zero
- * @param  string to be written on the LCD screen
+ * @param  column_index x-coordinates for the new cursor position starting with zero
+ * @param  line_index   y-coordinates for the new cursor position starting with zero
+ * @param  str pointer to a string variable to be written on the LCD screen
  * @return void
  * @details
  *  This function positions the cursor at the location defined by parameters
