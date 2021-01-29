@@ -16,8 +16,9 @@
  * @ingroup lib-layer-push-button-functions-public
  * @fn volatile uint16_t drv_PushButton_Initialize(volatile struct PUSH_BUTTON_OBJECT_s* pushbtn)
  * @brief  Initializes the push button device driver
- * @param  pushbtn: push button object of type struct PUSH_BUTTON_OBJECT_s*
- * @return unsigned int (0=failure, 1=success)
+ * @param  pushbtn  Push button object of type struct PUSH_BUTTON_OBJECT_s*
+ * @return unsigned integer (0=failure, 1=success)
+ * 
  * @details
  *  The push button driver offers typical functions of a human-machine interface
  *  push button such as 
@@ -55,7 +56,7 @@ volatile uint16_t drv_PushButton_Initialize(volatile struct PUSH_BUTTON_OBJECT_s
  * @ingroup lib-layer-push-button-functions-public
  * @fn     volatile uint16_t drv_PushButton_Execute(volatile struct PUSH_BUTTON_OBJECT_s *pushbtn)
  * @brief  Initializes the push button device driver
- * @param  *pushbtn: pointer to push button data object of type struct PUSH_BUTTON_OBJECT_s 
+ * @param  pushbtn  Pointer to push button data object of type struct PUSH_BUTTON_OBJECT_s 
  * @return unsigned int (0=failure, 1=success)
  * 
  * @details
@@ -139,7 +140,7 @@ volatile uint16_t drv_PushButton_Execute(volatile struct PUSH_BUTTON_OBJECT_s* p
  * @ingroup lib-layer-push-button-functions-public
  * @fn volatile uint16_t drv_PushButton_Dispose(volatile struct PUSH_BUTTON_OBJECT_s* pushbtn)
  * @brief  Initializes the push button device driver
- * @param  pushbtn: push button object of type struct PUSH_BUTTON_OBJECT_s*
+ * @param  pushbtn  Push button data object of type struct PUSH_BUTTON_OBJECT_s*
  * @return unsigned int (0=failure, 1=success)
  * @details
  *  This function will unload the push-button function driver and free its 
