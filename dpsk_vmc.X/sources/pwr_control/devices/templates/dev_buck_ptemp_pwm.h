@@ -49,7 +49,7 @@
 #include <stddef.h> // include standard definition data types
 
 /**
- * @ingroup lib-layer-buck-ptemplate-properties-public-defines
+ * @ingroup lib-layer-buck-ptemplate-properties-defines
  * @{
  */
 /* ********************************************************************************
@@ -453,10 +453,14 @@
  */  
 #define P33C_PGxIOCONL_OVREN_ASYNC  0x2000  
 /**
- * @def P33C_PGxIOCONH_PEN
- * @brief control bits in PGxIOCONH enabling/disabling the PWM outputs
+ * @def P33C_PGxIOCONH_PEN_SYNC
+ * @brief control bits in PGxIOCONH enabling/disabling the PWM outputs in synchronous mode
  */  
 #define P33C_PGxIOCONH_PEN_SYNC     0x000C  
+/**
+ * @def P33C_PGxIOCONH_PEN_SYNC
+ * @brief control bits in PGxIOCONH enabling/disabling the PWM outputs in asynchronous mode
+ */  
 #define P33C_PGxIOCONH_PEN_ASYNC    0x0008  
 /**
  * @def P33C_PGxSTAT_UPDREQ
