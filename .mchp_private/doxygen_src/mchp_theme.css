@@ -145,10 +145,16 @@ p code,
 li code,
 td code,
 dd code {
-	background-color: #ffffff;
-	border: 1px solid #A8B8D9;
+	font: Consolas,'Courier New',Courier,sans-serif;
+	font-size: 90%;
+	padding: 0px 3px 0px 3px;
+	background-color: #ededed;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #A8B8D9;
+	border-radius: 5px;
 
-	color: #D8D8D8;
+	color: #000000;
 }
 
 /*********************************************/
@@ -361,7 +367,9 @@ span.lineno a {
 }
 
 h2.groupheader {
-	color: #FF0000;
+	font-weight: bold;
+	font-size: 120%;
+	color: inherit;
 }
 
 /*********************************************/
