@@ -1,8 +1,8 @@
 ; **********************************************************************************
-;  SDK Version: PowerSmart(TM) Digital Control Library Designer v0.9.12.660
+;  SDK Version: PowerSmart™ Digital Control Library Designer v0.9.12.672
 ;  CGS Version: Code Generator Script v3.0.4 (01/27/2021)
 ;  Author:      M91406
-;  Date/Time:   01/29/2021 01:17:26
+;  Date/Time:   02/01/2021 19:20:15
 ; **********************************************************************************
 ;  4P4Z Control Library File (Fast Floating Point Coefficient Scaling Mode)
 ; **********************************************************************************
@@ -17,8 +17,8 @@
     .section .data                          ; place constant data in the data section
     
 ;------------------------------------------------------------------------------
-;include NPNZ16B_t data structure and global constants.
-    .include "./sources/pwr_control/drivers/npnz16b.inc" ; include NPNZ16b_t object data structure value offsets and status flag labels
+;include NPNZ16b_s data structure and global constants.
+    .include "./sources/pwr_control/drivers/npnz16b.inc" ; include NPNZ16b_s object data structure value offsets and status flag labels
     
 ;------------------------------------------------------------------------------
 ;source code section.
@@ -269,7 +269,7 @@
     
 ;------------------------------------------------------------------------------
 ; Global function declaration v_loop_PTermUpdate
-; This function executes a P-term based control loop used for plant measurements only.
+; This function executes a P-Term based control loop used for plant measurements only.
 ; THIS LOOP IS NOT SUITED FOR STABLE OPERATION
 ;------------------------------------------------------------------------------
 

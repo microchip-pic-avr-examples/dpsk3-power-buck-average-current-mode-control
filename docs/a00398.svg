@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="a00531.html" target="_top" xlink:title="Hardware Abstraction Layer Declarations.">
+<g id="a_node2"><a xlink:href="a00532.html" target="_top" xlink:title="Hardware Abstraction Layer Declarations.">
 <polygon fill="white" stroke="black" points="110,-61.5 0,-61.5 0,-31.5 110,-31.5 110,-61.5"/>
 <text text-anchor="start" x="8" y="-49.5" font-family="Helvetica,sans-Serif" font-size="10.00">Hardware Abstraction</text>
 <text text-anchor="middle" x="55" y="-38.5" font-family="Helvetica,sans-Serif" font-size="10.00"> Layer</text>

@@ -1,5 +1,5 @@
 /* *********************************************************************************
- * PowerSmart(TM) Digital Control Library Designer, Version 0.9.12.660
+ * PowerSmart™ Digital Control Library Designer, Version 0.9.12.672
  * *********************************************************************************
  * 4p4z controller function declarations and compensation filter coefficients
  * derived for following operating conditions:
@@ -16,7 +16,7 @@
  * CGS Date:            01/27/2021
  * *********************************************************************************
  * User:                M91406
- * Date/Time:           01/29/2021 01:17:25
+ * Date/Time:           02/01/2021 19:20:15
  * ********************************************************************************/
 
 #include "v_loop.h"
@@ -24,7 +24,7 @@
 /* *********************************************************************************
  * Data Arrays:
  * This source file declares the default parameters of the z-domain compensation
- * filter. The NPNZ16b_t data structure contains two pointers to A- and B-
+ * filter. The NPNZ16b_s data structure contains two pointers to A- and B-
  * coefficient arrays and two pointers to control and error history arrays.
  *
  * For optimized data processing during DSP computations, these arrays must be
@@ -84,29 +84,29 @@ volatile int16_t v_loop_post_shift_B = 0;         // Bit-shift value B used to p
 volatile fractional v_loop_post_scaler = 0x0000;  // Q15 fractional factor used to perform control output value backward normalization
 
 // P-Term Coefficient for Plant Measurements
-volatile int16_t v_loop_pterm_factor = 0x65D7;    // Q15 fractional of the Pterm factor
-volatile int16_t v_loop_pterm_scaler = 0xFFFF;    // Bit-shift scaler of the Pterm factor
+volatile int16_t v_loop_pterm_factor = 0x65D7;    // Q15 fractional of the P-Term factor
+volatile int16_t v_loop_pterm_scaler = 0xFFFF;    // Bit-shift scaler of the P-Term factor
 
 
-// User-defined NPNZ16b_t controller data object
+// User-defined NPNZ16b_s controller data object
 volatile struct NPNZ16b_s v_loop;                 // user-controller data object
 
 /* ********************************************************************************/
 
 /***********************************************************************************
- * \fn   volatile uint16_t v_loop_Initialize(volatile struct NPNZ16b_s* controller)
- * \brief Initializes controller coefficient arrays and normalization
- * \param controller: Pointer to NPNZ Controller Data Object of type struct NPNZ16b_s
- * \returns unsigned integer
+ * @fn   volatile uint16_t v_loop_Initialize(volatile struct NPNZ16b_s* controller)
+ * @brief Initializes controller coefficient arrays and normalization
+ * @param controller: Pointer to NPNZ Controller Data Object of type struct NPNZ16b_s
+ * @returns unsigned integer
  *     0->failure
  *     1->success
  *
- * \details
+ * @details
  * This function needs to be called from user code at startup once to initialize
  * coefficient arrays and number normalization settings of the v_loop controller
  * object.
  *
- * \attention
+ * @attention
  * This routine DOES NOT initialize the complete controller object.
  * User-defined settings such as pointers to the control reference, source and
  * target registers, output minima and maxima and further, design-dependent

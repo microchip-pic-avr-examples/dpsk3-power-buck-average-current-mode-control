@@ -1,4 +1,6 @@
 var a00525 =
 [
-    [ "sysUserPeriperhals_Initialize", "a00525.html#ga70c5cba054e38a4e8c8285a187ff61fa", null ]
+    [ "User Peripheral Initialization", "a00526.html", "a00526" ],
+    [ "Digital-to-Analog Converter", "a00527.html", "a00527" ],
+    [ "Operational Amplifier Configuration", "a00528.html", "a00528" ]
 ];

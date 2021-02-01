@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>dsPIC33C Digital Power Starter Kit: Firmware Architecture</title>
+<title>dsPIC33C Digital Power Starter Kit: Variables</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -96,41 +96,72 @@ $(document).ready(function(){initNavTree('a00514.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#groups">Modules</a>  </div>
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">Firmware Architecture</div>  </div>
+<div class="title">Variables<div class="ingroups"><a class="el" href="a00535.html">Library Driver Layer</a> &raquo; <a class="el" href="a00507.html">Power Converter Control Driver</a> &raquo; <a class="el" href="a00510.html">Properties</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Firmware Flowchart.  
+<p>Public variables of the Power Converter Control driver.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Firmware Architecture:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Variables:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00514.svg" width="320" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00514.svg" width="216" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
-Modules</h2></td></tr>
-<tr class="memitem:a00515"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00515.html">Device Start Up</a></td></tr>
-<tr class="memdesc:a00515"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device Start Up. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00516"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00516.html">Main Loop</a></td></tr>
-<tr class="memdesc:a00516"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main Loop. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:gae1ef8104d52fe123c04e1107fd8ff55f"><td class="memItemLeft" align="right" valign="top">volatile int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00514.html#gae1ef8104d52fe123c04e1107fd8ff55f">v_loop_pterm_factor</a> = 0x65D7</td></tr>
+<tr class="memdesc:gae1ef8104d52fe123c04e1107fd8ff55f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Q15 fractional of the P-Term Coefficient for Plant Measurements.  <a href="a00514.html#gae1ef8104d52fe123c04e1107fd8ff55f">More...</a><br /></td></tr>
+<tr class="separator:gae1ef8104d52fe123c04e1107fd8ff55f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga566701f8f607a93f33e17e799fae6ac5"><td class="memItemLeft" align="right" valign="top">volatile int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00514.html#ga566701f8f607a93f33e17e799fae6ac5">v_loop_pterm_scaler</a> = 0xFFFF</td></tr>
+<tr class="memdesc:ga566701f8f607a93f33e17e799fae6ac5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit-shift scaler of the P-Term Coefficient for Plant Measurements.  <a href="a00514.html#ga566701f8f607a93f33e17e799fae6ac5">More...</a><br /></td></tr>
+<tr class="separator:ga566701f8f607a93f33e17e799fae6ac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Firmware Flowchart. </p>
-<p><b>Firmware Task Scheduling</b><br  />
-<br  />
- <br  />
- The SMPS Firmware Framework used in this application is organizing high and low priority tasks by a very simple task scheduler providing one common low-priority task level executed on priority level #0 and one high-priority task level executed on priority level #2. The interruption of processes on priority level #0 is enforced by a programmable timer. During system startup, the timer is set to overrun every 100 us, providing a stable high-priority task execution frequency of 10 kHz. All low-priority tasks are only allowed to run after all high-priority tasks have been completed. The real-time control system takes the highest priority within the firmware. This is ensured by using hardware triggers generated by the PWM signal generator logic with its high resolution time-base. The extremely short and optimized control loop code is implemented as monolithic Assembly routine to be most deterministic. Being triggered directly by the switching signal waveform generator, the execution is tightly coupled to the physical power conversion process and also independent from any other software process of the firmware.</p>
-<p><div class="dotgraph">
-<iframe scrolling="no" frameborder="0" src="dot_sfw_main.svg" width="1540" height="1034"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
- </p>
+<p>Public variables of the Power Converter Control driver. </p>
+<p>This is the detailed description of public variables of the Power Converter Control driver. </p>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="gae1ef8104d52fe123c04e1107fd8ff55f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae1ef8104d52fe123c04e1107fd8ff55f">&#9670;&nbsp;</a></span>v_loop_pterm_factor</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">v_loop_pterm_factor = 0x65D7</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Q15 fractional of the P-Term Coefficient for Plant Measurements. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00326_source.html#l00087">87</a> of file <a class="el" href="a00326_source.html">v_loop.c</a>.</p>
+
+</div>
+</div>
+<a id="ga566701f8f607a93f33e17e799fae6ac5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga566701f8f607a93f33e17e799fae6ac5">&#9670;&nbsp;</a></span>v_loop_pterm_scaler</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">v_loop_pterm_scaler = 0xFFFF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit-shift scaler of the P-Term Coefficient for Plant Measurements. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00326_source.html#l00088">88</a> of file <a class="el" href="a00326_source.html">v_loop.c</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

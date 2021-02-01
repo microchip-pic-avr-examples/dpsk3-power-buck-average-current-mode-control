@@ -1,5 +1,5 @@
 /* *********************************************************************************
- * PowerSmart(TM) Digital Control Library Designer, Version 0.9.12.660
+ * PowerSmart™ Digital Control Library Designer, Version 0.9.12.672
  * *********************************************************************************
  * Generic library header for z-domain compensation filter assembly functions
  * CGS Version: 3.0.4
@@ -17,21 +17,21 @@
 #include <stdbool.h>                              // include standard boolean data types (true/false)
 
 /***************************************************************************************************
- * \ingroup special-function-layer-npnz16-macros
- * \def   __PSDCLD_VERSION
- * \brief Generic macro allowing to identify the file version of 'npnz16b.h'
+ * @ingroup special-function-layer-npnz16-macros
+ * @def   __PSDCLD_VERSION
+ * @brief Generic macro allowing to identify the file version of 'npnz16b.h'
  *
- * \details
+ * @details
  * This version key represents the product version of PS-DCLD as integer number
  * of the form [MAJOR][MINOR][REVISION] => version 0.9.3.xxx would be shown as 903.
  * User code can check if the file version is compliant with the proprietary user
  * code by using pre-compiler directives such as
  *
- * \code{.c}
+ * @code{.c}
  * #if (__PSDCLD_VERSION > 908)
  *  #pragma message "This code has not been tested with the recently included version of npnz16b.h"
  * #endif
- * \endcode
+ * @endcode
  *
  ***************************************************************************************************/
 
@@ -40,12 +40,11 @@
 #endif
 
 /***************************************************************************************************
- * \enum    NPNZ_STATUS_FLAGS_e
- * \brief Common Controller Status and Control Flag Bits
- * \details
- * \details
+ * @enum    NPNZ_STATUS_FLAGS_e
+ * @brief   Common Controller Status and Control Flag Bits
+ * @details
  * The 16-bit wide NPNZ_STATUS_s data object holds status and control bits for
- * monitoring and control of the NPNZ16b_t controller during runtime. The lower 8 bit
+ * monitoring and control of the NPNZ16b_s controller during runtime. The lower 8 bit
  * of the status word are used for status indication while the upper 8 bit are used
  * by control bits.
  * For enhanced programming convenience, definitions of status and control flags are
@@ -75,8 +74,8 @@ enum NPNZ_STATUS_FLAGS_e
 typedef enum NPNZ_STATUS_FLAGS_e NPNZ_STATUS_FLAGS_t; ///< NPNZ controller status flags data type
 
 /***************************************************************************************************
- * \enum    NPNZ_STATUS_SATURATION_e
- * \brief   Enumeration of control loop saturation status bits
+ * @enum    NPNZ_STATUS_SATURATION_e
+ * @brief   Enumeration of control loop saturation status bits
  **************************************************************************************************/
 enum NPNZ_STATUS_SATURATION_e{
     NPNZ_SAT_CLEAR  = 0b0,                        ///< No saturation condition detected
@@ -87,8 +86,8 @@ extern volatile enum NPNZ_STATUS_SATURATION_e npnzEnumControlStatusSaturation; /
 
 /* Control flags (bit-field) */
 /***************************************************************************************************
- * \enum    NPNZ_STATUS_AGC_ENABLE_e
- * \brief   Enumeration of Adaptive Gain Modulation enable/disable control bits
+ * @enum    NPNZ_STATUS_AGC_ENABLE_e
+ * @brief   Enumeration of Adaptive Gain Modulation enable/disable control bits
  **************************************************************************************************/
 enum NPNZ_STATUS_AGC_ENABLE_e{
     NPNZ_AGC_DISABLED = 0b0,                      ///< Adaptive Gain Modulation is disabled
@@ -98,8 +97,8 @@ typedef enum NPNZ_STATUS_AGC_ENABLE_e NPNZ_STATUS_AGC_ENABLE_t; ///< Adaptive Ga
 extern volatile enum NPNZ_STATUS_AGC_ENABLE_e npnzEnumControlAgcEnable; ///< List Object Control AGC Enable
 
 /***************************************************************************************************
- * \enum    NPNZ_STATUS_SOURCE_SWAP_e
- * \brief   Enumeration of control input port swap control bits
+ * @enum    NPNZ_STATUS_SOURCE_SWAP_e
+ * @brief   Enumeration of control input port swap control bits
  **************************************************************************************************/
 enum NPNZ_STATUS_SOURCE_SWAP_e{
     NPNZ_SOURCE_DEFAULT = 0b0,                    ///< Controller source ports are not swapped, primary source is active input
@@ -109,8 +108,8 @@ typedef enum NPNZ_STATUS_SOURCE_SWAP_e NPNZ_STATUS_SOURCE_SWAP_t; ///< NPNZ Sour
 extern volatile enum NPNZ_STATUS_SOURCE_SWAP_e npnzEnumControlSourceSwap; ///< List Object Control Source Swap
 
 /***************************************************************************************************
- * \enum    NPNZ_STATUS_TARGET_SWAP_e
- * \brief   Enumeration of control output port swap control bits
+ * @enum    NPNZ_STATUS_TARGET_SWAP_e
+ * @brief   Enumeration of control output port swap control bits
  **************************************************************************************************/
 enum NPNZ_STATUS_TARGET_SWAP_e{
     NPNZ_TARGET_DEFAULT = 0b0,                    ///< Controller target ports are not swapped, primary source is active output
@@ -120,8 +119,8 @@ typedef enum NPNZ_STATUS_TARGET_SWAP_e NPNZ_STATUS_TARGET_SWAP_t; ///< NPNZ Targ
 extern volatile enum NPNZ_STATUS_TARGET_SWAP_e npnzEnumControlTargetSwap; ///< List Object Control Target Swap
 
 /***************************************************************************************************
- * \enum    NPNZ_STATUS_INPUT_INV_e
- * \brief   Enumeration of input value inversion control bits
+ * @enum    NPNZ_STATUS_INPUT_INV_e
+ * @brief   Enumeration of input value inversion control bits
  **************************************************************************************************/
 enum NPNZ_STATUS_INPUT_INV_e{
     NPNZ_INPUT_DEFAULT  = 0b0,                    ///< Controller error value is not inverted
@@ -131,8 +130,8 @@ typedef enum NPNZ_STATUS_INPUT_INV_e NPNZ_STATUS_INPUT_INV_t; ///< NPNZ Error Va
 extern volatile enum NPNZ_STATUS_INPUT_INV_e npnzEnumControlInputInversion; ///< List Object Control Input Inversion
 
 /***************************************************************************************************
- * \enum    NPNZ_STATUS_ENABLE_e
- * \brief   Enumeration of control loop enable/disable control bits
+ * @enum    NPNZ_STATUS_ENABLE_e
+ * @brief   Enumeration of control loop enable/disable control bits
  **************************************************************************************************/
 enum NPNZ_STATUS_ENABLE_e{
     NPNZ_DISABLED = 0b0,                          ///< Controller error value is not inverted
@@ -142,8 +141,8 @@ typedef enum NPNZ_STATUS_ENABLE_e NPNZ_STATUS_ENABLE_t; ///< NPNZ Controller Ena
 extern volatile enum NPNZ_STATUS_ENABLE_e npnzEnumControlEnable; ///< List Object Control Enable
 
 /****************************************************************************************************
- * \struct  BUCK_CONVERTER_CONSTANTS_s
- * \brief   Structure providing all public enumerated lists of constants
+ * @struct  BUCK_CONVERTER_CONSTANTS_s
+ * @brief   Structure providing all public enumerated lists of constants
  **************************************************************************************************** */
 struct NPNZ_FLAGS_s
 {
@@ -159,12 +158,12 @@ typedef struct NPNZ_FLAGS_s NPNZ_FLAGS_t;         ///< Consolidated list of stat
 extern volatile struct NPNZ_FLAGS_s npnzFlagList; ///< List object of consolidated status bit value enumerations
 
 /***************************************************************************************************
- * \ingroup special-function-layer-npnz16-object-members
- * \struct  NPNZ_STATUS_s
- * \brief   NPNZ16b controller object status and control word
- * \extends NPNZ16b_s
+ * @ingroup special-function-layer-npnz16-object-members
+ * @struct  NPNZ_STATUS_s
+ * @brief   NPNZ16b controller object status and control word
+ * @extends NPNZ16b_s
  *
- * \details
+ * @details
  * The NPNZ16b_s status word is providing status flag bits for monitoring and controlling the
  * NPNZ16b control library code execution from outside the library module.
  *
@@ -208,12 +207,12 @@ struct NPNZ_STATUS_s {
 typedef struct NPNZ_STATUS_s NPNZ_STATUS_t;       ///< Data type of controller status word data structure allowing bit-wise access to status and control bits
 
 /***************************************************************************************************
- * \ingroup special-function-layer-npnz16-object-members
- * \struct  NPNZ_PORT_s
- * \brief   Data Input/Output Port declaration of memory addresses, signal offsets and normalization settings
- * \extends NPNZ_PORTS_s
+ * @ingroup special-function-layer-npnz16-object-members
+ * @struct  NPNZ_PORT_s
+ * @brief   Data Input/Output Port declaration of memory addresses, signal offsets and normalization settings
+ * @extends NPNZ_PORTS_s
  *
- * \details
+ * @details
  * The NPNZ_PORT_s data object defines the basic parameters required to read data from or write
  * data to user-defined memory addresses as well as offers data fields for additional settings
  * such as normalization scaling factors or signal offsets, which can be used to compensate analog
@@ -235,14 +234,14 @@ struct NPNZ_PORT_s{
 typedef struct NPNZ_PORT_s NPNZ_PORT_t;           ///< Data structure data type defining parameters of a controller input or output port
 
 /***************************************************************************************************
- * \ingroup special-function-layer-npnz16-object-members
- * \struct  NPNZ_PORTS_s
- * \brief   Filter Coefficient Arrays, Number Format Handling and Input/Output History Parameters
- * \extends NPNZ16b_s
+ * @ingroup special-function-layer-npnz16-object-members
+ * @struct  NPNZ_PORTS_s
+ * @brief   Filter Coefficient Arrays, Number Format Handling and Input/Output History Parameters
+ * @extends NPNZ16b_s
  *
- * \details
+ * @details
  * The NPNZ_PORTS_t data object holds a list of nested NPNZ_PORT_t data objects, each
- * defining an individual controller input or output port. The NPNZ16b_t data objects defines
+ * defining an individual controller input or output port. The NPNZ16b_s data objects defines
  * up to two input and two output ports of type struct NPNZ_PORT_t and one additional
  * pointer to an external, user-defined 16-bit reference source variable. Each port of type
  * struct NPNZ_PORT_t declares its individual source/target memory address, normalization
@@ -269,12 +268,12 @@ struct NPNZ_PORTS_s{
 typedef struct NPNZ_PORTS_s NPNZ_PORTS_t;         ///< Data structure merging all defined controller input and output ports
 
 /***************************************************************************************************
- * \ingroup special-function-layer-npnz16-object-members
- * \struct  NPNZ_FILTER_PARAMS_s
- * \brief   Filter Coefficient Arrays, Number Format Handling and Input/Output History Parameters
- * \extends NPNZ16b_s
+ * @ingroup special-function-layer-npnz16-object-members
+ * @struct  NPNZ_FILTER_PARAMS_s
+ * @brief   Filter Coefficient Arrays, Number Format Handling and Input/Output History Parameters
+ * @extends NPNZ16b_s
  *
- * \details
+ * @details
  * The NPNZ_FILTER_PARAMS_t data object holds all configuration parameters of the compensation
  * filter. These parameters include pointers to external arrays of filter coefficients, error
  * and control history as well as number format normalization parameters like pre- and post-
@@ -309,12 +308,12 @@ struct NPNZ_FILTER_PARAMS_s{
 typedef struct NPNZ_FILTER_PARAMS_s NPNZ_FILTER_PARAMS_t; ///< Data structure for filter parameters such as pointer to history and coefficient arrays and number scaling factors
 
 /***************************************************************************************************
- * \ingroup special-function-layer-npnz16-object-members
- * \struct NPNZ_LIMITS_s
- * \brief  System Anti-Windup (Output Clamping) Thresholds
- * \extends NPNZ16b_s
+ * @ingroup special-function-layer-npnz16-object-members
+ * @struct  NPNZ_LIMITS_s
+ * @brief   System Anti-Windup (Output Clamping) Thresholds
+ * @extends NPNZ16b_s
  *
- * \details
+ * @details
  * The NPNZ_LIMITS_t data object holds all parameters required to automatically clamp the
  * most recent control output to user-defined thresholds. This data type allows the
  * definition of individual minimum and maximum output values for the NPNZ controller primary
@@ -336,12 +335,12 @@ struct NPNZ_LIMITS_s{
 typedef struct NPNZ_LIMITS_s  NPNZ_LIMITS_t;      ///< Data strucure holding control output clamping threshold values
 
 /***************************************************************************************************
- * \ingroup special-function-layer-npnz16-object-members
- * \struct  NPNZ_ADC_TRGCTRL_s
- * \brief   Automated ADC Trigger handling
- * \extends NPNZ16b_s
+ * @ingroup special-function-layer-npnz16-object-members
+ * @struct  NPNZ_ADC_TRGCTRL_s
+ * @brief   Automated ADC Trigger handling
+ * @extends NPNZ16b_s
  *
- * \details
+ * @details
  * The NPNZ_ADC_TRGCTRL_t data object holds all parameters required to automatically position
  * ADC triggers based on the most recent control output. This feature is used in voltage or
  * average current mode control to automatically track average values in triangular feedback
@@ -363,12 +362,12 @@ struct NPNZ_ADC_TRGCTRL_s{
 typedef struct NPNZ_ADC_TRGCTRL_s NPNZ_ADC_TRGCTRL_t; ///< Automatic ADC trigger placement parameters for primary ADC trigger A and secondary trigger B
 
 /***************************************************************************************************
- * \ingroup special-function-layer-npnz16-object-members
- * \struct NPNZ_DATA_PROVIDERS_s
- * \brief  Data Provider Target Memory Addresses
- * \extends NPNZ16b_s
+ * @ingroup special-function-layer-npnz16-object-members
+ * @struct  NPNZ_DATA_PROVIDERS_s
+ * @brief   Data Provider Target Memory Addresses
+ * @extends NPNZ16b_s
  *
- * \details
+ * @details
  * The NPNZ_DATA_PROVIDERS_t data object holds pointers to external, user-defined, global
  * variables allowing the NPNZ controller to push internal data to external, user-defined,
  * global variables during the execution of the NPNZ controller, resulting in an automated
@@ -390,12 +389,12 @@ struct NPNZ_DATA_PROVIDERS_s{
 typedef struct NPNZ_DATA_PROVIDERS_s NPNZ_DATA_PROVIDERS_t; ///< Automated data provider pointers used to push most recent data points to user-defined variables
 
 /**************************************************************************************************
- * \ingroup special-function-layer-npnz16-object-members
- * \struct NPNZ_EXTENSION_HOOKS_s
- * \brief User Extension Function Call Parameters
- * \extends NPNZ16b_s
+ * @ingroup special-function-layer-npnz16-object-members
+ * @struct  NPNZ_EXTENSION_HOOKS_s
+ * @brief   User Extension Function Call Parameters
+ * @extends NPNZ16b_s
  *
- * \details
+ * @details
  * The NPNZ_EXTENSION_HOOKS_s data object holds all parameters required to call user-defined extension
  * functions supporting advanced use cases, which are not covered by the standard functions provided.
  * When enabled, the NPNZ controller can automatically call user-defined functions at specific points
@@ -432,12 +431,12 @@ struct NPNZ_EXTENSION_HOOKS_s{
 typedef struct NPNZ_EXTENSION_HOOKS_s NPNZ_EXTENSION_HOOKS_t; ///< Function pointers and parameters used to tie in user-defined, external extension functions at specific points of the control loop execution
 
 /***************************************************************************************************
- * \ingroup special-function-layer-npnz16-object-members
- * \struct  NPNZ_GAIN_CONTROL_s
- * \brief   Adaptive Gain Control Modulation Parameters
- * \extends NPNZ16b_s
+ * @ingroup special-function-layer-npnz16-object-members
+ * @struct  NPNZ_GAIN_CONTROL_s
+ * @brief   Adaptive Gain Control Modulation Parameters
+ * @extends NPNZ16b_s
  *
- * \details
+ * @details
  * The NPNZ_GAIN_CONTROL_t data object holds all parameters required to perform real-time
  * gain modulation of the z-domain feedback loop. The loop gain is modulated by multiplying
  * the result of the NPNZ controller B-term with an additional scaling factor. This scaling
@@ -460,12 +459,12 @@ struct NPNZ_GAIN_CONTROL_s{
 typedef struct NPNZ_GAIN_CONTROL_s NPNZ_GAIN_CONTROL_t; ///< Data structure data type holding parameters required for adaptive or manual loop gain manipulation during runtime
 
 /***************************************************************************************************
- * \ingroup special-function-layer-npnz16-object-members
- * \struct  NPNZ_USER_DATA_BUFFER_s
- * \brief   User Data Space for Advanced Control Functions
- * \extends NPNZ16b_s
+ * @ingroup special-function-layer-npnz16-object-members
+ * @struct  NPNZ_USER_DATA_BUFFER_s
+ * @brief   User Data Space for Advanced Control Functions
+ * @extends NPNZ16b_s
 
- * \details
+ * @details
  * The NPNZ_USER_DATA_BUFFER_t data object reserves four word of additional data space for
  * user parameters. These parameters may be handled by user code and are not assigned to any
  * specific, pre-defined functions.
@@ -487,12 +486,12 @@ struct NPNZ_USER_DATA_BUFFER_s{
 typedef struct NPNZ_USER_DATA_BUFFER_s NPNZ_USER_DATA_BUFFER_t; ///< Data type of generic data buffer for undetermined use. These data buffers may be used by advanced control algorithms or be used by proprietary user code modules
 
 /***************************************************************************************************
- * \ingroup special-function-layer-npnz16-data-objects
- * \struct  NPNZ16b_s
- * \brief   Global NPNZ controller data object
+ * @ingroup special-function-layer-npnz16-data-objects
+ * @struct  NPNZ16b_s
+ * @brief   Global NPNZ controller data object
  *
- * \details
- * The NPNZ16b_t data object holds all configuration, status, control and monitoring values
+ * @details
+ * The NPNZ16b_s data object holds all configuration, status, control and monitoring values
  * of a z-domain lead-lag compensator based controller. All data types of this data object,
  * including floating, are scaled to a 16 bit number space, optimized for code execution on
  * Microchip dsPIC33 family of devices. Please refer to the description of nested data

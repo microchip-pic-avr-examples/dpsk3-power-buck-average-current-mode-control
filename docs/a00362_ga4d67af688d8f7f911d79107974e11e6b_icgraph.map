@@ -11,7 +11,7 @@
 <area shape="rect" id="node4" href="$a00472.html#gaf3c64772d6dfd473d6924fb8893bd180" title="This function initializes all peripheral modules and their instances used by the power controller." alt="" coords="861,157,1043,184"/>
 <area shape="rect" id="node5" href="$a00468.html#ga0b26acfec74d1804384b4ba1a3cffab4" title="This function is used to load peripheral configuration templates from the power controller device dri..." alt="" coords="620,134,811,175"/>
 <area shape="rect" id="node6" href="$a00465.html#ga7a4cf6371d09457539f96a74b2809ca0" title="Calls the application layer power controller initialization." alt="" coords="212,145,385,172"/>
-<area shape="rect" id="node7" href="$a00530.html#ga2be64f5f0b9a2c0c6713f5a69d793e05" title="Initializes the user&#45;defined tasks." alt="" coords="5,196,164,223"/>
+<area shape="rect" id="node7" href="$a00531.html#ga2be64f5f0b9a2c0c6713f5a69d793e05" title="Initializes the user&#45;defined tasks." alt="" coords="5,196,164,223"/>
 <area shape="rect" id="node9" href="$a00472.html#ga61726ccfa8287fe57683d2aa6423d6e0" title="This function stop the buck converter opration." alt="" coords="871,5,1033,32"/>
 <area shape="rect" id="node10" href="$a00465.html#gaa7d413f62f7b5f25d152cc12354241f0" title="This function calls the buck converter device driver function stopping the power supply." alt="" coords="639,5,792,32"/>
 <area shape="rect" id="node12" href="$a00484.html#ga47717557335be2404de223606ccf829a" title="If this function is called, the state machine is reset to INITIALIZE (URL=State_Initialize)." alt="" coords="908,107,996,133"/>
@@ -20,7 +20,7 @@
 <area shape="rect" id="node16" href="$a00465.html#ga13094235dd6cc123d9299925359ca178" title="This is the top&#45;level function call triggering the most recent state machine of all associated power ..." alt="" coords="865,279,1039,305"/>
 <area shape="rect" id="node18" href="$a00472.html#gaadb710d81053fd0ab75b305f1f329bf6" title="This function resume the operation of the buck converter." alt="" coords="860,333,1044,360"/>
 <area shape="rect" id="node20" href="$a00472.html#ga0d68d132b52175c43503c9b5794bae64" title="This function suspends the operation of the buck converter." alt="" coords="859,224,1045,251"/>
-<area shape="rect" id="node17" href="$a00518.html#ga1873ce221ca3545badd9c72c846bba3d" title="High priority task sequence executed at a fixed repetition frequency." alt="" coords="643,273,788,314"/>
+<area shape="rect" id="node17" href="$a00519.html#ga1873ce221ca3545badd9c72c846bba3d" title="High priority task sequence executed at a fixed repetition frequency." alt="" coords="643,273,788,314"/>
 <area shape="rect" id="node19" href="$a00465.html#ga3c7bf6b771bc1296401a270da4a95bff" title="This function resumes the power supply operation." alt="" coords="628,339,803,365"/>
 <area shape="rect" id="node21" href="$a00465.html#gafa4e90d260e60cf20f06acee067c39cd" title="This function stops the power supply operation." alt="" coords="627,221,804,248"/>
 <area shape="rect" id="node22" href="$a00421.html#ga54f9db91ea0782b08aa16ee77a57c5e5" title="Initializes the user&#45;defined fault objects for overcurrent protection." alt="" coords="439,272,566,299"/>
