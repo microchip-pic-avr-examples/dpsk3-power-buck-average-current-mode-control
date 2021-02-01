@@ -8,10 +8,13 @@
         <itemPath>sources/common/p33c_pral/xc16_pral.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="config" projectFiles="true">
-        <itemPath>sources/config/dpsk3_hwdescr.h</itemPath>
-        <itemPath>sources/config/dpsk3_devcfg.h</itemPath>
+        <logicalFolder name="f1" displayName="hal" projectFiles="true">
+          <itemPath>sources/config/hal/dpsk3_devcfg.h</itemPath>
+          <itemPath>sources/config/hal/dpsk3_hwdescr.h</itemPath>
+        </logicalFolder>
         <itemPath>sources/config/hal.h</itemPath>
         <itemPath>sources/config/apps.h</itemPath>
+        <itemPath>sources/config/system.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f4" displayName="tasks" projectFiles="true">
         <logicalFolder name="f4" displayName="fault_monitor" projectFiles="true">
@@ -20,7 +23,7 @@
           </logicalFolder>
           <logicalFolder name="f3" displayName="drivers" projectFiles="true">
             <itemPath>sources/fault_handler/drivers/drv_fault_handler.h</itemPath>
-            <itemPath>sources/fault_handler/drivers/fdrv_TrapHandler.h</itemPath>
+            <itemPath>sources/fault_handler/drivers/drv_trap_handler.h</itemPath>
           </logicalFolder>
         </logicalFolder>
         <logicalFolder name="f5" displayName="lcd" projectFiles="true">
@@ -55,6 +58,7 @@
             <itemPath>sources/pwr_control/devices/dev_buck_substates.h</itemPath>
             <itemPath>sources/pwr_control/devices/dev_buck_templates.h</itemPath>
             <itemPath>sources/pwr_control/devices/dev_buck_typedef.h</itemPath>
+            <itemPath>sources/pwr_control/devices/dev_buck_special_functions.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f3" displayName="drivers" projectFiles="true">
             <itemPath>sources/pwr_control/drivers/npnz16b.h</itemPath>
@@ -62,14 +66,16 @@
             <itemPath>sources/pwr_control/drivers/npnz16b.inc</itemPath>
           </logicalFolder>
         </logicalFolder>
-        <logicalFolder name="f8" displayName="switch" projectFiles="true">
+        <logicalFolder name="f8" displayName="push_button" projectFiles="true">
           <logicalFolder name="f1" displayName="app" projectFiles="true">
-            <itemPath>sources/switch/app_switch.h</itemPath>
+            <itemPath>sources/push_button/app_push_button.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f2" displayName="drivers" projectFiles="true">
+            <itemPath>sources/push_button/drivers/drv_push_button.h</itemPath>
           </logicalFolder>
         </logicalFolder>
       </logicalFolder>
+      <itemPath>sources/main.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -82,6 +88,9 @@
         <itemPath>sources/common/p33c_pral/p33c_pwm.c</itemPath>
         <itemPath>sources/common/p33c_pral/p33c_gpio.c</itemPath>
         <itemPath>sources/common/p33c_pral/p33c_dsp.c</itemPath>
+        <itemPath>sources/common/p33c_pral/p33c_osc.c</itemPath>
+        <itemPath>sources/common/p33c_pral/p33c_dac.c</itemPath>
+        <itemPath>sources/common/p33c_pral/p33c_opa.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="init" projectFiles="true">
@@ -89,8 +98,11 @@
           <itemPath>sources/config/init/init_gpio.c</itemPath>
           <itemPath>sources/config/init/init_timer1.c</itemPath>
           <itemPath>sources/config/init/init_dsp.c</itemPath>
+          <itemPath>sources/config/init/init_opa.c</itemPath>
+          <itemPath>sources/config/init/init_dac.c</itemPath>
         </logicalFolder>
         <itemPath>sources/config/config_bits.c</itemPath>
+        <itemPath>sources/config/system.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f4" displayName="tasks" projectFiles="true">
         <logicalFolder name="f5" displayName="fault_monitor" projectFiles="true">
@@ -99,7 +111,7 @@
           </logicalFolder>
           <logicalFolder name="f3" displayName="drivers" projectFiles="true">
             <itemPath>sources/fault_handler/drivers/drv_fault_handler.c</itemPath>
-            <itemPath>sources/fault_handler/drivers/fdrv_TrapHandler.c</itemPath>
+            <itemPath>sources/fault_handler/drivers/drv_trap_handler.c</itemPath>
           </logicalFolder>
         </logicalFolder>
         <logicalFolder name="f6" displayName="lcd" projectFiles="true">
@@ -122,6 +134,7 @@
           <logicalFolder name="f1" displayName="app" projectFiles="true">
             <itemPath>sources/pwr_control/app_power_control.c</itemPath>
             <itemPath>sources/pwr_control/app_power_control_isr.c</itemPath>
+            <itemPath>sources/pwr_control/app_power_config.c</itemPath>
           </logicalFolder>
           <logicalFolder name="f2" displayName="devices" projectFiles="true">
             <logicalFolder name="f1" displayName="templates" projectFiles="true">
@@ -133,20 +146,21 @@
             <itemPath>sources/pwr_control/devices/dev_buck_opstates.c</itemPath>
             <itemPath>sources/pwr_control/devices/dev_buck_pconfig.c</itemPath>
             <itemPath>sources/pwr_control/devices/dev_buck_substates.c</itemPath>
+            <itemPath>sources/pwr_control/devices/dev_buck_special_functions.c</itemPath>
           </logicalFolder>
           <logicalFolder name="f3" displayName="drivers" projectFiles="true">
             <itemPath>sources/pwr_control/drivers/v_loop.c</itemPath>
             <itemPath>sources/pwr_control/drivers/v_loop_asm.s</itemPath>
+            <itemPath>sources/pwr_control/drivers/v_loop_extensions.s</itemPath>
           </logicalFolder>
         </logicalFolder>
-        <logicalFolder name="f2" displayName="switch" projectFiles="true">
+        <logicalFolder name="f2" displayName="push_button" projectFiles="true">
           <logicalFolder name="f1" displayName="app" projectFiles="true">
-            <itemPath>sources/switch/app_switch.c</itemPath>
+            <itemPath>sources/push_button/app_push_button.c</itemPath>
           </logicalFolder>
           <logicalFolder name="f3" displayName="drivers" projectFiles="true">
-            <itemPath>sources/switch/drivers/drv_switch.c</itemPath>
+            <itemPath>sources/push_button/drivers/drv_push_button.c</itemPath>
           </logicalFolder>
-          <itemPath>sources/switch/drivers/drv_switch.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <itemPath>sources/main.c</itemPath>
@@ -155,14 +169,12 @@
                    displayName="Important Files"
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
-      <itemPath>sources/pwr_control/config/DPSK3_VMC.dcld</itemPath>
       <itemPath>readme.txt</itemPath>
+      <itemPath>sources/pwr_control/config/dpsk3_vmc.dcld</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
-    <Elem>sources/pwr_control</Elem>
-    <Elem>sources/fault_handler/drivers</Elem>
-    <Elem>sources/switch/drivers</Elem>
+    <Elem>sources</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -172,7 +184,7 @@
         <targetDevice>dsPIC33CK256MP505</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>pkob4hybrid</platformTool>
         <languageToolchain>XC16</languageToolchain>
         <languageToolchainVersion>1.61</languageToolchainVersion>
         <platform>3</platform>
@@ -915,6 +927,8 @@
                   value="report"/>
         <property key="warningmessagebreakoptions.W0247_ADC_CONVERSION_BAD_RESSEL"
                   value="report"/>
+        <property key="warningmessagebreakoptions.W0248_ADC_WR_BEFORE_KEY_SEQ"
+                  value="report"/>
         <property key="warningmessagebreakoptions.W0400_PWM_PWM_FASTER_THAN_FOSC"
                   value="report"/>
         <property key="warningmessagebreakoptions.W0600_WDT_2ND_WDT_MR_WRITE"
@@ -1141,6 +1155,8 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-2beff"/>
         <property key="memories.rww" value="true"/>
+        <property key="programmerToGoFilePath"
+                  value="D:/Firmware/MCU16ASMPS_CodeExamples/dpsk3-power-buck-voltage-mode-control/dpsk_vmc.X/debug/DPSK3_BUCK/dpsk_vmc_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>

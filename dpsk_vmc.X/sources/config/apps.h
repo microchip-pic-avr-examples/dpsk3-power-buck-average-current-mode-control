@@ -42,17 +42,8 @@
 #include "pwr_control/app_power_control.h"
 #include "led/app_led.h"
 #include "lcd/app_lcd.h"
-#include "switch/app_switch.h"
+#include "push_button/app_push_button.h"
 
-#ifdef	__cplusplus
-extern "C" {
-#endif /* __cplusplus */
-
-
-    
-#ifdef	__cplusplus
-}
-#endif /* __cplusplus */
 
 #endif	/* APPLICATION_GLOBALS_HEADER_H */
 

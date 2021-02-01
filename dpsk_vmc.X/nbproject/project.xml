@@ -13,9 +13,7 @@
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList>
-                <sourceRootElem>sources/pwr_control</sourceRootElem>
-                <sourceRootElem>sources/fault_handler/drivers</sourceRootElem>
-                <sourceRootElem>sources/switch/drivers</sourceRootElem>
+                <sourceRootElem>sources</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

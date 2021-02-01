@@ -17,28 +17,50 @@
 #include "dev_buck_templates.h"
 
 /* PRIVATE VARIABLES */
-volatile uint16_t adcore_mask=0;
-volatile uint16_t adcore_diff_mask=0;
+/**
+ * @var adcore_mask
+ * @ingroup lib-layer-buck-pconfig-properties-variables
+ * @brief This variable is use to set the ADC core mask
+ */
+volatile uint16_t adcore_mask=0;        
 
-/* @@buckPWM_ModuleInitialize
- * ********************************************************************************
- * Summary:
- * 
- * Parameters:
- * 
- * Returns:
- * 
- * Description:
- * 
- * ********************************************************************************/
+/**
+ * @var adcore_diff_mask
+ * @ingroup lib-layer-buck-pconfig-properties-variables
+ * @brief This variable is use to set the ADC core mask
+ */
+volatile uint16_t adcore_diff_mask=0;   
 
-volatile uint16_t buckPWM_ModuleInitialize(volatile struct BUCK_POWER_CONTROLLER_s* buckInstance)
+/* PRIVATE FUNCTION CALL PROTOTYPES */
+
+volatile uint16_t buckGPIO_PrivateInitialize(volatile struct BUCK_GPIO_INSTANCE_s* buckGPIOInstance);
+
+/*******************************************************************************
+ * @fn	    uint16_t buckPWM_ModuleInitialize(volatile struct BUCK_CONVERTER_s* buckInstance)
+ * @ingroup lib-layer-buck-pconfig-functions
+ * @brief   Initializes the buck PWM module by resetting its registers to default
+ * @param	buckInstance  Pointer to a Buck Converter data object of type struct BUCK_CONVERTER_s
+ * @return  unsigned integer (0=failure, 1=success)
+ *  
+ * @details
+ *    This function initializes the buck PWM module base registers with default
+ *     values for maximum performance. 
+ * 
+ *     Default configuration:
+ *         - all PWM peripheral power is enabled
+ *         - all PWM generators are disabled
+ *         - default PWM Module configurations are written in buck PWM module base registers 
+ *********************************************************************************/
+volatile uint16_t buckPWM_ModuleInitialize(volatile struct BUCK_CONVERTER_s* buckInstance)
 {
     volatile uint16_t retval=1;
     volatile struct P33C_PWM_MODULE_s* pwm;
     
     // Make sure power to the peripheral is enabled
+    volatile bool _pmdlock = PMDCONbits.PMDLOCK; // Copy state of PMD lock bit
+    PMDCONbits.PMDLOCK = 0; // Unlock PMD register writes
     PMD1bits.PWMMD = 0; // PWM Module Disable: PWM module is enabled
+    PMDCONbits.PMDLOCK = _pmdlock; // set previous state of PMD lock
     
     // DISABLE ALL PWM GENERATORS
     PG1CONLbits.ON = 0; // PWM Generator #1 Enable: PWM Generator is not enabled
@@ -68,21 +90,24 @@ volatile uint16_t buckPWM_ModuleInitialize(volatile struct BUCK_POWER_CONTROLLER
         pwm->vMPER.value = buckInstance->sw_node[0].period; // Set Period of phase #1
 
     return(retval);    
-}
+} 
 
-/* @@buckPWM_ChannelInitialize
- * ********************************************************************************
- * Summary:
+/*******************************************************************************
+ * @fn      uint16_t buckPWM_ChannelInitialize(volatile struct BUCK_CONVERTER_s* buckInstance)
+ * @ingroup lib-layer-buck-pconfig-functions
+ * @brief   This function initializes the output pins for the PWM output and the default buck PWM settings
+ * @param	buckInstance  Pointer to a Buck Converter data object of type struct BUCK_CONVERTER_s
+ * @return  unsigned integer (0=failure, 1=success)
+ *  
+ * @details
+ *    This function initializes the buck PWM channel with default values for maximum performance. 
  * 
- * Parameters:
- * 
- * Returns:
- * 
- * Description:
- * 
- * ********************************************************************************/
-
-volatile uint16_t buckPWM_ChannelInitialize(volatile struct BUCK_POWER_CONTROLLER_s* buckInstance)
+ *     Default configuration:
+ *         - selected PWM outputs are enabled 
+ *         - PWM timing settings are loaded (i.e., duty cycle, period, dead-times, blanking)
+ *         - PWM synchronization is established
+ *********************************************************************************/
+volatile uint16_t buckPWM_ChannelInitialize(volatile struct BUCK_CONVERTER_s* buckInstance)
 {
     volatile uint16_t retval=1;
     volatile uint16_t _i=0;
@@ -123,48 +148,74 @@ volatile uint16_t buckPWM_ChannelInitialize(volatile struct BUCK_POWER_CONTROLLE
         pg->PGxDTH.value = buckInstance->sw_node[_i].dead_time_rising; // PGxDTH: PWM GENERATOR x DEAD-TIME REGISTER HIGH
         pg->PGxLEBL.value = buckInstance->sw_node[_i].leb_period; // PWM GENERATOR x LEADING-EDGE BLANKING REGISTER LOW 
         
-        // First switch-node object of array is used as master PWM
-        if( _i == 0) {
-            pg->PGxCONH.bits.MSTEN = 1; // Make first PWM of switch node objects MASTER
-            pg->PGxCONH.bits.UPDMOD = P33C_PGxCONH_UPDMOD_MSTR; // Master PWM updates PWM registers Immediately
-            pg->PGxCONH.bits.SOCS = 0b0000; // Master PWM is self-triggered
-            pg->PGxEVTL.bits.PGTRGSEL = 0b011; // Master PWM uses PGxTRIGC as master trigger output
-            pg->PGxTRIGC.bits.TRIG = buckInstance->sw_node[_i].phase; // Set phase shift of trigger
+        // ToDo: PWM Synchronization needs to be more universaL
+        // PWM synchronization only work within groups of 4 (PG1-PG4 or PG5-PG8)
+        // Multiphase boost converter auto PWM phase synchronization
+        if ((_i == 0) && ((uint16_t)(buckInstance->set_values.no_of_phases) > 1U))
+        { // First phase is always master phase
+            pg->PGxCONH.bits.MSTEN = 1; // Enable Master synchronization mode
+            pg->PGxCONH.bits.SOCS = 0b0000; // Master PWM always triggers itself
+            pg->PGxEVTL.bits.PGTRGSEL = 0b011; // PGxTRIGC is always used as PWM synchronization trigger output
+            pg->PGxTRIGC.value = buckInstance->sw_node[_i+1].phase; // Set phase shift between master phase and first synchronized phase
+            pg->PGxCONH.bits.UPDMOD = 0b001; // Immediate update
+            pg->PGxEVTL.bits.UPDTRG = 0b11; // A write of the PGxTRIGA register automatically sets the UPDATE bit
         }
-        else {
-            pg->PGxCONH.bits.MSTEN = 0; // Make all other PWMs of switch node objects SLAVES
-            pg->PGxCONH.bits.UPDMOD = P33C_PGxCONH_UPDMOD_SLV; // Slave PWMs update PWM registers Immediately at MASTER trigger
-            pg->PGxCONH.bits.SOCS = BUCK_PWM_MASTER_SOCS; // Slave PWMs are triggered by MASTER PWM
-            pg->PGxEVTL.bits.PGTRGSEL = 0b000; // Slave PWM does not have PWM trigger output 
-            pg->PGxTRIGC.bits.TRIG = buckInstance->sw_node[_i].phase; // Set phase shift of trigger
+        else if ((0 < _i) && (_i < (buckInstance->set_values.no_of_phases-1)))
+        { // Every synchronized phase is synchronized to previous phase while being master to following
+            pg->PGxCONH.bits.MSTEN = 1; // Enable Master synchronization mode
+            pg->PGxCONH.bits.SOCS = buckInstance->sw_node[_i-1].pwm_instance; // synchronized PWM is always triggered by previous generator while providing trigger for following
+            pg->PGxEVTL.bits.PGTRGSEL = 0b011; // PGxTRIGC is always used as PWM synchronization trigger output
+            pg->PGxTRIGC.value = buckInstance->sw_node[_i+1].phase; // Set phase shift between master phase and first synchronized phase
+            pg->PGxCONH.bits.UPDMOD = 0b011; // Sync immediate update
+            pg->PGxEVTL.bits.UPDTRG = 0; // User must set the UPDREQ bit (PGxSTAT[3]) manually
         }
+        else if ((0 < _i) && (_i == (buckInstance->set_values.no_of_phases-1)))
+        { // Last phase does not provide any master trigger
+            pg->PGxCONH.bits.MSTEN = 0; // Disable Master synchronization mode
+            pg->PGxCONH.bits.SOCS = buckInstance->sw_node[_i-1].pwm_instance; // synchronized PWM is always triggered by previous generator while providing trigger for following
+            pg->PGxEVTL.bits.PGTRGSEL = 0b000; // EOC is the general trigger output
+            pg->PGxTRIGC.value = 0x0000; // Clear phase shift value 
+            pg->PGxCONH.bits.UPDMOD = 0b011; // Sync immediate update
+            pg->PGxEVTL.bits.UPDTRG = 0; // User must set the UPDREQ bit (PGxSTAT[3]) manually
+        }
+        else if (buckInstance->set_values.no_of_phases == 1U)
+        { // This is only a single phase system (no PWM dependencies)
+            pg->PGxCONH.bits.MSTEN = 0; // Disable Master synchronization mode
+            pg->PGxCONH.bits.SOCS = 0b0000; // Master PWM always triggers itself
+            pg->PGxEVTL.bits.PGTRGSEL = 0b011; // PGxTRIGC is always used as PWM synchronization trigger output
+            pg->PGxTRIGC.value = 0x0000; // Clear phase shift between master phase and first synchronized phase
+            pg->PGxCONH.bits.UPDMOD = 0b001; // Immediate update
+            pg->PGxEVTL.bits.UPDTRG = 0b11; // A write of the PGxTRIGA register automatically sets the UPDATE bit
+        }
+        else { /* continue */ }
         
         // Update PWM generator timing registers
-        pg->PGxSTAT.bits.UPDREQ = 1;
+        pg->PGxSTAT.bits.UPDREQ = 1; // Manually set the Update Request bit 
+        pg->PGxCONH.bits.TRGMOD = 1; // all PWM generators are in retriggerable mode
         
     }
         
     return(retval);    
-}
+} 
 
-/* @@buckPWM_Start
- * ********************************************************************************
- * Summary:
- * 
- * Parameters:
- * 
- * Returns:
- * 
- * Description:
- * 
- * ********************************************************************************/
-
-volatile uint16_t buckPWM_Start(volatile struct BUCK_POWER_CONTROLLER_s* buckInstance) 
+/*******************************************************************************
+ * @fn	    uint16_t buckPWM_Start(volatile struct BUCK_CONVERTER_s* buckInstance)
+ * @ingroup lib-layer-buck-pconfig-functions
+ * @brief   This function enables the buck PWM operation
+ * @param	buckInstance  Pointer to a Buck Converter data object of type struct BUCK_CONVERTER_s
+ * @return  unsigned integer (0=failure, 1=success)
+ *  
+ * @details
+ * This function starts the operation of the buck PWM by enabling the PWM 
+ * generator and its output pins.
+ *********************************************************************************/
+volatile uint16_t buckPWM_Start(volatile struct BUCK_CONVERTER_s* buckInstance) 
 {
     volatile uint16_t retval=1;
     volatile uint16_t _i=0;
     volatile uint16_t timeout=0;
     volatile uint16_t pwm_Instance=0;
+    volatile uint16_t sync_sw_mask=0;
     volatile struct P33C_PWM_GENERATOR_s* pg;
 
     // Enable all PWM channels of the recent buck converter configuration
@@ -176,8 +227,8 @@ volatile uint16_t buckPWM_Start(volatile struct BUCK_POWER_CONTROLLER_s* buckIns
         // CAPTURE MEMORY ADDRESS OF GIVEN PWM GENERATOR INSTANCE
         pg = p33c_PwmGenerator_GetHandle(pwm_Instance);
 
-        pg->PGxIOCONL.value |= P33C_PGxIOCONL_OVREN; // PWMxH/L Output Override Enable: PWM generator controls the PWMxH output pin
-        pg->PGxIOCONH.value &= ~(P33C_PGxIOCONH_PEN); // PWMxH/L Output Port Disable: PWM generator controls the PWMxH output pin
+        pg->PGxIOCONL.value |= P33C_PGxIOCONL_OVREN_SYNC; // PWMxH/L Output Override Enable: PWM generator controls the PWMxH output pin
+        pg->PGxIOCONH.value &= ~(P33C_PGxIOCONH_PEN_SYNC); // PWMxH/L Output Port Disable: PWM generator controls the PWMxH output pin
 
         pg->PGxCONL.bits.ON = 1;  // PWM Generator Enable: PWM Generator is enabled
         pg->PGxSTAT.bits.UPDREQ = 1;  // Update all PWM timing registers
@@ -189,28 +240,39 @@ volatile uint16_t buckPWM_Start(volatile struct BUCK_POWER_CONTROLLER_s* buckIns
                 return(0);                                      // ... exit returning ERROR
         }
 
-        pg->PGxIOCONH.value |= P33C_PGxIOCONH_PEN; // PWMxH/L Output Port Enable: PWM generator controls the PWMxH output pin
+        // Select the control bits for either synchronous or asynchronous PWM drive
+        if (buckInstance->sw_node[_i].sync_drive)
+            sync_sw_mask = P33C_PGxIOCONH_PEN_SYNC;
+        else
+            sync_sw_mask = P33C_PGxIOCONH_PEN_ASYNC;
 
+        
+        // PWMxH/L Output Port Enable: PWM generator controls the PWMxH output pin
+        pg->PGxIOCONH.value |= sync_sw_mask; 
+
+        // Turn on PWM generator
         retval &= (volatile uint16_t)(pg->PGxCONL.bits.ON);
 
     }
     
     return(retval);    
-}
+} 
 
-/* @@buckPWM_Stop
- * ********************************************************************************
- * Summary:
+/*******************************************************************************
+ * @fn	    uint16_t buckPWM_Stop(volatile struct BUCK_CONVERTER_s* buckInstance)
+ * @ingroup lib-layer-buck-pconfig-functions
+ * @brief   This function stops the buck PWM output
+ * @param	buckInstance  Pointer to a Buck Converter data object of type struct BUCK_CONVERTER_s
+ * @return  unsigned integer (0=failure, 1=success)
+ *  
+ * @details
+ * This function shuts down the PWM output by disabling all PWM channels of the recent buck
+ * converter object, overriding the output pins and resetting the buck PWM duty cycle to
+ * its minimum duty ratio. 
  * 
- * Parameters:
- * 
- * Returns:
- * 
- * Description:
- * 
- * ********************************************************************************/
-
-volatile uint16_t buckPWM_Stop(volatile struct BUCK_POWER_CONTROLLER_s* buckInstance) 
+ * If the Power Good output is enabled, this output pin will also be reset.
+ *********************************************************************************/
+volatile uint16_t buckPWM_Stop(volatile struct BUCK_CONVERTER_s* buckInstance) 
 {
     volatile uint16_t retval=1;
     volatile uint16_t _i=0;
@@ -226,8 +288,8 @@ volatile uint16_t buckPWM_Stop(volatile struct BUCK_POWER_CONTROLLER_s* buckInst
         // CAPTURE MEMORY ADDRESS OF GIVEN PWM GENERATOR INSTANCE
         pg = p33c_PwmGenerator_GetHandle(pwm_Instance);
 
-        pg->PGxIOCONL.value |= P33C_PGxIOCONL_OVREN;  // PWMxH/L Output Override Enable
-        pg->PGxIOCONH.value &= ~(P33C_PGxIOCONH_PEN); // PWMxH/L Output Pint Control Disable
+        pg->PGxIOCONL.value |= P33C_PGxIOCONL_OVREN_SYNC;  // PWMxH/L Output Override Enable
+        pg->PGxIOCONH.value &= ~(P33C_PGxIOCONH_PEN_SYNC); // PWMxH/L Output Pint Control Disable
         pg->PGxCONL.value &= ~(P33C_PGxCONL_PWM_ON);  // PWM Generator Disable
         pg->PGxDC.value = buckInstance->sw_node[_i].duty_ratio_min; // Reset Duty Cycle
         pg->PGxSTAT.value |= P33C_PGxSTAT_UPDREQ;     // Set the Update Request bit to update PWM timing
@@ -241,21 +303,22 @@ volatile uint16_t buckPWM_Stop(volatile struct BUCK_POWER_CONTROLLER_s* buckInst
         retval &= buckGPIO_Clear(&buckInstance->gpio.PowerGood);
     
     return(retval);    
-}
+    
+} 
 
-/* @@buckPWM_Suspend
- * ********************************************************************************
- * Summary:
- * 
- * Parameters:
- * 
- * Returns:
- * 
- * Description:
- * 
- * ********************************************************************************/
-
-volatile uint16_t buckPWM_Suspend(volatile struct BUCK_POWER_CONTROLLER_s* buckInstance) 
+/*******************************************************************************
+ * @fn	    uint16_t buckPWM_Suspend(volatile struct BUCK_CONVERTER_s* buckInstance) 
+ * @ingroup lib-layer-buck-pconfig-functions
+ * @brief   This function disables the PWM generator IOs
+ * @param	buckInstance  Pointer to a Buck Converter data object of type struct BUCK_CONVERTER_s
+ * @return  unsigned integer (0=failure, 1=success)
+ *  
+ * @details
+ * This function suspends the buck PWM operation by disabling all PWM outputs of the recent 
+ * buck converter configuration, overriding the PWM output pins and setting the 
+ * duty cycle to 0.
+ *********************************************************************************/
+volatile uint16_t buckPWM_Suspend(volatile struct BUCK_CONVERTER_s* buckInstance) 
 {
     volatile uint16_t retval=1;
     volatile uint16_t _i=0;
@@ -271,11 +334,11 @@ volatile uint16_t buckPWM_Suspend(volatile struct BUCK_POWER_CONTROLLER_s* buckI
         // CAPTURE MEMORY ADDRESS OF GIVEN PWM GENERATOR INSTANCE
         pg = p33c_PwmGenerator_GetHandle(pwm_Instance);
         
-        pg->PGxIOCONL.value |= P33C_PGxIOCONL_OVREN; // PWMxH/L Output Override Enable
+        pg->PGxIOCONL.value |= P33C_PGxIOCONL_OVREN_SYNC; // PWMxH/L Output Override Enable
         pg->PGxDC.value = 0;  // Reset Duty Cycle
         pg->PGxSTAT.value |= P33C_PGxSTAT_UPDREQ; // Set the Update Request bit to update PWM timing
 
-        retval &= (bool)(pg->PGxIOCONL.value & P33C_PGxIOCONL_OVREN);
+        retval &= (bool)(pg->PGxIOCONL.value & P33C_PGxIOCONL_OVREN_SYNC);
 
     }
     
@@ -284,25 +347,25 @@ volatile uint16_t buckPWM_Suspend(volatile struct BUCK_POWER_CONTROLLER_s* buckI
         retval &= buckGPIO_Clear(&buckInstance->gpio.PowerGood);
     
     return(retval);    
-}
+    
+} 
 
-/* @@<function_name>
- * ********************************************************************************
- * Summary:
- * 
- * Parameters:
- * 
- * Returns:
- * 
- * Description:
- * 
- * ********************************************************************************/
-
-volatile uint16_t buckPWM_Resume(volatile struct BUCK_POWER_CONTROLLER_s* buckInstance) 
+/*******************************************************************************
+ * @fn	    uint16_t buckPWM_Resume(volatile struct BUCK_CONVERTER_s* buckInstance)
+ * @ingroup lib-layer-buck-pconfig-functions
+ * @brief   This function resumes the buck PWM operation
+ * @param	buckInstance  Pointer to a Buck Converter data object of type struct BUCK_CONVERTER_s
+ * @return  unsigned integer (0=failure, 1=success)
+ *  
+ * @details
+ * THis function updates the PWM timing bit and the PWM output pins are enabled.
+ *********************************************************************************/
+volatile uint16_t buckPWM_Resume(volatile struct BUCK_CONVERTER_s* buckInstance) 
 {
     volatile uint16_t retval=1;
     volatile uint16_t _i=0;
     volatile uint16_t pwm_Instance=0;
+    volatile uint16_t sync_sw_mask=0;
     volatile struct P33C_PWM_GENERATOR_s* pg;
 
     // Disable all PWM channels of the recent buck converter configuration
@@ -314,34 +377,46 @@ volatile uint16_t buckPWM_Resume(volatile struct BUCK_POWER_CONTROLLER_s* buckIn
         // CAPTURE MEMORY ADDRESS OF GIVEN PWM GENERATOR INSTANCE
         pg = p33c_PwmGenerator_GetHandle(pwm_Instance);
     
+        // Select the control bits for either synchronous or asynchronous PWM drive
+        if ((buckInstance->sw_node[_i].sync_drive) || (buckInstance->status.bits.async_mode == false))
+            sync_sw_mask = P33C_PGxIOCONL_OVREN_SYNC;
+        else
+            sync_sw_mask = P33C_PGxIOCONL_OVREN_ASYNC;
+        
+        // Clear selected override bits
         pg->PGxSTAT.bits.UPDREQ = 1; // Set the Update Request bit to update PWM timing
-        pg->PGxIOCONL.value &= (volatile uint16_t)(~(P33C_PGxIOCONL_OVREN)); // PWMxH/L Output Override Disable
+        pg->PGxIOCONL.value &= (volatile uint16_t)(~(sync_sw_mask)); // PWMxH/L Output Override Disable
 
-        retval &= (uint16_t)((bool)(!(pg->PGxIOCONL.value & P33C_PGxIOCONL_OVREN)));
+        retval &= (uint16_t)((bool)(!(pg->PGxIOCONL.value & sync_sw_mask)));
 
     }
         
-    return(retval);    
+    return(retval);  
+    
 }
 
-/* @@<function_name>
- * ********************************************************************************
- * Summary:
- * 
- * Parameters:
- * 
- * Returns:
- * 
- * Description:
- * 
- * ********************************************************************************/
-
+/*******************************************************************************
+ * @fn	    uint16_t buckADC_ModuleInitialize(void) 
+ * @ingroup lib-layer-buck-pconfig-functions
+ * @brief   This fucntion initializes the buck by resetting all its registers to default
+ * @param	void
+ * @return  unsigned integer (0=failure, 1=success)
+ *  
+ * @details
+ * The ADC initialization covers basic configurations like data format, clock sources and dividers
+ * as well as specific configurations for ADC cores. These settings are general, basic settings
+ * and not related to specific analog inputs. The standard configuration set here sets up the 
+ * ADC module and ADC cores for maximum performance.
+ *********************************************************************************/
 volatile uint16_t buckADC_ModuleInitialize(void) 
 {
     volatile uint16_t retval=1;
     
     // Make sure power to peripheral is enabled
+    volatile bool _pmdlock = PMDCONbits.PMDLOCK; // Copy state of PMD lock bit
+    PMDCONbits.PMDLOCK = 0; // Unlock PMD register writes
     PMD1bits.ADC1MD = 0; // ADC Module Power Disable: ADC module power is enabled
+    PMDCONbits.PMDLOCK = _pmdlock; // set previous state of PMD lock
     
     // ADCON1L: ADC CONTROL REGISTER 1 LOW
     ADCON1Lbits.ADON = 0; // ADC Enable: ADC module is off during configuration
@@ -387,7 +462,7 @@ volatile uint16_t buckADC_ModuleInitialize(void)
     
     // ADCON4H: ADC CONTROL REGISTER 4 HIGH
     ADCON4Hbits.C0CHS = 0b00; // Dedicated ADC Core 0 Input Channel Selection: AN0
-    ADCON4Hbits.C1CHS = 0b01; // Dedicated ADC Core 1 Input Channel Selection: ANA1
+    ADCON4Hbits.C1CHS = 0b00; // Dedicated ADC Core 1 Input Channel Selection: AN1
 
     // ADCON5L: ADC CONTROL REGISTER 5 LOW
     // ADCON5Lbits.SHRRDY: Shared ADC Core Ready Flag (read only)
@@ -416,94 +491,95 @@ volatile uint16_t buckADC_ModuleInitialize(void)
     ADCORE1Hbits.ADCS = 0b0000000; // ADC Core x Input Clock Divider: 2 Source Clock Periods
     ADCORE1Hbits.EISEL = 0b111; // Early interrupt is set and an interrupt is generated 8 TADCORE clocks prior
     
-    return(retval);    
-}
+    return(retval);   
+    
+} 
 
-/* @@<function_name>
- * ********************************************************************************
- * Summary:
- * 
- * Parameters:
- * 
- * Returns:
- * 
- * Description:
- * 
- * ********************************************************************************/
-
-volatile uint16_t buckADC_ChannelInitialize(volatile BUCK_ADC_INPUT_SETTINGS_t* adc_Instance) 
+/*******************************************************************************
+ * @fn	    uint16_t buckADC_ChannelInitialize(volatile struct BUCK_ADC_INPUT_SETTINGS_s* adcInstance)
+ * @ingroup lib-layer-buck-pconfig-functions
+ * @brief   This function initializes the settings for the ADC channel
+ * @param	adcInstance  Pointer to an ADC Input Configuration data object of type struct BUCK_ADC_INPUT_SETTINGS_s
+ * @return  unsigned integer (0=failure, 1=success)
+ *  
+ * @details
+ * This function initializes the ADC input registers based on the selected ADC channel. 
+ * This function sets the input channel trigger source, input mode, and the ADC core 
+ * connected to the selected channel. 
+ *********************************************************************************/
+volatile uint16_t buckADC_ChannelInitialize(volatile struct BUCK_ADC_INPUT_SETTINGS_s* adcInstance) 
 {
     volatile uint16_t retval=1;
     volatile uint8_t* ptrADCRegister;
     volatile uint8_t bit_offset;
     
     // Initialize ADC input registers
-    if (adc_Instance->enabled) {
+    if (adcInstance->enabled) {
 
         // Write level trigger setting
-        if (adc_Instance->adc_input < 16) {
-            ADLVLTRGL |= ((uint16_t)(adc_Instance->level_trigger) << adc_Instance->adc_input);
-            ADEIEL |= ((uint16_t)(adc_Instance->early_interrupt_enable) << adc_Instance->adc_input);
-            ADIEL |= ((uint16_t)(adc_Instance->interrupt_enable) << adc_Instance->adc_input);
+        if (adcInstance->adc_input < 16) {
+            ADLVLTRGL |= ((uint16_t)(adcInstance->level_trigger) << adcInstance->adc_input);
+            ADEIEL |= ((uint16_t)(adcInstance->early_interrupt_enable) << adcInstance->adc_input);
+            ADIEL |= ((uint16_t)(adcInstance->interrupt_enable) << adcInstance->adc_input);
         }
-        else if (adc_Instance->adc_input < 32) {
-            ADLVLTRGH |= ((uint16_t)(adc_Instance->level_trigger) << (adc_Instance->adc_input - 16));
-            ADEIEH |= ((uint16_t)(adc_Instance->early_interrupt_enable) << (adc_Instance->adc_input - 16));
-            ADIEH |= ((uint16_t)(adc_Instance->interrupt_enable) << (adc_Instance->adc_input - 16));
+        else if (adcInstance->adc_input < 32) {
+            ADLVLTRGH |= ((uint16_t)(adcInstance->level_trigger) << (adcInstance->adc_input - 16));
+            ADEIEH |= ((uint16_t)(adcInstance->early_interrupt_enable) << (adcInstance->adc_input - 16));
+            ADIEH |= ((uint16_t)(adcInstance->interrupt_enable) << (adcInstance->adc_input - 16));
         }
         else {
             return(0); // ADC input number out of range
         }
 
         // write input mode setting
-        if (adc_Instance->adc_input < 8)
-            bit_offset = (2 * adc_Instance->adc_input);
-        else if (adc_Instance->adc_input < 16)
-            bit_offset = (2 * (adc_Instance->adc_input-8));
-        else if (adc_Instance->adc_input < 24)
-            bit_offset = (2 * (adc_Instance->adc_input-16));
-        else if (adc_Instance->adc_input < 32)
-            bit_offset = (2 * (adc_Instance->adc_input-24));
+        if (adcInstance->adc_input < 8)
+            bit_offset = (2 * adcInstance->adc_input);
+        else if (adcInstance->adc_input < 16)
+            bit_offset = (2 * (adcInstance->adc_input-8));
+        else if (adcInstance->adc_input < 24)
+            bit_offset = (2 * (adcInstance->adc_input-16));
+        else if (adcInstance->adc_input < 32)
+            bit_offset = (2 * (adcInstance->adc_input-24));
         else
             return(0); // ADC input number out of range
 
         ptrADCRegister = (volatile uint8_t *)
-            ((volatile uint8_t *)&ADMOD0L + (volatile uint8_t)(adc_Instance->adc_input >> 8));
+            ((volatile uint8_t *)&ADMOD0L + (volatile uint8_t)(adcInstance->adc_input >> 8));
         
-        *ptrADCRegister |= ((unsigned int)adc_Instance->signed_result << bit_offset);
-        *ptrADCRegister |= ((unsigned int)adc_Instance->differential_input << (bit_offset + 1));
+        *ptrADCRegister |= ((unsigned int)adcInstance->signed_result << bit_offset);
+        *ptrADCRegister |= ((unsigned int)adcInstance->differential_input << (bit_offset + 1));
        
         // Write ADC trigger source setting
         ptrADCRegister = (volatile uint8_t *)
-            ((volatile uint8_t *)&ADTRIG0L + (volatile uint8_t)adc_Instance->adc_input);
+            ((volatile uint8_t *)&ADTRIG0L + (volatile uint8_t)adcInstance->adc_input);
         
-        *ptrADCRegister = (volatile uint8_t)adc_Instance->trigger_source;
+        *ptrADCRegister = (volatile uint8_t)adcInstance->trigger_source;
         
         // Register ADC core to be active
-        switch (adc_Instance->adc_core) {
+        switch (adcInstance->adc_core) {
             case 0:
                 adcore_mask |= ADC_CORE0_MASK_INDEX;
-                if (adc_Instance->differential_input)
+                if (adcInstance->differential_input)
                     adcore_diff_mask |= ADC_CORE0_MASK_INDEX;
                 break;
             case 1:
                 adcore_mask |= ADC_CORE1_MASK_INDEX;
-                if (adc_Instance->differential_input)
+                if (adcInstance->differential_input)
                     adcore_diff_mask |= ADC_CORE1_MASK_INDEX;
                 break;
             case 2:
                 adcore_mask |= ADC_CORE2_MASK_INDEX;
-                if (adc_Instance->differential_input)
+                if (adcInstance->differential_input)
                     adcore_diff_mask |= ADC_CORE2_MASK_INDEX;
                 break;
             case 3:
                 adcore_mask |= ADC_CORE3_MASK_INDEX;
-                if (adc_Instance->differential_input)
+                if (adcInstance->differential_input)
                     adcore_diff_mask |= ADC_CORE3_MASK_INDEX;
                 break;
             default:
                 adcore_mask |= ADC_SHRCORE_MASK_INDEX;
-                if (adc_Instance->differential_input)
+                if (adcInstance->differential_input)
                     adcore_diff_mask |= ADC_SHRCORE_MASK_INDEX;
                 break;
         }
@@ -511,20 +587,20 @@ volatile uint16_t buckADC_ChannelInitialize(volatile BUCK_ADC_INPUT_SETTINGS_t* 
     }
     
     return(retval);
-}
+    
+} 
 
-/* @@buckADC_Start
- * ********************************************************************************
- * Summary:
- * 
- * Parameters:
- * 
- * Returns:
- * 
- * Description:
- * 
- * ********************************************************************************/
-
+/*******************************************************************************
+ * @fn	    uint16_t buckADC_Start(void) 
+ * @ingroup lib-layer-buck-pconfig-functions
+ * @brief   This function enables the ADC module and starts the ADC cores analog inputs for the required input signals 
+ * @param	void
+ * @return  unsigned integer (0=failure, 1=success)
+ *  
+ * @details
+ * This function enables the ADC module, powers-up and enables the ADC cores used and waits 
+ * until ADC cores are ready.
+ *********************************************************************************/
 volatile uint16_t buckADC_Start(void) 
 {
     volatile uint16_t retval=1;
@@ -543,20 +619,19 @@ volatile uint16_t buckADC_Start(void)
 
 
     return(retval);    
-}
+    
+} 
 
-/* @@buckGPIO_Set
- * ********************************************************************************
- * Summary:
- * 
- * Parameters:
- * 
- * Returns:
- * 
- * Description:
- * 
- * ********************************************************************************/
-
+/*******************************************************************************
+ * @fn	    uint16_t buckGPIO_Set(volatile struct BUCK_GPIO_INSTANCE_s* buckGPIOInstance)
+ * @ingroup lib-layer-buck-pconfig-functions
+ * @brief   This function sets the selected general purpose input/ouput pins 
+ * @param	buckGPIOInstance  Pointer to a GPIO instance data object of type struct BUCK_GPIO_INSTANCE_s
+ * @return  unsigned integer (0=failure, 1=success)
+ *  
+ * @details
+ * This function captures the user selected pin to be activated through LAT register.
+ *********************************************************************************/
 volatile uint16_t buckGPIO_Set(volatile struct BUCK_GPIO_INSTANCE_s* buckGPIOInstance)
 {
     volatile uint16_t retval=1;
@@ -579,20 +654,19 @@ volatile uint16_t buckGPIO_Set(volatile struct BUCK_GPIO_INSTANCE_s* buckGPIOIns
     retval = (bool)((gpio->LATx.value & filter_mask) == (gpio->PORTx.value & filter_mask));
     
     return(retval);
+    
 }
 
-/* @@buckGPIO_Clear
- * ********************************************************************************
- * Summary:
- * 
- * Parameters:
- * 
- * Returns:
- * 
- * Description:
- * 
- * ********************************************************************************/
-
+/*******************************************************************************
+ * @fn	    uint16_t buckGPIO_Clear(volatile struct BUCK_GPIO_INSTANCE_s* buckGPIOInstance)
+ * @ingroup lib-layer-buck-pconfig-functions
+ * @brief   This function clears the selected general purpose input/output pin
+ * @param	buckGPIOInstance  Pointer to a GPIO instance data object of type struct BUCK_GPIO_INSTANCE_s
+ * @return  unsigned integer (0=failure, 1=success)
+ *  
+ * @details
+ * This function captures the pin that the use desired to be put in inactive state. 
+ *********************************************************************************/
 volatile uint16_t buckGPIO_Clear(volatile struct BUCK_GPIO_INSTANCE_s* buckGPIOInstance)
 {
     volatile uint16_t retval=1;
@@ -615,21 +689,19 @@ volatile uint16_t buckGPIO_Clear(volatile struct BUCK_GPIO_INSTANCE_s* buckGPIOI
     retval = (bool)((gpio->LATx.value & filter_mask) == (gpio->PORTx.value & filter_mask));
     
     return(retval);
+    
 }
 
-
-/* @@buckGPIO_GetPinState
- * ********************************************************************************
- * Summary:
- * 
- * Parameters:
- * 
- * Returns:
- * 
- * Description:
- * 
- * ********************************************************************************/
-
+/*******************************************************************************
+ * @fn	    bool buckGPIO_GetPinState(volatile struct BUCK_GPIO_INSTANCE_s* buckGPIOInstance)
+ * @ingroup lib-layer-buck-pconfig-functions
+ * @brief   This function gets the state of the selected pin
+ * @param	buckGPIOInstance  Pointer to a GPIO instance data object of type struct BUCK_GPIO_INSTANCE_s
+ * @return  unsigned integer (0=failure, 1=success)
+ *  
+ * @details
+ * This function captures the selected pin and read its state.
+ *********************************************************************************/
 volatile bool buckGPIO_GetPinState(volatile struct BUCK_GPIO_INSTANCE_s* buckGPIOInstance)
 {
     volatile bool retval=1;
@@ -646,63 +718,22 @@ volatile bool buckGPIO_GetPinState(volatile struct BUCK_GPIO_INSTANCE_s* buckGPI
         retval = (1-retval);
     
     return(retval);
-}
-
-/* @@buckGPIO_PrivateInitialize
- * ********************************************************************************
- * Summary:
- * 
- * Parameters:
- * 
- * Returns:
- * 
- * Description:
- * 
- * ********************************************************************************/
-
-volatile uint16_t buckGPIO_PrivateInitialize(volatile struct BUCK_GPIO_INSTANCE_s* buckGPIOInstance)
-{
-    volatile uint16_t retval=1;
-    volatile struct P33C_GPIO_INSTANCE_s* gpio;
-
-    // Capture register of GPIO port
-    gpio = p33c_GpioInstance_GetHandle(buckGPIOInstance->port);
     
-    // Set pin to INACTIVE state
-    if (buckGPIOInstance->polarity == 0)
-        gpio->LATx.value &= ~(0x0001 << buckGPIOInstance->pin); // Clear pin bit in register            
-    else
-        gpio->LATx.value |= (0x0001 << buckGPIOInstance->pin); // Set pin bit in register
-
-    // Set INPUT or OUTPUT in TRIS register
-    if(buckGPIOInstance->io_type == 0)
-        gpio->TRISx.value &= ~(0x0001 << buckGPIOInstance->pin); // Clear pin bit in register
-    else
-        gpio->TRISx.value |= (0x0001 << buckGPIOInstance->pin); // Set pin bit in register
-    
-    // Set pin as DIGITAL IO
-    gpio->ANSELx.value &= ~(0x0001 << buckGPIOInstance->pin); // Clear pin bit in register
-
-    // ToDo: Enable register value testing to validate function result
-    retval = 1;
-
-    return(retval);
-}
+} 
 
 
-/* @@buckGPIO_Initialize
- * ********************************************************************************
- * Summary:
- * 
- * Parameters:
- * 
- * Returns:
- * 
- * Description:
- * 
- * ********************************************************************************/
-
-volatile uint16_t buckGPIO_Initialize(volatile struct BUCK_POWER_CONTROLLER_s* buckInstance)
+/*******************************************************************************
+ * @fn	    uint16_t buckGPIO_Initialize(volatile struct BUCK_CONVERTER_s* buckInstance)
+ * @ingroup lib-layer-buck-pconfig-functions
+ * @brief   This function initializes the buck input pins
+ * @param	buckInstance  Pointer to a Buck Converter data object of type struct BUCK_CONVERTER_s
+ * @return  unsigned integer (0=failure, 1=success)
+ *  
+ * @details
+ * This function initializes the ENABLE input pin and POWER GOOD output pin using the 
+ * buck GPIO_PrivateInitialize (URL = @ref buckGPIO_PrivateInitialize).
+ *********************************************************************************/
+volatile uint16_t buckGPIO_Initialize(volatile struct BUCK_CONVERTER_s* buckInstance)
 {
     volatile uint16_t retval=1;
 
@@ -720,6 +751,53 @@ volatile uint16_t buckGPIO_Initialize(volatile struct BUCK_POWER_CONTROLLER_s* b
 
     return(retval);
     
+} 
+
+
+/*******************************************************************************
+ * @fn	    uint16_t buckGPIO_PrivateInitialize(volatile struct BUCK_GPIO_INSTANCE_s* buckGPIOInstance)
+ * @ingroup lib-layer-buck-pconfig-functions
+ * @brief   This function sets the pin as input or output 
+ * @param	buckGPIOInstance  Pointer to a GPIO instance data object of type struct BUCK_GPIO_INSTANCE_s
+ * @return  unsigned integer (0=failure, 1=success)
+ *  
+ * @details
+ * This function captures the user selected pin then set the pin to inactive and
+ * set it as digital input or output pin. 
+ *********************************************************************************/
+volatile uint16_t buckGPIO_PrivateInitialize(volatile struct BUCK_GPIO_INSTANCE_s* buckGPIOInstance)
+{
+    volatile uint16_t retval=1;
+    volatile struct P33C_GPIO_INSTANCE_s* gpio;
+
+    // Capture register of GPIO port
+    gpio = p33c_GpioInstance_GetHandle(buckGPIOInstance->port);
+    
+    // Set pin to INACTIVE state
+    if (buckGPIOInstance->polarity == 0)
+        gpio->LATx.value &= ~(0x0001 << buckGPIOInstance->pin); // Clear pin bit in register            
+    else
+        gpio->LATx.value |= (0x0001 << buckGPIOInstance->pin); // Set pin bit in register
+
+    // Set INPUT or OUTPUT in TRIS register
+    if(buckGPIOInstance->io_type == 1)
+        gpio->TRISx.value |= (0x0001 << buckGPIOInstance->pin); // Set pin bit in register
+    else 
+        gpio->TRISx.value &= ~(0x0001 << buckGPIOInstance->pin); // Clear pin bit in register
+
+    // Set Pin in Open Drain Configuration
+    if(buckGPIOInstance->io_type == 2)
+        gpio->ODCx.value |= (0x0001 << buckGPIOInstance->pin); // Set pin bit in register
+    else
+        gpio->ODCx.value &= ~(0x0001 << buckGPIOInstance->pin); // Clear pin bit in register
+    
+    // Set pin as DIGITAL IO
+    gpio->ANSELx.value &= ~(0x0001 << buckGPIOInstance->pin); // Clear pin bit in register
+
+    // ToDo: Enable register value testing to validate function result
+    retval = 1;
+
+    return(retval);
 }
 
-// END OF FILE
+// end of file

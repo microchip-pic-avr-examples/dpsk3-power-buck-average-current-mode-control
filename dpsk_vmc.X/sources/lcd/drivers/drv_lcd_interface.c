@@ -15,53 +15,22 @@
 
 //======================================================================================================================
 // @file drv_lcd_interface.c
-//
-// @brief driver for the spi-interface to access the lcd controller
-//
+// @brief driver for the spi-interface to access the LCD controller
 //======================================================================================================================
 
 #include <stdint.h>
 #include "common/delay.h"
+#include "config/hal.h"
 
-//======================================================================================================================
-//	defines: to access the pins
-//======================================================================================================================
 
-#define LCD_SCL_SetHigh()           _LATC5 = 1
-#define LCD_SCL_SetLow()            _LATC5 = 0
-#define LCD_SCL_Toggle()            _LATC5 ^= 1
-#define LCD_SCL_GetValue()          _RC5
-#define LCD_SCL_SetDigitalInput()   _TRISC5 = 1
-#define LCD_SCL_SetDigitalOutput()  _TRISC5 = 0
+// PRIVATE FUNCTION CALL PROTOTYPES
+void drv_LcdInterface_SpiSend(uint8_t data);
 
-#define LCD_SDI_SetHigh()           _LATC4 = 1
-#define LCD_SDI_SetLow()            _LATC4 = 0
-#define LCD_SDI_Toggle()            _LATC4 ^= 1
-#define LCD_SDI_GetValue()          _RC4
-#define LCD_SDI_SetDigitalInput()   _TRISC4 = 1
-#define LCD_SDI_SetDigitalOutput()  _TRISC4 = 0
-
-#define LCD_CS_SetHigh()            _LATD8 = 1
-#define LCD_CS_SetLow()             _LATD8 = 0
-#define LCD_CS_Toggle()             _LATD8 ^= 1
-#define LCD_CS_GetValue()           _RD8
-#define LCD_CS_SetDigitalInput()    _TRISD8 = 1
-#define LCD_CS_SetDigitalOutput()   _TRISD8 = 0
-
-#define LCD_RST_SetHigh()           _LATC8 = 1
-#define LCD_RST_SetLow()            _LATC8 = 0
-#define LCD_RST_Toggle()            _LATC8 ^= 1
-#define LCD_RST_GetValue()          _RC8
-#define LCD_RST_SetDigitalInput()   _TRISC8 = 1
-#define LCD_RST_SetDigitalOutput()  _TRISC8 = 0
-
-#define LCD_RS_SetHigh()            _LATC9 = 1
-#define LCD_RS_SetLow()             _LATC9 = 0
-#define LCD_RS_Toggle()             _LATC9 ^= 1
-#define LCD_RS_GetValue()           _RC9
-#define LCD_RS_SetDigitalInput()    _TRISC9 = 1
-#define LCD_RS_SetDigitalOutput()   _TRISC9 = 0
-
+/*********************************************************************************
+ * @ingroup lib-driver-layer-lcd-interface-properties-private
+ * @{
+ * @brief  Initial interface pin state conditions
+ **********************************************************************************/
 
 #define LCD_CS_nSELECTED    LCD_CS_SetHigh
 #define LCD_CS_SELECTED     LCD_CS_SetLow
@@ -69,11 +38,18 @@
 #define LCD_RS_COMMAND      LCD_RS_SetLow
 #define LCD_RS_DATA         LCD_RS_SetHigh
 
-//======================================================================================================================
-//  @brief  this function initialized the lcd interface driver
-//  @note   use this one time after booting up your system to initialize before calling something else
-//======================================================================================================================
-void Drv_Lcd_Interface_Init(void)
+/** @} */ // end of group lib-driver-layer-lcd-interface-properties-private
+
+/*********************************************************************************
+ * @ingroup lib-driver-layer-lcd-interface-functions-public
+ * @fn void drv_LcdInterface_Initialize(void)
+ * @brief  Initializes the LCD interface driver
+ * @details 
+ *  This function needs to be called once at startup before calling 
+ *  any other function of the LCD device driver
+ **********************************************************************************/
+
+void drv_LcdInterface_Initialize(void)
 {
     LCD_RST_SetHigh();
     LCD_CS_nSELECTED();
@@ -88,11 +64,68 @@ void Drv_Lcd_Interface_Init(void)
     LCD_RS_SetDigitalOutput();
 }
 
-//======================================================================================================================
-//  @brief  this function sends data through the spi interface to the lcd controller
-//  @note   local function
-//======================================================================================================================
-void Drv_Lcd_Interface_Spi_Send(uint8_t data)
+/*********************************************************************************
+ * @ingroup lib-driver-layer-lcd-interface-functions-public
+ * @fn void drv_LcdInterface_Reset(void)
+ * @brief  Resets the LCD controller
+ * @details 
+ *  This function needs to be called once after system startup to reset 
+ *  the LCD controller and get into a defined state.
+ **********************************************************************************/
+
+void drv_LcdInterface_Reset(void)
+{
+    LCD_RST_SetLow();
+    __delay_ms(25);
+    LCD_RST_SetHigh();
+}
+
+/*********************************************************************************
+ * @ingroup lib-driver-layer-lcd-interface-functions-public
+ * @fn void drv_LcdInterface_SendCmd(uint8_t data)
+ * @brief  Sends a command to the LCD controller
+ * @details 
+ *  This function sends a one byte long command via the initialized SPI interface 
+ *  to the LCD controller.
+ **********************************************************************************/
+
+void drv_LcdInterface_SendCmd(uint8_t cmd)
+{		
+   LCD_CS_SELECTED();
+   LCD_RS_COMMAND();
+   drv_LcdInterface_SpiSend(cmd);
+}
+
+/*********************************************************************************
+ * @ingroup lib-driver-layer-lcd-interface-functions-public
+ * @fn void drv_LcdInterface_SendCmd(uint8_t data)
+ * @brief  Sends one character to the display controller to be displayed on the LCD screen
+ * @details 
+ *  This function sends a single character via the initialized SPI interface 
+ *  to the LCD controller to be displayed on the LCD screen
+ **********************************************************************************/
+
+extern void drv_LcdInterface_SendChar(const char c)
+{
+   LCD_CS_SELECTED();
+   LCD_RS_DATA();
+   drv_LcdInterface_SpiSend(c);
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// PRIVATE FUNCTIONS
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+/*********************************************************************************
+ * @ingroup lib-driver-layer-lcd-interface-functions-private
+ * @fn void drv_LcdInterface_SpiSend(uint8_t data)
+ * @brief  Sends data through the SPI interface to the LCD controller
+ * @details 
+ *  This function sends one byte via the initialized SPI interface to the
+ *  LCD controller.
+ **********************************************************************************/
+
+void drv_LcdInterface_SpiSend(uint8_t data)
 {
     uint8_t mask;
 
@@ -114,37 +147,5 @@ void Drv_Lcd_Interface_Spi_Send(uint8_t data)
 }
 
 
-//======================================================================================================================
-//  @brief  this function resets the lcd controller
-//  @note   use this one time after booting up your system to reset the lcd controller and get into a defined state
-//======================================================================================================================
-void Drv_Lcd_Interface_Reset(void)
-{
-    LCD_RST_SetLow();
-    __delay_ms(25);
-    LCD_RST_SetHigh();
-}
 
-
-//======================================================================================================================
-//  @brief  this functions sends a command to the lcd controller
-//======================================================================================================================
-void Drv_Lcd_Interface_SendCmd(uint8_t cmd)
-{		
-   LCD_CS_SELECTED();
-   LCD_RS_COMMAND();
-   Drv_Lcd_Interface_Spi_Send(cmd);
-}
-
-
-//======================================================================================================================
-//  @brief this function sends one character to the display controller to be displayed on the lcd screen
-//======================================================================================================================
-extern void Drv_Lcd_Interface_SendChar(const char c)
-{
-   LCD_CS_SELECTED();
-   LCD_RS_DATA();
-   Drv_Lcd_Interface_Spi_Send(c);
-}
-
-
+// end of file

@@ -20,10 +20,11 @@
  */
 
 /* 
- * File:   
- * Author: 
- * Comments:
+ * File:   hal.h
+ * Author: M91406
+ * Comments: Hardware Abstraction Layer (HAL) main header file
  * Revision history: 
+ *   1.0    initial release
  */
 
 // This is a guard condition so that contents of this file are not included
@@ -36,9 +37,13 @@
 #include <stdbool.h> // include standard boolean data types
 #include <stddef.h> // include standard definition data types
 
+// MICROCONTROLLER ABSTRACTION LAYER HEADER FILES
+#include "xc16_pral.h"
+
+// HARDWARE ABSTRACTION LAYER HEADER FILES
 #if defined (__DPSK3_R30__)
-  #include "config/dpsk3_hwdescr.h" // include hardware description declarations of DPSK3 (DM330017-3)
-  #include "config/dpsk3_devcfg.h" // include MCU initialization header of DPSK3 (DM330017-3)
+  #include "config/hal/dpsk3_hwdescr.h" // include hardware description declarations of DPSK3 (DM330017-3)
+  #include "config/hal/dpsk3_devcfg.h" // include MCU initialization header of DPSK3 (DM330017-3)
 #endif
 
 #endif	/* APPLICAITON_HARDWARE_ABSTRACTION_LAYER_H */

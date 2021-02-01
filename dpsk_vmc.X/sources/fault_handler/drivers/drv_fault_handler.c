@@ -41,22 +41,19 @@
 #include <stdbool.h> // include standard boolean data types
 #include <stdlib.h> // include standard library data types and macros
 
-#include "drv_fault_handler.h" // include generic fault handler library driver
+#include "drv_fault_handler.h" // 
 
-/**
- * @brief This contains driver fault handler APIs 
- * @addtogroup fault_handler
- * @{
- */
 
-/**
- * @struct FAULT_OBJECT_s fltobjClear
- * ********************************************************************************
- * @brief Pre-initialized data structure object of a default fault object 
- * 
- * ********************************************************************************/
-
-volatile struct FAULT_OBJECT_s fltobjClear = 
+/*******************************************************************************
+ * @var	FAULT_OBJECT_s fltObjectClear
+ * @ingroup lib-layer-fault-properties-private-variables
+ * @brief Clears the fault objects
+ * @details
+ *  The fltObjectClear object is used during pre-initialization of user-defined
+ *  fault pbjects, clearing all settings and setting the FaultActive and
+ *  FaultStatus fault object status flag bts. 
+*****************************************************************************/
+volatile struct FAULT_OBJECT_s fltObjectClear = 
 {
         .Status.bits.CompareType = FLTCMP_NONE,     ///< Clear fault object comparison type
         .Status.bits.Enabled = false,               ///< Clear fault object enable bit
@@ -75,17 +72,15 @@ volatile struct FAULT_OBJECT_s fltobjClear =
         .RecoveryResponse.ptrResponseFunction = NULL,  ///< Clear fault recovery response function pointer
     };
 
-
-/*!drv_FaultCheck()
- *****************************************************************************
- * @fn	uint16_t drv_FaultCheck(volatile FAULT_OBJECT_t* fltobj)
- * @param	FAULT_OBJECT_t* fltobj
- * @return  Unsigned Integer
+/*******************************************************************************
+ * @fn	volatile uint16_t drv_FaultHandler_CheckObject(volatile struct FAULT_OBJECT_s* fltObject)
+ * @ingroup lib-layer-fault-functions-public
+ * @param	fltObject Pointer to a Fault Monitoring Object of type struct FAULT_OBJECT_s
+ * @return  unsigned integer (0=failure, 1=success)
  *
  * @brief Check current fault status of a user-defined fault object
  *
- * <b>Description:</b>
- * 
+ * @details
  * This routine compares the most recent value of a global variable or SFR
  * (SOURCE) against user-defined thresholds. If the value violates/exceeds
  * one or more of the user defined conditions, a fault counter is incremented. 
@@ -100,48 +95,40 @@ volatile struct FAULT_OBJECT_s fltobjClear =
  * has been RSTCNT_MAX times below the RECOVERY_LEVEL threshold, the fault 
  * will automatically be cleared.
  * 
- *<b>Please note:</b>
- *      If the value is within normal operating conditions, the fault 
- *      counter will be cleared. Thus fault events must occur successively 
- *      incrementing the fault event counter high enough to eventually 
- *      trip a fault event. Thus the fault event counter can be used to 
- *      adjust the sensitivity of the fault response.
- * 
- * 
  * a) Comparison Types
  * 
  * The fault handler offers the following different comparison methods:
- *  - Greater Than:
+ *      - Greater Than:
  *          - performs comparison SOURCE > TRIP_LEVEL
  * 
  *          - TRIP_LEVEL is greater than RECOVERY_LEVEL. The difference between 
  *          TRIP_LEVEL and RECOVERY_LEVEL is the hysteresis of the defined
  *          threshold.
  * 
- *  - Less Than:
+ *      - Less Than:
  *          - performs comparison SOURCE < TRIP_LEVEL
  * 
  *          - TRIP_LEVEL is less than RECOVERY_LEVEL. The difference between 
  *          TRIP_LEVEL and RECOVERY_LEVEL is the hysteresis of the defined
  *          threshold.
  *
- * - Is Equal:
+ *      - Is Equal:
  *          - performs comparison SOURCE == TRIP_LEVEL
  *
  *          - RECOVERY_LEVEL is ignored.
  *
- * - Is Not Equal:
+ *      - Is Not Equal:
  *          - performs comparison SOURCE != TRIP_LEVEL
  *
  *          - RECOVERY_LEVEL is ignored.
  *
- * - Between:
+ *      - Between:
  *          - performs comparison RECOVERY_LEVEL < SOURCE < TRIP_LEVEL
  *
  *          - min/max of the FAULT range is defined by the range between
  *          RECOVERY_LEVEL (min) and TRIP_LEVEL (max)
  *
- * - Outside:
+ *      - Outside:
  *          - performs comparison (SOURCE < RECOVERY_LEVEL) or (TRIP_LEVEL < SOURCE)
  *
  *          - min/max of the allowed operating range is defined by the range 
@@ -170,94 +157,94 @@ volatile struct FAULT_OBJECT_s fltobjClear =
  *    I no user-defined function should be called, these pointers can be 
  *    set = NULL (NULL-pointer)
  * 
- * References:
- * -
- *
- * See also:
- * -
+ * @note If the value is within normal operating conditions, the fault 
+ *      counter will be cleared. Thus fault events must occur successively 
+ *      incrementing the fault event counter high enough to eventually 
+ *      trip a fault event. Thus the fault event counter can be used to 
+ *      adjust the sensitivity of the fault response.
+ * 
  *****************************************************************************/
 
-
-volatile uint16_t drv_FaultCheck(volatile FAULT_OBJECT_t* fltobj) {
+volatile uint16_t drv_FaultHandler_CheckObject(volatile struct FAULT_OBJECT_s* fltObject) {
 
     volatile uint16_t fres=1;
     volatile uint16_t source=0;
     
     // If the fault object is not initialized, exit here with error
-    if (fltobj == NULL)
+    if (fltObject == NULL)
         return(0);
 
     // If FAULT CHECK is disabled, exit here
-    if (!fltobj->Status.bits.Enabled) {
-        fltobj->Counter = 0;                        // Clear Counter
-        fltobj->Status.bits.FaultActive = false;   // Clear immediate fault flag
-        fltobj->Status.bits.FaultStatus = false;   // Clear fault status flag
+    if (!fltObject->Status.bits.Enabled) {
+        fltObject->Counter = 0;                        // Clear Counter
+        fltObject->Status.bits.FaultActive = false;   // Clear immediate fault flag
+        fltObject->Status.bits.FaultStatus = false;   // Clear fault status flag
         return(1);  // Return success
     }
     
     // If the source object is not initialized, exit here with error
-    if (fltobj->SourceObject.ptrObject == NULL)
+    if (fltObject->SourceObject.ptrObject == NULL)
         return(0);
     
     // Read most recent fault object value with bit-mask
-    source = (*fltobj->SourceObject.ptrObject & fltobj->SourceObject.bitMask);
+    source = (*fltObject->SourceObject.ptrObject & fltObject->SourceObject.bitMask);
     
     // If a reference object has been defined, read reference object value and override source with 
     // absolute value of difference between source and reference object values
-    if(fltobj->ReferenceObject.ptrObject != NULL) {  
+    if(fltObject->ReferenceObject.ptrObject != NULL) {  
         
-        uint16_t reference = (*fltobj->ReferenceObject.ptrObject & fltobj->ReferenceObject.bitMask);
+        uint16_t reference = (*fltObject->ReferenceObject.ptrObject & fltObject->ReferenceObject.bitMask);
         source = (volatile uint16_t)
             abs((volatile int32_t)source - (volatile int32_t)reference); // Load most recent value
     }
 
     // Check fault condition
 
-    switch(fltobj->Status.bits.CompareType) {
+    switch(fltObject->Status.bits.CompareType) {
 
         case FLTCMP_GREATER_THAN:  // Check if SOURCE > TRIP_LEVEL
             
-            if (source > fltobj->TripResponse.compareThreshold)  // Check if SOURCE > TRIP_LEVEL
-                fltobj->Status.bits.FaultActive = true; // Set FAULT_ACTIVE status flag bit
-            else if (source < fltobj->RecoveryResponse.compareThreshold) // Check if SOURCE < RECOVERY_LEVEL
-                fltobj->Status.bits.FaultActive = false; // Clear FAULT_ACTIVE status flag bit
+            if (source > fltObject->TripResponse.compareThreshold)  // Check if SOURCE > TRIP_LEVEL
+                fltObject->Status.bits.FaultActive = true; // Set FAULT_ACTIVE status flag bit
+            else if (source < fltObject->RecoveryResponse.compareThreshold) // Check if SOURCE < RECOVERY_LEVEL
+                fltObject->Status.bits.FaultActive = false; // Clear FAULT_ACTIVE status flag bit
             break;
 
         case FLTCMP_LESS_THAN:
-            if(source < fltobj->TripResponse.compareThreshold)  // Check if SOURCE < TRIP_LEVEL
-                fltobj->Status.bits.FaultActive = true; // Set FAULT_ACTIVE status flag bit
-            else if(source > fltobj->RecoveryResponse.compareThreshold) // Check if SOURCE > RECOVERY_LEVEL
-                fltobj->Status.bits.FaultActive = false; // Clear FAULT_ACTIVE status flag bit
+            if(source < fltObject->TripResponse.compareThreshold)  // Check if SOURCE < TRIP_LEVEL
+                fltObject->Status.bits.FaultActive = true; // Set FAULT_ACTIVE status flag bit
+            else if(source > fltObject->RecoveryResponse.compareThreshold) // Check if SOURCE > RECOVERY_LEVEL
+                fltObject->Status.bits.FaultActive = false; // Clear FAULT_ACTIVE status flag bit
             break;
 
         case FLTCMP_IS_EQUAL:
-            if(source == fltobj->TripResponse.compareThreshold)  // Check if SOURCE == TRIP_LEVEL
-                fltobj->Status.bits.FaultActive = true; // Set FAULT_ACTIVE status flag bit
-            else if(source != fltobj->TripResponse.compareThreshold)  // Check if SOURCE != TRIP_LEVEL
-                fltobj->Status.bits.FaultActive = false; // Clear FAULT_ACTIVE status flag bit
+            if(source == fltObject->TripResponse.compareThreshold)  // Check if SOURCE == TRIP_LEVEL
+                fltObject->Status.bits.FaultActive = true; // Set FAULT_ACTIVE status flag bit
+            else if(source != fltObject->TripResponse.compareThreshold)  // Check if SOURCE != TRIP_LEVEL
+                fltObject->Status.bits.FaultActive = false; // Clear FAULT_ACTIVE status flag bit
             break;
 
         case FLTCMP_IS_NOT_EQUAL:
-            if(source != fltobj->TripResponse.compareThreshold)  // Check if SOURCE != TRIP_LEVEL
-                fltobj->Status.bits.FaultActive = true; // Set FAULT_ACTIVE status flag bit
-            else if(source == fltobj->TripResponse.compareThreshold)  // Check if SOURCE == TRIP_LEVEL
-                fltobj->Status.bits.FaultActive = false; // Clear FAULT_ACTIVE status flag bit
+            if(source != fltObject->TripResponse.compareThreshold)  // Check if SOURCE != TRIP_LEVEL
+                fltObject->Status.bits.FaultActive = true; // Set FAULT_ACTIVE status flag bit
+            else if(source == fltObject->TripResponse.compareThreshold)  // Check if SOURCE == TRIP_LEVEL
+                fltObject->Status.bits.FaultActive = false; // Clear FAULT_ACTIVE status flag bit
             break;
 
         case FLTCMP_BETWEEN:
             // Check if SOURCE is between "RECOVERY_LEVEL ti TRIP_LEVEL"
-            if((fltobj->RecoveryResponse.compareThreshold < source) && (source < fltobj->TripResponse.compareThreshold))  
-                fltobj->Status.bits.FaultActive = true; // Set FAULT_ACTIVE status flag bit
+            if((fltObject->RecoveryResponse.compareThreshold < source) && (source < fltObject->TripResponse.compareThreshold))  
+                fltObject->Status.bits.FaultActive = true; // Set FAULT_ACTIVE status flag bit
             else 
-                fltobj->Status.bits.FaultActive = false; // Clear FAULT_ACTIVE status flag bit
+                fltObject->Status.bits.FaultActive = false; // Clear FAULT_ACTIVE status flag bit
             break;
 
         case FLTCMP_OUTSIDE:
             // Check if SOURCE is outside "RECOVERY_LEVEL to TRIP_LEVEL"
-            if((source < fltobj->RecoveryResponse.compareThreshold) || (fltobj->TripResponse.compareThreshold < source))  
-                fltobj->Status.bits.FaultActive = true; // Set FAULT_ACTIVE status flag bit
+            if((source < fltObject->RecoveryResponse.compareThreshold) || (fltObject->TripResponse.compareThreshold < source))  
+                fltObject->Status.bits.FaultActive = true; // Set FAULT_ACTIVE status flag bit
             else 
-                fltobj->Status.bits.FaultActive = false; // Clear FAULT_ACTIVE status flag bit
+                fltObject->Status.bits.FaultActive = false; // Clear FAULT_ACTIVE status flag bit
             break;
 
         default:
@@ -267,43 +254,44 @@ volatile uint16_t drv_FaultCheck(volatile FAULT_OBJECT_t* fltobj) {
     }
             
     // If a fault condition has been detected while no FAULT has been tripped....
-    if ((fltobj->Status.bits.FaultActive) && (!fltobj->Status.bits.FaultStatus)) {
+    if ((fltObject->Status.bits.FaultActive) && (!fltObject->Status.bits.FaultStatus)) {
     
-        fltobj->Counter++;  // Increment fault event counter
+        fltObject->Counter++;  // Increment fault event counter
         
         // Trigger on FAULT conditions
-        if (fltobj->Counter >= fltobj->TripResponse.eventThreshold)
+        if (fltObject->Counter >= fltObject->TripResponse.eventThreshold)
         {
-            fltobj->Status.bits.FaultStatus = true;    // Set FAULT STATUS FLAG BIT
-            fltobj->Counter = fltobj->TripResponse.eventThreshold; // Set fault event counter to threshold level
-            if (fltobj->TripResponse.ptrResponseFunction != NULL)    // If a user function has been defined,
-                fres = fltobj->TripResponse.ptrResponseFunction();   // => call this function and capture return value
+            fltObject->Status.bits.FaultStatus = true;    // Set FAULT STATUS FLAG BIT
+            fltObject->Counter = fltObject->TripResponse.eventThreshold; // Set fault event counter to threshold level
+            if (fltObject->TripResponse.ptrResponseFunction != NULL)    // If a user function has been defined,
+                fres = fltObject->TripResponse.ptrResponseFunction();   // => call this function and capture return value
         }
 
     }
     // If a FAULT has been tripped but no fault condition has been detected anymore....
-    else if ((fltobj->Status.bits.FaultStatus) && (!fltobj->Status.bits.FaultActive)) {
+    else if ((fltObject->Status.bits.FaultStatus) && (!fltObject->Status.bits.FaultActive)) {
     
-        fltobj->Counter++;  // Increment fault event counter
+        fltObject->Counter++;  // Increment fault event counter
 
         // Trigger on RECOVERY conditions
-        if (fltobj->Counter >= fltobj->RecoveryResponse.eventThreshold)
+        if (fltObject->Counter >= fltObject->RecoveryResponse.eventThreshold)
         {
-            fltobj->Status.bits.FaultStatus = false;   // Clear FAULT STATUS FLAG BIT
-            fltobj->Counter = fltobj->RecoveryResponse.eventThreshold; // Set fault event counter to threshold level
-            if (fltobj->RecoveryResponse.ptrResponseFunction != NULL)   // If a user function has been defined,
-                fres = fltobj->RecoveryResponse.ptrResponseFunction();  // => call this function and capture return value
+            fltObject->Status.bits.FaultStatus = false;   // Clear FAULT STATUS FLAG BIT
+            fltObject->Counter = fltObject->RecoveryResponse.eventThreshold; // Set fault event counter to threshold level
+            if (fltObject->RecoveryResponse.ptrResponseFunction != NULL)   // If a user function has been defined,
+                fres = fltObject->RecoveryResponse.ptrResponseFunction();  // => call this function and capture return value
         }
     
     }
     // If everything is OK, reset counter
     else
     {
-        fltobj->Counter = 0;  // clear fault event counter
+        fltObject->Counter = 0;  // clear fault event counter
     }
 
     
     return (fres); // Fault handler executed successfully
 }
 
-/** @} */ // end of group
+
+// end of file

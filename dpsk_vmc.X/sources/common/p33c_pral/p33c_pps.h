@@ -578,8 +578,8 @@
 
 
 // Macro to derive Peripehral Pin Select Output number of Output Compare peripheral instance
-#define p33c_PPS_GetRPOR_OCM(x)   (uint8_t)PPSOUT_OCM_INSTANCES[x-1]
-#define p33c_PPS_GetRPOR_CMP(x)   (uint8_t)PPSOUT_CMP_INSTANCES[x-1]
+#define p33c_PPS_GetRPOR_OCM(x)   {(uint8_t)PPSOUT_OCM_INSTANCES[x-1]}
+#define p33c_PPS_GetRPOR_CMP(x)   {(uint8_t)PPSOUT_CMP_INSTANCES[x-1]}
 
 
 /* ---------------------------------------------------------------------------
@@ -698,8 +698,8 @@
     
 extern volatile uint16_t PPS_RemapOutput(volatile uint8_t pinno, volatile uint8_t peripheral);
 extern volatile uint16_t PPS_UnmapOutput(volatile uint8_t pinno);
-extern volatile uint16_t PPS_RemapInput(volatile uint8_t pinno, volatile uint8_t* peripheral);
-extern volatile uint16_t PPS_UnmapInput(volatile uint8_t* peripheral);
+extern volatile uint16_t PPS_RemapInput(volatile uint8_t pinno, volatile uint8_t *peripheral);
+extern volatile uint16_t PPS_UnmapInput(volatile uint8_t *peripheral);
 extern volatile uint16_t PPS_LockIO(void);
 extern volatile uint16_t PPS_UnlockIO(void);
 

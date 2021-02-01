@@ -27,8 +27,8 @@
  * Created on March 8, 2019
  * ***************************************************************************/
 
-#ifndef MCAL_DSP_INITIALIZATION_H
-#define	MCAL_DSP_INITIALIZATION_H
+#ifndef SYSTEM_INITIALIZE_MCAL_DSP_INITIALIZATION_H
+#define	SYSTEM_INITIALIZE_MCAL_DSP_INITIALIZATION_H
 
 #include <xc.h> // include processor files - each processor file is guarded.  
 #include <stdint.h> // include standard integer types header file
@@ -36,7 +36,7 @@
 /* ***********************************************************************************************
  * PROTOTYPES
  * ***********************************************************************************************/
-extern volatile uint16_t Dsp_Initialize(void); 
+extern volatile uint16_t sysDsp_Initialize(void); 
 
-#endif	/* MCAL_DSP_INITIALIZATION_H */
+#endif	/* SYSTEM_INITIALIZE_MCAL_DSP_INITIALIZATION_H */
 

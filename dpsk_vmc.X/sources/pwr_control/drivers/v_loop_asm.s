@@ -1,8 +1,8 @@
 ; **********************************************************************************
-;  SDK Version: PowerSmart™ Digital Control Library Designer v0.9.12.645
-;  CGS Version: Code Generator Script v3.0.1 (12/16/2020)
+;  SDK Version: PowerSmart(TM) Digital Control Library Designer v0.9.12.660
+;  CGS Version: Code Generator Script v3.0.4 (01/27/2021)
 ;  Author:      M91406
-;  Date/Time:   01/09/2021 03:24:53
+;  Date/Time:   01/29/2021 01:17:26
 ; **********************************************************************************
 ;  4P4Z Control Library File (Fast Floating Point Coefficient Scaling Mode)
 ; **********************************************************************************
@@ -53,11 +53,14 @@
     mov w6, [w10 + #2]                      ; move buffered value one tick down the delay line
     
 ;------------------------------------------------------------------------------
-; Read data from input source and calculate error input to transfer function
+; Read data from input source
     mov [w0 + #ptrSourceRegister], w2       ; load pointer to input source register
     mov [w2], w1                            ; move value from input source into working register
     mov [w0 + #ptrDProvControlInputComp], w2 ; load pointer address of target buffer of most recent, compensated controller input from data structure
     mov w1, [w2]                            ; copy most recent controller input value to given data buffer target
+    
+;------------------------------------------------------------------------------
+; Load reference and calculate error input to transfer function
     mov [w0 + #ptrControlReference], w2     ; move pointer to control reference into working register
     subr w1, [w2], w1                       ; calculate error (=reference - input)
     mov [w0 + #normPreShift], w2            ; move error input scaler into working register
@@ -70,22 +73,21 @@
     
 ;------------------------------------------------------------------------------
 ; Compute compensation filter B-term
-    clr b, [w8]+=2, w5                      ; clear both accumulators and prefetch first operands
-    clr a, [w8]+=4, w4, [w10]+=2, w6
-    mpy w4*w6, a, [w8]+=4, w4, [w10]+=2, w6 ; multiply control output (n-%INDEX%) from the delay line with coefficient X%INDEX%
-    sftac a, w5                             ; shift accumulator to post-scale floating number
-    add b                                   ; add accumulator a to accumulator b
-
-    mov [w8 - #6], w5                       ; load scaler into working register
-    mpy w4*w6, a, [w8]+=4, w4, [w10]+=2, w6 ; multiply control output (n-0) from the delay line with coefficient X0
+    clr b, [w8]+=2, w5                      ; clear accumulator B and prefetch first error operand
+    clr a, [w8]+=4, w4, [w10]+=2, w6        ; clear accumulator A and prefetch first coefficient operand including number scaler
+    mpy w4*w6, a, [w8]+=4, w4, [w10]+=2, w6 ; multiply first control output of the delay line with first coefficient
     sftac a, w5                             ; shift accumulator to post-scale floating number
     add b                                   ; add accumulator a to accumulator b
     mov [w8 - #6], w5                       ; load scaler into working register
-    mpy w4*w6, a, [w8]+=4, w4, [w10]+=2, w6 ; multiply control output (n-1) from the delay line with coefficient X1
+    mpy w4*w6, a, [w8]+=4, w4, [w10]+=2, w6 ; multiply control output (n-1) from the delay line with coefficient B1
     sftac a, w5                             ; shift accumulator to post-scale floating number
     add b                                   ; add accumulator a to accumulator b
     mov [w8 - #6], w5                       ; load scaler into working register
-    mpy w4*w6, a, [w8]+=4, w4, [w10]+=2, w6 ; multiply control output (n-2) from the delay line with coefficient X2
+    mpy w4*w6, a, [w8]+=4, w4, [w10]+=2, w6 ; multiply control output (n-2) from the delay line with coefficient B2
+    sftac a, w5                             ; shift accumulator to post-scale floating number
+    add b                                   ; add accumulator a to accumulator b
+    mov [w8 - #6], w5                       ; load scaler into working register
+    mpy w4*w6, a, [w8]+=4, w4, [w10]+=2, w6 ; multiply control output (n-3) from the delay line with coefficient B3
     sftac a, w5                             ; shift accumulator to post-scale floating number
     add b                                   ; add accumulator a to accumulator b
     mov [w8 - #6], w5                       ; load scaler into working register
@@ -104,17 +106,16 @@
 ;------------------------------------------------------------------------------
 ; Compute compensation filter A-term
     movsac b, [w8]+=2, w5                   ; leave contents of accumulator B unchanged
-    clr a, [w8]+=4, w4, [w10]+=2, w6        ; clear accumulator A and prefetch first operands
-    mpy w4*w6, a, [w8]+=4, w4, [w10]+=2, w6 ; multiply control output (n-%INDEX%) from the delay line with coefficient X%INDEX%
-    sftac a, w5                             ; shift accumulator to post-scale floating number
-    add b                                   ; add accumulator a to accumulator b
-
-    mov [w8 - #6], w5                       ; load scaler into working register
-    mpy w4*w6, a, [w8]+=4, w4, [w10]+=2, w6 ; multiply control output (n-1) from the delay line with coefficient X1
+    clr a, [w8]+=4, w4, [w10]+=2, w6        ; clear accumulator A and prefetch first coefficient operand including number scaler
+    mpy w4*w6, a, [w8]+=4, w4, [w10]+=2, w6 ; multiply first control output of the delay line with first coefficient
     sftac a, w5                             ; shift accumulator to post-scale floating number
     add b                                   ; add accumulator a to accumulator b
     mov [w8 - #6], w5                       ; load scaler into working register
-    mpy w4*w6, a, [w8]+=4, w4, [w10]+=2, w6 ; multiply control output (n-2) from the delay line with coefficient X2
+    mpy w4*w6, a, [w8]+=4, w4, [w10]+=2, w6 ; multiply control output (n-2) from the delay line with coefficient A2
+    sftac a, w5                             ; shift accumulator to post-scale floating number
+    add b                                   ; add accumulator a to accumulator b
+    mov [w8 - #6], w5                       ; load scaler into working register
+    mpy w4*w6, a, [w8]+=4, w4, [w10]+=2, w6 ; multiply control output (n-3) from the delay line with coefficient A3
     sftac a, w5                             ; shift accumulator to post-scale floating number
     add b                                   ; add accumulator a to accumulator b
     mov [w8 - #6], w5                       ; load scaler into working register
@@ -140,6 +141,8 @@
 ; Write control output value to target
     mov [w0 + #ptrTargetRegister], w8       ; capture pointer to target in working register
     mov w4, [w8]                            ; move control output to target address
+    mov [w0 + #ptrDProvControlOutput], w2   ; load pointer address of target buffer of most recent controller output value from data structure
+    mov w4, [w2]                            ; copy most recent controller output value to given data buffer target
     
 ;------------------------------------------------------------------------------
 ; Update ADC trigger locations
@@ -177,6 +180,8 @@
     mov [w2], w1                            ; move value from input source into working register
     mov [w0 + #ptrDProvControlInputComp], w2 ; load pointer address of target buffer of most recent, compensated controller input from data structure
     mov w1, [w2]                            ; copy most recent controller input value to given data buffer target
+    mov [w0 + #ptrDProvControlOutput], w2   ; load pointer address of target buffer of most recent controller output value from data structure
+    clr [w2]                                ; copy most recent controller output value to given data buffer target
     V_LOOP_LOOP_EXIT:                       ; Exit control loop branch target
     
 ;------------------------------------------------------------------------------
@@ -277,11 +282,14 @@
     bra V_LOOP_PTERM_LOOP_BYPASS            ; if ENABLED bit is cleared, jump to end of control code
     
 ;------------------------------------------------------------------------------
-; Read data from input source and calculate error input to transfer function
+; Read data from input source
     mov [w0 + #ptrSourceRegister], w2       ; load pointer to input source register
     mov [w2], w1                            ; move value from input source into working register
     mov [w0 + #ptrDProvControlInputComp], w2 ; load pointer address of target buffer of most recent, compensated controller input from data structure
     mov w1, [w2]                            ; copy most recent controller input value to given data buffer target
+    
+;------------------------------------------------------------------------------
+; Load reference and calculate error input to transfer function
     mov [w0 + #ptrControlReference], w2     ; move pointer to control reference into working register
     subr w1, [w2], w1                       ; calculate error (=reference - input)
     mov [w0 + #normPreShift], w2            ; move error input scaler into working register
@@ -314,6 +322,8 @@
 ; Write control output value to target
     mov [w0 + #ptrTargetRegister], w8       ; capture pointer to target in working register
     mov w4, [w8]                            ; move control output to target address
+    mov [w0 + #ptrDProvControlOutput], w2   ; load pointer address of target buffer of most recent controller output value from data structure
+    mov w4, [w2]                            ; copy most recent controller output value to given data buffer target
     
 ;------------------------------------------------------------------------------
 ; Update ADC trigger locations
@@ -337,6 +347,8 @@
     mov [w2], w1                            ; move value from input source into working register
     mov [w0 + #ptrDProvControlInputComp], w2 ; load pointer address of target buffer of most recent, compensated controller input from data structure
     mov w1, [w2]                            ; copy most recent controller input value to given data buffer target
+    mov [w0 + #ptrDProvControlOutput], w2   ; load pointer address of target buffer of most recent controller output value from data structure
+    clr [w2]                                ; copy most recent controller output value to given data buffer target
     V_LOOP_PTERM_LOOP_EXIT:                 ; Exit P-Term control loop branch target
     
 ;------------------------------------------------------------------------------

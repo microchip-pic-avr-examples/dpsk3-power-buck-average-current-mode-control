@@ -41,22 +41,22 @@
 #ifndef FAULT_HANDLER_H
 #define	FAULT_HANDLER_H
 
-/**
- * 
- * @defgroup fault_handler Fault Handler Reference
- * @{
- */
+
 
 #include <xc.h> // include processor files - each processor file is guarded.  
 #include <stdint.h> // include standard integer types 
 #include <stdbool.h> // include standard boolean types  
 #include <stddef.h> // include standard definitions  
 
-/**FLT_COMPARE_TYPE_e enumeration
- * *********************************************************************************
+/**
+ * @ingroup lib-layer-lib1-properties-public
+ * @{
+ */
+/***********************************************************************************
  * @enum FLT_COMPARE_TYPE_e
- * @brief This data structure is comprise of fault comparison types
- * ********************************************************************************/
+ * @brief This data structure is comprised of fault comparison types
+ * @extends FLT_OBJECT_STATUS_s
+ *********************************************************************************/
 
 typedef enum FLT_COMPARE_TYPE_e {
     
@@ -70,12 +70,12 @@ typedef enum FLT_COMPARE_TYPE_e {
         
 } FLT_COMPARE_TYPE_t;
 
-/**FLT_OBJECT_STATUS_s data structure
- * ********************************************************************************
+
+/**********************************************************************************
  * @struct FLT_OBJECT_STATUS_s
  * @brief This data structure defines the fault object status
- * 
- * ********************************************************************************/
+ * @extends FAULT_OBJECT_s
+ *********************************************************************************/
 
 typedef struct FLT_OBJECT_STATUS_s{
 
@@ -94,11 +94,12 @@ typedef struct FLT_OBJECT_STATUS_s{
     
 } FLT_OBJECT_STATUS_t;	// Fault object status
 
-/** FLT_COMPARE_OBJECT_s data structure
- * ********************************************************************************
+
+/**********************************************************************************
  * @struct FLT_COMPARE_OBJECT_s
- * @brief This data structure defines the fault compare status
- * ********************************************************************************/
+ * @brief This data structure defines the data object which will be monitored by the fault handler
+ * @extends FAULT_OBJECT_s
+ *********************************************************************************/
 
 typedef struct FLT_COMPARE_OBJECT_s {
     
@@ -107,11 +108,12 @@ typedef struct FLT_COMPARE_OBJECT_s {
     
 } FLT_COMPARE_OBJECT_t;	// Fault compare object
 
-/**FLT_EVENT_RESPONSE_s data structure
- * ********************************************************************************
+
+/**********************************************************************************
  * @struct FLT_EVENT_RESPONSE_s
  * @brief This data structure defines the fault monitor event response object
- * ********************************************************************************/
+ * @extends FAULT_OBJECT_s
+ *********************************************************************************/
 
 typedef struct FLT_EVENT_RESPONSE_s {
     
@@ -121,12 +123,11 @@ typedef struct FLT_EVENT_RESPONSE_s {
     
 } FLT_EVENT_RESPONSE_t;	// Fault monitor event response object
 
-/**FAULT_OBJECT_s data structure
- * ********************************************************************************
+
+/**********************************************************************************
  * @struct FAULT_OBJECT_s
  * @brief This data structure is a collection of data structures for fault handling.
- * ********************************************************************************/
-
+ *********************************************************************************/
 typedef struct FAULT_OBJECT_s {
 
 	volatile struct FLT_OBJECT_STATUS_s  Status;           ///< Status word of this fault object
@@ -136,14 +137,16 @@ typedef struct FAULT_OBJECT_s {
     volatile struct FLT_EVENT_RESPONSE_s TripResponse;     ///< Settings defining the fault trip event
     volatile struct FLT_EVENT_RESPONSE_s RecoveryResponse; ///< Settings defining the fault recovery event
 
-} FAULT_OBJECT_t; // 
-
-// Public Fault Configuration Templates
-extern volatile struct FAULT_OBJECT_s fltobjClear;
-
-// Public Function Prototypes
-extern volatile uint16_t drv_FaultCheck(volatile FAULT_OBJECT_t* fltobj);
-    
-#endif	/* FAULT_HANDLER_H */
+} FAULT_OBJECT_t; ///< Generic fault object 
 
 /** @} */ // end of group
+
+
+// Public Fault Configuration Templates
+extern volatile struct FAULT_OBJECT_s fltObjectClear;
+
+// Public Function Prototypes
+extern volatile uint16_t drv_FaultHandler_CheckObject(volatile struct FAULT_OBJECT_s* fltobj);
+
+#endif	/* FAULT_HANDLER_H */
+

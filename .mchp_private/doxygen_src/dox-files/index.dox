@@ -136,16 +136,6 @@ process of the firmware.
  being called on the defined priority level (default = 2). The interrupt service routine utiilzes an alternate
  working register set for optimum coontext management. By default, alternate working register set #1 is reserved
  for high priority tasks.
-
-@defgroup task-layer Task Layer
-@ingroup firmware-flow
-@brief Task Layer
-@details
- The task layer covers all user tasks executed by the task scheduler. Each task is an independent entity 
- called on its respective priority level defined by the user. Tasks are proprietary user code modules 
- representing specific funcitons of the application or end-product. 
-
-
 */
 
 //Device Start-Up Sub-Index
@@ -214,17 +204,17 @@ process of the firmware.
  independent from device driver modules, These special peripehral modules are initialized 
  before the user tasks. Users will have to decide when and how these additional peripehrals
  may be enabled to ensure no conflicts with user task device drivers occur.
+*/
 
+/* Applicaiton-specific hardware or microcontroller declarations */
+/**
 @defgroup dac-initialization Digital-to-Analog Converter
 @ingroup system-initialization-user-peripherals
 @brief 
 @details
- DPSK3 uses one of the available on-chip Digital-to-Analog Converter (DAC) to generate 
- a stable, tunable reference voltage for the external current sense shunt amplifier devices
- used to measure the inductor current. This DAC is set to VDD/2 = 1.65 V to set the zero point
- of the current sense signal to the mid-point of the available range. Thus the triangular
- current waveform can swing above and below zero while still staying within the valid
- input voltage range of ADC converter inputs.
+ DPSK3 uses one of the available on-chip Digital-to-Analog Converters (DAC) to generate 
+ a dynamic, analog output signal, which can be used for enhanced debugging of high-speed
+ processes such as control output monitoring.
 @note
  The DAC output signal is buffered by utilizing one of the availalbe on-chip operational
  amplifiers. Please refer to the Operational Amplifier Configuration section for details.
@@ -234,12 +224,15 @@ process of the firmware.
 @brief 
 @details
  As described in the Digital-to-Analog Converter (DAC) initialization section, DPSK3
- requires a internally generated, tunable reference voltage to be applied to the external 
- current sense shunt amplifier devices used to measure the inductor current during peration.
- This DAC output signal is buffered by using one of the available on-chip operational amlifiers.
+ supports an internally generated, tunable, analog voltage signal for enhanced debugging.
+ This DAC output signal is buffered by using one of the available on-chip operational amlifiers,
+ which is configured and enabled in this section.
 @note
- The DAC output signal is buffered by utilizing one of the availalbe on-chip operational
- amplifiers. Please refer to the Digital-to-Analog (DAC) Configuration section for details.
+ Please refer to the Digital-to-Analog (DAC) Configuration section for further details on
+ the configuration of this peripheral.
+*/
+
+/**
 
 @defgroup system-initialization-user-tasks Initializing Firmware Tasks
 @ingroup device-start-up
@@ -290,6 +283,18 @@ process of the firmware.
  associated microcontroller peripheral instances and features.
 */
 
+// Application Layer Sub-Index 
+/**
+@defgroup task-layer Application Layer
+@brief Task Layer
+@details
+ The task layer covers all user tasks executed by the task scheduler. Each task is an independent entity 
+ called on its respective priority level defined by the user. Tasks are proprietary user code modules 
+ representing specific funcitons of the application or end-product. 
+
+
+*/
+
 
 // Library Layer
 /**
@@ -303,4 +308,17 @@ process of the firmware.
 
   Please refer to the specific device driver libraries for more information on public functions and
   properties provided to tailor and apply the supported features.
+
+@defgroup lib-driver-layer Library Driver Layer 
+@brief Generic Library Driver Layer
+@details
+  Library drivers are generic function libraries providing specific sub-functions for library modules. 
+  Each library driver is widely self-contained and includes functional software routines and resource 
+  management functions. Because of their generic nature, each library driver requires to be configured 
+  by proprietary user code to tailor their function to a specific application. The settings required to 
+  set up the library driver data objects are routed through the overlaying device driver, which also provides
+  the API and public data objects holding the library driver settings.
+
+  Please refer to the specific library driver for more information.
+
 */ 

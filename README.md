@@ -1,10 +1,26 @@
 ![image](images/microchip.png) 
 
+--- 
 # dsPIC33C Digital Power Starter Kit
-**Synchronous Buck Converter: Voltage Mode Control**
+### Synchronous Buck Converter: Voltage Mode Control
+
 
 <p><center><a target="_blank" href="https://www.microchip.com/DM330017-3" rel="nofollow">
-<img src="images/dm330017-3-1.jpg" alt="dsPIC33C Digital Power Starter Kit" width="300"></a></center></p>
+<p>
+<img src="images/dm330017-3-1.jpg" alt="dsPIC33C Digital Power Starter Kit" width="400">
+&nbsp; 
+<img src="images/dm330017-3-2.jpg" width="400"></p>
+</a>
+</center>
+</p>
+
+<p>
+<center>
+<a target="_blank" href="https://www.microchip.com/DM330017-3" rel="nofollow">
+dsPIC33C Digital Power Starter Kit (DPSK3) (Part-No. DM330017-3)
+</a>
+</center>
+</p>
 
 - - -
 
@@ -13,18 +29,24 @@ Voltage mode control example for the buck converter on the Digital Power Starter
 
 - - -
 
+## Description
+This code example demonstrates the implementation of a simple voltage mode control loop for the synchronous buck converter. The loop implementation also includes the required state machine managing board status analysis, start-up control, operation monitoring, fault handling and auto-restart capability. The buck converter state machine is based on a generic library package, which is configured and run in user code.
+
+This code example also includes the LCD driver allowing users to observe runtime data on the on-board LC display. The on-board user switch `USER` is allows users to change the active display page to observe input voltage, output voltage, output current and board temperature.
+
 ## Related Documentation
-- [dsPIC33CK256MP508 Family Data Sheet](https://ww1.microchip.com/downloads/en/DeviceDoc/dsPIC33CK256MP508-Family-Data-Sheet-DS70005349G.pdf)
-- [dsPIC33CK256MP508 Family Silicon Errata and Data Sheet Clarification](https://ww1.microchip.com/downloads/en/DeviceDoc/dsPIC33CK256MP508-Family-Silicon-Errata-and-Data-Sheet-Clarification-DS80000796G.pdf)
+- [Digital Power Starter Kit 3 User Guide](https://www.microchip.com/50002867)
+- [dsPIC33CK256MP508 Family Data Sheet](https://www.microchip.com/70005349)
+- [dsPIC33CK256MP508 Family Silicon Errata and Data Sheet Clarification](https://www.microchip.com/80000796)
 
 **Please always check for the latest data sheets on the respective product websites:**
 - [dsPIC33CK256MP508 Family](https://www.microchip.com/dsPIC33CK256MP508)
 - [dsPIC33CH512MP508 Family](https://www.microchip.com/dsPIC33CH512MP508)
 
 ## Software Used 
-- [MPLAB® X IDE v5.40](https://www.microchip.com/mplabx-ide-windows-installer)
-- [MPLAB XC16 Compiler v1.60](https://www.microchip.com/mplabxc16windows)
-- [Microchip Code Configurator v4.0.1](https://www.microchip.com/mplab/mplab-code-configurator)
+- [MPLAB® X IDE v5.45](https://www.microchip.com/mplabx-ide-windows-installer)
+- [MPLAB XC16 Compiler v1.61](https://www.microchip.com/mplabxc16windows)
+- [Microchip Code Configurator v4.0.2](https://www.microchip.com/mplab/mplab-code-configurator)
 
 ## Hardware Used
 - dsPIC33C Digital Power Starter Kit, Part-No. [DM330017-3](https://www.microchip.com/DM330017-3)
@@ -32,70 +54,64 @@ Voltage mode control example for the buck converter on the Digital Power Starter
 ## Supported Target Devices
 - 48-pin [dsPIC33CK256MP505](https://www.microchip.com/dsPIC33CK256MP505)
 
-- - -
 
+## Security and Safety Requirements
+
+Unattended operating power supplies are always a potential safety risk as short circuits or failures of power components can occur at any time where even seemingly small power converters can cause fire or damage connected equipment.
+
+* This development board has not been FCC approved nor certified and must not be used outside a laboratory environment
+* Never operate the board unattended
+* Only use power supplies delivered with the board or equal, approved laboratory equipment
+* Read the user guide for detailed operating instructions to prevent damage to the board or connected equipment
+
+- - -
 ## Setup
 - Connect dsPIC33C Digital Power Starter Kit to the PC using the micro-USB cable
 - Open and compile the firmware; program the target device
 - Attach the 9V power supply to the board and observe the real-time values on the LC display
 
-<br><center><img src="images/dm330017-3-2.jpg" width="400"></center>
+<center>
+<img src="images/dm330017-3-3.jpg" width="960">
+<br>
+DPSK3 Buck Converter Test Points
+</center>
+
+- - -
 
 ## Operation
-After the device has been programmed and the target device starts up, the LC display will show the startup screen for approx. 2 seconds before switching to the runtime data display, showing the most recent input and output voltages.
-In case an appropriate power supply has been attached to the DPSK3 power input and the firmware is running correctly, the display should show an output voltage of +3.30V. 
-When pressing the on-board button USER for one second or longer, the screen can be switched between:
+After the device has been programmed and the target device starts up, the LC display will show the startup screen for approx. 3 seconds before switching to the runtime data display, showing the most recent input and output voltages.
+In case an appropriate power supply has been attached to the DPSK3 power input and the firmware is running correctly, the display should show an output voltage of +3.30 V DC. 
+
+When pressing the on-board button `USER` for one second or longer, the screen can be switched between:
 
 - Output Voltage View
 - Temperature View
 - Output Current View
 
-By pressing the Buck Load on-board button on the right edge of the board, users can change the load level:
+By pressing the `Buck Load` on-board push button on the right edge of the board for ***less*** than a second, changes the static load level in four steps:
 
 - no LED:  0% (0 mA)
 - 1 LEDs: 10% (100 mA)
 - 2 LEDs: 25% (500 mA)
 - 3 LEDs: 50% (1000 mA)
 
-<!--
-<br><center><img src="images/pwm200kHz.png" width="400"></center><br>
-*200 kHz Switching Frequency Output*
+(value accuracy +/- 10%)
 
-By pressing the on-board push button *USER* on the Digital Power Development Board, the switching frequency is toggled between the initial 200 kHz and 1 MHz.
-<br><center><img src="images/pwm1MHz.png" width="400"></center><br>
-*1 MHz Switching Frequency Output*
--->
+By pressing the `Buck Load` on-board push button on the right edge of the board for ***longer*** than a second, the load switches into stepping mode. 
 
-Please refer to section *FIRMWARE QUICK-START GUIDE* below for more information on the initialization process and code structure.
- 
-- - -
+- Flashing LEDs indicate the upper step limit
+- Static LEDs indicate the lower step limit
 
-## FIRMWARE QUICK-START GUIDE
+Pressing the `Buck Load` on-board push button again for ***less*** than a second, the step load can be adjusted between
 
-<add description>
+- 10% to 25% Load (100-500 mA)
+- 10% to 50% Load (100-1000 mA)
+- 25% to 50% Load (500-1000 mA)
 
-*a) Project Directory Structure*
-The project contains two sub-directories
-- config: location of all hardware abstraction header files
-- common: all device configuration files auto-generated by MCC
-- drivers: location of generic peripheral drivers 
-- tasks: application user code
+(value accuracy +/- 10%)
 
-On the hard drive, main.c/h are located in the MPLAB X project directory. 
-All other user files, incl. peripheral drivers, are located in the sub-directory *sources*. 
-Files generated by MCC are always located in their own sub-directory *mcc_generated-files* 
-
-*b) Modifying Operating Parameters*
-The PWM peripheral driver files p33c_pwm.c/h provide data structures representing the Special Function Register (SFR) sets of PWM generators and the PAM base module. These 'virtual' PWM objects are used to load, read and modify PWM generator configurations without the need to hard-coded instructions, which would make the code hard to migrate from one peripheral to another or even across devices.
-To simplify PWM configurations, in these examples, each register is reset to a known default state before the user configuration of interest is set. Thus, only the register setting which really matter for a certain features/function are shown.
-
-To learn more about the generic PWM driver, its supported features and intended use cases, please read the comments inside p33c_pwm.c.
-
-*c) Executing the Code Example*
-This code has been written to automatically start up and perform the function of interest. Please read the demo instructions on top of file main.c to learn more about the code example, test points, expected signals and demo mode operation.
-
-
+For more information, please read the [Digital Power Starter Kit 3 User Guide](https://www.microchip.com/50002867).
 
 - - - 
 
-© 2020, Microchip Technology Inc.
+© 2021, Microchip Technology Inc.

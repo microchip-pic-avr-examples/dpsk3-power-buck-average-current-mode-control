@@ -38,26 +38,40 @@
 
 #include "pwr_control/devices/dev_buck_typedef.h"
 
-#ifdef	__cplusplus
-extern "C" {
-#endif /* __cplusplus */
-
 // PUBLIC DATA OBJECT DECLARATIONS
-extern volatile struct BUCK_POWER_CONTROLLER_s buck;
+extern volatile struct BUCK_CONVERTER_s buck;
 
 // PUBLIC FUNCTION PROTOTYPE DECLARATIONS
 extern volatile uint16_t appPowerSupply_Initialize(void);
-extern volatile uint16_t appPowerSupply_Dispose(void);
 extern volatile uint16_t appPowerSupply_Execute(void);
+extern volatile uint16_t appPowerSupply_Start(void);
+extern volatile uint16_t appPowerSupply_Stop(void);
 extern volatile uint16_t appPowerSupply_Suspend(void);
 extern volatile uint16_t appPowerSupply_Resume(void);
 
 
-#ifdef	__cplusplus
-}
-#endif /* __cplusplus */
+// CONTROL LOOP USER EXTENSION FUNCTIONS
 
-#else
-#pragma message "drv_buck_converter.h has been recalled"
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ * 
+ * PowerSmart DCLD allows users to create and call user extension 
+ * functions from specific locations of the main control loop to 
+ * cover design-specific requirements and features which are not
+ * supported by the main controller by default.
+ * 
+ * Control Loop User Extension Declaration Example:
+ * 
+ *    buck.v_loop.controller->ExtensionHooks.ptrExtHookStartFunction = (uint16_t)&my_function; 
+ * 
+ * Please refer to the PowerSmart DCLD User Guide for more details about
+ * how to use this feature, its requirements and limitations.
+ * 
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+// extern void __attribute__((near)) my_function(void); // Control Loop User Extension Example
+
+
+//#else
+//  #pragma message "app_power_control.h inclusion bypassed"
 #endif	/* APPLICATION_LAYER_POWER_CONTROL_H */
 
