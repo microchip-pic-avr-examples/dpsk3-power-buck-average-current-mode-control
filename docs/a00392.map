@@ -1,5 +1,5 @@
 <map id="PWM Settings" name="PWM Settings">
-<area shape="rect" id="node1" href="$a00531.html" title="Hardware Abstraction Layer Declarations." alt="" coords="5,47,152,87"/>
+<area shape="rect" id="node1" href="$a00532.html" title="Hardware Abstraction Layer Declarations." alt="" coords="5,47,152,87"/>
 <area shape="rect" id="node5" title="Declaration of fundamental PWM parameters." alt="" coords="200,55,307,80"/>
 <area shape="rect" id="node2" href="$a00395.html" title="PWM peripheral output pins, control signals and register assignments." alt="" coords="355,5,532,31"/>
 <area shape="rect" id="node3" href="$a00394.html" title="Conversion macros converting physical quantities of parameters into binary (integer) numbers for regi..." alt="" coords="377,55,509,80"/>

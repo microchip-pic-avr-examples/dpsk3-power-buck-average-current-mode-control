@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['rcon_5freg_1006',['rcon_reg',['../a01466.html#a622b54af34934b9ed58310984866f335',1,'TRAP_LOGGER_s']]],
-  ['ready_1007',['ready',['../a01502.html#a17c7212252d1da4aacdddd45db29a6d1',1,'BUCK_CONVERTER_STATUS_s']]],
-  ['recoveryresponse_1008',['RecoveryResponse',['../a01410.html#af9e053ccdb2ca7c1cff5fcbe4596bf9c',1,'FAULT_OBJECT_s']]],
-  ['ref_5finc_5fstep_1009',['ref_inc_step',['../a01526.html#a832c6be5021565e3da55cbc0a523e744',1,'BUCK_STARTUP_PERIOD_HANDLER_s']]],
-  ['reference_1010',['reference',['../a01526.html#aad7bda3be2c1e6a89bd7093086bbeec8',1,'BUCK_STARTUP_PERIOD_HANDLER_s::reference()'],['../a01542.html#aad7bda3be2c1e6a89bd7093086bbeec8',1,'BUCK_LOOP_SETTINGS_s::reference()']]],
-  ['referenceobject_1011',['ReferenceObject',['../a01410.html#a9e234a289ec2e7de63ab9095222086eb',1,'FAULT_OBJECT_s']]],
-  ['refresh_1012',['refresh',['../a01470.html#adc2298ffda0c853e699e6da9098f82ae',1,'LCD_s']]],
+  ['rcon_5freg_1006',['rcon_reg',['../a01467.html#a622b54af34934b9ed58310984866f335',1,'TRAP_LOGGER_s']]],
+  ['ready_1007',['ready',['../a01503.html#a17c7212252d1da4aacdddd45db29a6d1',1,'BUCK_CONVERTER_STATUS_s']]],
+  ['recoveryresponse_1008',['RecoveryResponse',['../a01411.html#af9e053ccdb2ca7c1cff5fcbe4596bf9c',1,'FAULT_OBJECT_s']]],
+  ['ref_5finc_5fstep_1009',['ref_inc_step',['../a01527.html#a832c6be5021565e3da55cbc0a523e744',1,'BUCK_STARTUP_PERIOD_HANDLER_s']]],
+  ['reference_1010',['reference',['../a01527.html#aad7bda3be2c1e6a89bd7093086bbeec8',1,'BUCK_STARTUP_PERIOD_HANDLER_s::reference()'],['../a01543.html#aad7bda3be2c1e6a89bd7093086bbeec8',1,'BUCK_LOOP_SETTINGS_s::reference()']]],
+  ['referenceobject_1011',['ReferenceObject',['../a01411.html#a9e234a289ec2e7de63ab9095222086eb',1,'FAULT_OBJECT_s']]],
+  ['refresh_1012',['refresh',['../a01471.html#adc2298ffda0c853e699e6da9098f82ae',1,'LCD_s']]],
   ['reg_5fcmbtrigh_1013',['REG_CMBTRIGH',['../a00506.html#ga5f93a9d03d5f53c6f76be0e80dab06e8',1,'dev_buck_ptemp_pwm.h']]],
   ['reg_5fcmbtrigl_1014',['REG_CMBTRIGL',['../a00506.html#ga966a169f22dd7e325d189cab51a74b1f',1,'dev_buck_ptemp_pwm.h']]],
   ['reg_5fdacxconh_1015',['REG_DACxCONH',['../a00506.html#gaa6e98055bc0d35732906fb5b0785b30a',1,'dev_buck_ptemp_dac.h']]],
@@ -43,11 +43,11 @@ var searchData=
   ['reg_5fpwmevtf_1046',['REG_PWMEVTF',['../a00506.html#gaa3add0aac78e496cf53fb28e10f4c415',1,'dev_buck_ptemp_pwm.h']]],
   ['reg_5fslpxconh_1047',['REG_SLPxCONH',['../a00506.html#ga91d0af2b9336b872cb114c3b58efa261',1,'dev_buck_ptemp_dac.h']]],
   ['reg_5fslpxconl_1048',['REG_SLPxCONL',['../a00506.html#ga512689ef8611be9275733eb81f13707f',1,'dev_buck_ptemp_dac.h']]],
-  ['regblk_5fclkdiv_5fconfig_5ft_1049',['REGBLK_CLKDIV_CONFIG_t',['../a00910.html',1,'']]],
-  ['regblk_5fosccon_5fconfig_5ft_1050',['REGBLK_OSCCON_CONFIG_t',['../a00906.html',1,'']]],
-  ['regblk_5fosctun_5fconfig_5ft_1051',['REGBLK_OSCTUN_CONFIG_t',['../a00918.html',1,'']]],
-  ['regblk_5fpllfbd_5fconfig_5ft_1052',['REGBLK_PLLFBD_CONFIG_t',['../a00914.html',1,'']]],
+  ['regblk_5fclkdiv_5fconfig_5ft_1049',['REGBLK_CLKDIV_CONFIG_t',['../a00911.html',1,'']]],
+  ['regblk_5fosccon_5fconfig_5ft_1050',['REGBLK_OSCCON_CONFIG_t',['../a00907.html',1,'']]],
+  ['regblk_5fosctun_5fconfig_5ft_1051',['REGBLK_OSCTUN_CONFIG_t',['../a00919.html',1,'']]],
+  ['regblk_5fpllfbd_5fconfig_5ft_1052',['REGBLK_PLLFBD_CONFIG_t',['../a00915.html',1,'']]],
   ['regerr_5ffaultinitialize_1053',['regerr_FaultInitialize',['../a00421.html#ga82dc317e3adac0308e5ac3f5ad321605',1,'app_fault_monitor.c']]],
-  ['reset_5fcount_1054',['reset_count',['../a01466.html#a95744ea4cf032674585b4e25a114c31a',1,'TRAP_LOGGER_s']]],
-  ['rnd_1055',['RND',['../a00806.html#a0675e7fa49994bf6f5958c3df8d370f2',1,'DSP_CONFIG_s']]]
+  ['reset_5fcount_1054',['reset_count',['../a01467.html#a95744ea4cf032674585b4e25a114c31a',1,'TRAP_LOGGER_s']]],
+  ['rnd_1055',['RND',['../a00807.html#a0675e7fa49994bf6f5958c3df8d370f2',1,'DSP_CONFIG_s']]]
 ];

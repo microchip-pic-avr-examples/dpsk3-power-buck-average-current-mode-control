@@ -232,11 +232,9 @@ volatile uint16_t CurrentSenseOffsetCalibration(volatile struct BUCK_CONVERTER_s
 
     // Return REPEAT until calibration is complete
     if (_complete)
-    { 
-        retval = (uint16_t)BUCK_OPSRET_COMPLETE;  // Return COMPLETE
-    }
+        retval = (uint16_t)BUCK_OPSRET_COMPLETE; // Return COMPLETE
     else
-    { retval = (uint16_t)BUCK_OPSRET_REPEAT; } // Return REPEAT
+        retval = (uint16_t)BUCK_OPSRET_REPEAT; // Return REPEAT
     
     return(retval);
     

@@ -1,5 +1,5 @@
 var a00528 =
 [
-    [ "Operating System Time Base", "a00529.html", "a00529" ],
-    [ "User Task Initialization", "a00530.html", "a00530" ]
+    [ "sysOpAmp_Initialize", "a00528.html#gaf4c74cf390185b49d99838e0f9885076", null ],
+    [ "sysOpAmp_ModuleEnable", "a00528.html#ga3cd080c9a48a5d74d8b2f89fdec161da", null ]
 ];

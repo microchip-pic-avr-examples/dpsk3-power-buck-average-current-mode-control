@@ -1,8 +1,8 @@
 var a00533 =
 [
-    [ "Peripheral Register Abstraction Layer (PRAL) Library", "a00350.html", "a00350" ],
-    [ "Fault Handler Library", "a00423.html", "a00423" ],
-    [ "LC-Display Library", "a00439.html", "a00439" ],
-    [ "Push-Button Library", "a00459.html", "a00459" ],
-    [ "Buck Converter Library", "a00470.html", "a00470" ]
+    [ "Fault Monitor Application Layer", "a00418.html", "a00418" ],
+    [ "LC-Display Application Layer", "a00434.html", "a00434" ],
+    [ "Debugging LED Application Layer", "a00449.html", "a00449" ],
+    [ "Push-Button Application Layer", "a00454.html", "a00454" ],
+    [ "Power Control Application Layer", "a00464.html", "a00464" ]
 ];

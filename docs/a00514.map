@@ -1,5 +1,4 @@
-<map id="Firmware Architecture" name="Firmware Architecture">
-<area shape="rect" id="node1" href="$a00516.html" title="Main Loop." alt="" coords="217,5,300,31"/>
-<area shape="rect" id="node2" title="Firmware Flowchart." alt="" coords="5,31,155,56"/>
-<area shape="rect" id="node3" href="$a00515.html" title="Device Start Up." alt="" coords="203,55,315,80"/>
+<map id="Variables" name="Variables">
+<area shape="rect" id="node1" title="Public variables of the Power Converter Control driver." alt="" coords="135,5,211,31"/>
+<area shape="rect" id="node2" href="$a00510.html" title="Public properties of the Power Converter Control driver." alt="" coords="5,5,87,31"/>
 </map>
