@@ -39,7 +39,7 @@
 
 // APPLICATION LAYER HEADER FILES
 #include "fault_handler/app_fault_monitor.h"
-#include "pwr_control/app_power_control.h"
+#include "power_control/app_power_control.h"
 #include "led/app_led.h"
 #include "lcd/app_lcd.h"
 #include "push_button/app_push_button.h"

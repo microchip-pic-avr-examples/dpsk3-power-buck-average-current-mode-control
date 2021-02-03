@@ -36,7 +36,7 @@
 #include <stdbool.h> // include standard boolean data types
 #include <stddef.h> // include standard definition data types
 
-#include "pwr_control/devices/dev_buck_typedef.h"
+#include "power_control/devices/dev_buck_typedef.h"
 
 // PUBLIC DATA OBJECT DECLARATIONS
 extern volatile struct BUCK_CONVERTER_s buck;

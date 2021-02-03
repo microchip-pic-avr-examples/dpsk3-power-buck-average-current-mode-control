@@ -1,5 +1,5 @@
 /*
- * File:   pwr_control.c
+ * File:   app_power_control.c
  * Author: M91406
  *
  * Created on March 12, 2020, 11:55 AM
@@ -7,8 +7,8 @@
 
 #include <stdbool.h>
 
-#include "./pwr_control/drivers/v_loop.h"
-#include "./pwr_control/devices/dev_buck_typedef.h"
+#include "./power_control/drivers/v_loop.h"
+#include "./power_control/devices/dev_buck_typedef.h"
 #include "devices/dev_buck_converter.h"
 #include "config/hal.h"
 
