@@ -47,7 +47,7 @@
  **********************************************************************************/
 volatile uint16_t sysDsp_Initialize(void) {
     
-    CORCONbits.ACCSAT = CORCON_ACCSAT_931;  // Accumulator Saturation Mode Selection: 9.31 saturation (super saturation)
+    CORCONbits.ACCSAT = CORCON_ACCSAT_131;  // Accumulator Saturation Mode Selection: 9.31 saturation (super saturation)
     CORCONbits.IF = CORCON_IF_FRACTIONAL;   // Integer or Fractional Multiplier Mode Selection: Fractional mode is enabled for DSP multiply
     CORCONbits.RND = CORCON_RND_UNBIASED;   // Rounding Mode Selection: Unbiased (convergent) rounding is enabled
     CORCONbits.SATA = CORCON_SATA_ON;       // ACCA Saturation Enable: Accumulator A saturation is enabled
