@@ -50,7 +50,7 @@
 #include <stdbool.h> // include standard boolean data types (true/false)
 #include <stddef.h> // include standard definition data types
 
-#include "pwr_control/drivers/npnz16b.h"
+#include "power_control/drivers/npnz16b.h"
 #include "config/hal.h"
 
 
