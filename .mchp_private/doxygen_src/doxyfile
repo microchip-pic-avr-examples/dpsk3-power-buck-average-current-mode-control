@@ -179,7 +179,7 @@ STRIP_FROM_PATH        = ../../
 # specify the list of include paths that are normally passed to the compiler
 # using the -I flag.
 
-STRIP_FROM_INC_PATH    = ../../dpsk_vmc.X/sources
+STRIP_FROM_INC_PATH    = ../../dpsk_buck_vmc.X/sources
 
 # If the SHORT_NAMES tag is set to YES, doxygen will generate much shorter (but
 # less readable) file names. This can be useful is your file systems doesn't
@@ -844,7 +844,7 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = ../../dpsk_vmc.X/sources \
+INPUT                  = ../../dpsk_buck_vmc.X/sources \
                          ../../README.md \
                          dox-files \
                          markdown-files
@@ -896,9 +896,9 @@ RECURSIVE              = YES
 # Note that relative paths are relative to the directory from which doxygen is
 # run.
 
-EXCLUDE                = ../../dpsk_vmc.X/sources/fault_handler/drivers/README.md \
-                         ../../dpsk_vmc.X/sources/pwr_control/devices/README.md \
-                         ../../dpsk_vmc.X/sources/common/p33c_pral/README.md
+EXCLUDE                = ../../dpsk_buck_vmc.X/sources/fault_handler/drivers/README.md \
+                         ../../dpsk_buck_vmc.X/sources/common/p33c_pral/README.md \
+                         ../../dpsk_buck_vmc.X/sources/power_control/devices/README.md
 
 # The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
 # directories that are symbolic links (a Unix file system feature) are excluded
