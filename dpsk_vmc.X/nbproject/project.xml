@@ -17,7 +17,7 @@
             </sourceRootList>
             <confList>
                 <confElem>
-                    <name>DPSK3_BUCK</name>
+                    <name>dpsk3_buck_vmc</name>
                     <type>2</type>
                 </confElem>
             </confList>

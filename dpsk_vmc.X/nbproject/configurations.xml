@@ -178,7 +178,7 @@
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
-    <conf name="DPSK3_BUCK" type="2">
+    <conf name="dpsk3_buck_vmc" type="2">
       <toolsSet>
         <developmentServer>localhost</developmentServer>
         <targetDevice>dsPIC33CK256MP505</targetDevice>
