@@ -1,8 +1,8 @@
 ; **********************************************************************************
 ;  SDK Version: PowerSmart™ Digital Control Library Designer v0.9.12.671
-;  CGS Version: Code Generator Script v3.0.4 (01/27/2021)
+;  CGS Version: Code Generator Script v3.0.5 (02/02/2021)
 ;  Author:      M91406
-;  Date/Time:   02/01/2021 20:19:58
+;  Date/Time:   02/03/2021 01:58:40
 ; **********************************************************************************
 ;  4P4Z Control Library File (Fast Floating Point Coefficient Scaling Mode)
 ; **********************************************************************************
@@ -126,16 +126,18 @@
     
 ;------------------------------------------------------------------------------
 ; Controller Anti-Windup (control output value clamping)
-    ; Check for upper limit violation
-    mov [w0 + #MaxOutput], w6               ; load upper limit value
-    cpslt w4, w6                            ; compare values and skip next instruction if control output is within operating range (control output < upper limit)
-    mov w6, w4                              ; override controller output
-    V_LOOP_CLAMP_MAX_EXIT:
-    ; Check for lower limit violation
+     
+; Check for lower limit violation
     mov [w0 + #MinOutput], w6               ; load lower limit value
     cpsgt w4, w6                            ; compare values and skip next instruction if control output is within operating range (control output > lower limit)
     mov w6, w4                              ; override controller output
     V_LOOP_CLAMP_MIN_EXIT:
+     
+; Check for upper limit violation
+    mov [w0 + #MaxOutput], w6               ; load upper limit value
+    cpslt w4, w6                            ; compare values and skip next instruction if control output is within operating range (control output < upper limit)
+    mov w6, w4                              ; override controller output
+    V_LOOP_CLAMP_MAX_EXIT:
     
 ;------------------------------------------------------------------------------
 ; Write control output value to target
@@ -307,16 +309,18 @@
     
 ;------------------------------------------------------------------------------
 ; Controller Anti-Windup (control output value clamping)
-    ; Check for upper limit violation
-    mov [w0 + #MaxOutput], w6               ; load upper limit value
-    cpslt w4, w6                            ; compare values and skip next instruction if control output is within operating range (control output < upper limit)
-    mov w6, w4                              ; override controller output
-    V_LOOP_PTERM_CLAMP_MAX_EXIT:
-    ; Check for lower limit violation
+     
+; Check for lower limit violation
     mov [w0 + #MinOutput], w6               ; load lower limit value
     cpsgt w4, w6                            ; compare values and skip next instruction if control output is within operating range (control output > lower limit)
     mov w6, w4                              ; override controller output
     V_LOOP_PTERM_CLAMP_MIN_EXIT:
+     
+; Check for upper limit violation
+    mov [w0 + #MaxOutput], w6               ; load upper limit value
+    cpslt w4, w6                            ; compare values and skip next instruction if control output is within operating range (control output < upper limit)
+    mov w6, w4                              ; override controller output
+    V_LOOP_PTERM_CLAMP_MAX_EXIT:
     
 ;------------------------------------------------------------------------------
 ; Write control output value to target

@@ -1,11 +1,11 @@
 [GUI]
 CreateDate=08/26/2020 14:07:37
-SaveDate=02/01/2021 20:20:11
+SaveDate=02/03/2021 02:00:49
 Name=PowerSmart™ Digital Control Library Designer
 Version=0.9.12.671
 VersionKey=912
 AGS Version=2.0.23
-CGS Version=3.0.4
+CGS Version=3.0.5
 WindoWState=0
 Top=60
 Left=2188
@@ -23,7 +23,7 @@ InputGainNormalization=1
 BiDirectionalFeedback=0
 FeedbackRectification=0
 OutputGain=1e+0
-OutputGainNormalization=0
+OutputGainNormalization=1
 EnableAGC=0
 AddAGCEnableSwitch=0
 AddAGCGetModFunCall=0
@@ -46,6 +46,7 @@ FixedPointErrorMsg=500e-3
 FixedPointErrorWarning=200e-3
 TargetDevice=dsPIC33CK256MP505
 AGCOptimizeResolution=1
+UnsignedOutputRange=0
 [FeedbackDeclaration]
 Type=1
 ADCref=3.3e+0
@@ -65,7 +66,7 @@ DSNomValue=2.048e+3
 [OutputDeclaration]
 ConverterType=0
 Type=1
-PCLK=4e+9
+PCLK=500e+6
 PCLKDIV=1e+0
 PWMFREQ=500e+3
 NomVin=9e+0

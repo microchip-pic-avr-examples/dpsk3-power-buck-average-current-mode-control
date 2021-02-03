@@ -12,11 +12,11 @@
  *  Input Gain:         0.5
  *
  * *********************************************************************************
- * CGS Version:         3.0.4
- * CGS Date:            01/27/2021
+ * CGS Version:         3.0.5
+ * CGS Date:            02/02/2021
  * *********************************************************************************
  * User:                M91406
- * Date/Time:           02/01/2021 20:19:58
+ * Date/Time:           02/03/2021 01:58:40
  * ********************************************************************************/
 
 // This is a guard condition so that contents of this file are not included
@@ -99,8 +99,19 @@ extern volatile struct NPNZ16b_s v_loop;          // user-controller data object
 /*********************************************************************************
  * @fn volatile uint16_t v_loop_Initialize(volatile struct NPNZ16b_s* controller)
  * @ingroup special-function-layer-npnz16-functions
- * @brief Initializes controller coefficient arrays and normalization
+ * @brief Initializes controller coefficient arrays and normalization factors
  * @param controller: Pointer to NPNZ Controller Data Object of type struct NPNZ16b_s
+ *
+ * @details
+ * This function needs to be called from user code at startup once to initialize
+ * coefficient arrays and number normalization settings of the v_loop controller
+ * object.
+ *
+ * @attention
+ * This routine DOES NOT initialize the complete controller object.
+ * User-defined settings such as pointers to the control reference, source and
+ * target registers, output minima and maxima and further, design-dependent
+ * settings, need to be specified in user code.
  ********************************************************************************/
 extern volatile uint16_t v_loop_Initialize(       // v_loop initialization function call
         volatile struct NPNZ16b_s* controller     // Pointer to NPNZ16b data object
