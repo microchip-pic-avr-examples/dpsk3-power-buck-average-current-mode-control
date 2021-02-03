@@ -267,7 +267,7 @@ volatile uint16_t State_RampUp(volatile struct BUCK_CONVERTER_s *buckInstance)
 
                     if (buckInstance->set_values.control_mode == BUCK_CONTROL_MODE_VMC)
                         buckInstance->state_id.bits.substate_id++; // Increment sub-state pointer
-                        
+                    
                 }
 
             }

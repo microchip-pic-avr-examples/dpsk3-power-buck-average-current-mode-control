@@ -291,15 +291,21 @@ volatile uint16_t SubState_VRampUp(volatile struct BUCK_CONVERTER_s *buckInstanc
 /***********************************************************************************
  * @fn      uint16_t SubState_IRampUp(volatile struct BUCK_CONVERTER_s *buckInstance)
  * @ingroup lib-layer-buck-state-machine-functions
- * @brief   This function is for the average current mode where the output current is ramped up to nominal current
+ * @brief   This function is for the average current mode control where the output current is ramped up to nominal current
  * @param	buckInstance  Pointer to a Buck Converter data object of type struct BUCK_CONVERTER_s
  * @return  unsigned integer (0=failure, 1=success)
  * 
  * @details
  * This phase of the soft-start ramp is only executed in average current mode and 
- * will only take effect when the current limit is hit before the nominal voltage 
- * regulation point. In this case the constant output current is ramped up to from 
- * the startup current to the nominal constant charging current.
+ * will only take effect when the declared current limit is hit before the nominal 
+ * voltage regulation point. In this case the outer voltage loop will clamp the 
+ * current reference value and the state will be switched to IRampUp, where the 
+ * clamping value of the voltage loop output is ramped up to the declared maximum
+ * current reference value.
+ * This additional state allows powering up the power converter against highly 
+ * capacitive loads preventing overshoots caused by down-stream capacitor inrush 
+ * currents or when the converter is used as battery charger, where this state 
+ * will tune into the constant current charging mode.
  **********************************************************************************/
 volatile uint16_t SubState_IRampUp(volatile struct BUCK_CONVERTER_s *buckInstance)
 {
