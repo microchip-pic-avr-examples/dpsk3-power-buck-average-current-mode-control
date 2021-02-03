@@ -167,7 +167,7 @@ volatile struct FAULT_OBJECT_s fltObjectClear =
 
 volatile uint16_t drv_FaultHandler_CheckObject(volatile struct FAULT_OBJECT_s* fltObject) {
 
-    volatile uint16_t fres=1;
+    volatile uint16_t retval=1;
     volatile uint16_t source=0;
     
     // If the fault object is not initialized, exit here with error
@@ -264,7 +264,7 @@ volatile uint16_t drv_FaultHandler_CheckObject(volatile struct FAULT_OBJECT_s* f
             fltObject->Status.bits.FaultStatus = true;    // Set FAULT STATUS FLAG BIT
             fltObject->Counter = fltObject->TripResponse.eventThreshold; // Set fault event counter to threshold level
             if (fltObject->TripResponse.ptrResponseFunction != NULL)    // If a user function has been defined,
-                fres = fltObject->TripResponse.ptrResponseFunction();   // => call this function and capture return value
+                retval = fltObject->TripResponse.ptrResponseFunction();   // => call this function and capture return value
         }
 
     }
@@ -279,7 +279,7 @@ volatile uint16_t drv_FaultHandler_CheckObject(volatile struct FAULT_OBJECT_s* f
             fltObject->Status.bits.FaultStatus = false;   // Clear FAULT STATUS FLAG BIT
             fltObject->Counter = fltObject->RecoveryResponse.eventThreshold; // Set fault event counter to threshold level
             if (fltObject->RecoveryResponse.ptrResponseFunction != NULL)   // If a user function has been defined,
-                fres = fltObject->RecoveryResponse.ptrResponseFunction();  // => call this function and capture return value
+                retval = fltObject->RecoveryResponse.ptrResponseFunction();  // => call this function and capture return value
         }
     
     }
@@ -290,7 +290,7 @@ volatile uint16_t drv_FaultHandler_CheckObject(volatile struct FAULT_OBJECT_s* f
     }
 
     
-    return (fres); // Fault handler executed successfully
+    return (retval); // Fault handler executed successfully
 }
 
 
