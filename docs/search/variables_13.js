@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['v_5fin_1832',['v_in',['../a01518.html#af34b61c0a55244bf4aa166666a322efa',1,'BUCK_CONVERTER_DATA_s']]],
+  ['v_5floop_1833',['v_loop',['../a01554.html#acc8ce31db94494416ddda164332a40c9',1,'BUCK_CONVERTER_s::v_loop()'],['../a00498.html#gafbcd1a3463a71ed45375fa8f6053ee28',1,'v_loop():&#160;v_loop.c'],['../a00498.html#gafbcd1a3463a71ed45375fa8f6053ee28',1,'v_loop():&#160;v_loop.c']]],
+  ['v_5floop_5fpterm_5ffactor_1834',['v_loop_pterm_factor',['../a00503.html#gae1ef8104d52fe123c04e1107fd8ff55f',1,'v_loop_pterm_factor():&#160;v_loop.c'],['../a00503.html#gae1ef8104d52fe123c04e1107fd8ff55f',1,'v_loop_pterm_factor():&#160;v_loop.c']]],
+  ['v_5floop_5fpterm_5fscaler_1835',['v_loop_pterm_scaler',['../a00503.html#ga566701f8f607a93f33e17e799fae6ac5',1,'v_loop_pterm_scaler():&#160;v_loop.c'],['../a00503.html#ga566701f8f607a93f33e17e799fae6ac5',1,'v_loop_pterm_scaler():&#160;v_loop.c']]],
+  ['v_5fout_1836',['v_out',['../a01518.html#a81d40bc6e9f5a711379a1d3d40123bd9',1,'BUCK_CONVERTER_DATA_s']]],
+  ['v_5framp_1837',['v_ramp',['../a01514.html#aaebcce978f474595f71be18ed850adb6',1,'BUCK_CONVERTER_STARTUP_s']]],
+  ['v_5fref_1838',['v_ref',['../a01522.html#a1c39765936057b7b2b1b90a4126d3f80',1,'BUCK_CONVERTER_SETTINGS_s']]],
+  ['value_1839',['value',['../a00538.html#a900b69af7d674b8db3bceae754b4955a',1,'P33C_CCP_INSTANCE_SFRSET_s::value()'],['../a00718.html#a3f0c55f449560b03ce0ac43270c26600',1,'P33C_DAC_MODULE_s::value()'],['../a00746.html#a3f0c55f449560b03ce0ac43270c26600',1,'P33C_DAC_INSTANCE_s::value()'],['../a00806.html#a3f0c55f449560b03ce0ac43270c26600',1,'DSP_CONFIG_s::value()'],['../a00818.html#a3f0c55f449560b03ce0ac43270c26600',1,'P33C_GPIO_INSTANCE_s::value()'],['../a00882.html#a3f0c55f449560b03ce0ac43270c26600',1,'P33C_OPA_MODULE_s::value()'],['../a00906.html#a3f0c55f449560b03ce0ac43270c26600',1,'REGBLK_OSCCON_CONFIG_t::value()'],['../a00910.html#a3f0c55f449560b03ce0ac43270c26600',1,'REGBLK_CLKDIV_CONFIG_t::value()'],['../a00914.html#a3f0c55f449560b03ce0ac43270c26600',1,'REGBLK_PLLFBD_CONFIG_t::value()'],['../a00918.html#a3f0c55f449560b03ce0ac43270c26600',1,'REGBLK_OSCTUN_CONFIG_t::value()'],['../a00922.html#a900b69af7d674b8db3bceae754b4955a',1,'P33C_PWM_MODULE_s::value()'],['../a01106.html#a900b69af7d674b8db3bceae754b4955a',1,'P33C_PWM_GENERATOR_s::value()'],['../a01390.html#a3f0c55f449560b03ce0ac43270c26600',1,'FLT_OBJECT_STATUS_s::value()'],['../a01414.html#ac394992c7d47027da1de259f501bff0e',1,'TRAP_FLAGS_s::value()'],['../a01426.html#a3f0c55f449560b03ce0ac43270c26600',1,'CPU_INTTREG_s::value()'],['../a01438.html#a3f0c55f449560b03ce0ac43270c26600',1,'CPU_RCON_s::value()'],['../a01450.html#a3f0c55f449560b03ce0ac43270c26600',1,'TRAPLOG_STATUS_s::value()'],['../a01486.html#a3f0c55f449560b03ce0ac43270c26600',1,'BUCK_CONVERTER_STATUS_s::value()'],['../a01498.html#ac394992c7d47027da1de259f501bff0e',1,'BUCK_STATE_ID_s::value()'],['../a01562.html#a3f0c55f449560b03ce0ac43270c26600',1,'NPNZ_STATUS_s::value()'],['../a01626.html#a3f0c55f449560b03ce0ac43270c26600',1,'PUSH_BUTTON_STATUS_s::value()']]],
+  ['var_1840',['VAR',['../a00806.html#a88c251a76ee3d54b5a7fb76ecbaf24a5',1,'DSP_CONFIG_s']]],
+  ['vcmbtrigh_1841',['vCMBTRIGH',['../a00922.html#ab1b3fb820cd62098d53441512acf0f21',1,'P33C_PWM_MODULE_s']]],
+  ['vcmbtrigl_1842',['vCMBTRIGL',['../a00922.html#ac50b1f620be1a7a9bfeb7245345de63c',1,'P33C_PWM_MODULE_s']]],
+  ['vecnum_1843',['VECNUM',['../a01426.html#a0f6921c4b6f0f47e319bdebb707e0e3a',1,'CPU_INTTREG_s']]],
+  ['vfscl_1844',['vFSCL',['../a00922.html#a77604b05a25efa8b232c54d985326710',1,'P33C_PWM_MODULE_s']]],
+  ['vfsminper_1845',['vFSMINPER',['../a00922.html#a7c9fc3e661669d6e5f384588aa9cf73e',1,'P33C_PWM_MODULE_s']]],
+  ['vhold_1846',['VHOLD',['../a01426.html#a82fd17775a72ed7c16b5f0df5b752a6c',1,'CPU_INTTREG_s']]],
+  ['vlfsr_1847',['vLFSR',['../a00922.html#a70c881e5c87b67419bba4cdb1d2a41a2',1,'P33C_PWM_MODULE_s']]],
+  ['vmdc_1848',['vMDC',['../a00922.html#a464816a67ae50fb8573221aa8272a4be',1,'P33C_PWM_MODULE_s']]],
+  ['vmper_1849',['vMPER',['../a00922.html#aecf933450f0005e2554745b3bfd1e5f9',1,'P33C_PWM_MODULE_s']]],
+  ['vmphase_1850',['vMPHASE',['../a00922.html#afa600c43b133721070e588cbe26079bd',1,'P33C_PWM_MODULE_s']]],
+  ['vpclkcon_1851',['vPCLKCON',['../a00922.html#a2c58be76db6f74191e135506e4f842d4',1,'P33C_PWM_MODULE_s']]],
+  ['vregs_1852',['vregs',['../a01438.html#a50b204d27cba3d51848c83354e71296f',1,'CPU_RCON_s']]],
+  ['vregsf_1853',['vregsf',['../a01438.html#a6516dffe775a593a505dcd61d17db9bb',1,'CPU_RCON_s']]]
+];
