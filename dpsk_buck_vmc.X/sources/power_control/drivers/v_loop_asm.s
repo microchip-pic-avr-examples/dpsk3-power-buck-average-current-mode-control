@@ -1,8 +1,8 @@
 ; **********************************************************************************
-;  SDK Version: PowerSmart™ Digital Control Library Designer v0.9.12.671
-;  CGS Version: Code Generator Script v3.0.5 (02/02/2021)
+;  SDK Version: PowerSmart™ Digital Control Library Designer v0.9.12.672
+;  CGS Version: Code Generator Script v3.0.6 (02/03/2021)
 ;  Author:      M91406
-;  Date/Time:   02/03/2021 01:58:40
+;  Date/Time:   02/04/2021 17:12:52
 ; **********************************************************************************
 ;  4P4Z Control Library File (Fast Floating Point Coefficient Scaling Mode)
 ; **********************************************************************************

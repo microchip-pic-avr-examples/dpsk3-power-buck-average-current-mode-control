@@ -1,17 +1,17 @@
 [GUI]
 CreateDate=08/26/2020 14:07:37
-SaveDate=02/03/2021 02:33:09
+SaveDate=02/04/2021 17:13:00
 Name=PowerSmart™ Digital Control Library Designer
-Version=0.9.12.671
+Version=0.9.12.672
 VersionKey=912
 AGS Version=2.0.23
-CGS Version=3.0.5
-WindowState=2
-Top=0
-Left=0
-Height=1066
-Width=1936
-TabHeight=328
+CGS Version=3.0.6
+WindowState=0
+Top=60
+Left=2188
+Height=950
+Width=1500
+TabHeight=288
 [ControlSetup]
 ControlType=3
 ScalingMode=3
@@ -120,6 +120,7 @@ AddUserHookStop=0
 AddUserHookStopParam=0
 AddUserHookEnd=0
 AddUserHookEndParam=0
+AddAntiWindupMinimumClampingAutoZero=0
 [CodeGenerationPaths]
 ExportASMSource=1
 ExportCSource=1
@@ -139,6 +140,7 @@ AsmIncPath=.\sources\power_control\drivers
 IncludeCHeaderPathInCSource=0
 IncludeCLibPathInCHeader=0
 IncludeLibIncPathInAssembly=1
+IncludeLibIncFileInAssembly=1
 [CodeGenerationOptions]
 IncludeUnsusedSettingsInTemplate=0
 [BodePlot]
@@ -165,8 +167,11 @@ TriggerPlacement=1
 [SimulationToolSupport]
 SimplisSchematics=
 [generator_history]
-count=3
-active_item=3
+count=6
+active_item=6
 1=2020-09-01 14:16:40||M91406||Optimized 4P4Z VMC Buck Converter Controller, fx = 20 kHz||3; 3; 12; 0.5; 1; 0; 0; 500000; 604; 82540; 104860; 250000; 250000; 250000; 2021; 3833; 49866; 50000; 50000
 2=2021-01-19 09:13:46||M91406||Regenerated firmware with PS-DCLD version 0.9.12.660||3; 3; 12; 0.5; 1; 0; 0; 500000; 604; 82540; 104860; 250000; 250000; 250000; 2021; 3833; 49866; 50000; 50000
 3=2021-01-26 12:54:42||M91406||Enabled control output data provider for enhanced debugging||3; 3; 12; 0.5; 1; 0; 0; 500000; 604; 82540; 104860; 250000; 250000; 250000; 2021; 3833; 49866; 50000; 50000
+4=2021-02-04 01:53:09||M91406||(Autosave) [4P4Z, Scaling 4, 500kHz]||3; 3; 12; 0.5; 1; 0; 0; 500000; 604; 82540; 104860; 250000; 250000; 250000; 2021; 3833; 49866; 50000; 50000; 1; 0; 0
+5=2021-02-04 01:53:59||M91406||(Autosave) [4P4Z, Scaling 4, 500kHz]||3; 3; 12; 0.5; 1; 0; 0; 500000; 604; 82540; 104860; 250000; 250000; 250000; 2021; 3833; 49866; 50000; 50000; 1; 0; 0
+6=2021-02-04 17:12:57||M91406||(Autosave) [4P4Z, Scaling 4, 500kHz]||3; 3; 12; 0.5; 1; 0; 0; 500000; 604; 82540; 104860; 250000; 250000; 250000; 2021; 3833; 49866; 50000; 50000; 1; 0; 0
