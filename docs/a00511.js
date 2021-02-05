@@ -1,22 +1,21 @@
 var a00511 =
 [
-    [ "NPNZ16b_s", "a01631.html", [
-      [ "status", "a01631.html#a38a4b2427f4b2b06c112385e722e1419", null ],
-      [ "Ports", "a01631.html#ae834fa9c7338d08d0fa927c901c2503f", null ],
-      [ "Filter", "a01631.html#aa98db9224dce165f72d861acc8558419", null ],
-      [ "GainControl", "a01631.html#a3c9fc0a5e04a384801d066b95dc27f5d", null ],
-      [ "Limits", "a01631.html#a6127947619eb634f1a3c3650529e092c", null ],
-      [ "ADCTriggerControl", "a01631.html#aa708a44ef3b59a931f929bc6c72e07fc", null ],
-      [ "DataProviders", "a01631.html#a971260b757f0c8822315d8c82a603142", null ],
-      [ "ExtensionHooks", "a01631.html#a486610694a9aac008ab8c01a0ab88090", null ],
-      [ "Advanced", "a01631.html#ae10c373e7000ff11abbb151f019793e0", null ]
+    [ "PUSH_BUTTON_STATUS_s", "a01626.html", [
+      [ "sw_event", "a01626.html#a4e5a3be7a99ad29f863ea0dd636cea0a", null ],
+      [ "unsigned", "a01626.html#a32e93b068e309da5a319a7a69f3b3ff5", null ],
+      [ "long_press", "a01626.html#ae6577f0794699101b84e90afcdfcaaaa", null ],
+      [ "pressed", "a01626.html#aa5848ca5944f6a2c0d6562778651629e", null ],
+      [ "enabled", "a01626.html#a085e9fc0863cee4864cf51dcfe1e32df", null ],
+      [ "value", "a01626.html#a3f0c55f449560b03ce0ac43270c26600", null ]
     ] ],
-    [ "V_LOOP_CONTROL_LOOP_COEFFICIENTS_s", "a01635.html", [
-      [ "ACoefficients", "a01635.html#a03bf1309ac1c8a67b7965b1a41dad362", null ],
-      [ "BCoefficients", "a01635.html#a6b5296ce3d1269641ff6342db852b44a", null ]
+    [ "PUSH_BUTTON_OBJECT_s", "a01638.html", [
+      [ "status", "a01638.html#a16a03dc6d0fd95cb3dffee0f76de5cd9", null ],
+      [ "debounce_delay", "a01638.html#a78437774e630c432a18d708b25955f0f", null ],
+      [ "long_press_delay", "a01638.html#a92322dfa9ee932050da2a695bc5fe160", null ],
+      [ "event_btn_down", "a01638.html#a5ec310dc3aa8f6b3c0635719fdf6062a", null ],
+      [ "event_long_press", "a01638.html#ab6ccfc633b01bf4d5aba1121b52cbe16", null ],
+      [ "event_pressed", "a01638.html#a4aec1837a6756f26ba5b7a95721e2f53", null ],
+      [ "event_btn_up", "a01638.html#aa2f2ef2afa1e13d9a26d222a716226ec", null ]
     ] ],
-    [ "V_LOOP_CONTROL_LOOP_HISTORIES_s", "a01639.html", [
-      [ "ControlHistory", "a01639.html#ac3dadde9f125d54e0238b02178a5812d", null ],
-      [ "ErrorHistory", "a01639.html#aefbb5fcdf54f9285d73baa6e704d1193", null ]
-    ] ]
+    [ "SWITCH_STATUS_FLAGS_e", "a00511.html#gabd8e0fa892ee3bfb88dea4e13b3ded87", null ]
 ];

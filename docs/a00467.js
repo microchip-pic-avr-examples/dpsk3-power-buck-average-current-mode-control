@@ -1,4 +1,6 @@
 var a00467 =
 [
-    [ "_BUCK_VLOOP_Interrupt", "a00415.html#ga4d26e0585523e4ab162ca9868517b878", null ]
+    [ "Variables & Constants", "a00468.html", null ],
+    [ "Data Types", "a00469.html", "a00469" ],
+    [ "Defines and Macros", "a00470.html", null ]
 ];

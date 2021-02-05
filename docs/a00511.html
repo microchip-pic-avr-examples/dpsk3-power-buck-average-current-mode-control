@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>dsPIC33C Digital Power Starter Kit: Data Objects</title>
+<title>Digital Power Starter Kit 3 Firmware Documentation: Public Properties</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -34,8 +34,9 @@
  <tr style="height: 36px;">
   <td id="projectlogo" style="padding-left: 0.2em; vertical-align: middle;"><img alt="Logo" src="microchip-docs.png"/></td>
   <td id="projectalign" style="padding-left: 0.0em;">
-   <div id="projectname" style="color: white; font-size:16px;">dsPIC33C Digital Power Starter Kit
+   <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware Documentation
    </div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -96,38 +97,64 @@ $(document).ready(function(){initNavTree('a00511.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a>  </div>
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
-<div class="title">Data Objects<div class="ingroups"><a class="el" href="a00535.html">Library Driver Layer</a> &raquo; <a class="el" href="a00507.html">Power Converter Control Driver</a> &raquo; <a class="el" href="a00510.html">Properties</a></div></div>  </div>
+<div class="title">Public Properties<div class="ingroups"><a class="el" href="a00533.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00509.html">Push-Button Library</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Public properties of the Power Converter Control driver.  
+<p>Public properties of the push button device driver library.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Data Objects:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Public Properties:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00511.svg" width="239" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00511.svg" width="318" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01631.html">NPNZ16b_s</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global NPNZ controller data object.  <a href="a01631.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01626.html">PUSH_BUTTON_STATUS_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status word of the push button driver.  <a href="a01626.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01635.html">V_LOOP_CONTROL_LOOP_COEFFICIENTS_s</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data structure packing A- and B- coefficient arrays in a linear memory space for optimized DSP code execution.  <a href="a01635.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01638.html">PUSH_BUTTON_OBJECT_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push button function driver data object.  <a href="a01638.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01639.html">V_LOOP_CONTROL_LOOP_HISTORIES_s</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data structure packing A- and B- coefficient arrays in a linear memory space for optimized DSP code execution.  <a href="a01639.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:gabd8e0fa892ee3bfb88dea4e13b3ded87"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00511.html#gabd8e0fa892ee3bfb88dea4e13b3ded87">SWITCH_STATUS_FLAGS_e</a> { <b>SWITCH_STAT_PRESSED</b> = 0b1100000000000001, 
+<b>SWITCH_STAT_LONG_PRESS</b> = 0b1110000000000001, 
+<b>SWITCH_STAT_RELEASED</b> = 0b1000000000000001
+ }</td></tr>
+<tr class="memdesc:gabd8e0fa892ee3bfb88dea4e13b3ded87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of push button states.  <a href="a00511.html#gabd8e0fa892ee3bfb88dea4e13b3ded87">More...</a><br /></td></tr>
+<tr class="separator:gabd8e0fa892ee3bfb88dea4e13b3ded87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Public properties of the Power Converter Control driver. </p>
-<p>This is the detailed description of public data objects of the Power Converter Control driver. </p>
+<p>Public properties of the push button device driver library. </p>
+<p>This is the detailed description of public variables, data types, enumerations, defines and macros of the push button device driver library. </p>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="gabd8e0fa892ee3bfb88dea4e13b3ded87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabd8e0fa892ee3bfb88dea4e13b3ded87">&#9670;&nbsp;</a></span>SWITCH_STATUS_FLAGS_e</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="a00511.html#gabd8e0fa892ee3bfb88dea4e13b3ded87">SWITCH_STATUS_FLAGS_e</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enumeration of push button states. </p>
+<p>This enumeration lists the different conditions of the push button connected to the specified GPIO of the device, which can be detecting by this push button function driver. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00332_source.html#l00049">49</a> of file <a class="el" href="a00332_source.html">drv_push_button.h</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

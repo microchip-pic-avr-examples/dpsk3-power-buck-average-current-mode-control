@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>dsPIC33C Digital Power Starter Kit: Main Page</title>
+<title>Digital Power Starter Kit 3 Firmware Documentation: Main Page</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -34,8 +34,9 @@
  <tr style="height: 36px;">
   <td id="projectlogo" style="padding-left: 0.2em; vertical-align: middle;"><img alt="Logo" src="microchip-docs.png"/></td>
   <td id="projectalign" style="padding-left: 0.0em;">
-   <div id="projectname" style="color: white; font-size:16px;">dsPIC33C Digital Power Starter Kit
+   <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware Documentation
    </div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -96,7 +97,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">dsPIC33C Digital Power Starter Kit Documentation</div>  </div>
+<div class="title">Digital Power Starter Kit 3 Firmware Documentation Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_README"></a><img src="microchip.png" alt="" class="inline" title="image"/>   </p>
@@ -120,16 +121,18 @@ Related Documentation</h2>
 <li><a href="https://www.microchip.com/70005349">dsPIC33CK256MP508 Family Data Sheet</a></li>
 <li><a href="https://www.microchip.com/80000796">dsPIC33CK256MP508 Family Silicon Errata and Data Sheet Clarification</a></li>
 </ul>
-<p><b>Please always check for the latest data sheets on the respective product websites:</b></p><ul>
+<h5>Please always check for the latest data sheets on the respective product websites:</h5>
+<ul>
 <li><a href="https://www.microchip.com/dsPIC33CK256MP508">dsPIC33CK256MP508 Family</a></li>
 <li><a href="https://www.microchip.com/dsPIC33CH512MP508">dsPIC33CH512MP508 Family</a></li>
 </ul>
 <h2><a class="anchor" id="autotoc_md5"></a>
 Software Used</h2>
 <ul>
-<li><a href="https://www.microchip.com/mplabx-ide-windows-installer">MPLAB® X IDE v5.45</a></li>
-<li><a href="https://www.microchip.com/mplabxc16windows">MPLAB XC16 Compiler v1.61</a></li>
+<li><a href="https://www.microchip.com/mplabx-ide-windows-installer">MPLAB&reg; X IDE v5.45</a></li>
+<li><a href="https://www.microchip.com/mplabxc16windows">MPLAB&reg; XC16 Compiler v1.61</a></li>
 <li><a href="https://www.microchip.com/mplab/mplab-code-configurator">Microchip Code Configurator v4.0.2</a></li>
+<li><a href="https://areiter128.github.io/DCLD">MPLAB&reg; PowerSmart&trade; Digital Control Library Designer v0.9.12</a></li>
 </ul>
 <h2><a class="anchor" id="autotoc_md6"></a>
 Hardware Used</h2>
@@ -138,8 +141,28 @@ Hardware Used</h2>
 </ul>
 <h2><a class="anchor" id="autotoc_md7"></a>
 Supported Target Devices</h2>
-<ul>
-<li>48-pin <a href="https://www.microchip.com/dsPIC33CK256MP505">dsPIC33CK256MP505</a></li>
+<p><em><b>Focus Microchip Technology Devices</b></em></p><ul>
+<li><a href="https://www.microchip.com/dsPIC33CK256MP505">48-pin Digital Signal Controller, dsPIC33CK256MP505</a></li>
+</ul>
+<p><em><b>Further Microchip Technology Devices used in this Design</b></em> <em>a) Power Supply Circuit</em></p><ul>
+<li><a href="https://www.microchip.com/DSC6000B">8-MHz MEMS Oscillator, DSC6011JI2A-008</a></li>
+<li><a href="https://www.microchip.com/MCP16331">50V/1A, Asynchronous Buck Regulator, MCP16331</a></li>
+<li><a href="https://www.microchip.com/MCP1755">16V/300mA Low Quiescent Current LDO with Shutdown and Power Good, 3.3V, MCP1755-330</a></li>
+<li><a href="https://www.microchip.com/MCP14A0152">High-Speed Low-Side MOSFET Driver, MCP14A0152</a></li>
+<li><a href="https://www.microchip.com/MCP14700">Dual Input Synchronous Half-Bridge MOSFET Driver, MCP14700</a></li>
+<li><a href="https://www.microchip.com/MCP87130">High-Speed N-Channel MOSFET, MCP87130</a></li>
+<li><a href="https://www.microchip.com/MCP9700">Active Thermistor Temperature Sensor, MCP9700</a></li>
+</ul>
+<p><em>b) Protection Circuit</em></p><ul>
+<li><a href="https://www.microchip.com/TP2104">P-Channel Enhancement-Mode MOSFET, TP2104</a></li>
+<li><a href="https://www.microchip.com/MIC6270">36V Open-Collector Comparator, MIC6270YM5</a></li>
+<li><a href="https://www.microchip.com/MIC841">Windowed Comparator with Adjustable Hysteresis, MIC841H</a></li>
+<li><a href="https://www.microsemi.com/existing-parts/parts/48587">50V/5A Schottky-Diode, HSM560JE3</a></li>
+</ul>
+<p><em>c) Communication, Programming/Debugging and Housekeeping</em></p><ul>
+<li><a href="https://www.microchip.com/USB2422">2-Port USB 2.0 HUB Controller, USB2422</a></li>
+<li><a href="https://www.microchip.com/MCP2221A">USB 2.0 to I2C/UART Protocol Converter, MCP2221A</a></li>
+<li><a href="https://www.microchip.com/PIC24FJ64GA004">44-pin MCU PIC24FJ64GA004</a></li>
 </ul>
 <h2><a class="anchor" id="autotoc_md8"></a>
 Security and Safety Requirements</h2>
@@ -191,7 +214,7 @@ Operation</h2>
 <p>(value accuracy +/- 10%)</p>
 <p>For more information, please read the <a href="https://www.microchip.com/50002867">Digital Power Starter Kit 3 User Guide</a>.</p>
 <hr  />
-<p>© 2021, Microchip Technology Inc. </p>
+<p>&copy; 2021, Microchip Technology Inc. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->

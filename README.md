@@ -39,21 +39,43 @@ This code example also includes the LCD driver allowing users to observe runtime
 - [dsPIC33CK256MP508 Family Data Sheet](https://www.microchip.com/70005349)
 - [dsPIC33CK256MP508 Family Silicon Errata and Data Sheet Clarification](https://www.microchip.com/80000796)
 
-**Please always check for the latest data sheets on the respective product websites:**
+##### Please always check for the latest data sheets on the respective product websites:
 - [dsPIC33CK256MP508 Family](https://www.microchip.com/dsPIC33CK256MP508)
 - [dsPIC33CH512MP508 Family](https://www.microchip.com/dsPIC33CH512MP508)
 
 ## Software Used 
-- [MPLAB® X IDE v5.45](https://www.microchip.com/mplabx-ide-windows-installer)
-- [MPLAB XC16 Compiler v1.61](https://www.microchip.com/mplabxc16windows)
+- [MPLAB&reg; X IDE v5.45](https://www.microchip.com/mplabx-ide-windows-installer)
+- [MPLAB&reg; XC16 Compiler v1.61](https://www.microchip.com/mplabxc16windows)
 - [Microchip Code Configurator v4.0.2](https://www.microchip.com/mplab/mplab-code-configurator)
+- [MPLAB&reg; PowerSmart&trade; Digital Control Library Designer v0.9.12](https://areiter128.github.io/DCLD)
 
 ## Hardware Used
 - dsPIC33C Digital Power Starter Kit, Part-No. [DM330017-3](https://www.microchip.com/DM330017-3)
 
 ## Supported Target Devices
-- 48-pin [dsPIC33CK256MP505](https://www.microchip.com/dsPIC33CK256MP505)
+***Focus Microchip Technology Devices***
+- [48-pin Digital Signal Controller, dsPIC33CK256MP505](https://www.microchip.com/dsPIC33CK256MP505)
 
+***Further Microchip Technology Devices used in this Design***
+*a) Power Supply Circuit*
+- [8-MHz MEMS Oscillator, DSC6011JI2A-008](https://www.microchip.com/DSC6000B)
+- [50V/1A, Asynchronous Buck Regulator, MCP16331](https://www.microchip.com/MCP16331)
+- [16V/300mA Low Quiescent Current LDO with Shutdown and Power Good, 3.3V, MCP1755-330](https://www.microchip.com/MCP1755)
+- [High-Speed Low-Side MOSFET Driver, MCP14A0152](https://www.microchip.com/MCP14A0152)
+- [Dual Input Synchronous Half-Bridge MOSFET Driver, MCP14700](https://www.microchip.com/MCP14700)
+- [High-Speed N-Channel MOSFET, MCP87130](https://www.microchip.com/MCP87130)
+- [Active Thermistor Temperature Sensor, MCP9700](https://www.microchip.com/MCP9700)
+
+*b) Protection Circuit*
+- [P-Channel Enhancement-Mode MOSFET, TP2104](https://www.microchip.com/TP2104)
+- [36V Open-Collector Comparator, MIC6270YM5](https://www.microchip.com/MIC6270)
+- [Windowed Comparator with Adjustable Hysteresis, MIC841H](https://www.microchip.com/MIC841)
+- [50V/5A Schottky-Diode, HSM560JE3](https://www.microsemi.com/existing-parts/parts/48587)
+
+*c) Communication, Programming/Debugging and Housekeeping*
+- [2-Port USB 2.0 HUB Controller, USB2422](https://www.microchip.com/USB2422)
+- [USB 2.0 to I2C/UART Protocol Converter, MCP2221A](https://www.microchip.com/MCP2221A)
+- [44-pin MCU PIC24FJ64GA004](https://www.microchip.com/PIC24FJ64GA004)
 
 ## Security and Safety Requirements
 
@@ -114,4 +136,4 @@ For more information, please read the [Digital Power Starter Kit 3 User Guide](h
 
 - - - 
 
-© 2021, Microchip Technology Inc.
+&copy; 2021, Microchip Technology Inc.

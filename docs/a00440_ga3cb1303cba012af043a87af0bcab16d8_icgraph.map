@@ -3,5 +3,5 @@
 <area shape="rect" id="node2" href="$a00440.html#gac07de05132918ca2db8cf4492819eca6" title="Writes a complete string on the LCD screen." alt="" coords="588,5,729,32"/>
 <area shape="rect" id="node3" href="$a00440.html#ga24701a4c3ae760e7e0b9c70d93370ff3" title="Sets the cursor position to the given x&#45; and y&#45;coordinates and writes the given string on the lcd scr..." alt="" coords="383,5,540,32"/>
 <area shape="rect" id="node4" href="$a00435.html#gab93992748ced72fdc2989d0b0f369e54" title="Initializes the LC display." alt="" coords="212,5,335,32"/>
-<area shape="rect" id="node5" href="$a00531.html#ga2be64f5f0b9a2c0c6713f5a69d793e05" title="Initializes the user&#45;defined tasks." alt="" coords="5,5,164,32"/>
+<area shape="rect" id="node5" href="$a00530.html#ga2be64f5f0b9a2c0c6713f5a69d793e05" title="Initializes the user&#45;defined tasks." alt="" coords="5,5,164,32"/>
 </map>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>dsPIC33C Digital Power Starter Kit: Initializing Firmware Tasks</title>
+<title>Digital Power Starter Kit 3 Firmware Documentation: Operating System Time Base</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -34,8 +34,9 @@
  <tr style="height: 36px;">
   <td id="projectlogo" style="padding-left: 0.2em; vertical-align: middle;"><img alt="Logo" src="microchip-docs.png"/></td>
   <td id="projectalign" style="padding-left: 0.0em;">
-   <div id="projectname" style="color: white; font-size:16px;">dsPIC33C Digital Power Starter Kit
+   <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware Documentation
    </div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -95,30 +96,95 @@ $(document).ready(function(){initNavTree('a00529.html',''); initResizable(); });
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#groups">Modules</a>  </div>
   <div class="headertitle">
-<div class="title">Initializing Firmware Tasks<div class="ingroups"><a class="el" href="a00515.html">Firmware Architecture</a> &raquo; <a class="el" href="a00516.html">Device Start Up</a></div></div>  </div>
+<div class="title">Operating System Time Base<div class="ingroups"><a class="el" href="a00514.html">Firmware Architecture</a> &raquo; <a class="el" href="a00515.html">Device Start Up</a> &raquo; <a class="el" href="a00528.html">Initializing Firmware Tasks</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Initializing Firmware Tasks:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Operating System Time Base:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00529.svg" width="548" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00529.svg" width="388" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
-Modules</h2></td></tr>
-<tr class="memitem:a00530"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00530.html">Operating System Time Base</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00531"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00531.html">User Task Initialization</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8e89a1a4ee5bf8c794bd29163b92bf49"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00529.html#ga8e89a1a4ee5bf8c794bd29163b92bf49">sysOsTimer_Initialize</a> (void)</td></tr>
+<tr class="memdesc:ga8e89a1a4ee5bf8c794bd29163b92bf49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the timer used as time-base for the task scheduler.  <a href="a00529.html#ga8e89a1a4ee5bf8c794bd29163b92bf49">More...</a><br /></td></tr>
+<tr class="separator:ga8e89a1a4ee5bf8c794bd29163b92bf49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4c811c3414a3785423f828be293562f0"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00529.html#ga4c811c3414a3785423f828be293562f0">sysOsTimer_Enable</a> (volatile bool interrupt_enable, volatile uint8_t interrupt_priority)</td></tr>
+<tr class="separator:ga4c811c3414a3785423f828be293562f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>The appliation wide task execution requires a two step approach, where first the operating system time base is configured and then all user-tasks are initialized. Once these two steps have been completed, the OS timer can be enabled and the main program will enter the main loop, continuously executing the specified and enabled user-tasks in high- and low-priority task execution sequences. </p>
+<p>A simple 16-bit timer is used to generate the time base of the operating system. This timer is set to overflow after the time period specified by <a class="el" href="a00380.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a> in the hardware abstraction layer. This time period is used to pace the high- and low priority task sequences of the main program.</p>
+<p>Two public functions are provided to initialize the time base, configuring its desired period as well as setting up the interrupt priority of the high priority task sequence execution, and an ENABLE function, enabling the high priority task sequence execution interrupt.</p>
+<p>Once the OS Timer and its interrupts are enabled, the main program will start to execute the user tasks with their respective priority and in their given order. </p>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga8e89a1a4ee5bf8c794bd29163b92bf49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8e89a1a4ee5bf8c794bd29163b92bf49">&#9670;&nbsp;</a></span>sysOsTimer_Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t sysOsTimer_Initialize </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the timer used as time-base for the task scheduler. </p>
+<p>The internal PLL is set up to operate the CPU at maximum speed of 100 MIPS (100 MHz instruction cycle).</p>
+<dl class="section return"><dt>Returns</dt><dd>unsigned integer </dd>
+<dd>
+0=failure </dd>
+<dd>
+1=success</dd></dl>
+<p>The task scheduler runs on a specific, usually fixed time base specified in the state machine section of the hardware abstraction layer (e.g. 100us). This routine initializes a device timer exclusively used for that purpose which is not shared with other tasks/peripherals to ensure stable, deterministic behavior of the firmware. The timer does not use interrupts. The scheduler task execution period is controlled by polling on the timer overrun bit, allowing some more relaxed timing while not putting additional burden on the CPU. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00149_source.html#l00040">40</a> of file <a class="el" href="a00149_source.html">init_timer1.c</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00529_ga8e89a1a4ee5bf8c794bd29163b92bf49_icgraph.svg" width="364" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ga4c811c3414a3785423f828be293562f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4c811c3414a3785423f828be293562f0">&#9670;&nbsp;</a></span>sysOsTimer_Enable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t sysOsTimer_Enable </td>
+          <td>(</td>
+          <td class="paramtype">volatile bool&#160;</td>
+          <td class="paramname"><em>interrupt_enable</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">volatile uint8_t&#160;</td>
+          <td class="paramname"><em>interrupt_priority</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00149_source.html#l00081">81</a> of file <a class="el" href="a00149_source.html">init_timer1.c</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

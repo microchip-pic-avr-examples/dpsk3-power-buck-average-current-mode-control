@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>dsPIC33C Digital Power Starter Kit: Device Pin Configuration</title>
+<title>Digital Power Starter Kit 3 Firmware Documentation: Digital Signal Processor Configuration</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -34,8 +34,9 @@
  <tr style="height: 36px;">
   <td id="projectlogo" style="padding-left: 0.2em; vertical-align: middle;"><img alt="Logo" src="microchip-docs.png"/></td>
   <td id="projectalign" style="padding-left: 0.0em;">
-   <div id="projectname" style="color: white; font-size:16px;">dsPIC33C Digital Power Starter Kit
+   <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware Documentation
    </div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -98,35 +99,34 @@ $(document).ready(function(){initNavTree('a00523.html',''); initResizable(); });
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Device Pin Configuration<div class="ingroups"><a class="el" href="a00515.html">Firmware Architecture</a> &raquo; <a class="el" href="a00516.html">Device Start Up</a> &raquo; <a class="el" href="a00520.html">Initializing Essential Chip Resources</a></div></div>  </div>
+<div class="title">Digital Signal Processor Configuration<div class="ingroups"><a class="el" href="a00514.html">Firmware Architecture</a> &raquo; <a class="el" href="a00515.html">Device Start Up</a> &raquo; <a class="el" href="a00519.html">Initializing Essential Chip Resources</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Device Pin Configuration:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Digital Signal Processor Configuration:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00523.svg" width="359" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00523.svg" width="358" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga79cb6e309797560a9a262a562fe40fee"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00523.html#ga79cb6e309797560a9a262a562fe40fee">sysGpio_Initialize</a> (void)</td></tr>
-<tr class="memdesc:ga79cb6e309797560a9a262a562fe40fee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the device input/output pins to digital inputs.  <a href="a00523.html#ga79cb6e309797560a9a262a562fe40fee">More...</a><br /></td></tr>
-<tr class="separator:ga79cb6e309797560a9a262a562fe40fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae104c8e1fd4160f749fefbcf540f5a07"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00523.html#gae104c8e1fd4160f749fefbcf540f5a07">sysDsp_Initialize</a> (void)</td></tr>
+<tr class="memdesc:gae104c8e1fd4160f749fefbcf540f5a07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Digital Signal Processor initialization.  <a href="a00523.html#gae104c8e1fd4160f749fefbcf540f5a07">More...</a><br /></td></tr>
+<tr class="separator:gae104c8e1fd4160f749fefbcf540f5a07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>When the device comes out of RESET, all general purpose inputs/outputs (GPIO) are configured as high-impedance inputs. Sample and hold (S&amp;H) circuits of ADC inputs are active and digital functions are blocked. Depending on the application, this may or may not be desired. Hence, this routine is used to set a different default state at startup where GPIOs are high impedance inputs but all analog functions are disabled. </p>
+<p>The Digital Signal Processor (DSP) of dsPIC33C can be configured to support specific functions optimized for fixed-point arithmetic of a normalized number space as well as enhanced features such as accumulator and write-back saturation. As there is no other software instance using the DSP other than the power supply control loops, the DSP is configured at device start to save time during high frequency computations of the high-speed control loop. </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga79cb6e309797560a9a262a562fe40fee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga79cb6e309797560a9a262a562fe40fee">&#9670;&nbsp;</a></span>sysGpio_Initialize()</h2>
+<a id="gae104c8e1fd4160f749fefbcf540f5a07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae104c8e1fd4160f749fefbcf540f5a07">&#9670;&nbsp;</a></span>sysDsp_Initialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t sysGpio_Initialize </td>
+          <td class="memname">uint16_t sysDsp_Initialize </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -135,18 +135,19 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Resets the device input/output pins to digital inputs. </p>
-<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
-<p>When the device is coming out of RESET, all device pins are configured as inputs and all analog functions will be enabled. Enabled analog functions are a potential source for conflicts and are therefore turned off by default during device startup to allow all peripheral configuration drivers to start from a defined default state. </p>
+<p>Digital Signal Processor initialization. </p>
+<dl class="section return"><dt>Returns</dt><dd>unsigned integer 0=failure 1=success</dd></dl>
+<p>This routine initializes the default configuration of the DSP core for performing SMPS control loop libraries. If any other section of the firmware needs to use the DSP with different settings, this code module would have to make sure the core configuration is reset to these defaults when the SMPS control library is executed.</p>
+<dl class="section note"><dt>Note</dt><dd>: The configuration of the control library allows to add its own core configuration save &amp; restore cycle in the control code. Please enable this function in the control loop configuration if conflicts between different DSP configurations cannot be resolved differently within the firmware. This routine initializes the default configuration of the DSP core for performing SMPS control loop libraries. If any other section of the firmware needs to use the DSP with different settings, this code module would have to make sure the core configuration is reset to these defaults when the SMPS control library is executed.</dd></dl>
+<p>The configuration of the control library allows to add its own core configuration save &amp; restore cycle in the control code. Please enable this function in the control loop configuration if conflicts between different DSP configurations cannot be resolved differently within the firmware. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00131_source.html#l00027">27</a> of file <a class="el" href="a00131_source.html">init_gpio.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00119_source.html#l00048">48</a> of file <a class="el" href="a00119_source.html">init_dsp.c</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00523_ga79cb6e309797560a9a262a562fe40fee_icgraph.svg" width="314" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00523_gae104c8e1fd4160f749fefbcf540f5a07_icgraph.svg" width="310" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

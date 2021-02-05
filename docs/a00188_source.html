@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>dsPIC33C Digital Power Starter Kit: dpsk_vmc.X/sources/lcd/app_lcd.h Source File</title>
+<title>Digital Power Starter Kit 3 Firmware Documentation: dpsk_buck_vmc.X/sources/lcd/app_lcd.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -34,8 +34,9 @@
  <tr style="height: 36px;">
   <td id="projectlogo" style="padding-left: 0.2em; vertical-align: middle;"><img alt="Logo" src="microchip-docs.png"/></td>
   <td id="projectalign" style="padding-left: 0.0em;">
-   <div id="projectname" style="color: white; font-size:16px;">dsPIC33C Digital Power Starter Kit
+   <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware Documentation
    </div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -143,16 +144,16 @@ $(document).ready(function(){initNavTree('a00188_source.html',''); initResizable
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">// PUBLIC TYPE DECLARATIONS</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="a01471.html">   54</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="a01471.html">LCD_s</a>{</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="a01471.html#a085e9fc0863cee4864cf51dcfe1e32df">   55</a></span>&#160;    <span class="keyword">volatile</span> <span class="keywordtype">bool</span> <a class="code" href="a01471.html#a085e9fc0863cee4864cf51dcfe1e32df">enabled</a>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="a01471.html#adc2298ffda0c853e699e6da9098f82ae">   56</a></span>&#160;    <span class="keyword">volatile</span> uint16_t <a class="code" href="a01471.html#adc2298ffda0c853e699e6da9098f82ae">refresh</a>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="a01471.html#aea467a9fc04f0771215b952d26bc4392">   57</a></span>&#160;    <span class="keyword">volatile</span> uint16_t <a class="code" href="a01471.html#aea467a9fc04f0771215b952d26bc4392">screen</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}<a class="code" href="a01471.html">LCD_t</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="a01470.html">   54</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="a01470.html">LCD_s</a>{</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="a01470.html#a085e9fc0863cee4864cf51dcfe1e32df">   55</a></span>&#160;    <span class="keyword">volatile</span> <span class="keywordtype">bool</span> <a class="code" href="a01470.html#a085e9fc0863cee4864cf51dcfe1e32df">enabled</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="a01470.html#adc2298ffda0c853e699e6da9098f82ae">   56</a></span>&#160;    <span class="keyword">volatile</span> uint16_t <a class="code" href="a01470.html#adc2298ffda0c853e699e6da9098f82ae">refresh</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="a01470.html#aea467a9fc04f0771215b952d26bc4392">   57</a></span>&#160;    <span class="keyword">volatile</span> uint16_t <a class="code" href="a01470.html#aea467a9fc04f0771215b952d26bc4392">screen</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}<a class="code" href="a01470.html">LCD_t</a>;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">// PUBLIC VARIABLE DECLARATION</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> <a class="code" href="a01471.html">LCD_t</a> lcd;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> <a class="code" href="a01470.html">LCD_t</a> lcd;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">// PUBLIC FUNCTION PROTOTYPE DECLARATION</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> uint16_t <a class="code" href="a00435.html#gab93992748ced72fdc2989d0b0f369e54">appLCD_Initialize</a>(<span class="keywordtype">void</span>);</div>
@@ -165,16 +166,16 @@ $(document).ready(function(){initNavTree('a00188_source.html',''); initResizable
 </div><!-- doc-content -->
 <div class="ttc" id="aa00435_html_ga38c10d91e208e9eb081d0341792954d7"><div class="ttname"><a href="a00435.html#ga38c10d91e208e9eb081d0341792954d7">appLCD_Dispose</a></div><div class="ttdeci">volatile uint16_t appLCD_Dispose(void)</div><div class="ttdoc">Unloads the LC display data object and resources.</div><div class="ttdef"><b>Definition:</b> <a href="a00185_source.html#l00192">app_lcd.c:192</a></div></div>
 <div class="ttc" id="aa00435_html_gab93992748ced72fdc2989d0b0f369e54"><div class="ttname"><a href="a00435.html#gab93992748ced72fdc2989d0b0f369e54">appLCD_Initialize</a></div><div class="ttdeci">volatile uint16_t appLCD_Initialize(void)</div><div class="ttdoc">Initializes the LC display.</div><div class="ttdef"><b>Definition:</b> <a href="a00185_source.html#l00076">app_lcd.c:76</a></div></div>
-<div class="ttc" id="aa01471_html_aea467a9fc04f0771215b952d26bc4392"><div class="ttname"><a href="a01471.html#aea467a9fc04f0771215b952d26bc4392">LCD_s::screen</a></div><div class="ttdeci">volatile uint16_t screen</div><div class="ttdef"><b>Definition:</b> <a href="a00188_source.html#l00057">app_lcd.h:57</a></div></div>
+<div class="ttc" id="aa01470_html_adc2298ffda0c853e699e6da9098f82ae"><div class="ttname"><a href="a01470.html#adc2298ffda0c853e699e6da9098f82ae">LCD_s::refresh</a></div><div class="ttdeci">volatile uint16_t refresh</div><div class="ttdef"><b>Definition:</b> <a href="a00188_source.html#l00056">app_lcd.h:56</a></div></div>
+<div class="ttc" id="aa01470_html_a085e9fc0863cee4864cf51dcfe1e32df"><div class="ttname"><a href="a01470.html#a085e9fc0863cee4864cf51dcfe1e32df">LCD_s::enabled</a></div><div class="ttdeci">volatile bool enabled</div><div class="ttdef"><b>Definition:</b> <a href="a00188_source.html#l00055">app_lcd.h:55</a></div></div>
 <div class="ttc" id="aa00435_html_gacd8e3f8ca8af94f13f7efa0df7ced6f5"><div class="ttname"><a href="a00435.html#gacd8e3f8ca8af94f13f7efa0df7ced6f5">appLCD_Execute</a></div><div class="ttdeci">volatile uint16_t appLCD_Execute(void)</div><div class="ttdoc">Refreshes the LC display.</div><div class="ttdef"><b>Definition:</b> <a href="a00185_source.html#l00106">app_lcd.c:106</a></div></div>
-<div class="ttc" id="aa01471_html_adc2298ffda0c853e699e6da9098f82ae"><div class="ttname"><a href="a01471.html#adc2298ffda0c853e699e6da9098f82ae">LCD_s::refresh</a></div><div class="ttdeci">volatile uint16_t refresh</div><div class="ttdef"><b>Definition:</b> <a href="a00188_source.html#l00056">app_lcd.h:56</a></div></div>
-<div class="ttc" id="aa01471_html_a085e9fc0863cee4864cf51dcfe1e32df"><div class="ttname"><a href="a01471.html#a085e9fc0863cee4864cf51dcfe1e32df">LCD_s::enabled</a></div><div class="ttdeci">volatile bool enabled</div><div class="ttdef"><b>Definition:</b> <a href="a00188_source.html#l00055">app_lcd.h:55</a></div></div>
-<div class="ttc" id="aa01471_html"><div class="ttname"><a href="a01471.html">LCD_s</a></div><div class="ttdoc">Declaration of public LC display data object.</div><div class="ttdef"><b>Definition:</b> <a href="a00188_source.html#l00054">app_lcd.h:54</a></div></div>
+<div class="ttc" id="aa01470_html_aea467a9fc04f0771215b952d26bc4392"><div class="ttname"><a href="a01470.html#aea467a9fc04f0771215b952d26bc4392">LCD_s::screen</a></div><div class="ttdeci">volatile uint16_t screen</div><div class="ttdef"><b>Definition:</b> <a href="a00188_source.html#l00057">app_lcd.h:57</a></div></div>
+<div class="ttc" id="aa01470_html"><div class="ttname"><a href="a01470.html">LCD_s</a></div><div class="ttdoc">Declaration of public LC display data object.</div><div class="ttdef"><b>Definition:</b> <a href="a00188_source.html#l00054">app_lcd.h:54</a></div></div>
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d20b26dc4520361ccd635dceae61919e.html">dpsk_vmc.X</a></li><li class="navelem"><a class="el" href="dir_2d5194f0f4a973de1534bc6ef9e5e7d3.html">sources</a></li><li class="navelem"><a class="el" href="dir_ebbcbd8e4be6c15aa9d2835850915906.html">lcd</a></li><li class="navelem"><b>app_lcd.h</b></li>
+    <li class="navelem"><a class="el" href="dir_01066bb7b1e33c391de0f39ab7f37964.html">dpsk_buck_vmc.X</a></li><li class="navelem"><a class="el" href="dir_4775101750c4dd55cff8a4809201f12a.html">sources</a></li><li class="navelem"><a class="el" href="dir_fd5d2382912bdb192ccebaa60cfb8953.html">lcd</a></li><li class="navelem"><b>app_lcd.h</b></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

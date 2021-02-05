@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>dsPIC33C Digital Power Starter Kit: dpsk_vmc.X/sources/common/p33c_pral/p33c_opa.c Source File</title>
+<title>Digital Power Starter Kit 3 Firmware Documentation: dpsk_buck_vmc.X/sources/common/p33c_pral/p33c_opa.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -34,8 +34,9 @@
  <tr style="height: 36px;">
   <td id="projectlogo" style="padding-left: 0.2em; vertical-align: middle;"><img alt="Logo" src="microchip-docs.png"/></td>
   <td id="projectalign" style="padding-left: 0.0em;">
-   <div id="projectname" style="color: white; font-size:16px;">dsPIC33C Digital Power Starter Kit
+   <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware Documentation
    </div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -129,12 +130,12 @@ $(document).ready(function(){initNavTree('a00062_source.html',''); initResizable
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;p33c_opa.h&quot;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="a00363.html#gacaacda32efbc1383f62de2ba1bb95a34">   43</a></span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00883.html">P33C_OPA_MODULE_s</a>* <a class="code" href="a00363.html#gacaacda32efbc1383f62de2ba1bb95a34">p33c_OpaModule_GetHandle</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="a00363.html#gacaacda32efbc1383f62de2ba1bb95a34">   43</a></span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00882.html">P33C_OPA_MODULE_s</a>* <a class="code" href="a00363.html#gacaacda32efbc1383f62de2ba1bb95a34">p33c_OpaModule_GetHandle</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00883.html">P33C_OPA_MODULE_s</a>* opa;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00882.html">P33C_OPA_MODULE_s</a>* opa;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// Capture Handle: set pointer to memory address of desired op-amp instance</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    opa = (<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00883.html">P33C_OPA_MODULE_s</a>*)((<span class="keyword">volatile</span> uint8_t*) &amp;AMPCON1L);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    opa = (<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00882.html">P33C_OPA_MODULE_s</a>*)((<span class="keyword">volatile</span> uint8_t*) &amp;AMPCON1L);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span>(opa);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
@@ -150,12 +151,12 @@ $(document).ready(function(){initNavTree('a00062_source.html',''); initResizable
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00883.html">P33C_OPA_MODULE_s</a> <a class="code" href="a00363.html#ga9fc0b06deb897a99cc95ce8f3dc5391c">p33c_OpaModule_ConfigRead</a>(void)</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00882.html">P33C_OPA_MODULE_s</a> <a class="code" href="a00363.html#ga9fc0b06deb897a99cc95ce8f3dc5391c">p33c_OpaModule_ConfigRead</a>(void)</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00883.html">P33C_OPA_MODULE_s</a>* opa;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00882.html">P33C_OPA_MODULE_s</a>* opa;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// Set pointer to memory address of desired Op-Amp instance</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    opa = (<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00883.html">P33C_OPA_MODULE_s</a>*)((<span class="keyword">volatile</span> uint8_t*) &amp;AMPCON1L);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    opa = (<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00882.html">P33C_OPA_MODULE_s</a>*)((<span class="keyword">volatile</span> uint8_t*) &amp;AMPCON1L);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">return</span>(*opa);</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    </div>
@@ -163,14 +164,14 @@ $(document).ready(function(){initNavTree('a00062_source.html',''); initResizable
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
 <div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="a00363.html#ga2e41506a3b90ae5a8221a73aaa4bfdde">  125</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00363.html#ga2e41506a3b90ae5a8221a73aaa4bfdde">p33c_OpaModule_ConfigWrite</a>(</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keyword">volatile</span> <span class="keyword">struct</span> <a class="code" href="a00883.html">P33C_OPA_MODULE_s</a> opaModuleConfig</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keyword">volatile</span> <span class="keyword">struct</span> <a class="code" href="a00882.html">P33C_OPA_MODULE_s</a> opaModuleConfig</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;)</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;{</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keyword">volatile</span> uint16_t retval=1;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00883.html">P33C_OPA_MODULE_s</a>* opa;    </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00882.html">P33C_OPA_MODULE_s</a>* opa;    </div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="comment">// Set pointer to memory address of the op-amp module base registers</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    opa = (<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00883.html">P33C_OPA_MODULE_s</a>*)((<span class="keyword">volatile</span> uint8_t*) &amp;AMPCON1L);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    opa = (<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00882.html">P33C_OPA_MODULE_s</a>*)((<span class="keyword">volatile</span> uint8_t*) &amp;AMPCON1L);</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    *opa = opaModuleConfig;</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    </div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">return</span>(retval);</div>
@@ -178,18 +179,18 @@ $(document).ready(function(){initNavTree('a00062_source.html',''); initResizable
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00883.html">P33C_OPA_MODULE_s</a> <a class="code" href="a00363.html#ga5900f44352bc38f4782586982480363e">opaModuleConfigClear</a> = {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00882.html">P33C_OPA_MODULE_s</a> <a class="code" href="a00363.html#ga5900f44352bc38f4782586982480363e">opaModuleConfigClear</a> = {</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    .<a class="code" href="a00883.html#a919a72f43d5d4c75d7f074419dbc997a">AmpCon1L</a>.<a class="code" href="a00883.html#a3f0c55f449560b03ce0ac43270c26600">value</a> = 0x0000,</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    .<a class="code" href="a00882.html#a919a72f43d5d4c75d7f074419dbc997a">AmpCon1L</a>.<a class="code" href="a00882.html#a3f0c55f449560b03ce0ac43270c26600">value</a> = 0x0000,</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    .AmpCon1H.value = 0x0000</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;};</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment">/*  */</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00883.html">P33C_OPA_MODULE_s</a> <a class="code" href="a00363.html#ga9bc264645744090c68ed4e6b0dd2fa7b">opaModuleDefault</a> = {</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00882.html">P33C_OPA_MODULE_s</a> <a class="code" href="a00363.html#ga9bc264645744090c68ed4e6b0dd2fa7b">opaModuleDefault</a> = {</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    .<a class="code" href="a00883.html#a919a72f43d5d4c75d7f074419dbc997a">AmpCon1L</a>.<a class="code" href="a00883.html#a3f0c55f449560b03ce0ac43270c26600">value</a> = 0x0000,</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    .<a class="code" href="a00882.html#a919a72f43d5d4c75d7f074419dbc997a">AmpCon1L</a>.<a class="code" href="a00882.html#a3f0c55f449560b03ce0ac43270c26600">value</a> = 0x0000,</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    .AmpCon1H.value = 0x0007,</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;};</div>
@@ -199,11 +200,11 @@ $(document).ready(function(){initNavTree('a00062_source.html',''); initResizable
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="comment">// end of file</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa00883_html_a919a72f43d5d4c75d7f074419dbc997a"><div class="ttname"><a href="a00883.html#a919a72f43d5d4c75d7f074419dbc997a">P33C_OPA_MODULE_s::AmpCon1L</a></div><div class="ttdeci">union P33C_OPA_MODULE_s::@0 AmpCon1L</div></div>
-<div class="ttc" id="aa00883_html_a3f0c55f449560b03ce0ac43270c26600"><div class="ttname"><a href="a00883.html#a3f0c55f449560b03ce0ac43270c26600">P33C_OPA_MODULE_s::value</a></div><div class="ttdeci">volatile uint16_t value</div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00051">p33c_opa.h:51</a></div></div>
+<div class="ttc" id="aa00882_html_a919a72f43d5d4c75d7f074419dbc997a"><div class="ttname"><a href="a00882.html#a919a72f43d5d4c75d7f074419dbc997a">P33C_OPA_MODULE_s::AmpCon1L</a></div><div class="ttdeci">union P33C_OPA_MODULE_s::@0 AmpCon1L</div></div>
+<div class="ttc" id="aa00882_html_a3f0c55f449560b03ce0ac43270c26600"><div class="ttname"><a href="a00882.html#a3f0c55f449560b03ce0ac43270c26600">P33C_OPA_MODULE_s::value</a></div><div class="ttdeci">volatile uint16_t value</div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00051">p33c_opa.h:51</a></div></div>
 <div class="ttc" id="aa00363_html_ga33002aeea2dc490470a0e02902747c0b"><div class="ttname"><a href="a00363.html#ga33002aeea2dc490470a0e02902747c0b">p33c_OpaModule_Dispose</a></div><div class="ttdeci">volatile uint16_t p33c_OpaModule_Dispose(void)</div><div class="ttdoc">Resets all Op-Amp Module registers to their RESET default values.</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00072">p33c_opa.c:72</a></div></div>
 <div class="ttc" id="aa00363_html_ga5900f44352bc38f4782586982480363e"><div class="ttname"><a href="a00363.html#ga5900f44352bc38f4782586982480363e">opaModuleConfigClear</a></div><div class="ttdeci">volatile struct P33C_OPA_MODULE_s opaModuleConfigClear</div><div class="ttdoc">Default RESET configuration of the op-amp module base SFRs.</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00125">p33c_opa.c:154</a></div></div>
-<div class="ttc" id="aa00883_html"><div class="ttname"><a href="a00883.html">P33C_OPA_MODULE_s</a></div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00048">p33c_opa.h:48</a></div></div>
+<div class="ttc" id="aa00882_html"><div class="ttname"><a href="a00882.html">P33C_OPA_MODULE_s</a></div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00048">p33c_opa.h:48</a></div></div>
 <div class="ttc" id="aa00363_html_gacaacda32efbc1383f62de2ba1bb95a34"><div class="ttname"><a href="a00363.html#gacaacda32efbc1383f62de2ba1bb95a34">p33c_OpaModule_GetHandle</a></div><div class="ttdeci">volatile struct P33C_OPA_MODULE_s * p33c_OpaModule_GetHandle(void)</div><div class="ttdoc">Gets pointer to op-amp Module SFR set.</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00043">p33c_opa.c:43</a></div></div>
 <div class="ttc" id="aa00363_html_ga9bc264645744090c68ed4e6b0dd2fa7b"><div class="ttname"><a href="a00363.html#ga9bc264645744090c68ed4e6b0dd2fa7b">opaModuleDefault</a></div><div class="ttdeci">volatile struct P33C_OPA_MODULE_s opaModuleDefault</div><div class="ttdoc">Default configuration of op-amp module running from 500 MHz input clock.</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00125">p33c_opa.c:176</a></div></div>
 <div class="ttc" id="aa00363_html_ga2e41506a3b90ae5a8221a73aaa4bfdde"><div class="ttname"><a href="a00363.html#ga2e41506a3b90ae5a8221a73aaa4bfdde">p33c_OpaModule_ConfigWrite</a></div><div class="ttdeci">volatile uint16_t p33c_OpaModule_ConfigWrite(volatile struct P33C_OPA_MODULE_s opaModuleConfig)</div><div class="ttdoc">Writes a user-defined configuration to the op-amp module base registers.</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00125">p33c_opa.c:125</a></div></div>
@@ -212,7 +213,7 @@ $(document).ready(function(){initNavTree('a00062_source.html',''); initResizable
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d20b26dc4520361ccd635dceae61919e.html">dpsk_vmc.X</a></li><li class="navelem"><a class="el" href="dir_2d5194f0f4a973de1534bc6ef9e5e7d3.html">sources</a></li><li class="navelem"><a class="el" href="dir_5f77e2f05e54b33f0db856814e8474f5.html">common</a></li><li class="navelem"><a class="el" href="dir_5d8c73de57eff2cd23671f084a685d62.html">p33c_pral</a></li><li class="navelem"><b>p33c_opa.c</b></li>
+    <li class="navelem"><a class="el" href="dir_01066bb7b1e33c391de0f39ab7f37964.html">dpsk_buck_vmc.X</a></li><li class="navelem"><a class="el" href="dir_4775101750c4dd55cff8a4809201f12a.html">sources</a></li><li class="navelem"><a class="el" href="dir_ced70fd872a44198d451146f52fcc7f8.html">common</a></li><li class="navelem"><a class="el" href="dir_8760435ef57efdda1da540d5815ec5fb.html">p33c_pral</a></li><li class="navelem"><b>p33c_opa.c</b></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

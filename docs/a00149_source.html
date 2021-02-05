@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>dsPIC33C Digital Power Starter Kit: dpsk_vmc.X/sources/config/init/init_timer1.c Source File</title>
+<title>Digital Power Starter Kit 3 Firmware Documentation: dpsk_buck_vmc.X/sources/config/init/init_timer1.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -34,8 +34,9 @@
  <tr style="height: 36px;">
   <td id="projectlogo" style="padding-left: 0.2em; vertical-align: middle;"><img alt="Logo" src="microchip-docs.png"/></td>
   <td id="projectalign" style="padding-left: 0.0em;">
-   <div id="projectname" style="color: white; font-size:16px;">dsPIC33C Digital Power Starter Kit
+   <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware Documentation
    </div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -114,7 +115,7 @@ $(document).ready(function(){initNavTree('a00149_source.html',''); initResizable
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;config/init/init_timer1.h&quot;</span>   </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="a00530.html#ga8e89a1a4ee5bf8c794bd29163b92bf49">   40</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00530.html#ga8e89a1a4ee5bf8c794bd29163b92bf49">sysOsTimer_Initialize</a> (<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="a00529.html#ga8e89a1a4ee5bf8c794bd29163b92bf49">   40</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00529.html#ga8e89a1a4ee5bf8c794bd29163b92bf49">sysOsTimer_Initialize</a> (<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">volatile</span> uint16_t retval=1;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
@@ -143,7 +144,7 @@ $(document).ready(function(){initNavTree('a00149_source.html',''); initResizable
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="a00530.html#ga4c811c3414a3785423f828be293562f0">   81</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00530.html#ga4c811c3414a3785423f828be293562f0">sysOsTimer_Enable</a> (<span class="keyword">volatile</span> <span class="keywordtype">bool</span> interrupt_enable, <span class="keyword">volatile</span> uint8_t interrupt_priority)</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="a00529.html#ga4c811c3414a3785423f828be293562f0">   81</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00529.html#ga4c811c3414a3785423f828be293562f0">sysOsTimer_Enable</a> (<span class="keyword">volatile</span> <span class="keywordtype">bool</span> interrupt_enable, <span class="keyword">volatile</span> uint8_t interrupt_priority)</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;{</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">volatile</span> uint16_t retval=1;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
@@ -162,17 +163,17 @@ $(document).ready(function(){initNavTree('a00149_source.html',''); initResizable
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aa00382_html_gaf0c6fb4644dc461d279c70028eeb0e0a"><div class="ttname"><a href="a00382.html#gaf0c6fb4644dc461d279c70028eeb0e0a">_OSTIMER_IF</a></div><div class="ttdeci">#define _OSTIMER_IF</div><div class="ttdoc">interrupt flag bit</div><div class="ttdef"><b>Definition:</b> <a href="a00104_source.html#l00169">dpsk3_hwdescr.h:169</a></div></div>
-<div class="ttc" id="aa00530_html_ga8e89a1a4ee5bf8c794bd29163b92bf49"><div class="ttname"><a href="a00530.html#ga8e89a1a4ee5bf8c794bd29163b92bf49">sysOsTimer_Initialize</a></div><div class="ttdeci">volatile uint16_t sysOsTimer_Initialize(void)</div><div class="ttdoc">Initializes the timer used as time-base for the task scheduler.</div><div class="ttdef"><b>Definition:</b> <a href="a00149_source.html#l00040">init_timer1.c:40</a></div></div>
 <div class="ttc" id="aa00382_html_gae01b52fce8c5689574bfa3ad07c29f4e"><div class="ttname"><a href="a00382.html#gae01b52fce8c5689574bfa3ad07c29f4e">_OSTIMER_PRIORITY</a></div><div class="ttdeci">#define _OSTIMER_PRIORITY</div><div class="ttdoc">interrupt priority (1 ... 7, default = 2)</div><div class="ttdef"><b>Definition:</b> <a href="a00104_source.html#l00170">dpsk3_hwdescr.h:170</a></div></div>
+<div class="ttc" id="aa00529_html_ga8e89a1a4ee5bf8c794bd29163b92bf49"><div class="ttname"><a href="a00529.html#ga8e89a1a4ee5bf8c794bd29163b92bf49">sysOsTimer_Initialize</a></div><div class="ttdeci">volatile uint16_t sysOsTimer_Initialize(void)</div><div class="ttdoc">Initializes the timer used as time-base for the task scheduler.</div><div class="ttdef"><b>Definition:</b> <a href="a00149_source.html#l00040">init_timer1.c:40</a></div></div>
 <div class="ttc" id="aa00382_html_gaf169ca56f95334f16dd2bca15dc108d5"><div class="ttname"><a href="a00382.html#gaf169ca56f95334f16dd2bca15dc108d5">_OSTIMER_IE</a></div><div class="ttdeci">#define _OSTIMER_IE</div><div class="ttdoc">interrupt enable bit</div><div class="ttdef"><b>Definition:</b> <a href="a00104_source.html#l00168">dpsk3_hwdescr.h:168</a></div></div>
-<div class="ttc" id="aa00530_html_ga4c811c3414a3785423f828be293562f0"><div class="ttname"><a href="a00530.html#ga4c811c3414a3785423f828be293562f0">sysOsTimer_Enable</a></div><div class="ttdeci">volatile uint16_t sysOsTimer_Enable(volatile bool interrupt_enable, volatile uint8_t interrupt_priority)</div><div class="ttdef"><b>Definition:</b> <a href="a00149_source.html#l00081">init_timer1.c:81</a></div></div>
+<div class="ttc" id="aa00529_html_ga4c811c3414a3785423f828be293562f0"><div class="ttname"><a href="a00529.html#ga4c811c3414a3785423f828be293562f0">sysOsTimer_Enable</a></div><div class="ttdeci">volatile uint16_t sysOsTimer_Enable(volatile bool interrupt_enable, volatile uint8_t interrupt_priority)</div><div class="ttdef"><b>Definition:</b> <a href="a00149_source.html#l00081">init_timer1.c:81</a></div></div>
 <div class="ttc" id="aa00381_html_gaf9a1bbe132fcc0fd2dacac4cf1bb4f10"><div class="ttname"><a href="a00381.html#gaf9a1bbe132fcc0fd2dacac4cf1bb4f10">MAIN_EXEC_PER</a></div><div class="ttdeci">#define MAIN_EXEC_PER</div><div class="ttdoc">Global state-machine user-settings conversion macros.</div><div class="ttdef"><b>Definition:</b> <a href="a00104_source.html#l00152">dpsk3_hwdescr.h:152</a></div></div>
 <div class="ttc" id="aa00382_html_ga9e2f08edcbbe0b28c502b3b024572962"><div class="ttname"><a href="a00382.html#ga9e2f08edcbbe0b28c502b3b024572962">_OSTIMER_IP</a></div><div class="ttdeci">#define _OSTIMER_IP</div><div class="ttdoc">interrupt priority register</div><div class="ttdef"><b>Definition:</b> <a href="a00104_source.html#l00167">dpsk3_hwdescr.h:167</a></div></div>
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d20b26dc4520361ccd635dceae61919e.html">dpsk_vmc.X</a></li><li class="navelem"><a class="el" href="dir_2d5194f0f4a973de1534bc6ef9e5e7d3.html">sources</a></li><li class="navelem"><a class="el" href="dir_f0298e50411a996cd9474df7082bd6ea.html">config</a></li><li class="navelem"><a class="el" href="dir_e6ff481a760abb8dcbad458ebddb1a8c.html">init</a></li><li class="navelem"><b>init_timer1.c</b></li>
+    <li class="navelem"><a class="el" href="dir_01066bb7b1e33c391de0f39ab7f37964.html">dpsk_buck_vmc.X</a></li><li class="navelem"><a class="el" href="dir_4775101750c4dd55cff8a4809201f12a.html">sources</a></li><li class="navelem"><a class="el" href="dir_033f174ee2b383398acd73569d12122c.html">config</a></li><li class="navelem"><a class="el" href="dir_3ee58c93f9a17aa9fadb3abe91d737a5.html">init</a></li><li class="navelem"><b>init_timer1.c</b></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

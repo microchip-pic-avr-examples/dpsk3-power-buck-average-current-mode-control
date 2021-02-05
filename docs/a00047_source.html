@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>dsPIC33C Digital Power Starter Kit: dpsk_vmc.X/sources/common/p33c_pral/p33c_dsp.c Source File</title>
+<title>Digital Power Starter Kit 3 Firmware Documentation: dpsk_buck_vmc.X/sources/common/p33c_pral/p33c_dsp.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -34,8 +34,9 @@
  <tr style="height: 36px;">
   <td id="projectlogo" style="padding-left: 0.2em; vertical-align: middle;"><img alt="Logo" src="microchip-docs.png"/></td>
   <td id="projectalign" style="padding-left: 0.0em;">
-   <div id="projectname" style="color: white; font-size:16px;">dsPIC33C Digital Power Starter Kit
+   <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware Documentation
    </div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -131,12 +132,12 @@ $(document).ready(function(){initNavTree('a00047_source.html',''); initResizable
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="a00361.html#gaf288dad5df78426690b7296f0a38bce4">   53</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00361.html#gaf288dad5df78426690b7296f0a38bce4">Dsp_SetConfig</a>(<span class="keyword">volatile</span> <span class="keyword">struct</span> <a class="code" href="a00807.html">DSP_CONFIG_s</a> dsp_cfg)</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="a00361.html#gaf288dad5df78426690b7296f0a38bce4">   53</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00361.html#gaf288dad5df78426690b7296f0a38bce4">Dsp_SetConfig</a>(<span class="keyword">volatile</span> <span class="keyword">struct</span> <a class="code" href="a00806.html">DSP_CONFIG_s</a> dsp_cfg)</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">volatile</span> uint16_t retval = 0;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    CORCON = dsp_cfg.<a class="code" href="a00807.html#a3f0c55f449560b03ce0ac43270c26600">value</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span>(CORCON == (dsp_cfg.<a class="code" href="a00807.html#a3f0c55f449560b03ce0ac43270c26600">value</a> &amp; REG_CORCON_VALID_DATA_WRITE_MSK)) </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    CORCON = dsp_cfg.<a class="code" href="a00806.html#a3f0c55f449560b03ce0ac43270c26600">value</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span>(CORCON == (dsp_cfg.<a class="code" href="a00806.html#a3f0c55f449560b03ce0ac43270c26600">value</a> &amp; REG_CORCON_VALID_DATA_WRITE_MSK)) </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        retval = 1;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span>(retval);</div>
@@ -145,11 +146,11 @@ $(document).ready(function(){initNavTree('a00047_source.html',''); initResizable
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00807.html">DSP_CONFIG_s</a> <a class="code" href="a00361.html#gaa6137620b2ae63fce63701725d97ee89">Dsp_GetConfig</a>(void)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00806.html">DSP_CONFIG_s</a> <a class="code" href="a00361.html#gaa6137620b2ae63fce63701725d97ee89">Dsp_GetConfig</a>(void)</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00807.html">DSP_CONFIG_s</a> dsp_cfg;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00806.html">DSP_CONFIG_s</a> dsp_cfg;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    dsp_cfg.<a class="code" href="a00807.html#a3f0c55f449560b03ce0ac43270c26600">value</a> = (<span class="keyword">volatile</span> uint16_t)(CORCON); <span class="comment">// &amp; REG_CORCON_VALID_DATA_READ_MSK);</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    dsp_cfg.<a class="code" href="a00806.html#a3f0c55f449560b03ce0ac43270c26600">value</a> = (<span class="keyword">volatile</span> uint16_t)(CORCON); <span class="comment">// &amp; REG_CORCON_VALID_DATA_READ_MSK);</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    </div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">return</span>(dsp_cfg);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
@@ -162,15 +163,15 @@ $(document).ready(function(){initNavTree('a00047_source.html',''); initResizable
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">// end of file</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa00807_html_a3f0c55f449560b03ce0ac43270c26600"><div class="ttname"><a href="a00807.html#a3f0c55f449560b03ce0ac43270c26600">DSP_CONFIG_s::value</a></div><div class="ttdeci">volatile uint16_t value</div><div class="ttdef"><b>Definition:</b> <a href="a00050_source.html#l00186">p33c_dsp.h:186</a></div></div>
 <div class="ttc" id="aa00361_html_gaf288dad5df78426690b7296f0a38bce4"><div class="ttname"><a href="a00361.html#gaf288dad5df78426690b7296f0a38bce4">Dsp_SetConfig</a></div><div class="ttdeci">volatile uint16_t Dsp_SetConfig(volatile struct DSP_CONFIG_s dsp_cfg)</div><div class="ttdoc">Initializes the DSP engine in accordance to user settings.</div><div class="ttdef"><b>Definition:</b> <a href="a00047_source.html#l00053">p33c_dsp.c:53</a></div></div>
-<div class="ttc" id="aa00807_html"><div class="ttname"><a href="a00807.html">DSP_CONFIG_s</a></div><div class="ttdef"><b>Definition:</b> <a href="a00050_source.html#l00166">p33c_dsp.h:167</a></div></div>
+<div class="ttc" id="aa00806_html_a3f0c55f449560b03ce0ac43270c26600"><div class="ttname"><a href="a00806.html#a3f0c55f449560b03ce0ac43270c26600">DSP_CONFIG_s::value</a></div><div class="ttdeci">volatile uint16_t value</div><div class="ttdef"><b>Definition:</b> <a href="a00050_source.html#l00186">p33c_dsp.h:186</a></div></div>
+<div class="ttc" id="aa00806_html"><div class="ttname"><a href="a00806.html">DSP_CONFIG_s</a></div><div class="ttdef"><b>Definition:</b> <a href="a00050_source.html#l00166">p33c_dsp.h:167</a></div></div>
 <div class="ttc" id="aa00361_html_gaa6137620b2ae63fce63701725d97ee89"><div class="ttname"><a href="a00361.html#gaa6137620b2ae63fce63701725d97ee89">Dsp_GetConfig</a></div><div class="ttdeci">volatile struct DSP_CONFIG_s Dsp_GetConfig(void)</div><div class="ttdoc">Reads the DSP engine configuration.</div><div class="ttdef"><b>Definition:</b> <a href="a00047_source.html#l00053">p33c_dsp.c:78</a></div></div>
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d20b26dc4520361ccd635dceae61919e.html">dpsk_vmc.X</a></li><li class="navelem"><a class="el" href="dir_2d5194f0f4a973de1534bc6ef9e5e7d3.html">sources</a></li><li class="navelem"><a class="el" href="dir_5f77e2f05e54b33f0db856814e8474f5.html">common</a></li><li class="navelem"><a class="el" href="dir_5d8c73de57eff2cd23671f084a685d62.html">p33c_pral</a></li><li class="navelem"><b>p33c_dsp.c</b></li>
+    <li class="navelem"><a class="el" href="dir_01066bb7b1e33c391de0f39ab7f37964.html">dpsk_buck_vmc.X</a></li><li class="navelem"><a class="el" href="dir_4775101750c4dd55cff8a4809201f12a.html">sources</a></li><li class="navelem"><a class="el" href="dir_ced70fd872a44198d451146f52fcc7f8.html">common</a></li><li class="navelem"><a class="el" href="dir_8760435ef57efdda1da540d5815ec5fb.html">p33c_pral</a></li><li class="navelem"><b>p33c_dsp.c</b></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

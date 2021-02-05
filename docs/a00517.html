@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>dsPIC33C Digital Power Starter Kit: Main Loop</title>
+<title>Digital Power Starter Kit 3 Firmware Documentation: Low-Priority Task Execution</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -34,8 +34,9 @@
  <tr style="height: 36px;">
   <td id="projectlogo" style="padding-left: 0.2em; vertical-align: middle;"><img alt="Logo" src="microchip-docs.png"/></td>
   <td id="projectalign" style="padding-left: 0.0em;">
-   <div id="projectname" style="color: white; font-size:16px;">dsPIC33C Digital Power Starter Kit
+   <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware Documentation
    </div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -96,35 +97,65 @@ $(document).ready(function(){initNavTree('a00517.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#groups">Modules</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Main Loop<div class="ingroups"><a class="el" href="a00515.html">Firmware Architecture</a></div></div>  </div>
+<div class="title">Low-Priority Task Execution<div class="ingroups"><a class="el" href="a00514.html">Firmware Architecture</a> &raquo; <a class="el" href="a00516.html">Main Loop</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Main Loop.  
+<p>Low priority task execution The execution of the sequence of low priority tasks is called from the main loop at lowest firmware priority #0. Tasks executed on this level may be interrupted by executions of high priority task sequences triggered by the operating system timer interrupt as well as the real-time control sytem interrupts. <br  />
+  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Main Loop:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Low-Priority Task Execution:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00517.svg" width="523" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00517.svg" width="326" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
-Modules</h2></td></tr>
-<tr class="memitem:a00518"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00518.html">Low-Priority Task Execution</a></td></tr>
-<tr class="memdesc:a00518"><td class="mdescLeft">&#160;</td><td class="mdescRight">Low priority task execution The execution of the sequence of low priority tasks is called from the main loop at lowest firmware priority #0. Tasks executed on this level may be interrupted by executions of high priority task sequences triggered by the operating system timer interrupt as well as the real-time control sytem interrupts. <br  />
- <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00519"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00519.html">High-Priority Task Execution</a></td></tr>
-<tr class="memdesc:a00519"><td class="mdescLeft">&#160;</td><td class="mdescRight">High priority task execution. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gaa1ec8154dbf983b02b3b2dc186c5079d"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00517.html#gaa1ec8154dbf983b02b3b2dc186c5079d">sysLowPriorityTasks_Execute</a> (void)</td></tr>
+<tr class="memdesc:gaa1ec8154dbf983b02b3b2dc186c5079d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Low priority task sequence executed after the high priority task sequence execution is complete.  <a href="a00517.html#gaa1ec8154dbf983b02b3b2dc186c5079d">More...</a><br /></td></tr>
+<tr class="separator:gaa1ec8154dbf983b02b3b2dc186c5079d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Main Loop. </p>
+<p>Low priority task execution The execution of the sequence of low priority tasks is called from the main loop at lowest firmware priority #0. Tasks executed on this level may be interrupted by executions of high priority task sequences triggered by the operating system timer interrupt as well as the real-time control sytem interrupts. <br  />
+ </p>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="gaa1ec8154dbf983b02b3b2dc186c5079d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa1ec8154dbf983b02b3b2dc186c5079d">&#9670;&nbsp;</a></span>sysLowPriorityTasks_Execute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t sysLowPriorityTasks_Execute </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Low priority task sequence executed after the high priority task sequence execution is complete. </p>
+<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
+<p>This application executes different tasks of which some are time critical while others are insensitive to execution time jitter. This function is calling all non-time critical tasks. it is called after all high-priority tasks have been executed.</p>
+<dl class="section note"><dt>Note</dt><dd>(this application does not execute low priority tasks) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="a00221_source.html#l00142">142</a> of file <a class="el" href="a00221_source.html">main.c</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00517_gaa1ec8154dbf983b02b3b2dc186c5079d_cgraph.svg" width="584" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

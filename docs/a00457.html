@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>dsPIC33C Digital Power Starter Kit: Private Functions</title>
+<title>Digital Power Starter Kit 3 Firmware Documentation: Events and Interrupts</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -34,8 +34,9 @@
  <tr style="height: 36px;">
   <td id="projectlogo" style="padding-left: 0.2em; vertical-align: middle;"><img alt="Logo" src="microchip-docs.png"/></td>
   <td id="projectalign" style="padding-left: 0.0em;">
-   <div id="projectname" style="color: white; font-size:16px;">dsPIC33C Digital Power Starter Kit
+   <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware Documentation
    </div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -95,184 +96,57 @@ $(document).ready(function(){initNavTree('a00457.html',''); initResizable(); });
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Private Functions<div class="ingroups"><a class="el" href="a00533.html">Application Layer</a> &raquo; <a class="el" href="a00454.html">Push-Button Application Layer</a></div></div>  </div>
+<div class="title">Events and Interrupts<div class="ingroups"><a class="el" href="a00532.html">Application Layer</a> &raquo; <a class="el" href="a00454.html">Power Control Application Layer</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Private functions of the application layer of the push button task.  
+<p>Public events of the application layer of the power control task.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Private Functions:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Events and Interrupts:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00457.svg" width="344" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00457.svg" width="374" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga3966fddf4ec29e64c6d51a93eee8706f"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00457.html#ga3966fddf4ec29e64c6d51a93eee8706f">appPushButton_EventButtonDown</a> (void)</td></tr>
-<tr class="memdesc:ga3966fddf4ec29e64c6d51a93eee8706f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push button event raised at the "pressed" transition.  <a href="a00457.html#ga3966fddf4ec29e64c6d51a93eee8706f">More...</a><br /></td></tr>
-<tr class="separator:ga3966fddf4ec29e64c6d51a93eee8706f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga13f736396ad1222ff5cbe35947bd60ac"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00457.html#ga13f736396ad1222ff5cbe35947bd60ac">appPushButton_EventButtonUp</a> (void)</td></tr>
-<tr class="memdesc:ga13f736396ad1222ff5cbe35947bd60ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push button event raised at the "not pressed" transition.  <a href="a00457.html#ga13f736396ad1222ff5cbe35947bd60ac">More...</a><br /></td></tr>
-<tr class="separator:ga13f736396ad1222ff5cbe35947bd60ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga072bf74bda3fcd8d688515bdfedd872c"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00457.html#ga072bf74bda3fcd8d688515bdfedd872c">appPushButton_EventButtonPressed</a> (void)</td></tr>
-<tr class="memdesc:ga072bf74bda3fcd8d688515bdfedd872c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push button event raised at the "is pressed" detection.  <a href="a00457.html#ga072bf74bda3fcd8d688515bdfedd872c">More...</a><br /></td></tr>
-<tr class="separator:ga072bf74bda3fcd8d688515bdfedd872c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6192986e06dbca144461c0315a2a100f"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00457.html#ga6192986e06dbca144461c0315a2a100f">appPushButton_EventButtonLongPress</a> (void)</td></tr>
-<tr class="memdesc:ga6192986e06dbca144461c0315a2a100f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push button event raised at the "is long pressed" detection.  <a href="a00457.html#ga6192986e06dbca144461c0315a2a100f">More...</a><br /></td></tr>
-<tr class="separator:ga6192986e06dbca144461c0315a2a100f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4d26e0585523e4ab162ca9868517b878"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00415.html#ga4d26e0585523e4ab162ca9868517b878">_BUCK_VLOOP_Interrupt</a>&#160;&#160;&#160;_PWM1Interrupt</td></tr>
+<tr class="memdesc:ga4d26e0585523e4ab162ca9868517b878"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt vector function call label.  <a href="a00415.html#ga4d26e0585523e4ab162ca9868517b878">More...</a><br /></td></tr>
+<tr class="separator:ga4d26e0585523e4ab162ca9868517b878"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Private functions of the application layer of the push button task. </p>
-<p>The private functions of the push button application layer are used to configure the generic push button device driver. </p>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="ga3966fddf4ec29e64c6d51a93eee8706f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3966fddf4ec29e64c6d51a93eee8706f">&#9670;&nbsp;</a></span>appPushButton_EventButtonDown()</h2>
+<p>Public events of the application layer of the power control task. </p>
+<p>This is the event level of the first application layer task. </p>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga4d26e0585523e4ab162ca9868517b878"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4d26e0585523e4ab162ca9868517b878">&#9670;&nbsp;</a></span>_BUCK_VLOOP_Interrupt</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t appPushButton_EventButtonDown </td>
+          <td class="memname">void _BUCK_VLOOP_Interrupt</td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">void</td><td>)</td>
+          <td>&#160;&#160;&#160;_PWM1Interrupt</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Push button event raised at the "pressed" transition. </p>
+<p>Interrupt vector function call label. </p>
+<p>Main Control Interrupt.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">void</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
-<p>This function is called when the push button detects a transition event from 'not being pressed' to 'being pressed'. Enabling this interrupt requires to declare the function pointer to this function in the push button data object event_btn_down data field. If this data field remains uninitialized or is set to NULL, this even is disabled. </p>
+<dl class="section return"><dt>Returns</dt><dd>void</dd></dl>
+<p>The control interrupt is calling the control loop. The point in time where this interrupt is thrown is determined by selecting the BUCK_VOUT_TRIGGER_MODE option. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00227_source.html#l00135">135</a> of file <a class="el" href="a00227_source.html">app_push_button.c</a>.</p>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00457_ga3966fddf4ec29e64c6d51a93eee8706f_icgraph.svg" width="651" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="ga13f736396ad1222ff5cbe35947bd60ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga13f736396ad1222ff5cbe35947bd60ac">&#9670;&nbsp;</a></span>appPushButton_EventButtonUp()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t appPushButton_EventButtonUp </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Push button event raised at the "not pressed" transition. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">void</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned int (0=failure, 1=success)</dd></dl>
-<p>This function is called when the push button detects a transition event from 'being pressed' to 'not being pressed'. Enabling this interrupt requires to declare the function pointer to this function in the push button data object event_btn_up data field. If this data field remains uninitialized or is set to NULL, this even is disabled. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00227_source.html#l00157">157</a> of file <a class="el" href="a00227_source.html">app_push_button.c</a>.</p>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00457_ga13f736396ad1222ff5cbe35947bd60ac_icgraph.svg" width="635" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="ga072bf74bda3fcd8d688515bdfedd872c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga072bf74bda3fcd8d688515bdfedd872c">&#9670;&nbsp;</a></span>appPushButton_EventButtonPressed()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t appPushButton_EventButtonPressed </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Push button event raised at the "is pressed" detection. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">void</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned int (0=failure, 1=success)</dd></dl>
-<p>This function is called after the push button detects a transition event from 'not being pressed' to 'being pressed'. Enabling this interrupt requires to declare the function pointer to this function in the push button data object event_btn_pressed data field. If this data field remains uninitialized or is set to NULL, this even is disabled. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00227_source.html#l00179">179</a> of file <a class="el" href="a00227_source.html">app_push_button.c</a>.</p>
-
-</div>
-</div>
-<a id="ga6192986e06dbca144461c0315a2a100f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6192986e06dbca144461c0315a2a100f">&#9670;&nbsp;</a></span>appPushButton_EventButtonLongPress()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t appPushButton_EventButtonLongPress </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Push button event raised at the "is long pressed" detection. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">void</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned int (0=failure, 1=success)</dd></dl>
-<p>This function is called after the push button event PRESSED has been detected and the Long Press Delay has expired without detecting a Button Up event. Enabling this interrupt requires to declare the function pointer to this function in the push button data object event_long_press data field. If this data field remains uninitialized or is set to NULL, this even is disabled. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00227_source.html#l00201">201</a> of file <a class="el" href="a00227_source.html">app_push_button.c</a>.</p>
-<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00457_ga6192986e06dbca144461c0315a2a100f_icgraph.svg" width="619" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00882">882</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

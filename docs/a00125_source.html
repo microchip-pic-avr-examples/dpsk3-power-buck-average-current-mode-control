@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>dsPIC33C Digital Power Starter Kit: dpsk_vmc.X/sources/config/init/init_fosc.c Source File</title>
+<title>Digital Power Starter Kit 3 Firmware Documentation: dpsk_buck_vmc.X/sources/config/init/init_fosc.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -34,8 +34,9 @@
  <tr style="height: 36px;">
   <td id="projectlogo" style="padding-left: 0.2em; vertical-align: middle;"><img alt="Logo" src="microchip-docs.png"/></td>
   <td id="projectalign" style="padding-left: 0.0em;">
-   <div id="projectname" style="color: white; font-size:16px;">dsPIC33C Digital Power Starter Kit
+   <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware Documentation
    </div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -117,7 +118,7 @@ $(document).ready(function(){initNavTree('a00125_source.html',''); initResizable
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#define TIMEOUT_LIMIT   5000    // timeout counter maximum</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a00522.html#ga40d0188218fbc4f682cbddffff9e1269">   32</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00522.html#ga40d0188218fbc4f682cbddffff9e1269">sysFosc_Initialize</a>(<span class="keywordtype">void</span>) </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a00521.html#ga40d0188218fbc4f682cbddffff9e1269">   32</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00521.html#ga40d0188218fbc4f682cbddffff9e1269">sysFosc_Initialize</a>(<span class="keywordtype">void</span>) </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">volatile</span> uint16_t retval=1;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    </div>
@@ -128,7 +129,7 @@ $(document).ready(function(){initNavTree('a00125_source.html',''); initResizable
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="a00522.html#ga3f3f3c22c6c2b95518271fae8f58b03f">   55</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00522.html#ga3f3f3c22c6c2b95518271fae8f58b03f">sysAclk_Initialize</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="a00521.html#ga3f3f3c22c6c2b95518271fae8f58b03f">   55</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00521.html#ga3f3f3c22c6c2b95518271fae8f58b03f">sysAclk_Initialize</a>(<span class="keywordtype">void</span>) {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">volatile</span> uint16_t retval=1;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
@@ -142,14 +143,14 @@ $(document).ready(function(){initNavTree('a00125_source.html',''); initResizable
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aa00364_html_ga110faf14914c3a8ebb3a4c1486aefb9d"><div class="ttname"><a href="a00364.html#ga110faf14914c3a8ebb3a4c1486aefb9d">p33c_OscFrc_DefaultInitialize</a></div><div class="ttdeci">volatile uint16_t p33c_OscFrc_DefaultInitialize(volatile enum CPU_SPEED_DEFAULTS_e cpu_speed)</div><div class="ttdoc">Initializes the major oscillator and the PLL module step by step by using clock switching in software...</div><div class="ttdef"><b>Definition:</b> <a href="a00068_source.html#l00062">p33c_osc.c:62</a></div></div>
-<div class="ttc" id="aa00522_html_ga40d0188218fbc4f682cbddffff9e1269"><div class="ttname"><a href="a00522.html#ga40d0188218fbc4f682cbddffff9e1269">sysFosc_Initialize</a></div><div class="ttdeci">volatile uint16_t sysFosc_Initialize(void)</div><div class="ttdoc">System oscillator initialization.</div><div class="ttdef"><b>Definition:</b> <a href="a00125_source.html#l00032">init_fosc.c:32</a></div></div>
+<div class="ttc" id="aa00521_html_ga40d0188218fbc4f682cbddffff9e1269"><div class="ttname"><a href="a00521.html#ga40d0188218fbc4f682cbddffff9e1269">sysFosc_Initialize</a></div><div class="ttdeci">volatile uint16_t sysFosc_Initialize(void)</div><div class="ttdoc">System oscillator initialization.</div><div class="ttdef"><b>Definition:</b> <a href="a00125_source.html#l00032">init_fosc.c:32</a></div></div>
+<div class="ttc" id="aa00521_html_ga3f3f3c22c6c2b95518271fae8f58b03f"><div class="ttname"><a href="a00521.html#ga3f3f3c22c6c2b95518271fae8f58b03f">sysAclk_Initialize</a></div><div class="ttdeci">volatile uint16_t sysAclk_Initialize(void)</div><div class="ttdoc">Initializes the auxiliary clock of the device.</div><div class="ttdef"><b>Definition:</b> <a href="a00125_source.html#l00055">init_fosc.c:55</a></div></div>
 <div class="ttc" id="aa00364_html_gab06b90f28b398245a399304dde2c1576"><div class="ttname"><a href="a00364.html#gab06b90f28b398245a399304dde2c1576">p33c_OscAuxClk_DefaultInitialize</a></div><div class="ttdeci">volatile uint16_t p33c_OscAuxClk_DefaultInitialize(volatile enum AUX_PLL_DEFAULTS_e afpllo_frequency)</div><div class="ttdoc">Initializes the auxiliary clock and its PLL module step by step in software. Each step is tested and ...</div><div class="ttdef"><b>Definition:</b> <a href="a00068_source.html#l00352">p33c_osc.c:352</a></div></div>
-<div class="ttc" id="aa00522_html_ga3f3f3c22c6c2b95518271fae8f58b03f"><div class="ttname"><a href="a00522.html#ga3f3f3c22c6c2b95518271fae8f58b03f">sysAclk_Initialize</a></div><div class="ttdeci">volatile uint16_t sysAclk_Initialize(void)</div><div class="ttdoc">Initializes the auxiliary clock of the device.</div><div class="ttdef"><b>Definition:</b> <a href="a00125_source.html#l00055">init_fosc.c:55</a></div></div>
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d20b26dc4520361ccd635dceae61919e.html">dpsk_vmc.X</a></li><li class="navelem"><a class="el" href="dir_2d5194f0f4a973de1534bc6ef9e5e7d3.html">sources</a></li><li class="navelem"><a class="el" href="dir_f0298e50411a996cd9474df7082bd6ea.html">config</a></li><li class="navelem"><a class="el" href="dir_e6ff481a760abb8dcbad458ebddb1a8c.html">init</a></li><li class="navelem"><b>init_fosc.c</b></li>
+    <li class="navelem"><a class="el" href="dir_01066bb7b1e33c391de0f39ab7f37964.html">dpsk_buck_vmc.X</a></li><li class="navelem"><a class="el" href="dir_4775101750c4dd55cff8a4809201f12a.html">sources</a></li><li class="navelem"><a class="el" href="dir_033f174ee2b383398acd73569d12122c.html">config</a></li><li class="navelem"><a class="el" href="dir_3ee58c93f9a17aa9fadb3abe91d737a5.html">init</a></li><li class="navelem"><b>init_fosc.c</b></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

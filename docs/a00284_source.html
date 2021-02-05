@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>dsPIC33C Digital Power Starter Kit: dpsk_vmc.X/sources/pwr_control/devices/dev_buck_special_functions.h Source File</title>
+<title>Digital Power Starter Kit 3 Firmware Documentation: dpsk_buck_vmc.X/sources/power_control/devices/templates/dev_buck_ptemp_adc.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -34,8 +34,9 @@
  <tr style="height: 36px;">
   <td id="projectlogo" style="padding-left: 0.2em; vertical-align: middle;"><img alt="Logo" src="microchip-docs.png"/></td>
   <td id="projectalign" style="padding-left: 0.0em;">
-   <div id="projectname" style="color: white; font-size:16px;">dsPIC33C Digital Power Starter Kit
+   <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware Documentation
    </div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -96,7 +97,7 @@ $(document).ready(function(){initNavTree('a00284_source.html',''); initResizable
 
 <div class="header">
   <div class="headertitle">
-<div class="title">dev_buck_special_functions.h</div>  </div>
+<div class="title">dev_buck_ptemp_adc.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* Microchip Technology Inc. and its subsidiaries.  You may use this software </span></div>
@@ -121,49 +122,80 @@ $(document).ready(function(){initNavTree('a00284_source.html',''); initResizable
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/* </span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * File:   </span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * Author: </span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * Comments:</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * File:   dev_buck_ptemp_adc.h</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * Author: M91406</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * Comments: ADC Peripheral Special Function Register Configuration Template</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * Revision history: </span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// This is a guard condition so that contents of this file are not included</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// more than once.  </span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#ifndef BUCK_CONVERTER_SPECIAL_FUNCTIONS_H</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define BUCK_CONVERTER_SPECIAL_FUNCTIONS_H</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;xc.h&gt;</span> <span class="comment">// include processor files - each processor file is guarded.  </span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span> <span class="comment">// include standard integer data types</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span> <span class="comment">// include standard boolean data types</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;stddef.h&gt;</span> <span class="comment">// include standard definition data types</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *   10/29/2020     1.0     initial release</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// This is a guard condition so that contents of this file are not included</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// more than once.  </span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#ifndef BUCK_CONVERTER_PERIPHERAL_CONFIGURATION_ADC_H</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define BUCK_CONVERTER_PERIPHERAL_CONFIGURATION_ADC_H</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;xc.h&gt;</span> <span class="comment">// include processor files - each processor file is guarded.  </span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span> <span class="comment">// include standard integer data types</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span> <span class="comment">// include standard boolean data types</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;stddef.h&gt;</span> <span class="comment">// include standard definition data types</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="a00493.html#ga3c2021030c83c9decfce3a892febcb9d">   50</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="a00493.html#ga3c2021030c83c9decfce3a892febcb9d">BUCK_SPECIAL_FUNCTIONS_e</a> </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    CS_OFSET_CALIBRATION    </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;} BUCK_SPECIAL_FUNCTIONS_t; <span class="comment">// Enumeration of special function sub-states</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">/* PUBLIC FUNCTION CALL PROTOTYPES */</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> uint16_t <a class="code" href="a00490.html#ga8573aaa632abde3518f8a4448ff73cf7">drv_BuckConverter_SpecialFunctionExecute</a> (</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keyword">volatile</span> <span class="keyword">struct</span> <a class="code" href="a01571.html">BUCK_CONVERTER_s</a> * buckInstance, </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keyword">volatile</span> <span class="keyword">enum</span> <a class="code" href="a00493.html#ga3c2021030c83c9decfce3a892febcb9d">BUCK_SPECIAL_FUNCTIONS_e</a> specialFunction);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* BUCK_CONVERTER_SPECIAL_FUNCTIONS_H */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">// end of file</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">/* ********************************************************************************</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> * ADC BASE MODULE BASE REGISTERS CONFIGURATION</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> * *******************************************************************************/</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="a00495.html#ga1b53aa998d151a03b54feaccfa0e6529">   51</a></span>&#160;<span class="preprocessor">#define ADC_POWERUP_TIMEOUT  5000</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">/* SLPxDAT: DACx SLOPE DATA REGISTER =&gt; Timing Register: User value will be set in code */</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">// ADC specific declarations</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="a00495.html#ga2f18a4ac55243c434199e4c03a1916d0">   59</a></span>&#160;<span class="comment"></span><span class="preprocessor">#define ADC_CORE_MASK           0b0000000010001111</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="a00495.html#ga5cd06b0701dd972bea484aa284b538fb">   65</a></span>&#160;<span class="preprocessor">#define ADC_CORE0_MASK_INDEX    0b0000000000000001</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="a00495.html#ga22888dc4e47b6c12697bb0d833a104d2">   71</a></span>&#160;<span class="preprocessor">#define ADC_CORE1_MASK_INDEX    0b0000000000000010</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="a00495.html#ga0d134fed01267e7e24128c763c0bcbf4">   77</a></span>&#160;<span class="preprocessor">#define ADC_CORE2_MASK_INDEX    0b0000000000000100</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="a00495.html#ga20a79307af387c2b58e0a26eba340201">   83</a></span>&#160;<span class="preprocessor">#define ADC_CORE3_MASK_INDEX    0b0000000000001000</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="a00495.html#ga759d38bf0d8fb74fd456d3c9aa1b0bae">   89</a></span>&#160;<span class="preprocessor">#define ADC_SHRCORE_MASK_INDEX  0b0000000010000000</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">/* ********************************************************************************</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment"> * ADC INPUT INSTANCE CONFIGURATION</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment"> * *******************************************************************************/</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">/* REGISTER VALUE DECLARATION TEMPLATE */</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">/* PCLKCON: PWM CLOCK CONTROL REGISTER</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">                           ________________ BIT 15: HRRDY: High-Resolution Ready bit</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">                          | _______________ BIT 14: HRERR: High-Resolution Error bit</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">                          || ______________ BIT 13: (unimplemented) </span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">                          ||| _____________ BIT 12: (unimplemented) </span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">                          |||| ____________ BIT 11: (unimplemented) </span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">                          ||||| ___________ BIT 10: (unimplemented)</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">                          |||||| __________ BIT  9: (unimplemented)</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">                          ||||||| _________ BIT  8: LOCK: Lock bit</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">                          |||||||| ________ BIT  7: (unimplemented)</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">                          ||||||||| _______ BIT  6: (unimplemented)</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">                          |||||||||| ______ BIT  5: DIVSEL[1:0]: PWM Clock Divider Selection bits</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">                          ||||||||||| _____ BIT  4: </span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">                          |||||||||||| ____ BIT  3: (unimplemented)</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">                          ||||||||||||| ___ BIT  2: (unimplemented)</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">                          |||||||||||||| __ BIT  1: MCLKSEL[1:0]: PWM Master Clock Selection bits</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">                          ||||||||||||||| _ BIT  0: </span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">                          ||||||||||||||||  */</span><span class="comment">/*</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment">#define REG_PCLKCON     0b0000000000000011   */</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* BUCK_CONVERTER_PERIPHERAL_CONFIGURATION_ADC_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa01571_html"><div class="ttname"><a href="a01571.html">BUCK_CONVERTER_s</a></div><div class="ttdoc">BUCK control &amp; monitoring data structure.</div><div class="ttdef"><b>Definition:</b> <a href="a00296_source.html#l00499">dev_buck_typedef.h:500</a></div></div>
-<div class="ttc" id="aa00490_html_ga8573aaa632abde3518f8a4448ff73cf7"><div class="ttname"><a href="a00490.html#ga8573aaa632abde3518f8a4448ff73cf7">drv_BuckConverter_SpecialFunctionExecute</a></div><div class="ttdeci">volatile uint16_t drv_BuckConverter_SpecialFunctionExecute(volatile struct BUCK_CONVERTER_s *buckInstance, volatile enum BUCK_SPECIAL_FUNCTIONS_e specialFunction)</div><div class="ttdoc">This is the public function call access point to call dedicated special sub-functions.</div><div class="ttdef"><b>Definition:</b> <a href="a00281_source.html#l00133">dev_buck_special_functions.c:133</a></div></div>
-<div class="ttc" id="aa00493_html_ga3c2021030c83c9decfce3a892febcb9d"><div class="ttname"><a href="a00493.html#ga3c2021030c83c9decfce3a892febcb9d">BUCK_SPECIAL_FUNCTIONS_e</a></div><div class="ttdeci">BUCK_SPECIAL_FUNCTIONS_e</div><div class="ttdoc">Enumeration of special function sub-states.</div><div class="ttdef"><b>Definition:</b> <a href="a00284_source.html#l00050">dev_buck_special_functions.h:51</a></div></div>
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d20b26dc4520361ccd635dceae61919e.html">dpsk_vmc.X</a></li><li class="navelem"><a class="el" href="dir_2d5194f0f4a973de1534bc6ef9e5e7d3.html">sources</a></li><li class="navelem"><a class="el" href="dir_b578d8adb3baa87c6e2e9fe5446a56e9.html">pwr_control</a></li><li class="navelem"><a class="el" href="dir_9683ca5fa7c7298c6b8d1febbdbe13a6.html">devices</a></li><li class="navelem"><b>dev_buck_special_functions.h</b></li>
+    <li class="navelem"><a class="el" href="dir_01066bb7b1e33c391de0f39ab7f37964.html">dpsk_buck_vmc.X</a></li><li class="navelem"><a class="el" href="dir_4775101750c4dd55cff8a4809201f12a.html">sources</a></li><li class="navelem"><a class="el" href="dir_fbd00860b1a2a86e7db4f141643e7a42.html">power_control</a></li><li class="navelem"><a class="el" href="dir_1e7729441992c637444f14d3c8887daa.html">devices</a></li><li class="navelem"><a class="el" href="dir_13fab0fb39093992243b35ed271124ac.html">templates</a></li><li class="navelem"><b>dev_buck_ptemp_adc.h</b></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>dsPIC33C Digital Power Starter Kit: dpsk_vmc.X/sources/pwr_control/drivers/v_loop.h Source File</title>
+<title>Digital Power Starter Kit 3 Firmware Documentation: dpsk_buck_vmc.X/sources/push_button/drivers/drv_push_button.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -34,8 +34,9 @@
  <tr style="height: 36px;">
   <td id="projectlogo" style="padding-left: 0.2em; vertical-align: middle;"><img alt="Logo" src="microchip-docs.png"/></td>
   <td id="projectalign" style="padding-left: 0.0em;">
-   <div id="projectname" style="color: white; font-size:16px;">dsPIC33C Digital Power Starter Kit
+   <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware Documentation
    </div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -96,143 +97,150 @@ $(document).ready(function(){initNavTree('a00329_source.html',''); initResizable
 
 <div class="header">
   <div class="headertitle">
-<div class="title">v_loop.h</div>  </div>
+<div class="title">drv_push_button.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* *********************************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * PowerSmart™ Digital Control Library Designer, Version 0.9.12.672</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * *********************************************************************************</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * 4p4z controller function declarations and compensation filter coefficients</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * derived for following operating conditions:</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * *********************************************************************************</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *  Controller Type:    4P4Z - Advanced High-Q Compensator</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *  Sampling Frequency: 500000 Hz</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *  Fixed Point Format: Q15</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *  Scaling Mode:       4 - Fast Floating Point Coefficient Scaling</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *  Input Gain:         0.5</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * *********************************************************************************</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * CGS Version:         3.0.4</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * CGS Date:            01/27/2021</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * *********************************************************************************</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * User:                M91406</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * Date/Time:           02/01/2021 19:20:15</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * ********************************************************************************/</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// This is a guard condition so that contents of this file are not included</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// more than once.</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#ifndef __SPECIAL_FUNCTION_LAYER_V_LOOP_H__</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#define __SPECIAL_FUNCTION_LAYER_V_LOOP_H__</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;xc.h&gt;</span>                                   <span class="comment">// include processor files - each processor file is guarded</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;dsp.h&gt;</span>                                  <span class="comment">// include DSP data types (e.g. fractional)</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span>                               <span class="comment">// include standard integer number data types</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span>                              <span class="comment">// include standard boolean data types (true/false)</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;npnz16b.h&quot;</span>                              <span class="comment">// include NPNZ library header file</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">/* *******************************************************************************</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> * Data Arrays:</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> * The NPNZ16b_s data structure contains pointers to coefficient, control and error</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> * history arrays. The pointer target objects (variables and arrays) are defined</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> * in controller source file v_loop.c</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> * Type definitions for A- and B- coefficient arrays as well as error- and control</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> * history arrays are aligned in memory using the &#39;packed&#39; attribute for optimized</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> * addressing during DSP computations. These aligned data structures need to be</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> * placed in specific memory locations to allow direct X/Y-access from the DSP.</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> * This X/Y-memory placement is covered by the declarations used in controller</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> * source file v_loop.c</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> * ******************************************************************************/</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="a01635.html">   53</a></span>&#160;<span class="keyword">struct </span><a class="code" href="a01635.html">V_LOOP_CONTROL_LOOP_COEFFICIENTS_s</a></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="a01635.html#a03bf1309ac1c8a67b7965b1a41dad362">   55</a></span>&#160;    <span class="keyword">volatile</span> int32_t <a class="code" href="a01635.html#a03bf1309ac1c8a67b7965b1a41dad362">ACoefficients</a>[4];            <span class="comment">// A-Coefficients</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="a01635.html#a6b5296ce3d1269641ff6342db852b44a">   56</a></span>&#160;    <span class="keyword">volatile</span> int32_t <a class="code" href="a01635.html#a6b5296ce3d1269641ff6342db852b44a">BCoefficients</a>[5];            <span class="comment">// B-Coefficients</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;} __attribute__((packed));                        <span class="comment">// Data structure packing A- and B- coefficient arrays in a linear memory space for optimized DSP code execution</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="a01635.html">V_LOOP_CONTROL_LOOP_COEFFICIENTS_s</a> <a class="code" href="a01635.html">V_LOOP_CONTROL_LOOP_COEFFICIENTS_t</a>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="a01639.html">   65</a></span>&#160;<span class="keyword">struct </span><a class="code" href="a01639.html">V_LOOP_CONTROL_LOOP_HISTORIES_s</a></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="a01639.html#ac3dadde9f125d54e0238b02178a5812d">   67</a></span>&#160;    <span class="keyword">volatile</span> fractional <a class="code" href="a01639.html#ac3dadde9f125d54e0238b02178a5812d">ControlHistory</a>[4];        <span class="comment">// Control History Array</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="a01639.html#aefbb5fcdf54f9285d73baa6e704d1193">   68</a></span>&#160;    <span class="keyword">volatile</span> fractional <a class="code" href="a01639.html#aefbb5fcdf54f9285d73baa6e704d1193">ErrorHistory</a>[5];          <span class="comment">// Error History Array</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;} __attribute__((packed));                        <span class="comment">// Data structure packing control and error histories arrays in a linear memory space for optimized DSP code execution</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="a01639.html">V_LOOP_CONTROL_LOOP_HISTORIES_s</a> <a class="code" href="a01639.html">V_LOOP_CONTROL_LOOP_HISTORIES_t</a>; <span class="comment">// Data type of data structure packing control and error histories arrays</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> int16_t <a class="code" href="a00514.html#gae1ef8104d52fe123c04e1107fd8ff55f">v_loop_pterm_factor</a>;      <span class="comment">// Q15 fractional of the P-Term factor</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> int16_t <a class="code" href="a00514.html#ga566701f8f607a93f33e17e799fae6ac5">v_loop_pterm_scaler</a>;      <span class="comment">// Bit-shift scaler of the P-Term factor</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a01631.html">NPNZ16b_s</a> <a class="code" href="a00509.html#gafbcd1a3463a71ed45375fa8f6053ee28">v_loop</a>;          <span class="comment">// user-controller data object</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">/* *******************************************************************************</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment"> * Function call prototypes for initialization routines and control loop handling</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment"> * ******************************************************************************/</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> uint16_t <a class="code" href="a00508.html#ga62d45a18f3dd47fa691fbb463f90e051">v_loop_Initialize</a>(       <span class="comment">// v_loop initialization function call</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keyword">volatile</span> <span class="keyword">struct</span> <a class="code" href="a01631.html">NPNZ16b_s</a>* controller     <span class="comment">// Pointer to NPNZ16b data object</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    );</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="a00508.html#gabb35e824b8586b680f54d59975ada3c7">  124</a></span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00508.html#gabb35e824b8586b680f54d59975ada3c7">v_loop_Reset</a>(                         <span class="comment">// v_loop reset function call (Assembly)</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keyword">volatile</span> <span class="keyword">struct</span> <a class="code" href="a01631.html">NPNZ16b_s</a>* controller     <span class="comment">// Pointer to NPNZ16b data object</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    );</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="a00508.html#ga3cdf7d86ab440015768706f04bd588e9">  142</a></span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00508.html#ga3cdf7d86ab440015768706f04bd588e9">v_loop_Precharge</a>(                     <span class="comment">// v_loop history pre-charge function call (Assembly)</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keyword">volatile</span> <span class="keyword">struct</span> <a class="code" href="a01631.html">NPNZ16b_s</a>* controller,    <span class="comment">// Pointer to NPNZ16b data object</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keyword">volatile</span> fractional ctrl_input,           <span class="comment">// user-defined, constant error history value</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keyword">volatile</span> fractional ctrl_output           <span class="comment">// user-defined, constant control output history value</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    );</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="a00508.html#gab8180f1cb973d694be5caffaec3ce940">  165</a></span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00508.html#gab8180f1cb973d694be5caffaec3ce940">v_loop_Update</a>(                        <span class="comment">// Calls the 4P4Z controller (Assembly)</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keyword">volatile</span> <span class="keyword">struct</span> <a class="code" href="a01631.html">NPNZ16b_s</a>* controller     <span class="comment">// Pointer to NPNZ16b data object</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    );</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
-<div class="line"><a name="l00192"></a><span class="lineno"><a class="line" href="a00508.html#gac782e99f408e1d33286076e69a14f781">  192</a></span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00508.html#gac782e99f408e1d33286076e69a14f781">v_loop_PTermUpdate</a>(                   <span class="comment">// Calls the P-Term controller (Assembly)</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keyword">volatile</span> <span class="keyword">struct</span> <a class="code" href="a01631.html">NPNZ16b_s</a>* controller     <span class="comment">// Pointer to NPNZ16b data object</span></div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    );</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="preprocessor">#endif                                            // end of __SPECIAL_FUNCTION_LAYER_V_LOOP_H__</span></div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment">//**********************************************************************************</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment">// Download latest version of this tool here: https://areiter128.github.io/DCLD</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">//**********************************************************************************</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:   switch.c</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Author: M91406</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created on March 12, 2020, 12:10 PM</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;push_button/app_push_button.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;config/hal.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// PRIVATE VARIABLE DELARATIONS</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// (none)</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="a00510.html#gaa3ce9c320a37ebc6e1ae113c82e68747">   38</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00510.html#gaa3ce9c320a37ebc6e1ae113c82e68747">drv_PushButton_Initialize</a>(<span class="keyword">volatile</span> <span class="keyword">struct</span> <a class="code" href="a01638.html">PUSH_BUTTON_OBJECT_s</a>* pushbtn) </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">volatile</span> uint16_t retval = 1;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="a00390.html#ga581c67f9730c387a74c217a17dd2f21c">SW_USER_Init</a>();   <span class="comment">// Initialize GPIO used to read switch</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// Initializing switch object </span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    pushbtn-&gt;<a class="code" href="a01638.html#a78437774e630c432a18d708b25955f0f">debounce_delay</a> = 0;              <span class="comment">// Clear debounce delay</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    pushbtn-&gt;<a class="code" href="a01638.html#a92322dfa9ee932050da2a695bc5fe160">long_press_delay</a> = 0;            <span class="comment">// Clear &#39;long press&quot; delay</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    pushbtn-&gt;<a class="code" href="a01638.html#a16a03dc6d0fd95cb3dffee0f76de5cd9">status</a>.bits.<a class="code" href="a01626.html#aa5848ca5944f6a2c0d6562778651629e">pressed</a> = <span class="keyword">false</span>;     <span class="comment">// Reset PRESSED status</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    pushbtn-&gt;<a class="code" href="a01638.html#a16a03dc6d0fd95cb3dffee0f76de5cd9">status</a>.bits.<a class="code" href="a01626.html#ae6577f0794699101b84e90afcdfcaaaa">long_press</a> = <span class="keyword">false</span>;  <span class="comment">// Reset LONG_PRESS status</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    pushbtn-&gt;<a class="code" href="a01638.html#a16a03dc6d0fd95cb3dffee0f76de5cd9">status</a>.bits.<a class="code" href="a01626.html#a085e9fc0863cee4864cf51dcfe1e32df">enabled</a> = <span class="keyword">false</span>;     <span class="comment">// Turn off Switch Button</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    pushbtn-&gt;<a class="code" href="a01638.html#a16a03dc6d0fd95cb3dffee0f76de5cd9">status</a>.bits.<a class="code" href="a01626.html#a4e5a3be7a99ad29f863ea0dd636cea0a">sw_event</a> = <span class="keyword">false</span>;    <span class="comment">// Clear SWITCH EVENT flag </span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span>(retval);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="a00510.html#ga29d5123115f34320a92fabc8be2f796c">   70</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00510.html#ga29d5123115f34320a92fabc8be2f796c">drv_PushButton_Execute</a>(<span class="keyword">volatile</span> <span class="keyword">struct</span> <a class="code" href="a01638.html">PUSH_BUTTON_OBJECT_s</a>* pushbtn) </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">volatile</span> uint16_t retval = 1; <span class="comment">// Return value</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">static</span> uint16_t press_cnt, release_cnt;     <span class="comment">// local counters of SWITCH_USER being pressed/released</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> pre_pressed = <span class="keyword">false</span>, pre_long_press = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// If switch is disabled, exit here</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">if</span> (!pushbtn-&gt;<a class="code" href="a01638.html#a16a03dc6d0fd95cb3dffee0f76de5cd9">status</a>.bits.<a class="code" href="a01626.html#a085e9fc0863cee4864cf51dcfe1e32df">enabled</a>)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        pushbtn-&gt;<a class="code" href="a01638.html#a16a03dc6d0fd95cb3dffee0f76de5cd9">status</a>.bits.<a class="code" href="a01626.html#aa5848ca5944f6a2c0d6562778651629e">pressed</a> = <span class="keyword">false</span>; <span class="comment">// Mark Switch as RELEASED</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">return</span>(1);  <span class="comment">// Exit function</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// Trigger on a PRESSED event with applied debouncing</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">if</span> ((!<a class="code" href="a00390.html#ga8dab463440a35fc3ca8ff1386e76a0ed">SW_USER_Get</a>()) &amp;&amp; (!pushbtn-&gt;<a class="code" href="a01638.html#a16a03dc6d0fd95cb3dffee0f76de5cd9">status</a>.bits.<a class="code" href="a01626.html#aa5848ca5944f6a2c0d6562778651629e">pressed</a>)) { </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="comment">// switch button PRESSED event</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">if</span> (++press_cnt &gt; pushbtn-&gt;<a class="code" href="a01638.html#a78437774e630c432a18d708b25955f0f">debounce_delay</a>) {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            pushbtn-&gt;<a class="code" href="a01638.html#a16a03dc6d0fd95cb3dffee0f76de5cd9">status</a>.bits.<a class="code" href="a01626.html#aa5848ca5944f6a2c0d6562778651629e">pressed</a> = <span class="keyword">true</span>; <span class="comment">// Set PRESSED flag</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordflow">if</span> (pushbtn-&gt;<a class="code" href="a01638.html#a5ec310dc3aa8f6b3c0635719fdf6062a">event_btn_down</a> != NULL)   <span class="comment">// Raise Button Event</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                pushbtn-&gt;<a class="code" href="a01638.html#a5ec310dc3aa8f6b3c0635719fdf6062a">event_btn_down</a>();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// Trigger on a LONG PRESS event with applied debouncing</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((!<a class="code" href="a00390.html#ga8dab463440a35fc3ca8ff1386e76a0ed">SW_USER_Get</a>()) &amp;&amp; (pushbtn-&gt;<a class="code" href="a01638.html#a16a03dc6d0fd95cb3dffee0f76de5cd9">status</a>.bits.<a class="code" href="a01626.html#aa5848ca5944f6a2c0d6562778651629e">pressed</a>)) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="comment">// switch button LONG PRESS event</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">if</span> (++press_cnt &gt; pushbtn-&gt;<a class="code" href="a01638.html#a92322dfa9ee932050da2a695bc5fe160">long_press_delay</a>) {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">if</span> (!pushbtn-&gt;<a class="code" href="a01638.html#a16a03dc6d0fd95cb3dffee0f76de5cd9">status</a>.bits.<a class="code" href="a01626.html#ae6577f0794699101b84e90afcdfcaaaa">long_press</a>)    <span class="comment">// Long Press Event is triggered for the first time</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordflow">if</span> (pushbtn-&gt;<a class="code" href="a01638.html#ab6ccfc633b01bf4d5aba1121b52cbe16">event_long_press</a> != NULL)   <span class="comment">// Raise Button Long Press Event</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                pushbtn-&gt;<a class="code" href="a01638.html#ab6ccfc633b01bf4d5aba1121b52cbe16">event_long_press</a>();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            pushbtn-&gt;<a class="code" href="a01638.html#a16a03dc6d0fd95cb3dffee0f76de5cd9">status</a>.bits.<a class="code" href="a01626.html#ae6577f0794699101b84e90afcdfcaaaa">long_press</a> = <span class="keyword">true</span>;  <span class="comment">// Set LONG_PRESS flag</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            press_cnt = pushbtn-&gt;<a class="code" href="a01638.html#a92322dfa9ee932050da2a695bc5fe160">long_press_delay</a>; <span class="comment">// Clamp counter to threshold</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keywordflow">if</span> (pushbtn-&gt;<a class="code" href="a01638.html#a4aec1837a6756f26ba5b7a95721e2f53">event_pressed</a> != NULL)   <span class="comment">// Raise Button Pressed Event</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                pushbtn-&gt;<a class="code" href="a01638.html#a4aec1837a6756f26ba5b7a95721e2f53">event_pressed</a>();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">// Trigger on a RELEASE event with applied debouncing</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((<a class="code" href="a00390.html#ga8dab463440a35fc3ca8ff1386e76a0ed">SW_USER_Get</a>()) &amp;&amp; (pushbtn-&gt;<a class="code" href="a01638.html#a16a03dc6d0fd95cb3dffee0f76de5cd9">status</a>.bits.<a class="code" href="a01626.html#aa5848ca5944f6a2c0d6562778651629e">pressed</a>)) {  </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="comment">// switch button RELEASE event</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">if</span> (++release_cnt &gt; pushbtn-&gt;<a class="code" href="a01638.html#a78437774e630c432a18d708b25955f0f">debounce_delay</a>) {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="keywordflow">if</span> (pushbtn-&gt;<a class="code" href="a01638.html#aa2f2ef2afa1e13d9a26d222a716226ec">event_btn_up</a> != NULL)       <span class="comment">// Raise Button Event</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                pushbtn-&gt;<a class="code" href="a01638.html#aa2f2ef2afa1e13d9a26d222a716226ec">event_btn_up</a>();</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            pushbtn-&gt;<a class="code" href="a01638.html#a16a03dc6d0fd95cb3dffee0f76de5cd9">status</a>.bits.<a class="code" href="a01626.html#aa5848ca5944f6a2c0d6562778651629e">pressed</a> = <span class="keyword">false</span>;      <span class="comment">// Clear PRESSED flag</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            pushbtn-&gt;<a class="code" href="a01638.html#a16a03dc6d0fd95cb3dffee0f76de5cd9">status</a>.bits.<a class="code" href="a01626.html#ae6577f0794699101b84e90afcdfcaaaa">long_press</a> = <span class="keyword">false</span>;   <span class="comment">// Clear LONG_PRESS flag</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            release_cnt = pushbtn-&gt;<a class="code" href="a01638.html#a78437774e630c432a18d708b25955f0f">debounce_delay</a>; <span class="comment">// Clamp counter to threshold</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        press_cnt = 0;   <span class="comment">// Clear switch debounce counter PRESSED</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        release_cnt = 0; <span class="comment">// Clear switch debounce counter RELEASE</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="comment">// Trigger on switch events</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    pushbtn-&gt;<a class="code" href="a01638.html#a16a03dc6d0fd95cb3dffee0f76de5cd9">status</a>.bits.<a class="code" href="a01626.html#a4e5a3be7a99ad29f863ea0dd636cea0a">sw_event</a> = (bool) <span class="comment">//(pre_pressed != pushbtn-&gt;status.pressed) ;</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        ((pre_pressed != pushbtn-&gt;<a class="code" href="a01638.html#a16a03dc6d0fd95cb3dffee0f76de5cd9">status</a>.bits.<a class="code" href="a01626.html#aa5848ca5944f6a2c0d6562778651629e">pressed</a>) || (pre_long_press != pushbtn-&gt;<a class="code" href="a01638.html#a16a03dc6d0fd95cb3dffee0f76de5cd9">status</a>.bits.<a class="code" href="a01626.html#ae6577f0794699101b84e90afcdfcaaaa">long_press</a>));</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    pre_pressed = pushbtn-&gt;<a class="code" href="a01638.html#a16a03dc6d0fd95cb3dffee0f76de5cd9">status</a>.bits.<a class="code" href="a01626.html#aa5848ca5944f6a2c0d6562778651629e">pressed</a>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    pre_long_press = pushbtn-&gt;<a class="code" href="a01638.html#a16a03dc6d0fd95cb3dffee0f76de5cd9">status</a>.bits.<a class="code" href="a01626.html#ae6577f0794699101b84e90afcdfcaaaa">long_press</a>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">return</span>(retval);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="a00510.html#ga8038f16564e9e426efe4b86b739d3d77">  153</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00510.html#ga8038f16564e9e426efe4b86b739d3d77">drv_PushButton_Dispose</a>(<span class="keyword">volatile</span> <span class="keyword">struct</span> <a class="code" href="a01638.html">PUSH_BUTTON_OBJECT_s</a>* pushbtn) </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;{</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keyword">volatile</span> uint16_t retval = 1;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    pushbtn-&gt;<a class="code" href="a01638.html#a78437774e630c432a18d708b25955f0f">debounce_delay</a> = 0;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    pushbtn-&gt;<a class="code" href="a01638.html#a16a03dc6d0fd95cb3dffee0f76de5cd9">status</a>.bits.<a class="code" href="a01626.html#aa5848ca5944f6a2c0d6562778651629e">pressed</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    pushbtn-&gt;<a class="code" href="a01638.html#a16a03dc6d0fd95cb3dffee0f76de5cd9">status</a>.bits.<a class="code" href="a01626.html#ae6577f0794699101b84e90afcdfcaaaa">long_press</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    pushbtn-&gt;<a class="code" href="a01638.html#a16a03dc6d0fd95cb3dffee0f76de5cd9">status</a>.bits.<a class="code" href="a01626.html#a085e9fc0863cee4864cf51dcfe1e32df">enabled</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <a class="code" href="a00390.html#ga581c67f9730c387a74c217a17dd2f21c">SW_USER_Init</a>();</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">return</span>(retval);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment">// end of file</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa00508_html_ga62d45a18f3dd47fa691fbb463f90e051"><div class="ttname"><a href="a00508.html#ga62d45a18f3dd47fa691fbb463f90e051">v_loop_Initialize</a></div><div class="ttdeci">volatile uint16_t v_loop_Initialize(volatile struct NPNZ16b_s *controller)</div><div class="ttdoc">Initializes controller coefficient arrays and normalization.</div><div class="ttdef"><b>Definition:</b> <a href="a00326_source.html#l00116">v_loop.c:116</a></div></div>
-<div class="ttc" id="aa01635_html_a6b5296ce3d1269641ff6342db852b44a"><div class="ttname"><a href="a01635.html#a6b5296ce3d1269641ff6342db852b44a">V_LOOP_CONTROL_LOOP_COEFFICIENTS_s::BCoefficients</a></div><div class="ttdeci">volatile int32_t BCoefficients[5]</div><div class="ttdef"><b>Definition:</b> <a href="a00329_source.html#l00056">v_loop.h:56</a></div></div>
-<div class="ttc" id="aa01639_html_ac3dadde9f125d54e0238b02178a5812d"><div class="ttname"><a href="a01639.html#ac3dadde9f125d54e0238b02178a5812d">V_LOOP_CONTROL_LOOP_HISTORIES_s::ControlHistory</a></div><div class="ttdeci">volatile fractional ControlHistory[4]</div><div class="ttdef"><b>Definition:</b> <a href="a00329_source.html#l00067">v_loop.h:67</a></div></div>
-<div class="ttc" id="aa00508_html_ga3cdf7d86ab440015768706f04bd588e9"><div class="ttname"><a href="a00508.html#ga3cdf7d86ab440015768706f04bd588e9">v_loop_Precharge</a></div><div class="ttdeci">void v_loop_Precharge(volatile struct NPNZ16b_s *controller, volatile fractional ctrl_input, volatile fractional ctrl_output)</div><div class="ttdoc">Prototype of the Assembly routine '_v_loop_Precharge' loading user-defined values into the NPNZ16b co...</div></div>
-<div class="ttc" id="aa01631_html"><div class="ttname"><a href="a01631.html">NPNZ16b_s</a></div><div class="ttdoc">Global NPNZ controller data object.</div><div class="ttdef"><b>Definition:</b> <a href="a00320_source.html#l00502">npnz16b.h:502</a></div></div>
-<div class="ttc" id="aa00508_html_gabb35e824b8586b680f54d59975ada3c7"><div class="ttname"><a href="a00508.html#gabb35e824b8586b680f54d59975ada3c7">v_loop_Reset</a></div><div class="ttdeci">void v_loop_Reset(volatile struct NPNZ16b_s *controller)</div><div class="ttdoc">Prototype of the Assembly routine '_v_loop_Reset' clearing the NPNZ16b controller output and error hi...</div></div>
-<div class="ttc" id="aa00508_html_gab8180f1cb973d694be5caffaec3ce940"><div class="ttname"><a href="a00508.html#gab8180f1cb973d694be5caffaec3ce940">v_loop_Update</a></div><div class="ttdeci">void v_loop_Update(volatile struct NPNZ16b_s *controller)</div><div class="ttdoc">Prototype of the Assembly feedback control loop routine helping to call the v_loop controller from C-...</div></div>
-<div class="ttc" id="aa00509_html_gafbcd1a3463a71ed45375fa8f6053ee28"><div class="ttname"><a href="a00509.html#gafbcd1a3463a71ed45375fa8f6053ee28">v_loop</a></div><div class="ttdeci">volatile struct NPNZ16b_s v_loop</div><div class="ttdoc">External reference to user-defined NPNZ16b controller data object 'v_loop'.</div><div class="ttdef"><b>Definition:</b> <a href="a00326_source.html#l00088">v_loop.c:92</a></div></div>
-<div class="ttc" id="aa00514_html_ga566701f8f607a93f33e17e799fae6ac5"><div class="ttname"><a href="a00514.html#ga566701f8f607a93f33e17e799fae6ac5">v_loop_pterm_scaler</a></div><div class="ttdeci">volatile int16_t v_loop_pterm_scaler</div><div class="ttdoc">Bit-shift scaler of the P-Term Coefficient for Plant Measurements.</div><div class="ttdef"><b>Definition:</b> <a href="a00326_source.html#l00088">v_loop.c:88</a></div></div>
-<div class="ttc" id="aa01639_html_aefbb5fcdf54f9285d73baa6e704d1193"><div class="ttname"><a href="a01639.html#aefbb5fcdf54f9285d73baa6e704d1193">V_LOOP_CONTROL_LOOP_HISTORIES_s::ErrorHistory</a></div><div class="ttdeci">volatile fractional ErrorHistory[5]</div><div class="ttdef"><b>Definition:</b> <a href="a00329_source.html#l00068">v_loop.h:68</a></div></div>
-<div class="ttc" id="aa00508_html_gac782e99f408e1d33286076e69a14f781"><div class="ttname"><a href="a00508.html#gac782e99f408e1d33286076e69a14f781">v_loop_PTermUpdate</a></div><div class="ttdeci">void v_loop_PTermUpdate(volatile struct NPNZ16b_s *controller)</div><div class="ttdoc">Prototype of the alternate Assembly P-Term control loop helping to call the v_loop P-Term controller ...</div></div>
-<div class="ttc" id="aa01639_html"><div class="ttname"><a href="a01639.html">V_LOOP_CONTROL_LOOP_HISTORIES_s</a></div><div class="ttdoc">Data structure packing A- and B- coefficient arrays in a linear memory space for optimized DSP code e...</div><div class="ttdef"><b>Definition:</b> <a href="a00329_source.html#l00065">v_loop.h:66</a></div></div>
-<div class="ttc" id="aa01635_html_a03bf1309ac1c8a67b7965b1a41dad362"><div class="ttname"><a href="a01635.html#a03bf1309ac1c8a67b7965b1a41dad362">V_LOOP_CONTROL_LOOP_COEFFICIENTS_s::ACoefficients</a></div><div class="ttdeci">volatile int32_t ACoefficients[4]</div><div class="ttdef"><b>Definition:</b> <a href="a00329_source.html#l00055">v_loop.h:55</a></div></div>
-<div class="ttc" id="aa00514_html_gae1ef8104d52fe123c04e1107fd8ff55f"><div class="ttname"><a href="a00514.html#gae1ef8104d52fe123c04e1107fd8ff55f">v_loop_pterm_factor</a></div><div class="ttdeci">volatile int16_t v_loop_pterm_factor</div><div class="ttdoc">Q15 fractional of the P-Term Coefficient for Plant Measurements.</div><div class="ttdef"><b>Definition:</b> <a href="a00326_source.html#l00087">v_loop.c:87</a></div></div>
-<div class="ttc" id="aa01635_html"><div class="ttname"><a href="a01635.html">V_LOOP_CONTROL_LOOP_COEFFICIENTS_s</a></div><div class="ttdoc">Data structure packing A- and B- coefficient arrays in a linear memory space for optimized DSP code e...</div><div class="ttdef"><b>Definition:</b> <a href="a00329_source.html#l00053">v_loop.h:54</a></div></div>
+<div class="ttc" id="aa01626_html_a085e9fc0863cee4864cf51dcfe1e32df"><div class="ttname"><a href="a01626.html#a085e9fc0863cee4864cf51dcfe1e32df">PUSH_BUTTON_STATUS_s::enabled</a></div><div class="ttdeci">volatile bool enabled</div><div class="ttdoc">Bit 15: Enables/disables the Switch button object.</div><div class="ttdef"><b>Definition:</b> <a href="a00332_source.html#l00089">drv_push_button.h:89</a></div></div>
+<div class="ttc" id="aa00390_html_ga581c67f9730c387a74c217a17dd2f21c"><div class="ttname"><a href="a00390.html#ga581c67f9730c387a74c217a17dd2f21c">SW_USER_Init</a></div><div class="ttdeci">#define SW_USER_Init()</div><div class="ttdoc">Macro instruction initializing the specified GPIO as input.</div><div class="ttdef"><b>Definition:</b> <a href="a00104_source.html#l00236">dpsk3_hwdescr.h:236</a></div></div>
+<div class="ttc" id="aa01626_html_a4e5a3be7a99ad29f863ea0dd636cea0a"><div class="ttname"><a href="a01626.html#a4e5a3be7a99ad29f863ea0dd636cea0a">PUSH_BUTTON_STATUS_s::sw_event</a></div><div class="ttdeci">volatile bool sw_event</div><div class="ttdoc">Bit 0: Event bit indicating a state has changed (cleared automatically)</div><div class="ttdef"><b>Definition:</b> <a href="a00332_source.html#l00074">drv_push_button.h:74</a></div></div>
+<div class="ttc" id="aa01638_html_a4aec1837a6756f26ba5b7a95721e2f53"><div class="ttname"><a href="a01638.html#a4aec1837a6756f26ba5b7a95721e2f53">PUSH_BUTTON_OBJECT_s::event_pressed</a></div><div class="ttdeci">volatile uint16_t(* event_pressed)(void)</div><div class="ttdoc">Function pointer to user function triggering a LONG_PRESS event.</div><div class="ttdef"><b>Definition:</b> <a href="a00332_source.html#l00115">drv_push_button.h:115</a></div></div>
+<div class="ttc" id="aa01638_html_a92322dfa9ee932050da2a695bc5fe160"><div class="ttname"><a href="a01638.html#a92322dfa9ee932050da2a695bc5fe160">PUSH_BUTTON_OBJECT_s::long_press_delay</a></div><div class="ttdeci">volatile uint16_t long_press_delay</div><div class="ttdoc">Number of call cycles until a &quot;long press&quot; switch event is triggered.</div><div class="ttdef"><b>Definition:</b> <a href="a00332_source.html#l00112">drv_push_button.h:112</a></div></div>
+<div class="ttc" id="aa01638_html_a78437774e630c432a18d708b25955f0f"><div class="ttname"><a href="a01638.html#a78437774e630c432a18d708b25955f0f">PUSH_BUTTON_OBJECT_s::debounce_delay</a></div><div class="ttdeci">volatile uint16_t debounce_delay</div><div class="ttdoc">Number of call cycles until a switch event is triggered.</div><div class="ttdef"><b>Definition:</b> <a href="a00332_source.html#l00111">drv_push_button.h:111</a></div></div>
+<div class="ttc" id="aa00510_html_ga8038f16564e9e426efe4b86b739d3d77"><div class="ttname"><a href="a00510.html#ga8038f16564e9e426efe4b86b739d3d77">drv_PushButton_Dispose</a></div><div class="ttdeci">volatile uint16_t drv_PushButton_Dispose(volatile struct PUSH_BUTTON_OBJECT_s *pushbtn)</div><div class="ttdoc">Initializes the push button device driver.</div><div class="ttdef"><b>Definition:</b> <a href="a00329_source.html#l00153">drv_push_button.c:153</a></div></div>
+<div class="ttc" id="aa01638_html_a5ec310dc3aa8f6b3c0635719fdf6062a"><div class="ttname"><a href="a01638.html#a5ec310dc3aa8f6b3c0635719fdf6062a">PUSH_BUTTON_OBJECT_s::event_btn_down</a></div><div class="ttdeci">volatile uint16_t(* event_btn_down)(void)</div><div class="ttdoc">Function pointer to user function triggering a PRESSED event.</div><div class="ttdef"><b>Definition:</b> <a href="a00332_source.html#l00113">drv_push_button.h:113</a></div></div>
+<div class="ttc" id="aa01638_html_a16a03dc6d0fd95cb3dffee0f76de5cd9"><div class="ttname"><a href="a01638.html#a16a03dc6d0fd95cb3dffee0f76de5cd9">PUSH_BUTTON_OBJECT_s::status</a></div><div class="ttdeci">volatile struct PUSH_BUTTON_STATUS_s status</div><div class="ttdoc">Status word of the switch object.</div><div class="ttdef"><b>Definition:</b> <a href="a00332_source.html#l00015">drv_push_button.h:110</a></div></div>
+<div class="ttc" id="aa01638_html"><div class="ttname"><a href="a01638.html">PUSH_BUTTON_OBJECT_s</a></div><div class="ttdoc">Push button function driver data object.</div><div class="ttdef"><b>Definition:</b> <a href="a00332_source.html#l00108">drv_push_button.h:108</a></div></div>
+<div class="ttc" id="aa00510_html_gaa3ce9c320a37ebc6e1ae113c82e68747"><div class="ttname"><a href="a00510.html#gaa3ce9c320a37ebc6e1ae113c82e68747">drv_PushButton_Initialize</a></div><div class="ttdeci">volatile uint16_t drv_PushButton_Initialize(volatile struct PUSH_BUTTON_OBJECT_s *pushbtn)</div><div class="ttdoc">Initializes the push button device driver.</div><div class="ttdef"><b>Definition:</b> <a href="a00329_source.html#l00038">drv_push_button.c:38</a></div></div>
+<div class="ttc" id="aa01638_html_ab6ccfc633b01bf4d5aba1121b52cbe16"><div class="ttname"><a href="a01638.html#ab6ccfc633b01bf4d5aba1121b52cbe16">PUSH_BUTTON_OBJECT_s::event_long_press</a></div><div class="ttdeci">volatile uint16_t(* event_long_press)(void)</div><div class="ttdoc">Function pointer to user function triggering a LONG_PRESS event.</div><div class="ttdef"><b>Definition:</b> <a href="a00332_source.html#l00114">drv_push_button.h:114</a></div></div>
+<div class="ttc" id="aa01626_html_aa5848ca5944f6a2c0d6562778651629e"><div class="ttname"><a href="a01626.html#aa5848ca5944f6a2c0d6562778651629e">PUSH_BUTTON_STATUS_s::pressed</a></div><div class="ttdeci">volatile bool pressed</div><div class="ttdoc">Bit 14: Indicates if the button is pressed or not.</div><div class="ttdef"><b>Definition:</b> <a href="a00332_source.html#l00088">drv_push_button.h:88</a></div></div>
+<div class="ttc" id="aa01638_html_aa2f2ef2afa1e13d9a26d222a716226ec"><div class="ttname"><a href="a01638.html#aa2f2ef2afa1e13d9a26d222a716226ec">PUSH_BUTTON_OBJECT_s::event_btn_up</a></div><div class="ttdeci">volatile uint16_t(* event_btn_up)(void)</div><div class="ttdoc">Function pointer to user function triggering a RELEASE event.</div><div class="ttdef"><b>Definition:</b> <a href="a00332_source.html#l00116">drv_push_button.h:116</a></div></div>
+<div class="ttc" id="aa00510_html_ga29d5123115f34320a92fabc8be2f796c"><div class="ttname"><a href="a00510.html#ga29d5123115f34320a92fabc8be2f796c">drv_PushButton_Execute</a></div><div class="ttdeci">volatile uint16_t drv_PushButton_Execute(volatile struct PUSH_BUTTON_OBJECT_s *pushbtn)</div><div class="ttdoc">Initializes the push button device driver.</div><div class="ttdef"><b>Definition:</b> <a href="a00329_source.html#l00070">drv_push_button.c:70</a></div></div>
+<div class="ttc" id="aa00390_html_ga8dab463440a35fc3ca8ff1386e76a0ed"><div class="ttname"><a href="a00390.html#ga8dab463440a35fc3ca8ff1386e76a0ed">SW_USER_Get</a></div><div class="ttdeci">#define SW_USER_Get()</div><div class="ttdoc">Macro instruction to set a pin state to logic HIGH.</div><div class="ttdef"><b>Definition:</b> <a href="a00104_source.html#l00232">dpsk3_hwdescr.h:232</a></div></div>
+<div class="ttc" id="aa01626_html_ae6577f0794699101b84e90afcdfcaaaa"><div class="ttname"><a href="a01626.html#ae6577f0794699101b84e90afcdfcaaaa">PUSH_BUTTON_STATUS_s::long_press</a></div><div class="ttdeci">volatile bool long_press</div><div class="ttdoc">Bit 13: Indicates if switch has been pressed for a longer time.</div><div class="ttdef"><b>Definition:</b> <a href="a00332_source.html#l00087">drv_push_button.h:87</a></div></div>
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d20b26dc4520361ccd635dceae61919e.html">dpsk_vmc.X</a></li><li class="navelem"><a class="el" href="dir_2d5194f0f4a973de1534bc6ef9e5e7d3.html">sources</a></li><li class="navelem"><a class="el" href="dir_b578d8adb3baa87c6e2e9fe5446a56e9.html">pwr_control</a></li><li class="navelem"><a class="el" href="dir_aac818152fb11d17f8c37e6d655031cc.html">drivers</a></li><li class="navelem"><b>v_loop.h</b></li>
+    <li class="navelem"><a class="el" href="dir_01066bb7b1e33c391de0f39ab7f37964.html">dpsk_buck_vmc.X</a></li><li class="navelem"><a class="el" href="dir_4775101750c4dd55cff8a4809201f12a.html">sources</a></li><li class="navelem"><a class="el" href="dir_6f753c9b8f16b6d0694aefeac5f29dee.html">push_button</a></li><li class="navelem"><a class="el" href="dir_7de90b19c74a8c3bc0e845c53ae9de16.html">drivers</a></li><li class="navelem"><b>drv_push_button.c</b></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

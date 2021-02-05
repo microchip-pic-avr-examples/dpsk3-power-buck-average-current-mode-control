@@ -1,4 +1,6 @@
-<map id="Functions" name="Functions">
-<area shape="rect" id="node1" title="Functions of the second library layer." alt="" coords="199,13,277,38"/>
-<area shape="rect" id="node2" href="$a00483.html" title="Description of the Buck Converter Library State Machine library module." alt="" coords="5,5,151,45"/>
+<map id="Buck Peripheral Configuration" name="Buck Peripheral Configuration">
+<area shape="rect" id="node1" title=" " alt="" coords="207,31,400,56"/>
+<area shape="rect" id="node2" href="$a00485.html" title="Functions of the second library layer." alt="" coords="449,5,528,31"/>
+<area shape="rect" id="node3" href="$a00486.html" title="Properties of the second library layer." alt="" coords="448,55,529,80"/>
+<area shape="rect" id="node4" href="$a00471.html" title=" " alt="" coords="5,23,159,63"/>
 </map>

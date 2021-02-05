@@ -1,5 +1,4 @@
 var a00522 =
 [
-    [ "sysFosc_Initialize", "a00522.html#ga40d0188218fbc4f682cbddffff9e1269", null ],
-    [ "sysAclk_Initialize", "a00522.html#ga3f3f3c22c6c2b95518271fae8f58b03f", null ]
+    [ "sysGpio_Initialize", "a00522.html#ga79cb6e309797560a9a262a562fe40fee", null ]
 ];

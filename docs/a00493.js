@@ -1,4 +1,7 @@
 var a00493 =
 [
-    [ "BUCK_SPECIAL_FUNCTIONS_e", "a00493.html#ga3c2021030c83c9decfce3a892febcb9d", null ]
+    [ "buckDacModuleConfig", "a00493.html#gac26c1311a275f3076a198a09227e8147", null ],
+    [ "buckDacInstanceConfig", "a00493.html#gab25d1a3889c78f4213ba349255d346c7", null ],
+    [ "buckPwmModuleConfig", "a00493.html#ga2d420ce844bd8e8c1f81d173d3c3b549", null ],
+    [ "buckPwmGeneratorConfig", "a00493.html#gae543c7d56ffc52bf7455d0a58d5ad70b", null ]
 ];

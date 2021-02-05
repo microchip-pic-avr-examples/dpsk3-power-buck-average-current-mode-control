@@ -1,4 +1,6 @@
 var a00524 =
 [
-    [ "sysDsp_Initialize", "a00524.html#gae104c8e1fd4160f749fefbcf540f5a07", null ]
+    [ "User Peripheral Initialization", "a00525.html", "a00525" ],
+    [ "Digital-to-Analog Converter", "a00526.html", "a00526" ],
+    [ "Operational Amplifier Configuration", "a00527.html", "a00527" ]
 ];

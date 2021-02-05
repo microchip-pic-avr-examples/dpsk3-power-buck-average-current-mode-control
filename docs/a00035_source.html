@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>dsPIC33C Digital Power Starter Kit: dpsk_vmc.X/sources/common/p33c_pral/p33c_ccp.c Source File</title>
+<title>Digital Power Starter Kit 3 Firmware Documentation: dpsk_buck_vmc.X/sources/common/p33c_pral/p33c_ccp.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -34,8 +34,9 @@
  <tr style="height: 36px;">
   <td id="projectlogo" style="padding-left: 0.2em; vertical-align: middle;"><img alt="Logo" src="microchip-docs.png"/></td>
   <td id="projectalign" style="padding-left: 0.0em;">
-   <div id="projectname" style="color: white; font-size:16px;">dsPIC33C Digital Power Starter Kit
+   <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware Documentation
    </div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -107,9 +108,9 @@ $(document).ready(function(){initNavTree('a00035_source.html',''); initResizable
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;p33c_ccp.h&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00539.html">P33C_CCP_INSTANCE_SFRSET_s</a> <a class="code" href="a00367.html#gaace96580ebc36260c1b6072178f25987">ccpConfigDefault</a> = { </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00538.html">P33C_CCP_INSTANCE_SFRSET_s</a> <a class="code" href="a00367.html#gaace96580ebc36260c1b6072178f25987">ccpConfigDefault</a> = { </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    .<a class="code" href="a00539.html#a537d44d6baaa4008aa4ccd19f81b5610">CCPxTMRL</a>.<a class="code" href="a00539.html#a900b69af7d674b8db3bceae754b4955a">value</a> = 0,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    .<a class="code" href="a00538.html#a537d44d6baaa4008aa4ccd19f81b5610">CCPxTMRL</a>.<a class="code" href="a00538.html#a900b69af7d674b8db3bceae754b4955a">value</a> = 0,</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    .CCPxTMRH.value = 0,</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    .CCPxBUFH.value = 0,</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    .CCPxBUFL.value = 0,</div>
@@ -130,24 +131,24 @@ $(document).ready(function(){initNavTree('a00035_source.html',''); initResizable
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//    (none)</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="a00359.html#ga69f27108ee95b46a170b3fd0900665ed">   60</a></span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00539.html">P33C_CCP_INSTANCE_SFRSET_s</a>* <a class="code" href="a00359.html#ga69f27108ee95b46a170b3fd0900665ed">p33c_CcpInstance_GetHandle</a>(<span class="keyword">volatile</span> uint16_t ccpInstance){</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="a00359.html#ga69f27108ee95b46a170b3fd0900665ed">   60</a></span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00538.html">P33C_CCP_INSTANCE_SFRSET_s</a>* <a class="code" href="a00359.html#ga69f27108ee95b46a170b3fd0900665ed">p33c_CcpInstance_GetHandle</a>(<span class="keyword">volatile</span> uint16_t ccpInstance){</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; <span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00539.html">P33C_CCP_INSTANCE_SFRSET_s</a>* ccp;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; <span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00538.html">P33C_CCP_INSTANCE_SFRSET_s</a>* ccp;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    </div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// Capture Handle: set pointer to memory address of desired PWM instance</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    ccp = (<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00539.html">P33C_CCP_INSTANCE_SFRSET_s</a>*) </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    ccp = (<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00538.html">P33C_CCP_INSTANCE_SFRSET_s</a>*) </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;         ((<span class="keyword">volatile</span> uint8_t*)&amp;CCP1CON1L + ((ccpInstance - 1) * P33C_CCPGEN_SFR_OFFSET));</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    </div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span>(ccp);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00539.html">P33C_CCP_INSTANCE_SFRSET_s</a> <a class="code" href="a00359.html#ga85e7392861b4162d105c2fb2c3fac15b">p33c_CcpInstance_ConfigRead</a>(volatile uint16_t ccpInstance){</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00538.html">P33C_CCP_INSTANCE_SFRSET_s</a> <a class="code" href="a00359.html#ga85e7392861b4162d105c2fb2c3fac15b">p33c_CcpInstance_ConfigRead</a>(volatile uint16_t ccpInstance){</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; <span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00539.html">P33C_CCP_INSTANCE_SFRSET_s</a>* ccp;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; <span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00538.html">P33C_CCP_INSTANCE_SFRSET_s</a>* ccp;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    </div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">// Capture Handle: set pointer to memory address of desired PWM instance</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    ccp = (<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00539.html">P33C_CCP_INSTANCE_SFRSET_s</a>*) </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    ccp = (<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00538.html">P33C_CCP_INSTANCE_SFRSET_s</a>*) </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;         ((<span class="keyword">volatile</span> uint8_t*)&amp;CCP1CON1L + ((ccpInstance - 1) * P33C_CCPGEN_SFR_OFFSET));</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    </div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">return</span>(*ccp);</div>
@@ -155,13 +156,13 @@ $(document).ready(function(){initNavTree('a00035_source.html',''); initResizable
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
 <div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="a00359.html#ga92df713d7ce95d9ce7408d246cfe5d17">  116</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00359.html#ga92df713d7ce95d9ce7408d246cfe5d17">p33c_CcpInstance_ConfigWrite</a>(<span class="keyword">volatile</span> uint16_t ccpInstance, </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                                <span class="keyword">volatile</span> <span class="keyword">struct</span> <a class="code" href="a00539.html">P33C_CCP_INSTANCE_SFRSET_s</a> ccpConfig)</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                                <span class="keyword">volatile</span> <span class="keyword">struct</span> <a class="code" href="a00538.html">P33C_CCP_INSTANCE_SFRSET_s</a> ccpConfig)</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;{</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">volatile</span> uint16_t retval=1;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00539.html">P33C_CCP_INSTANCE_SFRSET_s</a>* ccp;    </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00538.html">P33C_CCP_INSTANCE_SFRSET_s</a>* ccp;    </div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="comment">// Set pointer to memory address of desired PWM instance</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    ccp = (<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00539.html">P33C_CCP_INSTANCE_SFRSET_s</a>*) </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    ccp = (<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00538.html">P33C_CCP_INSTANCE_SFRSET_s</a>*) </div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        ((<span class="keyword">volatile</span> uint8_t*)&amp;CCP1CON1L + ((ccpInstance - 1) * P33C_CCPGEN_SFR_OFFSET));</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    *ccp = ccpConfig;</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    </div>
@@ -174,16 +175,16 @@ $(document).ready(function(){initNavTree('a00035_source.html',''); initResizable
 </div><!-- doc-content -->
 <div class="ttc" id="aa00359_html_ga85e7392861b4162d105c2fb2c3fac15b"><div class="ttname"><a href="a00359.html#ga85e7392861b4162d105c2fb2c3fac15b">p33c_CcpInstance_ConfigRead</a></div><div class="ttdeci">volatile struct P33C_CCP_INSTANCE_SFRSET_s p33c_CcpInstance_ConfigRead(volatile uint16_t ccpInstance)</div><div class="ttdoc">Read the current configuration from the CCP instance registers.</div><div class="ttdef"><b>Definition:</b> <a href="a00035_source.html#l00060">p33c_ccp.c:86</a></div></div>
 <div class="ttc" id="aa00359_html_ga92df713d7ce95d9ce7408d246cfe5d17"><div class="ttname"><a href="a00359.html#ga92df713d7ce95d9ce7408d246cfe5d17">p33c_CcpInstance_ConfigWrite</a></div><div class="ttdeci">volatile uint16_t p33c_CcpInstance_ConfigWrite(volatile uint16_t ccpInstance, volatile struct P33C_CCP_INSTANCE_SFRSET_s ccpConfig)</div><div class="ttdoc">Writes a user-defined configuration to the CCP instance registers.</div><div class="ttdef"><b>Definition:</b> <a href="a00035_source.html#l00116">p33c_ccp.c:116</a></div></div>
-<div class="ttc" id="aa00539_html_a537d44d6baaa4008aa4ccd19f81b5610"><div class="ttname"><a href="a00539.html#a537d44d6baaa4008aa4ccd19f81b5610">P33C_CCP_INSTANCE_SFRSET_s::CCPxTMRL</a></div><div class="ttdeci">union P33C_CCP_INSTANCE_SFRSET_s::@6 CCPxTMRL</div></div>
-<div class="ttc" id="aa00539_html_a900b69af7d674b8db3bceae754b4955a"><div class="ttname"><a href="a00539.html#a900b69af7d674b8db3bceae754b4955a">P33C_CCP_INSTANCE_SFRSET_s::value</a></div><div class="ttdeci">uint16_t value</div><div class="ttdef"><b>Definition:</b> <a href="a00038_source.html#l00042">p33c_ccp.h:42</a></div></div>
+<div class="ttc" id="aa00538_html"><div class="ttname"><a href="a00538.html">P33C_CCP_INSTANCE_SFRSET_s</a></div><div class="ttdoc">Generic Capture Compare Driver Module (header file)</div><div class="ttdef"><b>Definition:</b> <a href="a00038_source.html#l00038">p33c_ccp.h:38</a></div></div>
 <div class="ttc" id="aa00367_html_gaace96580ebc36260c1b6072178f25987"><div class="ttname"><a href="a00367.html#gaace96580ebc36260c1b6072178f25987">ccpConfigDefault</a></div><div class="ttdeci">volatile struct P33C_CCP_INSTANCE_SFRSET_s ccpConfigDefault</div><div class="ttdoc">CCP Register Set reset state template.</div><div class="ttdef"><b>Definition:</b> <a href="a00035_source.html#l00001">p33c_ccp.c:23</a></div></div>
-<div class="ttc" id="aa00539_html"><div class="ttname"><a href="a00539.html">P33C_CCP_INSTANCE_SFRSET_s</a></div><div class="ttdoc">Generic Capture Compare Driver Module (header file)</div><div class="ttdef"><b>Definition:</b> <a href="a00038_source.html#l00038">p33c_ccp.h:38</a></div></div>
+<div class="ttc" id="aa00538_html_a537d44d6baaa4008aa4ccd19f81b5610"><div class="ttname"><a href="a00538.html#a537d44d6baaa4008aa4ccd19f81b5610">P33C_CCP_INSTANCE_SFRSET_s::CCPxTMRL</a></div><div class="ttdeci">union P33C_CCP_INSTANCE_SFRSET_s::@6 CCPxTMRL</div></div>
+<div class="ttc" id="aa00538_html_a900b69af7d674b8db3bceae754b4955a"><div class="ttname"><a href="a00538.html#a900b69af7d674b8db3bceae754b4955a">P33C_CCP_INSTANCE_SFRSET_s::value</a></div><div class="ttdeci">uint16_t value</div><div class="ttdef"><b>Definition:</b> <a href="a00038_source.html#l00042">p33c_ccp.h:42</a></div></div>
 <div class="ttc" id="aa00359_html_ga69f27108ee95b46a170b3fd0900665ed"><div class="ttname"><a href="a00359.html#ga69f27108ee95b46a170b3fd0900665ed">p33c_CcpInstance_GetHandle</a></div><div class="ttdeci">volatile struct P33C_CCP_INSTANCE_SFRSET_s * p33c_CcpInstance_GetHandle(volatile uint16_t ccpInstance)</div><div class="ttdoc">Gets pointer to CCP instance SFR set.</div><div class="ttdef"><b>Definition:</b> <a href="a00035_source.html#l00060">p33c_ccp.c:60</a></div></div>
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d20b26dc4520361ccd635dceae61919e.html">dpsk_vmc.X</a></li><li class="navelem"><a class="el" href="dir_2d5194f0f4a973de1534bc6ef9e5e7d3.html">sources</a></li><li class="navelem"><a class="el" href="dir_5f77e2f05e54b33f0db856814e8474f5.html">common</a></li><li class="navelem"><a class="el" href="dir_5d8c73de57eff2cd23671f084a685d62.html">p33c_pral</a></li><li class="navelem"><b>p33c_ccp.c</b></li>
+    <li class="navelem"><a class="el" href="dir_01066bb7b1e33c391de0f39ab7f37964.html">dpsk_buck_vmc.X</a></li><li class="navelem"><a class="el" href="dir_4775101750c4dd55cff8a4809201f12a.html">sources</a></li><li class="navelem"><a class="el" href="dir_ced70fd872a44198d451146f52fcc7f8.html">common</a></li><li class="navelem"><a class="el" href="dir_8760435ef57efdda1da540d5815ec5fb.html">p33c_pral</a></li><li class="navelem"><b>p33c_ccp.c</b></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

@@ -1,13 +1,13 @@
-<map id="NPNZ_DATA_PROVIDERS_s" name="NPNZ_DATA_PROVIDERS_s">
-<area shape="rect" id="node1" title="Data Provider Target Memory Addresses." alt="" coords="641,5,873,127"/>
-<area shape="rect" id="node2" href="$a01631.html" title="Global NPNZ controller data object." alt="" coords="711,189,802,267"/>
-<area shape="rect" id="node3" href="$a01611.html" title="Automated ADC Trigger handling." alt="" coords="5,403,177,524"/>
-<area shape="rect" id="node4" href="$a01623.html" title="Adaptive Gain Control Modulation Parameters." alt="" coords="202,403,378,524"/>
-<area shape="rect" id="node5" href="$a01607.html" title="System Anti&#45;Windup (Output Clamping) Thresholds." alt="" coords="402,403,519,524"/>
-<area shape="rect" id="node6" href="$a01627.html" title="User Data Space for Advanced Control Functions." alt="" coords="543,373,757,553"/>
-<area shape="rect" id="node7" href="$a01599.html" title="Filter Coefficient Arrays, Number Format Handling and Input/Output History Parameters." alt="" coords="781,425,929,502"/>
-<area shape="rect" id="node9" href="$a01603.html" title="Filter Coefficient Arrays, Number Format Handling and Input/Output History Parameters." alt="" coords="953,329,1136,597"/>
-<area shape="rect" id="node10" href="$a01619.html" title="User Extension Function Call Parameters." alt="" coords="1160,337,1396,590"/>
-<area shape="rect" id="node11" href="$a01579.html" title="NPNZ16b controller object status and control word." alt="" coords="1420,366,1587,561"/>
-<area shape="rect" id="node8" href="$a01595.html" title="Data Input/Output Port declaration of memory addresses, signal offsets and normalization settings." alt="" coords="798,704,910,825"/>
+<map id="NPNZ16b_s" name="NPNZ16b_s">
+<area shape="rect" id="node1" title="Global NPNZ controller data object." alt="" coords="943,5,1085,200"/>
+<area shape="rect" id="node2" href="$a01594.html" title="Automated ADC Trigger handling." alt="" coords="5,321,177,443"/>
+<area shape="rect" id="node3" href="$a01598.html" title="Data Provider Target Memory Addresses." alt="" coords="202,321,434,443"/>
+<area shape="rect" id="node4" href="$a01602.html" title="User Extension Function Call Parameters." alt="" coords="459,255,695,509"/>
+<area shape="rect" id="node5" href="$a01586.html" title="Filter Coefficient Arrays, Number Format Handling and Input/Output History Parameters." alt="" coords="719,248,901,516"/>
+<area shape="rect" id="node6" href="$a01606.html" title="Adaptive Gain Control Modulation Parameters." alt="" coords="926,321,1102,443"/>
+<area shape="rect" id="node7" href="$a01590.html" title="System Anti&#45;Windup (Output Clamping) Thresholds." alt="" coords="1126,321,1243,443"/>
+<area shape="rect" id="node8" href="$a01582.html" title="Filter Coefficient Arrays, Number Format Handling and Input/Output History Parameters." alt="" coords="1268,314,1416,450"/>
+<area shape="rect" id="node10" href="$a01562.html" title="NPNZ16b controller object status and control word." alt="" coords="1440,285,1607,479"/>
+<area shape="rect" id="node11" href="$a01610.html" title="User Data Space for Advanced Control Functions." alt="" coords="1631,292,1845,472"/>
+<area shape="rect" id="node9" href="$a01578.html" title="Data Input/Output Port declaration of memory addresses, signal offsets and normalization settings." alt="" coords="1286,564,1398,685"/>
 </map>

@@ -1,7 +1,5 @@
 var a00527 =
 [
-    [ "sysDacModule_Initialize", "a00527.html#gab420e63336f317e197b1cb8861561c3f", null ],
-    [ "sysDacOutput_Initialize", "a00527.html#ga231ffdd65b0ae520b467cbc6fbbf8d03", null ],
-    [ "sysDacOutput_Enable", "a00527.html#ga2f97c3082e0d6f724cea482c10c2d08f", null ],
-    [ "sysDacOutput_Disable", "a00527.html#gae4c70ecb7b13f328f1458f5f2cfbe48a", null ]
+    [ "sysOpAmp_Initialize", "a00527.html#gaf4c74cf390185b49d99838e0f9885076", null ],
+    [ "sysOpAmp_ModuleEnable", "a00527.html#ga3cd080c9a48a5d74d8b2f89fdec161da", null ]
 ];

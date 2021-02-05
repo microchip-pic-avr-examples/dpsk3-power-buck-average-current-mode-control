@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>dsPIC33C Digital Power Starter Kit: dpsk_vmc.X/sources/config/init/init_dsp.c Source File</title>
+<title>Digital Power Starter Kit 3 Firmware Documentation: dpsk_buck_vmc.X/sources/config/init/init_dsp.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -34,8 +34,9 @@
  <tr style="height: 36px;">
   <td id="projectlogo" style="padding-left: 0.2em; vertical-align: middle;"><img alt="Logo" src="microchip-docs.png"/></td>
   <td id="projectalign" style="padding-left: 0.0em;">
-   <div id="projectname" style="color: white; font-size:16px;">dsPIC33C Digital Power Starter Kit
+   <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware Documentation
    </div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -111,9 +112,9 @@ $(document).ready(function(){initNavTree('a00119_source.html',''); initResizable
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;xc16_pral.h&quot;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="a00524.html#gae104c8e1fd4160f749fefbcf540f5a07">   48</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00524.html#gae104c8e1fd4160f749fefbcf540f5a07">sysDsp_Initialize</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="a00523.html#gae104c8e1fd4160f749fefbcf540f5a07">   48</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00523.html#gae104c8e1fd4160f749fefbcf540f5a07">sysDsp_Initialize</a>(<span class="keywordtype">void</span>) {</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    CORCONbits.ACCSAT = CORCON_ACCSAT_931;  <span class="comment">// Accumulator Saturation Mode Selection: 9.31 saturation (super saturation)</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    CORCONbits.ACCSAT = CORCON_ACCSAT_131;  <span class="comment">// Accumulator Saturation Mode Selection: 9.31 saturation (super saturation)</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    CORCONbits.IF = CORCON_IF_FRACTIONAL;   <span class="comment">// Integer or Fractional Multiplier Mode Selection: Fractional mode is enabled for DSP multiply</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    CORCONbits.RND = CORCON_RND_UNBIASED;   <span class="comment">// Rounding Mode Selection: Unbiased (convergent) rounding is enabled</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    CORCONbits.SATA = CORCON_SATA_ON;       <span class="comment">// ACCA Saturation Enable: Accumulator A saturation is enabled</span></div>
@@ -136,12 +137,12 @@ $(document).ready(function(){initNavTree('a00119_source.html',''); initResizable
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa00524_html_gae104c8e1fd4160f749fefbcf540f5a07"><div class="ttname"><a href="a00524.html#gae104c8e1fd4160f749fefbcf540f5a07">sysDsp_Initialize</a></div><div class="ttdeci">volatile uint16_t sysDsp_Initialize(void)</div><div class="ttdoc">Digital Signal Processor initialization.</div><div class="ttdef"><b>Definition:</b> <a href="a00119_source.html#l00048">init_dsp.c:48</a></div></div>
+<div class="ttc" id="aa00523_html_gae104c8e1fd4160f749fefbcf540f5a07"><div class="ttname"><a href="a00523.html#gae104c8e1fd4160f749fefbcf540f5a07">sysDsp_Initialize</a></div><div class="ttdeci">volatile uint16_t sysDsp_Initialize(void)</div><div class="ttdoc">Digital Signal Processor initialization.</div><div class="ttdef"><b>Definition:</b> <a href="a00119_source.html#l00048">init_dsp.c:48</a></div></div>
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d20b26dc4520361ccd635dceae61919e.html">dpsk_vmc.X</a></li><li class="navelem"><a class="el" href="dir_2d5194f0f4a973de1534bc6ef9e5e7d3.html">sources</a></li><li class="navelem"><a class="el" href="dir_f0298e50411a996cd9474df7082bd6ea.html">config</a></li><li class="navelem"><a class="el" href="dir_e6ff481a760abb8dcbad458ebddb1a8c.html">init</a></li><li class="navelem"><b>init_dsp.c</b></li>
+    <li class="navelem"><a class="el" href="dir_01066bb7b1e33c391de0f39ab7f37964.html">dpsk_buck_vmc.X</a></li><li class="navelem"><a class="el" href="dir_4775101750c4dd55cff8a4809201f12a.html">sources</a></li><li class="navelem"><a class="el" href="dir_033f174ee2b383398acd73569d12122c.html">config</a></li><li class="navelem"><a class="el" href="dir_3ee58c93f9a17aa9fadb3abe91d737a5.html">init</a></li><li class="navelem"><b>init_dsp.c</b></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

@@ -1,7 +1,7 @@
 var a00471 =
 [
-    [ "Public Functions", "a00472.html", "a00472" ],
-    [ "Public Properties", "a00473.html", "a00473" ],
-    [ "Private Functions", "a00477.html", null ],
-    [ "Private Properties", "a00478.html", "a00478" ]
+    [ "Buck Converter State Machine", "a00472.html", "a00472" ],
+    [ "Buck Special Functions", "a00478.html", "a00478" ],
+    [ "Buck Peripheral Configuration", "a00484.html", "a00484" ],
+    [ "Buck Peripheral Templates", "a00490.html", "a00490" ]
 ];

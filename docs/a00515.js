@@ -1,5 +1,6 @@
 var a00515 =
 [
-    [ "Device Start Up", "a00516.html", "a00516" ],
-    [ "Main Loop", "a00517.html", "a00517" ]
+    [ "Initializing Essential Chip Resources", "a00519.html", "a00519" ],
+    [ "Initializing Hardware-Specific Chip Resources", "a00524.html", "a00524" ],
+    [ "Initializing Firmware Tasks", "a00528.html", "a00528" ]
 ];
