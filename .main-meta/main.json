@@ -47,15 +47,13 @@
 		   "Power Management and Conversion"
        ],
        "keywords": [
-		   "dsPIC",
-         "DSP & Signal Conditioning",
+		 "dsPIC",
          "DSC",
-		   "Power Conversion & Charging",
          "Digital Power Conversion",
          "Digital Filters",
          "Power Conversion",
          "Power Supply",
-		   "SMPS"
+		 "SMPS"
        ]
      }
 }
