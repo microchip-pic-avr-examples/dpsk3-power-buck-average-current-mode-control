@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware Documentation: Conversion Macros</title>
+<title>Digital Power Starter Kit 3 Firmware: Conversion Macros</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -34,7 +34,7 @@
  <tr style="height: 36px;">
   <td id="projectlogo" style="padding-left: 0.2em; vertical-align: middle;"><img alt="Logo" src="microchip-docs.png"/></td>
   <td id="projectalign" style="padding-left: 0.0em;">
-   <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware Documentation
+   <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
    <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
   </td>
@@ -108,7 +108,8 @@ $(document).ready(function(){initNavTree('a00404.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00404.svg" width="362" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00404.svg" width="362" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="memitem:ga78e303e825ebbb38c8f61ddcb0a0d718"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga78e303e825ebbb38c8f61ddcb0a0d718">BUCK_VOUT_FEEDBACK_GAIN</a>&#160;&#160;&#160;(float)((<a class="el" href="a00403.html#ga4a6f31de7c3a357b3747d872b39a33e1">BUCK_VOUT_DIV_R2</a>) / (<a class="el" href="a00403.html#gaf247595693964a16cab1ca49e91d0825">BUCK_VOUT_DIV_R1</a> + <a class="el" href="a00403.html#ga4a6f31de7c3a357b3747d872b39a33e1">BUCK_VOUT_DIV_R2</a>))</td></tr>
@@ -145,6 +146,43 @@ $(document).ready(function(){initNavTree('a00404.html',''); initResizable(); });
 <tr class="memitem:ga8596a14d59666e7db30e52a5a3a39c8f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga8596a14d59666e7db30e52a5a3a39c8f">BUCK_VOUT_RANGE_MAX</a>&#160;&#160;&#160;(float)(<a class="el" href="a00377.html#ga317868c528ebe27fbca094a8bc2d910c">ADC_REFERENCE</a> * <a class="el" href="a00404.html#ga6f46102d2cb00d541e0cf6b3d7c3d46b">BUCK_VOUT_NORM_INV_G</a>)</td></tr>
 <tr class="memdesc:ga8596a14d59666e7db30e52a5a3a39c8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro calculating the integer number equivalent of the total output voltage range defined by the settings given above in [V]].  <a href="a00404.html#ga8596a14d59666e7db30e52a5a3a39c8f">More...</a><br /></td></tr>
 <tr class="separator:ga8596a14d59666e7db30e52a5a3a39c8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga79b327f868575255cf09583cf1970ea1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga79b327f868575255cf09583cf1970ea1">BOOST_VOUT_FEEDBACK_GAIN</a>&#160;&#160;&#160;(float)((<a class="el" href="a00403.html#ga2a1cf9da772e7fcb7803898deb0ebe86">BOOST_VOUT_DIV_R2</a>) / (<a class="el" href="a00403.html#gae629607ddac2fc054db8ca364ec1a9de">BOOST_VOUT_DIV_R1</a> + <a class="el" href="a00403.html#ga2a1cf9da772e7fcb7803898deb0ebe86">BOOST_VOUT_DIV_R2</a>))</td></tr>
+<tr class="memdesc:ga79b327f868575255cf09583cf1970ea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion macros of output voltage feedback parameters.  <a href="a00404.html#ga79b327f868575255cf09583cf1970ea1">More...</a><br /></td></tr>
+<tr class="separator:ga79b327f868575255cf09583cf1970ea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacdf6d826f314362d3aef5c3b31d40a80"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gacdf6d826f314362d3aef5c3b31d40a80">BOOST_VOUT_REF</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#ga56b83d27441bfa88e19670b4dedf2de8">BOOST_VOUT_NOMINAL</a> * <a class="el" href="a00404.html#ga79b327f868575255cf09583cf1970ea1">BOOST_VOUT_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
+<tr class="memdesc:gacdf6d826f314362d3aef5c3b31d40a80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro calculating the integer number equivalent of the output voltage reference given above in [V].  <a href="a00404.html#gacdf6d826f314362d3aef5c3b31d40a80">More...</a><br /></td></tr>
+<tr class="separator:gacdf6d826f314362d3aef5c3b31d40a80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae263e35d15b959f9bb7f4c970ffbbb06"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gae263e35d15b959f9bb7f4c970ffbbb06">BOOST_VOUT_NOM</a>&#160;&#160;&#160;<a class="el" href="a00404.html#gacdf6d826f314362d3aef5c3b31d40a80">BOOST_VOUT_REF</a></td></tr>
+<tr class="memdesc:gae263e35d15b959f9bb7f4c970ffbbb06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias macro of the integer number equivalent of the nominal output voltage given above in [V].  <a href="a00404.html#gae263e35d15b959f9bb7f4c970ffbbb06">More...</a><br /></td></tr>
+<tr class="separator:gae263e35d15b959f9bb7f4c970ffbbb06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3623bcffba8c593a603c6103e3f64297"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga3623bcffba8c593a603c6103e3f64297">BOOST_VOUT_DEV_TRIP</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#ga7bd7a9ba2474596e89b528ed8a473ef0">BOOST_VOUT_TOLERANCE_MAX</a> * <a class="el" href="a00404.html#ga79b327f868575255cf09583cf1970ea1">BOOST_VOUT_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
+<tr class="memdesc:ga3623bcffba8c593a603c6103e3f64297"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro calculating the integer number equivalent of the maximum allowed output voltage deviation given above in [V], which will lead to a converter shut down when exceeded.  <a href="a00404.html#ga3623bcffba8c593a603c6103e3f64297">More...</a><br /></td></tr>
+<tr class="separator:ga3623bcffba8c593a603c6103e3f64297"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac82c2e723104acfda07731c063ba3a0c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gac82c2e723104acfda07731c063ba3a0c">BOOST_VOUT_DEV_RELEASE</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#ga144893b4f72cc59c6b0ff16935025a3b">BOOST_VOUT_TOLERANCE_MIN</a> * <a class="el" href="a00404.html#ga79b327f868575255cf09583cf1970ea1">BOOST_VOUT_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
+<tr class="memdesc:gac82c2e723104acfda07731c063ba3a0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro calculating the integer number equivalent of the maximum allowed output voltage deviation given above in [V], which needs to be underrun before a shut-down converter can recover.  <a href="a00404.html#gac82c2e723104acfda07731c063ba3a0c">More...</a><br /></td></tr>
+<tr class="separator:gac82c2e723104acfda07731c063ba3a0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac4697105411532711d7f40611e141f0b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gac4697105411532711d7f40611e141f0b">BOOST_VOUT_OFFSET</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#gae78f23318f657874fa3169b6c7659908">BOOST_VOUT_FEEDBACK_OFFSET</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
+<tr class="memdesc:gac4697105411532711d7f40611e141f0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro calculating the integer number equivalent of the physical, static signal offset of this feedback channel.  <a href="a00404.html#gac4697105411532711d7f40611e141f0b">More...</a><br /></td></tr>
+<tr class="separator:gac4697105411532711d7f40611e141f0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacd456414b9bbddcdde3f08c0efbd903d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gacd456414b9bbddcdde3f08c0efbd903d">BOOST_VOUT_ADC_TRGDLY</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#ga930ff93bcf4b17bda050d16c61ee496e">BOOST_VOUT_ADC_TRG_DELAY</a> / <a class="el" href="a00378.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td></tr>
+<tr class="memdesc:gacd456414b9bbddcdde3f08c0efbd903d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro calculating the integer number equivalent of the signal chain time delay between internal PWM timebase and effective switching edge of the leading FET.  <a href="a00404.html#gacd456414b9bbddcdde3f08c0efbd903d">More...</a><br /></td></tr>
+<tr class="separator:gacd456414b9bbddcdde3f08c0efbd903d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae5901b3c629143c11577539079d473f7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gae5901b3c629143c11577539079d473f7">BOOST_VOUT_VFWD_DROP</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#gaece94d159a42f7cf2300ac46103f482f">BOOST_VOUT_VFWD_DROP_MAX</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
+<tr class="memdesc:gae5901b3c629143c11577539079d473f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro calculating the integer number equivalent of the maximum forward voltage drop across teh rectifier diode.  <a href="a00404.html#gae5901b3c629143c11577539079d473f7">More...</a><br /></td></tr>
+<tr class="separator:gae5901b3c629143c11577539079d473f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga04c4a2562cf5be6641eb0408fc66bfcc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga04c4a2562cf5be6641eb0408fc66bfcc">BOOST_VOUT_NORM_INV_G</a>&#160;&#160;&#160;(float)(1.0/<a class="el" href="a00404.html#ga79b327f868575255cf09583cf1970ea1">BOOST_VOUT_FEEDBACK_GAIN</a>)</td></tr>
+<tr class="memdesc:ga04c4a2562cf5be6641eb0408fc66bfcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverted feedback gain required for value normalization.  <a href="a00404.html#ga04c4a2562cf5be6641eb0408fc66bfcc">More...</a><br /></td></tr>
+<tr class="separator:ga04c4a2562cf5be6641eb0408fc66bfcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1bdaef3c6d009b06488ff96c79c0da0d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga1bdaef3c6d009b06488ff96c79c0da0d">BOOST_VOUT_NORM_SCALER</a>&#160;&#160;&#160;(int16_t)(ceil(log(<a class="el" href="a00404.html#ga04c4a2562cf5be6641eb0408fc66bfcc">BOOST_VOUT_NORM_INV_G</a>)) + 1)</td></tr>
+<tr class="memdesc:ga1bdaef3c6d009b06488ff96c79c0da0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">VOUT normalization <br  />
+  <a href="a00404.html#ga1bdaef3c6d009b06488ff96c79c0da0d">More...</a><br /></td></tr>
+<tr class="separator:ga1bdaef3c6d009b06488ff96c79c0da0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae7710dcb41a428ae2c56b4948227d320"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gae7710dcb41a428ae2c56b4948227d320">BOOST_VOUT_NORM_FACTOR</a>&#160;&#160;&#160;(int16_t)((<a class="el" href="a00404.html#ga04c4a2562cf5be6641eb0408fc66bfcc">BOOST_VOUT_NORM_INV_G</a> / pow(2.0, <a class="el" href="a00404.html#ga1bdaef3c6d009b06488ff96c79c0da0d">BOOST_VOUT_NORM_SCALER</a>)) * (pow(2.0, 15)-1))</td></tr>
+<tr class="memdesc:gae7710dcb41a428ae2c56b4948227d320"><td class="mdescLeft">&#160;</td><td class="mdescRight">VOUT normalization factor scaled in Q15.  <a href="a00404.html#gae7710dcb41a428ae2c56b4948227d320">More...</a><br /></td></tr>
+<tr class="separator:gae7710dcb41a428ae2c56b4948227d320"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0bb83c6df66e6b7193260bb06a5fcda8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga0bb83c6df66e6b7193260bb06a5fcda8">BOOST_VOUT_RANGE_MAX</a>&#160;&#160;&#160;(float)(<a class="el" href="a00377.html#ga317868c528ebe27fbca094a8bc2d910c">ADC_REFERENCE</a> * <a class="el" href="a00404.html#ga04c4a2562cf5be6641eb0408fc66bfcc">BOOST_VOUT_NORM_INV_G</a>)</td></tr>
+<tr class="memdesc:ga0bb83c6df66e6b7193260bb06a5fcda8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro calculating the integer number equivalent of the total output voltage range defined by the settings given above in [V]].  <a href="a00404.html#ga0bb83c6df66e6b7193260bb06a5fcda8">More...</a><br /></td></tr>
+<tr class="separator:ga0bb83c6df66e6b7193260bb06a5fcda8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Conversion macros for user-declarations of output voltage feedback parameters. </p>
@@ -164,7 +202,26 @@ $(document).ready(function(){initNavTree('a00404.html',''); initResizable(); });
 <p>Conversion macros of output voltage feedback parameters. </p>
 <p>These conversion macros are used to convert user settings defined as physical quantities into binary (integer) numbers, which will be written to registers and variables and used in calculations throughout the firmware. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00505">505</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00506">506</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga79b327f868575255cf09583cf1970ea1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga79b327f868575255cf09583cf1970ea1">&#9670;&nbsp;</a></span>BOOST_VOUT_FEEDBACK_GAIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VOUT_FEEDBACK_GAIN&#160;&#160;&#160;(float)((<a class="el" href="a00403.html#ga2a1cf9da772e7fcb7803898deb0ebe86">BOOST_VOUT_DIV_R2</a>) / (<a class="el" href="a00403.html#gae629607ddac2fc054db8ca364ec1a9de">BOOST_VOUT_DIV_R1</a> + <a class="el" href="a00403.html#ga2a1cf9da772e7fcb7803898deb0ebe86">BOOST_VOUT_DIV_R2</a>))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Conversion macros of output voltage feedback parameters. </p>
+<p>These conversion macros are used to convert user settings defined as physical quantities into binary (integer) numbers, which will be written to registers and variables and used in calculations throughout the firmware. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01133">1133</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -182,7 +239,7 @@ $(document).ready(function(){initNavTree('a00404.html',''); initResizable(); });
 
 <p>Macro calculating the integer number equivalent of the output voltage reference given above in [V]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00507">507</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00508">508</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -200,7 +257,7 @@ $(document).ready(function(){initNavTree('a00404.html',''); initResizable(); });
 
 <p>Alias macro of the integer number equivalent of the nominal output voltage given above in [V]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00508">508</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00509">509</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -218,7 +275,7 @@ $(document).ready(function(){initNavTree('a00404.html',''); initResizable(); });
 
 <p>Macro calculating the integer number equivalent of the maximum allowed output voltage deviation given above in [V], which will lead to a converter shut down when exceeded. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00509">509</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00510">510</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -236,7 +293,7 @@ $(document).ready(function(){initNavTree('a00404.html',''); initResizable(); });
 
 <p>Macro calculating the integer number equivalent of the maximum allowed output voltage deviation given above in [V], which needs to be underrun before a shut-down converter can recover. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00510">510</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00511">511</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -254,7 +311,7 @@ $(document).ready(function(){initNavTree('a00404.html',''); initResizable(); });
 
 <p>Macro calculating the integer number equivalent of the physical, static signal offset of this feedback channel. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00511">511</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00512">512</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -272,7 +329,7 @@ $(document).ready(function(){initNavTree('a00404.html',''); initResizable(); });
 
 <p>Macro calculating the integer number equivalent of the signal chain time delay between internal PWM timebase and effective switching edge of the leading FET. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00512">512</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00513">513</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -290,7 +347,7 @@ $(document).ready(function(){initNavTree('a00404.html',''); initResizable(); });
 
 <p>Inverted feedback gain required for value normalization. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00514">514</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00515">515</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -309,7 +366,7 @@ $(document).ready(function(){initNavTree('a00404.html',''); initResizable(); });
 <p>VOUT normalization <br  />
  </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00515">515</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00516">516</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -327,7 +384,7 @@ $(document).ready(function(){initNavTree('a00404.html',''); initResizable(); });
 
 <p>VOUT normalization factor scaled in Q15. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00516">516</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00517">517</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -345,7 +402,206 @@ $(document).ready(function(){initNavTree('a00404.html',''); initResizable(); });
 
 <p>Macro calculating the integer number equivalent of the total output voltage range defined by the settings given above in [V]]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00518">518</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00519">519</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gacdf6d826f314362d3aef5c3b31d40a80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacdf6d826f314362d3aef5c3b31d40a80">&#9670;&nbsp;</a></span>BOOST_VOUT_REF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VOUT_REF&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#ga56b83d27441bfa88e19670b4dedf2de8">BOOST_VOUT_NOMINAL</a> * <a class="el" href="a00404.html#ga79b327f868575255cf09583cf1970ea1">BOOST_VOUT_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Macro calculating the integer number equivalent of the output voltage reference given above in [V]. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01135">1135</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gae263e35d15b959f9bb7f4c970ffbbb06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae263e35d15b959f9bb7f4c970ffbbb06">&#9670;&nbsp;</a></span>BOOST_VOUT_NOM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VOUT_NOM&#160;&#160;&#160;<a class="el" href="a00404.html#gacdf6d826f314362d3aef5c3b31d40a80">BOOST_VOUT_REF</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alias macro of the integer number equivalent of the nominal output voltage given above in [V]. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01136">1136</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga3623bcffba8c593a603c6103e3f64297"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3623bcffba8c593a603c6103e3f64297">&#9670;&nbsp;</a></span>BOOST_VOUT_DEV_TRIP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VOUT_DEV_TRIP&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#ga7bd7a9ba2474596e89b528ed8a473ef0">BOOST_VOUT_TOLERANCE_MAX</a> * <a class="el" href="a00404.html#ga79b327f868575255cf09583cf1970ea1">BOOST_VOUT_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Macro calculating the integer number equivalent of the maximum allowed output voltage deviation given above in [V], which will lead to a converter shut down when exceeded. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01137">1137</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gac82c2e723104acfda07731c063ba3a0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac82c2e723104acfda07731c063ba3a0c">&#9670;&nbsp;</a></span>BOOST_VOUT_DEV_RELEASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VOUT_DEV_RELEASE&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#ga144893b4f72cc59c6b0ff16935025a3b">BOOST_VOUT_TOLERANCE_MIN</a> * <a class="el" href="a00404.html#ga79b327f868575255cf09583cf1970ea1">BOOST_VOUT_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Macro calculating the integer number equivalent of the maximum allowed output voltage deviation given above in [V], which needs to be underrun before a shut-down converter can recover. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01138">1138</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gac4697105411532711d7f40611e141f0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac4697105411532711d7f40611e141f0b">&#9670;&nbsp;</a></span>BOOST_VOUT_OFFSET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VOUT_OFFSET&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#gae78f23318f657874fa3169b6c7659908">BOOST_VOUT_FEEDBACK_OFFSET</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Macro calculating the integer number equivalent of the physical, static signal offset of this feedback channel. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01139">1139</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gacd456414b9bbddcdde3f08c0efbd903d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacd456414b9bbddcdde3f08c0efbd903d">&#9670;&nbsp;</a></span>BOOST_VOUT_ADC_TRGDLY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VOUT_ADC_TRGDLY&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#ga930ff93bcf4b17bda050d16c61ee496e">BOOST_VOUT_ADC_TRG_DELAY</a> / <a class="el" href="a00378.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Macro calculating the integer number equivalent of the signal chain time delay between internal PWM timebase and effective switching edge of the leading FET. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01140">1140</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gae5901b3c629143c11577539079d473f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae5901b3c629143c11577539079d473f7">&#9670;&nbsp;</a></span>BOOST_VOUT_VFWD_DROP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VOUT_VFWD_DROP&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00403.html#gaece94d159a42f7cf2300ac46103f482f">BOOST_VOUT_VFWD_DROP_MAX</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Macro calculating the integer number equivalent of the maximum forward voltage drop across teh rectifier diode. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01141">1141</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga04c4a2562cf5be6641eb0408fc66bfcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga04c4a2562cf5be6641eb0408fc66bfcc">&#9670;&nbsp;</a></span>BOOST_VOUT_NORM_INV_G</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VOUT_NORM_INV_G&#160;&#160;&#160;(float)(1.0/<a class="el" href="a00404.html#ga79b327f868575255cf09583cf1970ea1">BOOST_VOUT_FEEDBACK_GAIN</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inverted feedback gain required for value normalization. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01143">1143</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga1bdaef3c6d009b06488ff96c79c0da0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1bdaef3c6d009b06488ff96c79c0da0d">&#9670;&nbsp;</a></span>BOOST_VOUT_NORM_SCALER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VOUT_NORM_SCALER&#160;&#160;&#160;(int16_t)(ceil(log(<a class="el" href="a00404.html#ga04c4a2562cf5be6641eb0408fc66bfcc">BOOST_VOUT_NORM_INV_G</a>)) + 1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>VOUT normalization <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01144">1144</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gae7710dcb41a428ae2c56b4948227d320"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae7710dcb41a428ae2c56b4948227d320">&#9670;&nbsp;</a></span>BOOST_VOUT_NORM_FACTOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VOUT_NORM_FACTOR&#160;&#160;&#160;(int16_t)((<a class="el" href="a00404.html#ga04c4a2562cf5be6641eb0408fc66bfcc">BOOST_VOUT_NORM_INV_G</a> / pow(2.0, <a class="el" href="a00404.html#ga1bdaef3c6d009b06488ff96c79c0da0d">BOOST_VOUT_NORM_SCALER</a>)) * (pow(2.0, 15)-1))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>VOUT normalization factor scaled in Q15. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01145">1145</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga0bb83c6df66e6b7193260bb06a5fcda8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0bb83c6df66e6b7193260bb06a5fcda8">&#9670;&nbsp;</a></span>BOOST_VOUT_RANGE_MAX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VOUT_RANGE_MAX&#160;&#160;&#160;(float)(<a class="el" href="a00377.html#ga317868c528ebe27fbca094a8bc2d910c">ADC_REFERENCE</a> * <a class="el" href="a00404.html#ga04c4a2562cf5be6641eb0408fc66bfcc">BOOST_VOUT_NORM_INV_G</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Macro calculating the integer number equivalent of the total output voltage range defined by the settings given above in [V]]. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01147">1147</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

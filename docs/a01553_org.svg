@@ -61,22 +61,23 @@
 <g id="node3" class="node">
 <title>Node3</title>
 <g id="a_node3"><a xlink:href="a01522.html" target="_top" xlink:title="Generic power controller control settings.">
-<polygon fill="white" stroke="black" points="168,-392 168,-482 340,-482 340,-392 168,-392"/>
-<text text-anchor="middle" x="254" y="-470" font-family="Helvetica,sans-Serif" font-size="10.00">BUCK_CONVERTER_SETTINGS_s</text>
-<polyline fill="none" stroke="black" points="168,-463 340,-463 "/>
-<text text-anchor="start" x="176" y="-451" font-family="Helvetica,sans-Serif" font-size="10.00">+ control_mode</text>
-<text text-anchor="start" x="176" y="-440" font-family="Helvetica,sans-Serif" font-size="10.00">+ no_of_phases</text>
-<text text-anchor="start" x="176" y="-429" font-family="Helvetica,sans-Serif" font-size="10.00">+ v_ref</text>
-<text text-anchor="start" x="176" y="-418" font-family="Helvetica,sans-Serif" font-size="10.00">+ i_ref</text>
-<polyline fill="none" stroke="black" points="168,-411 340,-411 "/>
-<text text-anchor="middle" x="254" y="-399" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polygon fill="white" stroke="black" points="168,-386.5 168,-487.5 340,-487.5 340,-386.5 168,-386.5"/>
+<text text-anchor="middle" x="254" y="-475.5" font-family="Helvetica,sans-Serif" font-size="10.00">BUCK_CONVERTER_SETTINGS_s</text>
+<polyline fill="none" stroke="black" points="168,-468.5 340,-468.5 "/>
+<text text-anchor="start" x="176" y="-456.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ control_mode</text>
+<text text-anchor="start" x="176" y="-445.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ no_of_phases</text>
+<text text-anchor="start" x="176" y="-434.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ v_ref</text>
+<text text-anchor="start" x="176" y="-423.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ i_ref</text>
+<text text-anchor="start" x="176" y="-412.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ i_ref_startup</text>
+<polyline fill="none" stroke="black" points="168,-405.5 340,-405.5 "/>
+<text text-anchor="middle" x="254" y="-393.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M739.24,-651.98C644.72,-643.16 473.5,-617.4 349,-543 323.47,-527.74 300.85,-503.45 284.09,-482.07"/>
+<path fill="none" stroke="midnightblue" d="M739.24,-651.98C644.72,-643.16 473.5,-617.4 349,-543 325.68,-529.07 304.79,-507.6 288.58,-487.7"/>
 <polygon fill="none" stroke="midnightblue" points="738.99,-655.47 749.26,-652.88 739.62,-648.5 738.99,-655.47"/>
 </g>
 <!-- Node4 -->
@@ -237,13 +238,13 @@
 <text text-anchor="start" x="1352" y="-478.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ gpio_instance</text>
 <text text-anchor="start" x="1352" y="-467.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ gpio_high</text>
 <text text-anchor="start" x="1352" y="-456.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ gpio_low</text>
-<text text-anchor="start" x="1352" y="-445.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ master_period_enable</text>
-<text text-anchor="start" x="1352" y="-434.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ high_resolution_enable</text>
-<text text-anchor="start" x="1352" y="-423.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ sync_drive</text>
-<text text-anchor="start" x="1352" y="-412.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ period</text>
-<text text-anchor="start" x="1352" y="-401.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ phase</text>
-<text text-anchor="start" x="1352" y="-390.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ duty_ratio_init</text>
-<text text-anchor="start" x="1352" y="-379.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 7 more...</text>
+<text text-anchor="start" x="1352" y="-445.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ swap_outputs</text>
+<text text-anchor="start" x="1352" y="-434.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ master_period_enable</text>
+<text text-anchor="start" x="1352" y="-423.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ high_resolution_enable</text>
+<text text-anchor="start" x="1352" y="-412.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ sync_drive</text>
+<text text-anchor="start" x="1352" y="-401.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ period</text>
+<text text-anchor="start" x="1352" y="-390.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ phase</text>
+<text text-anchor="start" x="1352" y="-379.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 8 more...</text>
 <polyline fill="none" stroke="black" points="1344,-372.5 1526,-372.5 "/>
 <text text-anchor="middle" x="1435" y="-360.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 </a>

@@ -99,13 +99,13 @@
 <text text-anchor="start" x="1867.5" y="-517" font-family="Helvetica,sans-Serif" font-size="10.00">+ gpio_instance</text>
 <text text-anchor="start" x="1867.5" y="-506" font-family="Helvetica,sans-Serif" font-size="10.00">+ gpio_high</text>
 <text text-anchor="start" x="1867.5" y="-495" font-family="Helvetica,sans-Serif" font-size="10.00">+ gpio_low</text>
-<text text-anchor="start" x="1867.5" y="-484" font-family="Helvetica,sans-Serif" font-size="10.00">+ master_period_enable</text>
-<text text-anchor="start" x="1867.5" y="-473" font-family="Helvetica,sans-Serif" font-size="10.00">+ high_resolution_enable</text>
-<text text-anchor="start" x="1867.5" y="-462" font-family="Helvetica,sans-Serif" font-size="10.00">+ sync_drive</text>
-<text text-anchor="start" x="1867.5" y="-451" font-family="Helvetica,sans-Serif" font-size="10.00">+ period</text>
-<text text-anchor="start" x="1867.5" y="-440" font-family="Helvetica,sans-Serif" font-size="10.00">+ phase</text>
-<text text-anchor="start" x="1867.5" y="-429" font-family="Helvetica,sans-Serif" font-size="10.00">+ duty_ratio_init</text>
-<text text-anchor="start" x="1867.5" y="-418" font-family="Helvetica,sans-Serif" font-size="10.00">and 7 more...</text>
+<text text-anchor="start" x="1867.5" y="-484" font-family="Helvetica,sans-Serif" font-size="10.00">+ swap_outputs</text>
+<text text-anchor="start" x="1867.5" y="-473" font-family="Helvetica,sans-Serif" font-size="10.00">+ master_period_enable</text>
+<text text-anchor="start" x="1867.5" y="-462" font-family="Helvetica,sans-Serif" font-size="10.00">+ high_resolution_enable</text>
+<text text-anchor="start" x="1867.5" y="-451" font-family="Helvetica,sans-Serif" font-size="10.00">+ sync_drive</text>
+<text text-anchor="start" x="1867.5" y="-440" font-family="Helvetica,sans-Serif" font-size="10.00">+ period</text>
+<text text-anchor="start" x="1867.5" y="-429" font-family="Helvetica,sans-Serif" font-size="10.00">+ phase</text>
+<text text-anchor="start" x="1867.5" y="-418" font-family="Helvetica,sans-Serif" font-size="10.00">and 8 more...</text>
 <polyline fill="none" stroke="black" points="1859.5,-411 2041.5,-411 "/>
 <text text-anchor="middle" x="1950.5" y="-399" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 </a>
@@ -208,22 +208,23 @@
 <g id="node23" class="node">
 <title>Node23</title>
 <g id="a_node23"><a xlink:href="a01522.html" target="_top" xlink:title="Generic power controller control settings.">
-<polygon fill="white" stroke="black" points="2213.5,-430.5 2213.5,-520.5 2385.5,-520.5 2385.5,-430.5 2213.5,-430.5"/>
-<text text-anchor="middle" x="2299.5" y="-508.5" font-family="Helvetica,sans-Serif" font-size="10.00">BUCK_CONVERTER_SETTINGS_s</text>
-<polyline fill="none" stroke="black" points="2213.5,-501.5 2385.5,-501.5 "/>
-<text text-anchor="start" x="2221.5" y="-489.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ control_mode</text>
-<text text-anchor="start" x="2221.5" y="-478.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ no_of_phases</text>
-<text text-anchor="start" x="2221.5" y="-467.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ v_ref</text>
-<text text-anchor="start" x="2221.5" y="-456.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ i_ref</text>
-<polyline fill="none" stroke="black" points="2213.5,-449.5 2385.5,-449.5 "/>
-<text text-anchor="middle" x="2299.5" y="-437.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polygon fill="white" stroke="black" points="2213.5,-425 2213.5,-526 2385.5,-526 2385.5,-425 2213.5,-425"/>
+<text text-anchor="middle" x="2299.5" y="-514" font-family="Helvetica,sans-Serif" font-size="10.00">BUCK_CONVERTER_SETTINGS_s</text>
+<polyline fill="none" stroke="black" points="2213.5,-507 2385.5,-507 "/>
+<text text-anchor="start" x="2221.5" y="-495" font-family="Helvetica,sans-Serif" font-size="10.00">+ control_mode</text>
+<text text-anchor="start" x="2221.5" y="-484" font-family="Helvetica,sans-Serif" font-size="10.00">+ no_of_phases</text>
+<text text-anchor="start" x="2221.5" y="-473" font-family="Helvetica,sans-Serif" font-size="10.00">+ v_ref</text>
+<text text-anchor="start" x="2221.5" y="-462" font-family="Helvetica,sans-Serif" font-size="10.00">+ i_ref</text>
+<text text-anchor="start" x="2221.5" y="-451" font-family="Helvetica,sans-Serif" font-size="10.00">+ i_ref_startup</text>
+<polyline fill="none" stroke="black" points="2213.5,-444 2385.5,-444 "/>
+<text text-anchor="middle" x="2299.5" y="-432" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node23 -->
 <g id="edge43" class="edge">
 <title>Node2&#45;&gt;Node23</title>
-<path fill="none" stroke="midnightblue" d="M2124.79,-629.31C2150.44,-614.46 2179.93,-595.79 2204.5,-576 2224.96,-559.52 2245.38,-538.83 2262.01,-520.59"/>
+<path fill="none" stroke="midnightblue" d="M2124.79,-629.31C2150.44,-614.46 2179.93,-595.79 2204.5,-576 2222.91,-561.17 2241.29,-542.93 2256.91,-526.13"/>
 <polygon fill="none" stroke="midnightblue" points="2122.83,-626.39 2115.89,-634.4 2126.31,-632.47 2122.83,-626.39"/>
 </g>
 <!-- Node24 -->
@@ -727,7 +728,7 @@
 <!-- Node23&#45;&gt;Node2 -->
 <g id="edge42" class="edge">
 <title>Node23&#45;&gt;Node2</title>
-<path fill="none" stroke="#404040" d="M2288.47,-520.65C2278.53,-551.61 2260.85,-591.67 2231.5,-616 2204.56,-638.33 2167.65,-649.88 2135.29,-655.82"/>
+<path fill="none" stroke="#404040" d="M2286.6,-526.33C2276.36,-556.37 2259.09,-593.13 2231.5,-616 2204.56,-638.33 2167.65,-649.88 2135.29,-655.82"/>
 <polygon fill="none" stroke="#404040" points="2134.97,-655.87 2129.71,-660.8 2123.14,-657.83 2128.4,-652.91 2134.97,-655.87"/>
 <text text-anchor="middle" x="2280" y="-602.5" font-family="Helvetica,sans-Serif" font-size="10.00"> +set_values</text>
 </g>

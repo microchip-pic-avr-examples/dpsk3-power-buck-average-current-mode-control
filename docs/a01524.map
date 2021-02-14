@@ -7,7 +7,7 @@
 <area shape="rect" id="node6" href="$a01542.html" title="Buck converter feedback declarations." alt="" coords="737,807,957,884"/>
 <area shape="rect" id="node9" href="$a01498.html" title="data structure for the buck statement ID for sub&#45;operating and operating states" alt="" coords="981,785,1120,906"/>
 <area shape="rect" id="node10" href="$a01550.html" title="GPIO instance of the converter control GPIO." alt="" coords="1144,807,1325,884"/>
-<area shape="rect" id="node12" href="$a01522.html" title="Generic power controller control settings." alt="" coords="1349,785,1579,906"/>
+<area shape="rect" id="node12" href="$a01522.html" title="Generic power controller control settings." alt="" coords="1349,777,1579,913"/>
 <area shape="rect" id="node13" href="$a01514.html" title="Power Converter Startup Timing Settings." alt="" coords="1603,807,1829,884"/>
 <area shape="rect" id="node7" href="$a01538.html" title="ADC input channel configuration." alt="" coords="737,1093,957,1317"/>
 <area shape="rect" id="node8" href="$a01534.html" title="ADC input signal scaling = (ADCBUF &#45; &lt;offset&gt;) * &lt;factor&gt; &gt;&gt; 2^&lt;scaler&gt;" alt="" coords="740,1380,953,1487"/>

@@ -7,7 +7,7 @@
 <area shape="rect" id="node17" href="$a01542.html" title="Buck converter feedback declarations." alt="" coords="2077,263,2297,340"/>
 <area shape="rect" id="node20" href="$a01498.html" title="data structure for the buck statement ID for sub&#45;operating and operating states" alt="" coords="3053,241,3191,362"/>
 <area shape="rect" id="node21" href="$a01550.html" title="GPIO instance of the converter control GPIO." alt="" coords="3215,263,3397,340"/>
-<area shape="rect" id="node23" href="$a01522.html" title="Generic power controller control settings." alt="" coords="3421,241,3650,362"/>
+<area shape="rect" id="node23" href="$a01522.html" title="Generic power controller control settings." alt="" coords="3421,233,3650,369"/>
 <area shape="rect" id="node24" href="$a01514.html" title="Power Converter Startup Timing Settings." alt="" coords="3675,263,3900,340"/>
 <area shape="rect" id="node6" href="$a01614.html" title="Global NPNZ controller data object." alt="" coords="1013,5,1103,83"/>
 <area shape="rect" id="node7" href="$a01594.html" title="Automated ADC Trigger handling." alt="" coords="1092,241,1264,362"/>

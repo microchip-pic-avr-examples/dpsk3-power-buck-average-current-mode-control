@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware Documentation: User Settings</title>
+<title>Digital Power Starter Kit 3 Firmware: User Settings</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -34,7 +34,7 @@
  <tr style="height: 36px;">
   <td id="projectlogo" style="padding-left: 0.2em; vertical-align: middle;"><img alt="Logo" src="microchip-docs.png"/></td>
   <td id="projectalign" style="padding-left: 0.0em;">
-   <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware Documentation
+   <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
    <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
   </td>
@@ -108,7 +108,8 @@ $(document).ready(function(){initNavTree('a00403.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00403.svg" width="331" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00403.svg" width="331" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="memitem:ga28660f68fd69aa1cf4c352f88634060c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00403.html#ga28660f68fd69aa1cf4c352f88634060c">BUCK_VOUT_NOMINAL</a>&#160;&#160;&#160;(float)3.300</td></tr>
@@ -132,6 +133,30 @@ $(document).ready(function(){initNavTree('a00403.html',''); initResizable(); });
 <tr class="memitem:gae49c146c9868c9b950a541ebb1c3fcb6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00403.html#gae49c146c9868c9b950a541ebb1c3fcb6">BUCK_VOUT_ADC_TRG_DELAY</a>&#160;&#160;&#160;(float)(20.0e-9)</td></tr>
 <tr class="memdesc:gae49c146c9868c9b950a541ebb1c3fcb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trigger delay in [sec].  <a href="a00403.html#gae49c146c9868c9b950a541ebb1c3fcb6">More...</a><br /></td></tr>
 <tr class="separator:gae49c146c9868c9b950a541ebb1c3fcb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga56b83d27441bfa88e19670b4dedf2de8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00403.html#ga56b83d27441bfa88e19670b4dedf2de8">BOOST_VOUT_NOMINAL</a>&#160;&#160;&#160;(float)15.00</td></tr>
+<tr class="memdesc:ga56b83d27441bfa88e19670b4dedf2de8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration of output voltage feedback properties.  <a href="a00403.html#ga56b83d27441bfa88e19670b4dedf2de8">More...</a><br /></td></tr>
+<tr class="separator:ga56b83d27441bfa88e19670b4dedf2de8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7bd7a9ba2474596e89b528ed8a473ef0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00403.html#ga7bd7a9ba2474596e89b528ed8a473ef0">BOOST_VOUT_TOLERANCE_MAX</a>&#160;&#160;&#160;(float)0.500</td></tr>
+<tr class="memdesc:ga7bd7a9ba2474596e89b528ed8a473ef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output voltage tolerance [+/-].  <a href="a00403.html#ga7bd7a9ba2474596e89b528ed8a473ef0">More...</a><br /></td></tr>
+<tr class="separator:ga7bd7a9ba2474596e89b528ed8a473ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga144893b4f72cc59c6b0ff16935025a3b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00403.html#ga144893b4f72cc59c6b0ff16935025a3b">BOOST_VOUT_TOLERANCE_MIN</a>&#160;&#160;&#160;(float)0.100</td></tr>
+<tr class="memdesc:ga144893b4f72cc59c6b0ff16935025a3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output voltage tolerance [+/-].  <a href="a00403.html#ga144893b4f72cc59c6b0ff16935025a3b">More...</a><br /></td></tr>
+<tr class="separator:ga144893b4f72cc59c6b0ff16935025a3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaece94d159a42f7cf2300ac46103f482f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00403.html#gaece94d159a42f7cf2300ac46103f482f">BOOST_VOUT_VFWD_DROP_MAX</a>&#160;&#160;&#160;(float)0.400</td></tr>
+<tr class="memdesc:gaece94d159a42f7cf2300ac46103f482f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recitifer diode forward voltage drop maximum.  <a href="a00403.html#gaece94d159a42f7cf2300ac46103f482f">More...</a><br /></td></tr>
+<tr class="separator:gaece94d159a42f7cf2300ac46103f482f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae629607ddac2fc054db8ca364ec1a9de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00403.html#gae629607ddac2fc054db8ca364ec1a9de">BOOST_VOUT_DIV_R1</a>&#160;&#160;&#160;(float)(6.980)</td></tr>
+<tr class="memdesc:gae629607ddac2fc054db8ca364ec1a9de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upper voltage divider resistor in kOhm.  <a href="a00403.html#gae629607ddac2fc054db8ca364ec1a9de">More...</a><br /></td></tr>
+<tr class="separator:gae629607ddac2fc054db8ca364ec1a9de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2a1cf9da772e7fcb7803898deb0ebe86"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00403.html#ga2a1cf9da772e7fcb7803898deb0ebe86">BOOST_VOUT_DIV_R2</a>&#160;&#160;&#160;(float)(1.000)</td></tr>
+<tr class="memdesc:ga2a1cf9da772e7fcb7803898deb0ebe86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lower voltage divider resistor in kOhm.  <a href="a00403.html#ga2a1cf9da772e7fcb7803898deb0ebe86">More...</a><br /></td></tr>
+<tr class="separator:ga2a1cf9da772e7fcb7803898deb0ebe86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae78f23318f657874fa3169b6c7659908"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00403.html#gae78f23318f657874fa3169b6c7659908">BOOST_VOUT_FEEDBACK_OFFSET</a>&#160;&#160;&#160;(float)(0.0)</td></tr>
+<tr class="memdesc:gae78f23318f657874fa3169b6c7659908"><td class="mdescLeft">&#160;</td><td class="mdescRight">Physical, static signal offset in [V].  <a href="a00403.html#gae78f23318f657874fa3169b6c7659908">More...</a><br /></td></tr>
+<tr class="separator:gae78f23318f657874fa3169b6c7659908"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga930ff93bcf4b17bda050d16c61ee496e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00403.html#ga930ff93bcf4b17bda050d16c61ee496e">BOOST_VOUT_ADC_TRG_DELAY</a>&#160;&#160;&#160;(float)(20.0e-9)</td></tr>
+<tr class="memdesc:ga930ff93bcf4b17bda050d16c61ee496e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trigger delay in [sec].  <a href="a00403.html#ga930ff93bcf4b17bda050d16c61ee496e">More...</a><br /></td></tr>
+<tr class="separator:ga930ff93bcf4b17bda050d16c61ee496e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>User-declaration of output voltage feedback parameters using physical quantities. </p>
@@ -151,7 +176,26 @@ $(document).ready(function(){initNavTree('a00403.html',''); initResizable(); });
 <p>Declaration of output voltage feedback properties. </p>
 <p>In this section the output voltage feedback signal scaling, gain, valid signal limits and nominal operating point is specified. Physical quantities are used to define values. Macros are used to convert given physical values into binary (integer) number to be written into SFRs and variables. Nominal output voltage </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00462">462</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00463">463</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga56b83d27441bfa88e19670b4dedf2de8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga56b83d27441bfa88e19670b4dedf2de8">&#9670;&nbsp;</a></span>BOOST_VOUT_NOMINAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VOUT_NOMINAL&#160;&#160;&#160;(float)15.00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Declaration of output voltage feedback properties. </p>
+<p>In this section the output voltage feedback signal scaling, gain, valid signal limits and nominal operating point is specified. Physical quantities are used to define values. Macros are used to convert given physical values into binary (integer) number to be written into SFRs and variables. Nominal output voltage </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01089">1089</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -169,7 +213,7 @@ $(document).ready(function(){initNavTree('a00403.html',''); initResizable(); });
 
 <p>Output voltage tolerance [+/-]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00463">463</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00464">464</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -187,7 +231,7 @@ $(document).ready(function(){initNavTree('a00403.html',''); initResizable(); });
 
 <p>Output voltage tolerance [+/-]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00464">464</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00465">465</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -205,7 +249,7 @@ $(document).ready(function(){initNavTree('a00403.html',''); initResizable(); });
 
 <p>Upper voltage divider resistor in kOhm. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00466">466</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00467">467</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -223,7 +267,7 @@ $(document).ready(function(){initNavTree('a00403.html',''); initResizable(); });
 
 <p>Lower voltage divider resistor in kOhm. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00467">467</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00468">468</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -241,7 +285,7 @@ $(document).ready(function(){initNavTree('a00403.html',''); initResizable(); });
 
 <p>Physical, static signal offset in [V]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00468">468</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00469">469</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -259,7 +303,133 @@ $(document).ready(function(){initNavTree('a00403.html',''); initResizable(); });
 
 <p>Trigger delay in [sec]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00469">469</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00470">470</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga7bd7a9ba2474596e89b528ed8a473ef0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7bd7a9ba2474596e89b528ed8a473ef0">&#9670;&nbsp;</a></span>BOOST_VOUT_TOLERANCE_MAX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VOUT_TOLERANCE_MAX&#160;&#160;&#160;(float)0.500</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Output voltage tolerance [+/-]. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01090">1090</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga144893b4f72cc59c6b0ff16935025a3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga144893b4f72cc59c6b0ff16935025a3b">&#9670;&nbsp;</a></span>BOOST_VOUT_TOLERANCE_MIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VOUT_TOLERANCE_MIN&#160;&#160;&#160;(float)0.100</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Output voltage tolerance [+/-]. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01091">1091</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gaece94d159a42f7cf2300ac46103f482f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaece94d159a42f7cf2300ac46103f482f">&#9670;&nbsp;</a></span>BOOST_VOUT_VFWD_DROP_MAX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VOUT_VFWD_DROP_MAX&#160;&#160;&#160;(float)0.400</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Recitifer diode forward voltage drop maximum. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01092">1092</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gae629607ddac2fc054db8ca364ec1a9de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae629607ddac2fc054db8ca364ec1a9de">&#9670;&nbsp;</a></span>BOOST_VOUT_DIV_R1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VOUT_DIV_R1&#160;&#160;&#160;(float)(6.980)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Upper voltage divider resistor in kOhm. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01094">1094</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga2a1cf9da772e7fcb7803898deb0ebe86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2a1cf9da772e7fcb7803898deb0ebe86">&#9670;&nbsp;</a></span>BOOST_VOUT_DIV_R2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VOUT_DIV_R2&#160;&#160;&#160;(float)(1.000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lower voltage divider resistor in kOhm. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01095">1095</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gae78f23318f657874fa3169b6c7659908"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae78f23318f657874fa3169b6c7659908">&#9670;&nbsp;</a></span>BOOST_VOUT_FEEDBACK_OFFSET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VOUT_FEEDBACK_OFFSET&#160;&#160;&#160;(float)(0.0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Physical, static signal offset in [V]. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01096">1096</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga930ff93bcf4b17bda050d16c61ee496e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga930ff93bcf4b17bda050d16c61ee496e">&#9670;&nbsp;</a></span>BOOST_VOUT_ADC_TRG_DELAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VOUT_ADC_TRG_DELAY&#160;&#160;&#160;(float)(20.0e-9)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Trigger delay in [sec]. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01097">1097</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

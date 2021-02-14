@@ -167,13 +167,13 @@ var sectionId = 'dynsection-1';
 <text text-anchor="start" x="1071.5" y="-522.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ gpio_instance</text>
 <text text-anchor="start" x="1071.5" y="-511.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ gpio_high</text>
 <text text-anchor="start" x="1071.5" y="-500.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ gpio_low</text>
-<text text-anchor="start" x="1071.5" y="-489.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ master_period_enable</text>
-<text text-anchor="start" x="1071.5" y="-478.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ high_resolution_enable</text>
-<text text-anchor="start" x="1071.5" y="-467.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ sync_drive</text>
-<text text-anchor="start" x="1071.5" y="-456.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ period</text>
-<text text-anchor="start" x="1071.5" y="-445.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ phase</text>
-<text text-anchor="start" x="1071.5" y="-434.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ duty_ratio_init</text>
-<text text-anchor="start" x="1071.5" y="-423.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 7 more...</text>
+<text text-anchor="start" x="1071.5" y="-489.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ swap_outputs</text>
+<text text-anchor="start" x="1071.5" y="-478.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ master_period_enable</text>
+<text text-anchor="start" x="1071.5" y="-467.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ high_resolution_enable</text>
+<text text-anchor="start" x="1071.5" y="-456.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ sync_drive</text>
+<text text-anchor="start" x="1071.5" y="-445.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ period</text>
+<text text-anchor="start" x="1071.5" y="-434.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ phase</text>
+<text text-anchor="start" x="1071.5" y="-423.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 8 more...</text>
 <polyline fill="none" stroke="black" points="1063.5,-416.5 1245.5,-416.5 "/>
 <text text-anchor="middle" x="1154.5" y="-404.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 </a>
@@ -254,22 +254,23 @@ var sectionId = 'dynsection-1';
 <g id="node23" class="node">
 <title>Node23</title>
 <g id="a_node23"><a xlink:href="a01522.html" target="_top" xlink:title="Generic power controller control settings.">
-<polygon fill="white" stroke="black" points="505.5,-436 505.5,-526 677.5,-526 677.5,-436 505.5,-436"/>
-<text text-anchor="middle" x="591.5" y="-514" font-family="Helvetica,sans-Serif" font-size="10.00">BUCK_CONVERTER_SETTINGS_s</text>
-<polyline fill="none" stroke="black" points="505.5,-507 677.5,-507 "/>
-<text text-anchor="start" x="513.5" y="-495" font-family="Helvetica,sans-Serif" font-size="10.00">+ control_mode</text>
-<text text-anchor="start" x="513.5" y="-484" font-family="Helvetica,sans-Serif" font-size="10.00">+ no_of_phases</text>
-<text text-anchor="start" x="513.5" y="-473" font-family="Helvetica,sans-Serif" font-size="10.00">+ v_ref</text>
-<text text-anchor="start" x="513.5" y="-462" font-family="Helvetica,sans-Serif" font-size="10.00">+ i_ref</text>
-<polyline fill="none" stroke="black" points="505.5,-455 677.5,-455 "/>
-<text text-anchor="middle" x="591.5" y="-443" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polygon fill="white" stroke="black" points="505.5,-430.5 505.5,-531.5 677.5,-531.5 677.5,-430.5 505.5,-430.5"/>
+<text text-anchor="middle" x="591.5" y="-519.5" font-family="Helvetica,sans-Serif" font-size="10.00">BUCK_CONVERTER_SETTINGS_s</text>
+<polyline fill="none" stroke="black" points="505.5,-512.5 677.5,-512.5 "/>
+<text text-anchor="start" x="513.5" y="-500.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ control_mode</text>
+<text text-anchor="start" x="513.5" y="-489.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ no_of_phases</text>
+<text text-anchor="start" x="513.5" y="-478.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ v_ref</text>
+<text text-anchor="start" x="513.5" y="-467.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ i_ref</text>
+<text text-anchor="start" x="513.5" y="-456.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ i_ref_startup</text>
+<polyline fill="none" stroke="black" points="505.5,-449.5 677.5,-449.5 "/>
+<text text-anchor="middle" x="591.5" y="-437.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node23 -->
 <g id="edge43" class="edge">
 <title>Node2&#45;&gt;Node23</title>
-<path fill="none" stroke="midnightblue" d="M671.5,-636.35C655.2,-604.9 631.67,-559.51 614.35,-526.08"/>
+<path fill="none" stroke="midnightblue" d="M671.34,-636.04C655.94,-606.33 634.16,-564.31 617.24,-531.66"/>
 <polygon fill="none" stroke="midnightblue" points="668.4,-637.96 676.1,-645.23 674.61,-634.74 668.4,-637.96"/>
 </g>
 <!-- Node24 -->
@@ -773,7 +774,7 @@ var sectionId = 'dynsection-1';
 <!-- Node23&#45;&gt;Node2 -->
 <g id="edge42" class="edge">
 <title>Node23&#45;&gt;Node2</title>
-<path fill="none" stroke="#404040" d="M581.84,-526.11C577.62,-556.82 577.32,-597.41 596.5,-627 602.52,-636.29 611.01,-643.77 620.44,-649.77"/>
+<path fill="none" stroke="#404040" d="M581.11,-531.81C577.66,-561.71 578.48,-599.2 596.5,-627 602.52,-636.29 611.01,-643.77 620.44,-649.77"/>
 <polygon fill="none" stroke="#404040" points="620.52,-649.81 627.71,-649.28 630.97,-655.71 623.78,-656.24 620.52,-649.81"/>
 <text text-anchor="middle" x="624" y="-613.5" font-family="Helvetica,sans-Serif" font-size="10.00"> +set_values</text>
 </g>

@@ -9,7 +9,7 @@
 <area shape="rect" id="node19" href="$a01542.html" title="Buck converter feedback declarations." alt="" coords="5,645,225,723"/>
 <area shape="rect" id="node22" href="$a01498.html" title="data structure for the buck statement ID for sub&#45;operating and operating states" alt="" coords="474,623,613,745"/>
 <area shape="rect" id="node23" href="$a01550.html" title="GPIO instance of the converter control GPIO." alt="" coords="637,645,818,723"/>
-<area shape="rect" id="node25" href="$a01522.html" title="Generic power controller control settings." alt="" coords="842,623,1071,745"/>
+<area shape="rect" id="node25" href="$a01522.html" title="Generic power controller control settings." alt="" coords="842,616,1071,752"/>
 <area shape="rect" id="node8" href="$a01614.html" title="Global NPNZ controller data object." alt="" coords="2659,388,2750,465"/>
 <area shape="rect" id="node9" href="$a01594.html" title="Automated ADC Trigger handling." alt="" coords="2260,623,2432,745"/>
 <area shape="rect" id="node10" href="$a01606.html" title="Adaptive Gain Control Modulation Parameters." alt="" coords="2457,623,2633,745"/>

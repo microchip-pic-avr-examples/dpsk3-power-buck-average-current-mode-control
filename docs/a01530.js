@@ -4,6 +4,7 @@ var a01530 =
     [ "gpio_instance", "a01530.html#a87d4166062b0a4ec5b940c458cc92d8f", null ],
     [ "gpio_high", "a01530.html#a9320214ec2c12b30553f18b90bd66a40", null ],
     [ "gpio_low", "a01530.html#a736c541e05db7c7a5f434d82089ea922", null ],
+    [ "swap_outputs", "a01530.html#a9279b0b5c37b5449f3d970968b1e38fa", null ],
     [ "master_period_enable", "a01530.html#aec90912c08828f327183b3fdd22597b5", null ],
     [ "high_resolution_enable", "a01530.html#ab8295ce9e8d8fdba19b866d1cac71421", null ],
     [ "sync_drive", "a01530.html#a7160bcf47975cd60e3cf24410c4023f4", null ],
