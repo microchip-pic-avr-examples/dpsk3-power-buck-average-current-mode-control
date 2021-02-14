@@ -176,7 +176,7 @@
  * @{
  * @brief Global abstraction labels of special circuit signal device pin assignments
  * 
- * <b>Description:</b>
+ * @details
  * This section is used to define labels of hardware specific signals, which are directly 
  * assigned to specific device pins. These labels will be used throughout the code and remain
  * unchanged even if this firmware is migrated to another device or pin-out changes between
@@ -712,7 +712,7 @@
  * @{
  * @brief Declaration of additional hardware-specific defines required for adaptive gain control
  * 
- * <b>Description:</b>
+ * @details
  * In this section additional macros are defined to calculate constant parameters for the
  * adaptive gain modulation algorithm using user defined settings declared in their respective
  * sections. Any change of these parameters will also result in a change of the values of the 
@@ -763,13 +763,16 @@
  * be written to SFRs and variables.  
  * (see \ref startup-timing-macros for details)
  * 
- * <b>Please Note:</b><br>
- * On EPC9143 Rev 4 it takes roughly 50 ms until the auxiliary power has been started
- * and the controller completes self-test and peripheral configuration. After this period
- * the controller starts to execute the power control state machine.
+ * @note
+ * On DPSK3 it takes roughly 500 ms until the auxiliary power has been started, the 
+ * PIC24 housekeeping controller on the bottom side of the board resets the protection
+ * logic and allows the dsPIC to run. After this period the dsPIC controller starts to 
+ * execute its firmware.
  *  
- * This additional startup delay of ~50 ms is not considered here and needs to be taken into 
- * account when adjusting startup timing.
+ * This additional startup delay of ~500 ms is not considered in the settings below and 
+ * needs to be taken into account when adjusting startup timing. Use an independent debugging
+ * pin toggle at the beginning of the firmware to verify the specified startup timing is 
+ * applied as desired.
  **************************************************************************************************/
 
 #define BUCK_POWER_ON_DELAY          (float) 200e-3 ///< power on delay in [sec]
