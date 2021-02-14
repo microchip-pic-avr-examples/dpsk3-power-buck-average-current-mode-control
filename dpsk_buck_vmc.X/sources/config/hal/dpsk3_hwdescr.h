@@ -525,7 +525,7 @@
  * @{
  * @brief Declaration of phase-current feedback properties
  * 
- * <b>Description:</b>
+ * @details
  * In this section the phase-current feedback signal scaling, gain, valid signal limits and nominal
  * operating point is specified. Physical quantities are used to define parameter values to ease
  * the system configuration. 
@@ -552,7 +552,7 @@
     #define BUCK_ISNS_FEEDBACK_GAIN     (float) 1.000       ///< Current Gain in V/A
     #define BUCK_ISNS_MINIMUM           (float) 0.000       ///< absolute total minimum output current (average)
     #define BUCK_ISNS_MAXIMUM           (float) 2.500       ///< absolute total maximum output current (average)
-    #define BUCK_ISNS_RELEASE           (float) 2.500       ///< current reset level after over current event
+    #define BUCK_ISNS_RELEASE           (float) 2.000   ///< current reset level after over current event
     #define BUCK_ISNS_REFERENCE         (float) 2.500       ///< output current reference (average)
     #define BUCK_ISNS_REFERENCE_STARTUP (float) 2.500   ///< maximum output current (average) at startup
     #define BUCK_ISNS_ADC_TRG_DELAY     (float) 80.0e-9     ///< ADC trigger delay for current sense in [sec]
