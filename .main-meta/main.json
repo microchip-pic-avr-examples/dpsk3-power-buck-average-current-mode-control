@@ -35,27 +35,25 @@
          }
       },
       "peripherals":[
-         "UART",
-         "PWM",
-         "SMPS PWM",
-         "ADC",
-         "TIMER",
-         "SPI",
-         "LCD"
+        "UART",
+        "PWM",
+        "SMPS PWM",
+        "ADC",
+        "TIMER",
+        "SPI",
+        "LCD"
       ],
       "subcategories": [
-		   "Power Management and Conversion"
+		"Power Management and Conversion"
        ],
        "keywords": [
-		   "dsPIC",
-         "DSP & Signal Conditioning",
-         "DSC",
-		   "Power Conversion & Charging",
-         "Digital Power Conversion",
-         "Digital Filters",
-         "Power Conversion",
-         "Power Supply",
-		   "SMPS"
+		"dsPIC",
+        "DSC",
+        "Digital Power Conversion",
+        "Digital Filters",
+        "Power Conversion",
+        "Power Supply",
+		"SMPS"
        ]
      }
 }
