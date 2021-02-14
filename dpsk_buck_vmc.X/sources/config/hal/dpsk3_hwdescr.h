@@ -622,6 +622,7 @@
     #define BUCK_ISNS_ANSEL             _ANSELA0    ///< GPIO analog function mode enable bit
     #define BUCK_ISNS_ADCCORE           0           ///< 0=Dedicated Core #0, 1=Dedicated Core #1, 2=Shared ADC Core
     #define BUCK_ISNS_ADCIN             0           ///< Analog input number (e.g. '5' for 'AN5')
+    #define BUCK_ISNS_ALT_IN_SELECT     0b00        ///< Alternative Analog Input Selection (dedicated ADC cores only))																										   
     #define BUCK_ISNS_ADCBUF            ADCBUF0     ///< ADC input buffer of this ADC channel
     #define BUCK_ISNS_ADCTRIG           PG1TRIGB    ///< Register used for trigger placement
     #define BUCK_ISNS_TRGSRC            BUCK_PWM_TRGSRC_TRG2 ///< PWM1 (=PG1) Trigger 2 via PGxTRIGB
@@ -634,6 +635,7 @@
     #define BUCK_ISNS_ANSEL             _ANSELA1    ///< GPIO analog function mode enable bit
     #define BUCK_ISNS_ADCCORE           1           ///< 0=Dedicated Core #0, 1=Dedicated Core #1, 7=Shared ADC Core
     #define BUCK_ISNS_ADCIN             1           ///< Analog input number (e.g. '5' for 'AN5')
+	#define BUCK_ISNS_ALT_IN_SELECT     0b01        ///< Alternative Analog Input Selection (dedicated ADC cores only))
     #define BUCK_ISNS_ADCBUF            ADCBUF1     ///< ADC input buffer of this ADC channel
     #define BUCK_ISNS_ADCTRIG           PG1TRIGB    ///< Register used for trigger placement
     #define BUCK_ISNS_TRGSRC            BUCK_PWM_TRGSRC_TRG2 ///< PWM1 (=PG1) Trigger 2 via PGxTRIGB
