@@ -30,7 +30,7 @@ Voltage mode control example for the buck converter on the Digital Power Starter
 - - -
 
 ## Description
-This code example demonstrates the implementation of a simple voltage mode control loop for the synchronous buck converter. The loop implementation also includes the required state machine managing board status analysis, start-up control, operation monitoring, fault handling and auto-restart capability. The buck converter state machine is based on a generic library package, which is configured and run in user code.
+This code example demonstrates the implementation of a simple voltage mode control loop for the synchronous buck converter. The loop implementation also includes the required state machine managing board status analysis, start-up control, operation monitoring, fault handling and auto-restart capability. The buck converter state machine is based on a generic library package, which is configured and executed in user code.
 
 This code example also includes the LCD driver allowing users to observe runtime data on the on-board LC display. The on-board user switch `USER` is allows users to change the active display page to observe input voltage, output voltage, output current and board temperature.
 
