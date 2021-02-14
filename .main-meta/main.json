@@ -4,7 +4,7 @@
    "content":{
       "metaDataVersion":"1.0.0",
       "name":"com.microchip.mplabx.project.dpsk3-power-buck-voltage-mode-control",
-      "version":"1.0.0",
+      "version":"1.1.0",
       "displayName":"DPSK3 Synchronous Buck Converter Voltage Mode Control",
       "projectName":"dpsk3-power-buck-voltage-mode-control",
       "shortDescription":"Digital control loop implementation of a simple voltage mode controller regulating the output voltage of a synchronous buck converter",
