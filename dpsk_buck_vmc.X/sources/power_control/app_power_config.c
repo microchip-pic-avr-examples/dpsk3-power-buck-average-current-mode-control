@@ -64,6 +64,7 @@ volatile uint16_t appPowerSupply_ConverterObjectInitialize(void)
     buck.sw_node[0].gpio_instance = BUCK_PWM_GPIO_INSTANCE;
     buck.sw_node[0].gpio_high = BUCK_PWM_GPIO_PORT_PINH;
     buck.sw_node[0].gpio_low = BUCK_PWM_GPIO_PORT_PINL;
+    buck.sw_node[0].swap_outputs = BUCK_PWM_OUTPUT_SWAP;
     buck.sw_node[0].master_period_enable = false;
     buck.sw_node[0].sync_drive = true; 
     buck.sw_node[0].period = BUCK_PWM_PERIOD;

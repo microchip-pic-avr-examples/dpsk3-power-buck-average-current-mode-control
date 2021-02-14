@@ -378,6 +378,7 @@ struct BUCK_SWITCH_NODE_SETTINGS_s {
     volatile uint16_t gpio_instance;        ///< GPIO instance of the selected PWM generator
     volatile uint16_t gpio_high;            ///< GPIO port pin-number of PWMxH of the selected PWM generator
     volatile uint16_t gpio_low;             ///< GPIO port pin-number of PWMxL of the selected PWM generator
+    volatile bool     swap_outputs;         ///< Selecting if PWMxH (default) or PWMxL should be the leading PWM output
     volatile bool     master_period_enable; ///< Selecting MASTER or Individual period register
     volatile bool     high_resolution_enable; ///< Selecting if PWM module should use high-resolution mode 
     volatile bool     sync_drive;           ///< Selecting if switch node is driven in synchronous or asnchronous mode

@@ -241,11 +241,17 @@ volatile uint16_t buckPWM_Start(volatile struct BUCK_CONVERTER_s* buckInstance)
         }
 
         // Select the control bits for either synchronous or asynchronous PWM drive
+        // note: swapping PWMs changes H/L assignments and the 'active' pin has to 
+        //       selected in asynchronous mode
         if (buckInstance->sw_node[_i].sync_drive)
             sync_sw_mask = P33C_PGxIOCONH_PEN_SYNC;
         else
-            sync_sw_mask = P33C_PGxIOCONH_PEN_ASYNC;
-
+        {   
+            if (buckInstance->sw_node[_i].swap_outputs)
+                sync_sw_mask = P33C_PGxIOCONH_PEN_ASYNC_SWAP;
+            else
+                sync_sw_mask = P33C_PGxIOCONH_PEN_ASYNC;
+        }
         
         // PWMxH/L Output Port Enable: PWM generator controls the PWMxH output pin
         pg->PGxIOCONH.value |= sync_sw_mask; 
@@ -364,6 +370,7 @@ volatile uint16_t buckPWM_Resume(volatile struct BUCK_CONVERTER_s* buckInstance)
 {
     volatile uint16_t retval=1;
     volatile uint16_t _i=0;
+    volatile bool sync_mode=false;
     volatile uint16_t pwm_Instance=0;
     volatile uint16_t sync_sw_mask=0;
     volatile struct P33C_PWM_GENERATOR_s* pg;
@@ -378,10 +385,21 @@ volatile uint16_t buckPWM_Resume(volatile struct BUCK_CONVERTER_s* buckInstance)
         pg = p33c_PwmGenerator_GetHandle(pwm_Instance);
     
         // Select the control bits for either synchronous or asynchronous PWM drive
-        if ((buckInstance->sw_node[_i].sync_drive) || (buckInstance->status.bits.async_mode == false))
-            sync_sw_mask = P33C_PGxIOCONL_OVREN_SYNC;
+        sync_mode = buckInstance->sw_node[_i].sync_drive; 
+        sync_mode &= (~buckInstance->status.bits.async_mode);
+        
+        // Select the control bits for either synchronous or asynchronous PWM drive
+        // note: swapping PWMs changes H/L assignments and the 'active' pin has to 
+        //       selected in asynchronous mode
+        if (sync_mode)
+        {   sync_sw_mask = P33C_PGxIOCONL_OVREN_SYNC; }
         else
-            sync_sw_mask = P33C_PGxIOCONL_OVREN_ASYNC;
+        {   
+            if (buckInstance->sw_node[_i].swap_outputs)
+                sync_sw_mask = P33C_PGxIOCONL_OVREN_ASYNC_SWAP;
+            else
+                sync_sw_mask = P33C_PGxIOCONL_OVREN_ASYNC;
+        }
         
         // Clear selected override bits
         pg->PGxSTAT.bits.UPDREQ = 1; // Set the Update Request bit to update PWM timing

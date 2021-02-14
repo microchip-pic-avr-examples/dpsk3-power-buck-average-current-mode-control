@@ -313,6 +313,7 @@
 #define BUCK_PWM_GPIO_INSTANCE      1U ///< Number indicating device port, where 0=Port RA, 0=Port RB, 0=Port RC, etc.
 #define BUCK_PWM_GPIO_PORT_PINH     14U ///< Port Pin Number
 #define BUCK_PWM_GPIO_PORT_PINL     15U ///< Port Pin Number
+#define BUCK_PWM_OUTPUT_SWAP        false ///< true = PWMxH is the leading PWM output, false = PWMxL is the leading PWM output
     
 #define BUCK_PWM_PDC                PG1DC    ///< PWM Instance Duty Cycle Register
 #define BUCK_PWMH_TRIS              _TRISB14 ///< Device Port TRIS register
