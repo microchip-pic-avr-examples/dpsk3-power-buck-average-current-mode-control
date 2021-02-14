@@ -892,6 +892,647 @@
 /** @} */ // end of group control-interrupt-vector-declarations
 
 /**************************************************************************************************
+ * @ingroup pwm-settings
+ * @{
+ * @brief User-declaration of global defines for PWM signal generator settings
+ * 
+ * @details
+ * This section defines fundamental PWM settings required for the on-board boost converter of DPSK3.
+ * These settings are determined by hardware and defined using physical quantities. Pre-compiler 
+ * macros are used to convert physical values into binary (integer) numbers to be written to 
+ * Special Function Registers (SFR).
+ * 
+ **************************************************************************************************/
+
+#define BOOST_NO_OF_PHASES              1U ///< Number of power converter phases of this design
+
+#define BOOST_SWITCHING_FREQUENCY       (float)500.0e+3 ///< Fixed Switching frequency in [Hz]
+#define BOOST_PWM_DUTY_CYCLE_MIN        (float)0.040 ///< Minimum on/off-time ratio (duty ratio) in [%]
+#define BOOST_PWM_DUTY_CYCLE_MAX        (float)0.850 ///< Maximum on/off-time ratio (duty ratio) in [%]
+#define BOOST_LEADING_EDGE_BLANKING     (float)120.0e-9 ///< Leading Edge Blanking period in [sec]
+#define BOOST_DEAD_TIME_LEADING_EDGE    (float) 0.0e-9 ///< Leading Edge Dead Time delay in [sec]
+#define BOOST_DEAD_TIME_FALLING_EDGE    (float) 0.0e-9 ///< Falling Edge Dead Time delay in [sec]
+
+/** @} */ // end of group pwm-settings ~~~~~~~~~~~~~~~~~~~~
+
+/** 
+ * @ingroup pwm-mcal-phase1
+ * @{ 
+ * @brief PWM peripheral output pins, control signals and register assignments of converter phase #1
+ * 
+ * @details
+ * Converter phase #1 uses a simple half-bridge to commutate the switch node. The signal source
+ * therefore only requires a single PWM generator instance to be configured in fixed frequency 
+ * complementary mode with dead times. Additional PWM peripheral features are used by the firmware
+ * to respond to interrupts, trigger ADC conversions, control device output pins during startup 
+ * and fault responses and to change timing settings on the fly. 
+ * 
+ * Please review the device data sheet for details about register names and settings.
+ */
+#define BOOST_PWM_CHANNEL            2U ///< PWM Instance Index (e.g. 1=PWM1, 2=PWM2, etc.)
+#define BOOST_PWM_GPIO_INSTANCE      1U ///< Number indicating device port, where 0=Port RA, 0=Port RB, 0=Port RC, etc.
+#define BOOST_PWM_GPIO_PORT_PINH     13U ///< Port Pin Number
+#define BOOST_PWM_GPIO_PORT_PINL     12U ///< Port Pin Number
+#define BOOST_PWM_OUTPUT_SWAP        true ///< true = PWMxH is the leading PWM output, false = PWMxL is the leading PWM output
+
+#define BOOST_PWM_PDC                PG2DC    ///< PWM Instance Duty Cycle Register
+#define BOOST_PWMH_TRIS              _TRISB12 ///< Device Port TRIS register
+#define BOOST_PWMH_WR                _LATB12  ///< Device Pin WRITE
+#define BOOST_PWMH_RD                _RB12    ///< Device Pin READ
+#define BOOST_PWMH_RPx               (uint8_t)44 ///< Device Pin output remappable pin number (RPx)
+#define BOOST_PWML_TRIS              _TRISB13 ///< Device Port TRIS register
+#define BOOST_PWML_WR                _LATB13  ///< Device Pin WRITE
+#define BOOST_PWML_RD                _RB13    ///< Device Pin READ
+#define BOOST_PWML_RPx               (uint8_t)45 ///< Device Pin output remappable pin number (RPx)
+
+#define _BOOST_PWM_Interrupt         _PWM2Interrupt ///< PWM Interrupt Service Routine label
+#define BOOST_PWM_IF                 _PWM2IF  ///< PWM Interrupt Flag Bit
+#define BOOST_PWM_IE                 _PWM2IE  ///< PWM Interrupt Enable Bit
+#define BOOST_PWM_IP                 _PWM2IP  ///< PWM Interrupt Priority
+#define BOOST_PWM_TRGSRC_TRG1        0b00110  ///< PWM Trigger #1 Trigger Source of this channel
+#define BOOST_PWM_TRGSRC_TRG2        0b00111  ///< PWM Trigger #2 Trigger Source of this channel
+#define BOOST_PWM_PGxTRIGA           PG2TRIGA ///< PWM trigger register A
+#define BOOST_PWM_PGxTRIGB           PG2TRIGB ///< PWM trigger register B
+#define BOOST_PWM_PGxTRIGC           PG2TRIGC ///< PWM trigger register C
+    
+#define BOOST_PWM_ADTR1OFS           0U ///< ADC Trigger 1 Offset:  0...31
+#define BOOST_PWM_ADTR1PS            0U ///< ADC Trigger 1 Postscaler: 0...31
+
+#define BOOST_PWM_UPDREQ             PG2STATbits.UPDREQ
+
+/** @} */ // end of group pwm-mcal-phase1 ~~~~~~~~~~~~~~~~~
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/** 
+ * @ingroup pwm-macros
+ * @{ 
+ * @brief Conversion macros for user-declarations of PWM parameters
+ * 
+ * These conversion macros are used to convert user settings defined as physical 
+ * quantities into binary (integer) numbers, which will be written to registers and
+ * variables and used in calculations throughout the firmware.
+ */
+
+// Conversion Macros
+#define BOOST_SWITCHING_PERIOD   (float)(1.0/BOOST_SWITCHING_FREQUENCY)   ///< Switching period in [sec]
+#define BOOST_PWM_PERIOD         (uint16_t)(float)(BOOST_SWITCHING_PERIOD / PWM_CLOCK_PERIOD) ///< This sets the switching period of the converter
+#define BOOST_PWM_PHASE_SHIFT    (uint16_t)((float)BOOST_PWM_PERIOD / (float)BOOST_NO_OF_PHASES) ///< This sets the phase shift between phase #1 and #2
+#define BOOST_PWM_DC_MIN         (uint16_t)(BOOST_PWM_DUTY_CYCLE_MIN * (float)BOOST_PWM_PERIOD) ///< This sets the minimum duty cycle
+#define BOOST_PWM_DC_MAX         (uint16_t)(BOOST_PWM_DUTY_CYCLE_MAX * (float)BOOST_PWM_PERIOD) ///< This sets the maximum duty cycle
+#define BOOST_LEB_PERIOD         (uint16_t)(BOOST_LEADING_EDGE_BLANKING / (float)PWM_CLOCK_PERIOD) ///< Leading Edge Blanking = n x PWM resolution (here: 50 x 2ns = 100ns)
+#define BOOST_PWM_DEAD_TIME_LE   (uint16_t)(BOOST_DEAD_TIME_LEADING_EDGE / (float)PWM_CLOCK_PERIOD) ///< Rising edge dead time [tick = 250ps]
+#define BOOST_PWM_DEAD_TIME_FE   (uint16_t)(BOOST_DEAD_TIME_FALLING_EDGE / (float)PWM_CLOCK_PERIOD) ///< Falling edge dead time [tick = 250ps]
+
+/** @} */ // end of group pwm-macros ~~~~~~~~~~~~~~~~~~~~~~
+
+    
+/**************************************************************************************************
+ * @ingroup input-voltage-feedback-settings
+ * @{
+ * @brief Declaration of input voltage feedback properties
+ * 
+ * In this section the output voltage feedback signal scaling, gain, valid signal limits and nominal
+ * operating point is specified. Physical quantities are used to define values. Macros are used to 
+ * convert given physical values into binary (integer) number to be written into SFRs and variables.
+ * *************************************************************************************************/
+
+// Feedback Declarations
+#define BOOST_VIN_MINIMUM            (float) 6.500   ///< Minimum input voltage in [V]
+#define BOOST_VIN_NOMINAL            (float) 9.000   ///< Nominal input voltage in [V]
+#define BOOST_VIN_MAXIMUM            (float)13.800   ///< Maximum input voltage in [V]
+
+#define BOOST_VIN_UNDER_VOLTAGE      (float) 6.000   ///< Under Voltage Lock Out Cut Off in [V]
+#define BOOST_VIN_OVER_VOLTAGE       (float)14.300   ///< Over Voltage Lock Out Cut Off in [V]
+#define BOOST_VIN_HYSTERESIS         (float) 1.000   ///< UVLO/OVLO Hysteresis in [V]
+    
+#define BOOST_VIN_R1                 (float)(6.980)  ///< Upper voltage divider resistor in [kOhm]
+#define BOOST_VIN_R2                 (float)(1.000)  ///< Lower voltage divider resistor in [kOhm]
+    
+#define BOOST_VIN_FEEDBACK_OFFSET    (float)(0.0000) ///< Physical, static signal offset in [V]
+#define BOOST_VIN_ADC_TRG_DELAY      (float)(20.0e-9) ///< ADC trigger delay in [sec]
+
+/** @} */ // end of group input-voltage-feedback-settings ~~~~~~~~~~~~~~~~~~~~
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/** 
+ * @ingroup input-voltage-feedback-mcal
+ * @{ 
+ * @brief ADC input assignments of input voltage feedback signals
+ * 
+ * In this section the ADC input channels, related ADC result buffers, trigger
+ * sources and interrupt vectors are defined. These settings allow the fast 
+ * re-assignments of feedback signals in case of hardware changes.
+ */
+
+// Peripheral Assignments
+#define _BOOST_VIN_ADCInterrupt  _ADCAN12Interrupt ///< ADC interrupt service routine function call of the input voltage feedback channel
+#define _BOOST_VIN_ADCISR_IF     _ADCAN12IF   ///< ADC interrupt flag bit of the input voltage feedback channel
+
+#define BOOST_VIN_ANSEL          _ANSELC0    ///< GPIO analog function mode enable bit
+#define BOOST_VIN_ADCCORE        8           ///< 0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core
+#define BOOST_VIN_ADCIN          12          ///< Analog input number (e.g. '5' for 'AN5')
+#define BOOST_VIN_ADCBUF         ADCBUF12     ///< ADC input buffer of this ADC channel
+#define BOOST_VIN_ADCTRIG        PG2TRIGB    ///< Register used for trigger placement
+#define BOOST_VIN_TRGSRC         BOOST_PWM_TRGSRC_TRG2 ///< PWM1 (=PG1) Trigger 2 via PGxTRIGB
+
+/** @} */ // end of group input-voltage-feedback-mcal ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/** 
+ * @ingroup input-voltage-feedback-macros
+ * @{ 
+ * @brief Conversion macros of input voltage feedback parameters
+ * 
+ * These conversion macros are used to convert user settings defined as physical 
+ * quantities into binary (integer) numbers, which will be written to registers and
+ * variables and used in calculations throughout the firmware.
+ */
+    
+#define BOOST_VIN_FEEDBACK_GAIN  (float)((BOOST_VIN_R2) / (BOOST_VIN_R1 + BOOST_VIN_R2)) // DO NOT CHANGE
+#define BOOST_VIN_MIN            (uint16_t)(BOOST_VIN_MINIMUM * BOOST_VIN_FEEDBACK_GAIN / ADC_GRANULARITY)   ///< Minimum input voltage
+#define BOOST_VIN_NOM            (uint16_t)(BOOST_VIN_NOMINAL * BOOST_VIN_FEEDBACK_GAIN / ADC_GRANULARITY)   ///< Nominal input voltage
+#define BOOST_VIN_MAX            (uint16_t)(BOOST_VIN_MAXIMUM * BOOST_VIN_FEEDBACK_GAIN / ADC_GRANULARITY)   ///< Maximum input voltage
+#define BOOST_VIN_HYST           (uint16_t)(BOOST_VIN_HYSTERESIS * BOOST_VIN_FEEDBACK_GAIN / ADC_GRANULARITY)  ///< Over Voltage LOck Out voltage    
+#define BOOST_VIN_UVLO_TRIP      (uint16_t)(BOOST_VIN_UNDER_VOLTAGE * BOOST_VIN_FEEDBACK_GAIN / ADC_GRANULARITY) ///< Under Voltage LOck Out voltage
+#define BOOST_VIN_UVLO_RELEASE   (uint16_t)((BOOST_VIN_UNDER_VOLTAGE + BOOST_VIN_HYSTERESIS) * BOOST_VIN_FEEDBACK_GAIN / ADC_GRANULARITY) ///< Under Voltage LOck Out voltage
+#define BOOST_VIN_OVLO_TRIP      (uint16_t)(BOOST_VIN_OVER_VOLTAGE * BOOST_VIN_FEEDBACK_GAIN / ADC_GRANULARITY)  ///< Over Voltage LOck Out voltage
+#define BOOST_VIN_OVLO_RELEASE   (uint16_t)((BOOST_VIN_OVER_VOLTAGE - BOOST_VIN_HYSTERESIS) * BOOST_VIN_FEEDBACK_GAIN / ADC_GRANULARITY)  ///< Over Voltage LOck Out voltage
+#define BOOST_VIN_ADC_TRGDLY     (uint16_t)(BOOST_VIN_ADC_TRG_DELAY / PWM_CLOCK_PERIOD) ///< Input voltage ADC trigger delay
+#define BOOST_VIN_OFFSET         (uint16_t)(BOOST_VIN_FEEDBACK_OFFSET / ADC_GRANULARITY) ///< Input voltage feedback offset
+
+#define BOOST_VIN_NORM_INV_G     (float)(1.0/BOOST_VIN_FEEDBACK_GAIN) ///< Inverted feedback gain required for value normalization
+#define BOOST_VIN_NORM_SCALER    (int16_t)(ceil(log(BOOST_VIN_NORM_INV_G)) + 1) ///< VIN normalization  
+#define BOOST_VIN_NORM_FACTOR    (int16_t)((BOOST_VIN_NORM_INV_G / pow(2.0, BOOST_VIN_NORM_SCALER)) * (pow(2.0, 15)-1)) ///< VIN normalization factor scaled in Q15
+
+#define BOOST_VIN_RANGE_MAX      (float)(ADC_REFERENCE * BOOST_VIN_NORM_INV_G)
+
+/** @} */ // end of group input-voltage-feedback-macros ~~~~~~~~~~~~~~~~~~~~~~
+
+/**************************************************************************************************
+ * @ingroup output-voltage-feedback-settings
+ * @{
+ * @brief Declaration of output voltage feedback properties
+ * 
+ * In this section the output voltage feedback signal scaling, gain, valid signal limits and nominal
+ * operating point is specified. Physical quantities are used to define values. Macros are used to 
+ * convert given physical values into binary (integer) number to be written into SFRs and variables.
+ * *************************************************************************************************/
+
+// Feedback Declarations
+#define BOOST_VOUT_NOMINAL           (float)15.00   ///< Nominal output voltage
+#define BOOST_VOUT_TOLERANCE_MAX     (float)0.500   ///< Output voltage tolerance [+/-]
+#define BOOST_VOUT_TOLERANCE_MIN     (float)0.100   ///< Output voltage tolerance [+/-]
+#define BOOST_VOUT_VFWD_DROP_MAX     (float)0.400   ///< Recitifer diode forward voltage drop maximum
+    
+#define BOOST_VOUT_DIV_R1            (float)(6.980) ///< Upper voltage divider resistor in kOhm
+#define BOOST_VOUT_DIV_R2            (float)(1.000) ///< Lower voltage divider resistor in kOhm
+#define BOOST_VOUT_FEEDBACK_OFFSET   (float)(0.0)   ///< Physical, static signal offset in [V]
+#define BOOST_VOUT_ADC_TRG_DELAY     (float)(20.0e-9) ///< Trigger delay in [sec]
+
+/** @} */ // end of group output-voltage-feedback-settings ~~~~~~~~~~~~~~~~~~~~
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/** 
+ * @ingroup output-voltage-feedback-mcal
+ * @{ 
+ * @brief ADC input assignments of output voltage feedback signals
+ * 
+ * In this section the ADC input channels, related ADC result buffers, trigger
+ * sources and interrupt vectors are defined. These settings allow the fast 
+ * re-assignments of feedback signals in case of hardware changes.
+ */
+
+// Peripheral Assignments
+#define BOOST_VOUT_ANSEL             _ANSELD10   ///< GPIO analog function mode enable bit
+#define BOOST_VOUT_ADCCORE           8           ///< 0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core
+#define BOOST_VOUT_ADCIN             18          ///< Analog input number (e.g. '5' for 'AN5')
+#define BOOST_VOUT_ADCBUF            ADCBUF18    ///< ADC input buffer of this ADC channel
+#define BOOST_VOUT_ADCTRIG           PG2TRIGA    ///< Register used for trigger placement
+#define BOOST_VOUT_TRGSRC            BOOST_PWM_TRGSRC_TRG1 ///< PWM2 (=PG2) Trigger 1 via PGxTRIGA
+
+/** @} */ // end of group output-voltage-feedback-mcal ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/** 
+ * @ingroup output-voltage-feedback-macros
+ * @{ 
+ * @brief Conversion macros of output voltage feedback parameters
+ * 
+ * These conversion macros are used to convert user settings defined as physical 
+ * quantities into binary (integer) numbers, which will be written to registers and
+ * variables and used in calculations throughout the firmware.
+ */
+
+#define BOOST_VOUT_FEEDBACK_GAIN (float)((BOOST_VOUT_DIV_R2) / (BOOST_VOUT_DIV_R1 + BOOST_VOUT_DIV_R2))
+
+#define BOOST_VOUT_REF          (uint16_t)(BOOST_VOUT_NOMINAL * BOOST_VOUT_FEEDBACK_GAIN / ADC_GRANULARITY) ///< Macro calculating the integer number equivalent of the output voltage reference given above in [V]
+#define BOOST_VOUT_NOM          BOOST_VOUT_REF ///< Alias macro of the integer number equivalent of the nominal output voltage given above in [V]
+#define BOOST_VOUT_DEV_TRIP     (uint16_t)(BOOST_VOUT_TOLERANCE_MAX * BOOST_VOUT_FEEDBACK_GAIN / ADC_GRANULARITY) ///< Macro calculating the integer number equivalent of the maximum allowed output voltage deviation given above in [V], which will lead to a converter shut down when exceeded.
+#define BOOST_VOUT_DEV_RELEASE  (uint16_t)(BOOST_VOUT_TOLERANCE_MIN * BOOST_VOUT_FEEDBACK_GAIN / ADC_GRANULARITY) ///< Macro calculating the integer number equivalent of the maximum allowed output voltage deviation given above in [V], which needs to be underrun before a shut-down converter can recover
+#define BOOST_VOUT_OFFSET       (uint16_t)(BOOST_VOUT_FEEDBACK_OFFSET / ADC_GRANULARITY) ///< Macro calculating the integer number equivalent of the physical, static signal offset of this feedback channel
+#define BOOST_VOUT_ADC_TRGDLY   (uint16_t)(BOOST_VOUT_ADC_TRG_DELAY / PWM_CLOCK_PERIOD) ///< Macro calculating the integer number equivalent of the signal chain time delay between internal PWM timebase and effective switching edge of the leading FET
+#define BOOST_VOUT_VFWD_DROP    (uint16_t)(BOOST_VOUT_VFWD_DROP_MAX / ADC_GRANULARITY) ///< Macro calculating the integer number equivalent of the maximum forward voltage drop across teh rectifier diode
+
+#define BOOST_VOUT_NORM_INV_G   (float)(1.0/BOOST_VOUT_FEEDBACK_GAIN) ///< Inverted feedback gain required for value normalization
+#define BOOST_VOUT_NORM_SCALER  (int16_t)(ceil(log(BOOST_VOUT_NORM_INV_G)) + 1) ///< VOUT normalization  
+#define BOOST_VOUT_NORM_FACTOR  (int16_t)((BOOST_VOUT_NORM_INV_G / pow(2.0, BOOST_VOUT_NORM_SCALER)) * (pow(2.0, 15)-1)) ///< VOUT normalization factor scaled in Q15
+
+#define BOOST_VOUT_RANGE_MAX    (float)(ADC_REFERENCE * BOOST_VOUT_NORM_INV_G) ///< Macro calculating the integer number equivalent of the total output voltage range defined by the settings given above in [V]]
+    
+/** @} */ // end of group output-voltage-feedback-macros ~~~~~~~~~~~~~~~~~~~~~~
+
+/**************************************************************************************************
+ * @ingroup phase-current-feedback-settings
+ * @{
+ * @brief Declaration of phase-current feedback properties
+ * 
+ * @details
+ * In this section the phase-current feedback signal scaling, gain, valid signal limits and nominal
+ * operating point is specified. Physical quantities are used to define parameter values to ease
+ * the system configuration. 
+ * 
+ * As DPSK3 supports two different current sense devices (current sense transformers and shunt
+ * amplifier devices) users can select which one should be used for regulating the output current.
+ * Based on the selection made, the appropriate feedback channels and signal scaling values will be
+ * used by the firmware.
+ * 
+ * Macros are used to convert given physical values into binary (integer) number to be written
+ * into SFRs and variables and being used in runtime calculations.  
+ * (see \ref phase-current-feedback-macros for details)
+ * *************************************************************************************************/
+
+// Feedback Declarations
+#define BOOST_ISNS_LSCS     0                   ///< Use low-side shunt resistor as main current feedback source
+#define BOOST_ISNS_AMP      1                   ///< Use shunt amplifier as main current feedback source
+    
+#define BOOST_ISNS_OPTION    BOOST_ISNS_LSCS    ///< Select one of the available current sense feedback options
+
+// Settings based on the selection made above
+#if (BOOST_ISNS_OPTION == BOOST_ISNS_LSCS)
+
+    #define BOOST_ISNS_FEEDBACK_GAIN     (float) 1.000      ///< Current Gain in V/A
+    #define BOOST_ISNS_MINIMUM           (float) 0.000      ///< absolute total minimum output current (average) in [A]
+    #define BOOST_ISNS_MAXIMUM           (float) 2.500      ///< absolute total maximum output current (average) in [A]
+    #define BOOST_ISNS_RELEASE           (float) 1.500      ///< current reset level after over current event in [A]
+    #define BOOST_ISNS_REFERENCE         (float) 2.500      ///< output current reference (average) in [A]
+    #define BOOST_ISNS_REFERENCE_STARTUP (float) 2.500      ///< maximum output current (average) at startup in [A]
+    #define BOOST_ISNS_ADC_TRG_DELAY     (float) 200.0e-9   ///< ADC trigger delay for current sense in [sec]
+    #define BOOST_ISNS_FEEDBACK_OFFSET   (float) 1.125      ///< Current sense feedback offset (average) in [V]
+
+    #define BOOST_ISNS_OFFSET_CALIBRATION_ENABLE  true       ///< Current Sense Offset Calibration is disabled 
+
+#elif (BOOST_ISNS_OPTION == BOOST_ISNS_AMP)
+
+    #define BOOST_ISNS_FEEDBACK_GAIN     (float) 0.600      ///< Current Gain in V/A
+    #define BOOST_ISNS_MINIMUM           (float) 0.000      ///< absolute total minimum output current (average) in [A]
+    #define BOOST_ISNS_MAXIMUM           (float) 2.500      ///< absolute total maximum output current (average) in [A]
+    #define BOOST_ISNS_RELEASE           (float) 2.500      ///< current reset level after over current event in [A]
+    #define BOOST_ISNS_REFERENCE         (float) 2.500      ///< output current reference (average) in [A]
+    #define BOOST_ISNS_REFERENCE_STARTUP (float) 2.500      ///< maximum output current (average) at startup in [A]
+    #define BOOST_ISNS_ADC_TRG_DELAY     (float) 240.0e-9   ///< ADC trigger delay for current sense in [sec]
+    #define BOOST_ISNS_FEEDBACK_OFFSET   (float) 1.650      ///< current sense #1 feedback offset (average) in [V]
+
+    #define BOOST_ISNS_OFFSET_CALIBRATION_ENABLE true       ///< Current Sense Offset Calibration is disabled 
+
+#endif
+
+/** @} */ // end of group
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/** 
+ * @ingroup phase-current-feedback-macros
+ * @{ 
+ * @brief Conversion macros of phase current feedback parameters
+ * 
+ * These conversion macros are used to convert user settings defined as physical 
+ * quantities into binary (integer) numbers, which will be written to registers and
+ * variables and used in calculations throughout the firmware.
+ */
+
+// Phase Current Feedback Settings Conversion Macros
+#define BOOST_ISNS_MIN           (uint16_t)(int16_t)(((BOOST_ISNS_MINIMUM-BOOST_ISNS_FEEDBACK_OFFSET) * BOOST_ISNS_FEEDBACK_GAIN) / ADC_GRANULARITY)  ///< Over Current Limit
+#define BOOST_ISNS_OCL           (uint16_t)(((BOOST_ISNS_MAXIMUM-BOOST_ISNS_FEEDBACK_OFFSET) * BOOST_ISNS_FEEDBACK_GAIN) / ADC_GRANULARITY)  ///< Over Current Limit
+#define BOOST_ISNS_OCL_RELEASE   (uint16_t)(((BOOST_ISNS_RELEASE-BOOST_ISNS_FEEDBACK_OFFSET) * BOOST_ISNS_FEEDBACK_GAIN) / ADC_GRANULARITY)  ///< Over Current Release Level
+#define BOOST_ISNS_REF           (uint16_t)((BOOST_ISNS_REFERENCE * BOOST_ISNS_FEEDBACK_GAIN) / ADC_GRANULARITY)  ///< Output Current Reference
+#define BOOST_ISNS_REF_STARTUP   (uint16_t)((BOOST_ISNS_REFERENCE_STARTUP * BOOST_ISNS_FEEDBACK_GAIN) / ADC_GRANULARITY)  ///< Output Current Startup Reference
+#define BOOST_ISNS_FB_OFFSET     (uint16_t)(BOOST_ISNS_FEEDBACK_OFFSET / ADC_GRANULARITY)
+#define BOOST_ISNS_ADC_TRGDLY    (uint16_t)(BOOST_ISNS_ADC_TRG_DELAY / PWM_CLOCK_PERIOD)
+
+#define BOOST_ISNS_NORM_INV_G    (float)(1.0/BOOST_ISNS_FEEDBACK_GAIN) ///< Inverted feedback gain required for value normalization
+#define BOOST_ISNS_NORM_SCALER   (int16_t)(ceil(log(BOOST_ISNS_NORM_INV_G)) + 1) ///< ISNS normalization  
+#define BOOST_ISNS_NORM_FACTOR   (int16_t)((BOOST_ISNS_NORM_INV_G / pow(2.0, BOOST_ISNS_NORM_SCALER)) * (pow(2.0, 15)-1)) ///< ISNS normalization factor scaled in Q15
+
+/** @} */ // end of group phase-current-feedback-macros ~~~~~~~~~~~~~~~~~~~~~~~
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/** 
+ * @ingroup phase-current-feedback-mcal
+ * @{ 
+ * @brief ADC input assignments of phase current feedback signals
+ * 
+ * @details
+ * In this section the ADC input channels, related ADC result buffers, trigger
+ * sources and interrupt vectors are defined. These settings allow the fast 
+ * re-assignments of feedback signals in case of hardware changes.
+ */
+ 
+// Peripheral Assignments
+#if (BOOST_ISNS_OPTION == BOOST_ISNS_LSCS)
+
+    #define _BOOST_ISNS_ADCInterrupt    _ADCAN1Interrupt ///< Interrupt Service Routine function name
+    #define _BOOST_ISNS_ADCISR_IF       _ADCAN1IF   ///< Interrupt Service Routine Flag Bit
+
+    #define BOOST_ISNS_ANSEL            _ANSELA1    ///< GPIO analog function mode enable bit
+    #define BOOST_ISNS_ADCCORE          1           ///< 0=Dedicated Core #0, 1=Dedicated Core #1, 2=Shared ADC Core
+    #define BOOST_ISNS_ADCIN            1           ///< Analog input number (e.g. '5' for 'AN5')
+    #define BOOST_ISNS_ALT_IN_SELECT    0b00        ///< Alternative Analog Input Selection (dedicated ADC cores only))
+    #define BOOST_ISNS_ADCBUF           ADCBUF1     ///< ADC input buffer of this ADC channel
+    #define BOOST_ISNS_ADCTRIG          PG2TRIGB    ///< Register used for trigger placement
+    #define BOOST_ISNS_TRGSRC           BOOST_PWM_TRGSRC_TRG2 ///< PWM2 (=PG2) Trigger 2 via PGxTRIGB
+
+    #define BOOST_ISNS_OPA_INSTANCE     2U  ///< Operational amplifier instance used as ISNS aplifier (0 = disables op-amp option))
+
+#elif (BOOST_ISNS_OPTION == BOOST_ISNS_AMP)
+
+    #define _BOOST_ISNS_ADCInterrupt     _ADCAN1Interrupt ///< Interrupt Service Routine function name
+    #define _BOOST_ISNS_ADCISR_IF        _ADCAN1IF   ///< Interrupt Service Routine Flag Bit
+
+    #define BOOST_ISNS_ANSEL             _ANSELA1    ///< GPIO analog function mode enable bit
+    #define BOOST_ISNS_ADCCORE           1           ///< 0=Dedicated Core #0, 1=Dedicated Core #1, 7=Shared ADC Core
+    #define BOOST_ISNS_ADCIN             1           ///< Analog input number (e.g. '5' for 'AN5')
+    #define BOOST_ISNS_ALT_IN_SELECT     0b00        ///< Alternative Analog Input Selection (dedicated ADC cores only))
+    #define BOOST_ISNS_ADCBUF            ADCBUF1     ///< ADC input buffer of this ADC channel
+    #define BOOST_ISNS_ADCTRIG           PG2TRIGB    ///< Register used for trigger placement
+    #define BOOST_ISNS_TRGSRC            BOOST_PWM_TRGSRC_TRG2 ///< PWM2 (=PG2) Trigger 2 via PGxTRIGB
+
+    #define BOOST_ISNS_OPA_INSTANCE     0U  ///< Operational amplifier instance used as ISNS aplifier (0 = disables op-amp))
+
+#else
+    #pragma message "hardware abstraction layer warning: no current sense feedback selected."
+#endif
+
+/** @} */ // end of group phase-current-feedback-mcal ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+/**************************************************************************************************
+ * @ingroup temperature-feedback-settings
+ * @{
+ * @brief Declaration of temperature feedback properties
+ * 
+ * @details
+ * In this section the temperature feedback signal scaling, gain and valid signal limits are 
+ * specified. Physical quantities are used to define parameter values to ease the system 
+ * configuration. 
+ * 
+ * As DPSK3 has one, central on-board temperature sensor between the load resistor banks 
+ * indicating the worst case system temperature.
+ * 
+ * Macros are used to convert given physical values into binary (integer) number to be written
+ * into SFRs and variables and being used in runtime calculations.  
+ * (see \ref phase-current-feedback-macros for details)
+ * *************************************************************************************************/
+
+#define BOOST_TEMPCAL_ZERO       (float) 0.500   // Temperature sense signal zero point voltage in [V]
+#define BOOST_TEMPCAL_SLOPE      (float) 0.010   // Temperature sense signal slope in [V/K]
+
+/** @} */ // end of group temperature-feedback-settings
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/** 
+ * @ingroup temperature-feedback-macros
+ * @{ 
+ * @brief Conversion macros of temperature feedback parameters
+ * 
+ * These conversion macros are used to convert user settings defined as physical 
+ * quantities into binary (integer) numbers, which will be written to registers and
+ * variables and used in calculations throughout the firmware.
+ */
+
+#define BOOST_FB_TEMP_ZERO       (uint16_t)(BOOST_TEMPCAL_ZERO / ADC_GRANULARITY)
+#define BOOST_FB_TEMP_SLOPE      (float)(BOOST_TEMPCAL_SLOPE / ADC_GRANULARITY)
+
+/** @} */ // end of group temperature-feedback-macros
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/** 
+ * @ingroup temperature-feedback-mcal
+ * @{ 
+ * @brief ADC input assignments of temperature feedback signals
+ * 
+ * @details
+ * In this section the ADC input channels, related ADC result buffers, trigger
+ * sources and interrupt vectors are defined. These settings allow the fast 
+ * re-assignments of feedback signals in case of hardware changes.
+ */
+
+#define _BOOST_TEMP_ADCInterrupt     _ADCAN2Interrupt ///< Interrupt Service Routine function name
+#define _BOOST_TEMP_ADCISR_IF        _ADCAN2IF   ///< Interrupt Service Routine Flag Bit
+
+#define BOOST_TEMP_ANSEL             _ANSELB7    ///< GPIO analog function mode enable bit
+#define BOOST_TEMP_ADCCORE           8           // 0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core
+#define BOOST_TEMP_ADCIN             2           // Analog input number (e.g. '5' for 'AN5')
+#define BOOST_TEMP_ADCBUF            ADCBUF2     ///< GPIO analog function mode enable bit
+#define BOOST_TEMP_ADCTRIG           PG2TRIGB    ///< Register used for trigger placement
+#define BOOST_TEMP_TRGSRC            BOOST_PWM_TRGSRC_TRG2    // PWM2 Trigger 2
+    
+/** @} */ // end of group temperature-feedback-mcal
+
+/**************************************************************************************************
+ * @ingroup adaptive-control
+ * @{
+ * @brief Declaration of additional hardware-specific defines required for adaptive gain control
+ * 
+ * @details
+ * In this section additional macros are defined to calculate constant parameters for the
+ * adaptive gain modulation algorithm using user defined settings declared in their respective
+ * sections. Any change of these parameters will also result in a change of the values of the 
+ * gain modulation parameters of this section.
+ * *************************************************************************************************/
+/* ToDo: AGC is temporarily disabled for the boost converter and requires further verification 
+
+#define BOOST_VL_MINIMUM         (float)(BOOST_VIN_UNDER_VOLTAGE - BOOST_VOUT_RANGE_MAX) ///< Minimum input voltage - maximum output voltate
+#define BOOST_VL_NOMINAL         (float)(BOOST_VIN_NOMINAL       - BOOST_VOUT_NOMINAL) ///< Nominal input voltage - nominal output voltate
+#define BOOST_VL_MAXIMUM         (float)(BOOST_VIN_RANGE_MAX     - 0) ///< Maximum input voltage - 0
+
+#define BOOST_AGC_FACTOR_MAX     (float)(BOOST_VL_NOMINAL / BOOST_VL_MINIMUM) ///< Floating point number of the maximumm limit of the adaptive gain modulation factor (float)
+
+// To calculate the voltage across the inductor, input and output voltage ADC results need to be normalized. The normalization factor is determined here
+// Each input voltage sample has to be multiplied with this scaling factor to allow the calculation of the instantaneous voltage across the inductor
+#define BOOST_VIN_NORM_FCT       (float)(BOOST_VOUT_FEEDBACK_GAIN / BOOST_VIN_FEEDBACK_GAIN)   ///< VIN-2-VOUT Normalization Factor
+#define BOOST_AGC_IO_NORM_SCALER (int16_t)(ceil(log(BOOST_VIN_NORM_FCT)) + 1) ///< Nominal VL Q15 scaler  
+#define BOOST_AGC_IO_NORM_FACTOR (int16_t)((BOOST_VIN_NORM_FCT / pow(2.0, BOOST_AGC_IO_NORM_SCALER)) * (pow(2.0, 15)-1)) ///< Nominal VL Q15 factor 
+
+// The AGC compare value is defined at nominal input voltage and output voltage 
+#define BOOST_AGC_MEDIAN         (int16_t)(((float)BOOST_VIN_NOM * BOOST_VIN_NORM_FCT) - BOOST_VOUT_NOM) ///< Adaptive gain modulation factor at nominal operating point
+#define BOOST_AGC_NOM_SCALER     (uint16_t)(ceil(log(BOOST_AGC_FACTOR_MAX)) + 1) ///< Bit-shift scaler of the floating point number of the maimum limit of the adaptive gain modulation factor
+#define BOOST_AGC_NOM_FACTOR     (uint16_t)(0x7FFF >> BOOST_AGC_NOM_SCALER) ///< Fractional of the floating point number of the maimum limit of the adaptive gain modulation factor
+*/
+/** @} */ // end of group
+
+/**************************************************************************************************
+ * @ingroup startup-timing-settings
+ * @{
+ * @brief Global defines for soft-start specific parameters
+ * 
+ * @details
+ * This section is used to define power supply startup timing settings. The soft-start sequence 
+ * is part of the power controller. It allows to program specific timings for 
+ *   - Power On Delay
+ *   - Ramp Period 
+ *   - Power Good Delay
+ * 
+ * After the startup has passed these three timing periods, the power supply is ending up in 
+ * "normal" operation, continuously regulating the output until a fault is detected or the 
+ * operating state is changed for any other reason. When the output voltage reference is changed, 
+ * the power control state machine will use the voltage ramp slope defined here to tune from the 
+ * recent voltage reference to the new reference value. During this period the BUSY-bit of the 
+ * power controller (status word, bit #7) will be set. This status bit will be cleared automatically
+ * by the power controller state machine once the new reference value has been applied and the 
+ * converter is back in constant regulation mode.
+ * 
+ * Pre-compiler macros are used to translate physical values into binary (integer) numbers to 
+ * be written to SFRs and variables.  
+ * (see \ref startup-timing-macros for details)
+ * 
+ * @note
+ * On DPSK3 it takes roughly 500 ms until the auxiliary power has been started, the 
+ * PIC24 housekeeping controller on the bottom side of the board resets the protection
+ * logic and allows the dsPIC to run. After this period the dsPIC controller starts to 
+ * execute its firmware.
+ *  
+ * This additional startup delay of ~500 ms is not considered in the settings below and 
+ * needs to be taken into account when adjusting startup timing. Use an independent debugging
+ * pin toggle at the beginning of the firmware to verify the specified startup timing is 
+ * applied as desired.
+ **************************************************************************************************/
+
+#define BOOST_POWER_ON_DELAY        (float) 200e-3 ///< power on delay in [sec]
+#define BOOST_VRAMP_PERIOD          (float) 100e-3 ///< voltage ramp-up period in [sec]
+#define BOOST_IRAMP_PERIOD          (float) 100e-3 ///< output current ramp-up period in [sec]
+#define BOOST_POWER_GOOD_DELAY      (float) 200e-3 ///< power good delay in [sec]
+
+#define BOOST_CHARGEUP_PERIOD       (float)  50e-3 ///< output capacitor charge up monitor period in [sec]
+#define BOOST_CHARGEUP_TIMEOUT      (float) 200e-3 ///< output capacitor charge up monitor timeout in [sec]
+    
+/** @} */ // end of group startup-timing-settings ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/** 
+ * @ingroup startup-timing-macros
+ * @{ 
+ * @brief Conversion Macros of Startup Timing Settings
+ * 
+ * These conversion macros are used to convert user settings defined as physical 
+ * quantities into binary (integer) numbers, which will be written to registers and
+ * variables and used in calculations throughout the firmware.
+ */
+
+#define BOOST_POD       (uint16_t)(((float)BOOST_POWER_ON_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0)
+#define BOOST_VRAMP_PER (uint16_t)(((float)BOOST_VRAMP_PERIOD / (float)MAIN_EXECUTION_PERIOD)-1.0)
+#define BOOST_VREF_STEP (uint16_t)((float)BOOST_VOUT_REF / (float)(BOOST_VRAMP_PER + 1.0))
+#define BOOST_IRAMP_PER (uint16_t)(((float)BOOST_IRAMP_PERIOD / (float)MAIN_EXECUTION_PERIOD)-1.0)
+#define BOOST_IREF_STEP (uint16_t)((float)BOOST_ISNS_REF / (float)(BOOST_VRAMP_PER + 1.0))
+#define BOOST_PGD       (uint16_t)(((float)BOOST_POWER_GOOD_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0)
+#define BOOST_CHRG_PER  (uint16_t)(((float)BOOST_CHARGEUP_PERIOD / (float)MAIN_EXECUTION_PERIOD)-1.0)
+#define BOOST_CHRG_TOUT (uint16_t)(((float)BOOST_CHARGEUP_TIMEOUT / (float)MAIN_EXECUTION_PERIOD)-1.0)
+
+/** @} */ // end of group startup-timing-macros ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+/**************************************************************************************************
+ * @ingroup fault-response-settings
+ * @{
+ * @brief Global defines for fault-monitor related parameters
+ * 
+ * @details
+ * This section is used to define power supply fault object timing settings. The fault monitor 
+ * is continuously monitoring declared data objects at the high-priority task frequency defined by 
+ * \ref MAIN_EXECUTION_PERIOD. Based on this known interval, filtering delays for fault trip and 
+ * fault recovery events to allow users to adjust the fault detection sensitivity.
+ * 
+ * - Fault Trip Event Delay   
+ * This setting defines for how long a fault condition has to be continuously active before the 
+ * effective fault trip status/event will be triggered.
+ * 
+ * - Fault Recovery Event Delay   
+ * This setting defines for how long a fault condition has to be continuously cleared before the 
+ * effective fault recovery status/event will be triggered.
+ * 
+ *************************************************************************************************/
+
+#define BOOST_UVLO_TRIP_DELAY         (float) 5e-3   ///< under voltage lock out trip delay in [sec]
+#define BOOST_UVLO_RECOVERY_DELAY     (float) 500e-3 ///< under voltage lock out recovery delay in [sec]
+#define BOOST_OVLO_TRIP_DELAY         (float) 5e-3   ///< over voltage lock out trip delay in [sec]
+#define BOOST_OVLO_RECOVERY_DELAY     (float) 500e-3 ///< over voltage lock out recovery delay in [sec]
+#define BOOST_REGERR_TRIP_DELAY       (float) 25e-3  ///< regulation error trip delay in [sec]
+#define BOOST_REGERR_RECOVERY_DELAY   (float) 500e-3 ///< regulation error recovery delay in [sec]
+#define BOOST_OCP_TRIP_DELAY          (float) 2e-3   ///< over current proection trip delay in [sec]
+#define BOOST_OCP_RECOVERY_DELAY      (float) 500e-3 ///< over current proection recovery delay in [sec]
+
+/** @} */ // end of group fault-response-settings ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/** 
+ * @ingroup fault-response-macros
+ * @{ 
+ * @brief Conversion Macros of Fault Response Timing Settings
+ * 
+ * These conversion macros are used to convert user settings defined as physical 
+ * quantities into binary (integer) numbers, which will be written to registers and
+ * variables and used in calculations throughout the firmware.
+ */
+
+#define BOOST_UVLO_TDLY   (uint16_t)(((float)      BOOST_UVLO_TRIP_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< under voltage lock out trip delay conversion nacro
+#define BOOST_UVLO_RDLY   (uint16_t)(((float)  BOOST_UVLO_RECOVERY_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< under voltage lock out recovery delay conversion nacro
+#define BOOST_OVLO_TDLY   (uint16_t)(((float)      BOOST_OVLO_TRIP_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< over voltage lock out trip delay conversion nacro
+#define BOOST_OVLO_RDLY   (uint16_t)(((float)  BOOST_OVLO_RECOVERY_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< over voltage lock out recovery delay conversion nacro
+#define BOOST_REGERR_TDLY (uint16_t)(((float)    BOOST_REGERR_TRIP_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< regulation error trip delay conversion macro
+#define BOOST_REGERR_RDLY (uint16_t)(((float)BOOST_REGERR_RECOVERY_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< regulation error recovery delay conversion macro
+#define BOOST_OCP_TDLY    (uint16_t)(((float)       BOOST_OCP_TRIP_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< over current protection trip Delay conversion macro
+#define BOOST_OCP_RDLY    (uint16_t)(((float)   BOOST_OCP_RECOVERY_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< over current protection recovery delay conversion nacro
+
+/** @} */ // end of group fault-response-macros ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    
+/**************************************************************************************************
+ * @ingroup control-interrupt-vector-declarations
+ * @{
+ * @brief Control loop Interrupt Vector Settings
+ * 
+ * @details
+ * Control loops are called in dedicated interrupt service routines of PWM events, ADC events
+ * or triggered by timers. This section allows users to set and modify the interrupt service 
+ * routine triggers and their priority to set up and optimize the control system interrupt 
+ * structure.
+ * 
+ * *************************************************************************************************/
+    
+// Hardware-dependent defines
+#define BOOST_VOUT_TRIG_PWM  0   ///< Boost VOUT control loop is called in PWM interrupt
+#define BOOST_VOUT_TRIG_ADC  1   ///< Boost VOUT control loop is called in ADC interrupt
+
+#define BOOST_VOUT_TRIGGER_MODE  BOOST_VOUT_TRIG_PWM ///< Currently selected voltage loop interrupt vector
+#define BOOST_VOUT_ISR_PRIORITY  5 ///< Voltage loop interrupt vector priority (valid settings between 0...6 with 6 being the highest priority)
+
+#if (BOOST_VOUT_TRIGGER_MODE == BOOST_VOUT_TRIG_ADC)    
+
+  #define _BOOST_VLOOP_Interrupt     _ADCAN18Interrupt ///< Interrupt vector function call label
+  #define _BOOST_VLOOP_ISR_IP        _ADCAN18IP ///< Interrupt vector priority register bits
+  #define _BOOST_VLOOP_ISR_IF        _ADCAN18IF ///< Interrupt vector flag bit register bit
+  #define _BOOST_VLOOP_ISR_IE        _ADCAN18IE ///< Interrupt vector enable bit register bit
+
+#elif (BOOST_VOUT_TRIGGER_MODE == BOOST_VOUT_TRIG_PWM)
+
+  #define _BOOST_VLOOP_Interrupt     _PWM2Interrupt ///< Interrupt vector function call label
+  #define _BOOST_VLOOP_ISR_IP        _PWM2IP ///< Interrupt vector priority register
+  #define _BOOST_VLOOP_ISR_IF        _PWM2IF ///< Interrupt vector flag bit register bit
+  #define _BOOST_VLOOP_ISR_IE        _PWM2IE ///< Interrupt vector enable bit register bit
+
+#endif
+
+/** @} */ // end of group control-interrupt-vector-declarations
+
+
+
+/**************************************************************************************************
  * @ingroup lcd-interface-declarations
  * @{
  * @brief LC Display Interface Declarations
