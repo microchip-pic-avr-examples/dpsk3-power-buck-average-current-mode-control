@@ -2,6 +2,6 @@
 echo $SSH_AUTH_SOCK
 cd ../../
 git remote add subrepo-buck https://bitbucket.microchip.com/scm/mcu16asmpsl/subrepo-buck-converter.git
-git subtree add --prefix="dpsk_vmc.X/sources/power_control/devices" subrepo-buck main --squash
+git subtree add --prefix="dpsk_buck_vmc.X/sources/power_control/devices" subrepo-buck main --squash
 echo Press Enter to exit
 read
