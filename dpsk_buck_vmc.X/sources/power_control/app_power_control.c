@@ -65,16 +65,21 @@ volatile uint16_t appPowerSupply_Execute(void)
     volatile uint16_t retval=1;
 
     // Capture data values
-    buck.data.v_in = BUCK_VIN_ADCBUF;
-    buck.data.i_sns[0] = BUCK_ISNS_ADCBUF;
+    buck.data.v_in = (BUCK_VIN_ADCBUF - BUCK_VIN_OFFSET);
     buck.data.temp = BUCK_TEMP_ADCBUF;
+    buck.data.i_sns[0] = BUCK_ISNS_ADCBUF;
     
     // Average inductor current value
     isns_samples += buck.data.i_sns[0];
     if(!(++_isns_sample_count & ISNS_AVG_BITMASK))
     {
-        buck.data.i_out = (isns_samples >> 3);
-        isns_samples = 0;
+        isns_samples = (isns_samples >> 3);
+        isns_samples -= buck.i_loop[0].feedback_offset;
+        if((int16_t)isns_samples < 0) isns_samples = 0;
+
+        buck.data.i_out = isns_samples;
+        
+        isns_samples = 0; // Reset data buffer
     }
     
     // Execute buck converter state machine
