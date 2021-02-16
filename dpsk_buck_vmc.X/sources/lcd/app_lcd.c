@@ -119,15 +119,10 @@ volatile uint16_t appLCD_Execute(void)
     if(lcd_cnt == lcd.refresh) {
         
         // Calculate output values
-        temp = ((float)(buck.data.temp - BUCK_FB_TEMP_ZERO) / BUCK_FB_TEMP_SLOPE); // Scale ADC value to physical unit
-        temp = (float)(int)(100.0 * temp);  // Rounding operation required to prevent display 
-        temp /= 100.0;                      // rounding issues around 9.99 and 10.0 V
         vi = ((buck.data.v_in << 3) * ADC_GRANULARITY); // Scale ADC value to physical unit
         vi = (float)(int)(100.0 * vi);      // Rounding operation required to prevent display
         vi /= 100.0;                        // rounding issues around 9.99 and 10.0 ° C
-        vo = ((buck.data.v_out << 1) * ADC_GRANULARITY); // Scale ADC value to physical unit
-        isns = (((buck.data.i_out - BUCK_ISNS_FB_OFFSET) * ADC_GRANULARITY) /  BUCK_ISNS_FEEDBACK_GAIN); // Scale ADC value to physical unit
-        
+
         // Input voltage display
         if((double)vi < 10.000)
             PrintLcd(0, "VIN     = %2.2f V", (double)vi);
@@ -137,6 +132,11 @@ volatile uint16_t appLCD_Execute(void)
         switch (lcd.screen)
         {
             case 1:     // Show Temperature Output
+
+				temp = ((float)(buck.data.temp - BUCK_FB_TEMP_ZERO) / BUCK_FB_TEMP_SLOPE); // Scale ADC value to physical unit
+				temp = (float)(int)(100.0 * temp);  // Rounding operation required to prevent display 
+				temp /= 100.0;                      // rounding issues around 9.99 and 10.0 V
+
                 if((double)temp < 10.000)
                     PrintLcd(1, "TEMP    = %2.2f C", (double)temp);
                 else
@@ -144,26 +144,37 @@ volatile uint16_t appLCD_Execute(void)
                 break;
             
             case 2:     // Show Current Output
+
+				isns = ((buck.data.i_out * ADC_GRANULARITY) /  BUCK_ISNS_FEEDBACK_GAIN); // Scale ADC value to physical unit
+
                 if((double)isns < 1.000)
                 {
                     isns *= 1000.0;
                     PrintLcd(1, "ISNS    = %3d mA", (int)isns);
                 }
                 else
+                {
                     PrintLcd(1, "ISNS    = %1.2f A", (double)isns);
+                }
                 break;
 
             default:    // Output voltage display
                 
-                if (!buck.status.bits.fault_active)
+				vo = ((buck.data.v_out << 1) * ADC_GRANULARITY); // Scale ADC value to physical unit
+
+                if((double)vo < 10.000)
                     PrintLcd(1, "VOUT    = %2.2f V", (double)vo);
-                else {
+                else
+                    PrintLcd(1, "VOUT    = %2.1f V", (double)vo);
+
+                if (buck.status.bits.fault_active)
+                {
                     if (fltobj_BuckUVLO.Status.bits.FaultStatus)
-                        PrintLcd(1, "VOUT(UV)= %2.2f V", (double)vo);
+                        dev_Lcd_WriteStringXY(4, 1, "(UV)");
                     else if (fltobj_BuckOVLO.Status.bits.FaultStatus)
-                        PrintLcd(1, "VOUT(OV)= %2.2f V", (double)vo);
+                        dev_Lcd_WriteStringXY(4, 1, "(OV)");
                     else if (fltobj_BuckRegErr.Status.bits.FaultStatus)
-                        PrintLcd(1, "VOUT(RE)= %2.2f V", (double)vo);
+                        dev_Lcd_WriteStringXY(4, 1, "(RE)");
                 }
                 break;
         }
