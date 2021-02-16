@@ -412,8 +412,8 @@
 #define BUCK_VIN_ADCCORE        8           ///< 0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core
 #define BUCK_VIN_ADCIN          12          ///< Analog input number (e.g. '5' for 'AN5')
 #define BUCK_VIN_ADCBUF         ADCBUF12     ///< ADC input buffer of this ADC channel
-#define BUCK_VIN_ADCTRIG        PG1TRIGA    ///< Register used for trigger placement
-#define BUCK_VIN_TRGSRC         BUCK_PWM_TRGSRC_TRG1 ///< PWM1 (=PG1) Trigger 1 via PGxTRIGA
+#define BUCK_VIN_ADCTRIG        PG1TRIGB    ///< Register used for trigger placement
+#define BUCK_VIN_TRGSRC         BUCK_PWM_TRGSRC_TRG2 ///< PWM1 (=PG1) Trigger 2 via PGxTRIGB
 
 /** @} */ // end of group input-voltage-feedback-mcal ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -488,7 +488,7 @@
 #define BUCK_VOUT_ADCIN             13          ///< Analog input number (e.g. '5' for 'AN5')
 #define BUCK_VOUT_ADCBUF            ADCBUF13     ///< ADC input buffer of this ADC channel
 #define BUCK_VOUT_ADCTRIG           PG1TRIGA    ///< Register used for trigger placement
-#define BUCK_VOUT_TRGSRC            BUCK_PWM_TRGSRC_TRG1 ///< PWM1 (=PG2) Trigger 1 via PGxTRIGA
+#define BUCK_VOUT_TRGSRC            BUCK_PWM_TRGSRC_TRG1 ///< PWM1 (=PG1) Trigger 1 via PGxTRIGA
 
 /** @} */ // end of group output-voltage-feedback-mcal ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -705,8 +705,8 @@
 #define BUCK_TEMP_ADCCORE           8           // 0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core
 #define BUCK_TEMP_ADCIN             2           // Analog input number (e.g. '5' for 'AN5')
 #define BUCK_TEMP_ADCBUF            ADCBUF2     ///< GPIO analog function mode enable bit
-#define BUCK_TEMP_ADCTRIG           PG1TRIGA    ///< Register used for trigger placement
-#define BUCK_TEMP_TRGSRC            BUCK_PWM_TRGSRC_TRG1    // PWM1 Trigger 1 via PG1TRIGA
+#define BUCK_TEMP_ADCTRIG           PG1TRIGB    ///< Register used for trigger placement
+#define BUCK_TEMP_TRGSRC            BUCK_PWM_TRGSRC_TRG2    // PWM1 Trigger 2 via PG1TRIGB
     
 /** @} */ // end of group temperature-feedback-mcal
 
@@ -1039,7 +1039,7 @@
 #define BOOST_VIN_ADCIN          12          ///< Analog input number (e.g. '5' for 'AN5')
 #define BOOST_VIN_ADCBUF         ADCBUF12     ///< ADC input buffer of this ADC channel
 #define BOOST_VIN_ADCTRIG        PG2TRIGB    ///< Register used for trigger placement
-#define BOOST_VIN_TRGSRC         BOOST_PWM_TRGSRC_TRG2 ///< PWM1 (=PG1) Trigger 2 via PGxTRIGB
+#define BOOST_VIN_TRGSRC         BOOST_PWM_TRGSRC_TRG2 ///< PWM2 (=PG2) Trigger 2 via PGxTRIGB
 
 /** @} */ // end of group input-voltage-feedback-mcal ~~~~~~~~~~~~~~~~~~~~~~~~~
 
