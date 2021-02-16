@@ -58,6 +58,9 @@ volatile uint16_t sysUserPeriperhals_Initialize(void) {
 
     volatile uint16_t retval=1;
     
+    // Reset the operation amplifier module to a disabled default state.
+    retval &= sysOpAmp_ModuleReset();
+    
     // Initialize op-amp
     retval &= sysOpAmp_Initialize(DAC_BUFFER_OPA_INSTANCE, true); // Initialize op-amp #2 used to drive the reference voltage for current sense amplifiers
     
