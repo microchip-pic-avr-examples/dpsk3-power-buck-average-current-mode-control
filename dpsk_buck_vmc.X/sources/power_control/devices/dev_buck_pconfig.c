@@ -334,7 +334,7 @@ volatile uint16_t buckPWM_Suspend(volatile struct BUCK_CONVERTER_s* buckInstance
     // Disable all PWM outputs of the recent buck converter configuration
     for(_i=0; _i< buckInstance->set_values.no_of_phases; _i++) {
     
-            // Capture PWM instance of the recent channel
+        // Capture PWM instance of the recent channel
         pwm_Instance = buckInstance->sw_node[_i].pwm_instance;
 
         // CAPTURE MEMORY ADDRESS OF GIVEN PWM GENERATOR INSTANCE

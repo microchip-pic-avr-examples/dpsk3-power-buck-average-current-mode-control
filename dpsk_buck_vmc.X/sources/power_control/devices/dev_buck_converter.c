@@ -283,7 +283,7 @@ volatile uint16_t drv_BuckConverter_Suspend(volatile struct BUCK_CONVERTER_s *bu
 /*******************************************************************************
  * @fn	volatile uint16_t drv_BuckConverter_Resume(volatile struct BUCK_CONVERTER_s * buckInstance)
  * @ingroup lib-layer-buck-converter-functions-public
- * @brief  This function resume the operation of the buck converter
+ * @brief   This function resume the operation of the buck converter
  * @param	buckInstance  Pointer to a Buck Converter data object of type struct BUCK_CONVERTER_s
  * @return  unsigned integer (0=failure, 1=success)
  * 
