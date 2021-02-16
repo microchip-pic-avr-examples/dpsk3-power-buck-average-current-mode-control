@@ -35,11 +35,16 @@ This code example demonstrates the implementation of a simple voltage mode contr
 This code example also includes the LCD driver allowing users to observe runtime data on the on-board LC display. The on-board user switch `USER` is allows users to change the active display page to observe input voltage, output voltage, output current and board temperature.
 
 ## Related Documentation
+
+#### Firmware Documentation
+- [Online Firmware Documentation of this Code Example](https://microchip-pic-avr-examples.github.io/dpsk3-power-buck-voltage-mode-control/)
+
+#### Hardware and Target Device Documentation
 - [Digital Power Starter Kit 3 User Guide](https://www.microchip.com/50002867)
 - [dsPIC33CK256MP508 Family Data Sheet](https://www.microchip.com/70005349)
 - [dsPIC33CK256MP508 Family Silicon Errata and Data Sheet Clarification](https://www.microchip.com/80000796)
 
-##### Please always check for the latest data sheets on the respective product websites:
+#### Please always check for the latest data sheets on the respective product websites:
 - [dsPIC33CK256MP508 Family](https://www.microchip.com/dsPIC33CK256MP508)
 - [dsPIC33CH512MP508 Family](https://www.microchip.com/dsPIC33CH512MP508)
 
@@ -53,10 +58,12 @@ This code example also includes the LCD driver allowing users to observe runtime
 - dsPIC33C Digital Power Starter Kit, Part-No. [DM330017-3](https://www.microchip.com/DM330017-3)
 
 ## Supported Target Devices
-***Focus Microchip Technology Devices***
+
+#### Focus Microchip Technology Devices
 - [48-pin Digital Signal Controller, dsPIC33CK256MP505](https://www.microchip.com/dsPIC33CK256MP505)
 
-***Further Microchip Technology Devices used in this Design***
+#### Further Microchip Technology Devices used in this Design
+
 *a) Power Supply Circuit*
 - [8-MHz MEMS Oscillator, DSC6011JI2A-008](https://www.microchip.com/DSC6000B)
 - [50V/1A, Asynchronous Buck Regulator, MCP16331](https://www.microchip.com/MCP16331)
