@@ -298,7 +298,7 @@ volatile uint16_t appPowerSupply_ControllerInitialize(void)
     // ADC Trigger Control Configuration
     buck.v_loop.controller->ADCTriggerControl.ptrADCTriggerARegister = &BUCK_VOUT_ADCTRIG;
     buck.v_loop.controller->ADCTriggerControl.ADCTriggerAOffset = buck.v_loop.trigger_offset;
-    buck.v_loop.controller->ADCTriggerControl.ptrADCTriggerBRegister = &BUCK_VIN_ADCTRIG;
+    buck.v_loop.controller->ADCTriggerControl.ptrADCTriggerBRegister = &BUCK_ISNS_ADCTRIG;
     buck.v_loop.controller->ADCTriggerControl.ADCTriggerBOffset = BUCK_ISNS_ADC_TRGDLY; 
     
     // Data Provider Configuration
