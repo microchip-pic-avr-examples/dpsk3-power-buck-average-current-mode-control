@@ -7,8 +7,8 @@
 
 #include <stdbool.h>
 
-#include "./power_control/drivers/v_loop.h"
-#include "./power_control/devices/dev_buck_typedef.h"
+#include "drivers/v_loop.h"
+#include "devices/dev_buck_typedef.h"
 #include "devices/dev_buck_converter.h"
 #include "config/hal.h"
 
