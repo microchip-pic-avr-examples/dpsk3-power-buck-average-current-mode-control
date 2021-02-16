@@ -88,10 +88,12 @@ volatile uint16_t appPowerSupply_Execute(void)
         fltobj_BuckRegErr.ReferenceObject.ptrObject = buck.v_loop.controller->Ports.ptrControlReference;
         #if (PLANT_MEASUREMENT == false)
         fltobj_BuckRegErr.Status.bits.Enabled = buck.v_loop.controller->status.bits.enabled;
+        fltobj_BuckOCP.Status.bits.Enabled = buck.v_loop.controller->status.bits.enabled;
         #endif
     }
     else {
         fltobj_BuckRegErr.Status.bits.Enabled = false;
+        fltobj_BuckOCP.Status.bits.Enabled = false;
     }
     
     return(retval); 

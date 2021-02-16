@@ -331,7 +331,7 @@ volatile uint16_t ocp_FaultInitialize(void)
     fltobj_BuckOCP.Counter = 0;        // Clear fault event counter
     fltobj_BuckOCP.Status.bits.FaultActive = true; // Set fault condition flag (must be cleared by fault check)
     fltobj_BuckOCP.Status.bits.FaultStatus = true; // Set fault flag (must be cleared by fault check)
-    fltobj_BuckOCP.Status.bits.Enabled = true; // Enable fault checks    
+    fltobj_BuckOCP.Status.bits.Enabled = false; // Enable fault checks    
 
     return(retval);
     
