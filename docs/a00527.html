@@ -115,6 +115,9 @@ $(document).ready(function(){initNavTree('a00527.html',''); initResizable(); });
 <tr class="memitem:ga3cd080c9a48a5d74d8b2f89fdec161da"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00527.html#ga3cd080c9a48a5d74d8b2f89fdec161da">sysOpAmp_ModuleEnable</a> (void)</td></tr>
 <tr class="memdesc:ga3cd080c9a48a5d74d8b2f89fdec161da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the on-chip operational amplifier module.  <a href="a00527.html#ga3cd080c9a48a5d74d8b2f89fdec161da">More...</a><br /></td></tr>
 <tr class="separator:ga3cd080c9a48a5d74d8b2f89fdec161da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4dbd2367ecd449226460b0b0a52cbe8b"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00527.html#ga4dbd2367ecd449226460b0b0a52cbe8b">sysOpAmp_ModuleReset</a> (void)</td></tr>
+<tr class="memdesc:ga4dbd2367ecd449226460b0b0a52cbe8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the on-chip operational amplifier module.  <a href="a00527.html#ga4dbd2367ecd449226460b0b0a52cbe8b">More...</a><br /></td></tr>
+<tr class="separator:ga4dbd2367ecd449226460b0b0a52cbe8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>As described in the Digital-to-Analog Converter (DAC) initialization section, DPSK3 supports an internally generated, tunable, analog voltage signal for enhanced debugging. This DAC output signal is buffered by using one of the available on-chip operational amlifiers, which is configured and enabled in this section. </p><dl class="section note"><dt>Note</dt><dd>Please refer to the Digital-to-Analog (DAC) Configuration section for further details on the configuration of this peripheral. </dd></dl>
@@ -197,7 +200,7 @@ $(document).ready(function(){initNavTree('a00527.html',''); initResizable(); });
 1=success</dd></dl>
 <p>The on-chip operational amplifier module allows the configuration of multiple operational amplifier instances. The module itself provides an additional master enable bit to turn on/off the entire module. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00137_source.html#l00069">69</a> of file <a class="el" href="a00137_source.html">init_opa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00137_source.html#l00077">77</a> of file <a class="el" href="a00137_source.html">init_opa.c</a>.</p>
 <div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -212,6 +215,50 @@ $(document).ready(function(){initNavTree('a00527.html',''); initResizable(); });
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="a00527_ga3cd080c9a48a5d74d8b2f89fdec161da_icgraph.svg" width="370" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ga4dbd2367ecd449226460b0b0a52cbe8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4dbd2367ecd449226460b0b0a52cbe8b">&#9670;&nbsp;</a></span>sysOpAmp_ModuleReset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t sysOpAmp_ModuleReset </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resets the on-chip operational amplifier module. </p>
+<dl class="section return"><dt>Returns</dt><dd>unsigned integer </dd>
+<dd>
+0=failure </dd>
+<dd>
+1=success</dd></dl>
+<p>The on-chip operational amplifier module allows the configuration of multiple operational amplifier instances. The module itself provides an additional master enable bit to turn on/off the entire module as well as to enable/disable the N-inputs of individual op-amps. This function resets the op-amp module to its default disabling the N-channel inputs of all op-amps, disables all individual op-amps as well as turns of the op-amp module master switch. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00137_source.html#l00102">102</a> of file <a class="el" href="a00137_source.html">init_opa.c</a>.</p>
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00527_ga4dbd2367ecd449226460b0b0a52cbe8b_cgraph.svg" width="420" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00527_ga4dbd2367ecd449226460b0b0a52cbe8b_icgraph.svg" width="364" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
