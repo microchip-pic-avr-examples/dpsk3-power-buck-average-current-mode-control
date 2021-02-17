@@ -79,7 +79,7 @@ var sectionId = 'dynsection-0';
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="a01594.html" target="_top" xlink:title="Automated ADC Trigger handling.">
+<g id="a_node2"><a xlink:href="a01598.html" target="_top" xlink:title="Automated ADC Trigger handling.">
 <polygon fill="white" stroke="black" points="0,-182.5 0,-272.5 129,-272.5 129,-182.5 0,-182.5"/>
 <text text-anchor="middle" x="64.5" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00">NPNZ_ADC_TRGCTRL_s</text>
 <polyline fill="none" stroke="black" points="0,-253.5 129,-253.5 "/>
@@ -101,7 +101,7 @@ var sectionId = 'dynsection-0';
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="a01598.html" target="_top" xlink:title="Data Provider Target Memory Addresses.">
+<g id="a_node3"><a xlink:href="a01602.html" target="_top" xlink:title="Data Provider Target Memory Addresses.">
 <polygon fill="white" stroke="black" points="147.5,-182.5 147.5,-272.5 321.5,-272.5 321.5,-182.5 147.5,-182.5"/>
 <text text-anchor="middle" x="234.5" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00">NPNZ_DATA_PROVIDERS_s</text>
 <polyline fill="none" stroke="black" points="147.5,-253.5 321.5,-253.5 "/>
@@ -123,7 +123,7 @@ var sectionId = 'dynsection-0';
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="a01602.html" target="_top" xlink:title="User Extension Function Call Parameters.">
+<g id="a_node4"><a xlink:href="a01606.html" target="_top" xlink:title="User Extension Function Call Parameters.">
 <polygon fill="white" stroke="black" points="340,-133 340,-322 517,-322 517,-133 340,-133"/>
 <text text-anchor="middle" x="428.5" y="-310" font-family="Helvetica,sans-Serif" font-size="10.00">NPNZ_EXTENSION_HOOKS_s</text>
 <polyline fill="none" stroke="black" points="340,-303 517,-303 "/>
@@ -186,7 +186,7 @@ var sectionId = 'dynsection-0';
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="a01606.html" target="_top" xlink:title="Adaptive Gain Control Modulation Parameters.">
+<g id="a_node6"><a xlink:href="a01590.html" target="_top" xlink:title="Adaptive Gain Control Modulation Parameters.">
 <polygon fill="white" stroke="black" points="690.5,-182.5 690.5,-272.5 822.5,-272.5 822.5,-182.5 690.5,-182.5"/>
 <text text-anchor="middle" x="756.5" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00">NPNZ_GAIN_CONTROL_s</text>
 <polyline fill="none" stroke="black" points="690.5,-253.5 822.5,-253.5 "/>
@@ -208,7 +208,7 @@ var sectionId = 'dynsection-0';
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="a01590.html" target="_top" xlink:title="System Anti&#45;Windup (Output Clamping) Thresholds.">
+<g id="a_node7"><a xlink:href="a01594.html" target="_top" xlink:title="System Anti&#45;Windup (Output Clamping) Thresholds.">
 <polygon fill="white" stroke="black" points="840.5,-182.5 840.5,-272.5 928.5,-272.5 928.5,-182.5 840.5,-182.5"/>
 <text text-anchor="middle" x="884.5" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00">NPNZ_LIMITS_s</text>
 <polyline fill="none" stroke="black" points="840.5,-253.5 928.5,-253.5 "/>

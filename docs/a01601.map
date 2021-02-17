@@ -1,4 +1,4 @@
-<map id="NPNZ_EXTENSION_HOOKS_s" name="NPNZ_EXTENSION_HOOKS_s">
-<area shape="rect" id="node1" title="User Extension Function Call Parameters." alt="" coords="5,248,241,501"/>
-<area shape="rect" id="node2" href="$a01614.html" title="Global NPNZ controller data object." alt="" coords="53,5,194,200"/>
+<map id="NPNZ_DATA_PROVIDERS_s" name="NPNZ_DATA_PROVIDERS_s">
+<area shape="rect" id="node1" title="Data Provider Target Memory Addresses." alt="" coords="5,248,237,369"/>
+<area shape="rect" id="node2" href="$a01614.html" title="Global NPNZ controller data object." alt="" coords="51,5,192,200"/>
 </map>

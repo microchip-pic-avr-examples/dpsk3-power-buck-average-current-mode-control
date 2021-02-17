@@ -50,7 +50,7 @@ var searchData=
   ['controlhistoryarraysize_560',['ControlHistoryArraySize',['../a01586.html#ae142fcfc24877087d89007045ced6563',1,'NPNZ_FILTER_PARAMS_s']]],
   ['controller_561',['controller',['../a01526.html#a86e023cf3f4b4255c1b514b6d70ef74f',1,'BUCK_LOOP_SETTINGS_s']]],
   ['controlmodes_562',['ControlModes',['../a01482.html#ae6ee4010e24872f5eda7319fd21ee25f',1,'BUCK_CONVERTER_CONSTANTS_s']]],
-  ['counter_563',['Counter',['../a01410.html#a9e9b3f9102ce573dc6ac2e1058140322',1,'FAULT_OBJECT_s::Counter()'],['../a01510.html#a8544f2f5b43d21d6a0a586fc81f9ce92',1,'BUCK_STARTUP_PERIOD_HANDLER_s::counter()']]],
+  ['counter_563',['counter',['../a01510.html#a8544f2f5b43d21d6a0a586fc81f9ce92',1,'BUCK_STARTUP_PERIOD_HANDLER_s::counter()'],['../a01410.html#a9e9b3f9102ce573dc6ac2e1058140322',1,'FAULT_OBJECT_s::Counter()']]],
   ['covaerr_564',['COVAERR',['../a01414.html#ae00834b4ecc5e26f69480264de43ec07',1,'TRAP_FLAGS_s']]],
   ['covberr_565',['COVBERR',['../a01414.html#a1a65a8268196f50bb2198e3cf76c1a36',1,'TRAP_FLAGS_s']]],
   ['cpu_5ffrequency_566',['CPU_FREQUENCY',['../a00377.html#gaf73acdf7fb3be35ff98322b7e827d349',1,'dpsk3_hwdescr.h']]],

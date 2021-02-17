@@ -291,7 +291,7 @@
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="a01594.html" target="_top" xlink:title="Automated ADC Trigger handling.">
+<g id="a_node7"><a xlink:href="a01598.html" target="_top" xlink:title="Automated ADC Trigger handling.">
 <polygon fill="white" stroke="black" points="815,-436 815,-526 944,-526 944,-436 815,-436"/>
 <text text-anchor="middle" x="879.5" y="-514" font-family="Helvetica,sans-Serif" font-size="10.00">NPNZ_ADC_TRGCTRL_s</text>
 <polyline fill="none" stroke="black" points="815,-507 944,-507 "/>
@@ -313,7 +313,7 @@
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="a01606.html" target="_top" xlink:title="Adaptive Gain Control Modulation Parameters.">
+<g id="a_node8"><a xlink:href="a01590.html" target="_top" xlink:title="Adaptive Gain Control Modulation Parameters.">
 <polygon fill="white" stroke="black" points="962.5,-436 962.5,-526 1094.5,-526 1094.5,-436 962.5,-436"/>
 <text text-anchor="middle" x="1028.5" y="-514" font-family="Helvetica,sans-Serif" font-size="10.00">NPNZ_GAIN_CONTROL_s</text>
 <polyline fill="none" stroke="black" points="962.5,-507 1094.5,-507 "/>
@@ -335,7 +335,7 @@
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="a01590.html" target="_top" xlink:title="System Anti&#45;Windup (Output Clamping) Thresholds.">
+<g id="a_node9"><a xlink:href="a01594.html" target="_top" xlink:title="System Anti&#45;Windup (Output Clamping) Thresholds.">
 <polygon fill="white" stroke="black" points="1112.5,-436 1112.5,-526 1200.5,-526 1200.5,-436 1112.5,-436"/>
 <text text-anchor="middle" x="1156.5" y="-514" font-family="Helvetica,sans-Serif" font-size="10.00">NPNZ_LIMITS_s</text>
 <polyline fill="none" stroke="black" points="1112.5,-507 1200.5,-507 "/>
@@ -434,7 +434,7 @@
 <!-- Node14 -->
 <g id="node14" class="node">
 <title>Node14</title>
-<g id="a_node14"><a xlink:href="a01598.html" target="_top" xlink:title="Data Provider Target Memory Addresses.">
+<g id="a_node14"><a xlink:href="a01602.html" target="_top" xlink:title="Data Provider Target Memory Addresses.">
 <polygon fill="white" stroke="black" points="155.5,-436 155.5,-526 329.5,-526 329.5,-436 155.5,-436"/>
 <text text-anchor="middle" x="242.5" y="-514" font-family="Helvetica,sans-Serif" font-size="10.00">NPNZ_DATA_PROVIDERS_s</text>
 <polyline fill="none" stroke="black" points="155.5,-507 329.5,-507 "/>
@@ -456,7 +456,7 @@
 <!-- Node15 -->
 <g id="node15" class="node">
 <title>Node15</title>
-<g id="a_node15"><a xlink:href="a01602.html" target="_top" xlink:title="User Extension Function Call Parameters.">
+<g id="a_node15"><a xlink:href="a01606.html" target="_top" xlink:title="User Extension Function Call Parameters.">
 <polygon fill="white" stroke="black" points="348,-386.5 348,-575.5 525,-575.5 525,-386.5 348,-386.5"/>
 <text text-anchor="middle" x="436.5" y="-563.5" font-family="Helvetica,sans-Serif" font-size="10.00">NPNZ_EXTENSION_HOOKS_s</text>
 <polyline fill="none" stroke="black" points="348,-556.5 525,-556.5 "/>

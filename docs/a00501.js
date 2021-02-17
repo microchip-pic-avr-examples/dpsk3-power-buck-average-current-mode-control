@@ -40,43 +40,43 @@ var a00501 =
       [ "PTermScaler", "a01586.html#a83313da545ad8473d436b087f4ff29b8", null ],
       [ "PTermFactor", "a01586.html#a1b848b9fb90925fa803fea3196346506", null ]
     ] ],
-    [ "NPNZ_LIMITS_s", "a01590.html", [
-      [ "MinOutput", "a01590.html#a4a0b0ed45a1400930c789f007bed7270", null ],
-      [ "MaxOutput", "a01590.html#a0ff4148e12916cb65656b9d3387a6e71", null ],
-      [ "AltMinOutput", "a01590.html#a28fe2b583e16d86badea77dbdc199104", null ],
-      [ "AltMaxOutput", "a01590.html#a5e923dee71273b4a3b30c6ee8f7a489d", null ]
+    [ "NPNZ_GAIN_CONTROL_s", "a01590.html", [
+      [ "AgcScaler", "a01590.html#ac97f6143fca6e6fc9f433dfe402666b3", null ],
+      [ "AgcFactor", "a01590.html#a33a039fe8965b322341074ddefe53881", null ],
+      [ "AgcMedian", "a01590.html#a3c0670b2b7a0412426c46eed6d621e77", null ],
+      [ "ptrAgcObserverFunction", "a01590.html#ab4475a4c794f6fe13b0bd7c17190cfe0", null ]
     ] ],
-    [ "NPNZ_ADC_TRGCTRL_s", "a01594.html", [
-      [ "ptrADCTriggerARegister", "a01594.html#a46f5604170f677e6036cacb5cfe51679", null ],
-      [ "ADCTriggerAOffset", "a01594.html#ac58523daa5ba4498f98f6add321b9996", null ],
-      [ "ptrADCTriggerBRegister", "a01594.html#aa76168551141e6233a9006c992475d30", null ],
-      [ "ADCTriggerBOffset", "a01594.html#aad1976c0ad1835d9c2a65e82fb3e839f", null ]
+    [ "NPNZ_LIMITS_s", "a01594.html", [
+      [ "MinOutput", "a01594.html#a4a0b0ed45a1400930c789f007bed7270", null ],
+      [ "MaxOutput", "a01594.html#a0ff4148e12916cb65656b9d3387a6e71", null ],
+      [ "AltMinOutput", "a01594.html#a28fe2b583e16d86badea77dbdc199104", null ],
+      [ "AltMaxOutput", "a01594.html#a5e923dee71273b4a3b30c6ee8f7a489d", null ]
     ] ],
-    [ "NPNZ_DATA_PROVIDERS_s", "a01598.html", [
-      [ "ptrDProvControlInput", "a01598.html#a69148c2c54a089c711120fff25fb7476", null ],
-      [ "ptrDProvControlInputCompensated", "a01598.html#acde428aaa0e39d9f081ca8fba07c0de8", null ],
-      [ "ptrDProvControlError", "a01598.html#a6fa6d9ee16172bc38667fa42c719f3bd", null ],
-      [ "ptrDProvControlOutput", "a01598.html#a01d375870a9b4ee0dcc4fe8d68340906", null ]
+    [ "NPNZ_ADC_TRGCTRL_s", "a01598.html", [
+      [ "ptrADCTriggerARegister", "a01598.html#a46f5604170f677e6036cacb5cfe51679", null ],
+      [ "ADCTriggerAOffset", "a01598.html#ac58523daa5ba4498f98f6add321b9996", null ],
+      [ "ptrADCTriggerBRegister", "a01598.html#aa76168551141e6233a9006c992475d30", null ],
+      [ "ADCTriggerBOffset", "a01598.html#aad1976c0ad1835d9c2a65e82fb3e839f", null ]
     ] ],
-    [ "NPNZ_EXTENSION_HOOKS_s", "a01602.html", [
-      [ "ptrExtHookStartFunction", "a01602.html#aa9ccf832637ed7b72fafc3e3bc3dec1f", null ],
-      [ "ExtHookStartFunctionParam", "a01602.html#ac55c0abd3786fbced0f295d0643e860c", null ],
-      [ "ptrExtHookSourceFunction", "a01602.html#a56cc6ba084187143b28ed5ae3a722ab3", null ],
-      [ "ExtHookSourceFunctionParam", "a01602.html#a49056496daa1b372d8fc77fa0277cb7a", null ],
-      [ "ptrExtHookPreAntiWindupFunction", "a01602.html#a0a886a12a39dcf68dff8d6b17569e278", null ],
-      [ "ExtHookPreAntiWindupFunctionParam", "a01602.html#a4751deec1568e355ede04519aca1163f", null ],
-      [ "ptrExtHookTargetFunction", "a01602.html#aba021e28e8aa8c60fdf0d0ad8a586bc2", null ],
-      [ "ExtHookTargetFunctionParam", "a01602.html#a2a5b9d17e4385cc94016be30e5ef8a04", null ],
-      [ "ptrExtHookStopFunction", "a01602.html#a13aa0323b5f553a04526ebd4562d43f8", null ],
-      [ "ExtHookStopFunctionParam", "a01602.html#a7c0021aa8f168054383cc2c5348be89f", null ],
-      [ "ptrExtHookEndFunction", "a01602.html#ad4d47362ccc41eac37c4efbea81667ec", null ],
-      [ "ExtHookEndFunctionParam", "a01602.html#a0d0cec76368160a68c746460fb0c78de", null ]
+    [ "NPNZ_DATA_PROVIDERS_s", "a01602.html", [
+      [ "ptrDProvControlInput", "a01602.html#a69148c2c54a089c711120fff25fb7476", null ],
+      [ "ptrDProvControlInputCompensated", "a01602.html#acde428aaa0e39d9f081ca8fba07c0de8", null ],
+      [ "ptrDProvControlError", "a01602.html#a6fa6d9ee16172bc38667fa42c719f3bd", null ],
+      [ "ptrDProvControlOutput", "a01602.html#a01d375870a9b4ee0dcc4fe8d68340906", null ]
     ] ],
-    [ "NPNZ_GAIN_CONTROL_s", "a01606.html", [
-      [ "AgcScaler", "a01606.html#ac97f6143fca6e6fc9f433dfe402666b3", null ],
-      [ "AgcFactor", "a01606.html#a33a039fe8965b322341074ddefe53881", null ],
-      [ "AgcMedian", "a01606.html#a3c0670b2b7a0412426c46eed6d621e77", null ],
-      [ "ptrAgcObserverFunction", "a01606.html#ab4475a4c794f6fe13b0bd7c17190cfe0", null ]
+    [ "NPNZ_EXTENSION_HOOKS_s", "a01606.html", [
+      [ "ptrExtHookStartFunction", "a01606.html#aa9ccf832637ed7b72fafc3e3bc3dec1f", null ],
+      [ "ExtHookStartFunctionParam", "a01606.html#ac55c0abd3786fbced0f295d0643e860c", null ],
+      [ "ptrExtHookSourceFunction", "a01606.html#a56cc6ba084187143b28ed5ae3a722ab3", null ],
+      [ "ExtHookSourceFunctionParam", "a01606.html#a49056496daa1b372d8fc77fa0277cb7a", null ],
+      [ "ptrExtHookPreAntiWindupFunction", "a01606.html#a0a886a12a39dcf68dff8d6b17569e278", null ],
+      [ "ExtHookPreAntiWindupFunctionParam", "a01606.html#a4751deec1568e355ede04519aca1163f", null ],
+      [ "ptrExtHookTargetFunction", "a01606.html#aba021e28e8aa8c60fdf0d0ad8a586bc2", null ],
+      [ "ExtHookTargetFunctionParam", "a01606.html#a2a5b9d17e4385cc94016be30e5ef8a04", null ],
+      [ "ptrExtHookStopFunction", "a01606.html#a13aa0323b5f553a04526ebd4562d43f8", null ],
+      [ "ExtHookStopFunctionParam", "a01606.html#a7c0021aa8f168054383cc2c5348be89f", null ],
+      [ "ptrExtHookEndFunction", "a01606.html#ad4d47362ccc41eac37c4efbea81667ec", null ],
+      [ "ExtHookEndFunctionParam", "a01606.html#a0d0cec76368160a68c746460fb0c78de", null ]
     ] ],
     [ "NPNZ_USER_DATA_BUFFER_s", "a01610.html", [
       [ "usrParam0", "a01610.html#a5bd554258d0a885c9fad89cc9f778716", null ],

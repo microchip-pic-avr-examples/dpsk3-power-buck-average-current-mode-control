@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: NPNZ_ADC_TRGCTRL_s Struct Reference</title>
+<title>Digital Power Starter Kit 3 Firmware: NPNZ_LIMITS_s Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -99,43 +99,45 @@ $(document).ready(function(){initNavTree('a01594.html',''); initResizable(); });
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">NPNZ_ADC_TRGCTRL_s Struct Reference<div class="ingroups"><a class="el" href="a00534.html">Library Driver Layer</a> &raquo; <a class="el" href="a00496.html">Power Converter Control Driver</a> &raquo; <a class="el" href="a00499.html">Properties</a> &raquo; <a class="el" href="a00501.html">Data Object Members</a></div></div>  </div>
+<div class="title">NPNZ_LIMITS_s Struct Reference<div class="ingroups"><a class="el" href="a00534.html">Library Driver Layer</a> &raquo; <a class="el" href="a00496.html">Power Converter Control Driver</a> &raquo; <a class="el" href="a00499.html">Properties</a> &raquo; <a class="el" href="a00501.html">Data Object Members</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Automated ADC Trigger handling.  
+<p>System Anti-Windup (Output Clamping) Thresholds.  
  <a href="a01594.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="a00302_source.html">power_control/drivers/npnz16b.h</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for NPNZ_ADC_TRGCTRL_s:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for NPNZ_LIMITS_s:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01593.svg" width="183" height="375"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a01593.svg" width="152" height="375"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for NPNZ_ADC_TRGCTRL_s:</div>
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for NPNZ_LIMITS_s:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a01592.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a01592.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a46f5604170f677e6036cacb5cfe51679"><td class="memItemLeft" align="right" valign="top">volatile uint16_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01594.html#a46f5604170f677e6036cacb5cfe51679">ptrADCTriggerARegister</a></td></tr>
-<tr class="memdesc:a46f5604170f677e6036cacb5cfe51679"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to ADC trigger #1 register (e.g. TRIG1)  <a href="a01594.html#a46f5604170f677e6036cacb5cfe51679">More...</a><br /></td></tr>
-<tr class="separator:a46f5604170f677e6036cacb5cfe51679"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac58523daa5ba4498f98f6add321b9996"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01594.html#ac58523daa5ba4498f98f6add321b9996">ADCTriggerAOffset</a></td></tr>
-<tr class="memdesc:ac58523daa5ba4498f98f6add321b9996"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC trigger #1 offset to compensate propagation delays.  <a href="a01594.html#ac58523daa5ba4498f98f6add321b9996">More...</a><br /></td></tr>
-<tr class="separator:ac58523daa5ba4498f98f6add321b9996"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa76168551141e6233a9006c992475d30"><td class="memItemLeft" align="right" valign="top">volatile uint16_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01594.html#aa76168551141e6233a9006c992475d30">ptrADCTriggerBRegister</a></td></tr>
-<tr class="memdesc:aa76168551141e6233a9006c992475d30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to ADC trigger #2 register (e.g. TRIG2)  <a href="a01594.html#aa76168551141e6233a9006c992475d30">More...</a><br /></td></tr>
-<tr class="separator:aa76168551141e6233a9006c992475d30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad1976c0ad1835d9c2a65e82fb3e839f"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01594.html#aad1976c0ad1835d9c2a65e82fb3e839f">ADCTriggerBOffset</a></td></tr>
-<tr class="memdesc:aad1976c0ad1835d9c2a65e82fb3e839f"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC trigger #2 offset to compensate propagation delays.  <a href="a01594.html#aad1976c0ad1835d9c2a65e82fb3e839f">More...</a><br /></td></tr>
-<tr class="separator:aad1976c0ad1835d9c2a65e82fb3e839f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a0b0ed45a1400930c789f007bed7270"><td class="memItemLeft" align="right" valign="top">volatile int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01594.html#a4a0b0ed45a1400930c789f007bed7270">MinOutput</a></td></tr>
+<tr class="memdesc:a4a0b0ed45a1400930c789f007bed7270"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum output value used for clamping (R/W)  <a href="a01594.html#a4a0b0ed45a1400930c789f007bed7270">More...</a><br /></td></tr>
+<tr class="separator:a4a0b0ed45a1400930c789f007bed7270"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ff4148e12916cb65656b9d3387a6e71"><td class="memItemLeft" align="right" valign="top">volatile int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01594.html#a0ff4148e12916cb65656b9d3387a6e71">MaxOutput</a></td></tr>
+<tr class="memdesc:a0ff4148e12916cb65656b9d3387a6e71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum output value used for clamping (R/W)  <a href="a01594.html#a0ff4148e12916cb65656b9d3387a6e71">More...</a><br /></td></tr>
+<tr class="separator:a0ff4148e12916cb65656b9d3387a6e71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28fe2b583e16d86badea77dbdc199104"><td class="memItemLeft" align="right" valign="top">volatile int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01594.html#a28fe2b583e16d86badea77dbdc199104">AltMinOutput</a></td></tr>
+<tr class="memdesc:a28fe2b583e16d86badea77dbdc199104"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alternate minimum output value used for clamping (R/W)  <a href="a01594.html#a28fe2b583e16d86badea77dbdc199104">More...</a><br /></td></tr>
+<tr class="separator:a28fe2b583e16d86badea77dbdc199104"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e923dee71273b4a3b30c6ee8f7a489d"><td class="memItemLeft" align="right" valign="top">volatile int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01594.html#a5e923dee71273b4a3b30c6ee8f7a489d">AltMaxOutput</a></td></tr>
+<tr class="memdesc:a5e923dee71273b4a3b30c6ee8f7a489d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alternate maximum output value used for clamping (R/W)  <a href="a01594.html#a5e923dee71273b4a3b30c6ee8f7a489d">More...</a><br /></td></tr>
+<tr class="separator:a5e923dee71273b4a3b30c6ee8f7a489d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_a01614"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_a01614')"><img src="closed.png" alt="-"/>&#160;Data Fields inherited from <a class="el" href="a01614.html">NPNZ16b_s</a></td></tr>
 <tr class="memitem:a38a4b2427f4b2b06c112385e722e1419 inherit pub_attribs_a01614"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01562.html">NPNZ_STATUS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01614.html#a38a4b2427f4b2b06c112385e722e1419">status</a></td></tr>
 <tr class="memdesc:a38a4b2427f4b2b06c112385e722e1419 inherit pub_attribs_a01614"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control Loop Status and Control flags.  <a href="a01614.html#a38a4b2427f4b2b06c112385e722e1419">More...</a><br /></td></tr>
@@ -146,19 +148,19 @@ Data Fields</h2></td></tr>
 <tr class="memitem:aa98db9224dce165f72d861acc8558419 inherit pub_attribs_a01614"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01586.html">NPNZ_FILTER_PARAMS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01614.html#aa98db9224dce165f72d861acc8558419">Filter</a></td></tr>
 <tr class="memdesc:aa98db9224dce165f72d861acc8558419 inherit pub_attribs_a01614"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter parameters such as pointer to history and coefficient arrays and number scaling.  <a href="a01614.html#aa98db9224dce165f72d861acc8558419">More...</a><br /></td></tr>
 <tr class="separator:aa98db9224dce165f72d861acc8558419 inherit pub_attribs_a01614"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c9fc0a5e04a384801d066b95dc27f5d inherit pub_attribs_a01614"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01606.html">NPNZ_GAIN_CONTROL_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01614.html#a3c9fc0a5e04a384801d066b95dc27f5d">GainControl</a></td></tr>
+<tr class="memitem:a3c9fc0a5e04a384801d066b95dc27f5d inherit pub_attribs_a01614"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01590.html">NPNZ_GAIN_CONTROL_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01614.html#a3c9fc0a5e04a384801d066b95dc27f5d">GainControl</a></td></tr>
 <tr class="memdesc:a3c9fc0a5e04a384801d066b95dc27f5d inherit pub_attribs_a01614"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameter section for advanced control options.  <a href="a01614.html#a3c9fc0a5e04a384801d066b95dc27f5d">More...</a><br /></td></tr>
 <tr class="separator:a3c9fc0a5e04a384801d066b95dc27f5d inherit pub_attribs_a01614"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6127947619eb634f1a3c3650529e092c inherit pub_attribs_a01614"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01590.html">NPNZ_LIMITS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01614.html#a6127947619eb634f1a3c3650529e092c">Limits</a></td></tr>
+<tr class="memitem:a6127947619eb634f1a3c3650529e092c inherit pub_attribs_a01614"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01594.html">NPNZ_LIMITS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01614.html#a6127947619eb634f1a3c3650529e092c">Limits</a></td></tr>
 <tr class="memdesc:a6127947619eb634f1a3c3650529e092c inherit pub_attribs_a01614"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input and output clamping values.  <a href="a01614.html#a6127947619eb634f1a3c3650529e092c">More...</a><br /></td></tr>
 <tr class="separator:a6127947619eb634f1a3c3650529e092c inherit pub_attribs_a01614"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa708a44ef3b59a931f929bc6c72e07fc inherit pub_attribs_a01614"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01594.html">NPNZ_ADC_TRGCTRL_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01614.html#aa708a44ef3b59a931f929bc6c72e07fc">ADCTriggerControl</a></td></tr>
+<tr class="memitem:aa708a44ef3b59a931f929bc6c72e07fc inherit pub_attribs_a01614"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01598.html">NPNZ_ADC_TRGCTRL_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01614.html#aa708a44ef3b59a931f929bc6c72e07fc">ADCTriggerControl</a></td></tr>
 <tr class="memdesc:aa708a44ef3b59a931f929bc6c72e07fc inherit pub_attribs_a01614"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automatic ADC trigger placement options for ADC Trigger A and B.  <a href="a01614.html#aa708a44ef3b59a931f929bc6c72e07fc">More...</a><br /></td></tr>
 <tr class="separator:aa708a44ef3b59a931f929bc6c72e07fc inherit pub_attribs_a01614"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a971260b757f0c8822315d8c82a603142 inherit pub_attribs_a01614"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01598.html">NPNZ_DATA_PROVIDERS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01614.html#a971260b757f0c8822315d8c82a603142">DataProviders</a></td></tr>
+<tr class="memitem:a971260b757f0c8822315d8c82a603142 inherit pub_attribs_a01614"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01602.html">NPNZ_DATA_PROVIDERS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01614.html#a971260b757f0c8822315d8c82a603142">DataProviders</a></td></tr>
 <tr class="memdesc:a971260b757f0c8822315d8c82a603142 inherit pub_attribs_a01614"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automated data sources pushing recent data points to user-defined variables.  <a href="a01614.html#a971260b757f0c8822315d8c82a603142">More...</a><br /></td></tr>
 <tr class="separator:a971260b757f0c8822315d8c82a603142 inherit pub_attribs_a01614"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a486610694a9aac008ab8c01a0ab88090 inherit pub_attribs_a01614"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01602.html">NPNZ_EXTENSION_HOOKS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01614.html#a486610694a9aac008ab8c01a0ab88090">ExtensionHooks</a></td></tr>
+<tr class="memitem:a486610694a9aac008ab8c01a0ab88090 inherit pub_attribs_a01614"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01606.html">NPNZ_EXTENSION_HOOKS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01614.html#a486610694a9aac008ab8c01a0ab88090">ExtensionHooks</a></td></tr>
 <tr class="memdesc:a486610694a9aac008ab8c01a0ab88090 inherit pub_attribs_a01614"><td class="mdescLeft">&#160;</td><td class="mdescRight">User extension function triggers using function pointers with parameters.  <a href="a01614.html#a486610694a9aac008ab8c01a0ab88090">More...</a><br /></td></tr>
 <tr class="separator:a486610694a9aac008ab8c01a0ab88090 inherit pub_attribs_a01614"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae10c373e7000ff11abbb151f019793e0 inherit pub_attribs_a01614"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01610.html">NPNZ_USER_DATA_BUFFER_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01614.html#ae10c373e7000ff11abbb151f019793e0">Advanced</a></td></tr>
@@ -166,81 +168,81 @@ Data Fields</h2></td></tr>
 <tr class="separator:ae10c373e7000ff11abbb151f019793e0 inherit pub_attribs_a01614"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Automated ADC Trigger handling. </p>
-<p>The NPNZ_ADC_TRGCTRL_t data object holds all parameters required to automatically position ADC triggers based on the most recent control output. This feature is used in voltage or average current mode control to automatically track average values in triangular feedback signal waveforms.</p>
+<div class="textblock"><p>System Anti-Windup (Output Clamping) Thresholds. </p>
+<p>The NPNZ_LIMITS_t data object holds all parameters required to automatically clamp the most recent control output to user-defined thresholds. This data type allows the definition of individual minimum and maximum output values for the NPNZ controller primary and alternate output port.</p>
 <p>This feature is optional and needs to be enabled, configured and managed manually in user code. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00354">354</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00355">355</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="a46f5604170f677e6036cacb5cfe51679"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46f5604170f677e6036cacb5cfe51679">&#9670;&nbsp;</a></span>ptrADCTriggerARegister</h2>
+<a id="a4a0b0ed45a1400930c789f007bed7270"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a0b0ed45a1400930c789f007bed7270">&#9670;&nbsp;</a></span>MinOutput</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t* ptrADCTriggerARegister</td>
+          <td class="memname">volatile int16_t MinOutput</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Pointer to ADC trigger #1 register (e.g. TRIG1) </p>
-
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00356">356</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
-
-</div>
-</div>
-<a id="ac58523daa5ba4498f98f6add321b9996"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac58523daa5ba4498f98f6add321b9996">&#9670;&nbsp;</a></span>ADCTriggerAOffset</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t ADCTriggerAOffset</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>ADC trigger #1 offset to compensate propagation delays. </p>
+<p>Minimum output value used for clamping (R/W) </p>
 
 <p class="definition">Definition at line <a class="el" href="a00302_source.html#l00357">357</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
 
 </div>
 </div>
-<a id="aa76168551141e6233a9006c992475d30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa76168551141e6233a9006c992475d30">&#9670;&nbsp;</a></span>ptrADCTriggerBRegister</h2>
+<a id="a0ff4148e12916cb65656b9d3387a6e71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ff4148e12916cb65656b9d3387a6e71">&#9670;&nbsp;</a></span>MaxOutput</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t* ptrADCTriggerBRegister</td>
+          <td class="memname">volatile int16_t MaxOutput</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Pointer to ADC trigger #2 register (e.g. TRIG2) </p>
+<p>Maximum output value used for clamping (R/W) </p>
 
 <p class="definition">Definition at line <a class="el" href="a00302_source.html#l00358">358</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
 
 </div>
 </div>
-<a id="aad1976c0ad1835d9c2a65e82fb3e839f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad1976c0ad1835d9c2a65e82fb3e839f">&#9670;&nbsp;</a></span>ADCTriggerBOffset</h2>
+<a id="a28fe2b583e16d86badea77dbdc199104"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28fe2b583e16d86badea77dbdc199104">&#9670;&nbsp;</a></span>AltMinOutput</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t ADCTriggerBOffset</td>
+          <td class="memname">volatile int16_t AltMinOutput</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>ADC trigger #2 offset to compensate propagation delays. </p>
+<p>Alternate minimum output value used for clamping (R/W) </p>
 
 <p class="definition">Definition at line <a class="el" href="a00302_source.html#l00359">359</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
+
+</div>
+</div>
+<a id="a5e923dee71273b4a3b30c6ee8f7a489d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e923dee71273b4a3b30c6ee8f7a489d">&#9670;&nbsp;</a></span>AltMaxOutput</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile int16_t AltMaxOutput</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alternate maximum output value used for clamping (R/W) </p>
+
+<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00360">360</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
 
 </div>
 </div>
@@ -253,7 +255,7 @@ Data Fields</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a01594.html">NPNZ_ADC_TRGCTRL_s</a></li>
+    <li class="navelem"><a class="el" href="a01594.html">NPNZ_LIMITS_s</a></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>
