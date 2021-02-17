@@ -112,16 +112,14 @@ $(document).ready(function(){initNavTree('a01390.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01389.svg" width="183" height="375"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a01389.svg" width="183" height="375"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for FLT_OBJECT_STATUS_s:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01388.svg" width="422" height="500"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a01388.svg" width="422" height="500"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -171,58 +169,17 @@ Data Fields</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="a00173_source.html#l00080">80</a> of file <a class="el" href="a00173_source.html">drv_fault_handler.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="a028f8fd8c38c1a2669efbf670ee1d222"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a028f8fd8c38c1a2669efbf670ee1d222">&#9670;&nbsp;</a></span>FaultStatus</h2>
+<a id="a8c8fccc5fbee4168d96cf59a0c22d656"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c8fccc5fbee4168d96cf59a0c22d656">&#9670;&nbsp;</a></span>@1</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile bool FaultStatus</td>
+          <td class="memname">union { ... } </td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Bit 0: Flag bit indicating if FAULT has been tripped. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00173_source.html#l00084">84</a> of file <a class="el" href="a00173_source.html">drv_fault_handler.h</a>.</p>
-
-</div>
-</div>
-<a id="a1bc02388766479b8ec8ac2dfcd4d83b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1bc02388766479b8ec8ac2dfcd4d83b2">&#9670;&nbsp;</a></span>FaultActive</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile bool FaultActive</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bit 1: Flag bit indicating if fault condition has been detected but FAULT has not been tripped yet. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00173_source.html#l00085">85</a> of file <a class="el" href="a00173_source.html">drv_fault_handler.h</a>.</p>
-
-</div>
-</div>
-<a id="a32e93b068e309da5a319a7a69f3b3ff5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32e93b068e309da5a319a7a69f3b3ff5">&#9670;&nbsp;</a></span>unsigned</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile unsigned</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bit &lt;7:2&gt;: (reserved) </p>
-<p>Bit 14: (reserved) </p>
-
-<p class="definition">Definition at line <a class="el" href="a00173_source.html#l00086">86</a> of file <a class="el" href="a00173_source.html">drv_fault_handler.h</a>.</p>
 
 </div>
 </div>
@@ -262,6 +219,61 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a id="a1bc02388766479b8ec8ac2dfcd4d83b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bc02388766479b8ec8ac2dfcd4d83b2">&#9670;&nbsp;</a></span>FaultActive</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool FaultActive</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit 1: Flag bit indicating if fault condition has been detected but FAULT has not been tripped yet. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00173_source.html#l00085">85</a> of file <a class="el" href="a00173_source.html">drv_fault_handler.h</a>.</p>
+
+</div>
+</div>
+<a id="a028f8fd8c38c1a2669efbf670ee1d222"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a028f8fd8c38c1a2669efbf670ee1d222">&#9670;&nbsp;</a></span>FaultStatus</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool FaultStatus</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit 0: Flag bit indicating if FAULT has been tripped. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00173_source.html#l00084">84</a> of file <a class="el" href="a00173_source.html">drv_fault_handler.h</a>.</p>
+
+</div>
+</div>
+<a id="a32e93b068e309da5a319a7a69f3b3ff5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32e93b068e309da5a319a7a69f3b3ff5">&#9670;&nbsp;</a></span>unsigned</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile unsigned</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit &lt;7:2&gt;: (reserved) </p>
+<p>Bit 14: (reserved) </p>
+
+<p class="definition">Definition at line <a class="el" href="a00173_source.html#l00086">86</a> of file <a class="el" href="a00173_source.html">drv_fault_handler.h</a>.</p>
+
+</div>
+</div>
 <a id="a3f0c55f449560b03ce0ac43270c26600"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3f0c55f449560b03ce0ac43270c26600">&#9670;&nbsp;</a></span>value</h2>
 
@@ -275,20 +287,6 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="a00173_source.html#l00092">92</a> of file <a class="el" href="a00173_source.html">drv_fault_handler.h</a>.</p>
-
-</div>
-</div>
-<a id="a8c8fccc5fbee4168d96cf59a0c22d656"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c8fccc5fbee4168d96cf59a0c22d656">&#9670;&nbsp;</a></span>@1</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">union { ... } </td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>

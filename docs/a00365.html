@@ -110,8 +110,7 @@ $(document).ready(function(){initNavTree('a00365.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00365.svg" width="322" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00365.svg" width="322" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -165,29 +164,54 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga64624ae359fb9dd170bb9a3f85dd81f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga64624ae359fb9dd170bb9a3f85dd81f2">&#9670;&nbsp;</a></span>PPS_UnlockIO()</h2>
+<a id="ga6be1f27b70496503b7bda6edc2cfb59b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6be1f27b70496503b7bda6edc2cfb59b">&#9670;&nbsp;</a></span>PPS_RemapInput()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t PPS_UnlockIO </td>
+          <td class="memname">uint16_t PPS_RemapInput </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">volatile uint8_t&#160;</td>
+          <td class="paramname"><em>pinno</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">volatile uint8_t *&#160;</td>
+          <td class="paramname"><em>peripheral</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Unlocks the Peripheral Pin Select Configuration registers to enable changes. </p>
+<p>Assigns a pin to a digital function input. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pinno</td><td>Index number of the RPx-pin of type uint8_t, which should be assigned to the function </td></tr>
+    <tr><td class="paramname">peripheral</td><td>Pointer to peripheral/function of type uint8_t, which should be assigned to the pin </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>unsigned integer 1: Success 0: Error</dd></dl>
-<p>This inline-assembly routine unlocks the Port Multiplexing Configuration registers by keeping the required number of cycles during the unlock process. This function has to be called once after digital functions have been mapped to a specific pin, to prevent accidental changes.</p>
-<dl class="section note"><dt>Note</dt><dd>If bit IOL1WAY in the Oscillator Configuration Bits (FOSC) is set, only one pin assignment operation will be allowed. all following calls of Unlock() or Lock() will be ignored.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00077_source.html">p33c_pps.h</a> </dd></dl>
+<p>Any RPx pin can be assigned to a supported digital function input (e.g. UART RxD). To assign a pin to a function input, call</p>
+<p>smpsPPS_RemapInput([RP-NUMBER], [FUNCTION])</p>
+<div class="fragment"><div class="line">lres |= smpsPPS_RemapInput(PIN_RP10, PPSIN_U1RX);      <span class="comment">// Assign RP10 to UART1 RxD</span></div>
+</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd>p33SMPS_pps.h, FOSC, IOL1WAY, IOL1WAY_ON, IOL1WAY_OFF, smpsPPS_LockIO, smpsPPS_UnlockIO, smpsPPS_RemapOutput, smpsPPS_UnmapInput, smpsPPS_UnmapOutput </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="a00074_source.html#l00102">102</a> of file <a class="el" href="a00074_source.html">p33c_pps.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00074_source.html#l00174">174</a> of file <a class="el" href="a00074_source.html">p33c_pps.c</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00365_ga6be1f27b70496503b7bda6edc2cfb59b_icgraph.svg" width="310" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -232,65 +256,79 @@ Functions</h2></td></tr>
 </div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="a00077_source.html">p33c_pps.h</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="a00074_source.html#l00133">133</a> of file <a class="el" href="a00074_source.html">p33c_pps.c</a>.</p>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00365_ga592e485a9574eeebc2e1dc6993de1f55_icgraph.svg" width="331" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="ga6be1f27b70496503b7bda6edc2cfb59b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6be1f27b70496503b7bda6edc2cfb59b">&#9670;&nbsp;</a></span>PPS_RemapInput()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t PPS_RemapInput </td>
-          <td>(</td>
-          <td class="paramtype">volatile uint8_t&#160;</td>
-          <td class="paramname"><em>pinno</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">volatile uint8_t *&#160;</td>
-          <td class="paramname"><em>peripheral</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Assigns a pin to a digital function input. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pinno</td><td>Index number of the RPx-pin of type uint8_t, which should be assigned to the function </td></tr>
-    <tr><td class="paramname">peripheral</td><td>Pointer to peripheral/function of type uint8_t, which should be assigned to the pin </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned integer 1: Success 0: Error</dd></dl>
-<p>Any RPx pin can be assigned to a supported digital function input (e.g. UART RxD). To assign a pin to a function input, call</p>
-<p>smpsPPS_RemapInput([RP-NUMBER], [FUNCTION])</p>
-<div class="fragment"><div class="line">lres |= smpsPPS_RemapInput(PIN_RP10, PPSIN_U1RX);      <span class="comment">// Assign RP10 to UART1 RxD</span></div>
-</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd>p33SMPS_pps.h, FOSC, IOL1WAY, IOL1WAY_ON, IOL1WAY_OFF, smpsPPS_LockIO, smpsPPS_UnlockIO, smpsPPS_RemapOutput, smpsPPS_UnmapInput, smpsPPS_UnmapOutput </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="a00074_source.html#l00174">174</a> of file <a class="el" href="a00074_source.html">p33c_pps.c</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00365_ga6be1f27b70496503b7bda6edc2cfb59b_icgraph.svg" width="310" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00365_ga592e485a9574eeebc2e1dc6993de1f55_icgraph.svg" width="331" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
+
+</div>
+</div>
+<a id="ga64624ae359fb9dd170bb9a3f85dd81f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga64624ae359fb9dd170bb9a3f85dd81f2">&#9670;&nbsp;</a></span>PPS_UnlockIO()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t PPS_UnlockIO </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Unlocks the Peripheral Pin Select Configuration registers to enable changes. </p>
+<dl class="section return"><dt>Returns</dt><dd>unsigned integer 1: Success 0: Error</dd></dl>
+<p>This inline-assembly routine unlocks the Port Multiplexing Configuration registers by keeping the required number of cycles during the unlock process. This function has to be called once after digital functions have been mapped to a specific pin, to prevent accidental changes.</p>
+<dl class="section note"><dt>Note</dt><dd>If bit IOL1WAY in the Oscillator Configuration Bits (FOSC) is set, only one pin assignment operation will be allowed. all following calls of Unlock() or Lock() will be ignored.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00077_source.html">p33c_pps.h</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="a00074_source.html#l00102">102</a> of file <a class="el" href="a00074_source.html">p33c_pps.c</a>.</p>
+
+</div>
+</div>
+<a id="ga76a2264a280f74b1e66ff047241e7a5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga76a2264a280f74b1e66ff047241e7a5c">&#9670;&nbsp;</a></span>PPS_UnmapInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t PPS_UnmapInput </td>
+          <td>(</td>
+          <td class="paramtype">volatile uint8_t *&#160;</td>
+          <td class="paramname"><em>peripheral</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disconnects a pin from a digital function input. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">peripheral</td><td>Pointer to peripheral of type uint8_t, which should be assigned to the pin </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned integer <br  />
+ 1: Success 0: Error</dd></dl>
+<p>An existing assignment between any RPx pin and a supported digital function input will be dissolved.</p>
+<p>smpsPPS_UnmapInput([RP-NUMBER])</p>
+<div class="fragment"><div class="line">lres |= smpsPPS_UnmapInput(PIN_RP10);      <span class="comment">// Dissolve RP10 assignment</span></div>
+</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="a00077_source.html">p33c_pps.h</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="a00074_source.html#l00240">240</a> of file <a class="el" href="a00074_source.html">p33c_pps.c</a>.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00365_ga76a2264a280f74b1e66ff047241e7a5c_cgraph.svg" width="310" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -326,55 +364,12 @@ Functions</h2></td></tr>
 </div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="a00077_source.html">p33c_pps.h</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="a00074_source.html#l00207">207</a> of file <a class="el" href="a00074_source.html">p33c_pps.c</a>.</p>
-<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00365_gac40d40430a5237549eaafb4aa6ab3a24_cgraph.svg" width="331" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="ga76a2264a280f74b1e66ff047241e7a5c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga76a2264a280f74b1e66ff047241e7a5c">&#9670;&nbsp;</a></span>PPS_UnmapInput()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t PPS_UnmapInput </td>
-          <td>(</td>
-          <td class="paramtype">volatile uint8_t *&#160;</td>
-          <td class="paramname"><em>peripheral</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Disconnects a pin from a digital function input. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">peripheral</td><td>Pointer to peripheral of type uint8_t, which should be assigned to the pin </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned integer <br  />
- 1: Success 0: Error</dd></dl>
-<p>An existing assignment between any RPx pin and a supported digital function input will be dissolved.</p>
-<p>smpsPPS_UnmapInput([RP-NUMBER])</p>
-<div class="fragment"><div class="line">lres |= smpsPPS_UnmapInput(PIN_RP10);      <span class="comment">// Dissolve RP10 assignment</span></div>
-</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="a00077_source.html">p33c_pps.h</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="a00074_source.html#l00240">240</a> of file <a class="el" href="a00074_source.html">p33c_pps.c</a>.</p>
 <div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00365_ga76a2264a280f74b1e66ff047241e7a5c_cgraph.svg" width="310" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00365_gac40d40430a5237549eaafb4aa6ab3a24_cgraph.svg" width="331" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

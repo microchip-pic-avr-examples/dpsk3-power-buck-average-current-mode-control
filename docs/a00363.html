@@ -111,8 +111,7 @@ $(document).ready(function(){initNavTree('a00363.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00363.svg" width="320" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00363.svg" width="320" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -143,79 +142,6 @@ Variables</h2></td></tr>
 <p>Public functions of the AMP PRAL driver. </p>
 <p>This is the detailed description of public functions of the AMP PRAL driver </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="gacaacda32efbc1383f62de2ba1bb95a34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gacaacda32efbc1383f62de2ba1bb95a34">&#9670;&nbsp;</a></span>p33c_OpaModule_GetHandle()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="a00882.html">P33C_OPA_MODULE_s</a> * p33c_OpaModule_GetHandle </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets pointer to op-amp Module SFR set. </p>
-<dl class="section return"><dt>Returns</dt><dd>struct P33C_OPA_MODULE_s*: Pointer to op-amp module special function register set object</dd></dl>
-<p>This function returns the pointer to a op-amp module register set Special Function Register memory space. This pointer can be used to directly write to/read from the Special Function Registers of the op-amp peripheral module configuration. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00062_source.html#l00043">43</a> of file <a class="el" href="a00062_source.html">p33c_opa.c</a>.</p>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00363_gacaacda32efbc1383f62de2ba1bb95a34_icgraph.svg" width="608" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="ga33002aeea2dc490470a0e02902747c0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga33002aeea2dc490470a0e02902747c0b">&#9670;&nbsp;</a></span>p33c_OpaModule_Dispose()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t p33c_OpaModule_Dispose </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Resets all Op-Amp Module registers to their RESET default values. </p>
-<dl class="section return"><dt>Returns</dt><dd>unsigned integer </dd>
-<dd>
-0 = failure, disposing OP-Amp module was not successful </dd>
-<dd>
-1 = success, disposing OP-Amp module was successful</dd></dl>
-<p>This function clears all op-amp module registers to their default values set when the device comes out of RESET.</p>
-<p>Default configuration:</p><ul>
-<li>all operational amplifiers are turned off</li>
-<li>the operational amplifier module is turned off</li>
-<li>all operational amplifier negative inputs are enabled </li>
-</ul>
-
-<p class="definition">Definition at line <a class="el" href="a00062_source.html#l00072">72</a> of file <a class="el" href="a00062_source.html">p33c_opa.c</a>.</p>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00363_ga33002aeea2dc490470a0e02902747c0b_cgraph.svg" width="434" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
 <a id="ga9fc0b06deb897a99cc95ce8f3dc5391c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga9fc0b06deb897a99cc95ce8f3dc5391c">&#9670;&nbsp;</a></span>p33c_OpaModule_ConfigRead()</h2>
 
@@ -271,13 +197,83 @@ Variables</h2></td></tr>
 <p>This function writes a user-defined op-amp module configuration of type <a class="el" href="a00882.html">P33C_OPA_MODULE_s</a> to the op-amp module base registers. The individual register configurations have to be set in user-code before calling this function. To simplify the configuration process of standard functions, this driver provides templates, which can be loaded and written directly. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00062_source.html#l00125">125</a> of file <a class="el" href="a00062_source.html">p33c_opa.c</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00363_ga2e41506a3b90ae5a8221a73aaa4bfdde_icgraph.svg" width="434" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ga33002aeea2dc490470a0e02902747c0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga33002aeea2dc490470a0e02902747c0b">&#9670;&nbsp;</a></span>p33c_OpaModule_Dispose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t p33c_OpaModule_Dispose </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resets all Op-Amp Module registers to their RESET default values. </p>
+<dl class="section return"><dt>Returns</dt><dd>unsigned integer </dd>
+<dd>
+0 = failure, disposing OP-Amp module was not successful </dd>
+<dd>
+1 = success, disposing OP-Amp module was successful</dd></dl>
+<p>This function clears all op-amp module registers to their default values set when the device comes out of RESET.</p>
+<p>Default configuration:</p><ul>
+<li>all operational amplifiers are turned off</li>
+<li>the operational amplifier module is turned off</li>
+<li>all operational amplifier negative inputs are enabled </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="a00062_source.html#l00072">72</a> of file <a class="el" href="a00062_source.html">p33c_opa.c</a>.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00363_ga33002aeea2dc490470a0e02902747c0b_cgraph.svg" width="434" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="gacaacda32efbc1383f62de2ba1bb95a34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacaacda32efbc1383f62de2ba1bb95a34">&#9670;&nbsp;</a></span>p33c_OpaModule_GetHandle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="a00882.html">P33C_OPA_MODULE_s</a> * p33c_OpaModule_GetHandle </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets pointer to op-amp Module SFR set. </p>
+<dl class="section return"><dt>Returns</dt><dd>struct P33C_OPA_MODULE_s*: Pointer to op-amp module special function register set object</dd></dl>
+<p>This function returns the pointer to a op-amp module register set Special Function Register memory space. This pointer can be used to directly write to/read from the Special Function Registers of the op-amp peripheral module configuration. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00062_source.html#l00043">43</a> of file <a class="el" href="a00062_source.html">p33c_opa.c</a>.</p>
 <div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00363_ga2e41506a3b90ae5a8221a73aaa4bfdde_icgraph.svg" width="434" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00363_gacaacda32efbc1383f62de2ba1bb95a34_icgraph.svg" width="608" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

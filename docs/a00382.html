@@ -108,8 +108,7 @@ $(document).ready(function(){initNavTree('a00382.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00382.svg" width="420" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00382.svg" width="420" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="memitem:ga197f587a79697441cb15f08ffe527e56"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00382.html#ga197f587a79697441cb15f08ffe527e56">_OsTimerInterrupt</a>&#160;&#160;&#160;_T1Interrupt</td></tr>
@@ -131,49 +130,6 @@ $(document).ready(function(){initNavTree('a00382.html',''); initResizable(); });
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Assignment of microcontroller device specific chip-resources to circuit functions and signals. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga197f587a79697441cb15f08ffe527e56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga197f587a79697441cb15f08ffe527e56">&#9670;&nbsp;</a></span>_OsTimerInterrupt</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void _OsTimerInterrupt</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">void</td><td>)</td>
-          <td>&#160;&#160;&#160;_T1Interrupt</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Global state-machine peripheral assignments. </p>
-<p>High priority task sequence executed on a fixed 100us pace.</p>
-<p>The main task scheduler time base required a timer interrupt to separate high-priority from low-priority tasks. The high priority task timer interrupt is configured here. Interrupt serivce routine label</p>
-<p>This interrupt is used to call the high priority task sequence at a fixed repetition frequency of 10 kHz (= 100 us period). </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00166">166</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga9e2f08edcbbe0b28c502b3b024572962"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9e2f08edcbbe0b28c502b3b024572962">&#9670;&nbsp;</a></span>_OSTIMER_IP</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define _OSTIMER_IP&#160;&#160;&#160;_T1IP</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>interrupt priority register </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00167">167</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
 <a id="gaf169ca56f95334f16dd2bca15dc108d5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaf169ca56f95334f16dd2bca15dc108d5">&#9670;&nbsp;</a></span>_OSTIMER_IE</h2>
 
@@ -210,6 +166,24 @@ $(document).ready(function(){initNavTree('a00382.html',''); initResizable(); });
 
 </div>
 </div>
+<a id="ga9e2f08edcbbe0b28c502b3b024572962"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9e2f08edcbbe0b28c502b3b024572962">&#9670;&nbsp;</a></span>_OSTIMER_IP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _OSTIMER_IP&#160;&#160;&#160;_T1IP</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>interrupt priority register </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00167">167</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
 <a id="gae01b52fce8c5689574bfa3ad07c29f4e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gae01b52fce8c5689574bfa3ad07c29f4e">&#9670;&nbsp;</a></span>_OSTIMER_PRIORITY</h2>
 
@@ -225,6 +199,31 @@ $(document).ready(function(){initNavTree('a00382.html',''); initResizable(); });
 <p>interrupt priority (1 ... 7, default = 2) </p>
 
 <p class="definition">Definition at line <a class="el" href="a00104_source.html#l00170">170</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga197f587a79697441cb15f08ffe527e56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga197f587a79697441cb15f08ffe527e56">&#9670;&nbsp;</a></span>_OsTimerInterrupt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _OsTimerInterrupt</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">void</td><td>)</td>
+          <td>&#160;&#160;&#160;_T1Interrupt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Global state-machine peripheral assignments. </p>
+<p>High priority task sequence executed on a fixed 100us pace.</p>
+<p>The main task scheduler time base required a timer interrupt to separate high-priority from low-priority tasks. The high priority task timer interrupt is configured here. Interrupt serivce routine label</p>
+<p>This interrupt is used to call the high priority task sequence at a fixed repetition frequency of 10 kHz (= 100 us period). </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00166">166</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

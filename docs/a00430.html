@@ -105,8 +105,7 @@ $(document).ready(function(){initNavTree('a00430.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00430.svg" width="318" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00430.svg" width="318" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="memitem:ga393990cf5c03424419ade69a25bac06a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00430.html#ga393990cf5c03424419ade69a25bac06a">TRAP_DMA_SUPPORT</a>&#160;&#160;&#160;0</td></tr>
@@ -122,22 +121,21 @@ $(document).ready(function(){initNavTree('a00430.html',''); initResizable(); });
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>This chapter provides detailed information about the public defines and macros provided by the fault handler library. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga393990cf5c03424419ade69a25bac06a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga393990cf5c03424419ade69a25bac06a">&#9670;&nbsp;</a></span>TRAP_DMA_SUPPORT</h2>
+<a id="ga93ad1697099d89b5b6ea6b7b5ff04b6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga93ad1697099d89b5b6ea6b7b5ff04b6b">&#9670;&nbsp;</a></span>CPU_RESET_TRIGGER_LOW_BIT_MASK</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TRAP_DMA_SUPPORT&#160;&#160;&#160;0</td>
+          <td class="memname">#define CPU_RESET_TRIGGER_LOW_BIT_MASK&#160;&#160;&#160;0b00000000000000011011101110000000</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Device does not support DMA. </p>
-<p>defining trap-ID for primary and secondary vectors </p>
+<p>This define is used to filter on critical fault conditions used to trigger a CPU reset. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00076">76</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00081">81</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
 
 </div>
 </div>
@@ -159,21 +157,22 @@ $(document).ready(function(){initNavTree('a00430.html',''); initResizable(); });
 
 </div>
 </div>
-<a id="ga93ad1697099d89b5b6ea6b7b5ff04b6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga93ad1697099d89b5b6ea6b7b5ff04b6b">&#9670;&nbsp;</a></span>CPU_RESET_TRIGGER_LOW_BIT_MASK</h2>
+<a id="ga393990cf5c03424419ade69a25bac06a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga393990cf5c03424419ade69a25bac06a">&#9670;&nbsp;</a></span>TRAP_DMA_SUPPORT</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define CPU_RESET_TRIGGER_LOW_BIT_MASK&#160;&#160;&#160;0b00000000000000011011101110000000</td>
+          <td class="memname">TRAP_DMA_SUPPORT&#160;&#160;&#160;0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>This define is used to filter on critical fault conditions used to trigger a CPU reset. </p>
+<p>Device does not support DMA. </p>
+<p>defining trap-ID for primary and secondary vectors </p>
 
-<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00081">81</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00076">76</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
 
 </div>
 </div>

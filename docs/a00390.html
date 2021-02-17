@@ -108,8 +108,7 @@ $(document).ready(function(){initNavTree('a00390.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00390.svg" width="382" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00390.svg" width="382" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="memitem:ga5e2c1c4e412e8814735a407ed3d35509"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga5e2c1c4e412e8814735a407ed3d35509">DBGPIN1_PORT</a>&#160;&#160;&#160;1</td></tr>
@@ -236,82 +235,165 @@ $(document).ready(function(){initNavTree('a00390.html',''); initResizable(); });
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Assignment of microcontroller device pins to circuit functions and signals. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga5e2c1c4e412e8814735a407ed3d35509"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5e2c1c4e412e8814735a407ed3d35509">&#9670;&nbsp;</a></span>DBGPIN1_PORT</h2>
+<a id="ga65ad72dcdfb6cb2af13342b2389257b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga65ad72dcdfb6cb2af13342b2389257b8">&#9670;&nbsp;</a></span>DBGLED_Clear</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DBGPIN1_PORT&#160;&#160;&#160;1</td>
+          <td class="memname">#define DBGLED_Clear</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;{ _LATB6 = 0; }</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Global abstraction labels of special circuit signal device pin assignments. </p>
-<p>This section is used to define labels of hardware specific signals, which are directly assigned to specific device pins. These labels will be used throughout the code and remain unchanged even if this firmware is migrated to another device or pin-out changes between hardware revisions. &lt; Enable debugging pin TP50 on DPSK3 GPIO port declaration where 0=Port RA, 0=Port RB, 0=Port RC, etc. </p>
+<p>Macro instruction to set a pin state to logic LOW. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00188">188</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00214">214</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gab5b808f6da3668c66b068245c18b42c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab5b808f6da3668c66b068245c18b42c5">&#9670;&nbsp;</a></span>DBGPIN1_PIN</h2>
+<a id="ga11c0a9d0875d6a807235d225b70281d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga11c0a9d0875d6a807235d225b70281d2">&#9670;&nbsp;</a></span>DBGLED_Dispose</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DBGPIN1_PIN&#160;&#160;&#160;5</td>
+          <td class="memname">#define DBGLED_Dispose</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;{ _LATB6 = 1; _TRISB6 = 1; }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Macro instruction initializing the specified GPIO as input. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00217">217</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga774daaf86bf5e73051bf3dcdf9e499a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga774daaf86bf5e73051bf3dcdf9e499a6">&#9670;&nbsp;</a></span>DBGLED_Get</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DBGLED_Get</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_RB6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Macro instruction to set a pin state to logic HIGH. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00212">212</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga6f72dd83ca1c1b3bac872c5b9b55823c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6f72dd83ca1c1b3bac872c5b9b55823c">&#9670;&nbsp;</a></span>DBGLED_Init</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DBGLED_Init</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;{ _LATB6 = 0; _TRISB6 = 0; }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Macro instruction initializing the specified GPIO as output. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00216">216</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga78c90f2edb77b15cb6223ab65bb128ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga78c90f2edb77b15cb6223ab65bb128ee">&#9670;&nbsp;</a></span>DBGLED_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DBGLED_PIN&#160;&#160;&#160;6</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>GPIO port pin declaration where 0=Rx0, 1=Rx1, 2=Rx3, etc. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00189">189</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00211">211</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga0fcda4794122b73cc77dd94f3e87881e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0fcda4794122b73cc77dd94f3e87881e">&#9670;&nbsp;</a></span>DBGPIN1_Get</h2>
+<a id="gafa43bc540dbf899e6f3e083adbe683d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafa43bc540dbf899e6f3e083adbe683d5">&#9670;&nbsp;</a></span>DBGLED_PORT</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DBGPIN1_Get</td>
+          <td class="memname">#define DBGLED_PORT&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO port declaration where 0=Port RA, 0=Port RB, 0=Port RC, etc. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00210">210</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gadab0810d05950f4dca0284889575c688"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadab0810d05950f4dca0284889575c688">&#9670;&nbsp;</a></span>DBGLED_Set</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DBGLED_Set</td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_RB5</td>
+          <td>&#160;&#160;&#160;{ _LATB6 = 1; }</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Macro instruction to set a pin state to logic HIGH. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00190">190</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00213">213</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga68099f5c4f61be5720a1ff79998f5aa8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga68099f5c4f61be5720a1ff79998f5aa8">&#9670;&nbsp;</a></span>DBGPIN1_Set</h2>
+<a id="gadd1664fc6d47d42e930cf9453a3b6e87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadd1664fc6d47d42e930cf9453a3b6e87">&#9670;&nbsp;</a></span>DBGLED_Toggle</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DBGPIN1_Set</td>
+          <td class="memname">#define DBGLED_Toggle</td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB5 = 1; }</td>
+          <td>&#160;&#160;&#160;{ _LATB6 ^= 1; }</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro instruction to set a pin state to logic HIGH. </p>
+<p>Macro instruction to toggle most recent pin state. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00191">191</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00215">215</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -333,48 +415,6 @@ $(document).ready(function(){initNavTree('a00390.html',''); initResizable(); });
 <p>Macro instruction to set a pin state to logic LOW. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00104_source.html#l00192">192</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gae69ef331f5fadcc42dfcceb85eee082c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae69ef331f5fadcc42dfcceb85eee082c">&#9670;&nbsp;</a></span>DBGPIN1_Toggle</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DBGPIN1_Toggle</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB5 ^= 1; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Macro instruction to toggle most recent pin state. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00193">193</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga6c75ce713b6c317a532c901f1fee851f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6c75ce713b6c317a532c901f1fee851f">&#9670;&nbsp;</a></span>DBGPIN1_Init</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DBGPIN1_Init</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB5 = 0; _TRISB5 = 0; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Macro instruction initializing the specified GPIO as output. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00194">194</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -400,81 +440,124 @@ $(document).ready(function(){initNavTree('a00390.html',''); initResizable(); });
 
 </div>
 </div>
-<a id="ga2b7203433eb70d8fc6b8df0b5c41f83b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2b7203433eb70d8fc6b8df0b5c41f83b">&#9670;&nbsp;</a></span>DBGPIN2_PORT</h2>
+<a id="ga0fcda4794122b73cc77dd94f3e87881e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0fcda4794122b73cc77dd94f3e87881e">&#9670;&nbsp;</a></span>DBGPIN1_Get</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DBGPIN2_PORT&#160;&#160;&#160;1</td>
+          <td class="memname">#define DBGPIN1_Get</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_RB5</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>GPIO port declaration where 0=Port RA, 0=Port RB, 0=Port RC, etc. </p>
+<p>Macro instruction to set a pin state to logic HIGH. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00199">199</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00190">190</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga6c82e51210b60a8daaea2602496c93b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6c82e51210b60a8daaea2602496c93b1">&#9670;&nbsp;</a></span>DBGPIN2_PIN</h2>
+<a id="ga6c75ce713b6c317a532c901f1fee851f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6c75ce713b6c317a532c901f1fee851f">&#9670;&nbsp;</a></span>DBGPIN1_Init</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DBGPIN2_PIN&#160;&#160;&#160;11</td>
+          <td class="memname">#define DBGPIN1_Init</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;{ _LATB5 = 0; _TRISB5 = 0; }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Macro instruction initializing the specified GPIO as output. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00194">194</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gab5b808f6da3668c66b068245c18b42c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab5b808f6da3668c66b068245c18b42c5">&#9670;&nbsp;</a></span>DBGPIN1_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DBGPIN1_PIN&#160;&#160;&#160;5</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>GPIO port pin declaration where 0=Rx0, 1=Rx1, 2=Rx3, etc. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00200">200</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00189">189</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga827c04ff6e7576210ebc3e250c027f63"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga827c04ff6e7576210ebc3e250c027f63">&#9670;&nbsp;</a></span>DBGPIN2_Get</h2>
+<a id="ga5e2c1c4e412e8814735a407ed3d35509"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5e2c1c4e412e8814735a407ed3d35509">&#9670;&nbsp;</a></span>DBGPIN1_PORT</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DBGPIN2_Get</td>
+          <td class="memname">#define DBGPIN1_PORT&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Global abstraction labels of special circuit signal device pin assignments. </p>
+<p>This section is used to define labels of hardware specific signals, which are directly assigned to specific device pins. These labels will be used throughout the code and remain unchanged even if this firmware is migrated to another device or pin-out changes between hardware revisions. &lt; Enable debugging pin TP50 on DPSK3 GPIO port declaration where 0=Port RA, 0=Port RB, 0=Port RC, etc. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00188">188</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga68099f5c4f61be5720a1ff79998f5aa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga68099f5c4f61be5720a1ff79998f5aa8">&#9670;&nbsp;</a></span>DBGPIN1_Set</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DBGPIN1_Set</td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_RB11</td>
+          <td>&#160;&#160;&#160;{ _LATB5 = 1; }</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Macro instruction to set a pin state to logic HIGH. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00201">201</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00191">191</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga81602741185030b94a63da995bebe9d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga81602741185030b94a63da995bebe9d7">&#9670;&nbsp;</a></span>DBGPIN2_Set</h2>
+<a id="gae69ef331f5fadcc42dfcceb85eee082c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae69ef331f5fadcc42dfcceb85eee082c">&#9670;&nbsp;</a></span>DBGPIN1_Toggle</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DBGPIN2_Set</td>
+          <td class="memname">#define DBGPIN1_Toggle</td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB11 = 1; }</td>
+          <td>&#160;&#160;&#160;{ _LATB5 ^= 1; }</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro instruction to set a pin state to logic HIGH. </p>
+<p>Macro instruction to toggle most recent pin state. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00202">202</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00193">193</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -499,24 +582,45 @@ $(document).ready(function(){initNavTree('a00390.html',''); initResizable(); });
 
 </div>
 </div>
-<a id="ga76f1eb634a1181f09f98522c0854a55b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga76f1eb634a1181f09f98522c0854a55b">&#9670;&nbsp;</a></span>DBGPIN2_Toggle</h2>
+<a id="ga0428dd552ce473ac0a57d8e605f6107f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0428dd552ce473ac0a57d8e605f6107f">&#9670;&nbsp;</a></span>DBGPIN2_Dispose</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DBGPIN2_Toggle</td>
+          <td class="memname">#define DBGPIN2_Dispose</td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB11 ^= 1; }</td>
+          <td>&#160;&#160;&#160;{ _LATB11 = 1; _TRISB11 = 1; }</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro instruction to toggle most recent pin state. </p>
+<p>Macro instruction initializing the specified GPIO as input. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00204">204</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00206">206</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga827c04ff6e7576210ebc3e250c027f63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga827c04ff6e7576210ebc3e250c027f63">&#9670;&nbsp;</a></span>DBGPIN2_Get</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DBGPIN2_Get</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_RB11</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Macro instruction to set a pin state to logic HIGH. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00201">201</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -541,264 +645,81 @@ $(document).ready(function(){initNavTree('a00390.html',''); initResizable(); });
 
 </div>
 </div>
-<a id="ga0428dd552ce473ac0a57d8e605f6107f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0428dd552ce473ac0a57d8e605f6107f">&#9670;&nbsp;</a></span>DBGPIN2_Dispose</h2>
+<a id="ga6c82e51210b60a8daaea2602496c93b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6c82e51210b60a8daaea2602496c93b1">&#9670;&nbsp;</a></span>DBGPIN2_PIN</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DBGPIN2_Dispose</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB11 = 1; _TRISB11 = 1; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Macro instruction initializing the specified GPIO as input. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00206">206</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gafa43bc540dbf899e6f3e083adbe683d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gafa43bc540dbf899e6f3e083adbe683d5">&#9670;&nbsp;</a></span>DBGLED_PORT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DBGLED_PORT&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>GPIO port declaration where 0=Port RA, 0=Port RB, 0=Port RC, etc. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00210">210</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga78c90f2edb77b15cb6223ab65bb128ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga78c90f2edb77b15cb6223ab65bb128ee">&#9670;&nbsp;</a></span>DBGLED_PIN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DBGLED_PIN&#160;&#160;&#160;6</td>
+          <td class="memname">#define DBGPIN2_PIN&#160;&#160;&#160;11</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>GPIO port pin declaration where 0=Rx0, 1=Rx1, 2=Rx3, etc. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00211">211</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00200">200</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga774daaf86bf5e73051bf3dcdf9e499a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga774daaf86bf5e73051bf3dcdf9e499a6">&#9670;&nbsp;</a></span>DBGLED_Get</h2>
+<a id="ga2b7203433eb70d8fc6b8df0b5c41f83b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2b7203433eb70d8fc6b8df0b5c41f83b">&#9670;&nbsp;</a></span>DBGPIN2_PORT</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DBGLED_Get</td>
+          <td class="memname">#define DBGPIN2_PORT&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO port declaration where 0=Port RA, 0=Port RB, 0=Port RC, etc. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00199">199</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga81602741185030b94a63da995bebe9d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga81602741185030b94a63da995bebe9d7">&#9670;&nbsp;</a></span>DBGPIN2_Set</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DBGPIN2_Set</td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_RB6</td>
+          <td>&#160;&#160;&#160;{ _LATB11 = 1; }</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Macro instruction to set a pin state to logic HIGH. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00212">212</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00202">202</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gadab0810d05950f4dca0284889575c688"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadab0810d05950f4dca0284889575c688">&#9670;&nbsp;</a></span>DBGLED_Set</h2>
+<a id="ga76f1eb634a1181f09f98522c0854a55b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga76f1eb634a1181f09f98522c0854a55b">&#9670;&nbsp;</a></span>DBGPIN2_Toggle</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DBGLED_Set</td>
+          <td class="memname">#define DBGPIN2_Toggle</td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB6 = 1; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Macro instruction to set a pin state to logic HIGH. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00213">213</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga65ad72dcdfb6cb2af13342b2389257b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga65ad72dcdfb6cb2af13342b2389257b8">&#9670;&nbsp;</a></span>DBGLED_Clear</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DBGLED_Clear</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB6 = 0; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Macro instruction to set a pin state to logic LOW. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00214">214</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gadd1664fc6d47d42e930cf9453a3b6e87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadd1664fc6d47d42e930cf9453a3b6e87">&#9670;&nbsp;</a></span>DBGLED_Toggle</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DBGLED_Toggle</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB6 ^= 1; }</td>
+          <td>&#160;&#160;&#160;{ _LATB11 ^= 1; }</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Macro instruction to toggle most recent pin state. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00215">215</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga6f72dd83ca1c1b3bac872c5b9b55823c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6f72dd83ca1c1b3bac872c5b9b55823c">&#9670;&nbsp;</a></span>DBGLED_Init</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DBGLED_Init</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB6 = 0; _TRISB6 = 0; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Macro instruction initializing the specified GPIO as output. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00216">216</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga11c0a9d0875d6a807235d225b70281d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga11c0a9d0875d6a807235d225b70281d2">&#9670;&nbsp;</a></span>DBGLED_Dispose</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DBGLED_Dispose</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB6 = 1; _TRISB6 = 1; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Macro instruction initializing the specified GPIO as input. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00217">217</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gaa41ac18d27256361be5d7ae39337f1ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa41ac18d27256361be5d7ae39337f1ef">&#9670;&nbsp;</a></span>PWRGOOD_PORT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PWRGOOD_PORT&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>GPIO port declaration where 0=Port RA, 0=Port RB, 0=Port RC, etc. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00220">220</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga0931cbd53153018be31acf403544c3ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0931cbd53153018be31acf403544c3ab">&#9670;&nbsp;</a></span>PWRGOOD_PIN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PWRGOOD_PIN&#160;&#160;&#160;12</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>GPIO port pin declaration where 0=Rx0, 1=Rx1, 2=Rx3, etc. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00221">221</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga002953a599296b4fc98496a5dc0f5628"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga002953a599296b4fc98496a5dc0f5628">&#9670;&nbsp;</a></span>PWRGOOD_Get</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PWRGOOD_Get</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _RB12; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Macro instruction to set a pin state to logic HIGH. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00222">222</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gaf8e24346d237b20f54c51230324f1057"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf8e24346d237b20f54c51230324f1057">&#9670;&nbsp;</a></span>PWRGOOD_Set</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PWRGOOD_Set</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB12 = 1; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Macro instruction to set a pin state to logic HIGH. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00223">223</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00204">204</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -823,24 +744,45 @@ $(document).ready(function(){initNavTree('a00390.html',''); initResizable(); });
 
 </div>
 </div>
-<a id="gaae08a194e05086ee7428c3d4b6dfeef4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaae08a194e05086ee7428c3d4b6dfeef4">&#9670;&nbsp;</a></span>PWRGOOD_Toggle</h2>
+<a id="gaf4d18800a39129c0256f6be165862bcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf4d18800a39129c0256f6be165862bcd">&#9670;&nbsp;</a></span>PWRGOOD_Dispose</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define PWRGOOD_Toggle</td>
+          <td class="memname">#define PWRGOOD_Dispose</td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB12 ^= 1; }</td>
+          <td>&#160;&#160;&#160;{ _LATB12 = 1; _TRISB12 = 1; }</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro instruction to toggle most recent pin state. </p>
+<p>Macro instruction initializing the specified GPIO as input. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00225">225</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00227">227</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga002953a599296b4fc98496a5dc0f5628"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga002953a599296b4fc98496a5dc0f5628">&#9670;&nbsp;</a></span>PWRGOOD_Get</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PWRGOOD_Get</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;{ _RB12; }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Macro instruction to set a pin state to logic HIGH. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00222">222</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -865,102 +807,81 @@ $(document).ready(function(){initNavTree('a00390.html',''); initResizable(); });
 
 </div>
 </div>
-<a id="gaf4d18800a39129c0256f6be165862bcd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf4d18800a39129c0256f6be165862bcd">&#9670;&nbsp;</a></span>PWRGOOD_Dispose</h2>
+<a id="ga0931cbd53153018be31acf403544c3ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0931cbd53153018be31acf403544c3ab">&#9670;&nbsp;</a></span>PWRGOOD_PIN</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define PWRGOOD_Dispose</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB12 = 1; _TRISB12 = 1; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Macro instruction initializing the specified GPIO as input. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00227">227</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga39c17d4f2167ce8b705b662afbfdb9b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga39c17d4f2167ce8b705b662afbfdb9b1">&#9670;&nbsp;</a></span>SW_USER_PORT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SW_USER_PORT&#160;&#160;&#160;3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>GPIO port declaration where 0=Port RA, 0=Port RB, 0=Port RC, etc. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00230">230</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gaeb2e1ef8508ada9c21ccb83561947bf8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaeb2e1ef8508ada9c21ccb83561947bf8">&#9670;&nbsp;</a></span>SW_USER_PIN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SW_USER_PIN&#160;&#160;&#160;1</td>
+          <td class="memname">#define PWRGOOD_PIN&#160;&#160;&#160;12</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>GPIO port pin declaration where 0=Rx0, 1=Rx1, 2=Rx3, etc. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00231">231</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00221">221</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga8dab463440a35fc3ca8ff1386e76a0ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8dab463440a35fc3ca8ff1386e76a0ed">&#9670;&nbsp;</a></span>SW_USER_Get</h2>
+<a id="gaa41ac18d27256361be5d7ae39337f1ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa41ac18d27256361be5d7ae39337f1ef">&#9670;&nbsp;</a></span>PWRGOOD_PORT</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SW_USER_Get</td>
+          <td class="memname">#define PWRGOOD_PORT&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO port declaration where 0=Port RA, 0=Port RB, 0=Port RC, etc. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00220">220</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gaf8e24346d237b20f54c51230324f1057"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf8e24346d237b20f54c51230324f1057">&#9670;&nbsp;</a></span>PWRGOOD_Set</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PWRGOOD_Set</td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_RD1</td>
+          <td>&#160;&#160;&#160;{ _LATB12 = 1; }</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Macro instruction to set a pin state to logic HIGH. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00232">232</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00223">223</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga85d0ae28842fbbec76c772a4d837a4f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga85d0ae28842fbbec76c772a4d837a4f0">&#9670;&nbsp;</a></span>SW_USER_Set</h2>
+<a id="gaae08a194e05086ee7428c3d4b6dfeef4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaae08a194e05086ee7428c3d4b6dfeef4">&#9670;&nbsp;</a></span>PWRGOOD_Toggle</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SW_USER_Set</td>
+          <td class="memname">#define PWRGOOD_Toggle</td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATD1 = 1; }</td>
+          <td>&#160;&#160;&#160;{ _LATB12 ^= 1; }</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro instruction to set a pin state to logic HIGH. </p>
+<p>Macro instruction to toggle most recent pin state. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00233">233</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00225">225</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -985,24 +906,45 @@ $(document).ready(function(){initNavTree('a00390.html',''); initResizable(); });
 
 </div>
 </div>
-<a id="gac307ed7b4f9656614fbe23b6aa11d5af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac307ed7b4f9656614fbe23b6aa11d5af">&#9670;&nbsp;</a></span>SW_USER_Toggle</h2>
+<a id="ga834d21b1a01bcd18ecbde60065d548fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga834d21b1a01bcd18ecbde60065d548fe">&#9670;&nbsp;</a></span>SW_USER_Dispose</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SW_USER_Toggle</td>
+          <td class="memname">#define SW_USER_Dispose</td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATD1 ^= 1; }</td>
+          <td>&#160;&#160;&#160;{ _LATD1 = 1; _TRISD1 = 1; }</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro instruction to toggle most recent pin state. </p>
+<p>Macro instruction initializing the specified GPIO as input. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00235">235</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00237">237</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga8dab463440a35fc3ca8ff1386e76a0ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8dab463440a35fc3ca8ff1386e76a0ed">&#9670;&nbsp;</a></span>SW_USER_Get</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SW_USER_Get</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_RD1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Macro instruction to set a pin state to logic HIGH. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00232">232</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -1027,24 +969,81 @@ $(document).ready(function(){initNavTree('a00390.html',''); initResizable(); });
 
 </div>
 </div>
-<a id="ga834d21b1a01bcd18ecbde60065d548fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga834d21b1a01bcd18ecbde60065d548fe">&#9670;&nbsp;</a></span>SW_USER_Dispose</h2>
+<a id="gaeb2e1ef8508ada9c21ccb83561947bf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaeb2e1ef8508ada9c21ccb83561947bf8">&#9670;&nbsp;</a></span>SW_USER_PIN</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SW_USER_Dispose</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATD1 = 1; _TRISD1 = 1; }</td>
+          <td class="memname">#define SW_USER_PIN&#160;&#160;&#160;1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro instruction initializing the specified GPIO as input. </p>
+<p>GPIO port pin declaration where 0=Rx0, 1=Rx1, 2=Rx3, etc. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00237">237</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00231">231</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga39c17d4f2167ce8b705b662afbfdb9b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga39c17d4f2167ce8b705b662afbfdb9b1">&#9670;&nbsp;</a></span>SW_USER_PORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SW_USER_PORT&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO port declaration where 0=Port RA, 0=Port RB, 0=Port RC, etc. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00230">230</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga85d0ae28842fbbec76c772a4d837a4f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga85d0ae28842fbbec76c772a4d837a4f0">&#9670;&nbsp;</a></span>SW_USER_Set</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SW_USER_Set</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;{ _LATD1 = 1; }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Macro instruction to set a pin state to logic HIGH. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00233">233</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gac307ed7b4f9656614fbe23b6aa11d5af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac307ed7b4f9656614fbe23b6aa11d5af">&#9670;&nbsp;</a></span>SW_USER_Toggle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SW_USER_Toggle</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;{ _LATD1 ^= 1; }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Macro instruction to toggle most recent pin state. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00235">235</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

@@ -110,8 +110,7 @@ $(document).ready(function(){initNavTree('a00479.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00479.svg" width="298" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00479.svg" width="298" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -127,6 +126,36 @@ Functions</h2></td></tr>
 <p>Public functions of the second library layer. </p>
 <p>This is the detailed description of public functions of the special function module of the buck converter device driver library. </p>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ga337549d1d76534d9b092d7c8bdaf686a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga337549d1d76534d9b092d7c8bdaf686a">&#9670;&nbsp;</a></span>CurrentSenseOffsetCalibration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t CurrentSenseOffsetCalibration </td>
+          <td>(</td>
+          <td class="paramtype">volatile struct <a class="el" href="a01554.html">BUCK_CONVERTER_s</a> *&#160;</td>
+          <td class="paramname"><em>buckInstance</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Performs an offset calibration of the current sense feedback signal(s) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buckInstance</td><td>Pointer to a Buck Converter data object of type struct <a class="el" href="a01554.html" title="BUCK control &amp; monitoring data structure.">BUCK_CONVERTER_s</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
+<p>This function performs a current sense feedback channel zero-offset calibration. The calibration is executed when the reference voltage is applied to the current sense shunt amplifiers but the power supply is still turned off. The offset value is determined by a 4x oversampling of each of the feedback signals to eliminate high-frequency noise. Once the calibration is complete, the 'cs_calib_complete' status bit in the buck converter power controller object status word is set, allowing the state machine to run. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00263_source.html#l00178">178</a> of file <a class="el" href="a00263_source.html">dev_buck_special_functions.c</a>.</p>
+
+</div>
+</div>
 <a id="ga8573aaa632abde3518f8a4448ff73cf7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga8573aaa632abde3518f8a4448ff73cf7">&#9670;&nbsp;</a></span>drv_BuckConverter_SpecialFunctionExecute()</h2>
 
@@ -184,39 +213,8 @@ Functions</h2></td></tr>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00479_ga8573aaa632abde3518f8a4448ff73cf7_icgraph.svg" width="346" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00479_ga8573aaa632abde3518f8a4448ff73cf7_icgraph.svg" width="346" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-</div>
-
-</div>
-</div>
-<a id="ga337549d1d76534d9b092d7c8bdaf686a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga337549d1d76534d9b092d7c8bdaf686a">&#9670;&nbsp;</a></span>CurrentSenseOffsetCalibration()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t CurrentSenseOffsetCalibration </td>
-          <td>(</td>
-          <td class="paramtype">volatile struct <a class="el" href="a01554.html">BUCK_CONVERTER_s</a> *&#160;</td>
-          <td class="paramname"><em>buckInstance</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Performs an offset calibration of the current sense feedback signal(s) </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">buckInstance</td><td>Pointer to a Buck Converter data object of type struct <a class="el" href="a01554.html" title="BUCK control &amp; monitoring data structure.">BUCK_CONVERTER_s</a> </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
-<p>This function performs a current sense feedback channel zero-offset calibration. The calibration is executed when the reference voltage is applied to the current sense shunt amplifiers but the power supply is still turned off. The offset value is determined by a 4x oversampling of each of the feedback signals to eliminate high-frequency noise. Once the calibration is complete, the 'cs_calib_complete' status bit in the buck converter power controller object status word is set, allowing the state machine to run. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00263_source.html#l00178">178</a> of file <a class="el" href="a00263_source.html">dev_buck_special_functions.c</a>.</p>
 
 </div>
 </div>

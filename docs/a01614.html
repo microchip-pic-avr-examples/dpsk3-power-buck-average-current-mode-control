@@ -112,16 +112,14 @@ $(document).ready(function(){initNavTree('a01614.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a01613.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a01613.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for NPNZ16b_s:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a01612.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a01612.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -160,37 +158,73 @@ Data Fields</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="a00302_source.html#l00502">502</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="a38a4b2427f4b2b06c112385e722e1419"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38a4b2427f4b2b06c112385e722e1419">&#9670;&nbsp;</a></span>status</h2>
+<a id="aa708a44ef3b59a931f929bc6c72e07fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa708a44ef3b59a931f929bc6c72e07fc">&#9670;&nbsp;</a></span>ADCTriggerControl</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile struct <a class="el" href="a01562.html">NPNZ_STATUS_s</a> status</td>
+          <td class="memname">volatile struct <a class="el" href="a01598.html">NPNZ_ADC_TRGCTRL_s</a> ADCTriggerControl</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Control Loop Status and Control flags. </p>
+<p>Automatic ADC trigger placement options for ADC Trigger A and B. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00302_source.html#l00008">8</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
 
 </div>
 </div>
-<a id="ae834fa9c7338d08d0fa927c901c2503f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae834fa9c7338d08d0fa927c901c2503f">&#9670;&nbsp;</a></span>Ports</h2>
+<a id="ae10c373e7000ff11abbb151f019793e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae10c373e7000ff11abbb151f019793e0">&#9670;&nbsp;</a></span>Advanced</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile struct <a class="el" href="a01582.html">NPNZ_PORTS_s</a> Ports</td>
+          <td class="memname">volatile struct <a class="el" href="a01610.html">NPNZ_USER_DATA_BUFFER_s</a> Advanced</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Controller input and output ports. </p>
+<p>Parameter section for advanced user control options. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00008">8</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
+
+</div>
+</div>
+<a id="a971260b757f0c8822315d8c82a603142"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a971260b757f0c8822315d8c82a603142">&#9670;&nbsp;</a></span>DataProviders</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile struct <a class="el" href="a01602.html">NPNZ_DATA_PROVIDERS_s</a> DataProviders</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Automated data sources pushing recent data points to user-defined variables. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00008">8</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
+
+</div>
+</div>
+<a id="a486610694a9aac008ab8c01a0ab88090"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a486610694a9aac008ab8c01a0ab88090">&#9670;&nbsp;</a></span>ExtensionHooks</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile struct <a class="el" href="a01606.html">NPNZ_EXTENSION_HOOKS_s</a> ExtensionHooks</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>User extension function triggers using function pointers with parameters. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00302_source.html#l00008">8</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
 
@@ -250,73 +284,37 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="aa708a44ef3b59a931f929bc6c72e07fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa708a44ef3b59a931f929bc6c72e07fc">&#9670;&nbsp;</a></span>ADCTriggerControl</h2>
+<a id="ae834fa9c7338d08d0fa927c901c2503f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae834fa9c7338d08d0fa927c901c2503f">&#9670;&nbsp;</a></span>Ports</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile struct <a class="el" href="a01598.html">NPNZ_ADC_TRGCTRL_s</a> ADCTriggerControl</td>
+          <td class="memname">volatile struct <a class="el" href="a01582.html">NPNZ_PORTS_s</a> Ports</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Automatic ADC trigger placement options for ADC Trigger A and B. </p>
+<p>Controller input and output ports. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00302_source.html#l00008">8</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
 
 </div>
 </div>
-<a id="a971260b757f0c8822315d8c82a603142"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a971260b757f0c8822315d8c82a603142">&#9670;&nbsp;</a></span>DataProviders</h2>
+<a id="a38a4b2427f4b2b06c112385e722e1419"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38a4b2427f4b2b06c112385e722e1419">&#9670;&nbsp;</a></span>status</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile struct <a class="el" href="a01602.html">NPNZ_DATA_PROVIDERS_s</a> DataProviders</td>
+          <td class="memname">volatile struct <a class="el" href="a01562.html">NPNZ_STATUS_s</a> status</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Automated data sources pushing recent data points to user-defined variables. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00008">8</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
-
-</div>
-</div>
-<a id="a486610694a9aac008ab8c01a0ab88090"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a486610694a9aac008ab8c01a0ab88090">&#9670;&nbsp;</a></span>ExtensionHooks</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile struct <a class="el" href="a01606.html">NPNZ_EXTENSION_HOOKS_s</a> ExtensionHooks</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>User extension function triggers using function pointers with parameters. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00008">8</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
-
-</div>
-</div>
-<a id="ae10c373e7000ff11abbb151f019793e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae10c373e7000ff11abbb151f019793e0">&#9670;&nbsp;</a></span>Advanced</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile struct <a class="el" href="a01610.html">NPNZ_USER_DATA_BUFFER_s</a> Advanced</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Parameter section for advanced user control options. </p>
+<p>Control Loop Status and Control flags. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00302_source.html#l00008">8</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
 

@@ -108,8 +108,7 @@ $(document).ready(function(){initNavTree('a00385.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00385.svg" width="350" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00385.svg" width="350" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="memitem:gabba7830b442d410bf3c9beb934f024ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00385.html#gabba7830b442d410bf3c9beb934f024ad">BUCK_POD</a>&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00384.html#ga4308ebf74c3332bd1edfdb6952629eaa">BUCK_POWER_ON_DELAY</a> / (float)<a class="el" href="a00380.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
@@ -146,153 +145,35 @@ $(document).ready(function(){initNavTree('a00385.html',''); initResizable(); });
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Conversion macros for user-declarations of startup timing periods. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="gabba7830b442d410bf3c9beb934f024ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabba7830b442d410bf3c9beb934f024ad">&#9670;&nbsp;</a></span>BUCK_POD</h2>
+<a id="ga6d1019160fae08bdd0abdb8bf1ac8a54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6d1019160fae08bdd0abdb8bf1ac8a54">&#9670;&nbsp;</a></span>BOOST_CHRG_PER</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_POD&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00384.html#ga4308ebf74c3332bd1edfdb6952629eaa">BUCK_POWER_ON_DELAY</a> / (float)<a class="el" href="a00380.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
+          <td class="memname">#define BOOST_CHRG_PER&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00384.html#ga54fa6c219dce9de5f816617ce4716b35">BOOST_CHARGEUP_PERIOD</a> / (float)<a class="el" href="a00380.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Conversion Macros of Startup Timing Settings. </p>
-<p>These conversion macros are used to convert user settings defined as physical quantities into binary (integer) numbers, which will be written to registers and variables and used in calculations throughout the firmware. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00799">799</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01442">1442</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga5198f80b878579deb1103362c8ce99bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5198f80b878579deb1103362c8ce99bc">&#9670;&nbsp;</a></span>BOOST_POD</h2>
+<a id="ga6d4138bf3b3d53405e2e6b1b45724f07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6d4138bf3b3d53405e2e6b1b45724f07">&#9670;&nbsp;</a></span>BOOST_CHRG_TOUT</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_POD&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00384.html#ga0c3f62393119606cf410bc110c3485c1">BOOST_POWER_ON_DELAY</a> / (float)<a class="el" href="a00380.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
+          <td class="memname">#define BOOST_CHRG_TOUT&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00384.html#gae3597efdac20bf9aee16420f6f6d8be4">BOOST_CHARGEUP_TIMEOUT</a> / (float)<a class="el" href="a00380.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Conversion Macros of Startup Timing Settings. </p>
-<p>These conversion macros are used to convert user settings defined as physical quantities into binary (integer) numbers, which will be written to registers and variables and used in calculations throughout the firmware. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01436">1436</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gaa489d990aa6315f54fee41b013f02fd3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa489d990aa6315f54fee41b013f02fd3">&#9670;&nbsp;</a></span>BUCK_VRAMP_PER</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VRAMP_PER&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00384.html#ga5adf9fb727870e57bf02ead3ac7c63ac">BUCK_VRAMP_PERIOD</a> / (float)<a class="el" href="a00380.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00800">800</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga1e532e985e4d737932c504e40950cc37"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga1e532e985e4d737932c504e40950cc37">&#9670;&nbsp;</a></span>BUCK_VREF_STEP</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VREF_STEP&#160;&#160;&#160;(uint16_t)((float)<a class="el" href="a00404.html#ga42d8626bfa1f343d89033f82963fd2b5">BUCK_VOUT_REF</a> / (float)(<a class="el" href="a00385.html#gaa489d990aa6315f54fee41b013f02fd3">BUCK_VRAMP_PER</a> + 1.0))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00801">801</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga44bc7c5f1a38be0df740af9e95a57018"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga44bc7c5f1a38be0df740af9e95a57018">&#9670;&nbsp;</a></span>BUCK_IRAMP_PER</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_IRAMP_PER&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00384.html#ga97ee7cbed4a1ed9ebae5c8576d292103">BUCK_IRAMP_PERIOD</a> / (float)<a class="el" href="a00380.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00802">802</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga351c39d5d5de144dc1ce695066a52195"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga351c39d5d5de144dc1ce695066a52195">&#9670;&nbsp;</a></span>BUCK_IREF_STEP</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_IREF_STEP&#160;&#160;&#160;(uint16_t)((float)<a class="el" href="a00408.html#ga781cfc9802c86ba6e1813b2615adac21">BUCK_ISNS_REF</a> / (float)(<a class="el" href="a00385.html#gaa489d990aa6315f54fee41b013f02fd3">BUCK_VRAMP_PER</a> + 1.0))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00803">803</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gaf341b4ac7178e33925ead7e712a2583b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf341b4ac7178e33925ead7e712a2583b">&#9670;&nbsp;</a></span>BUCK_PGD</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_PGD&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00384.html#ga4cf9c52e0a9c20641018ebdd2679f3c1">BUCK_POWER_GOOD_DELAY</a> / (float)<a class="el" href="a00380.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00804">804</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga53112c16890c08377894e6f1b3a1e80d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga53112c16890c08377894e6f1b3a1e80d">&#9670;&nbsp;</a></span>BOOST_VRAMP_PER</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BOOST_VRAMP_PER&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00384.html#ga96ef5acd0b4aa670827cb7b418fee8a9">BOOST_VRAMP_PERIOD</a> / (float)<a class="el" href="a00380.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01437">1437</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gab110e669b0c43a88be993121558786db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab110e669b0c43a88be993121558786db">&#9670;&nbsp;</a></span>BOOST_VREF_STEP</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BOOST_VREF_STEP&#160;&#160;&#160;(uint16_t)((float)<a class="el" href="a00404.html#gacdf6d826f314362d3aef5c3b31d40a80">BOOST_VOUT_REF</a> / (float)(<a class="el" href="a00385.html#ga53112c16890c08377894e6f1b3a1e80d">BOOST_VRAMP_PER</a> + 1.0))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01438">1438</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01443">1443</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -344,35 +225,153 @@ $(document).ready(function(){initNavTree('a00385.html',''); initResizable(); });
 
 </div>
 </div>
-<a id="ga6d1019160fae08bdd0abdb8bf1ac8a54"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6d1019160fae08bdd0abdb8bf1ac8a54">&#9670;&nbsp;</a></span>BOOST_CHRG_PER</h2>
+<a id="ga5198f80b878579deb1103362c8ce99bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5198f80b878579deb1103362c8ce99bc">&#9670;&nbsp;</a></span>BOOST_POD</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_CHRG_PER&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00384.html#ga54fa6c219dce9de5f816617ce4716b35">BOOST_CHARGEUP_PERIOD</a> / (float)<a class="el" href="a00380.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
+          <td class="memname">#define BOOST_POD&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00384.html#ga0c3f62393119606cf410bc110c3485c1">BOOST_POWER_ON_DELAY</a> / (float)<a class="el" href="a00380.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01442">1442</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p>Conversion Macros of Startup Timing Settings. </p>
+<p>These conversion macros are used to convert user settings defined as physical quantities into binary (integer) numbers, which will be written to registers and variables and used in calculations throughout the firmware. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01436">1436</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga6d4138bf3b3d53405e2e6b1b45724f07"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6d4138bf3b3d53405e2e6b1b45724f07">&#9670;&nbsp;</a></span>BOOST_CHRG_TOUT</h2>
+<a id="ga53112c16890c08377894e6f1b3a1e80d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga53112c16890c08377894e6f1b3a1e80d">&#9670;&nbsp;</a></span>BOOST_VRAMP_PER</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_CHRG_TOUT&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00384.html#gae3597efdac20bf9aee16420f6f6d8be4">BOOST_CHARGEUP_TIMEOUT</a> / (float)<a class="el" href="a00380.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
+          <td class="memname">#define BOOST_VRAMP_PER&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00384.html#ga96ef5acd0b4aa670827cb7b418fee8a9">BOOST_VRAMP_PERIOD</a> / (float)<a class="el" href="a00380.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01443">1443</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01437">1437</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gab110e669b0c43a88be993121558786db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab110e669b0c43a88be993121558786db">&#9670;&nbsp;</a></span>BOOST_VREF_STEP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VREF_STEP&#160;&#160;&#160;(uint16_t)((float)<a class="el" href="a00404.html#gacdf6d826f314362d3aef5c3b31d40a80">BOOST_VOUT_REF</a> / (float)(<a class="el" href="a00385.html#ga53112c16890c08377894e6f1b3a1e80d">BOOST_VRAMP_PER</a> + 1.0))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01438">1438</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga44bc7c5f1a38be0df740af9e95a57018"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga44bc7c5f1a38be0df740af9e95a57018">&#9670;&nbsp;</a></span>BUCK_IRAMP_PER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_IRAMP_PER&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00384.html#ga97ee7cbed4a1ed9ebae5c8576d292103">BUCK_IRAMP_PERIOD</a> / (float)<a class="el" href="a00380.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00802">802</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga351c39d5d5de144dc1ce695066a52195"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga351c39d5d5de144dc1ce695066a52195">&#9670;&nbsp;</a></span>BUCK_IREF_STEP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_IREF_STEP&#160;&#160;&#160;(uint16_t)((float)<a class="el" href="a00408.html#ga781cfc9802c86ba6e1813b2615adac21">BUCK_ISNS_REF</a> / (float)(<a class="el" href="a00385.html#gaa489d990aa6315f54fee41b013f02fd3">BUCK_VRAMP_PER</a> + 1.0))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00803">803</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gaf341b4ac7178e33925ead7e712a2583b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf341b4ac7178e33925ead7e712a2583b">&#9670;&nbsp;</a></span>BUCK_PGD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_PGD&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00384.html#ga4cf9c52e0a9c20641018ebdd2679f3c1">BUCK_POWER_GOOD_DELAY</a> / (float)<a class="el" href="a00380.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00804">804</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gabba7830b442d410bf3c9beb934f024ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabba7830b442d410bf3c9beb934f024ad">&#9670;&nbsp;</a></span>BUCK_POD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_POD&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00384.html#ga4308ebf74c3332bd1edfdb6952629eaa">BUCK_POWER_ON_DELAY</a> / (float)<a class="el" href="a00380.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Conversion Macros of Startup Timing Settings. </p>
+<p>These conversion macros are used to convert user settings defined as physical quantities into binary (integer) numbers, which will be written to registers and variables and used in calculations throughout the firmware. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00799">799</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gaa489d990aa6315f54fee41b013f02fd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa489d990aa6315f54fee41b013f02fd3">&#9670;&nbsp;</a></span>BUCK_VRAMP_PER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_VRAMP_PER&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00384.html#ga5adf9fb727870e57bf02ead3ac7c63ac">BUCK_VRAMP_PERIOD</a> / (float)<a class="el" href="a00380.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00800">800</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga1e532e985e4d737932c504e40950cc37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1e532e985e4d737932c504e40950cc37">&#9670;&nbsp;</a></span>BUCK_VREF_STEP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_VREF_STEP&#160;&#160;&#160;(uint16_t)((float)<a class="el" href="a00404.html#ga42d8626bfa1f343d89033f82963fd2b5">BUCK_VOUT_REF</a> / (float)(<a class="el" href="a00385.html#gaa489d990aa6315f54fee41b013f02fd3">BUCK_VRAMP_PER</a> + 1.0))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00801">801</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

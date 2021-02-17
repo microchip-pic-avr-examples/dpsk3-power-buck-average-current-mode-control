@@ -110,8 +110,7 @@ $(document).ready(function(){initNavTree('a00374.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00374.svg" width="355" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00374.svg" width="355" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
@@ -130,6 +129,55 @@ Variables</h2></td></tr>
 <p>Private properties of the HSPWM PRAL driver. </p>
 <p>This is the detailed description of privte variables, data types, enumerations, defines and macros of the HSPWM PRAL driver </p>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="ga75ca6374eb31a3224a8e7bcfd4cd56a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga75ca6374eb31a3224a8e7bcfd4cd56a0">&#9670;&nbsp;</a></span>pgConfigClear</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="a01106.html">P33C_PWM_GENERATOR_s</a> pgConfigClear</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    </div>
+<div class="line">        .PGxCONL.value = 0x0000,    </div>
+<div class="line">        .PGxCONH.value = 0x0000,    </div>
+<div class="line">        .PGxSTAT.value = 0x0000,    </div>
+<div class="line">        .PGxIOCONL.value = 0x0000,  </div>
+<div class="line">        .PGxIOCONH.value = 0x0000,  </div>
+<div class="line">        .PGxEVTL.value = 0x0000,    </div>
+<div class="line">        .PGxEVTH.value = 0x0000,    </div>
+<div class="line">        .PGxFPCIL.value = 0x0000,   </div>
+<div class="line">        .PGxFPCIH.value = 0x0000,   </div>
+<div class="line">        .PGxCLPCIL.value = 0x0000,  </div>
+<div class="line">        .PGxCLPCIH.value = 0x0000,  </div>
+<div class="line">        .PGxFFPCIL.value = 0x0000,  </div>
+<div class="line">        .PGxFFPCIH.value = 0x0000,  </div>
+<div class="line">        .PGxSPCIL.value = 0x0000,   </div>
+<div class="line">        .PGxSPCIH.value = 0x0000,   </div>
+<div class="line">        .PGxLEBL.value = 0x0000,    </div>
+<div class="line">        .PGxLEBH.value = 0x0000,    </div>
+<div class="line">        .PGxPHASE.value = 0x0000,   </div>
+<div class="line">        .PGxDC.value = 0x0000,      </div>
+<div class="line">        .PGxDCA.value = 0x0000,     </div>
+<div class="line">        .PGxPER.value = 0x0000,     </div>
+<div class="line">        .PGxTRIGA.value = 0x0000,   </div>
+<div class="line">        .PGxTRIGB.value = 0x0000,   </div>
+<div class="line">        .PGxTRIGC.value = 0x0000,   </div>
+<div class="line">        .PGxDTL.value = 0x0000,     </div>
+<div class="line">        .PGxDTH.value = 0x0000,     </div>
+<div class="line">        .PGxCAP.value = 0x0000      </div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p>Default RESET configuration of one PWM generator instance SFRs. </p>
+<p>Default configuration of the PWM generator SFRs with all its registers being reset to their default state when the device comes out of RESET. Programmers can use this template to reset (dispose) a previously used PWM generator when it's not used anymore or to secure a known startup condition before writing individual configurations to its SFRs. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00080_source.html#l00670">670</a> of file <a class="el" href="a00080_source.html">p33c_pwm.c</a>.</p>
+
+</div>
+</div>
 <a id="gafeca0163f581790a35cef7b99a276adc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gafeca0163f581790a35cef7b99a276adc">&#9670;&nbsp;</a></span>pwmConfigClear</h2>
 
@@ -211,55 +259,6 @@ Variables</h2></td></tr>
 </div><!-- fragment -->
 <p>Default initialization configuration of the PWM module SFRs. </p>
 <p>Default configuration of the PWM module SFRs for normal operation at maximum performance using the auxiliary clock input, expecting a 500 MHz input clock. All other functions of the PWM module base registers, such as combinatorial logic blocks, are turned off. Programmers can use this template to initialize the PWM module in default mode before writing individual configurations to its SFRs. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00080_source.html#l00670">670</a> of file <a class="el" href="a00080_source.html">p33c_pwm.c</a>.</p>
-
-</div>
-</div>
-<a id="ga75ca6374eb31a3224a8e7bcfd4cd56a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga75ca6374eb31a3224a8e7bcfd4cd56a0">&#9670;&nbsp;</a></span>pgConfigClear</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="a01106.html">P33C_PWM_GENERATOR_s</a> pgConfigClear</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    </div>
-<div class="line">        .PGxCONL.value = 0x0000,    </div>
-<div class="line">        .PGxCONH.value = 0x0000,    </div>
-<div class="line">        .PGxSTAT.value = 0x0000,    </div>
-<div class="line">        .PGxIOCONL.value = 0x0000,  </div>
-<div class="line">        .PGxIOCONH.value = 0x0000,  </div>
-<div class="line">        .PGxEVTL.value = 0x0000,    </div>
-<div class="line">        .PGxEVTH.value = 0x0000,    </div>
-<div class="line">        .PGxFPCIL.value = 0x0000,   </div>
-<div class="line">        .PGxFPCIH.value = 0x0000,   </div>
-<div class="line">        .PGxCLPCIL.value = 0x0000,  </div>
-<div class="line">        .PGxCLPCIH.value = 0x0000,  </div>
-<div class="line">        .PGxFFPCIL.value = 0x0000,  </div>
-<div class="line">        .PGxFFPCIH.value = 0x0000,  </div>
-<div class="line">        .PGxSPCIL.value = 0x0000,   </div>
-<div class="line">        .PGxSPCIH.value = 0x0000,   </div>
-<div class="line">        .PGxLEBL.value = 0x0000,    </div>
-<div class="line">        .PGxLEBH.value = 0x0000,    </div>
-<div class="line">        .PGxPHASE.value = 0x0000,   </div>
-<div class="line">        .PGxDC.value = 0x0000,      </div>
-<div class="line">        .PGxDCA.value = 0x0000,     </div>
-<div class="line">        .PGxPER.value = 0x0000,     </div>
-<div class="line">        .PGxTRIGA.value = 0x0000,   </div>
-<div class="line">        .PGxTRIGB.value = 0x0000,   </div>
-<div class="line">        .PGxTRIGC.value = 0x0000,   </div>
-<div class="line">        .PGxDTL.value = 0x0000,     </div>
-<div class="line">        .PGxDTH.value = 0x0000,     </div>
-<div class="line">        .PGxCAP.value = 0x0000      </div>
-<div class="line">    }</div>
-</div><!-- fragment -->
-<p>Default RESET configuration of one PWM generator instance SFRs. </p>
-<p>Default configuration of the PWM generator SFRs with all its registers being reset to their default state when the device comes out of RESET. Programmers can use this template to reset (dispose) a previously used PWM generator when it's not used anymore or to secure a known startup condition before writing individual configurations to its SFRs. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00080_source.html#l00670">670</a> of file <a class="el" href="a00080_source.html">p33c_pwm.c</a>.</p>
 

@@ -108,8 +108,7 @@ $(document).ready(function(){initNavTree('a00401.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00401.svg" width="395" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00401.svg" width="395" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="memitem:ga501721dae24a62c9b8c884d7de0b2611"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00401.html#ga501721dae24a62c9b8c884d7de0b2611">_BUCK_VIN_ADCInterrupt</a>&#160;&#160;&#160;_ADCAN12Interrupt</td></tr>
@@ -164,25 +163,6 @@ $(document).ready(function(){initNavTree('a00401.html',''); initResizable(); });
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Device analog input pin, register and interrupt vector assignments of input voltage feedback signal(s) </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga501721dae24a62c9b8c884d7de0b2611"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga501721dae24a62c9b8c884d7de0b2611">&#9670;&nbsp;</a></span>_BUCK_VIN_ADCInterrupt</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define _BUCK_VIN_ADCInterrupt&#160;&#160;&#160;_ADCAN12Interrupt</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>ADC input assignments of input voltage feedback signals. </p>
-<p>In this section the ADC input channels, related ADC result buffers, trigger sources and interrupt vectors are defined. These settings allow the fast re-assignments of feedback signals in case of hardware changes. ADC interrupt service routine function call of the input voltage feedback channel </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00408">408</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
 <a id="gad307e954c5c557bf8b6bc58aa903ef81"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gad307e954c5c557bf8b6bc58aa903ef81">&#9670;&nbsp;</a></span>_BOOST_VIN_ADCInterrupt</h2>
 
@@ -199,132 +179,6 @@ $(document).ready(function(){initNavTree('a00401.html',''); initResizable(); });
 <p>In this section the ADC input channels, related ADC result buffers, trigger sources and interrupt vectors are defined. These settings allow the fast re-assignments of feedback signals in case of hardware changes. ADC interrupt service routine function call of the input voltage feedback channel </p>
 
 <p class="definition">Definition at line <a class="el" href="a00104_source.html#l01034">1034</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga47cf795321e845b3b6b2bc0679c55e0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga47cf795321e845b3b6b2bc0679c55e0b">&#9670;&nbsp;</a></span>_BUCK_VIN_ADCISR_IF</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define _BUCK_VIN_ADCISR_IF&#160;&#160;&#160;_ADCAN12IF</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>ADC interrupt flag bit of the input voltage feedback channel. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00409">409</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gad69d0fffc2e8bbb40add0c81d05714ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad69d0fffc2e8bbb40add0c81d05714ee">&#9670;&nbsp;</a></span>BUCK_VIN_ANSEL</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VIN_ANSEL&#160;&#160;&#160;_ANSELC0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>GPIO analog function mode enable bit. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00411">411</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga53db8f7bdb4425578dfa64d6fcff0c79"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga53db8f7bdb4425578dfa64d6fcff0c79">&#9670;&nbsp;</a></span>BUCK_VIN_ADCCORE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VIN_ADCCORE&#160;&#160;&#160;8</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00412">412</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga9160049921a7c481b69d7098c41f2152"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9160049921a7c481b69d7098c41f2152">&#9670;&nbsp;</a></span>BUCK_VIN_ADCIN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VIN_ADCIN&#160;&#160;&#160;12</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Analog input number (e.g. '5' for 'AN5') </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00413">413</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga677e9cc4284911fb4b20198894b32478"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga677e9cc4284911fb4b20198894b32478">&#9670;&nbsp;</a></span>BUCK_VIN_ADCBUF</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VIN_ADCBUF&#160;&#160;&#160;ADCBUF12</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>ADC input buffer of this ADC channel. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00414">414</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gab3f4ccd582e6df196f114dee7401ae9e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab3f4ccd582e6df196f114dee7401ae9e">&#9670;&nbsp;</a></span>BUCK_VIN_ADCTRIG</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VIN_ADCTRIG&#160;&#160;&#160;PG1TRIGB</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Register used for trigger placement. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00415">415</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gaef301b39ff68f0c6f5d96996e5f4e5e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaef301b39ff68f0c6f5d96996e5f4e5e4">&#9670;&nbsp;</a></span>BUCK_VIN_TRGSRC</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VIN_TRGSRC&#160;&#160;&#160;<a class="el" href="a00396.html#ga58748fe2fe121d5e911032bb48743dfc">BUCK_PWM_TRGSRC_TRG2</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>PWM1 (=PG1) Trigger 2 via PGxTRIGB. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00416">416</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -346,21 +200,58 @@ $(document).ready(function(){initNavTree('a00401.html',''); initResizable(); });
 
 </div>
 </div>
-<a id="ga2f8fc3cc23d74cff84b66a15c1a4144a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2f8fc3cc23d74cff84b66a15c1a4144a">&#9670;&nbsp;</a></span>BOOST_VIN_ANSEL</h2>
+<a id="ga501721dae24a62c9b8c884d7de0b2611"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga501721dae24a62c9b8c884d7de0b2611">&#9670;&nbsp;</a></span>_BUCK_VIN_ADCInterrupt</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VIN_ANSEL&#160;&#160;&#160;_ANSELC0</td>
+          <td class="memname">#define _BUCK_VIN_ADCInterrupt&#160;&#160;&#160;_ADCAN12Interrupt</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>GPIO analog function mode enable bit. </p>
+<p>ADC input assignments of input voltage feedback signals. </p>
+<p>In this section the ADC input channels, related ADC result buffers, trigger sources and interrupt vectors are defined. These settings allow the fast re-assignments of feedback signals in case of hardware changes. ADC interrupt service routine function call of the input voltage feedback channel </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01037">1037</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00408">408</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga47cf795321e845b3b6b2bc0679c55e0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga47cf795321e845b3b6b2bc0679c55e0b">&#9670;&nbsp;</a></span>_BUCK_VIN_ADCISR_IF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _BUCK_VIN_ADCISR_IF&#160;&#160;&#160;_ADCAN12IF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ADC interrupt flag bit of the input voltage feedback channel. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00409">409</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga37f7db0137b8395eb67247493be227cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga37f7db0137b8395eb67247493be227cf">&#9670;&nbsp;</a></span>BOOST_VIN_ADCBUF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VIN_ADCBUF&#160;&#160;&#160;ADCBUF12</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ADC input buffer of this ADC channel. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01040">1040</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -400,24 +291,6 @@ $(document).ready(function(){initNavTree('a00401.html',''); initResizable(); });
 
 </div>
 </div>
-<a id="ga37f7db0137b8395eb67247493be227cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga37f7db0137b8395eb67247493be227cf">&#9670;&nbsp;</a></span>BOOST_VIN_ADCBUF</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BOOST_VIN_ADCBUF&#160;&#160;&#160;ADCBUF12</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>ADC input buffer of this ADC channel. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01040">1040</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
 <a id="gac2dc7bb665d5a22aa00dbfeb2aed167f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gac2dc7bb665d5a22aa00dbfeb2aed167f">&#9670;&nbsp;</a></span>BOOST_VIN_ADCTRIG</h2>
 
@@ -436,6 +309,24 @@ $(document).ready(function(){initNavTree('a00401.html',''); initResizable(); });
 
 </div>
 </div>
+<a id="ga2f8fc3cc23d74cff84b66a15c1a4144a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2f8fc3cc23d74cff84b66a15c1a4144a">&#9670;&nbsp;</a></span>BOOST_VIN_ANSEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VIN_ANSEL&#160;&#160;&#160;_ANSELC0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO analog function mode enable bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01037">1037</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
 <a id="gac40a516f8246206918dc9b0c991a55d6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gac40a516f8246206918dc9b0c991a55d6">&#9670;&nbsp;</a></span>BOOST_VIN_TRGSRC</h2>
 
@@ -451,6 +342,114 @@ $(document).ready(function(){initNavTree('a00401.html',''); initResizable(); });
 <p>PWM2 (=PG2) Trigger 2 via PGxTRIGB. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00104_source.html#l01042">1042</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga677e9cc4284911fb4b20198894b32478"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga677e9cc4284911fb4b20198894b32478">&#9670;&nbsp;</a></span>BUCK_VIN_ADCBUF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_VIN_ADCBUF&#160;&#160;&#160;ADCBUF12</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ADC input buffer of this ADC channel. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00414">414</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga53db8f7bdb4425578dfa64d6fcff0c79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga53db8f7bdb4425578dfa64d6fcff0c79">&#9670;&nbsp;</a></span>BUCK_VIN_ADCCORE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_VIN_ADCCORE&#160;&#160;&#160;8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00412">412</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga9160049921a7c481b69d7098c41f2152"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9160049921a7c481b69d7098c41f2152">&#9670;&nbsp;</a></span>BUCK_VIN_ADCIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_VIN_ADCIN&#160;&#160;&#160;12</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Analog input number (e.g. '5' for 'AN5') </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00413">413</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gab3f4ccd582e6df196f114dee7401ae9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab3f4ccd582e6df196f114dee7401ae9e">&#9670;&nbsp;</a></span>BUCK_VIN_ADCTRIG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_VIN_ADCTRIG&#160;&#160;&#160;PG1TRIGB</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register used for trigger placement. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00415">415</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gad69d0fffc2e8bbb40add0c81d05714ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad69d0fffc2e8bbb40add0c81d05714ee">&#9670;&nbsp;</a></span>BUCK_VIN_ANSEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_VIN_ANSEL&#160;&#160;&#160;_ANSELC0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO analog function mode enable bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00411">411</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gaef301b39ff68f0c6f5d96996e5f4e5e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaef301b39ff68f0c6f5d96996e5f4e5e4">&#9670;&nbsp;</a></span>BUCK_VIN_TRGSRC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_VIN_TRGSRC&#160;&#160;&#160;<a class="el" href="a00396.html#ga58748fe2fe121d5e911032bb48743dfc">BUCK_PWM_TRGSRC_TRG2</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PWM1 (=PG1) Trigger 2 via PGxTRIGB. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00416">416</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

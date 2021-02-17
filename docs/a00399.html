@@ -108,8 +108,7 @@ $(document).ready(function(){initNavTree('a00399.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00399.svg" width="319" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00399.svg" width="319" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="memitem:ga2b9d7fd5b2702046315df96e0dac53a6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00399.html#ga2b9d7fd5b2702046315df96e0dac53a6">BUCK_VIN_MINIMUM</a>&#160;&#160;&#160;(float) 6.500</td></tr>
@@ -176,22 +175,75 @@ $(document).ready(function(){initNavTree('a00399.html',''); initResizable(); });
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>User-declaration of input voltage feedback parameters using physical quantities. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga2b9d7fd5b2702046315df96e0dac53a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2b9d7fd5b2702046315df96e0dac53a6">&#9670;&nbsp;</a></span>BUCK_VIN_MINIMUM</h2>
+<a id="gabf31dcb35b27258749eaebc91bc25c86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabf31dcb35b27258749eaebc91bc25c86">&#9670;&nbsp;</a></span>BOOST_VIN_ADC_TRG_DELAY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_VIN_MINIMUM&#160;&#160;&#160;(float) 6.500</td>
+          <td class="memname">#define BOOST_VIN_ADC_TRG_DELAY&#160;&#160;&#160;(float)(20.0e-9)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Declaration of input voltage feedback properties. </p>
-<p>In this section the output voltage feedback signal scaling, gain, valid signal limits and nominal operating point is specified. Physical quantities are used to define values. Macros are used to convert given physical values into binary (integer) number to be written into SFRs and variables. Minimum input voltage in [V] </p>
+<p>ADC trigger delay in [sec]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00380">380</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01018">1018</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gaebdcf7b89be3517cbe6464a32216c341"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaebdcf7b89be3517cbe6464a32216c341">&#9670;&nbsp;</a></span>BOOST_VIN_FEEDBACK_OFFSET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VIN_FEEDBACK_OFFSET&#160;&#160;&#160;(float)(0.0000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Physical, static signal offset in [V]. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01017">1017</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga9bd075cb27c7aef0a12dba19e0509a48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9bd075cb27c7aef0a12dba19e0509a48">&#9670;&nbsp;</a></span>BOOST_VIN_HYSTERESIS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VIN_HYSTERESIS&#160;&#160;&#160;(float) 1.000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>UVLO/OVLO Hysteresis in [V]. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01012">1012</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga58ae34b85408432b3ba0d7774d9b34f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga58ae34b85408432b3ba0d7774d9b34f1">&#9670;&nbsp;</a></span>BOOST_VIN_MAXIMUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VIN_MAXIMUM&#160;&#160;&#160;(float)13.800</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maximum input voltage in [V]. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01008">1008</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -214,168 +266,6 @@ $(document).ready(function(){initNavTree('a00399.html',''); initResizable(); });
 
 </div>
 </div>
-<a id="ga5c7772209d64e3a378005e91041e4909"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5c7772209d64e3a378005e91041e4909">&#9670;&nbsp;</a></span>BUCK_VIN_NOMINAL</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VIN_NOMINAL&#160;&#160;&#160;(float) 9.000</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Nominal input voltage in [V]. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00381">381</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gaf44f0978ee4afa8c9934405d94c4f7a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf44f0978ee4afa8c9934405d94c4f7a7">&#9670;&nbsp;</a></span>BUCK_VIN_MAXIMUM</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VIN_MAXIMUM&#160;&#160;&#160;(float)13.800</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Maximum input voltage in [V]. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00382">382</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga5bb8349b54c2abdb048d8c6cb5abb97a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5bb8349b54c2abdb048d8c6cb5abb97a">&#9670;&nbsp;</a></span>BUCK_VIN_UNDER_VOLTAGE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VIN_UNDER_VOLTAGE&#160;&#160;&#160;(float) 6.000</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Under Voltage Lock Out Cut Off in [V]. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00384">384</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga045299d4d5087811ae36728c59f4f8fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga045299d4d5087811ae36728c59f4f8fb">&#9670;&nbsp;</a></span>BUCK_VIN_OVER_VOLTAGE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VIN_OVER_VOLTAGE&#160;&#160;&#160;(float)14.300</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Over Voltage Lock Out Cut Off in [V]. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00385">385</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gac9d550e31988f099595df4e1cf57c6fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac9d550e31988f099595df4e1cf57c6fe">&#9670;&nbsp;</a></span>BUCK_VIN_HYSTERESIS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VIN_HYSTERESIS&#160;&#160;&#160;(float) 1.000</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>UVLO/OVLO Hysteresis in [V]. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00386">386</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga1e5a2551445274f32a9dde1ccab41511"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga1e5a2551445274f32a9dde1ccab41511">&#9670;&nbsp;</a></span>BUCK_VIN_R1</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VIN_R1&#160;&#160;&#160;(float)(6.980)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Upper voltage divider resistor in [kOhm]. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00388">388</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gab95ae3ec4f9a91b3a65fbeedc2d5f3dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab95ae3ec4f9a91b3a65fbeedc2d5f3dd">&#9670;&nbsp;</a></span>BUCK_VIN_R2</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VIN_R2&#160;&#160;&#160;(float)(1.000)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Lower voltage divider resistor in [kOhm]. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00389">389</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gaf593cd65bd5f4c5e89e53a2f18eee78f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf593cd65bd5f4c5e89e53a2f18eee78f">&#9670;&nbsp;</a></span>BUCK_VIN_FEEDBACK_OFFSET</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VIN_FEEDBACK_OFFSET&#160;&#160;&#160;(float)(0.0000)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Physical, static signal offset in [V]. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00391">391</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga424be83a416e00c8a543dba4c4fc0b4b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga424be83a416e00c8a543dba4c4fc0b4b">&#9670;&nbsp;</a></span>BUCK_VIN_ADC_TRG_DELAY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VIN_ADC_TRG_DELAY&#160;&#160;&#160;(float)(20.0e-9)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>ADC trigger delay in [sec]. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00392">392</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
 <a id="gad24de47b6326d94841299f3d4063edff"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gad24de47b6326d94841299f3d4063edff">&#9670;&nbsp;</a></span>BOOST_VIN_NOMINAL</h2>
 
@@ -394,42 +284,6 @@ $(document).ready(function(){initNavTree('a00399.html',''); initResizable(); });
 
 </div>
 </div>
-<a id="ga58ae34b85408432b3ba0d7774d9b34f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga58ae34b85408432b3ba0d7774d9b34f1">&#9670;&nbsp;</a></span>BOOST_VIN_MAXIMUM</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BOOST_VIN_MAXIMUM&#160;&#160;&#160;(float)13.800</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Maximum input voltage in [V]. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01008">1008</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gad0982e95f129233155bda6bbd3f37f6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad0982e95f129233155bda6bbd3f37f6b">&#9670;&nbsp;</a></span>BOOST_VIN_UNDER_VOLTAGE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BOOST_VIN_UNDER_VOLTAGE&#160;&#160;&#160;(float) 6.000</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Under Voltage Lock Out Cut Off in [V]. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01010">1010</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
 <a id="ga731ec038ed3218a73f37f7c82d05dd39"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga731ec038ed3218a73f37f7c82d05dd39">&#9670;&nbsp;</a></span>BOOST_VIN_OVER_VOLTAGE</h2>
 
@@ -445,24 +299,6 @@ $(document).ready(function(){initNavTree('a00399.html',''); initResizable(); });
 <p>Over Voltage Lock Out Cut Off in [V]. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00104_source.html#l01011">1011</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga9bd075cb27c7aef0a12dba19e0509a48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9bd075cb27c7aef0a12dba19e0509a48">&#9670;&nbsp;</a></span>BOOST_VIN_HYSTERESIS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BOOST_VIN_HYSTERESIS&#160;&#160;&#160;(float) 1.000</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>UVLO/OVLO Hysteresis in [V]. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01012">1012</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -502,39 +338,202 @@ $(document).ready(function(){initNavTree('a00399.html',''); initResizable(); });
 
 </div>
 </div>
-<a id="gaebdcf7b89be3517cbe6464a32216c341"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaebdcf7b89be3517cbe6464a32216c341">&#9670;&nbsp;</a></span>BOOST_VIN_FEEDBACK_OFFSET</h2>
+<a id="gad0982e95f129233155bda6bbd3f37f6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad0982e95f129233155bda6bbd3f37f6b">&#9670;&nbsp;</a></span>BOOST_VIN_UNDER_VOLTAGE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VIN_FEEDBACK_OFFSET&#160;&#160;&#160;(float)(0.0000)</td>
+          <td class="memname">#define BOOST_VIN_UNDER_VOLTAGE&#160;&#160;&#160;(float) 6.000</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Physical, static signal offset in [V]. </p>
+<p>Under Voltage Lock Out Cut Off in [V]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01017">1017</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01010">1010</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gabf31dcb35b27258749eaebc91bc25c86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabf31dcb35b27258749eaebc91bc25c86">&#9670;&nbsp;</a></span>BOOST_VIN_ADC_TRG_DELAY</h2>
+<a id="ga424be83a416e00c8a543dba4c4fc0b4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga424be83a416e00c8a543dba4c4fc0b4b">&#9670;&nbsp;</a></span>BUCK_VIN_ADC_TRG_DELAY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VIN_ADC_TRG_DELAY&#160;&#160;&#160;(float)(20.0e-9)</td>
+          <td class="memname">#define BUCK_VIN_ADC_TRG_DELAY&#160;&#160;&#160;(float)(20.0e-9)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>ADC trigger delay in [sec]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01018">1018</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00392">392</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gaf593cd65bd5f4c5e89e53a2f18eee78f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf593cd65bd5f4c5e89e53a2f18eee78f">&#9670;&nbsp;</a></span>BUCK_VIN_FEEDBACK_OFFSET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_VIN_FEEDBACK_OFFSET&#160;&#160;&#160;(float)(0.0000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Physical, static signal offset in [V]. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00391">391</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gac9d550e31988f099595df4e1cf57c6fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac9d550e31988f099595df4e1cf57c6fe">&#9670;&nbsp;</a></span>BUCK_VIN_HYSTERESIS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_VIN_HYSTERESIS&#160;&#160;&#160;(float) 1.000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>UVLO/OVLO Hysteresis in [V]. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00386">386</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gaf44f0978ee4afa8c9934405d94c4f7a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf44f0978ee4afa8c9934405d94c4f7a7">&#9670;&nbsp;</a></span>BUCK_VIN_MAXIMUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_VIN_MAXIMUM&#160;&#160;&#160;(float)13.800</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maximum input voltage in [V]. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00382">382</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga2b9d7fd5b2702046315df96e0dac53a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2b9d7fd5b2702046315df96e0dac53a6">&#9670;&nbsp;</a></span>BUCK_VIN_MINIMUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_VIN_MINIMUM&#160;&#160;&#160;(float) 6.500</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Declaration of input voltage feedback properties. </p>
+<p>In this section the output voltage feedback signal scaling, gain, valid signal limits and nominal operating point is specified. Physical quantities are used to define values. Macros are used to convert given physical values into binary (integer) number to be written into SFRs and variables. Minimum input voltage in [V] </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00380">380</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga5c7772209d64e3a378005e91041e4909"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5c7772209d64e3a378005e91041e4909">&#9670;&nbsp;</a></span>BUCK_VIN_NOMINAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_VIN_NOMINAL&#160;&#160;&#160;(float) 9.000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Nominal input voltage in [V]. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00381">381</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga045299d4d5087811ae36728c59f4f8fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga045299d4d5087811ae36728c59f4f8fb">&#9670;&nbsp;</a></span>BUCK_VIN_OVER_VOLTAGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_VIN_OVER_VOLTAGE&#160;&#160;&#160;(float)14.300</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Over Voltage Lock Out Cut Off in [V]. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00385">385</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga1e5a2551445274f32a9dde1ccab41511"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1e5a2551445274f32a9dde1ccab41511">&#9670;&nbsp;</a></span>BUCK_VIN_R1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_VIN_R1&#160;&#160;&#160;(float)(6.980)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Upper voltage divider resistor in [kOhm]. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00388">388</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gab95ae3ec4f9a91b3a65fbeedc2d5f3dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab95ae3ec4f9a91b3a65fbeedc2d5f3dd">&#9670;&nbsp;</a></span>BUCK_VIN_R2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_VIN_R2&#160;&#160;&#160;(float)(1.000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lower voltage divider resistor in [kOhm]. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00389">389</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga5bb8349b54c2abdb048d8c6cb5abb97a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5bb8349b54c2abdb048d8c6cb5abb97a">&#9670;&nbsp;</a></span>BUCK_VIN_UNDER_VOLTAGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_VIN_UNDER_VOLTAGE&#160;&#160;&#160;(float) 6.000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Under Voltage Lock Out Cut Off in [V]. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00384">384</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

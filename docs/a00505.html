@@ -110,8 +110,7 @@ $(document).ready(function(){initNavTree('a00505.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00505.svg" width="340" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00505.svg" width="340" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -130,14 +129,14 @@ Functions</h2></td></tr>
 <p>Public functions of the application layer of the power control task. </p>
 <p>The push button application layer is the proprietary user code used to configure and drive the on-board push button. </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga7c903bd2ce5b08d78de218d726830947"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7c903bd2ce5b08d78de218d726830947">&#9670;&nbsp;</a></span>appPushButton_Initialize()</h2>
+<a id="ga8bbc25ada37ef5de18f083add7143372"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8bbc25ada37ef5de18f083add7143372">&#9670;&nbsp;</a></span>appPushButton_Dispose()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t appPushButton_Initialize </td>
+          <td class="memname">volatile uint16_t appPushButton_Dispose </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -146,7 +145,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initializes the USER push button on DPSK3. </p>
+<p>Unloads the push button data object and frees its resources. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">void</td><td></td></tr>
@@ -154,25 +153,16 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
-<p>DPSK3 has one on-board push button labeled 'USER' which is used in this application example to switch between different LCD screens allowing the user to view runtime data.</p>
-<p>This function initializes the push button function driver used by the push button monitoring function <a class="el" href="a00505.html#gac8eaed20cfb248e14fe71e45483203f7" title="Executes the USER push button monitor.">appPushButton_Execute()</a> by setting user defined delays to debounce the switching edge and set up filters for short and long press events. </p>
+<p>This function is used to unload all push button function driver data objects and free their resources.</p>
+<p>All user settings will get reset. The PUSH_BUTTON_OBJECT_t data object holding all user-defined settings of the push-button object need to be re-initialized before this function driver can be used again. * </p>
 
-<p class="definition">Definition at line <a class="el" href="a00320_source.html#l00045">45</a> of file <a class="el" href="a00320_source.html">app_push_button.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00320_source.html#l00106">106</a> of file <a class="el" href="a00320_source.html">app_push_button.c</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00505_ga7c903bd2ce5b08d78de218d726830947_cgraph.svg" width="444" height="206"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00505_ga7c903bd2ce5b08d78de218d726830947_icgraph.svg" width="383" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00505_ga8bbc25ada37ef5de18f083add7143372_cgraph.svg" width="391" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -205,33 +195,31 @@ Functions</h2></td></tr>
 <p>This function monitors the defined general purpose I/O to detect the status of the on-board push button 'USER', scanning for Long Press events, which will trigger the switch-over between different LCD screens. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00320_source.html#l00081">81</a> of file <a class="el" href="a00320_source.html">app_push_button.c</a>.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00505_gac8eaed20cfb248e14fe71e45483203f7_cgraph.svg" width="394" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00505_gac8eaed20cfb248e14fe71e45483203f7_cgraph.svg" width="394" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00505_gac8eaed20cfb248e14fe71e45483203f7_icgraph.svg" width="368" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00505_gac8eaed20cfb248e14fe71e45483203f7_icgraph.svg" width="368" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
 </div>
-<a id="ga8bbc25ada37ef5de18f083add7143372"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8bbc25ada37ef5de18f083add7143372">&#9670;&nbsp;</a></span>appPushButton_Dispose()</h2>
+<a id="ga7c903bd2ce5b08d78de218d726830947"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7c903bd2ce5b08d78de218d726830947">&#9670;&nbsp;</a></span>appPushButton_Initialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t appPushButton_Dispose </td>
+          <td class="memname">volatile uint16_t appPushButton_Initialize </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -240,7 +228,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Unloads the push button data object and frees its resources. </p>
+<p>Initializes the USER push button on DPSK3. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">void</td><td></td></tr>
@@ -248,17 +236,23 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
-<p>This function is used to unload all push button function driver data objects and free their resources.</p>
-<p>All user settings will get reset. The PUSH_BUTTON_OBJECT_t data object holding all user-defined settings of the push-button object need to be re-initialized before this function driver can be used again. * </p>
+<p>DPSK3 has one on-board push button labeled 'USER' which is used in this application example to switch between different LCD screens allowing the user to view runtime data.</p>
+<p>This function initializes the push button function driver used by the push button monitoring function <a class="el" href="a00505.html#gac8eaed20cfb248e14fe71e45483203f7" title="Executes the USER push button monitor.">appPushButton_Execute()</a> by setting user defined delays to debounce the switching edge and set up filters for short and long press events. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00320_source.html#l00106">106</a> of file <a class="el" href="a00320_source.html">app_push_button.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00320_source.html#l00045">45</a> of file <a class="el" href="a00320_source.html">app_push_button.c</a>.</p>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00505_ga7c903bd2ce5b08d78de218d726830947_cgraph.svg" width="444" height="206"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00505_ga8bbc25ada37ef5de18f083add7143372_cgraph.svg" width="391" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00505_ga7c903bd2ce5b08d78de218d726830947_icgraph.svg" width="383" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

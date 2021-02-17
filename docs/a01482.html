@@ -112,8 +112,7 @@ $(document).ready(function(){initNavTree('a01482.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01480.svg" width="255" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a01480.svg" width="255" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -139,19 +138,19 @@ Data Fields</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="a00278_source.html#l00165">165</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="a6724e9f45f6aa73bf8322d0aaecbce89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6724e9f45f6aa73bf8322d0aaecbce89">&#9670;&nbsp;</a></span>StatusFlags</h2>
+<a id="ae6ee4010e24872f5eda7319fd21ee25f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6ee4010e24872f5eda7319fd21ee25f">&#9670;&nbsp;</a></span>ControlModes</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="a00469.html#ga7a455d7ce27a6a7f0208fe143e38c68f">BUCK_STATUS_FLAGS_e</a> StatusFlags</td>
+          <td class="memname">enum <a class="el" href="a00469.html#ga7a34fa9e4da52a8bf6a056323c6c7e11">BUCK_CONTROL_MODE_e</a> ControlModes</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>List of all status and control flags of the Buck Converter status word. </p>
+<p>List of Supported Control Modes. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00278_source.html#l00001">1</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
 
@@ -175,24 +174,6 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="a9b09dca4c4bd35f70befa5fb5fcf03b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b09dca4c4bd35f70befa5fb5fcf03b3">&#9670;&nbsp;</a></span>SubStateOpCodes</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="a00469.html#ga2db122348a48e04bad8e0dea47327793">BUCK_SUBSTATES_e</a> SubStateOpCodes</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>List of State Machine Sub-State IDs. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00001">1</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
-
-</div>
-</div>
 <a id="aedb094fb2eddc45cd58e26d47139f34e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aedb094fb2eddc45cd58e26d47139f34e">&#9670;&nbsp;</a></span>OpStateReturnValues</h2>
 
@@ -211,19 +192,37 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="ae6ee4010e24872f5eda7319fd21ee25f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6ee4010e24872f5eda7319fd21ee25f">&#9670;&nbsp;</a></span>ControlModes</h2>
+<a id="a6724e9f45f6aa73bf8322d0aaecbce89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6724e9f45f6aa73bf8322d0aaecbce89">&#9670;&nbsp;</a></span>StatusFlags</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="a00469.html#ga7a34fa9e4da52a8bf6a056323c6c7e11">BUCK_CONTROL_MODE_e</a> ControlModes</td>
+          <td class="memname">enum <a class="el" href="a00469.html#ga7a455d7ce27a6a7f0208fe143e38c68f">BUCK_STATUS_FLAGS_e</a> StatusFlags</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>List of Supported Control Modes. </p>
+<p>List of all status and control flags of the Buck Converter status word. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00001">1</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="a9b09dca4c4bd35f70befa5fb5fcf03b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b09dca4c4bd35f70befa5fb5fcf03b3">&#9670;&nbsp;</a></span>SubStateOpCodes</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="a00469.html#ga2db122348a48e04bad8e0dea47327793">BUCK_SUBSTATES_e</a> SubStateOpCodes</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>List of State Machine Sub-State IDs. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00278_source.html#l00001">1</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
 

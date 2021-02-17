@@ -110,8 +110,7 @@ $(document).ready(function(){initNavTree('a00359.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00359.svg" width="347" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00359.svg" width="347" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -130,36 +129,6 @@ Functions</h2></td></tr>
 <p>Public functions of the SCCP/MCCP PRAL driver. </p>
 <p>This is the detailed description of public functions of the SCCP/MCCP PRAL driver </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga69f27108ee95b46a170b3fd0900665ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga69f27108ee95b46a170b3fd0900665ed">&#9670;&nbsp;</a></span>p33c_CcpInstance_GetHandle()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile struct <a class="el" href="a00538.html">P33C_CCP_INSTANCE_SFRSET_s</a> * p33c_CcpInstance_GetHandle </td>
-          <td>(</td>
-          <td class="paramtype">volatile uint16_t&#160;</td>
-          <td class="paramname"><em>ccpInstance</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets pointer to CCP instance SFR set. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ccpInstance</td><td>Index of the Capture/Compare peripheral instance of type unsinged integer </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to SCCP/MCCP instance special function register data object of type struct <a class="el" href="a00538.html" title="Generic Capture Compare Driver Module (header file)">P33C_CCP_INSTANCE_SFRSET_s</a></dd></dl>
-<p>This function returns the pointer to a CCP module register set Special Function Register memory space. This pointer can be used to directly write to/read from the Special Function Registers of the CCP peripheral module configuration. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00035_source.html#l00060">60</a> of file <a class="el" href="a00035_source.html">p33c_ccp.c</a>.</p>
-
-</div>
-</div>
 <a id="ga85e7392861b4162d105c2fb2c3fac15b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga85e7392861b4162d105c2fb2c3fac15b">&#9670;&nbsp;</a></span>p33c_CcpInstance_ConfigRead()</h2>
 
@@ -230,6 +199,36 @@ Functions</h2></td></tr>
 <p>This function writes a user-defined CCP instance configuration of type P33C_CCP_MODULE_SFRSET_s to the CCP instance registers. The individual register configurations have to be set in user-code before calling this function. To simplify the configuration process of standard functions, this driver provides templates, which can be loaded and written directly </p>
 
 <p class="definition">Definition at line <a class="el" href="a00035_source.html#l00116">116</a> of file <a class="el" href="a00035_source.html">p33c_ccp.c</a>.</p>
+
+</div>
+</div>
+<a id="ga69f27108ee95b46a170b3fd0900665ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga69f27108ee95b46a170b3fd0900665ed">&#9670;&nbsp;</a></span>p33c_CcpInstance_GetHandle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile struct <a class="el" href="a00538.html">P33C_CCP_INSTANCE_SFRSET_s</a> * p33c_CcpInstance_GetHandle </td>
+          <td>(</td>
+          <td class="paramtype">volatile uint16_t&#160;</td>
+          <td class="paramname"><em>ccpInstance</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets pointer to CCP instance SFR set. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ccpInstance</td><td>Index of the Capture/Compare peripheral instance of type unsinged integer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to SCCP/MCCP instance special function register data object of type struct <a class="el" href="a00538.html" title="Generic Capture Compare Driver Module (header file)">P33C_CCP_INSTANCE_SFRSET_s</a></dd></dl>
+<p>This function returns the pointer to a CCP module register set Special Function Register memory space. This pointer can be used to directly write to/read from the Special Function Registers of the CCP peripheral module configuration. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00035_source.html#l00060">60</a> of file <a class="el" href="a00035_source.html">p33c_ccp.c</a>.</p>
 
 </div>
 </div>

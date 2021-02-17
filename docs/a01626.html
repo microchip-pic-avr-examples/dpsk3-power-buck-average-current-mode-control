@@ -112,16 +112,14 @@ $(document).ready(function(){initNavTree('a01626.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01625.svg" width="198" height="390"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a01625.svg" width="198" height="390"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for PUSH_BUTTON_STATUS_s:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01624.svg" width="198" height="390"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a01624.svg" width="198" height="390"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -177,6 +175,74 @@ Data Fields</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="a00332_source.html#l00070">70</a> of file <a class="el" href="a00332_source.html">drv_push_button.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
+<a id="a799b56a1350231191e7adf263e520b95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a799b56a1350231191e7adf263e520b95">&#9670;&nbsp;</a></span>@1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">union { ... } </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a085e9fc0863cee4864cf51dcfe1e32df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a085e9fc0863cee4864cf51dcfe1e32df">&#9670;&nbsp;</a></span>enabled</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool enabled</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit 15: Enables/disables the Switch button object. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00332_source.html#l00089">89</a> of file <a class="el" href="a00332_source.html">drv_push_button.h</a>.</p>
+
+</div>
+</div>
+<a id="ae6577f0794699101b84e90afcdfcaaaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6577f0794699101b84e90afcdfcaaaa">&#9670;&nbsp;</a></span>long_press</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool long_press</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit 13: Indicates if switch has been pressed for a longer time. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00332_source.html#l00087">87</a> of file <a class="el" href="a00332_source.html">drv_push_button.h</a>.</p>
+
+</div>
+</div>
+<a id="aa5848ca5944f6a2c0d6562778651629e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5848ca5944f6a2c0d6562778651629e">&#9670;&nbsp;</a></span>pressed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool pressed</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit 14: Indicates if the button is pressed or not. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00332_source.html#l00088">88</a> of file <a class="el" href="a00332_source.html">drv_push_button.h</a>.</p>
+
+</div>
+</div>
 <a id="a4e5a3be7a99ad29f863ea0dd636cea0a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4e5a3be7a99ad29f863ea0dd636cea0a">&#9670;&nbsp;</a></span>sw_event</h2>
 
@@ -224,60 +290,6 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="ae6577f0794699101b84e90afcdfcaaaa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6577f0794699101b84e90afcdfcaaaa">&#9670;&nbsp;</a></span>long_press</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile bool long_press</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bit 13: Indicates if switch has been pressed for a longer time. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00332_source.html#l00087">87</a> of file <a class="el" href="a00332_source.html">drv_push_button.h</a>.</p>
-
-</div>
-</div>
-<a id="aa5848ca5944f6a2c0d6562778651629e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa5848ca5944f6a2c0d6562778651629e">&#9670;&nbsp;</a></span>pressed</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile bool pressed</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bit 14: Indicates if the button is pressed or not. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00332_source.html#l00088">88</a> of file <a class="el" href="a00332_source.html">drv_push_button.h</a>.</p>
-
-</div>
-</div>
-<a id="a085e9fc0863cee4864cf51dcfe1e32df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a085e9fc0863cee4864cf51dcfe1e32df">&#9670;&nbsp;</a></span>enabled</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile bool enabled</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bit 15: Enables/disables the Switch button object. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00332_source.html#l00089">89</a> of file <a class="el" href="a00332_source.html">drv_push_button.h</a>.</p>
-
-</div>
-</div>
 <a id="a3f0c55f449560b03ce0ac43270c26600"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3f0c55f449560b03ce0ac43270c26600">&#9670;&nbsp;</a></span>value</h2>
 
@@ -293,20 +305,6 @@ Data Fields</h2></td></tr>
 <p>Status word. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00332_source.html#l00091">91</a> of file <a class="el" href="a00332_source.html">drv_push_button.h</a>.</p>
-
-</div>
-</div>
-<a id="a799b56a1350231191e7adf263e520b95"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a799b56a1350231191e7adf263e520b95">&#9670;&nbsp;</a></span>@1</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">union { ... } </td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>

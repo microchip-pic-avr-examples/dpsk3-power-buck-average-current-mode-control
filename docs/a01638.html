@@ -112,16 +112,14 @@ $(document).ready(function(){initNavTree('a01638.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01637.svg" width="198" height="390"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a01637.svg" width="198" height="390"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for PUSH_BUTTON_OBJECT_s:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01636.svg" width="198" height="390"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a01636.svg" width="198" height="390"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -154,24 +152,6 @@ Data Fields</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="a00332_source.html#l00108">108</a> of file <a class="el" href="a00332_source.html">drv_push_button.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="a16a03dc6d0fd95cb3dffee0f76de5cd9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16a03dc6d0fd95cb3dffee0f76de5cd9">&#9670;&nbsp;</a></span>status</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile struct <a class="el" href="a01626.html">PUSH_BUTTON_STATUS_s</a> status</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Status word of the switch object. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00332_source.html#l00015">15</a> of file <a class="el" href="a00332_source.html">drv_push_button.h</a>.</p>
-
-</div>
-</div>
 <a id="a78437774e630c432a18d708b25955f0f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a78437774e630c432a18d708b25955f0f">&#9670;&nbsp;</a></span>debounce_delay</h2>
 
@@ -190,24 +170,6 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="a92322dfa9ee932050da2a695bc5fe160"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92322dfa9ee932050da2a695bc5fe160">&#9670;&nbsp;</a></span>long_press_delay</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t long_press_delay</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Number of call cycles until a "long press" switch event is triggered. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00332_source.html#l00112">112</a> of file <a class="el" href="a00332_source.html">drv_push_button.h</a>.</p>
-
-</div>
-</div>
 <a id="a5ec310dc3aa8f6b3c0635719fdf6062a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5ec310dc3aa8f6b3c0635719fdf6062a">&#9670;&nbsp;</a></span>event_btn_down</h2>
 
@@ -223,6 +185,24 @@ Data Fields</h2></td></tr>
 <p>Function pointer to user function triggering a PRESSED event. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00332_source.html#l00113">113</a> of file <a class="el" href="a00332_source.html">drv_push_button.h</a>.</p>
+
+</div>
+</div>
+<a id="aa2f2ef2afa1e13d9a26d222a716226ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2f2ef2afa1e13d9a26d222a716226ec">&#9670;&nbsp;</a></span>event_btn_up</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t(* event_btn_up) (void)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function pointer to user function triggering a RELEASE event. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00332_source.html#l00116">116</a> of file <a class="el" href="a00332_source.html">drv_push_button.h</a>.</p>
 
 </div>
 </div>
@@ -262,21 +242,39 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="aa2f2ef2afa1e13d9a26d222a716226ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2f2ef2afa1e13d9a26d222a716226ec">&#9670;&nbsp;</a></span>event_btn_up</h2>
+<a id="a92322dfa9ee932050da2a695bc5fe160"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92322dfa9ee932050da2a695bc5fe160">&#9670;&nbsp;</a></span>long_press_delay</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t(* event_btn_up) (void)</td>
+          <td class="memname">volatile uint16_t long_press_delay</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Function pointer to user function triggering a RELEASE event. </p>
+<p>Number of call cycles until a "long press" switch event is triggered. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00332_source.html#l00116">116</a> of file <a class="el" href="a00332_source.html">drv_push_button.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00332_source.html#l00112">112</a> of file <a class="el" href="a00332_source.html">drv_push_button.h</a>.</p>
+
+</div>
+</div>
+<a id="a16a03dc6d0fd95cb3dffee0f76de5cd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16a03dc6d0fd95cb3dffee0f76de5cd9">&#9670;&nbsp;</a></span>status</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile struct <a class="el" href="a01626.html">PUSH_BUTTON_STATUS_s</a> status</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Status word of the switch object. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00332_source.html#l00015">15</a> of file <a class="el" href="a00332_source.html">drv_push_button.h</a>.</p>
 
 </div>
 </div>

@@ -110,8 +110,7 @@ $(document).ready(function(){initNavTree('a00424.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00424.svg" width="320" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00424.svg" width="320" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -130,6 +129,30 @@ Functions</h2></td></tr>
 <p>Public functions of the fault handler library layer. </p>
 <p>This is the detailed description of public functions of the fault handler library. </p>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ga0250f20caa12da59ca4f42c807cff152"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0250f20caa12da59ca4f42c807cff152">&#9670;&nbsp;</a></span>DefaultTrapHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DefaultTrapHandler </td>
+          <td>(</td>
+          <td class="paramtype">enum <a class="el" href="a00429.html#gaee63654a5e14dd3b2bab6179a5cbe2ab">TRAP_ID_e</a>&#160;</td>
+          <td class="paramname"><em>trap_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Centralized trap handler routine. </p>
+<p>This routine is used as centralized trap handler for all traps. Each trap is identified and logged by a unique trap ID and the status bits of traps and interrupt vectors are captured</p>
+<p>Users may modify the basic framework provided here to suit to the needs of their application. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00176_source.html#l00116">116</a> of file <a class="el" href="a00176_source.html">drv_trap_handler.c</a>.</p>
+
+</div>
+</div>
 <a id="gaeb3b68f1e4c29aa4cb6e8ceedfb9c145"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaeb3b68f1e4c29aa4cb6e8ceedfb9c145">&#9670;&nbsp;</a></span>drv_FaultHandler_CheckObject()</h2>
 
@@ -246,30 +269,6 @@ Functions</h2></td></tr>
 <p>This routine sets the DSP-specific traps for overflow-events of accumulator A and B. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00176_source.html#l00090">90</a> of file <a class="el" href="a00176_source.html">drv_trap_handler.c</a>.</p>
-
-</div>
-</div>
-<a id="ga0250f20caa12da59ca4f42c807cff152"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0250f20caa12da59ca4f42c807cff152">&#9670;&nbsp;</a></span>DefaultTrapHandler()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DefaultTrapHandler </td>
-          <td>(</td>
-          <td class="paramtype">enum <a class="el" href="a00429.html#gaee63654a5e14dd3b2bab6179a5cbe2ab">TRAP_ID_e</a>&#160;</td>
-          <td class="paramname"><em>trap_id</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Centralized trap handler routine. </p>
-<p>This routine is used as centralized trap handler for all traps. Each trap is identified and logged by a unique trap ID and the status bits of traps and interrupt vectors are captured</p>
-<p>Users may modify the basic framework provided here to suit to the needs of their application. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00176_source.html#l00116">116</a> of file <a class="el" href="a00176_source.html">drv_trap_handler.c</a>.</p>
 
 </div>
 </div>

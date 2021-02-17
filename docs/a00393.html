@@ -108,8 +108,7 @@ $(document).ready(function(){initNavTree('a00393.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00393.svg" width="267" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00393.svg" width="267" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="memitem:ga353ba60329e90d1aca97deba7e0bd669"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#ga353ba60329e90d1aca97deba7e0bd669">BUCK_NO_OF_PHASES</a>&#160;&#160;&#160;1U</td></tr>
@@ -158,22 +157,57 @@ $(document).ready(function(){initNavTree('a00393.html',''); initResizable(); });
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Parameter defintions using physical quantities. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga353ba60329e90d1aca97deba7e0bd669"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga353ba60329e90d1aca97deba7e0bd669">&#9670;&nbsp;</a></span>BUCK_NO_OF_PHASES</h2>
+<a id="gacc7415a2a9fd14abe19588dac5804b22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacc7415a2a9fd14abe19588dac5804b22">&#9670;&nbsp;</a></span>BOOST_DEAD_TIME_FALLING_EDGE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_NO_OF_PHASES&#160;&#160;&#160;1U</td>
+          <td class="memname">#define BOOST_DEAD_TIME_FALLING_EDGE&#160;&#160;&#160;(float) 0.0e-9</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>User-declaration of global defines for PWM signal generator settings. </p>
-<p>This section defines fundamental PWM settings required for the on-board buck converter of DPSK3. These settings are determined by hardware and defined using physical quantities. Pre-compiler macros are used to convert physical values into binary (integer) numbers to be written to Special Function Registers (SFR). Number of power converter phases of this design </p>
+<p>Falling Edge Dead Time delay in [sec]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00287">287</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00920">920</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga30bc95c5be03be162bd08c04706e34b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga30bc95c5be03be162bd08c04706e34b2">&#9670;&nbsp;</a></span>BOOST_DEAD_TIME_LEADING_EDGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_DEAD_TIME_LEADING_EDGE&#160;&#160;&#160;(float) 0.0e-9</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Leading Edge Dead Time delay in [sec]. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00919">919</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gadef417fa6e9b29f43fc1b26321f07750"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadef417fa6e9b29f43fc1b26321f07750">&#9670;&nbsp;</a></span>BOOST_LEADING_EDGE_BLANKING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_LEADING_EDGE_BLANKING&#160;&#160;&#160;(float)120.0e-9</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Leading Edge Blanking period in [sec]. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00918">918</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -196,129 +230,21 @@ $(document).ready(function(){initNavTree('a00393.html',''); initResizable(); });
 
 </div>
 </div>
-<a id="gadecc3fb9cc6da0d2add11d577d50d5b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadecc3fb9cc6da0d2add11d577d50d5b5">&#9670;&nbsp;</a></span>BUCK_SWITCHING_FREQUENCY</h2>
+<a id="gafe2eededed4304c44e47642b9093beda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafe2eededed4304c44e47642b9093beda">&#9670;&nbsp;</a></span>BOOST_PWM_DUTY_CYCLE_MAX</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_SWITCHING_FREQUENCY&#160;&#160;&#160;(float)500.0e+3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Fixed Switching frequency in [Hz]. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00289">289</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gabcc43f4201492160173351db97ddcfda"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabcc43f4201492160173351db97ddcfda">&#9670;&nbsp;</a></span>BUCK_PWM_DUTY_CYCLE_MIN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_PWM_DUTY_CYCLE_MIN&#160;&#160;&#160;(float)0.010</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Minimum on/off-time ratio (duty ratio) in [%]. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00290">290</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga355fe35bc08bc0f4657be7f638a643a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga355fe35bc08bc0f4657be7f638a643a6">&#9670;&nbsp;</a></span>BUCK_PWM_DUTY_CYCLE_MAX</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_PWM_DUTY_CYCLE_MAX&#160;&#160;&#160;(float)0.900</td>
+          <td class="memname">#define BOOST_PWM_DUTY_CYCLE_MAX&#160;&#160;&#160;(float)0.850</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Maximum on/off-time ratio (duty ratio) in [%]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00291">291</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga53e830102be3559594f1f107c42e3cb2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga53e830102be3559594f1f107c42e3cb2">&#9670;&nbsp;</a></span>BUCK_LEADING_EDGE_BLANKING</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_LEADING_EDGE_BLANKING&#160;&#160;&#160;(float)120.0e-9</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Leading Edge Blanking period in [sec]. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00292">292</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gaee8430cb24cfc1cdd3b12dd3c40b09d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaee8430cb24cfc1cdd3b12dd3c40b09d5">&#9670;&nbsp;</a></span>BUCK_DEAD_TIME_LEADING_EDGE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_DEAD_TIME_LEADING_EDGE&#160;&#160;&#160;(float)20.0e-9</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Leading Edge Dead Time delay in [sec]. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00293">293</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gafe895b572c7fdeced04221d53c18695d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gafe895b572c7fdeced04221d53c18695d">&#9670;&nbsp;</a></span>BUCK_DEAD_TIME_FALLING_EDGE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_DEAD_TIME_FALLING_EDGE&#160;&#160;&#160;(float)60.0e-9</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Falling Edge Dead Time delay in [sec]. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00294">294</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga190c68d192a604d70087146623fedd1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga190c68d192a604d70087146623fedd1d">&#9670;&nbsp;</a></span>BOOST_SWITCHING_FREQUENCY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BOOST_SWITCHING_FREQUENCY&#160;&#160;&#160;(float)500.0e+3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Fixed Switching frequency in [Hz]. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00915">915</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00917">917</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -340,75 +266,148 @@ $(document).ready(function(){initNavTree('a00393.html',''); initResizable(); });
 
 </div>
 </div>
-<a id="gafe2eededed4304c44e47642b9093beda"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gafe2eededed4304c44e47642b9093beda">&#9670;&nbsp;</a></span>BOOST_PWM_DUTY_CYCLE_MAX</h2>
+<a id="ga190c68d192a604d70087146623fedd1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga190c68d192a604d70087146623fedd1d">&#9670;&nbsp;</a></span>BOOST_SWITCHING_FREQUENCY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_PWM_DUTY_CYCLE_MAX&#160;&#160;&#160;(float)0.850</td>
+          <td class="memname">#define BOOST_SWITCHING_FREQUENCY&#160;&#160;&#160;(float)500.0e+3</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Maximum on/off-time ratio (duty ratio) in [%]. </p>
+<p>Fixed Switching frequency in [Hz]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00917">917</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00915">915</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gadef417fa6e9b29f43fc1b26321f07750"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadef417fa6e9b29f43fc1b26321f07750">&#9670;&nbsp;</a></span>BOOST_LEADING_EDGE_BLANKING</h2>
+<a id="gafe895b572c7fdeced04221d53c18695d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafe895b572c7fdeced04221d53c18695d">&#9670;&nbsp;</a></span>BUCK_DEAD_TIME_FALLING_EDGE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_LEADING_EDGE_BLANKING&#160;&#160;&#160;(float)120.0e-9</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Leading Edge Blanking period in [sec]. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00918">918</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga30bc95c5be03be162bd08c04706e34b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga30bc95c5be03be162bd08c04706e34b2">&#9670;&nbsp;</a></span>BOOST_DEAD_TIME_LEADING_EDGE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BOOST_DEAD_TIME_LEADING_EDGE&#160;&#160;&#160;(float) 0.0e-9</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Leading Edge Dead Time delay in [sec]. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00919">919</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gacc7415a2a9fd14abe19588dac5804b22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gacc7415a2a9fd14abe19588dac5804b22">&#9670;&nbsp;</a></span>BOOST_DEAD_TIME_FALLING_EDGE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BOOST_DEAD_TIME_FALLING_EDGE&#160;&#160;&#160;(float) 0.0e-9</td>
+          <td class="memname">#define BUCK_DEAD_TIME_FALLING_EDGE&#160;&#160;&#160;(float)60.0e-9</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Falling Edge Dead Time delay in [sec]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00920">920</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00294">294</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gaee8430cb24cfc1cdd3b12dd3c40b09d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaee8430cb24cfc1cdd3b12dd3c40b09d5">&#9670;&nbsp;</a></span>BUCK_DEAD_TIME_LEADING_EDGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_DEAD_TIME_LEADING_EDGE&#160;&#160;&#160;(float)20.0e-9</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Leading Edge Dead Time delay in [sec]. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00293">293</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga53e830102be3559594f1f107c42e3cb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga53e830102be3559594f1f107c42e3cb2">&#9670;&nbsp;</a></span>BUCK_LEADING_EDGE_BLANKING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_LEADING_EDGE_BLANKING&#160;&#160;&#160;(float)120.0e-9</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Leading Edge Blanking period in [sec]. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00292">292</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga353ba60329e90d1aca97deba7e0bd669"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga353ba60329e90d1aca97deba7e0bd669">&#9670;&nbsp;</a></span>BUCK_NO_OF_PHASES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_NO_OF_PHASES&#160;&#160;&#160;1U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>User-declaration of global defines for PWM signal generator settings. </p>
+<p>This section defines fundamental PWM settings required for the on-board buck converter of DPSK3. These settings are determined by hardware and defined using physical quantities. Pre-compiler macros are used to convert physical values into binary (integer) numbers to be written to Special Function Registers (SFR). Number of power converter phases of this design </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00287">287</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga355fe35bc08bc0f4657be7f638a643a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga355fe35bc08bc0f4657be7f638a643a6">&#9670;&nbsp;</a></span>BUCK_PWM_DUTY_CYCLE_MAX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_PWM_DUTY_CYCLE_MAX&#160;&#160;&#160;(float)0.900</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maximum on/off-time ratio (duty ratio) in [%]. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00291">291</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gabcc43f4201492160173351db97ddcfda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabcc43f4201492160173351db97ddcfda">&#9670;&nbsp;</a></span>BUCK_PWM_DUTY_CYCLE_MIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_PWM_DUTY_CYCLE_MIN&#160;&#160;&#160;(float)0.010</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Minimum on/off-time ratio (duty ratio) in [%]. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00290">290</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gadecc3fb9cc6da0d2add11d577d50d5b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadecc3fb9cc6da0d2add11d577d50d5b5">&#9670;&nbsp;</a></span>BUCK_SWITCHING_FREQUENCY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_SWITCHING_FREQUENCY&#160;&#160;&#160;(float)500.0e+3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fixed Switching frequency in [Hz]. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00289">289</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

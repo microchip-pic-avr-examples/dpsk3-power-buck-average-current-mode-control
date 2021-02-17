@@ -108,8 +108,7 @@ $(document).ready(function(){initNavTree('a00411.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00411.svg" width="315" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00411.svg" width="315" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="memitem:gae1bfd432f4281610523780a3c7dea8c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00411.html#gae1bfd432f4281610523780a3c7dea8c2">BUCK_TEMPCAL_ZERO</a>&#160;&#160;&#160;(float) 0.500</td></tr>
@@ -126,25 +125,19 @@ $(document).ready(function(){initNavTree('a00411.html',''); initResizable(); });
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>User-declaration of temperature feedback parameters using physical quantities. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="gae1bfd432f4281610523780a3c7dea8c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae1bfd432f4281610523780a3c7dea8c2">&#9670;&nbsp;</a></span>BUCK_TEMPCAL_ZERO</h2>
+<a id="gaa3973a312a9169505ae4ee1f19f8ec87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa3973a312a9169505ae4ee1f19f8ec87">&#9670;&nbsp;</a></span>BOOST_TEMPCAL_SLOPE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_TEMPCAL_ZERO&#160;&#160;&#160;(float) 0.500</td>
+          <td class="memname">#define BOOST_TEMPCAL_SLOPE&#160;&#160;&#160;(float) 0.010</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Declaration of temperature feedback properties. </p>
-<p>In this section the temperature feedback signal scaling, gain and valid signal limits are specified. Physical quantities are used to define parameter values to ease the system configuration.</p>
-<p>As DPSK3 has one, central on-board temperature sensor between the load resistor banks indicating the worst case system temperature.</p>
-<p>Macros are used to convert given physical values into binary (integer) number to be written into SFRs and variables and being used in runtime calculations. <br  />
- (see <a class="el" href="a00408.html">Conversion Macros</a> for details) </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00668">668</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01302">1302</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -186,19 +179,25 @@ $(document).ready(function(){initNavTree('a00411.html',''); initResizable(); });
 
 </div>
 </div>
-<a id="gaa3973a312a9169505ae4ee1f19f8ec87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa3973a312a9169505ae4ee1f19f8ec87">&#9670;&nbsp;</a></span>BOOST_TEMPCAL_SLOPE</h2>
+<a id="gae1bfd432f4281610523780a3c7dea8c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae1bfd432f4281610523780a3c7dea8c2">&#9670;&nbsp;</a></span>BUCK_TEMPCAL_ZERO</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_TEMPCAL_SLOPE&#160;&#160;&#160;(float) 0.010</td>
+          <td class="memname">#define BUCK_TEMPCAL_ZERO&#160;&#160;&#160;(float) 0.500</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01302">1302</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p>Declaration of temperature feedback properties. </p>
+<p>In this section the temperature feedback signal scaling, gain and valid signal limits are specified. Physical quantities are used to define parameter values to ease the system configuration.</p>
+<p>As DPSK3 has one, central on-board temperature sensor between the load resistor banks indicating the worst case system temperature.</p>
+<p>Macros are used to convert given physical values into binary (integer) number to be written into SFRs and variables and being used in runtime calculations. <br  />
+ (see <a class="el" href="a00408.html">Conversion Macros</a> for details) </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00668">668</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

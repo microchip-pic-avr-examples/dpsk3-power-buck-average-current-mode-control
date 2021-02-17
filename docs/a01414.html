@@ -112,16 +112,14 @@ $(document).ready(function(){initNavTree('a01414.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01413.svg" width="143" height="463"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a01413.svg" width="143" height="463"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for TRAP_FLAGS_s:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a01412.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a01412.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -222,129 +220,17 @@ Data Fields</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="a00179_source.html#l00130">130</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="a30c32f037f64d9c2397f405435794df6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30c32f037f64d9c2397f405435794df6">&#9670;&nbsp;</a></span>OVAERR</h2>
+<a id="a7719a474fee3b6d07b430f5d7167180c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7719a474fee3b6d07b430f5d7167180c">&#9670;&nbsp;</a></span>@1</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile <a class="el" href="a01414.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> OVAERR</td>
+          <td class="memname">union { ... } </td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Bit #0: Accumulator A Overflow Trap Flag bit. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00135">135</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
-
-</div>
-</div>
-<a id="a62dee09ca5bb1da52405aae81c1c14e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62dee09ca5bb1da52405aae81c1c14e3">&#9670;&nbsp;</a></span>OVBERR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile <a class="el" href="a01414.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> OVBERR</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bit #1: Accumulator B Overflow Trap Flag bit. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00136">136</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
-
-</div>
-</div>
-<a id="ae00834b4ecc5e26f69480264de43ec07"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae00834b4ecc5e26f69480264de43ec07">&#9670;&nbsp;</a></span>COVAERR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile <a class="el" href="a01414.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> COVAERR</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bit #2: Accumulator A Catastrophic Overflow Trap Flag bit. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00137">137</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
-
-</div>
-</div>
-<a id="a1a65a8268196f50bb2198e3cf76c1a36"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a65a8268196f50bb2198e3cf76c1a36">&#9670;&nbsp;</a></span>COVBERR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile <a class="el" href="a01414.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> COVBERR</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bit #3: Accumulator B Catastrophic Overflow Trap Flag bit. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00138">138</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
-
-</div>
-</div>
-<a id="a4424f8d4e37af608412acf4722885078"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4424f8d4e37af608412acf4722885078">&#9670;&nbsp;</a></span>SFTACERR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile <a class="el" href="a01414.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> SFTACERR</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bit #4: Shift Accumulator Error Status bit. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00139">139</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
-
-</div>
-</div>
-<a id="a1281beb6ca8a711b6b6937318b0b0c88"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1281beb6ca8a711b6b6937318b0b0c88">&#9670;&nbsp;</a></span>DIV0ERR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile <a class="el" href="a01414.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> DIV0ERR</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bit #5: Divide-by-Zero Error Status bit. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00140">140</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
-
-</div>
-</div>
-<a id="ad2b7b3e6c766746ab9be78ce49af5ded"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2b7b3e6c766746ab9be78ce49af5ded">&#9670;&nbsp;</a></span>MATHERR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile <a class="el" href="a01414.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> MATHERR</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bit #6: Math Error Status bit. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00141">141</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
 
 </div>
 </div>
@@ -366,96 +252,6 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="a2b63851f6cc54b16c631b0842e106493"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b63851f6cc54b16c631b0842e106493">&#9670;&nbsp;</a></span>STKERR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile <a class="el" href="a01414.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> STKERR</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bit #8: Stack Error Trap Status bit. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00143">143</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
-
-</div>
-</div>
-<a id="a620f125069b86e73e57e22145b64c379"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a620f125069b86e73e57e22145b64c379">&#9670;&nbsp;</a></span>OSCFAIL</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile <a class="el" href="a01414.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> OSCFAIL</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bit #9: Oscillator Failure Trap Status bit. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00144">144</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
-
-</div>
-</div>
-<a id="a0ea7db44e3cb773bce8843d9cabc246d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ea7db44e3cb773bce8843d9cabc246d">&#9670;&nbsp;</a></span>SWTRAP</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile <a class="el" href="a01414.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> SWTRAP</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bit #10: Software Trap Status bit. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00145">145</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
-
-</div>
-</div>
-<a id="ad5855027eb7296bdccdc647c64fa6e13"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5855027eb7296bdccdc647c64fa6e13">&#9670;&nbsp;</a></span>NAE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile <a class="el" href="a01414.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> NAE</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bit #11: NVM Address Error Soft Trap Status bit. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00146">146</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
-
-</div>
-</div>
-<a id="a2b0813f968289bb04f95731834a5c404"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b0813f968289bb04f95731834a5c404">&#9670;&nbsp;</a></span>DOOVR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile <a class="el" href="a01414.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> DOOVR</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bit #12: DO Stack Overflow Soft Trap Status bit. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00147">147</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
-
-</div>
-</div>
 <a id="ab1e4efce2581aa94f22ef865e6ec4a68"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab1e4efce2581aa94f22ef865e6ec4a68">&#9670;&nbsp;</a></span>APLL</h2>
 
@@ -471,60 +267,6 @@ Data Fields</h2></td></tr>
 <p>Bit #13: Auxiliary PLL Loss of Lock Soft Trap Status bit. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00179_source.html#l00148">148</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
-
-</div>
-</div>
-<a id="aadd85c7c9844fbc3cd0211e8c28deea9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aadd85c7c9844fbc3cd0211e8c28deea9">&#9670;&nbsp;</a></span>SGHT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile <a class="el" href="a01414.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> SGHT</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bit #14: Software Generated Hard Trap Status bit. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00149">149</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
-
-</div>
-</div>
-<a id="adaf9bca42fbaf44a4c9e4a41a81e3fca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adaf9bca42fbaf44a4c9e4a41a81e3fca">&#9670;&nbsp;</a></span>DMACERR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile <a class="el" href="a01414.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> DMACERR</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bit #15: DMA Trap Status bit. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00150">150</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
-
-</div>
-</div>
-<a id="ad57b2339165b0ad43cd3d29b8bc113b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad57b2339165b0ad43cd3d29b8bc113b2">&#9670;&nbsp;</a></span>ECCDBE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile <a class="el" href="a01414.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> ECCDBE</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bit #16: ECC Double-Bit Error Trap Status bit. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00152">152</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
 
 </div>
 </div>
@@ -564,6 +306,276 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a id="ae00834b4ecc5e26f69480264de43ec07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae00834b4ecc5e26f69480264de43ec07">&#9670;&nbsp;</a></span>COVAERR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="a01414.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> COVAERR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit #2: Accumulator A Catastrophic Overflow Trap Flag bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00137">137</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
+
+</div>
+</div>
+<a id="a1a65a8268196f50bb2198e3cf76c1a36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a65a8268196f50bb2198e3cf76c1a36">&#9670;&nbsp;</a></span>COVBERR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="a01414.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> COVBERR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit #3: Accumulator B Catastrophic Overflow Trap Flag bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00138">138</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
+
+</div>
+</div>
+<a id="a1281beb6ca8a711b6b6937318b0b0c88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1281beb6ca8a711b6b6937318b0b0c88">&#9670;&nbsp;</a></span>DIV0ERR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="a01414.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> DIV0ERR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit #5: Divide-by-Zero Error Status bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00140">140</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
+
+</div>
+</div>
+<a id="adaf9bca42fbaf44a4c9e4a41a81e3fca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adaf9bca42fbaf44a4c9e4a41a81e3fca">&#9670;&nbsp;</a></span>DMACERR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="a01414.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> DMACERR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit #15: DMA Trap Status bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00150">150</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
+
+</div>
+</div>
+<a id="a2b0813f968289bb04f95731834a5c404"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b0813f968289bb04f95731834a5c404">&#9670;&nbsp;</a></span>DOOVR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="a01414.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> DOOVR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit #12: DO Stack Overflow Soft Trap Status bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00147">147</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
+
+</div>
+</div>
+<a id="ad57b2339165b0ad43cd3d29b8bc113b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad57b2339165b0ad43cd3d29b8bc113b2">&#9670;&nbsp;</a></span>ECCDBE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="a01414.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> ECCDBE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit #16: ECC Double-Bit Error Trap Status bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00152">152</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
+
+</div>
+</div>
+<a id="ad2b7b3e6c766746ab9be78ce49af5ded"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2b7b3e6c766746ab9be78ce49af5ded">&#9670;&nbsp;</a></span>MATHERR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="a01414.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> MATHERR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit #6: Math Error Status bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00141">141</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
+
+</div>
+</div>
+<a id="ad5855027eb7296bdccdc647c64fa6e13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5855027eb7296bdccdc647c64fa6e13">&#9670;&nbsp;</a></span>NAE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="a01414.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> NAE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit #11: NVM Address Error Soft Trap Status bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00146">146</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
+
+</div>
+</div>
+<a id="a620f125069b86e73e57e22145b64c379"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a620f125069b86e73e57e22145b64c379">&#9670;&nbsp;</a></span>OSCFAIL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="a01414.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> OSCFAIL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit #9: Oscillator Failure Trap Status bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00144">144</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
+
+</div>
+</div>
+<a id="a30c32f037f64d9c2397f405435794df6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30c32f037f64d9c2397f405435794df6">&#9670;&nbsp;</a></span>OVAERR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="a01414.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> OVAERR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit #0: Accumulator A Overflow Trap Flag bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00135">135</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
+
+</div>
+</div>
+<a id="a62dee09ca5bb1da52405aae81c1c14e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62dee09ca5bb1da52405aae81c1c14e3">&#9670;&nbsp;</a></span>OVBERR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="a01414.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> OVBERR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit #1: Accumulator B Overflow Trap Flag bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00136">136</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
+
+</div>
+</div>
+<a id="a4424f8d4e37af608412acf4722885078"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4424f8d4e37af608412acf4722885078">&#9670;&nbsp;</a></span>SFTACERR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="a01414.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> SFTACERR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit #4: Shift Accumulator Error Status bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00139">139</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
+
+</div>
+</div>
+<a id="aadd85c7c9844fbc3cd0211e8c28deea9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadd85c7c9844fbc3cd0211e8c28deea9">&#9670;&nbsp;</a></span>SGHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="a01414.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> SGHT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit #14: Software Generated Hard Trap Status bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00149">149</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
+
+</div>
+</div>
+<a id="a2b63851f6cc54b16c631b0842e106493"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b63851f6cc54b16c631b0842e106493">&#9670;&nbsp;</a></span>STKERR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="a01414.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> STKERR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit #8: Stack Error Trap Status bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00143">143</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
+
+</div>
+</div>
+<a id="a0ea7db44e3cb773bce8843d9cabc246d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ea7db44e3cb773bce8843d9cabc246d">&#9670;&nbsp;</a></span>SWTRAP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="a01414.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> SWTRAP</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit #10: Software Trap Status bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00145">145</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
+
+</div>
+</div>
 <a id="a32e93b068e309da5a319a7a69f3b3ff5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a32e93b068e309da5a319a7a69f3b3ff5">&#9670;&nbsp;</a></span>unsigned</h2>
 
@@ -595,20 +607,6 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="a00179_source.html#l00159">159</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
-
-</div>
-</div>
-<a id="a7719a474fee3b6d07b430f5d7167180c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7719a474fee3b6d07b430f5d7167180c">&#9670;&nbsp;</a></span>@1</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">union { ... } </td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>

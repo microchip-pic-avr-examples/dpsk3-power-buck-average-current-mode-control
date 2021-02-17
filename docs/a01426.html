@@ -110,16 +110,14 @@ $(document).ready(function(){initNavTree('a01426.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01425.svg" width="143" height="375"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a01425.svg" width="143" height="375"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for CPU_INTTREG_s:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a01424.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a01424.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
@@ -155,24 +153,6 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="a00179_source.html#l00169">169</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="a0f6921c4b6f0f47e319bdebb707e0e3a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f6921c4b6f0f47e319bdebb707e0e3a">&#9670;&nbsp;</a></span>VECNUM</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile <a class="el" href="a01426.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> VECNUM</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bit #0-7: Pending Interrupt Number List. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00173">173</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
-
-</div>
-</div>
 <a id="afc91a8fcf8325fbe0059152da64a96f8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afc91a8fcf8325fbe0059152da64a96f8">&#9670;&nbsp;</a></span>ILR</h2>
 
@@ -211,6 +191,40 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a3f0c55f449560b03ce0ac43270c26600"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f0c55f449560b03ce0ac43270c26600">&#9670;&nbsp;</a></span>value</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t value</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00181">181</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
+
+</div>
+</div>
+<a id="a0f6921c4b6f0f47e319bdebb707e0e3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f6921c4b6f0f47e319bdebb707e0e3a">&#9670;&nbsp;</a></span>VECNUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="a01426.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> VECNUM</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit #0-7: Pending Interrupt Number List. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00173">173</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
+
+</div>
+</div>
 <a id="a82fd17775a72ed7c16b5f0df5b752a6c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a82fd17775a72ed7c16b5f0df5b752a6c">&#9670;&nbsp;</a></span>VHOLD</h2>
 
@@ -226,22 +240,6 @@ Additional Inherited Members</h2></td></tr>
 <p>Bit #13: Vector Number Capture Enable bit. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00179_source.html#l00176">176</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
-
-</div>
-</div>
-<a id="a3f0c55f449560b03ce0ac43270c26600"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f0c55f449560b03ce0ac43270c26600">&#9670;&nbsp;</a></span>value</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t value</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00181">181</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
 
 </div>
 </div>

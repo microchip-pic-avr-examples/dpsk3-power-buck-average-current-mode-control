@@ -112,16 +112,14 @@ $(document).ready(function(){initNavTree('a01530.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01529.svg" width="254" height="492"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a01529.svg" width="254" height="492"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for BUCK_SWITCH_NODE_SETTINGS_s:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a01528.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a01528.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -220,39 +218,93 @@ Data Fields</h2></td></tr>
  
 <p class="definition">Definition at line <a class="el" href="a00278_source.html#l00376">376</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="ac2593427e75f5587a35e071bfd512a87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2593427e75f5587a35e071bfd512a87">&#9670;&nbsp;</a></span>pwm_instance</h2>
+<a id="aca5eccd84c19ceab228bfd5e99bbcbfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca5eccd84c19ceab228bfd5e99bbcbfc">&#9670;&nbsp;</a></span>dead_time_falling</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t pwm_instance</td>
+          <td class="memname">volatile uint16_t dead_time_falling</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>number of the PWM channel used </p>
+<p>Dead time setting at falling edge of a half-bridge drive. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00378">378</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00392">392</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
 
 </div>
 </div>
-<a id="a87d4166062b0a4ec5b940c458cc92d8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87d4166062b0a4ec5b940c458cc92d8f">&#9670;&nbsp;</a></span>gpio_instance</h2>
+<a id="a853862f4280ea0cc15f5d7f872e9fa6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a853862f4280ea0cc15f5d7f872e9fa6c">&#9670;&nbsp;</a></span>dead_time_rising</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t gpio_instance</td>
+          <td class="memname">volatile uint16_t dead_time_rising</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>GPIO instance of the selected PWM generator. </p>
+<p>Dead time setting at rising edge of a half-bridge drive. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00379">379</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00391">391</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="a654366239edeecb51c0fa5bf8d72e277"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a654366239edeecb51c0fa5bf8d72e277">&#9670;&nbsp;</a></span>duty_ratio_init</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t duty_ratio_init</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initial duty cycle when the PWM module is being turned on. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00388">388</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="a6c90759b50465ad81c384285a9f20971"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c90759b50465ad81c384285a9f20971">&#9670;&nbsp;</a></span>duty_ratio_max</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t duty_ratio_max</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Absolute duty cycle maximum during normal operation. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00390">390</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="a76412863b3c111042a9a7a06fb921868"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76412863b3c111042a9a7a06fb921868">&#9670;&nbsp;</a></span>duty_ratio_min</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t duty_ratio_min</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Absolute duty cycle minimum during normal operation. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00389">389</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
 
 </div>
 </div>
@@ -274,6 +326,24 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a id="a87d4166062b0a4ec5b940c458cc92d8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87d4166062b0a4ec5b940c458cc92d8f">&#9670;&nbsp;</a></span>gpio_instance</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t gpio_instance</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO instance of the selected PWM generator. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00379">379</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
+
+</div>
+</div>
 <a id="a736c541e05db7c7a5f434d82089ea922"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a736c541e05db7c7a5f434d82089ea922">&#9670;&nbsp;</a></span>gpio_low</h2>
 
@@ -289,42 +359,6 @@ Data Fields</h2></td></tr>
 <p>GPIO port pin-number of PWMxL of the selected PWM generator. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00278_source.html#l00381">381</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
-
-</div>
-</div>
-<a id="a9279b0b5c37b5449f3d970968b1e38fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9279b0b5c37b5449f3d970968b1e38fa">&#9670;&nbsp;</a></span>swap_outputs</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile bool swap_outputs</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Selecting if PWMxH (default) or PWMxL should be the leading PWM output. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00382">382</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
-
-</div>
-</div>
-<a id="aec90912c08828f327183b3fdd22597b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec90912c08828f327183b3fdd22597b5">&#9670;&nbsp;</a></span>master_period_enable</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile bool master_period_enable</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Selecting MASTER or Individual period register. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00383">383</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
 
 </div>
 </div>
@@ -346,21 +380,39 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="a7160bcf47975cd60e3cf24410c4023f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7160bcf47975cd60e3cf24410c4023f4">&#9670;&nbsp;</a></span>sync_drive</h2>
+<a id="a3ece9c519d1aed8dc10812a363b658fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ece9c519d1aed8dc10812a363b658fb">&#9670;&nbsp;</a></span>leb_period</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile bool sync_drive</td>
+          <td class="memname">volatile uint16_t leb_period</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Selecting if switch node is driven in synchronous or asnchronous mode. </p>
+<p>Leading-Edge Blanking period. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00385">385</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00393">393</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="aec90912c08828f327183b3fdd22597b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec90912c08828f327183b3fdd22597b5">&#9670;&nbsp;</a></span>master_period_enable</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool master_period_enable</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Selecting MASTER or Individual period register. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00383">383</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
 
 </div>
 </div>
@@ -400,129 +452,57 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="a654366239edeecb51c0fa5bf8d72e277"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a654366239edeecb51c0fa5bf8d72e277">&#9670;&nbsp;</a></span>duty_ratio_init</h2>
+<a id="ac2593427e75f5587a35e071bfd512a87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2593427e75f5587a35e071bfd512a87">&#9670;&nbsp;</a></span>pwm_instance</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t duty_ratio_init</td>
+          <td class="memname">volatile uint16_t pwm_instance</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initial duty cycle when the PWM module is being turned on. </p>
+<p>number of the PWM channel used </p>
 
-<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00388">388</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00378">378</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
 
 </div>
 </div>
-<a id="a76412863b3c111042a9a7a06fb921868"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76412863b3c111042a9a7a06fb921868">&#9670;&nbsp;</a></span>duty_ratio_min</h2>
+<a id="a9279b0b5c37b5449f3d970968b1e38fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9279b0b5c37b5449f3d970968b1e38fa">&#9670;&nbsp;</a></span>swap_outputs</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t duty_ratio_min</td>
+          <td class="memname">volatile bool swap_outputs</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Absolute duty cycle minimum during normal operation. </p>
+<p>Selecting if PWMxH (default) or PWMxL should be the leading PWM output. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00389">389</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00382">382</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
 
 </div>
 </div>
-<a id="a6c90759b50465ad81c384285a9f20971"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c90759b50465ad81c384285a9f20971">&#9670;&nbsp;</a></span>duty_ratio_max</h2>
+<a id="a7160bcf47975cd60e3cf24410c4023f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7160bcf47975cd60e3cf24410c4023f4">&#9670;&nbsp;</a></span>sync_drive</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t duty_ratio_max</td>
+          <td class="memname">volatile bool sync_drive</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Absolute duty cycle maximum during normal operation. </p>
+<p>Selecting if switch node is driven in synchronous or asnchronous mode. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00390">390</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
-
-</div>
-</div>
-<a id="a853862f4280ea0cc15f5d7f872e9fa6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a853862f4280ea0cc15f5d7f872e9fa6c">&#9670;&nbsp;</a></span>dead_time_rising</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t dead_time_rising</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Dead time setting at rising edge of a half-bridge drive. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00391">391</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
-
-</div>
-</div>
-<a id="aca5eccd84c19ceab228bfd5e99bbcbfc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca5eccd84c19ceab228bfd5e99bbcbfc">&#9670;&nbsp;</a></span>dead_time_falling</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t dead_time_falling</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Dead time setting at falling edge of a half-bridge drive. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00392">392</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
-
-</div>
-</div>
-<a id="a3ece9c519d1aed8dc10812a363b658fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ece9c519d1aed8dc10812a363b658fb">&#9670;&nbsp;</a></span>leb_period</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t leb_period</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Leading-Edge Blanking period. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00393">393</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
-
-</div>
-</div>
-<a id="a3d76e04ea6b1bb827e0df3aa9aeae87d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d76e04ea6b1bb827e0df3aa9aeae87d">&#9670;&nbsp;</a></span>trigger_scaler</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t trigger_scaler</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>PWM triggers for ADC will be generated every n-th cycle. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00394">394</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00385">385</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
 
 </div>
 </div>
@@ -541,6 +521,24 @@ Data Fields</h2></td></tr>
 <p>PWM triggers for ADC will be offset by n cycles. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00278_source.html#l00395">395</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="a3d76e04ea6b1bb827e0df3aa9aeae87d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d76e04ea6b1bb827e0df3aa9aeae87d">&#9670;&nbsp;</a></span>trigger_scaler</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t trigger_scaler</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PWM triggers for ADC will be generated every n-th cycle. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00394">394</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
 
 </div>
 </div>

@@ -112,16 +112,14 @@ $(document).ready(function(){initNavTree('a01578.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01577.svg" width="159" height="559"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a01577.svg" width="159" height="559"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for NPNZ_PORT_s:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a01576.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a01576.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -189,21 +187,21 @@ Data Fields</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="a00302_source.html#l00226">226</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="aa37b174ac35fcbc1a22f5a8e221700e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa37b174ac35fcbc1a22f5a8e221700e2">&#9670;&nbsp;</a></span>ptrAddress</h2>
+<a id="a337a5aff8a1ccc3c7c13dde864a0a59c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a337a5aff8a1ccc3c7c13dde864a0a59c">&#9670;&nbsp;</a></span>NormFactor</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t* ptrAddress</td>
+          <td class="memname">volatile fractional NormFactor</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Pointer to register or variable where the value is read from (e.g. ADCBUFx) or written to (e.g. PGxDC) </p>
+<p>Q15 normalization factor. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00228">228</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00230">230</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
 
 </div>
 </div>
@@ -225,24 +223,6 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="a337a5aff8a1ccc3c7c13dde864a0a59c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a337a5aff8a1ccc3c7c13dde864a0a59c">&#9670;&nbsp;</a></span>NormFactor</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile fractional NormFactor</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Q15 normalization factor. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00230">230</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
-
-</div>
-</div>
 <a id="a7da24ddfbcba445de2da4ac0468f7a06"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7da24ddfbcba445de2da4ac0468f7a06">&#9670;&nbsp;</a></span>Offset</h2>
 
@@ -258,6 +238,24 @@ Data Fields</h2></td></tr>
 <p>Value/signal offset of this port. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00302_source.html#l00231">231</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
+
+</div>
+</div>
+<a id="aa37b174ac35fcbc1a22f5a8e221700e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa37b174ac35fcbc1a22f5a8e221700e2">&#9670;&nbsp;</a></span>ptrAddress</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t* ptrAddress</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pointer to register or variable where the value is read from (e.g. ADCBUFx) or written to (e.g. PGxDC) </p>
+
+<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00228">228</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
 
 </div>
 </div>

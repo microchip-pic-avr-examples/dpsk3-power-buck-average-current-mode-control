@@ -110,8 +110,7 @@ $(document).ready(function(){initNavTree('a00510.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00510.svg" width="315" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00510.svg" width="315" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -130,14 +129,14 @@ Functions</h2></td></tr>
 <p>Public functions of the push button device driver library. </p>
 <p>This is the detailed description of public API functions of the push button device driver library. </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="gaa3ce9c320a37ebc6e1ae113c82e68747"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa3ce9c320a37ebc6e1ae113c82e68747">&#9670;&nbsp;</a></span>drv_PushButton_Initialize()</h2>
+<a id="ga8038f16564e9e426efe4b86b739d3d77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8038f16564e9e426efe4b86b739d3d77">&#9670;&nbsp;</a></span>drv_PushButton_Dispose()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t drv_PushButton_Initialize </td>
+          <td class="memname">volatile uint16_t drv_PushButton_Dispose </td>
           <td>(</td>
           <td class="paramtype">volatile struct <a class="el" href="a01638.html">PUSH_BUTTON_OBJECT_s</a> *&#160;</td>
           <td class="paramname"><em>pushbtn</em></td><td>)</td>
@@ -149,29 +148,19 @@ Functions</h2></td></tr>
 <p>Initializes the push button device driver. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pushbtn</td><td>Push button object of type struct PUSH_BUTTON_OBJECT_s* </td></tr>
+    <tr><td class="paramname">pushbtn</td><td>Push button data object of type struct PUSH_BUTTON_OBJECT_s* </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
-<p>The push button driver offers typical functions of a human-machine interface push button such as</p>
-<ul>
-<li>hardware debouncing</li>
-<li>detection of short press</li>
-<li>detection of long press</li>
-<li>push-button status (pressed/unpressed)</li>
-<li>switch event indication</li>
-</ul>
-<p>Users of this function driver can define and tune delay to adopt detection delays and related responses to the task execution period and hardware circuit related dependencies. </p>
+<dl class="section return"><dt>Returns</dt><dd>unsigned int (0=failure, 1=success)  This function will unload the push-button function driver and free its resources. All user settings will get reset. The PUSH_BUTTON_t data object holding all user-defined settings of the push-button object need to be re-initialized before this function driver can be used again. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="a00329_source.html#l00038">38</a> of file <a class="el" href="a00329_source.html">drv_push_button.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00329_source.html#l00153">153</a> of file <a class="el" href="a00329_source.html">drv_push_button.c</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00510_gaa3ce9c320a37ebc6e1ae113c82e68747_icgraph.svg" width="598" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00510_ga8038f16564e9e426efe4b86b739d3d77_icgraph.svg" width="391" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -208,20 +197,19 @@ Functions</h2></td></tr>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00510_ga29d5123115f34320a92fabc8be2f796c_icgraph.svg" width="584" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00510_ga29d5123115f34320a92fabc8be2f796c_icgraph.svg" width="584" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
 </div>
-<a id="ga8038f16564e9e426efe4b86b739d3d77"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8038f16564e9e426efe4b86b739d3d77">&#9670;&nbsp;</a></span>drv_PushButton_Dispose()</h2>
+<a id="gaa3ce9c320a37ebc6e1ae113c82e68747"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa3ce9c320a37ebc6e1ae113c82e68747">&#9670;&nbsp;</a></span>drv_PushButton_Initialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t drv_PushButton_Dispose </td>
+          <td class="memname">volatile uint16_t drv_PushButton_Initialize </td>
           <td>(</td>
           <td class="paramtype">volatile struct <a class="el" href="a01638.html">PUSH_BUTTON_OBJECT_s</a> *&#160;</td>
           <td class="paramname"><em>pushbtn</em></td><td>)</td>
@@ -233,20 +221,28 @@ Functions</h2></td></tr>
 <p>Initializes the push button device driver. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pushbtn</td><td>Push button data object of type struct PUSH_BUTTON_OBJECT_s* </td></tr>
+    <tr><td class="paramname">pushbtn</td><td>Push button object of type struct PUSH_BUTTON_OBJECT_s* </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned int (0=failure, 1=success)  This function will unload the push-button function driver and free its resources. All user settings will get reset. The PUSH_BUTTON_t data object holding all user-defined settings of the push-button object need to be re-initialized before this function driver can be used again. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
+<p>The push button driver offers typical functions of a human-machine interface push button such as</p>
+<ul>
+<li>hardware debouncing</li>
+<li>detection of short press</li>
+<li>detection of long press</li>
+<li>push-button status (pressed/unpressed)</li>
+<li>switch event indication</li>
+</ul>
+<p>Users of this function driver can define and tune delay to adopt detection delays and related responses to the task execution period and hardware circuit related dependencies. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00329_source.html#l00153">153</a> of file <a class="el" href="a00329_source.html">drv_push_button.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00329_source.html#l00038">38</a> of file <a class="el" href="a00329_source.html">drv_push_button.c</a>.</p>
 <div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00510_ga8038f16564e9e426efe4b86b739d3d77_icgraph.svg" width="391" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00510_gaa3ce9c320a37ebc6e1ae113c82e68747_icgraph.svg" width="598" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

@@ -107,8 +107,7 @@ $(document).ready(function(){initNavTree('a00493.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00493.svg" width="292" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00493.svg" width="292" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
@@ -128,30 +127,6 @@ Variables</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="gac26c1311a275f3076a198a09227e8147"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac26c1311a275f3076a198a09227e8147">&#9670;&nbsp;</a></span>buckDacModuleConfig</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">buckDacModuleConfig</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= </div>
-<div class="line">{</div>
-<div class="line">    .DacModuleCtrl1L.value = 0x0000, </div>
-<div class="line">    .DacModuleCtrl2L.value = 0x0000, </div>
-<div class="line">    .DacModuleCtrl2H.value = 0x0000  </div>
-<div class="line">}</div>
-</div><!-- fragment -->
-<p>DAC module default configuration. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00287_source.html#l00001">1</a> of file <a class="el" href="a00287_source.html">dev_buck_ptemp_dac.c</a>.</p>
-
-</div>
-</div>
 <a id="gab25d1a3889c78f4213ba349255d346c7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gab25d1a3889c78f4213ba349255d346c7">&#9670;&nbsp;</a></span>buckDacInstanceConfig</h2>
 
@@ -180,29 +155,27 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ga2d420ce844bd8e8c1f81d173d3c3b549"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2d420ce844bd8e8c1f81d173d3c3b549">&#9670;&nbsp;</a></span>buckPwmModuleConfig</h2>
+<a id="gac26c1311a275f3076a198a09227e8147"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac26c1311a275f3076a198a09227e8147">&#9670;&nbsp;</a></span>buckDacModuleConfig</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">buckPwmModuleConfig</td>
+          <td class="memname">buckDacModuleConfig</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= </div>
+<div class="line">{</div>
+<div class="line">    .DacModuleCtrl1L.value = 0x0000, </div>
+<div class="line">    .DacModuleCtrl2L.value = 0x0000, </div>
+<div class="line">    .DacModuleCtrl2H.value = 0x0000  </div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p>DAC module default configuration. </p>
 
-<p>PWM module default configuration. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00293_source.html#l00001">1</a> of file <a class="el" href="a00293_source.html">dev_buck_ptemp_pwm.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00287_source.html#l00001">1</a> of file <a class="el" href="a00287_source.html">dev_buck_ptemp_dac.c</a>.</p>
 
 </div>
 </div>
@@ -227,6 +200,32 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>PWM generator default configuration. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00293_source.html#l00001">1</a> of file <a class="el" href="a00293_source.html">dev_buck_ptemp_pwm.c</a>.</p>
+
+</div>
+</div>
+<a id="ga2d420ce844bd8e8c1f81d173d3c3b549"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2d420ce844bd8e8c1f81d173d3c3b549">&#9670;&nbsp;</a></span>buckPwmModuleConfig</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">buckPwmModuleConfig</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>PWM module default configuration. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00293_source.html#l00001">1</a> of file <a class="el" href="a00293_source.html">dev_buck_ptemp_pwm.c</a>.</p>
 

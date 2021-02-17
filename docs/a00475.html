@@ -110,8 +110,7 @@ $(document).ready(function(){initNavTree('a00475.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00475.svg" width="292" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00475.svg" width="292" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
@@ -133,6 +132,42 @@ Variables</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Variables of the buck converter state machine. </p>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="gad90aaba79b75de05468a961a39c9c018"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad90aaba79b75de05468a961a39c9c018">&#9670;&nbsp;</a></span>BuckConverterRampUpSubStateMachine</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t(* BuckConverterRampUpSubStateMachine)[](volatile struct <a class="el" href="a01554.html">BUCK_CONVERTER_s</a> *buckInstance)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Buck converter state machine function pointer array. </p>
+<p>Function pointer array of buck converter startup sub-states.</p>
+<p>The function pointer list BuckConverterRampUpSubStateMachine[] is providing access to a list of state functions. Each function mapped into this array as function pointer represents a self-contained, independent sub-state. The main state machine will call functions from this list in order of their index within the array, starting from '0'. While this list is executed, the calling main state is transparent by passing through the return value of the most recent sub-state. Once all sub-states have been executed, the calling main state will return the COMPLETE flag, allowing the main state machine to move on.</p>
+<p>Each function needs to be called by handing over a parameter of type</p>
+<ul>
+<li>struct <a class="el" href="a01554.html" title="BUCK control &amp; monitoring data structure.">BUCK_CONVERTER_s</a></li>
+</ul>
+<p>Each function returns of type unsigned integer:</p>
+<ul>
+<li>0 = BUCK_OPSRET_ERROR</li>
+<li>1 = BUCK_OPSRET_COMPLETE</li>
+<li>2 = BUCK_OPSRET_REPEAT </li>
+</ul>
+
+</div>
+</div>
 <a id="ga34e9e076d0bb91ad7b4ce328bc03dfee"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga34e9e076d0bb91ad7b4ce328bc03dfee">&#9670;&nbsp;</a></span>BuckConverterStateMachine</h2>
 
@@ -170,6 +205,25 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="gaf52bd106cdf677965715261049bbc072"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf52bd106cdf677965715261049bbc072">&#9670;&nbsp;</a></span>BuckRampUpSubStateList_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t BuckRampUpSubStateList_size = (sizeof(<a class="el" href="a00475.html#gad90aaba79b75de05468a961a39c9c018">BuckConverterRampUpSubStateMachine</a>)/sizeof(<a class="el" href="a00475.html#gad90aaba79b75de05468a961a39c9c018">BuckConverterRampUpSubStateMachine</a>[0]))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Buck converter sub-state machine function pointer array size. </p>
+<p>Buck converter state machine function pointer array size. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00269_source.html#l00035">35</a> of file <a class="el" href="a00269_source.html">dev_buck_substates.c</a>.</p>
+
+</div>
+</div>
 <a id="ga908907079f862f9793ac00bd89d653ce"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga908907079f862f9793ac00bd89d653ce">&#9670;&nbsp;</a></span>BuckStateList_size</h2>
 
@@ -187,61 +241,6 @@ Variables</h2></td></tr>
 <p>Buck converter state machine function pointer array size. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00251_source.html#l00039">39</a> of file <a class="el" href="a00251_source.html">dev_buck_opstates.c</a>.</p>
-
-</div>
-</div>
-<a id="gad90aaba79b75de05468a961a39c9c018"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad90aaba79b75de05468a961a39c9c018">&#9670;&nbsp;</a></span>BuckConverterRampUpSubStateMachine</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t(* BuckConverterRampUpSubStateMachine)[](volatile struct <a class="el" href="a01554.html">BUCK_CONVERTER_s</a> *buckInstance)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Buck converter state machine function pointer array. </p>
-<p>Function pointer array of buck converter startup sub-states.</p>
-<p>The function pointer list BuckConverterRampUpSubStateMachine[] is providing access to a list of state functions. Each function mapped into this array as function pointer represents a self-contained, independent sub-state. The main state machine will call functions from this list in order of their index within the array, starting from '0'. While this list is executed, the calling main state is transparent by passing through the return value of the most recent sub-state. Once all sub-states have been executed, the calling main state will return the COMPLETE flag, allowing the main state machine to move on.</p>
-<p>Each function needs to be called by handing over a parameter of type</p>
-<ul>
-<li>struct <a class="el" href="a01554.html" title="BUCK control &amp; monitoring data structure.">BUCK_CONVERTER_s</a></li>
-</ul>
-<p>Each function returns of type unsigned integer:</p>
-<ul>
-<li>0 = BUCK_OPSRET_ERROR</li>
-<li>1 = BUCK_OPSRET_COMPLETE</li>
-<li>2 = BUCK_OPSRET_REPEAT </li>
-</ul>
-
-</div>
-</div>
-<a id="gaf52bd106cdf677965715261049bbc072"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf52bd106cdf677965715261049bbc072">&#9670;&nbsp;</a></span>BuckRampUpSubStateList_size</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t BuckRampUpSubStateList_size = (sizeof(<a class="el" href="a00475.html#gad90aaba79b75de05468a961a39c9c018">BuckConverterRampUpSubStateMachine</a>)/sizeof(<a class="el" href="a00475.html#gad90aaba79b75de05468a961a39c9c018">BuckConverterRampUpSubStateMachine</a>[0]))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Buck converter sub-state machine function pointer array size. </p>
-<p>Buck converter state machine function pointer array size. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00269_source.html#l00035">35</a> of file <a class="el" href="a00269_source.html">dev_buck_substates.c</a>.</p>
 
 </div>
 </div>

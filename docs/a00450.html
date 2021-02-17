@@ -110,8 +110,7 @@ $(document).ready(function(){initNavTree('a00450.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00450.svg" width="358" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00450.svg" width="358" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -130,14 +129,14 @@ Functions</h2></td></tr>
 <p>Public functions of the application layer of the debugging LED task. </p>
 <p>This is the detailed description of public API functions of the on-board debugging LED task. </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga900c95201f101cb3c8644bcf7aab8af9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga900c95201f101cb3c8644bcf7aab8af9">&#9670;&nbsp;</a></span>appLED_Initialize()</h2>
+<a id="ga038f968f3d5544cfe50faa2079d7daf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga038f968f3d5544cfe50faa2079d7daf6">&#9670;&nbsp;</a></span>appLED_Dispose()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t appLED_Initialize </td>
+          <td class="memname">volatile uint16_t appLED_Dispose </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -146,24 +145,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initializes the LED driving GPIO. </p>
+<p>Frees the resources of the debugging LED driver. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">void</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned int (0=failure, 1=success)  This routine configures the driving GPIO as output and sets the initial toggle interval of the debugging LED. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned int (0=failure, 1=success)  This routine is used to end the debugging LED driver task and frees its resources. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="a00212_source.html#l00029">29</a> of file <a class="el" href="a00212_source.html">app_led.c</a>.</p>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00450_ga900c95201f101cb3c8644bcf7aab8af9_icgraph.svg" width="340" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
+<p class="definition">Definition at line <a class="el" href="a00212_source.html#l00076">76</a> of file <a class="el" href="a00212_source.html">app_led.c</a>.</p>
 
 </div>
 </div>
@@ -193,25 +184,24 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>unsigned int (0=failure, 1=success)  This routine executes the debugging LED driver controlling the toggling interval of the debugging LED. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="a00212_source.html#l00052">52</a> of file <a class="el" href="a00212_source.html">app_led.c</a>.</p>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00450_gaaa8c86cbd692a090f955022c93593a68_icgraph.svg" width="324" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00450_gaaa8c86cbd692a090f955022c93593a68_icgraph.svg" width="324" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
 </div>
-<a id="ga038f968f3d5544cfe50faa2079d7daf6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga038f968f3d5544cfe50faa2079d7daf6">&#9670;&nbsp;</a></span>appLED_Dispose()</h2>
+<a id="ga900c95201f101cb3c8644bcf7aab8af9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga900c95201f101cb3c8644bcf7aab8af9">&#9670;&nbsp;</a></span>appLED_Initialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t appLED_Dispose </td>
+          <td class="memname">volatile uint16_t appLED_Initialize </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -220,16 +210,23 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Frees the resources of the debugging LED driver. </p>
+<p>Initializes the LED driving GPIO. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">void</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned int (0=failure, 1=success)  This routine is used to end the debugging LED driver task and frees its resources. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned int (0=failure, 1=success)  This routine configures the driving GPIO as output and sets the initial toggle interval of the debugging LED. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="a00212_source.html#l00076">76</a> of file <a class="el" href="a00212_source.html">app_led.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00212_source.html#l00029">29</a> of file <a class="el" href="a00212_source.html">app_led.c</a>.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00450_ga900c95201f101cb3c8644bcf7aab8af9_icgraph.svg" width="340" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>

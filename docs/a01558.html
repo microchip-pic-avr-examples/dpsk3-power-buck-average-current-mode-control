@@ -112,8 +112,7 @@ $(document).ready(function(){initNavTree('a01558.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01556.svg" width="163" height="176"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a01556.svg" width="163" height="176"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -146,19 +145,55 @@ Data Fields</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="a00302_source.html#l00147">147</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="a6586f76d74993183527cf0de35d0f04e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6586f76d74993183527cf0de35d0f04e">&#9670;&nbsp;</a></span>StatusWordFlags</h2>
+<a id="aa5468f367294e1d45dad1f2e5d0ed028"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5468f367294e1d45dad1f2e5d0ed028">&#9670;&nbsp;</a></span>flagAgcControl</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum NPNZ_STATUS_FLAGS_e StatusWordFlags</td>
+          <td class="memname">enum NPNZ_STATUS_AGC_ENABLE_e flagAgcControl</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>List of all status and control flags of the NPNZ status word. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00001">1</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
+
+</div>
+</div>
+<a id="a89d7fde025ce70bd8ae63a08e9a46e38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89d7fde025ce70bd8ae63a08e9a46e38">&#9670;&nbsp;</a></span>flagControlEnable</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum NPNZ_STATUS_ENABLE_e flagControlEnable</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>List of Supported Control Modes. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00001">1</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
+
+</div>
+</div>
+<a id="abc62c1d8e452ee7df323444d1e310f35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc62c1d8e452ee7df323444d1e310f35">&#9670;&nbsp;</a></span>flagCtrlInputInversion</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum NPNZ_STATUS_INPUT_INV_e flagCtrlInputInversion</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>List of State Machine Operating State Return Values. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00302_source.html#l00001">1</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
 
@@ -172,24 +207,6 @@ Data Fields</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">enum NPNZ_STATUS_SATURATION_e flagSaturation</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>List of all status and control flags of the NPNZ status word. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00001">1</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
-
-</div>
-</div>
-<a id="aa5468f367294e1d45dad1f2e5d0ed028"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa5468f367294e1d45dad1f2e5d0ed028">&#9670;&nbsp;</a></span>flagAgcControl</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum NPNZ_STATUS_AGC_ENABLE_e flagAgcControl</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -236,37 +253,19 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="abc62c1d8e452ee7df323444d1e310f35"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc62c1d8e452ee7df323444d1e310f35">&#9670;&nbsp;</a></span>flagCtrlInputInversion</h2>
+<a id="a6586f76d74993183527cf0de35d0f04e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6586f76d74993183527cf0de35d0f04e">&#9670;&nbsp;</a></span>StatusWordFlags</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum NPNZ_STATUS_INPUT_INV_e flagCtrlInputInversion</td>
+          <td class="memname">enum NPNZ_STATUS_FLAGS_e StatusWordFlags</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>List of State Machine Operating State Return Values. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00001">1</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
-
-</div>
-</div>
-<a id="a89d7fde025ce70bd8ae63a08e9a46e38"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89d7fde025ce70bd8ae63a08e9a46e38">&#9670;&nbsp;</a></span>flagControlEnable</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum NPNZ_STATUS_ENABLE_e flagControlEnable</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>List of Supported Control Modes. </p>
+<p>List of all status and control flags of the NPNZ status word. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00302_source.html#l00001">1</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
 

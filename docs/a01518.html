@@ -112,16 +112,14 @@ $(document).ready(function(){initNavTree('a01518.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01517.svg" width="211" height="448"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a01517.svg" width="211" height="448"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for BUCK_CONVERTER_DATA_s:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a01516.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a01516.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -187,21 +185,57 @@ Data Fields</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="a00278_source.html#l00296">296</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="a18db7120ea66987ec70729258c2126e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18db7120ea66987ec70729258c2126e0">&#9670;&nbsp;</a></span>i_sns</h2>
+<a id="ac8075e097d2f5b01f5e19a1c088b2765"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8075e097d2f5b01f5e19a1c088b2765">&#9670;&nbsp;</a></span>control_error</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t i_sns[<a class="el" href="a00466.html#ga74df4d33c3d762495bc67b88bb6aa524">BUCK_MPHASE_COUNT</a>]</td>
+          <td class="memname">volatile uint16_t control_error</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>BUCK output current. </p>
+<p>BUCK most recent control error value. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00298">298</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00305">305</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="a1f1df1b6b181796635627d10d720dd4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f1df1b6b181796635627d10d720dd4f">&#9670;&nbsp;</a></span>control_input</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t control_input</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BUCK most recent control input value (raw input) </p>
+
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00304">304</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="ac7ce35c7ae4977118fe839759bf34518"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7ce35c7ae4977118fe839759bf34518">&#9670;&nbsp;</a></span>control_output</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t control_output</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BUCK most recent control output value. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00306">306</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
 
 </div>
 </div>
@@ -220,6 +254,42 @@ Data Fields</h2></td></tr>
 <p>BUCK common output current. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00278_source.html#l00299">299</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="a18db7120ea66987ec70729258c2126e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18db7120ea66987ec70729258c2126e0">&#9670;&nbsp;</a></span>i_sns</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t i_sns[<a class="el" href="a00466.html#ga74df4d33c3d762495bc67b88bb6aa524">BUCK_MPHASE_COUNT</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BUCK output current. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00298">298</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
+
+</div>
+</div>
+<a id="aa9f24b0c02dbbc6659649c7b7a124dc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9f24b0c02dbbc6659649c7b7a124dc4">&#9670;&nbsp;</a></span>temp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t temp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BUCK board temperature. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00302">302</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
 
 </div>
 </div>
@@ -256,78 +326,6 @@ Data Fields</h2></td></tr>
 <p>BUCK output voltage. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00278_source.html#l00301">301</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
-
-</div>
-</div>
-<a id="aa9f24b0c02dbbc6659649c7b7a124dc4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9f24b0c02dbbc6659649c7b7a124dc4">&#9670;&nbsp;</a></span>temp</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t temp</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>BUCK board temperature. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00302">302</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
-
-</div>
-</div>
-<a id="a1f1df1b6b181796635627d10d720dd4f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f1df1b6b181796635627d10d720dd4f">&#9670;&nbsp;</a></span>control_input</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t control_input</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>BUCK most recent control input value (raw input) </p>
-
-<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00304">304</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
-
-</div>
-</div>
-<a id="ac8075e097d2f5b01f5e19a1c088b2765"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8075e097d2f5b01f5e19a1c088b2765">&#9670;&nbsp;</a></span>control_error</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t control_error</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>BUCK most recent control error value. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00305">305</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
-
-</div>
-</div>
-<a id="ac7ce35c7ae4977118fe839759bf34518"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7ce35c7ae4977118fe839759bf34518">&#9670;&nbsp;</a></span>control_output</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t control_output</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>BUCK most recent control output value. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00306">306</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
 
 </div>
 </div>
