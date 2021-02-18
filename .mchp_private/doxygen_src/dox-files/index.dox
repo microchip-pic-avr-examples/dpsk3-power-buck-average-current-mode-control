@@ -98,7 +98,7 @@ process of the firmware.
    <br><br>
 
  - <b>Step 4 (OS Timer Initialization):</b><br><br>
-   In the fourth step the operating system time base is initialized. In this slim applicaiton the operating system
+   In the fourth step the operating system time base is initialized. In this slim application the operating system
    consists of two different task execution levels on two priority levels:
    <br><br>
    - <b>Low-Priority Task Execution</b><br>
@@ -191,22 +191,22 @@ process of the firmware.
 @details
  This system initialization segment is reserved for user configurations, which are not covered 
  by standard library functions, such as circuit specific feedback signal conditioning or other
- independent funcitons.
+ independent functions.
 
 @defgroup user-peripherals-initialization User Peripheral Initialization
 @ingroup system-initialization-user-peripherals
 @brief 
 @details
- Some applicaitons require specific peripheral module functions to implement functions, 
+ Some applications require specific peripheral module functions to implement functions, 
  which are not covered by user-task device driver modules, such as special logic functions 
  or additional analog components like operational amplifiers for signal conditioning. This 
  initialization routine can be used to add user-configurations to the project, which are 
- independent from device driver modules, These special peripehral modules are initialized 
- before the user tasks. Users will have to decide when and how these additional peripehrals
+ independent from device driver modules, These special peripheral modules are initialized 
+ before the user tasks. Users will have to decide when and how these additional peripherals
  may be enabled to ensure no conflicts with user task device drivers occur.
 */
 
-/* Applicaiton-specific hardware or microcontroller declarations */
+/* Application-specific hardware or microcontroller declarations */
 /**
 @defgroup dac-initialization Digital-to-Analog Converter
 @ingroup system-initialization-user-peripherals
@@ -216,7 +216,7 @@ process of the firmware.
  a dynamic, analog output signal, which can be used for enhanced debugging of high-speed
  processes such as control output monitoring.
 @note
- The DAC output signal is buffered by utilizing one of the availalbe on-chip operational
+ The DAC output signal is buffered by utilizing one of the available on-chip operational
  amplifiers. Please refer to the Operational Amplifier Configuration section for details.
  
 @defgroup op-amp-initialization Operational Amplifier Configuration
@@ -238,7 +238,7 @@ process of the firmware.
 @ingroup device-start-up
 @brief 
 @details
- The appliation wide task execution requires a two step approach, where first the operating 
+ The application wide task execution requires a two step approach, where first the operating 
  system time base is configured and then all user-tasks are initialized. Once these two steps
  have been completed, the OS timer can be enabled and the main program will enter the main loop,
  continuously executing the specified and enabled user-tasks in high- and low-priority task
@@ -290,7 +290,7 @@ process of the firmware.
 @details
  The task layer covers all user tasks executed by the task scheduler. Each task is an independent entity 
  called on its respective priority level defined by the user. Tasks are proprietary user code modules 
- representing specific funcitons of the application or end-product. 
+ representing specific functions of the application or end-product. 
 
 
 */
