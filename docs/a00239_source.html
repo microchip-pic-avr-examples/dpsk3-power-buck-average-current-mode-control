@@ -110,39 +110,40 @@ $(document).ready(function(){initNavTree('a00239_source.html',''); initResizable
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;config/hal.h&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;app_power_control.h&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;drivers/v_loop.h&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">void</span> __attribute__((__interrupt__, auto_psv, context))<a class="code" href="a00415.html#ga4d26e0585523e4ab162ca9868517b878">_BUCK_VLOOP_Interrupt</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">    #if (DBGPIN2_ENABLE)</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="a00390.html#ga81602741185030b94a63da995bebe9d7">DBGPIN2_Set</a>();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// Set flag bit indication ADC interrupt activity</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="a00456.html#gad251307f33c9d1fd60c1a55535d61955">buck</a>.<a class="code" href="a01554.html#a3f64d0961e6a7e4534dafa86d60348b1">status</a>.bits.<a class="code" href="a01486.html#ae04b22175817e3ca9a061687c0d90786">adc_active</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// Call feedback loop</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">    #if (PLANT_MEASUREMENT == false)</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="a00456.html#gad251307f33c9d1fd60c1a55535d61955">buck</a>.<a class="code" href="a01554.html#acc8ce31db94494416ddda164332a40c9">v_loop</a>.<a class="code" href="a01526.html#a95eb0e366ec0c0c509d13060e796a7c2">ctrl_Update</a>(<a class="code" href="a00456.html#gad251307f33c9d1fd60c1a55535d61955">buck</a>.<a class="code" href="a01554.html#acc8ce31db94494416ddda164332a40c9">v_loop</a>.<a class="code" href="a01526.html#a86e023cf3f4b4255c1b514b6d70ef74f">controller</a>);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">    #else</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="a00497.html#gac782e99f408e1d33286076e69a14f781">v_loop_PTermUpdate</a>(&amp;<a class="code" href="a00498.html#gafbcd1a3463a71ed45375fa8f6053ee28">v_loop</a>);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// Copy most recent control output to DAC output for debugging</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">    #if (DBGDAC_ENABLE)</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="a00391.html#gae819dedb558c1ebfd083be382c1d39ee">DACOUT_Set</a>(<a class="code" href="a00456.html#gad251307f33c9d1fd60c1a55535d61955">buck</a>.<a class="code" href="a01554.html#ace365e404e1a839717de3d05ee55d27a">data</a>.<a class="code" href="a01518.html#ac7ce35c7ae4977118fe839759bf34518">control_output</a>);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// Clear the interrupt flag bit allowing the next interrupt to trip</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="a00415.html#ga86a33b4bdcca00d9c177cbcba36fe05b">_BUCK_VLOOP_ISR_IF</a> = 0;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">    #if (DBGPIN2_ENABLE)</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="a00390.html#ga8209ee25d31e6631f485b662d105fc8d">DBGPIN2_Clear</a>();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">// end of file</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">void</span> __attribute__((__interrupt__, auto_psv, context))<a class="code" href="a00415.html#ga4d26e0585523e4ab162ca9868517b878">_BUCK_VLOOP_Interrupt</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">    #if (DBGPIN2_ENABLE)</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="a00390.html#ga81602741185030b94a63da995bebe9d7">DBGPIN2_Set</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">// Set flag bit indication ADC interrupt activity</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="a00456.html#gad251307f33c9d1fd60c1a55535d61955">buck</a>.<a class="code" href="a01554.html#a3f64d0961e6a7e4534dafa86d60348b1">status</a>.bits.<a class="code" href="a01486.html#ae04b22175817e3ca9a061687c0d90786">adc_active</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// Call feedback loop</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">    #if (PLANT_MEASUREMENT == false)</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="a00456.html#gad251307f33c9d1fd60c1a55535d61955">buck</a>.<a class="code" href="a01554.html#acc8ce31db94494416ddda164332a40c9">v_loop</a>.<a class="code" href="a01526.html#a95eb0e366ec0c0c509d13060e796a7c2">ctrl_Update</a>(<a class="code" href="a00456.html#gad251307f33c9d1fd60c1a55535d61955">buck</a>.<a class="code" href="a01554.html#acc8ce31db94494416ddda164332a40c9">v_loop</a>.<a class="code" href="a01526.html#a86e023cf3f4b4255c1b514b6d70ef74f">controller</a>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">    #else</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="a00497.html#gac782e99f408e1d33286076e69a14f781">v_loop_PTermUpdate</a>(&amp;<a class="code" href="a00498.html#gafbcd1a3463a71ed45375fa8f6053ee28">v_loop</a>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// Copy most recent control output to DAC output for debugging</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">    #if (DBGDAC_ENABLE)</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="a00391.html#gae819dedb558c1ebfd083be382c1d39ee">DACOUT_Set</a>(<a class="code" href="a00456.html#gad251307f33c9d1fd60c1a55535d61955">buck</a>.<a class="code" href="a01554.html#ace365e404e1a839717de3d05ee55d27a">data</a>.<a class="code" href="a01518.html#ac7ce35c7ae4977118fe839759bf34518">control_output</a>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// Clear the interrupt flag bit allowing the next interrupt to trip</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="a00415.html#ga86a33b4bdcca00d9c177cbcba36fe05b">_BUCK_VLOOP_ISR_IF</a> = 0;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">    #if (DBGPIN2_ENABLE)</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="a00390.html#ga8209ee25d31e6631f485b662d105fc8d">DBGPIN2_Clear</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">// end of file</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aa01554_html_ace365e404e1a839717de3d05ee55d27a"><div class="ttname"><a href="a01554.html#ace365e404e1a839717de3d05ee55d27a">BUCK_CONVERTER_s::data</a></div><div class="ttdeci">volatile struct BUCK_CONVERTER_DATA_s data</div><div class="ttdoc">BUCK runtime data.</div><div class="ttdef"><b>Definition:</b> <a href="a00278_source.html#l00477">dev_buck_typedef.h:507</a></div></div>

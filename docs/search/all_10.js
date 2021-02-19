@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['special_20circuit_20signals_1244',['Special Circuit Signals',['../a00389.html',1,'']]],
   ['sata_1245',['SATA',['../a00806.html#af53bfab89b9aada9cd4600d06ff9c410',1,'DSP_CONFIG_s']]],
   ['satb_1246',['SATB',['../a00806.html#a4630d9527b3bae7b7a8e9fef16eaf8f8',1,'DSP_CONFIG_s']]],
   ['satdw_1247',['SATDW',['../a00806.html#aa19d08b83e73991dc281b98d59e06ab7',1,'DSP_CONFIG_s']]],

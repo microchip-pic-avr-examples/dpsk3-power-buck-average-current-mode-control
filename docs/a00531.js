@@ -5,7 +5,7 @@ var a00531 =
     [ "State Machine Settings", "a00379.html", "a00379" ],
     [ "Startup Timing Settings", "a00383.html", "a00383" ],
     [ "Fault Response Settings", "a00386.html", "a00386" ],
-    [ "Circuit Special Circuit Signals", "a00389.html", "a00389" ],
+    [ "Special Circuit Signals", "a00389.html", "a00389" ],
     [ "PWM Settings", "a00392.html", "a00392" ],
     [ "Input Voltage Feedback", "a00398.html", "a00398" ],
     [ "Output Voltage Feedback", "a00402.html", "a00402" ],
