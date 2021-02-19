@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Conversion Macros</title>
+<title>Digital Power Starter Kit 3 Firmware: Control Interrupt Vector Declarations</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -97,101 +97,369 @@ $(document).ready(function(){initNavTree('a00412.html',''); initResizable(); });
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Conversion Macros<div class="ingroups"><a class="el" href="a00531.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00410.html">Temperature Feedback</a></div></div>  </div>
+<div class="title">Control Interrupt Vector Declarations<div class="ingroups"><a class="el" href="a00531.html">Hardware Abstraction Layer</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Conversion macros for user-declarations of temperature feedback parameters.  
-<a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Conversion Macros:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Control Interrupt Vector Declarations:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00412.svg" width="346" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00412.svg" width="362" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <table class="memberdecls">
-<tr class="memitem:gacde6c3fa85c34fe5414566acd2e77ca8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00412.html#gacde6c3fa85c34fe5414566acd2e77ca8">BUCK_FB_TEMP_ZERO</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00411.html#gae1bfd432f4281610523780a3c7dea8c2">BUCK_TEMPCAL_ZERO</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:gacde6c3fa85c34fe5414566acd2e77ca8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion macros of temperature feedback parameters.  <a href="a00412.html#gacde6c3fa85c34fe5414566acd2e77ca8">More...</a><br /></td></tr>
-<tr class="separator:gacde6c3fa85c34fe5414566acd2e77ca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga014133f88cd82218241bf16985302cd4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00412.html#ga014133f88cd82218241bf16985302cd4">BUCK_FB_TEMP_SLOPE</a>&#160;&#160;&#160;(float)(<a class="el" href="a00411.html#gabb9a63a36610e526480fce9dbe4e77d7">BUCK_TEMPCAL_SLOPE</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="separator:ga014133f88cd82218241bf16985302cd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga093804711059cf01cdb3113365ec8ea3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00412.html#ga093804711059cf01cdb3113365ec8ea3">BOOST_FB_TEMP_ZERO</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00411.html#ga6c73550242695c13f4019492d7782fc2">BOOST_TEMPCAL_ZERO</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:ga093804711059cf01cdb3113365ec8ea3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion macros of temperature feedback parameters.  <a href="a00412.html#ga093804711059cf01cdb3113365ec8ea3">More...</a><br /></td></tr>
-<tr class="separator:ga093804711059cf01cdb3113365ec8ea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaabab1ff0ffe06204aa20f33caec4f6ce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00412.html#gaabab1ff0ffe06204aa20f33caec4f6ce">BOOST_FB_TEMP_SLOPE</a>&#160;&#160;&#160;(float)(<a class="el" href="a00411.html#gaa3973a312a9169505ae4ee1f19f8ec87">BOOST_TEMPCAL_SLOPE</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="separator:gaabab1ff0ffe06204aa20f33caec4f6ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0cfa7f19452962e44f33d62da824775d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00412.html#ga0cfa7f19452962e44f33d62da824775d">BUCK_VOUT_TRIG_PWM</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:ga0cfa7f19452962e44f33d62da824775d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control loop Interrupt Vector Settings.  <a href="a00412.html#ga0cfa7f19452962e44f33d62da824775d">More...</a><br /></td></tr>
+<tr class="separator:ga0cfa7f19452962e44f33d62da824775d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa46c260ebaea7e59a41e0c02c09b7012"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00412.html#gaa46c260ebaea7e59a41e0c02c09b7012">BUCK_VOUT_TRIG_ADC</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:gaa46c260ebaea7e59a41e0c02c09b7012"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buck VOUT control loop is called in ADC interrupt.  <a href="a00412.html#gaa46c260ebaea7e59a41e0c02c09b7012">More...</a><br /></td></tr>
+<tr class="separator:gaa46c260ebaea7e59a41e0c02c09b7012"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga753fe8fc858101ec0f3de3dbd5632929"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00412.html#ga753fe8fc858101ec0f3de3dbd5632929">BUCK_VOUT_TRIGGER_MODE</a>&#160;&#160;&#160;<a class="el" href="a00412.html#ga0cfa7f19452962e44f33d62da824775d">BUCK_VOUT_TRIG_PWM</a></td></tr>
+<tr class="memdesc:ga753fe8fc858101ec0f3de3dbd5632929"><td class="mdescLeft">&#160;</td><td class="mdescRight">Currently selected voltage loop interrupt vector.  <a href="a00412.html#ga753fe8fc858101ec0f3de3dbd5632929">More...</a><br /></td></tr>
+<tr class="separator:ga753fe8fc858101ec0f3de3dbd5632929"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga21c69aa2132f7c8296cf4a558144472d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00412.html#ga21c69aa2132f7c8296cf4a558144472d">BUCK_VOUT_ISR_PRIORITY</a>&#160;&#160;&#160;5</td></tr>
+<tr class="memdesc:ga21c69aa2132f7c8296cf4a558144472d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Voltage loop interrupt vector priority (valid settings between 0...6 with 6 being the highest priority)  <a href="a00412.html#ga21c69aa2132f7c8296cf4a558144472d">More...</a><br /></td></tr>
+<tr class="separator:ga21c69aa2132f7c8296cf4a558144472d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4d26e0585523e4ab162ca9868517b878"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00412.html#ga4d26e0585523e4ab162ca9868517b878">_BUCK_VLOOP_Interrupt</a>&#160;&#160;&#160;_PWM1Interrupt</td></tr>
+<tr class="memdesc:ga4d26e0585523e4ab162ca9868517b878"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt vector function call label.  <a href="a00412.html#ga4d26e0585523e4ab162ca9868517b878">More...</a><br /></td></tr>
+<tr class="separator:ga4d26e0585523e4ab162ca9868517b878"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac652105fed34fa1602688a30bbd8b227"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00412.html#gac652105fed34fa1602688a30bbd8b227">_BUCK_VLOOP_ISR_IP</a>&#160;&#160;&#160;_PWM1IP</td></tr>
+<tr class="memdesc:gac652105fed34fa1602688a30bbd8b227"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interupt vector priority register.  <a href="a00412.html#gac652105fed34fa1602688a30bbd8b227">More...</a><br /></td></tr>
+<tr class="separator:gac652105fed34fa1602688a30bbd8b227"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga86a33b4bdcca00d9c177cbcba36fe05b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00412.html#ga86a33b4bdcca00d9c177cbcba36fe05b">_BUCK_VLOOP_ISR_IF</a>&#160;&#160;&#160;_PWM1IF</td></tr>
+<tr class="memdesc:ga86a33b4bdcca00d9c177cbcba36fe05b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interupt vector flag bit register bit.  <a href="a00412.html#ga86a33b4bdcca00d9c177cbcba36fe05b">More...</a><br /></td></tr>
+<tr class="separator:ga86a33b4bdcca00d9c177cbcba36fe05b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga203d0dc5a0b331f39f7ed672d7fc7b31"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00412.html#ga203d0dc5a0b331f39f7ed672d7fc7b31">_BUCK_VLOOP_ISR_IE</a>&#160;&#160;&#160;_PWM1IE</td></tr>
+<tr class="memdesc:ga203d0dc5a0b331f39f7ed672d7fc7b31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interupt vector enable bit register bit.  <a href="a00412.html#ga203d0dc5a0b331f39f7ed672d7fc7b31">More...</a><br /></td></tr>
+<tr class="separator:ga203d0dc5a0b331f39f7ed672d7fc7b31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaafaf974d2a5e87e7d3859994720cea7d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00412.html#gaafaf974d2a5e87e7d3859994720cea7d">BOOST_VOUT_TRIG_PWM</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:gaafaf974d2a5e87e7d3859994720cea7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control loop Interrupt Vector Settings.  <a href="a00412.html#gaafaf974d2a5e87e7d3859994720cea7d">More...</a><br /></td></tr>
+<tr class="separator:gaafaf974d2a5e87e7d3859994720cea7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf7040d627752dbe520526e0b2c5c2f67"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00412.html#gaf7040d627752dbe520526e0b2c5c2f67">BOOST_VOUT_TRIG_ADC</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:gaf7040d627752dbe520526e0b2c5c2f67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boost VOUT control loop is called in ADC interrupt.  <a href="a00412.html#gaf7040d627752dbe520526e0b2c5c2f67">More...</a><br /></td></tr>
+<tr class="separator:gaf7040d627752dbe520526e0b2c5c2f67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga227d5015afba51df5e1d255e12043b49"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00412.html#ga227d5015afba51df5e1d255e12043b49">BOOST_VOUT_TRIGGER_MODE</a>&#160;&#160;&#160;<a class="el" href="a00412.html#gaafaf974d2a5e87e7d3859994720cea7d">BOOST_VOUT_TRIG_PWM</a></td></tr>
+<tr class="memdesc:ga227d5015afba51df5e1d255e12043b49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Currently selected voltage loop interrupt vector.  <a href="a00412.html#ga227d5015afba51df5e1d255e12043b49">More...</a><br /></td></tr>
+<tr class="separator:ga227d5015afba51df5e1d255e12043b49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9b6948e04e94f09c9fc9cf453d677128"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00412.html#ga9b6948e04e94f09c9fc9cf453d677128">BOOST_VOUT_ISR_PRIORITY</a>&#160;&#160;&#160;5</td></tr>
+<tr class="memdesc:ga9b6948e04e94f09c9fc9cf453d677128"><td class="mdescLeft">&#160;</td><td class="mdescRight">Voltage loop interrupt vector priority (valid settings between 0...6 with 6 being the highest priority)  <a href="a00412.html#ga9b6948e04e94f09c9fc9cf453d677128">More...</a><br /></td></tr>
+<tr class="separator:ga9b6948e04e94f09c9fc9cf453d677128"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab7fdea50b3ce7a57e59faeccb8cf3b4e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00412.html#gab7fdea50b3ce7a57e59faeccb8cf3b4e">_BOOST_VLOOP_Interrupt</a>&#160;&#160;&#160;_PWM2Interrupt</td></tr>
+<tr class="memdesc:gab7fdea50b3ce7a57e59faeccb8cf3b4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt vector function call label.  <a href="a00412.html#gab7fdea50b3ce7a57e59faeccb8cf3b4e">More...</a><br /></td></tr>
+<tr class="separator:gab7fdea50b3ce7a57e59faeccb8cf3b4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga17e9e69b3b8407c4caf045b7e1e532c5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00412.html#ga17e9e69b3b8407c4caf045b7e1e532c5">_BOOST_VLOOP_ISR_IP</a>&#160;&#160;&#160;_PWM2IP</td></tr>
+<tr class="memdesc:ga17e9e69b3b8407c4caf045b7e1e532c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt vector priority register.  <a href="a00412.html#ga17e9e69b3b8407c4caf045b7e1e532c5">More...</a><br /></td></tr>
+<tr class="separator:ga17e9e69b3b8407c4caf045b7e1e532c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae8e5507e2e9ad30f944946c519158606"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00412.html#gae8e5507e2e9ad30f944946c519158606">_BOOST_VLOOP_ISR_IF</a>&#160;&#160;&#160;_PWM2IF</td></tr>
+<tr class="memdesc:gae8e5507e2e9ad30f944946c519158606"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt vector flag bit register bit.  <a href="a00412.html#gae8e5507e2e9ad30f944946c519158606">More...</a><br /></td></tr>
+<tr class="separator:gae8e5507e2e9ad30f944946c519158606"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga31ad399b8b47cffdeef4da6df56fd9a6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00412.html#ga31ad399b8b47cffdeef4da6df56fd9a6">_BOOST_VLOOP_ISR_IE</a>&#160;&#160;&#160;_PWM2IE</td></tr>
+<tr class="memdesc:ga31ad399b8b47cffdeef4da6df56fd9a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt vector enable bit register bit.  <a href="a00412.html#ga31ad399b8b47cffdeef4da6df56fd9a6">More...</a><br /></td></tr>
+<tr class="separator:ga31ad399b8b47cffdeef4da6df56fd9a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Conversion macros for user-declarations of temperature feedback parameters. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="gaabab1ff0ffe06204aa20f33caec4f6ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaabab1ff0ffe06204aa20f33caec4f6ce">&#9670;&nbsp;</a></span>BOOST_FB_TEMP_SLOPE</h2>
+<a id="gab7fdea50b3ce7a57e59faeccb8cf3b4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab7fdea50b3ce7a57e59faeccb8cf3b4e">&#9670;&nbsp;</a></span>_BOOST_VLOOP_Interrupt</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_FB_TEMP_SLOPE&#160;&#160;&#160;(float)(<a class="el" href="a00411.html#gaa3973a312a9169505ae4ee1f19f8ec87">BOOST_TEMPCAL_SLOPE</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+          <td class="memname">#define _BOOST_VLOOP_Interrupt&#160;&#160;&#160;_PWM2Interrupt</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01318">1318</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p>Interrupt vector function call label. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01530">1530</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga093804711059cf01cdb3113365ec8ea3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga093804711059cf01cdb3113365ec8ea3">&#9670;&nbsp;</a></span>BOOST_FB_TEMP_ZERO</h2>
+<a id="ga31ad399b8b47cffdeef4da6df56fd9a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga31ad399b8b47cffdeef4da6df56fd9a6">&#9670;&nbsp;</a></span>_BOOST_VLOOP_ISR_IE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_FB_TEMP_ZERO&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00411.html#ga6c73550242695c13f4019492d7782fc2">BOOST_TEMPCAL_ZERO</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+          <td class="memname">#define _BOOST_VLOOP_ISR_IE&#160;&#160;&#160;_PWM2IE</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Conversion macros of temperature feedback parameters. </p>
-<p>These conversion macros are used to convert user settings defined as physical quantities into binary (integer) numbers, which will be written to registers and variables and used in calculations throughout the firmware. </p>
+<p>Interrupt vector enable bit register bit. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01317">1317</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01533">1533</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga014133f88cd82218241bf16985302cd4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga014133f88cd82218241bf16985302cd4">&#9670;&nbsp;</a></span>BUCK_FB_TEMP_SLOPE</h2>
+<a id="gae8e5507e2e9ad30f944946c519158606"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae8e5507e2e9ad30f944946c519158606">&#9670;&nbsp;</a></span>_BOOST_VLOOP_ISR_IF</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_FB_TEMP_SLOPE&#160;&#160;&#160;(float)(<a class="el" href="a00411.html#gabb9a63a36610e526480fce9dbe4e77d7">BUCK_TEMPCAL_SLOPE</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+          <td class="memname">#define _BOOST_VLOOP_ISR_IF&#160;&#160;&#160;_PWM2IF</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00685">685</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p>Interrupt vector flag bit register bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01532">1532</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gacde6c3fa85c34fe5414566acd2e77ca8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gacde6c3fa85c34fe5414566acd2e77ca8">&#9670;&nbsp;</a></span>BUCK_FB_TEMP_ZERO</h2>
+<a id="ga17e9e69b3b8407c4caf045b7e1e532c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga17e9e69b3b8407c4caf045b7e1e532c5">&#9670;&nbsp;</a></span>_BOOST_VLOOP_ISR_IP</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_FB_TEMP_ZERO&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00411.html#gae1bfd432f4281610523780a3c7dea8c2">BUCK_TEMPCAL_ZERO</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+          <td class="memname">#define _BOOST_VLOOP_ISR_IP&#160;&#160;&#160;_PWM2IP</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Conversion macros of temperature feedback parameters. </p>
-<p>These conversion macros are used to convert user settings defined as physical quantities into binary (integer) numbers, which will be written to registers and variables and used in calculations throughout the firmware. </p>
+<p>Interrupt vector priority register. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00684">684</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01531">1531</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga4d26e0585523e4ab162ca9868517b878"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4d26e0585523e4ab162ca9868517b878">&#9670;&nbsp;</a></span>_BUCK_VLOOP_Interrupt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _BUCK_VLOOP_Interrupt</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">void</td><td>)</td>
+          <td>&#160;&#160;&#160;_PWM1Interrupt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interrupt vector function call label. </p>
+<p>Main Control Interrupt.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void</dd></dl>
+<p>The control interrupt is calling the control loop. The point in time where this interrupt is thrown is determined by selecting the BUCK_VOUT_TRIGGER_MODE option. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00891">891</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga203d0dc5a0b331f39f7ed672d7fc7b31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga203d0dc5a0b331f39f7ed672d7fc7b31">&#9670;&nbsp;</a></span>_BUCK_VLOOP_ISR_IE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _BUCK_VLOOP_ISR_IE&#160;&#160;&#160;_PWM1IE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interupt vector enable bit register bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00894">894</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga86a33b4bdcca00d9c177cbcba36fe05b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga86a33b4bdcca00d9c177cbcba36fe05b">&#9670;&nbsp;</a></span>_BUCK_VLOOP_ISR_IF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _BUCK_VLOOP_ISR_IF&#160;&#160;&#160;_PWM1IF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interupt vector flag bit register bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00893">893</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gac652105fed34fa1602688a30bbd8b227"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac652105fed34fa1602688a30bbd8b227">&#9670;&nbsp;</a></span>_BUCK_VLOOP_ISR_IP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _BUCK_VLOOP_ISR_IP&#160;&#160;&#160;_PWM1IP</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interupt vector priority register. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00892">892</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga9b6948e04e94f09c9fc9cf453d677128"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9b6948e04e94f09c9fc9cf453d677128">&#9670;&nbsp;</a></span>BOOST_VOUT_ISR_PRIORITY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VOUT_ISR_PRIORITY&#160;&#160;&#160;5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Voltage loop interrupt vector priority (valid settings between 0...6 with 6 being the highest priority) </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01519">1519</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gaf7040d627752dbe520526e0b2c5c2f67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf7040d627752dbe520526e0b2c5c2f67">&#9670;&nbsp;</a></span>BOOST_VOUT_TRIG_ADC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VOUT_TRIG_ADC&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Boost VOUT control loop is called in ADC interrupt. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01516">1516</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gaafaf974d2a5e87e7d3859994720cea7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaafaf974d2a5e87e7d3859994720cea7d">&#9670;&nbsp;</a></span>BOOST_VOUT_TRIG_PWM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VOUT_TRIG_PWM&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Control loop Interrupt Vector Settings. </p>
+<p>Control loops are called in dedicated interrupt service routines of PWM events, ADC events or triggered by timers. This section allows users to set and modify the interrupt service routine triggers and their priority to set up and optimize the control system interrupt structure. Boost VOUT control loop is called in PWM interrupt </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01515">1515</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga227d5015afba51df5e1d255e12043b49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga227d5015afba51df5e1d255e12043b49">&#9670;&nbsp;</a></span>BOOST_VOUT_TRIGGER_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_VOUT_TRIGGER_MODE&#160;&#160;&#160;<a class="el" href="a00412.html#gaafaf974d2a5e87e7d3859994720cea7d">BOOST_VOUT_TRIG_PWM</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Currently selected voltage loop interrupt vector. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01518">1518</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga21c69aa2132f7c8296cf4a558144472d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga21c69aa2132f7c8296cf4a558144472d">&#9670;&nbsp;</a></span>BUCK_VOUT_ISR_PRIORITY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_VOUT_ISR_PRIORITY&#160;&#160;&#160;5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Voltage loop interrupt vector priority (valid settings between 0...6 with 6 being the highest priority) </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00880">880</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gaa46c260ebaea7e59a41e0c02c09b7012"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa46c260ebaea7e59a41e0c02c09b7012">&#9670;&nbsp;</a></span>BUCK_VOUT_TRIG_ADC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_VOUT_TRIG_ADC&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Buck VOUT control loop is called in ADC interrupt. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00877">877</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga0cfa7f19452962e44f33d62da824775d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0cfa7f19452962e44f33d62da824775d">&#9670;&nbsp;</a></span>BUCK_VOUT_TRIG_PWM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_VOUT_TRIG_PWM&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Control loop Interrupt Vector Settings. </p>
+<p>Control loops are called in dedicated interrupt service routines of PWM events, ADC events or triggered by timers. This section allows users to set and modify the interrupt service routine triggers and their priority to set up and optimize the control system interrupt structure. Buck VOUT control loop is called in PWM interrupt </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00876">876</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga753fe8fc858101ec0f3de3dbd5632929"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga753fe8fc858101ec0f3de3dbd5632929">&#9670;&nbsp;</a></span>BUCK_VOUT_TRIGGER_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_VOUT_TRIGGER_MODE&#160;&#160;&#160;<a class="el" href="a00412.html#ga0cfa7f19452962e44f33d62da824775d">BUCK_VOUT_TRIG_PWM</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Currently selected voltage loop interrupt vector. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00879">879</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

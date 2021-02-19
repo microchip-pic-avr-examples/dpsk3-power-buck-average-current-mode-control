@@ -7,7 +7,7 @@ var searchData=
   ['ad_5ftemp_34',['ad_temp',['../a01542.html#ab2720dbc3213b84c266064217dcc53ae',1,'BUCK_FEEDBACK_SETTINGS_s']]],
   ['ad_5fvin_35',['ad_vin',['../a01542.html#a5b2dc4caf0113cd2fd142a46750a1b53',1,'BUCK_FEEDBACK_SETTINGS_s']]],
   ['ad_5fvout_36',['ad_vout',['../a01542.html#ad59de826ef732a92cec6f00ff84c8d01',1,'BUCK_FEEDBACK_SETTINGS_s']]],
-  ['adaptive_20gain_20control_20feed_20forward_37',['Adaptive Gain Control Feed Forward',['../a00414.html',1,'']]],
+  ['adaptive_20gain_20control_20feed_20forward_37',['Adaptive Gain Control Feed Forward',['../a00411.html',1,'']]],
   ['adc_5factive_38',['adc_active',['../a01486.html#ae04b22175817e3ca9a061687c0d90786',1,'BUCK_CONVERTER_STATUS_s']]],
   ['adc_5fbuffer_39',['adc_buffer',['../a01538.html#ae6b3bf1e59067bcf24c50032a88b454e',1,'BUCK_ADC_INPUT_SETTINGS_s']]],
   ['adc_5fcore_40',['adc_core',['../a01538.html#a1108a003f371af97be13ed110ebdf23b',1,'BUCK_ADC_INPUT_SETTINGS_s']]],

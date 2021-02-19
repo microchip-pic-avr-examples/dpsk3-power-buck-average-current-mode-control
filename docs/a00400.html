@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Conversion Macros</title>
+<title>Digital Power Starter Kit 3 Firmware: User Settings</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -97,655 +97,339 @@ $(document).ready(function(){initNavTree('a00400.html',''); initResizable(); });
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Conversion Macros<div class="ingroups"><a class="el" href="a00531.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00398.html">Input Voltage Feedback</a></div></div>  </div>
+<div class="title">User Settings<div class="ingroups"><a class="el" href="a00531.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00399.html">Output Voltage Feedback</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Conversion macros for user-declarations of input voltage feedback parameters.  
+<p>User-declaration of output voltage feedback parameters using physical quantities.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Conversion Macros:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for User Settings:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00400.svg" width="350" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00400.svg" width="331" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <table class="memberdecls">
-<tr class="memitem:ga0400a9956f7aa27d775cdfb00cd12e5d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#ga0400a9956f7aa27d775cdfb00cd12e5d">BUCK_VIN_FEEDBACK_GAIN</a>&#160;&#160;&#160;(float)((<a class="el" href="a00399.html#gab95ae3ec4f9a91b3a65fbeedc2d5f3dd">BUCK_VIN_R2</a>) / (<a class="el" href="a00399.html#ga1e5a2551445274f32a9dde1ccab41511">BUCK_VIN_R1</a> + <a class="el" href="a00399.html#gab95ae3ec4f9a91b3a65fbeedc2d5f3dd">BUCK_VIN_R2</a>))</td></tr>
-<tr class="memdesc:ga0400a9956f7aa27d775cdfb00cd12e5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion macros of input voltage feedback parameters.  <a href="a00400.html#ga0400a9956f7aa27d775cdfb00cd12e5d">More...</a><br /></td></tr>
-<tr class="separator:ga0400a9956f7aa27d775cdfb00cd12e5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa29edd273b98ce34192834726820635c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#gaa29edd273b98ce34192834726820635c">BUCK_VIN_MIN</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#ga2b9d7fd5b2702046315df96e0dac53a6">BUCK_VIN_MINIMUM</a> * <a class="el" href="a00400.html#ga0400a9956f7aa27d775cdfb00cd12e5d">BUCK_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:gaa29edd273b98ce34192834726820635c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum input voltage.  <a href="a00400.html#gaa29edd273b98ce34192834726820635c">More...</a><br /></td></tr>
-<tr class="separator:gaa29edd273b98ce34192834726820635c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab5fe8834938982fdd2e9c6773866542b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#gab5fe8834938982fdd2e9c6773866542b">BUCK_VIN_NOM</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#ga5c7772209d64e3a378005e91041e4909">BUCK_VIN_NOMINAL</a> * <a class="el" href="a00400.html#ga0400a9956f7aa27d775cdfb00cd12e5d">BUCK_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:gab5fe8834938982fdd2e9c6773866542b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nominal input voltage.  <a href="a00400.html#gab5fe8834938982fdd2e9c6773866542b">More...</a><br /></td></tr>
-<tr class="separator:gab5fe8834938982fdd2e9c6773866542b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaab4319c2b78139af3fe8eb251d01fadf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#gaab4319c2b78139af3fe8eb251d01fadf">BUCK_VIN_MAX</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#gaf44f0978ee4afa8c9934405d94c4f7a7">BUCK_VIN_MAXIMUM</a> * <a class="el" href="a00400.html#ga0400a9956f7aa27d775cdfb00cd12e5d">BUCK_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:gaab4319c2b78139af3fe8eb251d01fadf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum input voltage.  <a href="a00400.html#gaab4319c2b78139af3fe8eb251d01fadf">More...</a><br /></td></tr>
-<tr class="separator:gaab4319c2b78139af3fe8eb251d01fadf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga34bc0d6f4ab547c99b2c02c1302f5ecf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#ga34bc0d6f4ab547c99b2c02c1302f5ecf">BUCK_VIN_HYST</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#gac9d550e31988f099595df4e1cf57c6fe">BUCK_VIN_HYSTERESIS</a> * <a class="el" href="a00400.html#ga0400a9956f7aa27d775cdfb00cd12e5d">BUCK_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:ga34bc0d6f4ab547c99b2c02c1302f5ecf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Over Voltage LOck Out voltage <br  />
-  <a href="a00400.html#ga34bc0d6f4ab547c99b2c02c1302f5ecf">More...</a><br /></td></tr>
-<tr class="separator:ga34bc0d6f4ab547c99b2c02c1302f5ecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2b2b1af5d1f595d3d30d8b33fe20049e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#ga2b2b1af5d1f595d3d30d8b33fe20049e">BUCK_VIN_UVLO_TRIP</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#ga5bb8349b54c2abdb048d8c6cb5abb97a">BUCK_VIN_UNDER_VOLTAGE</a> * <a class="el" href="a00400.html#ga0400a9956f7aa27d775cdfb00cd12e5d">BUCK_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:ga2b2b1af5d1f595d3d30d8b33fe20049e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Under Voltage LOck Out voltage.  <a href="a00400.html#ga2b2b1af5d1f595d3d30d8b33fe20049e">More...</a><br /></td></tr>
-<tr class="separator:ga2b2b1af5d1f595d3d30d8b33fe20049e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4e30efeba3e4eabf4d96b1649dc7866d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#ga4e30efeba3e4eabf4d96b1649dc7866d">BUCK_VIN_UVLO_RELEASE</a>&#160;&#160;&#160;(uint16_t)((<a class="el" href="a00399.html#ga5bb8349b54c2abdb048d8c6cb5abb97a">BUCK_VIN_UNDER_VOLTAGE</a> + <a class="el" href="a00399.html#gac9d550e31988f099595df4e1cf57c6fe">BUCK_VIN_HYSTERESIS</a>) * <a class="el" href="a00400.html#ga0400a9956f7aa27d775cdfb00cd12e5d">BUCK_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:ga4e30efeba3e4eabf4d96b1649dc7866d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Under Voltage LOck Out voltage.  <a href="a00400.html#ga4e30efeba3e4eabf4d96b1649dc7866d">More...</a><br /></td></tr>
-<tr class="separator:ga4e30efeba3e4eabf4d96b1649dc7866d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac98e158cb73b23b08617446fb8839e16"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#gac98e158cb73b23b08617446fb8839e16">BUCK_VIN_OVLO_TRIP</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#ga045299d4d5087811ae36728c59f4f8fb">BUCK_VIN_OVER_VOLTAGE</a> * <a class="el" href="a00400.html#ga0400a9956f7aa27d775cdfb00cd12e5d">BUCK_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:gac98e158cb73b23b08617446fb8839e16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Over Voltage LOck Out voltage.  <a href="a00400.html#gac98e158cb73b23b08617446fb8839e16">More...</a><br /></td></tr>
-<tr class="separator:gac98e158cb73b23b08617446fb8839e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga88fedea7d8380c9ca87e2e98f05a7339"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#ga88fedea7d8380c9ca87e2e98f05a7339">BUCK_VIN_OVLO_RELEASE</a>&#160;&#160;&#160;(uint16_t)((<a class="el" href="a00399.html#ga045299d4d5087811ae36728c59f4f8fb">BUCK_VIN_OVER_VOLTAGE</a> - <a class="el" href="a00399.html#gac9d550e31988f099595df4e1cf57c6fe">BUCK_VIN_HYSTERESIS</a>) * <a class="el" href="a00400.html#ga0400a9956f7aa27d775cdfb00cd12e5d">BUCK_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:ga88fedea7d8380c9ca87e2e98f05a7339"><td class="mdescLeft">&#160;</td><td class="mdescRight">Over Voltage LOck Out voltage.  <a href="a00400.html#ga88fedea7d8380c9ca87e2e98f05a7339">More...</a><br /></td></tr>
-<tr class="separator:ga88fedea7d8380c9ca87e2e98f05a7339"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaebdc8f2678e3d0bc7d44bfb45c57f496"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#gaebdc8f2678e3d0bc7d44bfb45c57f496">BUCK_VIN_ADC_TRGDLY</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#ga424be83a416e00c8a543dba4c4fc0b4b">BUCK_VIN_ADC_TRG_DELAY</a> / <a class="el" href="a00378.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td></tr>
-<tr class="memdesc:gaebdc8f2678e3d0bc7d44bfb45c57f496"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input voltage ADC trigger delay.  <a href="a00400.html#gaebdc8f2678e3d0bc7d44bfb45c57f496">More...</a><br /></td></tr>
-<tr class="separator:gaebdc8f2678e3d0bc7d44bfb45c57f496"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabd59b02a2ace754dfccc9c42b45e2b7e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#gabd59b02a2ace754dfccc9c42b45e2b7e">BUCK_VIN_OFFSET</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#gaf593cd65bd5f4c5e89e53a2f18eee78f">BUCK_VIN_FEEDBACK_OFFSET</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:gabd59b02a2ace754dfccc9c42b45e2b7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input voltage feedback offset.  <a href="a00400.html#gabd59b02a2ace754dfccc9c42b45e2b7e">More...</a><br /></td></tr>
-<tr class="separator:gabd59b02a2ace754dfccc9c42b45e2b7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7eea84f9319a9c04857d0061c8c8b332"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#ga7eea84f9319a9c04857d0061c8c8b332">BUCK_VIN_NORM_INV_G</a>&#160;&#160;&#160;(float)(1.0/<a class="el" href="a00400.html#ga0400a9956f7aa27d775cdfb00cd12e5d">BUCK_VIN_FEEDBACK_GAIN</a>)</td></tr>
-<tr class="memdesc:ga7eea84f9319a9c04857d0061c8c8b332"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverted feedback gain required for value normalization.  <a href="a00400.html#ga7eea84f9319a9c04857d0061c8c8b332">More...</a><br /></td></tr>
-<tr class="separator:ga7eea84f9319a9c04857d0061c8c8b332"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga961467f632e6d14a705ae5bde5026acc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#ga961467f632e6d14a705ae5bde5026acc">BUCK_VIN_NORM_SCALER</a>&#160;&#160;&#160;(int16_t)(ceil(log(<a class="el" href="a00400.html#ga7eea84f9319a9c04857d0061c8c8b332">BUCK_VIN_NORM_INV_G</a>)) + 1)</td></tr>
-<tr class="memdesc:ga961467f632e6d14a705ae5bde5026acc"><td class="mdescLeft">&#160;</td><td class="mdescRight">VIN normalization <br  />
-  <a href="a00400.html#ga961467f632e6d14a705ae5bde5026acc">More...</a><br /></td></tr>
-<tr class="separator:ga961467f632e6d14a705ae5bde5026acc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga22cf517ef3554a6157e25905d7d1755a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#ga22cf517ef3554a6157e25905d7d1755a">BUCK_VIN_NORM_FACTOR</a>&#160;&#160;&#160;(int16_t)((<a class="el" href="a00400.html#ga7eea84f9319a9c04857d0061c8c8b332">BUCK_VIN_NORM_INV_G</a> / pow(2.0, <a class="el" href="a00400.html#ga961467f632e6d14a705ae5bde5026acc">BUCK_VIN_NORM_SCALER</a>)) * (pow(2.0, 15)-1))</td></tr>
-<tr class="memdesc:ga22cf517ef3554a6157e25905d7d1755a"><td class="mdescLeft">&#160;</td><td class="mdescRight">VIN normalization factor scaled in Q15.  <a href="a00400.html#ga22cf517ef3554a6157e25905d7d1755a">More...</a><br /></td></tr>
-<tr class="separator:ga22cf517ef3554a6157e25905d7d1755a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9d3deddd69546a95751204fe12f2a30c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#ga9d3deddd69546a95751204fe12f2a30c">BUCK_VIN_RANGE_MAX</a>&#160;&#160;&#160;(float)(<a class="el" href="a00377.html#ga317868c528ebe27fbca094a8bc2d910c">ADC_REFERENCE</a> * <a class="el" href="a00400.html#ga7eea84f9319a9c04857d0061c8c8b332">BUCK_VIN_NORM_INV_G</a>)</td></tr>
-<tr class="separator:ga9d3deddd69546a95751204fe12f2a30c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9cace240630336ea083441dec15683b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#ga9cace240630336ea083441dec15683b5">BOOST_VIN_FEEDBACK_GAIN</a>&#160;&#160;&#160;(float)((<a class="el" href="a00399.html#ga305c8ee15fc7ffea43b3621db232a51d">BOOST_VIN_R2</a>) / (<a class="el" href="a00399.html#ga5cbf22f4ec2ccdfdefead58c0cea6f8d">BOOST_VIN_R1</a> + <a class="el" href="a00399.html#ga305c8ee15fc7ffea43b3621db232a51d">BOOST_VIN_R2</a>))</td></tr>
-<tr class="memdesc:ga9cace240630336ea083441dec15683b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion macros of input voltage feedback parameters.  <a href="a00400.html#ga9cace240630336ea083441dec15683b5">More...</a><br /></td></tr>
-<tr class="separator:ga9cace240630336ea083441dec15683b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae03babd3083aaf3c89fd217a1b1a0440"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#gae03babd3083aaf3c89fd217a1b1a0440">BOOST_VIN_MIN</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#ga38b44ccc543c64207ce806f1d3a15ebc">BOOST_VIN_MINIMUM</a> * <a class="el" href="a00400.html#ga9cace240630336ea083441dec15683b5">BOOST_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:gae03babd3083aaf3c89fd217a1b1a0440"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum input voltage.  <a href="a00400.html#gae03babd3083aaf3c89fd217a1b1a0440">More...</a><br /></td></tr>
-<tr class="separator:gae03babd3083aaf3c89fd217a1b1a0440"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf1fff39730a3455e8c78a2537b256b05"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#gaf1fff39730a3455e8c78a2537b256b05">BOOST_VIN_NOM</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#gad24de47b6326d94841299f3d4063edff">BOOST_VIN_NOMINAL</a> * <a class="el" href="a00400.html#ga9cace240630336ea083441dec15683b5">BOOST_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:gaf1fff39730a3455e8c78a2537b256b05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nominal input voltage.  <a href="a00400.html#gaf1fff39730a3455e8c78a2537b256b05">More...</a><br /></td></tr>
-<tr class="separator:gaf1fff39730a3455e8c78a2537b256b05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf2280da89dcd39524c3ce77c9a602365"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#gaf2280da89dcd39524c3ce77c9a602365">BOOST_VIN_MAX</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#ga58ae34b85408432b3ba0d7774d9b34f1">BOOST_VIN_MAXIMUM</a> * <a class="el" href="a00400.html#ga9cace240630336ea083441dec15683b5">BOOST_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:gaf2280da89dcd39524c3ce77c9a602365"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum input voltage.  <a href="a00400.html#gaf2280da89dcd39524c3ce77c9a602365">More...</a><br /></td></tr>
-<tr class="separator:gaf2280da89dcd39524c3ce77c9a602365"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac85c0c0ed5c3852936cd3ad95737345d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#gac85c0c0ed5c3852936cd3ad95737345d">BOOST_VIN_HYST</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#ga9bd075cb27c7aef0a12dba19e0509a48">BOOST_VIN_HYSTERESIS</a> * <a class="el" href="a00400.html#ga9cace240630336ea083441dec15683b5">BOOST_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:gac85c0c0ed5c3852936cd3ad95737345d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Over Voltage LOck Out voltage <br  />
-  <a href="a00400.html#gac85c0c0ed5c3852936cd3ad95737345d">More...</a><br /></td></tr>
-<tr class="separator:gac85c0c0ed5c3852936cd3ad95737345d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadbf0334f346376840bf1b655d5423915"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#gadbf0334f346376840bf1b655d5423915">BOOST_VIN_UVLO_TRIP</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#gad0982e95f129233155bda6bbd3f37f6b">BOOST_VIN_UNDER_VOLTAGE</a> * <a class="el" href="a00400.html#ga9cace240630336ea083441dec15683b5">BOOST_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:gadbf0334f346376840bf1b655d5423915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Under Voltage LOck Out voltage.  <a href="a00400.html#gadbf0334f346376840bf1b655d5423915">More...</a><br /></td></tr>
-<tr class="separator:gadbf0334f346376840bf1b655d5423915"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae6514d59d97023025b77db8e925a93c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#gae6514d59d97023025b77db8e925a93c2">BOOST_VIN_UVLO_RELEASE</a>&#160;&#160;&#160;(uint16_t)((<a class="el" href="a00399.html#gad0982e95f129233155bda6bbd3f37f6b">BOOST_VIN_UNDER_VOLTAGE</a> + <a class="el" href="a00399.html#ga9bd075cb27c7aef0a12dba19e0509a48">BOOST_VIN_HYSTERESIS</a>) * <a class="el" href="a00400.html#ga9cace240630336ea083441dec15683b5">BOOST_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:gae6514d59d97023025b77db8e925a93c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Under Voltage LOck Out voltage.  <a href="a00400.html#gae6514d59d97023025b77db8e925a93c2">More...</a><br /></td></tr>
-<tr class="separator:gae6514d59d97023025b77db8e925a93c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga25365c19b854de73b8f89dd20be1366c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#ga25365c19b854de73b8f89dd20be1366c">BOOST_VIN_OVLO_TRIP</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#ga731ec038ed3218a73f37f7c82d05dd39">BOOST_VIN_OVER_VOLTAGE</a> * <a class="el" href="a00400.html#ga9cace240630336ea083441dec15683b5">BOOST_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:ga25365c19b854de73b8f89dd20be1366c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Over Voltage LOck Out voltage.  <a href="a00400.html#ga25365c19b854de73b8f89dd20be1366c">More...</a><br /></td></tr>
-<tr class="separator:ga25365c19b854de73b8f89dd20be1366c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga24d4d1c1e4cbd135e0f5a52cea0340d5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#ga24d4d1c1e4cbd135e0f5a52cea0340d5">BOOST_VIN_OVLO_RELEASE</a>&#160;&#160;&#160;(uint16_t)((<a class="el" href="a00399.html#ga731ec038ed3218a73f37f7c82d05dd39">BOOST_VIN_OVER_VOLTAGE</a> - <a class="el" href="a00399.html#ga9bd075cb27c7aef0a12dba19e0509a48">BOOST_VIN_HYSTERESIS</a>) * <a class="el" href="a00400.html#ga9cace240630336ea083441dec15683b5">BOOST_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:ga24d4d1c1e4cbd135e0f5a52cea0340d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Over Voltage LOck Out voltage.  <a href="a00400.html#ga24d4d1c1e4cbd135e0f5a52cea0340d5">More...</a><br /></td></tr>
-<tr class="separator:ga24d4d1c1e4cbd135e0f5a52cea0340d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1a677ef967c0dde1e894c81d4b2042b4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#ga1a677ef967c0dde1e894c81d4b2042b4">BOOST_VIN_ADC_TRGDLY</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#gabf31dcb35b27258749eaebc91bc25c86">BOOST_VIN_ADC_TRG_DELAY</a> / <a class="el" href="a00378.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td></tr>
-<tr class="memdesc:ga1a677ef967c0dde1e894c81d4b2042b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input voltage ADC trigger delay.  <a href="a00400.html#ga1a677ef967c0dde1e894c81d4b2042b4">More...</a><br /></td></tr>
-<tr class="separator:ga1a677ef967c0dde1e894c81d4b2042b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaaa704ebe3558b031bff6808e3246de9f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#gaaa704ebe3558b031bff6808e3246de9f">BOOST_VIN_OFFSET</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#gaebdcf7b89be3517cbe6464a32216c341">BOOST_VIN_FEEDBACK_OFFSET</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:gaaa704ebe3558b031bff6808e3246de9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input voltage feedback offset.  <a href="a00400.html#gaaa704ebe3558b031bff6808e3246de9f">More...</a><br /></td></tr>
-<tr class="separator:gaaa704ebe3558b031bff6808e3246de9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafd59328ac895312cd34565a0542640b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#gafd59328ac895312cd34565a0542640b8">BOOST_VIN_NORM_INV_G</a>&#160;&#160;&#160;(float)(1.0/<a class="el" href="a00400.html#ga9cace240630336ea083441dec15683b5">BOOST_VIN_FEEDBACK_GAIN</a>)</td></tr>
-<tr class="memdesc:gafd59328ac895312cd34565a0542640b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverted feedback gain required for value normalization.  <a href="a00400.html#gafd59328ac895312cd34565a0542640b8">More...</a><br /></td></tr>
-<tr class="separator:gafd59328ac895312cd34565a0542640b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaaace4e13d15ff51ac2931bf26b210367"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#gaaace4e13d15ff51ac2931bf26b210367">BOOST_VIN_NORM_SCALER</a>&#160;&#160;&#160;(int16_t)(ceil(log(<a class="el" href="a00400.html#gafd59328ac895312cd34565a0542640b8">BOOST_VIN_NORM_INV_G</a>)) + 1)</td></tr>
-<tr class="memdesc:gaaace4e13d15ff51ac2931bf26b210367"><td class="mdescLeft">&#160;</td><td class="mdescRight">VIN normalization <br  />
-  <a href="a00400.html#gaaace4e13d15ff51ac2931bf26b210367">More...</a><br /></td></tr>
-<tr class="separator:gaaace4e13d15ff51ac2931bf26b210367"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0c1aa88f5e070f1420734328cd035082"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#ga0c1aa88f5e070f1420734328cd035082">BOOST_VIN_NORM_FACTOR</a>&#160;&#160;&#160;(int16_t)((<a class="el" href="a00400.html#gafd59328ac895312cd34565a0542640b8">BOOST_VIN_NORM_INV_G</a> / pow(2.0, <a class="el" href="a00400.html#gaaace4e13d15ff51ac2931bf26b210367">BOOST_VIN_NORM_SCALER</a>)) * (pow(2.0, 15)-1))</td></tr>
-<tr class="memdesc:ga0c1aa88f5e070f1420734328cd035082"><td class="mdescLeft">&#160;</td><td class="mdescRight">VIN normalization factor scaled in Q15.  <a href="a00400.html#ga0c1aa88f5e070f1420734328cd035082">More...</a><br /></td></tr>
-<tr class="separator:ga0c1aa88f5e070f1420734328cd035082"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab452621af87712afca05c8dc31845d0a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#gab452621af87712afca05c8dc31845d0a">BOOST_VIN_RANGE_MAX</a>&#160;&#160;&#160;(float)(<a class="el" href="a00377.html#ga317868c528ebe27fbca094a8bc2d910c">ADC_REFERENCE</a> * <a class="el" href="a00400.html#gafd59328ac895312cd34565a0542640b8">BOOST_VIN_NORM_INV_G</a>)</td></tr>
-<tr class="separator:gab452621af87712afca05c8dc31845d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga28660f68fd69aa1cf4c352f88634060c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#ga28660f68fd69aa1cf4c352f88634060c">BUCK_VOUT_NOMINAL</a>&#160;&#160;&#160;(float)3.300</td></tr>
+<tr class="memdesc:ga28660f68fd69aa1cf4c352f88634060c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration of output voltage feedback properties.  <a href="a00400.html#ga28660f68fd69aa1cf4c352f88634060c">More...</a><br /></td></tr>
+<tr class="separator:ga28660f68fd69aa1cf4c352f88634060c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf67774fbccd9ee5ac60e5aed4cc7c5b4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#gaf67774fbccd9ee5ac60e5aed4cc7c5b4">BUCK_VOUT_TOLERANCE_MAX</a>&#160;&#160;&#160;(float)0.500</td></tr>
+<tr class="memdesc:gaf67774fbccd9ee5ac60e5aed4cc7c5b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output voltage tolerance [+/-].  <a href="a00400.html#gaf67774fbccd9ee5ac60e5aed4cc7c5b4">More...</a><br /></td></tr>
+<tr class="separator:gaf67774fbccd9ee5ac60e5aed4cc7c5b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga31ccbf02b1090ae456771ab15c6b632b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#ga31ccbf02b1090ae456771ab15c6b632b">BUCK_VOUT_TOLERANCE_MIN</a>&#160;&#160;&#160;(float)0.100</td></tr>
+<tr class="memdesc:ga31ccbf02b1090ae456771ab15c6b632b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output voltage tolerance [+/-].  <a href="a00400.html#ga31ccbf02b1090ae456771ab15c6b632b">More...</a><br /></td></tr>
+<tr class="separator:ga31ccbf02b1090ae456771ab15c6b632b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf247595693964a16cab1ca49e91d0825"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#gaf247595693964a16cab1ca49e91d0825">BUCK_VOUT_DIV_R1</a>&#160;&#160;&#160;(float)(1.000)</td></tr>
+<tr class="memdesc:gaf247595693964a16cab1ca49e91d0825"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upper voltage divider resistor in kOhm.  <a href="a00400.html#gaf247595693964a16cab1ca49e91d0825">More...</a><br /></td></tr>
+<tr class="separator:gaf247595693964a16cab1ca49e91d0825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4a6f31de7c3a357b3747d872b39a33e1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#ga4a6f31de7c3a357b3747d872b39a33e1">BUCK_VOUT_DIV_R2</a>&#160;&#160;&#160;(float)(1.000)</td></tr>
+<tr class="memdesc:ga4a6f31de7c3a357b3747d872b39a33e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lower voltage divider resistor in kOhm.  <a href="a00400.html#ga4a6f31de7c3a357b3747d872b39a33e1">More...</a><br /></td></tr>
+<tr class="separator:ga4a6f31de7c3a357b3747d872b39a33e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga48f54a116cb069cff526d482aa83fafd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#ga48f54a116cb069cff526d482aa83fafd">BUCK_VOUT_FEEDBACK_OFFSET</a>&#160;&#160;&#160;(float)(0.0)</td></tr>
+<tr class="memdesc:ga48f54a116cb069cff526d482aa83fafd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Physical, static signal offset in [V].  <a href="a00400.html#ga48f54a116cb069cff526d482aa83fafd">More...</a><br /></td></tr>
+<tr class="separator:ga48f54a116cb069cff526d482aa83fafd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae49c146c9868c9b950a541ebb1c3fcb6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#gae49c146c9868c9b950a541ebb1c3fcb6">BUCK_VOUT_ADC_TRG_DELAY</a>&#160;&#160;&#160;(float)(20.0e-9)</td></tr>
+<tr class="memdesc:gae49c146c9868c9b950a541ebb1c3fcb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trigger delay in [sec].  <a href="a00400.html#gae49c146c9868c9b950a541ebb1c3fcb6">More...</a><br /></td></tr>
+<tr class="separator:gae49c146c9868c9b950a541ebb1c3fcb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga56b83d27441bfa88e19670b4dedf2de8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#ga56b83d27441bfa88e19670b4dedf2de8">BOOST_VOUT_NOMINAL</a>&#160;&#160;&#160;(float)15.00</td></tr>
+<tr class="memdesc:ga56b83d27441bfa88e19670b4dedf2de8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration of output voltage feedback properties.  <a href="a00400.html#ga56b83d27441bfa88e19670b4dedf2de8">More...</a><br /></td></tr>
+<tr class="separator:ga56b83d27441bfa88e19670b4dedf2de8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7bd7a9ba2474596e89b528ed8a473ef0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#ga7bd7a9ba2474596e89b528ed8a473ef0">BOOST_VOUT_TOLERANCE_MAX</a>&#160;&#160;&#160;(float)0.500</td></tr>
+<tr class="memdesc:ga7bd7a9ba2474596e89b528ed8a473ef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output voltage tolerance [+/-].  <a href="a00400.html#ga7bd7a9ba2474596e89b528ed8a473ef0">More...</a><br /></td></tr>
+<tr class="separator:ga7bd7a9ba2474596e89b528ed8a473ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga144893b4f72cc59c6b0ff16935025a3b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#ga144893b4f72cc59c6b0ff16935025a3b">BOOST_VOUT_TOLERANCE_MIN</a>&#160;&#160;&#160;(float)0.100</td></tr>
+<tr class="memdesc:ga144893b4f72cc59c6b0ff16935025a3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output voltage tolerance [+/-].  <a href="a00400.html#ga144893b4f72cc59c6b0ff16935025a3b">More...</a><br /></td></tr>
+<tr class="separator:ga144893b4f72cc59c6b0ff16935025a3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaece94d159a42f7cf2300ac46103f482f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#gaece94d159a42f7cf2300ac46103f482f">BOOST_VOUT_VFWD_DROP_MAX</a>&#160;&#160;&#160;(float)0.400</td></tr>
+<tr class="memdesc:gaece94d159a42f7cf2300ac46103f482f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recitifer diode forward voltage drop maximum.  <a href="a00400.html#gaece94d159a42f7cf2300ac46103f482f">More...</a><br /></td></tr>
+<tr class="separator:gaece94d159a42f7cf2300ac46103f482f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae629607ddac2fc054db8ca364ec1a9de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#gae629607ddac2fc054db8ca364ec1a9de">BOOST_VOUT_DIV_R1</a>&#160;&#160;&#160;(float)(6.980)</td></tr>
+<tr class="memdesc:gae629607ddac2fc054db8ca364ec1a9de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upper voltage divider resistor in kOhm.  <a href="a00400.html#gae629607ddac2fc054db8ca364ec1a9de">More...</a><br /></td></tr>
+<tr class="separator:gae629607ddac2fc054db8ca364ec1a9de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2a1cf9da772e7fcb7803898deb0ebe86"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#ga2a1cf9da772e7fcb7803898deb0ebe86">BOOST_VOUT_DIV_R2</a>&#160;&#160;&#160;(float)(1.000)</td></tr>
+<tr class="memdesc:ga2a1cf9da772e7fcb7803898deb0ebe86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lower voltage divider resistor in kOhm.  <a href="a00400.html#ga2a1cf9da772e7fcb7803898deb0ebe86">More...</a><br /></td></tr>
+<tr class="separator:ga2a1cf9da772e7fcb7803898deb0ebe86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae78f23318f657874fa3169b6c7659908"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#gae78f23318f657874fa3169b6c7659908">BOOST_VOUT_FEEDBACK_OFFSET</a>&#160;&#160;&#160;(float)(0.0)</td></tr>
+<tr class="memdesc:gae78f23318f657874fa3169b6c7659908"><td class="mdescLeft">&#160;</td><td class="mdescRight">Physical, static signal offset in [V].  <a href="a00400.html#gae78f23318f657874fa3169b6c7659908">More...</a><br /></td></tr>
+<tr class="separator:gae78f23318f657874fa3169b6c7659908"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga930ff93bcf4b17bda050d16c61ee496e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#ga930ff93bcf4b17bda050d16c61ee496e">BOOST_VOUT_ADC_TRG_DELAY</a>&#160;&#160;&#160;(float)(20.0e-9)</td></tr>
+<tr class="memdesc:ga930ff93bcf4b17bda050d16c61ee496e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trigger delay in [sec].  <a href="a00400.html#ga930ff93bcf4b17bda050d16c61ee496e">More...</a><br /></td></tr>
+<tr class="separator:ga930ff93bcf4b17bda050d16c61ee496e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Conversion macros for user-declarations of input voltage feedback parameters. </p>
+<p>User-declaration of output voltage feedback parameters using physical quantities. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga1a677ef967c0dde1e894c81d4b2042b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga1a677ef967c0dde1e894c81d4b2042b4">&#9670;&nbsp;</a></span>BOOST_VIN_ADC_TRGDLY</h2>
+<a id="ga930ff93bcf4b17bda050d16c61ee496e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga930ff93bcf4b17bda050d16c61ee496e">&#9670;&nbsp;</a></span>BOOST_VOUT_ADC_TRG_DELAY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VIN_ADC_TRGDLY&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#gabf31dcb35b27258749eaebc91bc25c86">BOOST_VIN_ADC_TRG_DELAY</a> / <a class="el" href="a00378.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td>
+          <td class="memname">#define BOOST_VOUT_ADC_TRG_DELAY&#160;&#160;&#160;(float)(20.0e-9)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Input voltage ADC trigger delay. </p>
+<p>Trigger delay in [sec]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01067">1067</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01097">1097</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga9cace240630336ea083441dec15683b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9cace240630336ea083441dec15683b5">&#9670;&nbsp;</a></span>BOOST_VIN_FEEDBACK_GAIN</h2>
+<a id="gae629607ddac2fc054db8ca364ec1a9de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae629607ddac2fc054db8ca364ec1a9de">&#9670;&nbsp;</a></span>BOOST_VOUT_DIV_R1</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VIN_FEEDBACK_GAIN&#160;&#160;&#160;(float)((<a class="el" href="a00399.html#ga305c8ee15fc7ffea43b3621db232a51d">BOOST_VIN_R2</a>) / (<a class="el" href="a00399.html#ga5cbf22f4ec2ccdfdefead58c0cea6f8d">BOOST_VIN_R1</a> + <a class="el" href="a00399.html#ga305c8ee15fc7ffea43b3621db232a51d">BOOST_VIN_R2</a>))</td>
+          <td class="memname">#define BOOST_VOUT_DIV_R1&#160;&#160;&#160;(float)(6.980)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Conversion macros of input voltage feedback parameters. </p>
-<p>These conversion macros are used to convert user settings defined as physical quantities into binary (integer) numbers, which will be written to registers and variables and used in calculations throughout the firmware. </p>
+<p>Upper voltage divider resistor in kOhm. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01058">1058</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01094">1094</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gac85c0c0ed5c3852936cd3ad95737345d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac85c0c0ed5c3852936cd3ad95737345d">&#9670;&nbsp;</a></span>BOOST_VIN_HYST</h2>
+<a id="ga2a1cf9da772e7fcb7803898deb0ebe86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2a1cf9da772e7fcb7803898deb0ebe86">&#9670;&nbsp;</a></span>BOOST_VOUT_DIV_R2</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VIN_HYST&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#ga9bd075cb27c7aef0a12dba19e0509a48">BOOST_VIN_HYSTERESIS</a> * <a class="el" href="a00400.html#ga9cace240630336ea083441dec15683b5">BOOST_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+          <td class="memname">#define BOOST_VOUT_DIV_R2&#160;&#160;&#160;(float)(1.000)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Over Voltage LOck Out voltage <br  />
- </p>
+<p>Lower voltage divider resistor in kOhm. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01062">1062</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01095">1095</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gaf2280da89dcd39524c3ce77c9a602365"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf2280da89dcd39524c3ce77c9a602365">&#9670;&nbsp;</a></span>BOOST_VIN_MAX</h2>
+<a id="gae78f23318f657874fa3169b6c7659908"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae78f23318f657874fa3169b6c7659908">&#9670;&nbsp;</a></span>BOOST_VOUT_FEEDBACK_OFFSET</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VIN_MAX&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#ga58ae34b85408432b3ba0d7774d9b34f1">BOOST_VIN_MAXIMUM</a> * <a class="el" href="a00400.html#ga9cace240630336ea083441dec15683b5">BOOST_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+          <td class="memname">#define BOOST_VOUT_FEEDBACK_OFFSET&#160;&#160;&#160;(float)(0.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Maximum input voltage. </p>
+<p>Physical, static signal offset in [V]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01061">1061</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01096">1096</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gae03babd3083aaf3c89fd217a1b1a0440"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae03babd3083aaf3c89fd217a1b1a0440">&#9670;&nbsp;</a></span>BOOST_VIN_MIN</h2>
+<a id="ga56b83d27441bfa88e19670b4dedf2de8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga56b83d27441bfa88e19670b4dedf2de8">&#9670;&nbsp;</a></span>BOOST_VOUT_NOMINAL</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VIN_MIN&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#ga38b44ccc543c64207ce806f1d3a15ebc">BOOST_VIN_MINIMUM</a> * <a class="el" href="a00400.html#ga9cace240630336ea083441dec15683b5">BOOST_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+          <td class="memname">#define BOOST_VOUT_NOMINAL&#160;&#160;&#160;(float)15.00</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Minimum input voltage. </p>
+<p>Declaration of output voltage feedback properties. </p>
+<p>In this section the output voltage feedback signal scaling, gain, valid signal limits and nominal operating point is specified. Physical quantities are used to define values. Macros are used to convert given physical values into binary (integer) number to be written into SFRs and variables. Nominal output voltage </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01059">1059</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01089">1089</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gaf1fff39730a3455e8c78a2537b256b05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf1fff39730a3455e8c78a2537b256b05">&#9670;&nbsp;</a></span>BOOST_VIN_NOM</h2>
+<a id="ga7bd7a9ba2474596e89b528ed8a473ef0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7bd7a9ba2474596e89b528ed8a473ef0">&#9670;&nbsp;</a></span>BOOST_VOUT_TOLERANCE_MAX</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VIN_NOM&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#gad24de47b6326d94841299f3d4063edff">BOOST_VIN_NOMINAL</a> * <a class="el" href="a00400.html#ga9cace240630336ea083441dec15683b5">BOOST_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+          <td class="memname">#define BOOST_VOUT_TOLERANCE_MAX&#160;&#160;&#160;(float)0.500</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Nominal input voltage. </p>
+<p>Output voltage tolerance [+/-]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01060">1060</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01090">1090</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga0c1aa88f5e070f1420734328cd035082"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0c1aa88f5e070f1420734328cd035082">&#9670;&nbsp;</a></span>BOOST_VIN_NORM_FACTOR</h2>
+<a id="ga144893b4f72cc59c6b0ff16935025a3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga144893b4f72cc59c6b0ff16935025a3b">&#9670;&nbsp;</a></span>BOOST_VOUT_TOLERANCE_MIN</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VIN_NORM_FACTOR&#160;&#160;&#160;(int16_t)((<a class="el" href="a00400.html#gafd59328ac895312cd34565a0542640b8">BOOST_VIN_NORM_INV_G</a> / pow(2.0, <a class="el" href="a00400.html#gaaace4e13d15ff51ac2931bf26b210367">BOOST_VIN_NORM_SCALER</a>)) * (pow(2.0, 15)-1))</td>
+          <td class="memname">#define BOOST_VOUT_TOLERANCE_MIN&#160;&#160;&#160;(float)0.100</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>VIN normalization factor scaled in Q15. </p>
+<p>Output voltage tolerance [+/-]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01072">1072</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01091">1091</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gafd59328ac895312cd34565a0542640b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gafd59328ac895312cd34565a0542640b8">&#9670;&nbsp;</a></span>BOOST_VIN_NORM_INV_G</h2>
+<a id="gaece94d159a42f7cf2300ac46103f482f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaece94d159a42f7cf2300ac46103f482f">&#9670;&nbsp;</a></span>BOOST_VOUT_VFWD_DROP_MAX</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VIN_NORM_INV_G&#160;&#160;&#160;(float)(1.0/<a class="el" href="a00400.html#ga9cace240630336ea083441dec15683b5">BOOST_VIN_FEEDBACK_GAIN</a>)</td>
+          <td class="memname">#define BOOST_VOUT_VFWD_DROP_MAX&#160;&#160;&#160;(float)0.400</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Inverted feedback gain required for value normalization. </p>
+<p>Recitifer diode forward voltage drop maximum. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01070">1070</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01092">1092</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gaaace4e13d15ff51ac2931bf26b210367"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaaace4e13d15ff51ac2931bf26b210367">&#9670;&nbsp;</a></span>BOOST_VIN_NORM_SCALER</h2>
+<a id="gae49c146c9868c9b950a541ebb1c3fcb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae49c146c9868c9b950a541ebb1c3fcb6">&#9670;&nbsp;</a></span>BUCK_VOUT_ADC_TRG_DELAY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VIN_NORM_SCALER&#160;&#160;&#160;(int16_t)(ceil(log(<a class="el" href="a00400.html#gafd59328ac895312cd34565a0542640b8">BOOST_VIN_NORM_INV_G</a>)) + 1)</td>
+          <td class="memname">#define BUCK_VOUT_ADC_TRG_DELAY&#160;&#160;&#160;(float)(20.0e-9)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>VIN normalization <br  />
- </p>
+<p>Trigger delay in [sec]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01071">1071</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00470">470</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gaaa704ebe3558b031bff6808e3246de9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaaa704ebe3558b031bff6808e3246de9f">&#9670;&nbsp;</a></span>BOOST_VIN_OFFSET</h2>
+<a id="gaf247595693964a16cab1ca49e91d0825"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf247595693964a16cab1ca49e91d0825">&#9670;&nbsp;</a></span>BUCK_VOUT_DIV_R1</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VIN_OFFSET&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#gaebdcf7b89be3517cbe6464a32216c341">BOOST_VIN_FEEDBACK_OFFSET</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+          <td class="memname">#define BUCK_VOUT_DIV_R1&#160;&#160;&#160;(float)(1.000)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Input voltage feedback offset. </p>
+<p>Upper voltage divider resistor in kOhm. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01068">1068</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00467">467</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga24d4d1c1e4cbd135e0f5a52cea0340d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga24d4d1c1e4cbd135e0f5a52cea0340d5">&#9670;&nbsp;</a></span>BOOST_VIN_OVLO_RELEASE</h2>
+<a id="ga4a6f31de7c3a357b3747d872b39a33e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4a6f31de7c3a357b3747d872b39a33e1">&#9670;&nbsp;</a></span>BUCK_VOUT_DIV_R2</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VIN_OVLO_RELEASE&#160;&#160;&#160;(uint16_t)((<a class="el" href="a00399.html#ga731ec038ed3218a73f37f7c82d05dd39">BOOST_VIN_OVER_VOLTAGE</a> - <a class="el" href="a00399.html#ga9bd075cb27c7aef0a12dba19e0509a48">BOOST_VIN_HYSTERESIS</a>) * <a class="el" href="a00400.html#ga9cace240630336ea083441dec15683b5">BOOST_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+          <td class="memname">#define BUCK_VOUT_DIV_R2&#160;&#160;&#160;(float)(1.000)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Over Voltage LOck Out voltage. </p>
+<p>Lower voltage divider resistor in kOhm. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01066">1066</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00468">468</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga25365c19b854de73b8f89dd20be1366c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga25365c19b854de73b8f89dd20be1366c">&#9670;&nbsp;</a></span>BOOST_VIN_OVLO_TRIP</h2>
+<a id="ga48f54a116cb069cff526d482aa83fafd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga48f54a116cb069cff526d482aa83fafd">&#9670;&nbsp;</a></span>BUCK_VOUT_FEEDBACK_OFFSET</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VIN_OVLO_TRIP&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#ga731ec038ed3218a73f37f7c82d05dd39">BOOST_VIN_OVER_VOLTAGE</a> * <a class="el" href="a00400.html#ga9cace240630336ea083441dec15683b5">BOOST_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+          <td class="memname">#define BUCK_VOUT_FEEDBACK_OFFSET&#160;&#160;&#160;(float)(0.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Over Voltage LOck Out voltage. </p>
+<p>Physical, static signal offset in [V]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01065">1065</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00469">469</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gab452621af87712afca05c8dc31845d0a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab452621af87712afca05c8dc31845d0a">&#9670;&nbsp;</a></span>BOOST_VIN_RANGE_MAX</h2>
+<a id="ga28660f68fd69aa1cf4c352f88634060c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga28660f68fd69aa1cf4c352f88634060c">&#9670;&nbsp;</a></span>BUCK_VOUT_NOMINAL</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VIN_RANGE_MAX&#160;&#160;&#160;(float)(<a class="el" href="a00377.html#ga317868c528ebe27fbca094a8bc2d910c">ADC_REFERENCE</a> * <a class="el" href="a00400.html#gafd59328ac895312cd34565a0542640b8">BOOST_VIN_NORM_INV_G</a>)</td>
+          <td class="memname">#define BUCK_VOUT_NOMINAL&#160;&#160;&#160;(float)3.300</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01074">1074</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p>Declaration of output voltage feedback properties. </p>
+<p>In this section the output voltage feedback signal scaling, gain, valid signal limits and nominal operating point is specified. Physical quantities are used to define values. Macros are used to convert given physical values into binary (integer) number to be written into SFRs and variables. Nominal output voltage </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00463">463</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gae6514d59d97023025b77db8e925a93c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae6514d59d97023025b77db8e925a93c2">&#9670;&nbsp;</a></span>BOOST_VIN_UVLO_RELEASE</h2>
+<a id="gaf67774fbccd9ee5ac60e5aed4cc7c5b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf67774fbccd9ee5ac60e5aed4cc7c5b4">&#9670;&nbsp;</a></span>BUCK_VOUT_TOLERANCE_MAX</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VIN_UVLO_RELEASE&#160;&#160;&#160;(uint16_t)((<a class="el" href="a00399.html#gad0982e95f129233155bda6bbd3f37f6b">BOOST_VIN_UNDER_VOLTAGE</a> + <a class="el" href="a00399.html#ga9bd075cb27c7aef0a12dba19e0509a48">BOOST_VIN_HYSTERESIS</a>) * <a class="el" href="a00400.html#ga9cace240630336ea083441dec15683b5">BOOST_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+          <td class="memname">#define BUCK_VOUT_TOLERANCE_MAX&#160;&#160;&#160;(float)0.500</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Under Voltage LOck Out voltage. </p>
+<p>Output voltage tolerance [+/-]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01064">1064</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00464">464</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gadbf0334f346376840bf1b655d5423915"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadbf0334f346376840bf1b655d5423915">&#9670;&nbsp;</a></span>BOOST_VIN_UVLO_TRIP</h2>
+<a id="ga31ccbf02b1090ae456771ab15c6b632b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga31ccbf02b1090ae456771ab15c6b632b">&#9670;&nbsp;</a></span>BUCK_VOUT_TOLERANCE_MIN</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VIN_UVLO_TRIP&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#gad0982e95f129233155bda6bbd3f37f6b">BOOST_VIN_UNDER_VOLTAGE</a> * <a class="el" href="a00400.html#ga9cace240630336ea083441dec15683b5">BOOST_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+          <td class="memname">#define BUCK_VOUT_TOLERANCE_MIN&#160;&#160;&#160;(float)0.100</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Under Voltage LOck Out voltage. </p>
+<p>Output voltage tolerance [+/-]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01063">1063</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gaebdc8f2678e3d0bc7d44bfb45c57f496"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaebdc8f2678e3d0bc7d44bfb45c57f496">&#9670;&nbsp;</a></span>BUCK_VIN_ADC_TRGDLY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VIN_ADC_TRGDLY&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#ga424be83a416e00c8a543dba4c4fc0b4b">BUCK_VIN_ADC_TRG_DELAY</a> / <a class="el" href="a00378.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Input voltage ADC trigger delay. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00441">441</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga0400a9956f7aa27d775cdfb00cd12e5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0400a9956f7aa27d775cdfb00cd12e5d">&#9670;&nbsp;</a></span>BUCK_VIN_FEEDBACK_GAIN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VIN_FEEDBACK_GAIN&#160;&#160;&#160;(float)((<a class="el" href="a00399.html#gab95ae3ec4f9a91b3a65fbeedc2d5f3dd">BUCK_VIN_R2</a>) / (<a class="el" href="a00399.html#ga1e5a2551445274f32a9dde1ccab41511">BUCK_VIN_R1</a> + <a class="el" href="a00399.html#gab95ae3ec4f9a91b3a65fbeedc2d5f3dd">BUCK_VIN_R2</a>))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Conversion macros of input voltage feedback parameters. </p>
-<p>These conversion macros are used to convert user settings defined as physical quantities into binary (integer) numbers, which will be written to registers and variables and used in calculations throughout the firmware. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00432">432</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga34bc0d6f4ab547c99b2c02c1302f5ecf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga34bc0d6f4ab547c99b2c02c1302f5ecf">&#9670;&nbsp;</a></span>BUCK_VIN_HYST</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VIN_HYST&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#gac9d550e31988f099595df4e1cf57c6fe">BUCK_VIN_HYSTERESIS</a> * <a class="el" href="a00400.html#ga0400a9956f7aa27d775cdfb00cd12e5d">BUCK_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Over Voltage LOck Out voltage <br  />
- </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00436">436</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gaab4319c2b78139af3fe8eb251d01fadf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaab4319c2b78139af3fe8eb251d01fadf">&#9670;&nbsp;</a></span>BUCK_VIN_MAX</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VIN_MAX&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#gaf44f0978ee4afa8c9934405d94c4f7a7">BUCK_VIN_MAXIMUM</a> * <a class="el" href="a00400.html#ga0400a9956f7aa27d775cdfb00cd12e5d">BUCK_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Maximum input voltage. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00435">435</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gaa29edd273b98ce34192834726820635c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa29edd273b98ce34192834726820635c">&#9670;&nbsp;</a></span>BUCK_VIN_MIN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VIN_MIN&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#ga2b9d7fd5b2702046315df96e0dac53a6">BUCK_VIN_MINIMUM</a> * <a class="el" href="a00400.html#ga0400a9956f7aa27d775cdfb00cd12e5d">BUCK_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Minimum input voltage. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00433">433</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gab5fe8834938982fdd2e9c6773866542b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab5fe8834938982fdd2e9c6773866542b">&#9670;&nbsp;</a></span>BUCK_VIN_NOM</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VIN_NOM&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#ga5c7772209d64e3a378005e91041e4909">BUCK_VIN_NOMINAL</a> * <a class="el" href="a00400.html#ga0400a9956f7aa27d775cdfb00cd12e5d">BUCK_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Nominal input voltage. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00434">434</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga22cf517ef3554a6157e25905d7d1755a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga22cf517ef3554a6157e25905d7d1755a">&#9670;&nbsp;</a></span>BUCK_VIN_NORM_FACTOR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VIN_NORM_FACTOR&#160;&#160;&#160;(int16_t)((<a class="el" href="a00400.html#ga7eea84f9319a9c04857d0061c8c8b332">BUCK_VIN_NORM_INV_G</a> / pow(2.0, <a class="el" href="a00400.html#ga961467f632e6d14a705ae5bde5026acc">BUCK_VIN_NORM_SCALER</a>)) * (pow(2.0, 15)-1))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>VIN normalization factor scaled in Q15. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00446">446</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga7eea84f9319a9c04857d0061c8c8b332"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7eea84f9319a9c04857d0061c8c8b332">&#9670;&nbsp;</a></span>BUCK_VIN_NORM_INV_G</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VIN_NORM_INV_G&#160;&#160;&#160;(float)(1.0/<a class="el" href="a00400.html#ga0400a9956f7aa27d775cdfb00cd12e5d">BUCK_VIN_FEEDBACK_GAIN</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Inverted feedback gain required for value normalization. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00444">444</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga961467f632e6d14a705ae5bde5026acc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga961467f632e6d14a705ae5bde5026acc">&#9670;&nbsp;</a></span>BUCK_VIN_NORM_SCALER</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VIN_NORM_SCALER&#160;&#160;&#160;(int16_t)(ceil(log(<a class="el" href="a00400.html#ga7eea84f9319a9c04857d0061c8c8b332">BUCK_VIN_NORM_INV_G</a>)) + 1)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>VIN normalization <br  />
- </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00445">445</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gabd59b02a2ace754dfccc9c42b45e2b7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabd59b02a2ace754dfccc9c42b45e2b7e">&#9670;&nbsp;</a></span>BUCK_VIN_OFFSET</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VIN_OFFSET&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#gaf593cd65bd5f4c5e89e53a2f18eee78f">BUCK_VIN_FEEDBACK_OFFSET</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Input voltage feedback offset. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00442">442</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga88fedea7d8380c9ca87e2e98f05a7339"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga88fedea7d8380c9ca87e2e98f05a7339">&#9670;&nbsp;</a></span>BUCK_VIN_OVLO_RELEASE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VIN_OVLO_RELEASE&#160;&#160;&#160;(uint16_t)((<a class="el" href="a00399.html#ga045299d4d5087811ae36728c59f4f8fb">BUCK_VIN_OVER_VOLTAGE</a> - <a class="el" href="a00399.html#gac9d550e31988f099595df4e1cf57c6fe">BUCK_VIN_HYSTERESIS</a>) * <a class="el" href="a00400.html#ga0400a9956f7aa27d775cdfb00cd12e5d">BUCK_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Over Voltage LOck Out voltage. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00440">440</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gac98e158cb73b23b08617446fb8839e16"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac98e158cb73b23b08617446fb8839e16">&#9670;&nbsp;</a></span>BUCK_VIN_OVLO_TRIP</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VIN_OVLO_TRIP&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#ga045299d4d5087811ae36728c59f4f8fb">BUCK_VIN_OVER_VOLTAGE</a> * <a class="el" href="a00400.html#ga0400a9956f7aa27d775cdfb00cd12e5d">BUCK_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Over Voltage LOck Out voltage. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00439">439</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga9d3deddd69546a95751204fe12f2a30c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9d3deddd69546a95751204fe12f2a30c">&#9670;&nbsp;</a></span>BUCK_VIN_RANGE_MAX</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VIN_RANGE_MAX&#160;&#160;&#160;(float)(<a class="el" href="a00377.html#ga317868c528ebe27fbca094a8bc2d910c">ADC_REFERENCE</a> * <a class="el" href="a00400.html#ga7eea84f9319a9c04857d0061c8c8b332">BUCK_VIN_NORM_INV_G</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00448">448</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga4e30efeba3e4eabf4d96b1649dc7866d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4e30efeba3e4eabf4d96b1649dc7866d">&#9670;&nbsp;</a></span>BUCK_VIN_UVLO_RELEASE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VIN_UVLO_RELEASE&#160;&#160;&#160;(uint16_t)((<a class="el" href="a00399.html#ga5bb8349b54c2abdb048d8c6cb5abb97a">BUCK_VIN_UNDER_VOLTAGE</a> + <a class="el" href="a00399.html#gac9d550e31988f099595df4e1cf57c6fe">BUCK_VIN_HYSTERESIS</a>) * <a class="el" href="a00400.html#ga0400a9956f7aa27d775cdfb00cd12e5d">BUCK_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Under Voltage LOck Out voltage. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00438">438</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga2b2b1af5d1f595d3d30d8b33fe20049e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2b2b1af5d1f595d3d30d8b33fe20049e">&#9670;&nbsp;</a></span>BUCK_VIN_UVLO_TRIP</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VIN_UVLO_TRIP&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00399.html#ga5bb8349b54c2abdb048d8c6cb5abb97a">BUCK_VIN_UNDER_VOLTAGE</a> * <a class="el" href="a00400.html#ga0400a9956f7aa27d775cdfb00cd12e5d">BUCK_VIN_FEEDBACK_GAIN</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Under Voltage LOck Out voltage. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00437">437</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00465">465</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

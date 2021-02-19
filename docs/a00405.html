@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Microcontroller Abstraction</title>
+<title>Digital Power Starter Kit 3 Firmware: Conversion Macros</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -97,275 +97,436 @@ $(document).ready(function(){initNavTree('a00405.html',''); initResizable(); });
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Microcontroller Abstraction<div class="ingroups"><a class="el" href="a00531.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00402.html">Output Voltage Feedback</a></div></div>  </div>
+<div class="title">Conversion Macros<div class="ingroups"><a class="el" href="a00531.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00403.html">Phase Current Feedback</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Device analog input pin, register and interrupt vector assignments of output voltage feedback signal(s)  
+<p>Conversion macros for user-declarations of phase current feedback parameters.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Microcontroller Abstraction:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Conversion Macros:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00405.svg" width="407" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00405.svg" width="358" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <table class="memberdecls">
-<tr class="memitem:gac90fa2099f502ddf5210bcbae94b5cc0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#gac90fa2099f502ddf5210bcbae94b5cc0">BUCK_VOUT_ANSEL</a>&#160;&#160;&#160;_ANSELC1</td></tr>
-<tr class="memdesc:gac90fa2099f502ddf5210bcbae94b5cc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input assignments of output voltage feedback signals.  <a href="a00405.html#gac90fa2099f502ddf5210bcbae94b5cc0">More...</a><br /></td></tr>
-<tr class="separator:gac90fa2099f502ddf5210bcbae94b5cc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadca72f2007af7bbcfeabea3f088417c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#gadca72f2007af7bbcfeabea3f088417c1">BUCK_VOUT_ADCCORE</a>&#160;&#160;&#160;8</td></tr>
-<tr class="memdesc:gadca72f2007af7bbcfeabea3f088417c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core  <a href="a00405.html#gadca72f2007af7bbcfeabea3f088417c1">More...</a><br /></td></tr>
-<tr class="separator:gadca72f2007af7bbcfeabea3f088417c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0f65d536bafa774db983f1654d9c0fb1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#ga0f65d536bafa774db983f1654d9c0fb1">BUCK_VOUT_ADCIN</a>&#160;&#160;&#160;13</td></tr>
-<tr class="memdesc:ga0f65d536bafa774db983f1654d9c0fb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Analog input number (e.g. '5' for 'AN5')  <a href="a00405.html#ga0f65d536bafa774db983f1654d9c0fb1">More...</a><br /></td></tr>
-<tr class="separator:ga0f65d536bafa774db983f1654d9c0fb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab5a66db522e36f4df6c1261ac6f169f7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#gab5a66db522e36f4df6c1261ac6f169f7">BUCK_VOUT_ADCBUF</a>&#160;&#160;&#160;ADCBUF13</td></tr>
-<tr class="memdesc:gab5a66db522e36f4df6c1261ac6f169f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input buffer of this ADC channel.  <a href="a00405.html#gab5a66db522e36f4df6c1261ac6f169f7">More...</a><br /></td></tr>
-<tr class="separator:gab5a66db522e36f4df6c1261ac6f169f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4cc0051ef254bbf7167af02c30e9489d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#ga4cc0051ef254bbf7167af02c30e9489d">BUCK_VOUT_ADCTRIG</a>&#160;&#160;&#160;PG1TRIGA</td></tr>
-<tr class="memdesc:ga4cc0051ef254bbf7167af02c30e9489d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register used for trigger placement.  <a href="a00405.html#ga4cc0051ef254bbf7167af02c30e9489d">More...</a><br /></td></tr>
-<tr class="separator:ga4cc0051ef254bbf7167af02c30e9489d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga582c1b8e723703fb75c4d14c766a6ce0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#ga582c1b8e723703fb75c4d14c766a6ce0">BUCK_VOUT_TRGSRC</a>&#160;&#160;&#160;<a class="el" href="a00396.html#ga7220e89a59d6abd8bf7611a3ed4da166">BUCK_PWM_TRGSRC_TRG1</a></td></tr>
-<tr class="memdesc:ga582c1b8e723703fb75c4d14c766a6ce0"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM1 (=PG1) Trigger 1 via PGxTRIGA.  <a href="a00405.html#ga582c1b8e723703fb75c4d14c766a6ce0">More...</a><br /></td></tr>
-<tr class="separator:ga582c1b8e723703fb75c4d14c766a6ce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga141f25042cbe329584d519a4a000bb64"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#ga141f25042cbe329584d519a4a000bb64">BOOST_VOUT_ANSEL</a>&#160;&#160;&#160;_ANSELD10</td></tr>
-<tr class="memdesc:ga141f25042cbe329584d519a4a000bb64"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input assignments of output voltage feedback signals.  <a href="a00405.html#ga141f25042cbe329584d519a4a000bb64">More...</a><br /></td></tr>
-<tr class="separator:ga141f25042cbe329584d519a4a000bb64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6c4f711685cc1501eb94c9db5bd27199"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#ga6c4f711685cc1501eb94c9db5bd27199">BOOST_VOUT_ADCCORE</a>&#160;&#160;&#160;8</td></tr>
-<tr class="memdesc:ga6c4f711685cc1501eb94c9db5bd27199"><td class="mdescLeft">&#160;</td><td class="mdescRight">0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core  <a href="a00405.html#ga6c4f711685cc1501eb94c9db5bd27199">More...</a><br /></td></tr>
-<tr class="separator:ga6c4f711685cc1501eb94c9db5bd27199"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2142a1219d575b2df562afd5610f34ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#ga2142a1219d575b2df562afd5610f34ac">BOOST_VOUT_ADCIN</a>&#160;&#160;&#160;18</td></tr>
-<tr class="memdesc:ga2142a1219d575b2df562afd5610f34ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Analog input number (e.g. '5' for 'AN5')  <a href="a00405.html#ga2142a1219d575b2df562afd5610f34ac">More...</a><br /></td></tr>
-<tr class="separator:ga2142a1219d575b2df562afd5610f34ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7be2db4ea22a5ed0e0425f2442200d5e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#ga7be2db4ea22a5ed0e0425f2442200d5e">BOOST_VOUT_ADCBUF</a>&#160;&#160;&#160;ADCBUF18</td></tr>
-<tr class="memdesc:ga7be2db4ea22a5ed0e0425f2442200d5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input buffer of this ADC channel.  <a href="a00405.html#ga7be2db4ea22a5ed0e0425f2442200d5e">More...</a><br /></td></tr>
-<tr class="separator:ga7be2db4ea22a5ed0e0425f2442200d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa17ed262d95146b0aa4e281ae6f25530"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#gaa17ed262d95146b0aa4e281ae6f25530">BOOST_VOUT_ADCTRIG</a>&#160;&#160;&#160;PG2TRIGA</td></tr>
-<tr class="memdesc:gaa17ed262d95146b0aa4e281ae6f25530"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register used for trigger placement.  <a href="a00405.html#gaa17ed262d95146b0aa4e281ae6f25530">More...</a><br /></td></tr>
-<tr class="separator:gaa17ed262d95146b0aa4e281ae6f25530"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga03502d6af9477b4622620cd3bc74d280"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#ga03502d6af9477b4622620cd3bc74d280">BOOST_VOUT_TRGSRC</a>&#160;&#160;&#160;<a class="el" href="a00396.html#gacea17e5f96aee1f9a4cf0ecb825749aa">BOOST_PWM_TRGSRC_TRG1</a></td></tr>
-<tr class="memdesc:ga03502d6af9477b4622620cd3bc74d280"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM2 (=PG2) Trigger 1 via PGxTRIGA.  <a href="a00405.html#ga03502d6af9477b4622620cd3bc74d280">More...</a><br /></td></tr>
-<tr class="separator:ga03502d6af9477b4622620cd3bc74d280"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga42e1f31f04d989b2e435cdbc4d3e7f6f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#ga42e1f31f04d989b2e435cdbc4d3e7f6f">BUCK_ISNS_MIN</a>&#160;&#160;&#160;(uint16_t)(int16_t)(((<a class="el" href="a00404.html#ga7eaf7c6b620fda0f1ec13a647c5d7ba2">BUCK_ISNS_MINIMUM</a>-<a class="el" href="a00404.html#ga4f2c0588965ec1c16d49bde4c956ec4c">BUCK_ISNS_FEEDBACK_OFFSET</a>) * <a class="el" href="a00404.html#ga4b80ef68401d82252de9b596cc7a9300">BUCK_ISNS_FEEDBACK_GAIN</a>) / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
+<tr class="memdesc:ga42e1f31f04d989b2e435cdbc4d3e7f6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion macros of phase current feedback parameters.  <a href="a00405.html#ga42e1f31f04d989b2e435cdbc4d3e7f6f">More...</a><br /></td></tr>
+<tr class="separator:ga42e1f31f04d989b2e435cdbc4d3e7f6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4d1c14d9a17cb1e372741350cc46552f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#ga4d1c14d9a17cb1e372741350cc46552f">BUCK_ISNS_OCL</a>&#160;&#160;&#160;(uint16_t)(((<a class="el" href="a00404.html#ga254083e30868dac3af9cb6279f2554a7">BUCK_ISNS_MAXIMUM</a>-<a class="el" href="a00404.html#ga4f2c0588965ec1c16d49bde4c956ec4c">BUCK_ISNS_FEEDBACK_OFFSET</a>) * <a class="el" href="a00404.html#ga4b80ef68401d82252de9b596cc7a9300">BUCK_ISNS_FEEDBACK_GAIN</a>) / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
+<tr class="memdesc:ga4d1c14d9a17cb1e372741350cc46552f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Over Current Limit.  <a href="a00405.html#ga4d1c14d9a17cb1e372741350cc46552f">More...</a><br /></td></tr>
+<tr class="separator:ga4d1c14d9a17cb1e372741350cc46552f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa3a7fb2feaa8c138d4c52f504075e802"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#gaa3a7fb2feaa8c138d4c52f504075e802">BUCK_ISNS_OCL_RELEASE</a>&#160;&#160;&#160;(uint16_t)(((<a class="el" href="a00404.html#ga7208ac3392b96a19243b7ebf817226a0">BUCK_ISNS_RELEASE</a>-<a class="el" href="a00404.html#ga4f2c0588965ec1c16d49bde4c956ec4c">BUCK_ISNS_FEEDBACK_OFFSET</a>) * <a class="el" href="a00404.html#ga4b80ef68401d82252de9b596cc7a9300">BUCK_ISNS_FEEDBACK_GAIN</a>) / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
+<tr class="memdesc:gaa3a7fb2feaa8c138d4c52f504075e802"><td class="mdescLeft">&#160;</td><td class="mdescRight">Over Current Release Level.  <a href="a00405.html#gaa3a7fb2feaa8c138d4c52f504075e802">More...</a><br /></td></tr>
+<tr class="separator:gaa3a7fb2feaa8c138d4c52f504075e802"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga781cfc9802c86ba6e1813b2615adac21"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#ga781cfc9802c86ba6e1813b2615adac21">BUCK_ISNS_REF</a>&#160;&#160;&#160;(uint16_t)((<a class="el" href="a00404.html#ga379038e7f84e71d34bc692f9c818668f">BUCK_ISNS_REFERENCE</a> * <a class="el" href="a00404.html#ga4b80ef68401d82252de9b596cc7a9300">BUCK_ISNS_FEEDBACK_GAIN</a>) / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
+<tr class="memdesc:ga781cfc9802c86ba6e1813b2615adac21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output Current Reference.  <a href="a00405.html#ga781cfc9802c86ba6e1813b2615adac21">More...</a><br /></td></tr>
+<tr class="separator:ga781cfc9802c86ba6e1813b2615adac21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga984d62cb7c1136c9f1de5d544ef0ac5b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#ga984d62cb7c1136c9f1de5d544ef0ac5b">BUCK_ISNS_REF_STARTUP</a>&#160;&#160;&#160;(uint16_t)((<a class="el" href="a00404.html#ga2683302f8905a1285ac0eff54a7899a1">BUCK_ISNS_REFERENCE_STARTUP</a> * <a class="el" href="a00404.html#ga4b80ef68401d82252de9b596cc7a9300">BUCK_ISNS_FEEDBACK_GAIN</a>) / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
+<tr class="memdesc:ga984d62cb7c1136c9f1de5d544ef0ac5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output Current Startup Reference.  <a href="a00405.html#ga984d62cb7c1136c9f1de5d544ef0ac5b">More...</a><br /></td></tr>
+<tr class="separator:ga984d62cb7c1136c9f1de5d544ef0ac5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga35b597c9d9b5c03a9b82f3d6eb39d5d9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#ga35b597c9d9b5c03a9b82f3d6eb39d5d9">BUCK_ISNS_FB_OFFSET</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00404.html#ga4f2c0588965ec1c16d49bde4c956ec4c">BUCK_ISNS_FEEDBACK_OFFSET</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
+<tr class="separator:ga35b597c9d9b5c03a9b82f3d6eb39d5d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadd7bda921f20e16726f0afb3093c9e9a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#gadd7bda921f20e16726f0afb3093c9e9a">BUCK_ISNS_ADC_TRGDLY</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00404.html#ga0f95bd1676556b8171cf85aa90ca7c2c">BUCK_ISNS_ADC_TRG_DELAY</a> / <a class="el" href="a00378.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td></tr>
+<tr class="separator:gadd7bda921f20e16726f0afb3093c9e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3267f68828461f4ddcad6f54b2ecaa08"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#ga3267f68828461f4ddcad6f54b2ecaa08">BUCK_ISNS_NORM_INV_G</a>&#160;&#160;&#160;(float)(1.0/<a class="el" href="a00404.html#ga4b80ef68401d82252de9b596cc7a9300">BUCK_ISNS_FEEDBACK_GAIN</a>)</td></tr>
+<tr class="memdesc:ga3267f68828461f4ddcad6f54b2ecaa08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverted feedback gain required for value normalization.  <a href="a00405.html#ga3267f68828461f4ddcad6f54b2ecaa08">More...</a><br /></td></tr>
+<tr class="separator:ga3267f68828461f4ddcad6f54b2ecaa08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf32bbfa61d6f4519876d7db9164a8c61"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#gaf32bbfa61d6f4519876d7db9164a8c61">BUCK_ISNS_NORM_SCALER</a>&#160;&#160;&#160;(int16_t)(ceil(log(<a class="el" href="a00405.html#ga3267f68828461f4ddcad6f54b2ecaa08">BUCK_ISNS_NORM_INV_G</a>)) + 1)</td></tr>
+<tr class="memdesc:gaf32bbfa61d6f4519876d7db9164a8c61"><td class="mdescLeft">&#160;</td><td class="mdescRight">ISNS normalization <br  />
+  <a href="a00405.html#gaf32bbfa61d6f4519876d7db9164a8c61">More...</a><br /></td></tr>
+<tr class="separator:gaf32bbfa61d6f4519876d7db9164a8c61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9645ff162de5632caf60de3035e69083"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#ga9645ff162de5632caf60de3035e69083">BUCK_ISNS_NORM_FACTOR</a>&#160;&#160;&#160;(int16_t)((<a class="el" href="a00405.html#ga3267f68828461f4ddcad6f54b2ecaa08">BUCK_ISNS_NORM_INV_G</a> / pow(2.0, <a class="el" href="a00405.html#gaf32bbfa61d6f4519876d7db9164a8c61">BUCK_ISNS_NORM_SCALER</a>)) * (pow(2.0, 15)-1))</td></tr>
+<tr class="memdesc:ga9645ff162de5632caf60de3035e69083"><td class="mdescLeft">&#160;</td><td class="mdescRight">ISNS normalization factor scaled in Q15.  <a href="a00405.html#ga9645ff162de5632caf60de3035e69083">More...</a><br /></td></tr>
+<tr class="separator:ga9645ff162de5632caf60de3035e69083"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8e98990970b9b63b412703a4ba21eb32"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#ga8e98990970b9b63b412703a4ba21eb32">BOOST_ISNS_MIN</a>&#160;&#160;&#160;(uint16_t)(int16_t)(((<a class="el" href="a00404.html#ga0d4b666b44b7c06c1ae6433756b2637f">BOOST_ISNS_MINIMUM</a>-<a class="el" href="a00404.html#ga4ac2b70886a2072e790a13b333b0066d">BOOST_ISNS_FEEDBACK_OFFSET</a>) * <a class="el" href="a00404.html#ga902086e51335c2bdc10ca371cbd182e7">BOOST_ISNS_FEEDBACK_GAIN</a>) / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
+<tr class="memdesc:ga8e98990970b9b63b412703a4ba21eb32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion macros of phase current feedback parameters.  <a href="a00405.html#ga8e98990970b9b63b412703a4ba21eb32">More...</a><br /></td></tr>
+<tr class="separator:ga8e98990970b9b63b412703a4ba21eb32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga338166f55528286578e68f3e45ba18e6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#ga338166f55528286578e68f3e45ba18e6">BOOST_ISNS_OCL</a>&#160;&#160;&#160;(uint16_t)(((<a class="el" href="a00404.html#ga88f0eadb1bfb6164e982a25e96f338ff">BOOST_ISNS_MAXIMUM</a>-<a class="el" href="a00404.html#ga4ac2b70886a2072e790a13b333b0066d">BOOST_ISNS_FEEDBACK_OFFSET</a>) * <a class="el" href="a00404.html#ga902086e51335c2bdc10ca371cbd182e7">BOOST_ISNS_FEEDBACK_GAIN</a>) / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
+<tr class="memdesc:ga338166f55528286578e68f3e45ba18e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Over Current Limit.  <a href="a00405.html#ga338166f55528286578e68f3e45ba18e6">More...</a><br /></td></tr>
+<tr class="separator:ga338166f55528286578e68f3e45ba18e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad4291d6f1240cde5634efa9b1c3c186e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#gad4291d6f1240cde5634efa9b1c3c186e">BOOST_ISNS_OCL_RELEASE</a>&#160;&#160;&#160;(uint16_t)(((<a class="el" href="a00404.html#gaa3d04325127fcbd86f0ab2c55c3f00d4">BOOST_ISNS_RELEASE</a>-<a class="el" href="a00404.html#ga4ac2b70886a2072e790a13b333b0066d">BOOST_ISNS_FEEDBACK_OFFSET</a>) * <a class="el" href="a00404.html#ga902086e51335c2bdc10ca371cbd182e7">BOOST_ISNS_FEEDBACK_GAIN</a>) / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
+<tr class="memdesc:gad4291d6f1240cde5634efa9b1c3c186e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Over Current Release Level.  <a href="a00405.html#gad4291d6f1240cde5634efa9b1c3c186e">More...</a><br /></td></tr>
+<tr class="separator:gad4291d6f1240cde5634efa9b1c3c186e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1812e11e4cbca75babd9dc3be24579d5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#ga1812e11e4cbca75babd9dc3be24579d5">BOOST_ISNS_REF</a>&#160;&#160;&#160;(uint16_t)((<a class="el" href="a00404.html#gacf2b44ee3c53c9802f999c1963af8e80">BOOST_ISNS_REFERENCE</a> * <a class="el" href="a00404.html#ga902086e51335c2bdc10ca371cbd182e7">BOOST_ISNS_FEEDBACK_GAIN</a>) / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
+<tr class="memdesc:ga1812e11e4cbca75babd9dc3be24579d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output Current Reference.  <a href="a00405.html#ga1812e11e4cbca75babd9dc3be24579d5">More...</a><br /></td></tr>
+<tr class="separator:ga1812e11e4cbca75babd9dc3be24579d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaec3d7b3ee13c4a99831d215bda850388"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#gaec3d7b3ee13c4a99831d215bda850388">BOOST_ISNS_REF_STARTUP</a>&#160;&#160;&#160;(uint16_t)((<a class="el" href="a00404.html#ga3c7191f25c28386cdb71ddc16e704392">BOOST_ISNS_REFERENCE_STARTUP</a> * <a class="el" href="a00404.html#ga902086e51335c2bdc10ca371cbd182e7">BOOST_ISNS_FEEDBACK_GAIN</a>) / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
+<tr class="memdesc:gaec3d7b3ee13c4a99831d215bda850388"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output Current Startup Reference.  <a href="a00405.html#gaec3d7b3ee13c4a99831d215bda850388">More...</a><br /></td></tr>
+<tr class="separator:gaec3d7b3ee13c4a99831d215bda850388"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7deffe1f756ecdc6fcc2da4cc8acc439"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#ga7deffe1f756ecdc6fcc2da4cc8acc439">BOOST_ISNS_FB_OFFSET</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00404.html#ga4ac2b70886a2072e790a13b333b0066d">BOOST_ISNS_FEEDBACK_OFFSET</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
+<tr class="separator:ga7deffe1f756ecdc6fcc2da4cc8acc439"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae8947ce236c13faf17f185c90516b601"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#gae8947ce236c13faf17f185c90516b601">BOOST_ISNS_ADC_TRGDLY</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00404.html#ga5a9bda187b106fb0f86cfadbc3f09e93">BOOST_ISNS_ADC_TRG_DELAY</a> / <a class="el" href="a00378.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td></tr>
+<tr class="separator:gae8947ce236c13faf17f185c90516b601"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga27d281445f58d1ebdda4b5309589a297"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#ga27d281445f58d1ebdda4b5309589a297">BOOST_ISNS_NORM_INV_G</a>&#160;&#160;&#160;(float)(1.0/<a class="el" href="a00404.html#ga902086e51335c2bdc10ca371cbd182e7">BOOST_ISNS_FEEDBACK_GAIN</a>)</td></tr>
+<tr class="memdesc:ga27d281445f58d1ebdda4b5309589a297"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverted feedback gain required for value normalization.  <a href="a00405.html#ga27d281445f58d1ebdda4b5309589a297">More...</a><br /></td></tr>
+<tr class="separator:ga27d281445f58d1ebdda4b5309589a297"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf4e2616c16258fac71cc9bd827c86ec8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#gaf4e2616c16258fac71cc9bd827c86ec8">BOOST_ISNS_NORM_SCALER</a>&#160;&#160;&#160;(int16_t)(ceil(log(<a class="el" href="a00405.html#ga27d281445f58d1ebdda4b5309589a297">BOOST_ISNS_NORM_INV_G</a>)) + 1)</td></tr>
+<tr class="memdesc:gaf4e2616c16258fac71cc9bd827c86ec8"><td class="mdescLeft">&#160;</td><td class="mdescRight">ISNS normalization <br  />
+  <a href="a00405.html#gaf4e2616c16258fac71cc9bd827c86ec8">More...</a><br /></td></tr>
+<tr class="separator:gaf4e2616c16258fac71cc9bd827c86ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac537dce720864ef884b7d0f0784acff2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#gac537dce720864ef884b7d0f0784acff2">BOOST_ISNS_NORM_FACTOR</a>&#160;&#160;&#160;(int16_t)((<a class="el" href="a00405.html#ga27d281445f58d1ebdda4b5309589a297">BOOST_ISNS_NORM_INV_G</a> / pow(2.0, <a class="el" href="a00405.html#gaf4e2616c16258fac71cc9bd827c86ec8">BOOST_ISNS_NORM_SCALER</a>)) * (pow(2.0, 15)-1))</td></tr>
+<tr class="memdesc:gac537dce720864ef884b7d0f0784acff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">ISNS normalization factor scaled in Q15.  <a href="a00405.html#gac537dce720864ef884b7d0f0784acff2">More...</a><br /></td></tr>
+<tr class="separator:gac537dce720864ef884b7d0f0784acff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Device analog input pin, register and interrupt vector assignments of output voltage feedback signal(s) </p>
+<p>Conversion macros for user-declarations of phase current feedback parameters. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga7be2db4ea22a5ed0e0425f2442200d5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7be2db4ea22a5ed0e0425f2442200d5e">&#9670;&nbsp;</a></span>BOOST_VOUT_ADCBUF</h2>
+<a id="gae8947ce236c13faf17f185c90516b601"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae8947ce236c13faf17f185c90516b601">&#9670;&nbsp;</a></span>BOOST_ISNS_ADC_TRGDLY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VOUT_ADCBUF&#160;&#160;&#160;ADCBUF18</td>
+          <td class="memname">#define BOOST_ISNS_ADC_TRGDLY&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00404.html#ga5a9bda187b106fb0f86cfadbc3f09e93">BOOST_ISNS_ADC_TRG_DELAY</a> / <a class="el" href="a00378.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>ADC input buffer of this ADC channel. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01116">1116</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01226">1226</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga6c4f711685cc1501eb94c9db5bd27199"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6c4f711685cc1501eb94c9db5bd27199">&#9670;&nbsp;</a></span>BOOST_VOUT_ADCCORE</h2>
+<a id="ga7deffe1f756ecdc6fcc2da4cc8acc439"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7deffe1f756ecdc6fcc2da4cc8acc439">&#9670;&nbsp;</a></span>BOOST_ISNS_FB_OFFSET</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VOUT_ADCCORE&#160;&#160;&#160;8</td>
+          <td class="memname">#define BOOST_ISNS_FB_OFFSET&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00404.html#ga4ac2b70886a2072e790a13b333b0066d">BOOST_ISNS_FEEDBACK_OFFSET</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01114">1114</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01225">1225</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga2142a1219d575b2df562afd5610f34ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2142a1219d575b2df562afd5610f34ac">&#9670;&nbsp;</a></span>BOOST_VOUT_ADCIN</h2>
+<a id="ga8e98990970b9b63b412703a4ba21eb32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8e98990970b9b63b412703a4ba21eb32">&#9670;&nbsp;</a></span>BOOST_ISNS_MIN</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VOUT_ADCIN&#160;&#160;&#160;18</td>
+          <td class="memname">#define BOOST_ISNS_MIN&#160;&#160;&#160;(uint16_t)(int16_t)(((<a class="el" href="a00404.html#ga0d4b666b44b7c06c1ae6433756b2637f">BOOST_ISNS_MINIMUM</a>-<a class="el" href="a00404.html#ga4ac2b70886a2072e790a13b333b0066d">BOOST_ISNS_FEEDBACK_OFFSET</a>) * <a class="el" href="a00404.html#ga902086e51335c2bdc10ca371cbd182e7">BOOST_ISNS_FEEDBACK_GAIN</a>) / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Analog input number (e.g. '5' for 'AN5') </p>
+<p>Conversion macros of phase current feedback parameters. </p>
+<p>These conversion macros are used to convert user settings defined as physical quantities into binary (integer) numbers, which will be written to registers and variables and used in calculations throughout the firmware. Over Current Limit </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01115">1115</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01220">1220</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gaa17ed262d95146b0aa4e281ae6f25530"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa17ed262d95146b0aa4e281ae6f25530">&#9670;&nbsp;</a></span>BOOST_VOUT_ADCTRIG</h2>
+<a id="gac537dce720864ef884b7d0f0784acff2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac537dce720864ef884b7d0f0784acff2">&#9670;&nbsp;</a></span>BOOST_ISNS_NORM_FACTOR</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VOUT_ADCTRIG&#160;&#160;&#160;PG2TRIGA</td>
+          <td class="memname">#define BOOST_ISNS_NORM_FACTOR&#160;&#160;&#160;(int16_t)((<a class="el" href="a00405.html#ga27d281445f58d1ebdda4b5309589a297">BOOST_ISNS_NORM_INV_G</a> / pow(2.0, <a class="el" href="a00405.html#gaf4e2616c16258fac71cc9bd827c86ec8">BOOST_ISNS_NORM_SCALER</a>)) * (pow(2.0, 15)-1))</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Register used for trigger placement. </p>
+<p>ISNS normalization factor scaled in Q15. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01117">1117</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01230">1230</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga141f25042cbe329584d519a4a000bb64"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga141f25042cbe329584d519a4a000bb64">&#9670;&nbsp;</a></span>BOOST_VOUT_ANSEL</h2>
+<a id="ga27d281445f58d1ebdda4b5309589a297"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga27d281445f58d1ebdda4b5309589a297">&#9670;&nbsp;</a></span>BOOST_ISNS_NORM_INV_G</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VOUT_ANSEL&#160;&#160;&#160;_ANSELD10</td>
+          <td class="memname">#define BOOST_ISNS_NORM_INV_G&#160;&#160;&#160;(float)(1.0/<a class="el" href="a00404.html#ga902086e51335c2bdc10ca371cbd182e7">BOOST_ISNS_FEEDBACK_GAIN</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>ADC input assignments of output voltage feedback signals. </p>
-<p>In this section the ADC input channels, related ADC result buffers, trigger sources and interrupt vectors are defined. These settings allow the fast re-assignments of feedback signals in case of hardware changes. GPIO analog function mode enable bit </p>
+<p>Inverted feedback gain required for value normalization. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01113">1113</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01228">1228</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga03502d6af9477b4622620cd3bc74d280"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga03502d6af9477b4622620cd3bc74d280">&#9670;&nbsp;</a></span>BOOST_VOUT_TRGSRC</h2>
+<a id="gaf4e2616c16258fac71cc9bd827c86ec8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf4e2616c16258fac71cc9bd827c86ec8">&#9670;&nbsp;</a></span>BOOST_ISNS_NORM_SCALER</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_VOUT_TRGSRC&#160;&#160;&#160;<a class="el" href="a00396.html#gacea17e5f96aee1f9a4cf0ecb825749aa">BOOST_PWM_TRGSRC_TRG1</a></td>
+          <td class="memname">#define BOOST_ISNS_NORM_SCALER&#160;&#160;&#160;(int16_t)(ceil(log(<a class="el" href="a00405.html#ga27d281445f58d1ebdda4b5309589a297">BOOST_ISNS_NORM_INV_G</a>)) + 1)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>PWM2 (=PG2) Trigger 1 via PGxTRIGA. </p>
+<p>ISNS normalization <br  />
+ </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01118">1118</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01229">1229</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gab5a66db522e36f4df6c1261ac6f169f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab5a66db522e36f4df6c1261ac6f169f7">&#9670;&nbsp;</a></span>BUCK_VOUT_ADCBUF</h2>
+<a id="ga338166f55528286578e68f3e45ba18e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga338166f55528286578e68f3e45ba18e6">&#9670;&nbsp;</a></span>BOOST_ISNS_OCL</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_VOUT_ADCBUF&#160;&#160;&#160;ADCBUF13</td>
+          <td class="memname">#define BOOST_ISNS_OCL&#160;&#160;&#160;(uint16_t)(((<a class="el" href="a00404.html#ga88f0eadb1bfb6164e982a25e96f338ff">BOOST_ISNS_MAXIMUM</a>-<a class="el" href="a00404.html#ga4ac2b70886a2072e790a13b333b0066d">BOOST_ISNS_FEEDBACK_OFFSET</a>) * <a class="el" href="a00404.html#ga902086e51335c2bdc10ca371cbd182e7">BOOST_ISNS_FEEDBACK_GAIN</a>) / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>ADC input buffer of this ADC channel. </p>
+<p>Over Current Limit. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00489">489</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01221">1221</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gadca72f2007af7bbcfeabea3f088417c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadca72f2007af7bbcfeabea3f088417c1">&#9670;&nbsp;</a></span>BUCK_VOUT_ADCCORE</h2>
+<a id="gad4291d6f1240cde5634efa9b1c3c186e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad4291d6f1240cde5634efa9b1c3c186e">&#9670;&nbsp;</a></span>BOOST_ISNS_OCL_RELEASE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_VOUT_ADCCORE&#160;&#160;&#160;8</td>
+          <td class="memname">#define BOOST_ISNS_OCL_RELEASE&#160;&#160;&#160;(uint16_t)(((<a class="el" href="a00404.html#gaa3d04325127fcbd86f0ab2c55c3f00d4">BOOST_ISNS_RELEASE</a>-<a class="el" href="a00404.html#ga4ac2b70886a2072e790a13b333b0066d">BOOST_ISNS_FEEDBACK_OFFSET</a>) * <a class="el" href="a00404.html#ga902086e51335c2bdc10ca371cbd182e7">BOOST_ISNS_FEEDBACK_GAIN</a>) / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core </p>
+<p>Over Current Release Level. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00487">487</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01222">1222</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga0f65d536bafa774db983f1654d9c0fb1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0f65d536bafa774db983f1654d9c0fb1">&#9670;&nbsp;</a></span>BUCK_VOUT_ADCIN</h2>
+<a id="ga1812e11e4cbca75babd9dc3be24579d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1812e11e4cbca75babd9dc3be24579d5">&#9670;&nbsp;</a></span>BOOST_ISNS_REF</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_VOUT_ADCIN&#160;&#160;&#160;13</td>
+          <td class="memname">#define BOOST_ISNS_REF&#160;&#160;&#160;(uint16_t)((<a class="el" href="a00404.html#gacf2b44ee3c53c9802f999c1963af8e80">BOOST_ISNS_REFERENCE</a> * <a class="el" href="a00404.html#ga902086e51335c2bdc10ca371cbd182e7">BOOST_ISNS_FEEDBACK_GAIN</a>) / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Analog input number (e.g. '5' for 'AN5') </p>
+<p>Output Current Reference. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00488">488</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01223">1223</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga4cc0051ef254bbf7167af02c30e9489d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4cc0051ef254bbf7167af02c30e9489d">&#9670;&nbsp;</a></span>BUCK_VOUT_ADCTRIG</h2>
+<a id="gaec3d7b3ee13c4a99831d215bda850388"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaec3d7b3ee13c4a99831d215bda850388">&#9670;&nbsp;</a></span>BOOST_ISNS_REF_STARTUP</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_VOUT_ADCTRIG&#160;&#160;&#160;PG1TRIGA</td>
+          <td class="memname">#define BOOST_ISNS_REF_STARTUP&#160;&#160;&#160;(uint16_t)((<a class="el" href="a00404.html#ga3c7191f25c28386cdb71ddc16e704392">BOOST_ISNS_REFERENCE_STARTUP</a> * <a class="el" href="a00404.html#ga902086e51335c2bdc10ca371cbd182e7">BOOST_ISNS_FEEDBACK_GAIN</a>) / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Register used for trigger placement. </p>
+<p>Output Current Startup Reference. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00490">490</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01224">1224</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gac90fa2099f502ddf5210bcbae94b5cc0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac90fa2099f502ddf5210bcbae94b5cc0">&#9670;&nbsp;</a></span>BUCK_VOUT_ANSEL</h2>
+<a id="gadd7bda921f20e16726f0afb3093c9e9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadd7bda921f20e16726f0afb3093c9e9a">&#9670;&nbsp;</a></span>BUCK_ISNS_ADC_TRGDLY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_VOUT_ANSEL&#160;&#160;&#160;_ANSELC1</td>
+          <td class="memname">#define BUCK_ISNS_ADC_TRGDLY&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00404.html#ga0f95bd1676556b8171cf85aa90ca7c2c">BUCK_ISNS_ADC_TRG_DELAY</a> / <a class="el" href="a00378.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>ADC input assignments of output voltage feedback signals. </p>
-<p>In this section the ADC input channels, related ADC result buffers, trigger sources and interrupt vectors are defined. These settings allow the fast re-assignments of feedback signals in case of hardware changes. GPIO analog function mode enable bit </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00486">486</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00597">597</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga582c1b8e723703fb75c4d14c766a6ce0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga582c1b8e723703fb75c4d14c766a6ce0">&#9670;&nbsp;</a></span>BUCK_VOUT_TRGSRC</h2>
+<a id="ga35b597c9d9b5c03a9b82f3d6eb39d5d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga35b597c9d9b5c03a9b82f3d6eb39d5d9">&#9670;&nbsp;</a></span>BUCK_ISNS_FB_OFFSET</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_VOUT_TRGSRC&#160;&#160;&#160;<a class="el" href="a00396.html#ga7220e89a59d6abd8bf7611a3ed4da166">BUCK_PWM_TRGSRC_TRG1</a></td>
+          <td class="memname">#define BUCK_ISNS_FB_OFFSET&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00404.html#ga4f2c0588965ec1c16d49bde4c956ec4c">BUCK_ISNS_FEEDBACK_OFFSET</a> / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>PWM1 (=PG1) Trigger 1 via PGxTRIGA. </p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00596">596</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00491">491</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+</div>
+</div>
+<a id="ga42e1f31f04d989b2e435cdbc4d3e7f6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga42e1f31f04d989b2e435cdbc4d3e7f6f">&#9670;&nbsp;</a></span>BUCK_ISNS_MIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_ISNS_MIN&#160;&#160;&#160;(uint16_t)(int16_t)(((<a class="el" href="a00404.html#ga7eaf7c6b620fda0f1ec13a647c5d7ba2">BUCK_ISNS_MINIMUM</a>-<a class="el" href="a00404.html#ga4f2c0588965ec1c16d49bde4c956ec4c">BUCK_ISNS_FEEDBACK_OFFSET</a>) * <a class="el" href="a00404.html#ga4b80ef68401d82252de9b596cc7a9300">BUCK_ISNS_FEEDBACK_GAIN</a>) / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Conversion macros of phase current feedback parameters. </p>
+<p>These conversion macros are used to convert user settings defined as physical quantities into binary (integer) numbers, which will be written to registers and variables and used in calculations throughout the firmware. Over Current Limit </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00591">591</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga9645ff162de5632caf60de3035e69083"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9645ff162de5632caf60de3035e69083">&#9670;&nbsp;</a></span>BUCK_ISNS_NORM_FACTOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_ISNS_NORM_FACTOR&#160;&#160;&#160;(int16_t)((<a class="el" href="a00405.html#ga3267f68828461f4ddcad6f54b2ecaa08">BUCK_ISNS_NORM_INV_G</a> / pow(2.0, <a class="el" href="a00405.html#gaf32bbfa61d6f4519876d7db9164a8c61">BUCK_ISNS_NORM_SCALER</a>)) * (pow(2.0, 15)-1))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ISNS normalization factor scaled in Q15. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00601">601</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga3267f68828461f4ddcad6f54b2ecaa08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3267f68828461f4ddcad6f54b2ecaa08">&#9670;&nbsp;</a></span>BUCK_ISNS_NORM_INV_G</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_ISNS_NORM_INV_G&#160;&#160;&#160;(float)(1.0/<a class="el" href="a00404.html#ga4b80ef68401d82252de9b596cc7a9300">BUCK_ISNS_FEEDBACK_GAIN</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inverted feedback gain required for value normalization. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00599">599</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gaf32bbfa61d6f4519876d7db9164a8c61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf32bbfa61d6f4519876d7db9164a8c61">&#9670;&nbsp;</a></span>BUCK_ISNS_NORM_SCALER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_ISNS_NORM_SCALER&#160;&#160;&#160;(int16_t)(ceil(log(<a class="el" href="a00405.html#ga3267f68828461f4ddcad6f54b2ecaa08">BUCK_ISNS_NORM_INV_G</a>)) + 1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ISNS normalization <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00600">600</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga4d1c14d9a17cb1e372741350cc46552f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4d1c14d9a17cb1e372741350cc46552f">&#9670;&nbsp;</a></span>BUCK_ISNS_OCL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_ISNS_OCL&#160;&#160;&#160;(uint16_t)(((<a class="el" href="a00404.html#ga254083e30868dac3af9cb6279f2554a7">BUCK_ISNS_MAXIMUM</a>-<a class="el" href="a00404.html#ga4f2c0588965ec1c16d49bde4c956ec4c">BUCK_ISNS_FEEDBACK_OFFSET</a>) * <a class="el" href="a00404.html#ga4b80ef68401d82252de9b596cc7a9300">BUCK_ISNS_FEEDBACK_GAIN</a>) / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Over Current Limit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00592">592</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gaa3a7fb2feaa8c138d4c52f504075e802"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa3a7fb2feaa8c138d4c52f504075e802">&#9670;&nbsp;</a></span>BUCK_ISNS_OCL_RELEASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_ISNS_OCL_RELEASE&#160;&#160;&#160;(uint16_t)(((<a class="el" href="a00404.html#ga7208ac3392b96a19243b7ebf817226a0">BUCK_ISNS_RELEASE</a>-<a class="el" href="a00404.html#ga4f2c0588965ec1c16d49bde4c956ec4c">BUCK_ISNS_FEEDBACK_OFFSET</a>) * <a class="el" href="a00404.html#ga4b80ef68401d82252de9b596cc7a9300">BUCK_ISNS_FEEDBACK_GAIN</a>) / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Over Current Release Level. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00593">593</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga781cfc9802c86ba6e1813b2615adac21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga781cfc9802c86ba6e1813b2615adac21">&#9670;&nbsp;</a></span>BUCK_ISNS_REF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_ISNS_REF&#160;&#160;&#160;(uint16_t)((<a class="el" href="a00404.html#ga379038e7f84e71d34bc692f9c818668f">BUCK_ISNS_REFERENCE</a> * <a class="el" href="a00404.html#ga4b80ef68401d82252de9b596cc7a9300">BUCK_ISNS_FEEDBACK_GAIN</a>) / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Output Current Reference. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00594">594</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga984d62cb7c1136c9f1de5d544ef0ac5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga984d62cb7c1136c9f1de5d544ef0ac5b">&#9670;&nbsp;</a></span>BUCK_ISNS_REF_STARTUP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_ISNS_REF_STARTUP&#160;&#160;&#160;(uint16_t)((<a class="el" href="a00404.html#ga2683302f8905a1285ac0eff54a7899a1">BUCK_ISNS_REFERENCE_STARTUP</a> * <a class="el" href="a00404.html#ga4b80ef68401d82252de9b596cc7a9300">BUCK_ISNS_FEEDBACK_GAIN</a>) / <a class="el" href="a00378.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Output Current Startup Reference. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00595">595</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

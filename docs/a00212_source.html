@@ -125,7 +125,7 @@ $(document).ready(function(){initNavTree('a00212_source.html',''); initResizable
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">if</span>(debug_led.<a class="code" href="a01474.html#a48f363c7bcd47589472b59f0a7dfb74b">period</a> == 0)</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        debug_led.<a class="code" href="a01474.html#a48f363c7bcd47589472b59f0a7dfb74b">period</a> = TGL_INTERVAL;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="a00390.html#ga6f72dd83ca1c1b3bac872c5b9b55823c">DBGLED_Init</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="a00415.html#ga6f72dd83ca1c1b3bac872c5b9b55823c">DBGLED_Init</a>();</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">return</span>(retval);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
@@ -137,7 +137,7 @@ $(document).ready(function(){initNavTree('a00212_source.html',''); initResizable
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// Toggle LED, refresh LCD and reset toggle counter</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">if</span> (tgl_cnt++ &gt; debug_led.<a class="code" href="a01474.html#a48f363c7bcd47589472b59f0a7dfb74b">period</a>) { <span class="comment">// Count n loops until LED toggle interval is exceeded</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="a00390.html#gadd1664fc6d47d42e930cf9453a3b6e87">DBGLED_Toggle</a>();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="a00415.html#gadd1664fc6d47d42e930cf9453a3b6e87">DBGLED_Toggle</a>();</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        tgl_cnt = 0;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    } </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
@@ -150,7 +150,7 @@ $(document).ready(function(){initNavTree('a00212_source.html',''); initResizable
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">volatile</span> uint16_t retval = 1;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    </div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    debug_led.<a class="code" href="a01474.html#a48f363c7bcd47589472b59f0a7dfb74b">period</a> = 0;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="a00390.html#ga11c0a9d0875d6a807235d225b70281d2">DBGLED_Dispose</a>();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="a00415.html#ga11c0a9d0875d6a807235d225b70281d2">DBGLED_Dispose</a>();</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">return</span>(retval);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
@@ -158,13 +158,13 @@ $(document).ready(function(){initNavTree('a00212_source.html',''); initResizable
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">// end of file</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aa00415_html_ga11c0a9d0875d6a807235d225b70281d2"><div class="ttname"><a href="a00415.html#ga11c0a9d0875d6a807235d225b70281d2">DBGLED_Dispose</a></div><div class="ttdeci">#define DBGLED_Dispose()</div><div class="ttdoc">Macro instruction initializing the specified GPIO as input.</div><div class="ttdef"><b>Definition:</b> <a href="a00104_source.html#l00217">dpsk3_hwdescr.h:217</a></div></div>
 <div class="ttc" id="aa01474_html"><div class="ttname"><a href="a01474.html">DEBUGGING_LED_s</a></div><div class="ttdoc">Debugging LED settings data object.</div><div class="ttdef"><b>Definition:</b> <a href="a00215_source.html#l00055">app_led.h:55</a></div></div>
+<div class="ttc" id="aa00415_html_gadd1664fc6d47d42e930cf9453a3b6e87"><div class="ttname"><a href="a00415.html#gadd1664fc6d47d42e930cf9453a3b6e87">DBGLED_Toggle</a></div><div class="ttdeci">#define DBGLED_Toggle()</div><div class="ttdoc">Macro instruction to toggle most recent pin state.</div><div class="ttdef"><b>Definition:</b> <a href="a00104_source.html#l00215">dpsk3_hwdescr.h:215</a></div></div>
 <div class="ttc" id="aa00450_html_gaaa8c86cbd692a090f955022c93593a68"><div class="ttname"><a href="a00450.html#gaaa8c86cbd692a090f955022c93593a68">appLED_Execute</a></div><div class="ttdeci">volatile uint16_t appLED_Execute(void)</div><div class="ttdoc">Executes the debugging LED driver.</div><div class="ttdef"><b>Definition:</b> <a href="a00212_source.html#l00052">app_led.c:52</a></div></div>
 <div class="ttc" id="aa00450_html_ga038f968f3d5544cfe50faa2079d7daf6"><div class="ttname"><a href="a00450.html#ga038f968f3d5544cfe50faa2079d7daf6">appLED_Dispose</a></div><div class="ttdeci">volatile uint16_t appLED_Dispose(void)</div><div class="ttdoc">Frees the resources of the debugging LED driver.</div><div class="ttdef"><b>Definition:</b> <a href="a00212_source.html#l00076">app_led.c:76</a></div></div>
+<div class="ttc" id="aa00415_html_ga6f72dd83ca1c1b3bac872c5b9b55823c"><div class="ttname"><a href="a00415.html#ga6f72dd83ca1c1b3bac872c5b9b55823c">DBGLED_Init</a></div><div class="ttdeci">#define DBGLED_Init()</div><div class="ttdoc">Macro instruction initializing the specified GPIO as output.</div><div class="ttdef"><b>Definition:</b> <a href="a00104_source.html#l00216">dpsk3_hwdescr.h:216</a></div></div>
 <div class="ttc" id="aa00450_html_ga900c95201f101cb3c8644bcf7aab8af9"><div class="ttname"><a href="a00450.html#ga900c95201f101cb3c8644bcf7aab8af9">appLED_Initialize</a></div><div class="ttdeci">volatile uint16_t appLED_Initialize(void)</div><div class="ttdoc">Initializes the LED driving GPIO.</div><div class="ttdef"><b>Definition:</b> <a href="a00212_source.html#l00029">app_led.c:29</a></div></div>
-<div class="ttc" id="aa00390_html_ga6f72dd83ca1c1b3bac872c5b9b55823c"><div class="ttname"><a href="a00390.html#ga6f72dd83ca1c1b3bac872c5b9b55823c">DBGLED_Init</a></div><div class="ttdeci">#define DBGLED_Init()</div><div class="ttdoc">Macro instruction initializing the specified GPIO as output.</div><div class="ttdef"><b>Definition:</b> <a href="a00104_source.html#l00216">dpsk3_hwdescr.h:216</a></div></div>
-<div class="ttc" id="aa00390_html_gadd1664fc6d47d42e930cf9453a3b6e87"><div class="ttname"><a href="a00390.html#gadd1664fc6d47d42e930cf9453a3b6e87">DBGLED_Toggle</a></div><div class="ttdeci">#define DBGLED_Toggle()</div><div class="ttdoc">Macro instruction to toggle most recent pin state.</div><div class="ttdef"><b>Definition:</b> <a href="a00104_source.html#l00215">dpsk3_hwdescr.h:215</a></div></div>
-<div class="ttc" id="aa00390_html_ga11c0a9d0875d6a807235d225b70281d2"><div class="ttname"><a href="a00390.html#ga11c0a9d0875d6a807235d225b70281d2">DBGLED_Dispose</a></div><div class="ttdeci">#define DBGLED_Dispose()</div><div class="ttdoc">Macro instruction initializing the specified GPIO as input.</div><div class="ttdef"><b>Definition:</b> <a href="a00104_source.html#l00217">dpsk3_hwdescr.h:217</a></div></div>
 <div class="ttc" id="aa01474_html_a48f363c7bcd47589472b59f0a7dfb74b"><div class="ttname"><a href="a01474.html#a48f363c7bcd47589472b59f0a7dfb74b">DEBUGGING_LED_s::period</a></div><div class="ttdeci">volatile uint16_t period</div><div class="ttdef"><b>Definition:</b> <a href="a00215_source.html#l00056">app_led.h:56</a></div></div>
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->

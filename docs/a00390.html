@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Device GPIO Assignments</title>
+<title>Digital Power Starter Kit 3 Firmware: User Settings</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -97,953 +97,318 @@ $(document).ready(function(){initNavTree('a00390.html',''); initResizable(); });
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Device GPIO Assignments<div class="ingroups"><a class="el" href="a00531.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00389.html">Circuit Special Circuit Signals</a></div></div>  </div>
+<div class="title">User Settings<div class="ingroups"><a class="el" href="a00531.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00389.html">PWM Settings</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Assignment of microcontroller device pins to circuit functions and signals.  
+<p>Parameter defintions using physical quantities.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Device GPIO Assignments:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for User Settings:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00390.svg" width="382" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00390.svg" width="267" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <table class="memberdecls">
-<tr class="memitem:ga5e2c1c4e412e8814735a407ed3d35509"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga5e2c1c4e412e8814735a407ed3d35509">DBGPIN1_PORT</a>&#160;&#160;&#160;1</td></tr>
-<tr class="memdesc:ga5e2c1c4e412e8814735a407ed3d35509"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global abstraction labels of special circuit signal device pin assignments.  <a href="a00390.html#ga5e2c1c4e412e8814735a407ed3d35509">More...</a><br /></td></tr>
-<tr class="separator:ga5e2c1c4e412e8814735a407ed3d35509"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab5b808f6da3668c66b068245c18b42c5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#gab5b808f6da3668c66b068245c18b42c5">DBGPIN1_PIN</a>&#160;&#160;&#160;5</td></tr>
-<tr class="memdesc:gab5b808f6da3668c66b068245c18b42c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO port pin declaration where 0=Rx0, 1=Rx1, 2=Rx3, etc.  <a href="a00390.html#gab5b808f6da3668c66b068245c18b42c5">More...</a><br /></td></tr>
-<tr class="separator:gab5b808f6da3668c66b068245c18b42c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0fcda4794122b73cc77dd94f3e87881e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga0fcda4794122b73cc77dd94f3e87881e">DBGPIN1_Get</a>()&#160;&#160;&#160;_RB5</td></tr>
-<tr class="memdesc:ga0fcda4794122b73cc77dd94f3e87881e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro instruction to set a pin state to logic HIGH.  <a href="a00390.html#ga0fcda4794122b73cc77dd94f3e87881e">More...</a><br /></td></tr>
-<tr class="separator:ga0fcda4794122b73cc77dd94f3e87881e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga68099f5c4f61be5720a1ff79998f5aa8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga68099f5c4f61be5720a1ff79998f5aa8">DBGPIN1_Set</a>()&#160;&#160;&#160;{ _LATB5 = 1; }</td></tr>
-<tr class="memdesc:ga68099f5c4f61be5720a1ff79998f5aa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro instruction to set a pin state to logic HIGH.  <a href="a00390.html#ga68099f5c4f61be5720a1ff79998f5aa8">More...</a><br /></td></tr>
-<tr class="separator:ga68099f5c4f61be5720a1ff79998f5aa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga863f176172825140c1d4189f48e098bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga863f176172825140c1d4189f48e098bb">DBGPIN1_Clear</a>()&#160;&#160;&#160;{ _LATB5 = 0; }</td></tr>
-<tr class="memdesc:ga863f176172825140c1d4189f48e098bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro instruction to set a pin state to logic LOW.  <a href="a00390.html#ga863f176172825140c1d4189f48e098bb">More...</a><br /></td></tr>
-<tr class="separator:ga863f176172825140c1d4189f48e098bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae69ef331f5fadcc42dfcceb85eee082c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#gae69ef331f5fadcc42dfcceb85eee082c">DBGPIN1_Toggle</a>()&#160;&#160;&#160;{ _LATB5 ^= 1; }</td></tr>
-<tr class="memdesc:gae69ef331f5fadcc42dfcceb85eee082c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro instruction to toggle most recent pin state.  <a href="a00390.html#gae69ef331f5fadcc42dfcceb85eee082c">More...</a><br /></td></tr>
-<tr class="separator:gae69ef331f5fadcc42dfcceb85eee082c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6c75ce713b6c317a532c901f1fee851f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga6c75ce713b6c317a532c901f1fee851f">DBGPIN1_Init</a>()&#160;&#160;&#160;{ _LATB5 = 0; _TRISB5 = 0; }</td></tr>
-<tr class="memdesc:ga6c75ce713b6c317a532c901f1fee851f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro instruction initializing the specified GPIO as output.  <a href="a00390.html#ga6c75ce713b6c317a532c901f1fee851f">More...</a><br /></td></tr>
-<tr class="separator:ga6c75ce713b6c317a532c901f1fee851f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad13eb1d655160115a41f462f1cb7b047"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#gad13eb1d655160115a41f462f1cb7b047">DBGPIN1_Dispose</a>()&#160;&#160;&#160;{ _LATB5 = 1; _TRISB5 = 1; }</td></tr>
-<tr class="memdesc:gad13eb1d655160115a41f462f1cb7b047"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro instruction initializing the specified GPIO as input.  <a href="a00390.html#gad13eb1d655160115a41f462f1cb7b047">More...</a><br /></td></tr>
-<tr class="separator:gad13eb1d655160115a41f462f1cb7b047"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2b7203433eb70d8fc6b8df0b5c41f83b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga2b7203433eb70d8fc6b8df0b5c41f83b">DBGPIN2_PORT</a>&#160;&#160;&#160;1</td></tr>
-<tr class="memdesc:ga2b7203433eb70d8fc6b8df0b5c41f83b"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO port declaration where 0=Port RA, 0=Port RB, 0=Port RC, etc.  <a href="a00390.html#ga2b7203433eb70d8fc6b8df0b5c41f83b">More...</a><br /></td></tr>
-<tr class="separator:ga2b7203433eb70d8fc6b8df0b5c41f83b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6c82e51210b60a8daaea2602496c93b1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga6c82e51210b60a8daaea2602496c93b1">DBGPIN2_PIN</a>&#160;&#160;&#160;11</td></tr>
-<tr class="memdesc:ga6c82e51210b60a8daaea2602496c93b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO port pin declaration where 0=Rx0, 1=Rx1, 2=Rx3, etc.  <a href="a00390.html#ga6c82e51210b60a8daaea2602496c93b1">More...</a><br /></td></tr>
-<tr class="separator:ga6c82e51210b60a8daaea2602496c93b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga827c04ff6e7576210ebc3e250c027f63"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga827c04ff6e7576210ebc3e250c027f63">DBGPIN2_Get</a>()&#160;&#160;&#160;_RB11</td></tr>
-<tr class="memdesc:ga827c04ff6e7576210ebc3e250c027f63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro instruction to set a pin state to logic HIGH.  <a href="a00390.html#ga827c04ff6e7576210ebc3e250c027f63">More...</a><br /></td></tr>
-<tr class="separator:ga827c04ff6e7576210ebc3e250c027f63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga81602741185030b94a63da995bebe9d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga81602741185030b94a63da995bebe9d7">DBGPIN2_Set</a>()&#160;&#160;&#160;{ _LATB11 = 1; }</td></tr>
-<tr class="memdesc:ga81602741185030b94a63da995bebe9d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro instruction to set a pin state to logic HIGH.  <a href="a00390.html#ga81602741185030b94a63da995bebe9d7">More...</a><br /></td></tr>
-<tr class="separator:ga81602741185030b94a63da995bebe9d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8209ee25d31e6631f485b662d105fc8d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga8209ee25d31e6631f485b662d105fc8d">DBGPIN2_Clear</a>()&#160;&#160;&#160;{ _LATB11 = 0; }</td></tr>
-<tr class="memdesc:ga8209ee25d31e6631f485b662d105fc8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro instruction to set a pin state to logic LOW.  <a href="a00390.html#ga8209ee25d31e6631f485b662d105fc8d">More...</a><br /></td></tr>
-<tr class="separator:ga8209ee25d31e6631f485b662d105fc8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga76f1eb634a1181f09f98522c0854a55b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga76f1eb634a1181f09f98522c0854a55b">DBGPIN2_Toggle</a>()&#160;&#160;&#160;{ _LATB11 ^= 1; }</td></tr>
-<tr class="memdesc:ga76f1eb634a1181f09f98522c0854a55b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro instruction to toggle most recent pin state.  <a href="a00390.html#ga76f1eb634a1181f09f98522c0854a55b">More...</a><br /></td></tr>
-<tr class="separator:ga76f1eb634a1181f09f98522c0854a55b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga799967fceeeae22fbe97fab675ce49b2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga799967fceeeae22fbe97fab675ce49b2">DBGPIN2_Init</a>()&#160;&#160;&#160;{ _LATB11 = 0; _TRISB11 = 0; }</td></tr>
-<tr class="memdesc:ga799967fceeeae22fbe97fab675ce49b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro instruction initializing the specified GPIO as output.  <a href="a00390.html#ga799967fceeeae22fbe97fab675ce49b2">More...</a><br /></td></tr>
-<tr class="separator:ga799967fceeeae22fbe97fab675ce49b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0428dd552ce473ac0a57d8e605f6107f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga0428dd552ce473ac0a57d8e605f6107f">DBGPIN2_Dispose</a>()&#160;&#160;&#160;{ _LATB11 = 1; _TRISB11 = 1; }</td></tr>
-<tr class="memdesc:ga0428dd552ce473ac0a57d8e605f6107f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro instruction initializing the specified GPIO as input.  <a href="a00390.html#ga0428dd552ce473ac0a57d8e605f6107f">More...</a><br /></td></tr>
-<tr class="separator:ga0428dd552ce473ac0a57d8e605f6107f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafa43bc540dbf899e6f3e083adbe683d5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#gafa43bc540dbf899e6f3e083adbe683d5">DBGLED_PORT</a>&#160;&#160;&#160;1</td></tr>
-<tr class="memdesc:gafa43bc540dbf899e6f3e083adbe683d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO port declaration where 0=Port RA, 0=Port RB, 0=Port RC, etc.  <a href="a00390.html#gafa43bc540dbf899e6f3e083adbe683d5">More...</a><br /></td></tr>
-<tr class="separator:gafa43bc540dbf899e6f3e083adbe683d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga78c90f2edb77b15cb6223ab65bb128ee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga78c90f2edb77b15cb6223ab65bb128ee">DBGLED_PIN</a>&#160;&#160;&#160;6</td></tr>
-<tr class="memdesc:ga78c90f2edb77b15cb6223ab65bb128ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO port pin declaration where 0=Rx0, 1=Rx1, 2=Rx3, etc.  <a href="a00390.html#ga78c90f2edb77b15cb6223ab65bb128ee">More...</a><br /></td></tr>
-<tr class="separator:ga78c90f2edb77b15cb6223ab65bb128ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga774daaf86bf5e73051bf3dcdf9e499a6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga774daaf86bf5e73051bf3dcdf9e499a6">DBGLED_Get</a>()&#160;&#160;&#160;_RB6</td></tr>
-<tr class="memdesc:ga774daaf86bf5e73051bf3dcdf9e499a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro instruction to set a pin state to logic HIGH.  <a href="a00390.html#ga774daaf86bf5e73051bf3dcdf9e499a6">More...</a><br /></td></tr>
-<tr class="separator:ga774daaf86bf5e73051bf3dcdf9e499a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadab0810d05950f4dca0284889575c688"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#gadab0810d05950f4dca0284889575c688">DBGLED_Set</a>()&#160;&#160;&#160;{ _LATB6 = 1; }</td></tr>
-<tr class="memdesc:gadab0810d05950f4dca0284889575c688"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro instruction to set a pin state to logic HIGH.  <a href="a00390.html#gadab0810d05950f4dca0284889575c688">More...</a><br /></td></tr>
-<tr class="separator:gadab0810d05950f4dca0284889575c688"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga65ad72dcdfb6cb2af13342b2389257b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga65ad72dcdfb6cb2af13342b2389257b8">DBGLED_Clear</a>()&#160;&#160;&#160;{ _LATB6 = 0; }</td></tr>
-<tr class="memdesc:ga65ad72dcdfb6cb2af13342b2389257b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro instruction to set a pin state to logic LOW.  <a href="a00390.html#ga65ad72dcdfb6cb2af13342b2389257b8">More...</a><br /></td></tr>
-<tr class="separator:ga65ad72dcdfb6cb2af13342b2389257b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadd1664fc6d47d42e930cf9453a3b6e87"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#gadd1664fc6d47d42e930cf9453a3b6e87">DBGLED_Toggle</a>()&#160;&#160;&#160;{ _LATB6 ^= 1; }</td></tr>
-<tr class="memdesc:gadd1664fc6d47d42e930cf9453a3b6e87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro instruction to toggle most recent pin state.  <a href="a00390.html#gadd1664fc6d47d42e930cf9453a3b6e87">More...</a><br /></td></tr>
-<tr class="separator:gadd1664fc6d47d42e930cf9453a3b6e87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6f72dd83ca1c1b3bac872c5b9b55823c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga6f72dd83ca1c1b3bac872c5b9b55823c">DBGLED_Init</a>()&#160;&#160;&#160;{ _LATB6 = 0; _TRISB6 = 0; }</td></tr>
-<tr class="memdesc:ga6f72dd83ca1c1b3bac872c5b9b55823c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro instruction initializing the specified GPIO as output.  <a href="a00390.html#ga6f72dd83ca1c1b3bac872c5b9b55823c">More...</a><br /></td></tr>
-<tr class="separator:ga6f72dd83ca1c1b3bac872c5b9b55823c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga11c0a9d0875d6a807235d225b70281d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga11c0a9d0875d6a807235d225b70281d2">DBGLED_Dispose</a>()&#160;&#160;&#160;{ _LATB6 = 1; _TRISB6 = 1; }</td></tr>
-<tr class="memdesc:ga11c0a9d0875d6a807235d225b70281d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro instruction initializing the specified GPIO as input.  <a href="a00390.html#ga11c0a9d0875d6a807235d225b70281d2">More...</a><br /></td></tr>
-<tr class="separator:ga11c0a9d0875d6a807235d225b70281d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa41ac18d27256361be5d7ae39337f1ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#gaa41ac18d27256361be5d7ae39337f1ef">PWRGOOD_PORT</a>&#160;&#160;&#160;1</td></tr>
-<tr class="memdesc:gaa41ac18d27256361be5d7ae39337f1ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO port declaration where 0=Port RA, 0=Port RB, 0=Port RC, etc.  <a href="a00390.html#gaa41ac18d27256361be5d7ae39337f1ef">More...</a><br /></td></tr>
-<tr class="separator:gaa41ac18d27256361be5d7ae39337f1ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0931cbd53153018be31acf403544c3ab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga0931cbd53153018be31acf403544c3ab">PWRGOOD_PIN</a>&#160;&#160;&#160;12</td></tr>
-<tr class="memdesc:ga0931cbd53153018be31acf403544c3ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO port pin declaration where 0=Rx0, 1=Rx1, 2=Rx3, etc.  <a href="a00390.html#ga0931cbd53153018be31acf403544c3ab">More...</a><br /></td></tr>
-<tr class="separator:ga0931cbd53153018be31acf403544c3ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga002953a599296b4fc98496a5dc0f5628"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga002953a599296b4fc98496a5dc0f5628">PWRGOOD_Get</a>()&#160;&#160;&#160;{ _RB12; }</td></tr>
-<tr class="memdesc:ga002953a599296b4fc98496a5dc0f5628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro instruction to set a pin state to logic HIGH.  <a href="a00390.html#ga002953a599296b4fc98496a5dc0f5628">More...</a><br /></td></tr>
-<tr class="separator:ga002953a599296b4fc98496a5dc0f5628"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf8e24346d237b20f54c51230324f1057"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#gaf8e24346d237b20f54c51230324f1057">PWRGOOD_Set</a>()&#160;&#160;&#160;{ _LATB12 = 1; }</td></tr>
-<tr class="memdesc:gaf8e24346d237b20f54c51230324f1057"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro instruction to set a pin state to logic HIGH.  <a href="a00390.html#gaf8e24346d237b20f54c51230324f1057">More...</a><br /></td></tr>
-<tr class="separator:gaf8e24346d237b20f54c51230324f1057"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga08788506e884eccb4282bf2bccd32982"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga08788506e884eccb4282bf2bccd32982">PWRGOOD_Clear</a>()&#160;&#160;&#160;{ _LATB12 = 0; }</td></tr>
-<tr class="memdesc:ga08788506e884eccb4282bf2bccd32982"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro instruction to set a pin state to logic LOW.  <a href="a00390.html#ga08788506e884eccb4282bf2bccd32982">More...</a><br /></td></tr>
-<tr class="separator:ga08788506e884eccb4282bf2bccd32982"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaae08a194e05086ee7428c3d4b6dfeef4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#gaae08a194e05086ee7428c3d4b6dfeef4">PWRGOOD_Toggle</a>()&#160;&#160;&#160;{ _LATB12 ^= 1; }</td></tr>
-<tr class="memdesc:gaae08a194e05086ee7428c3d4b6dfeef4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro instruction to toggle most recent pin state.  <a href="a00390.html#gaae08a194e05086ee7428c3d4b6dfeef4">More...</a><br /></td></tr>
-<tr class="separator:gaae08a194e05086ee7428c3d4b6dfeef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5e1696c7e66145bba0cbc254e27b052c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga5e1696c7e66145bba0cbc254e27b052c">PWRGOOD_Init</a>()&#160;&#160;&#160;{ _LATB12 = 0; _TRISB12 = 0; }</td></tr>
-<tr class="memdesc:ga5e1696c7e66145bba0cbc254e27b052c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro instruction initializing the specified GPIO as output.  <a href="a00390.html#ga5e1696c7e66145bba0cbc254e27b052c">More...</a><br /></td></tr>
-<tr class="separator:ga5e1696c7e66145bba0cbc254e27b052c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf4d18800a39129c0256f6be165862bcd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#gaf4d18800a39129c0256f6be165862bcd">PWRGOOD_Dispose</a>()&#160;&#160;&#160;{ _LATB12 = 1; _TRISB12 = 1; }</td></tr>
-<tr class="memdesc:gaf4d18800a39129c0256f6be165862bcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro instruction initializing the specified GPIO as input.  <a href="a00390.html#gaf4d18800a39129c0256f6be165862bcd">More...</a><br /></td></tr>
-<tr class="separator:gaf4d18800a39129c0256f6be165862bcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga39c17d4f2167ce8b705b662afbfdb9b1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga39c17d4f2167ce8b705b662afbfdb9b1">SW_USER_PORT</a>&#160;&#160;&#160;3</td></tr>
-<tr class="memdesc:ga39c17d4f2167ce8b705b662afbfdb9b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO port declaration where 0=Port RA, 0=Port RB, 0=Port RC, etc.  <a href="a00390.html#ga39c17d4f2167ce8b705b662afbfdb9b1">More...</a><br /></td></tr>
-<tr class="separator:ga39c17d4f2167ce8b705b662afbfdb9b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaeb2e1ef8508ada9c21ccb83561947bf8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#gaeb2e1ef8508ada9c21ccb83561947bf8">SW_USER_PIN</a>&#160;&#160;&#160;1</td></tr>
-<tr class="memdesc:gaeb2e1ef8508ada9c21ccb83561947bf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO port pin declaration where 0=Rx0, 1=Rx1, 2=Rx3, etc.  <a href="a00390.html#gaeb2e1ef8508ada9c21ccb83561947bf8">More...</a><br /></td></tr>
-<tr class="separator:gaeb2e1ef8508ada9c21ccb83561947bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8dab463440a35fc3ca8ff1386e76a0ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga8dab463440a35fc3ca8ff1386e76a0ed">SW_USER_Get</a>()&#160;&#160;&#160;_RD1</td></tr>
-<tr class="memdesc:ga8dab463440a35fc3ca8ff1386e76a0ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro instruction to set a pin state to logic HIGH.  <a href="a00390.html#ga8dab463440a35fc3ca8ff1386e76a0ed">More...</a><br /></td></tr>
-<tr class="separator:ga8dab463440a35fc3ca8ff1386e76a0ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga85d0ae28842fbbec76c772a4d837a4f0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga85d0ae28842fbbec76c772a4d837a4f0">SW_USER_Set</a>()&#160;&#160;&#160;{ _LATD1 = 1; }</td></tr>
-<tr class="memdesc:ga85d0ae28842fbbec76c772a4d837a4f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro instruction to set a pin state to logic HIGH.  <a href="a00390.html#ga85d0ae28842fbbec76c772a4d837a4f0">More...</a><br /></td></tr>
-<tr class="separator:ga85d0ae28842fbbec76c772a4d837a4f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacbd13ddef363e34e2c928385c6a1981b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#gacbd13ddef363e34e2c928385c6a1981b">SW_USER_Clear</a>()&#160;&#160;&#160;{ _LATD1 = 0; }</td></tr>
-<tr class="memdesc:gacbd13ddef363e34e2c928385c6a1981b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro instruction to set a pin state to logic LOW.  <a href="a00390.html#gacbd13ddef363e34e2c928385c6a1981b">More...</a><br /></td></tr>
-<tr class="separator:gacbd13ddef363e34e2c928385c6a1981b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac307ed7b4f9656614fbe23b6aa11d5af"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#gac307ed7b4f9656614fbe23b6aa11d5af">SW_USER_Toggle</a>()&#160;&#160;&#160;{ _LATD1 ^= 1; }</td></tr>
-<tr class="memdesc:gac307ed7b4f9656614fbe23b6aa11d5af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro instruction to toggle most recent pin state.  <a href="a00390.html#gac307ed7b4f9656614fbe23b6aa11d5af">More...</a><br /></td></tr>
-<tr class="separator:gac307ed7b4f9656614fbe23b6aa11d5af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga581c67f9730c387a74c217a17dd2f21c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga581c67f9730c387a74c217a17dd2f21c">SW_USER_Init</a>()&#160;&#160;&#160;{ _LATD1 = 1; _TRISD1 = 1; }</td></tr>
-<tr class="memdesc:ga581c67f9730c387a74c217a17dd2f21c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro instruction initializing the specified GPIO as input.  <a href="a00390.html#ga581c67f9730c387a74c217a17dd2f21c">More...</a><br /></td></tr>
-<tr class="separator:ga581c67f9730c387a74c217a17dd2f21c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga834d21b1a01bcd18ecbde60065d548fe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga834d21b1a01bcd18ecbde60065d548fe">SW_USER_Dispose</a>()&#160;&#160;&#160;{ _LATD1 = 1; _TRISD1 = 1; }</td></tr>
-<tr class="memdesc:ga834d21b1a01bcd18ecbde60065d548fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro instruction initializing the specified GPIO as input.  <a href="a00390.html#ga834d21b1a01bcd18ecbde60065d548fe">More...</a><br /></td></tr>
-<tr class="separator:ga834d21b1a01bcd18ecbde60065d548fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga353ba60329e90d1aca97deba7e0bd669"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga353ba60329e90d1aca97deba7e0bd669">BUCK_NO_OF_PHASES</a>&#160;&#160;&#160;1U</td></tr>
+<tr class="memdesc:ga353ba60329e90d1aca97deba7e0bd669"><td class="mdescLeft">&#160;</td><td class="mdescRight">User-declaration of global defines for PWM signal generator settings.  <a href="a00390.html#ga353ba60329e90d1aca97deba7e0bd669">More...</a><br /></td></tr>
+<tr class="separator:ga353ba60329e90d1aca97deba7e0bd669"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadecc3fb9cc6da0d2add11d577d50d5b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#gadecc3fb9cc6da0d2add11d577d50d5b5">BUCK_SWITCHING_FREQUENCY</a>&#160;&#160;&#160;(float)500.0e+3</td></tr>
+<tr class="memdesc:gadecc3fb9cc6da0d2add11d577d50d5b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fixed Switching frequency in [Hz].  <a href="a00390.html#gadecc3fb9cc6da0d2add11d577d50d5b5">More...</a><br /></td></tr>
+<tr class="separator:gadecc3fb9cc6da0d2add11d577d50d5b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabcc43f4201492160173351db97ddcfda"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#gabcc43f4201492160173351db97ddcfda">BUCK_PWM_DUTY_CYCLE_MIN</a>&#160;&#160;&#160;(float)0.010</td></tr>
+<tr class="memdesc:gabcc43f4201492160173351db97ddcfda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum on/off-time ratio (duty ratio) in [%].  <a href="a00390.html#gabcc43f4201492160173351db97ddcfda">More...</a><br /></td></tr>
+<tr class="separator:gabcc43f4201492160173351db97ddcfda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga355fe35bc08bc0f4657be7f638a643a6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga355fe35bc08bc0f4657be7f638a643a6">BUCK_PWM_DUTY_CYCLE_MAX</a>&#160;&#160;&#160;(float)0.900</td></tr>
+<tr class="memdesc:ga355fe35bc08bc0f4657be7f638a643a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum on/off-time ratio (duty ratio) in [%].  <a href="a00390.html#ga355fe35bc08bc0f4657be7f638a643a6">More...</a><br /></td></tr>
+<tr class="separator:ga355fe35bc08bc0f4657be7f638a643a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga53e830102be3559594f1f107c42e3cb2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga53e830102be3559594f1f107c42e3cb2">BUCK_LEADING_EDGE_BLANKING</a>&#160;&#160;&#160;(float)120.0e-9</td></tr>
+<tr class="memdesc:ga53e830102be3559594f1f107c42e3cb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leading Edge Blanking period in [sec].  <a href="a00390.html#ga53e830102be3559594f1f107c42e3cb2">More...</a><br /></td></tr>
+<tr class="separator:ga53e830102be3559594f1f107c42e3cb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaee8430cb24cfc1cdd3b12dd3c40b09d5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#gaee8430cb24cfc1cdd3b12dd3c40b09d5">BUCK_DEAD_TIME_LEADING_EDGE</a>&#160;&#160;&#160;(float)20.0e-9</td></tr>
+<tr class="memdesc:gaee8430cb24cfc1cdd3b12dd3c40b09d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leading Edge Dead Time delay in [sec].  <a href="a00390.html#gaee8430cb24cfc1cdd3b12dd3c40b09d5">More...</a><br /></td></tr>
+<tr class="separator:gaee8430cb24cfc1cdd3b12dd3c40b09d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafe895b572c7fdeced04221d53c18695d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#gafe895b572c7fdeced04221d53c18695d">BUCK_DEAD_TIME_FALLING_EDGE</a>&#160;&#160;&#160;(float)60.0e-9</td></tr>
+<tr class="memdesc:gafe895b572c7fdeced04221d53c18695d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Falling Edge Dead Time delay in [sec].  <a href="a00390.html#gafe895b572c7fdeced04221d53c18695d">More...</a><br /></td></tr>
+<tr class="separator:gafe895b572c7fdeced04221d53c18695d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5208c54df1cdb14e00e62eb7957820f6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga5208c54df1cdb14e00e62eb7957820f6">BOOST_NO_OF_PHASES</a>&#160;&#160;&#160;1U</td></tr>
+<tr class="memdesc:ga5208c54df1cdb14e00e62eb7957820f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">User-declaration of global defines for PWM signal generator settings.  <a href="a00390.html#ga5208c54df1cdb14e00e62eb7957820f6">More...</a><br /></td></tr>
+<tr class="separator:ga5208c54df1cdb14e00e62eb7957820f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga190c68d192a604d70087146623fedd1d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga190c68d192a604d70087146623fedd1d">BOOST_SWITCHING_FREQUENCY</a>&#160;&#160;&#160;(float)500.0e+3</td></tr>
+<tr class="memdesc:ga190c68d192a604d70087146623fedd1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fixed Switching frequency in [Hz].  <a href="a00390.html#ga190c68d192a604d70087146623fedd1d">More...</a><br /></td></tr>
+<tr class="separator:ga190c68d192a604d70087146623fedd1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf4b6b5baf07ba17e75f66ec5305c68fb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#gaf4b6b5baf07ba17e75f66ec5305c68fb">BOOST_PWM_DUTY_CYCLE_MIN</a>&#160;&#160;&#160;(float)0.040</td></tr>
+<tr class="memdesc:gaf4b6b5baf07ba17e75f66ec5305c68fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum on/off-time ratio (duty ratio) in [%].  <a href="a00390.html#gaf4b6b5baf07ba17e75f66ec5305c68fb">More...</a><br /></td></tr>
+<tr class="separator:gaf4b6b5baf07ba17e75f66ec5305c68fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafe2eededed4304c44e47642b9093beda"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#gafe2eededed4304c44e47642b9093beda">BOOST_PWM_DUTY_CYCLE_MAX</a>&#160;&#160;&#160;(float)0.850</td></tr>
+<tr class="memdesc:gafe2eededed4304c44e47642b9093beda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum on/off-time ratio (duty ratio) in [%].  <a href="a00390.html#gafe2eededed4304c44e47642b9093beda">More...</a><br /></td></tr>
+<tr class="separator:gafe2eededed4304c44e47642b9093beda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadef417fa6e9b29f43fc1b26321f07750"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#gadef417fa6e9b29f43fc1b26321f07750">BOOST_LEADING_EDGE_BLANKING</a>&#160;&#160;&#160;(float)120.0e-9</td></tr>
+<tr class="memdesc:gadef417fa6e9b29f43fc1b26321f07750"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leading Edge Blanking period in [sec].  <a href="a00390.html#gadef417fa6e9b29f43fc1b26321f07750">More...</a><br /></td></tr>
+<tr class="separator:gadef417fa6e9b29f43fc1b26321f07750"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga30bc95c5be03be162bd08c04706e34b2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga30bc95c5be03be162bd08c04706e34b2">BOOST_DEAD_TIME_LEADING_EDGE</a>&#160;&#160;&#160;(float) 0.0e-9</td></tr>
+<tr class="memdesc:ga30bc95c5be03be162bd08c04706e34b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leading Edge Dead Time delay in [sec].  <a href="a00390.html#ga30bc95c5be03be162bd08c04706e34b2">More...</a><br /></td></tr>
+<tr class="separator:ga30bc95c5be03be162bd08c04706e34b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacc7415a2a9fd14abe19588dac5804b22"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#gacc7415a2a9fd14abe19588dac5804b22">BOOST_DEAD_TIME_FALLING_EDGE</a>&#160;&#160;&#160;(float) 0.0e-9</td></tr>
+<tr class="memdesc:gacc7415a2a9fd14abe19588dac5804b22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Falling Edge Dead Time delay in [sec].  <a href="a00390.html#gacc7415a2a9fd14abe19588dac5804b22">More...</a><br /></td></tr>
+<tr class="separator:gacc7415a2a9fd14abe19588dac5804b22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Assignment of microcontroller device pins to circuit functions and signals. </p>
+<p>Parameter defintions using physical quantities. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga65ad72dcdfb6cb2af13342b2389257b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga65ad72dcdfb6cb2af13342b2389257b8">&#9670;&nbsp;</a></span>DBGLED_Clear</h2>
+<a id="gacc7415a2a9fd14abe19588dac5804b22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacc7415a2a9fd14abe19588dac5804b22">&#9670;&nbsp;</a></span>BOOST_DEAD_TIME_FALLING_EDGE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DBGLED_Clear</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB6 = 0; }</td>
+          <td class="memname">#define BOOST_DEAD_TIME_FALLING_EDGE&#160;&#160;&#160;(float) 0.0e-9</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro instruction to set a pin state to logic LOW. </p>
+<p>Falling Edge Dead Time delay in [sec]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00214">214</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00920">920</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga11c0a9d0875d6a807235d225b70281d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga11c0a9d0875d6a807235d225b70281d2">&#9670;&nbsp;</a></span>DBGLED_Dispose</h2>
+<a id="ga30bc95c5be03be162bd08c04706e34b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga30bc95c5be03be162bd08c04706e34b2">&#9670;&nbsp;</a></span>BOOST_DEAD_TIME_LEADING_EDGE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DBGLED_Dispose</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB6 = 1; _TRISB6 = 1; }</td>
+          <td class="memname">#define BOOST_DEAD_TIME_LEADING_EDGE&#160;&#160;&#160;(float) 0.0e-9</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro instruction initializing the specified GPIO as input. </p>
+<p>Leading Edge Dead Time delay in [sec]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00217">217</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00919">919</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga774daaf86bf5e73051bf3dcdf9e499a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga774daaf86bf5e73051bf3dcdf9e499a6">&#9670;&nbsp;</a></span>DBGLED_Get</h2>
+<a id="gadef417fa6e9b29f43fc1b26321f07750"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadef417fa6e9b29f43fc1b26321f07750">&#9670;&nbsp;</a></span>BOOST_LEADING_EDGE_BLANKING</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DBGLED_Get</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_RB6</td>
+          <td class="memname">#define BOOST_LEADING_EDGE_BLANKING&#160;&#160;&#160;(float)120.0e-9</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro instruction to set a pin state to logic HIGH. </p>
+<p>Leading Edge Blanking period in [sec]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00212">212</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00918">918</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga6f72dd83ca1c1b3bac872c5b9b55823c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6f72dd83ca1c1b3bac872c5b9b55823c">&#9670;&nbsp;</a></span>DBGLED_Init</h2>
+<a id="ga5208c54df1cdb14e00e62eb7957820f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5208c54df1cdb14e00e62eb7957820f6">&#9670;&nbsp;</a></span>BOOST_NO_OF_PHASES</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DBGLED_Init</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB6 = 0; _TRISB6 = 0; }</td>
+          <td class="memname">#define BOOST_NO_OF_PHASES&#160;&#160;&#160;1U</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro instruction initializing the specified GPIO as output. </p>
+<p>User-declaration of global defines for PWM signal generator settings. </p>
+<p>This section defines fundamental PWM settings required for the on-board boost converter of DPSK3. These settings are determined by hardware and defined using physical quantities. Pre-compiler macros are used to convert physical values into binary (integer) numbers to be written to Special Function Registers (SFR). Number of power converter phases of this design </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00216">216</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00913">913</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga78c90f2edb77b15cb6223ab65bb128ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga78c90f2edb77b15cb6223ab65bb128ee">&#9670;&nbsp;</a></span>DBGLED_PIN</h2>
+<a id="gafe2eededed4304c44e47642b9093beda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafe2eededed4304c44e47642b9093beda">&#9670;&nbsp;</a></span>BOOST_PWM_DUTY_CYCLE_MAX</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DBGLED_PIN&#160;&#160;&#160;6</td>
+          <td class="memname">#define BOOST_PWM_DUTY_CYCLE_MAX&#160;&#160;&#160;(float)0.850</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>GPIO port pin declaration where 0=Rx0, 1=Rx1, 2=Rx3, etc. </p>
+<p>Maximum on/off-time ratio (duty ratio) in [%]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00211">211</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00917">917</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gafa43bc540dbf899e6f3e083adbe683d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gafa43bc540dbf899e6f3e083adbe683d5">&#9670;&nbsp;</a></span>DBGLED_PORT</h2>
+<a id="gaf4b6b5baf07ba17e75f66ec5305c68fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf4b6b5baf07ba17e75f66ec5305c68fb">&#9670;&nbsp;</a></span>BOOST_PWM_DUTY_CYCLE_MIN</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DBGLED_PORT&#160;&#160;&#160;1</td>
+          <td class="memname">#define BOOST_PWM_DUTY_CYCLE_MIN&#160;&#160;&#160;(float)0.040</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>GPIO port declaration where 0=Port RA, 0=Port RB, 0=Port RC, etc. </p>
+<p>Minimum on/off-time ratio (duty ratio) in [%]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00210">210</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00916">916</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gadab0810d05950f4dca0284889575c688"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadab0810d05950f4dca0284889575c688">&#9670;&nbsp;</a></span>DBGLED_Set</h2>
+<a id="ga190c68d192a604d70087146623fedd1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga190c68d192a604d70087146623fedd1d">&#9670;&nbsp;</a></span>BOOST_SWITCHING_FREQUENCY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DBGLED_Set</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB6 = 1; }</td>
+          <td class="memname">#define BOOST_SWITCHING_FREQUENCY&#160;&#160;&#160;(float)500.0e+3</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro instruction to set a pin state to logic HIGH. </p>
+<p>Fixed Switching frequency in [Hz]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00213">213</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00915">915</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gadd1664fc6d47d42e930cf9453a3b6e87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadd1664fc6d47d42e930cf9453a3b6e87">&#9670;&nbsp;</a></span>DBGLED_Toggle</h2>
+<a id="gafe895b572c7fdeced04221d53c18695d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafe895b572c7fdeced04221d53c18695d">&#9670;&nbsp;</a></span>BUCK_DEAD_TIME_FALLING_EDGE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DBGLED_Toggle</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB6 ^= 1; }</td>
+          <td class="memname">#define BUCK_DEAD_TIME_FALLING_EDGE&#160;&#160;&#160;(float)60.0e-9</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro instruction to toggle most recent pin state. </p>
+<p>Falling Edge Dead Time delay in [sec]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00215">215</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00294">294</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga863f176172825140c1d4189f48e098bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga863f176172825140c1d4189f48e098bb">&#9670;&nbsp;</a></span>DBGPIN1_Clear</h2>
+<a id="gaee8430cb24cfc1cdd3b12dd3c40b09d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaee8430cb24cfc1cdd3b12dd3c40b09d5">&#9670;&nbsp;</a></span>BUCK_DEAD_TIME_LEADING_EDGE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DBGPIN1_Clear</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB5 = 0; }</td>
+          <td class="memname">#define BUCK_DEAD_TIME_LEADING_EDGE&#160;&#160;&#160;(float)20.0e-9</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro instruction to set a pin state to logic LOW. </p>
+<p>Leading Edge Dead Time delay in [sec]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00192">192</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00293">293</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gad13eb1d655160115a41f462f1cb7b047"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad13eb1d655160115a41f462f1cb7b047">&#9670;&nbsp;</a></span>DBGPIN1_Dispose</h2>
+<a id="ga53e830102be3559594f1f107c42e3cb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga53e830102be3559594f1f107c42e3cb2">&#9670;&nbsp;</a></span>BUCK_LEADING_EDGE_BLANKING</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DBGPIN1_Dispose</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB5 = 1; _TRISB5 = 1; }</td>
+          <td class="memname">#define BUCK_LEADING_EDGE_BLANKING&#160;&#160;&#160;(float)120.0e-9</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro instruction initializing the specified GPIO as input. </p>
-<p>Enable debugging pin TP52 on DPSK3 </p>
+<p>Leading Edge Blanking period in [sec]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00198">198</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00292">292</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga0fcda4794122b73cc77dd94f3e87881e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0fcda4794122b73cc77dd94f3e87881e">&#9670;&nbsp;</a></span>DBGPIN1_Get</h2>
+<a id="ga353ba60329e90d1aca97deba7e0bd669"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga353ba60329e90d1aca97deba7e0bd669">&#9670;&nbsp;</a></span>BUCK_NO_OF_PHASES</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DBGPIN1_Get</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_RB5</td>
+          <td class="memname">#define BUCK_NO_OF_PHASES&#160;&#160;&#160;1U</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro instruction to set a pin state to logic HIGH. </p>
+<p>User-declaration of global defines for PWM signal generator settings. </p>
+<p>This section defines fundamental PWM settings required for the on-board buck converter of DPSK3. These settings are determined by hardware and defined using physical quantities. Pre-compiler macros are used to convert physical values into binary (integer) numbers to be written to Special Function Registers (SFR). Number of power converter phases of this design </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00190">190</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00287">287</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga6c75ce713b6c317a532c901f1fee851f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6c75ce713b6c317a532c901f1fee851f">&#9670;&nbsp;</a></span>DBGPIN1_Init</h2>
+<a id="ga355fe35bc08bc0f4657be7f638a643a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga355fe35bc08bc0f4657be7f638a643a6">&#9670;&nbsp;</a></span>BUCK_PWM_DUTY_CYCLE_MAX</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DBGPIN1_Init</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB5 = 0; _TRISB5 = 0; }</td>
+          <td class="memname">#define BUCK_PWM_DUTY_CYCLE_MAX&#160;&#160;&#160;(float)0.900</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro instruction initializing the specified GPIO as output. </p>
+<p>Maximum on/off-time ratio (duty ratio) in [%]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00194">194</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00291">291</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gab5b808f6da3668c66b068245c18b42c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab5b808f6da3668c66b068245c18b42c5">&#9670;&nbsp;</a></span>DBGPIN1_PIN</h2>
+<a id="gabcc43f4201492160173351db97ddcfda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabcc43f4201492160173351db97ddcfda">&#9670;&nbsp;</a></span>BUCK_PWM_DUTY_CYCLE_MIN</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DBGPIN1_PIN&#160;&#160;&#160;5</td>
+          <td class="memname">#define BUCK_PWM_DUTY_CYCLE_MIN&#160;&#160;&#160;(float)0.010</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>GPIO port pin declaration where 0=Rx0, 1=Rx1, 2=Rx3, etc. </p>
+<p>Minimum on/off-time ratio (duty ratio) in [%]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00189">189</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00290">290</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga5e2c1c4e412e8814735a407ed3d35509"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5e2c1c4e412e8814735a407ed3d35509">&#9670;&nbsp;</a></span>DBGPIN1_PORT</h2>
+<a id="gadecc3fb9cc6da0d2add11d577d50d5b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadecc3fb9cc6da0d2add11d577d50d5b5">&#9670;&nbsp;</a></span>BUCK_SWITCHING_FREQUENCY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DBGPIN1_PORT&#160;&#160;&#160;1</td>
+          <td class="memname">#define BUCK_SWITCHING_FREQUENCY&#160;&#160;&#160;(float)500.0e+3</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Global abstraction labels of special circuit signal device pin assignments. </p>
-<p>This section is used to define labels of hardware specific signals, which are directly assigned to specific device pins. These labels will be used throughout the code and remain unchanged even if this firmware is migrated to another device or pin-out changes between hardware revisions. &lt; Enable debugging pin TP50 on DPSK3 GPIO port declaration where 0=Port RA, 0=Port RB, 0=Port RC, etc. </p>
+<p>Fixed Switching frequency in [Hz]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00188">188</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga68099f5c4f61be5720a1ff79998f5aa8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga68099f5c4f61be5720a1ff79998f5aa8">&#9670;&nbsp;</a></span>DBGPIN1_Set</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DBGPIN1_Set</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB5 = 1; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Macro instruction to set a pin state to logic HIGH. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00191">191</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gae69ef331f5fadcc42dfcceb85eee082c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae69ef331f5fadcc42dfcceb85eee082c">&#9670;&nbsp;</a></span>DBGPIN1_Toggle</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DBGPIN1_Toggle</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB5 ^= 1; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Macro instruction to toggle most recent pin state. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00193">193</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga8209ee25d31e6631f485b662d105fc8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8209ee25d31e6631f485b662d105fc8d">&#9670;&nbsp;</a></span>DBGPIN2_Clear</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DBGPIN2_Clear</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB11 = 0; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Macro instruction to set a pin state to logic LOW. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00203">203</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga0428dd552ce473ac0a57d8e605f6107f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0428dd552ce473ac0a57d8e605f6107f">&#9670;&nbsp;</a></span>DBGPIN2_Dispose</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DBGPIN2_Dispose</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB11 = 1; _TRISB11 = 1; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Macro instruction initializing the specified GPIO as input. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00206">206</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga827c04ff6e7576210ebc3e250c027f63"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga827c04ff6e7576210ebc3e250c027f63">&#9670;&nbsp;</a></span>DBGPIN2_Get</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DBGPIN2_Get</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_RB11</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Macro instruction to set a pin state to logic HIGH. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00201">201</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga799967fceeeae22fbe97fab675ce49b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga799967fceeeae22fbe97fab675ce49b2">&#9670;&nbsp;</a></span>DBGPIN2_Init</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DBGPIN2_Init</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB11 = 0; _TRISB11 = 0; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Macro instruction initializing the specified GPIO as output. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00205">205</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga6c82e51210b60a8daaea2602496c93b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6c82e51210b60a8daaea2602496c93b1">&#9670;&nbsp;</a></span>DBGPIN2_PIN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DBGPIN2_PIN&#160;&#160;&#160;11</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>GPIO port pin declaration where 0=Rx0, 1=Rx1, 2=Rx3, etc. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00200">200</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga2b7203433eb70d8fc6b8df0b5c41f83b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2b7203433eb70d8fc6b8df0b5c41f83b">&#9670;&nbsp;</a></span>DBGPIN2_PORT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DBGPIN2_PORT&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>GPIO port declaration where 0=Port RA, 0=Port RB, 0=Port RC, etc. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00199">199</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga81602741185030b94a63da995bebe9d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga81602741185030b94a63da995bebe9d7">&#9670;&nbsp;</a></span>DBGPIN2_Set</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DBGPIN2_Set</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB11 = 1; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Macro instruction to set a pin state to logic HIGH. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00202">202</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga76f1eb634a1181f09f98522c0854a55b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga76f1eb634a1181f09f98522c0854a55b">&#9670;&nbsp;</a></span>DBGPIN2_Toggle</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DBGPIN2_Toggle</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB11 ^= 1; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Macro instruction to toggle most recent pin state. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00204">204</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga08788506e884eccb4282bf2bccd32982"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga08788506e884eccb4282bf2bccd32982">&#9670;&nbsp;</a></span>PWRGOOD_Clear</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PWRGOOD_Clear</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB12 = 0; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Macro instruction to set a pin state to logic LOW. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00224">224</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gaf4d18800a39129c0256f6be165862bcd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf4d18800a39129c0256f6be165862bcd">&#9670;&nbsp;</a></span>PWRGOOD_Dispose</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PWRGOOD_Dispose</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB12 = 1; _TRISB12 = 1; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Macro instruction initializing the specified GPIO as input. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00227">227</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga002953a599296b4fc98496a5dc0f5628"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga002953a599296b4fc98496a5dc0f5628">&#9670;&nbsp;</a></span>PWRGOOD_Get</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PWRGOOD_Get</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _RB12; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Macro instruction to set a pin state to logic HIGH. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00222">222</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga5e1696c7e66145bba0cbc254e27b052c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5e1696c7e66145bba0cbc254e27b052c">&#9670;&nbsp;</a></span>PWRGOOD_Init</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PWRGOOD_Init</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB12 = 0; _TRISB12 = 0; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Macro instruction initializing the specified GPIO as output. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00226">226</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga0931cbd53153018be31acf403544c3ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0931cbd53153018be31acf403544c3ab">&#9670;&nbsp;</a></span>PWRGOOD_PIN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PWRGOOD_PIN&#160;&#160;&#160;12</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>GPIO port pin declaration where 0=Rx0, 1=Rx1, 2=Rx3, etc. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00221">221</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gaa41ac18d27256361be5d7ae39337f1ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa41ac18d27256361be5d7ae39337f1ef">&#9670;&nbsp;</a></span>PWRGOOD_PORT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PWRGOOD_PORT&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>GPIO port declaration where 0=Port RA, 0=Port RB, 0=Port RC, etc. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00220">220</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gaf8e24346d237b20f54c51230324f1057"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf8e24346d237b20f54c51230324f1057">&#9670;&nbsp;</a></span>PWRGOOD_Set</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PWRGOOD_Set</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB12 = 1; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Macro instruction to set a pin state to logic HIGH. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00223">223</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gaae08a194e05086ee7428c3d4b6dfeef4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaae08a194e05086ee7428c3d4b6dfeef4">&#9670;&nbsp;</a></span>PWRGOOD_Toggle</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PWRGOOD_Toggle</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATB12 ^= 1; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Macro instruction to toggle most recent pin state. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00225">225</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gacbd13ddef363e34e2c928385c6a1981b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gacbd13ddef363e34e2c928385c6a1981b">&#9670;&nbsp;</a></span>SW_USER_Clear</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SW_USER_Clear</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATD1 = 0; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Macro instruction to set a pin state to logic LOW. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00234">234</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga834d21b1a01bcd18ecbde60065d548fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga834d21b1a01bcd18ecbde60065d548fe">&#9670;&nbsp;</a></span>SW_USER_Dispose</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SW_USER_Dispose</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATD1 = 1; _TRISD1 = 1; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Macro instruction initializing the specified GPIO as input. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00237">237</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga8dab463440a35fc3ca8ff1386e76a0ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8dab463440a35fc3ca8ff1386e76a0ed">&#9670;&nbsp;</a></span>SW_USER_Get</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SW_USER_Get</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_RD1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Macro instruction to set a pin state to logic HIGH. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00232">232</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga581c67f9730c387a74c217a17dd2f21c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga581c67f9730c387a74c217a17dd2f21c">&#9670;&nbsp;</a></span>SW_USER_Init</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SW_USER_Init</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATD1 = 1; _TRISD1 = 1; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Macro instruction initializing the specified GPIO as input. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00236">236</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gaeb2e1ef8508ada9c21ccb83561947bf8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaeb2e1ef8508ada9c21ccb83561947bf8">&#9670;&nbsp;</a></span>SW_USER_PIN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SW_USER_PIN&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>GPIO port pin declaration where 0=Rx0, 1=Rx1, 2=Rx3, etc. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00231">231</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga39c17d4f2167ce8b705b662afbfdb9b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga39c17d4f2167ce8b705b662afbfdb9b1">&#9670;&nbsp;</a></span>SW_USER_PORT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SW_USER_PORT&#160;&#160;&#160;3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>GPIO port declaration where 0=Port RA, 0=Port RB, 0=Port RC, etc. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00230">230</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga85d0ae28842fbbec76c772a4d837a4f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga85d0ae28842fbbec76c772a4d837a4f0">&#9670;&nbsp;</a></span>SW_USER_Set</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SW_USER_Set</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATD1 = 1; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Macro instruction to set a pin state to logic HIGH. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00233">233</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gac307ed7b4f9656614fbe23b6aa11d5af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac307ed7b4f9656614fbe23b6aa11d5af">&#9670;&nbsp;</a></span>SW_USER_Toggle</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SW_USER_Toggle</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;{ _LATD1 ^= 1; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Macro instruction to toggle most recent pin state. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00235">235</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00289">289</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
