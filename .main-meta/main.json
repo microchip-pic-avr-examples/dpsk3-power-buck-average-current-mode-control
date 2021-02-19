@@ -44,6 +44,7 @@
         "LCD"
       ],
       "subcategories": [
+		"Power",
 		"Power Management and Conversion"
        ],
        "keywords": [
