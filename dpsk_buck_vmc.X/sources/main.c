@@ -82,7 +82,7 @@ int main(void) {
     volatile uint16_t retval = 1;
     volatile uint16_t timeout = 0;
     
-// Initialize basic system configuration
+    // Initialize basic system configuration
     retval &= SYSTEM_Initialize();
     
     // Initialize special, application-specific peripherals 
@@ -144,9 +144,9 @@ volatile uint16_t sysLowPriorityTasks_Execute(void)
     volatile uint16_t retval=1;
     
     // Execute non-time critical, low-priority tasks
-    appLCD_Execute();
-    appLED_Execute();
-    appPushButton_Execute();
+    retval &= appLCD_Execute();
+    retval &= appLED_Execute();
+    retval &= appPushButton_Execute();
     
     return(retval);
 }
@@ -193,11 +193,13 @@ volatile uint16_t sysHighPriorityTasks_Execute(void)
 
 void __attribute__((__interrupt__, context, no_auto_psv)) _OsTimerInterrupt(void)
 {
+	volatile uint16_t retval=1;
+	
     #if (DBGPIN1_ENABLE)
     DBGPIN1_Set();              // Set the CPU debugging pin HIGH
     #endif
 
-    sysHighPriorityTasks_Execute(); // Execute list of high priority tasks
+    retval &= sysHighPriorityTasks_Execute(); // Execute list of high priority tasks
     
     LOW_PRIORITY_GO = true; // Set GO trigger for low priority tasks
     _OSTIMER_IF = 0; // Reset the interrupt flag bit
