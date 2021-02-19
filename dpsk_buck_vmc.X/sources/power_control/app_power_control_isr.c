@@ -8,6 +8,7 @@
 
 #include "config/hal.h"
 #include "app_power_control.h"
+#include "drivers/v_loop.h"
 
 /*********************************************************************************
  * @fn      void _BUCK_VLOOP_Interrupt(void)
