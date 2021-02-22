@@ -237,23 +237,22 @@
 <g id="node21" class="node">
 <title>Node21</title>
 <g id="a_node21"><a xlink:href="a01522.html" target="_top" xlink:title="Generic power controller control settings.">
-<polygon fill="white" stroke="black" points="200,-237.5 200,-338.5 372,-338.5 372,-237.5 200,-237.5"/>
-<text text-anchor="middle" x="286" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">BUCK_CONVERTER_SETTINGS_s</text>
-<polyline fill="none" stroke="black" points="200,-319.5 372,-319.5 "/>
-<text text-anchor="start" x="208" y="-307.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ control_mode</text>
-<text text-anchor="start" x="208" y="-296.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ no_of_phases</text>
-<text text-anchor="start" x="208" y="-285.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ v_ref</text>
-<text text-anchor="start" x="208" y="-274.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ i_ref</text>
-<text text-anchor="start" x="208" y="-263.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ i_ref_startup</text>
-<polyline fill="none" stroke="black" points="200,-256.5 372,-256.5 "/>
-<text text-anchor="middle" x="286" y="-244.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polygon fill="white" stroke="black" points="200,-243 200,-333 372,-333 372,-243 200,-243"/>
+<text text-anchor="middle" x="286" y="-321" font-family="Helvetica,sans-Serif" font-size="10.00">BUCK_CONVERTER_SETTINGS_s</text>
+<polyline fill="none" stroke="black" points="200,-314 372,-314 "/>
+<text text-anchor="start" x="208" y="-302" font-family="Helvetica,sans-Serif" font-size="10.00">+ control_mode</text>
+<text text-anchor="start" x="208" y="-291" font-family="Helvetica,sans-Serif" font-size="10.00">+ no_of_phases</text>
+<text text-anchor="start" x="208" y="-280" font-family="Helvetica,sans-Serif" font-size="10.00">+ v_ref</text>
+<text text-anchor="start" x="208" y="-269" font-family="Helvetica,sans-Serif" font-size="10.00">+ i_ref</text>
+<polyline fill="none" stroke="black" points="200,-262 372,-262 "/>
+<text text-anchor="middle" x="286" y="-250" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node21 -->
 <g id="edge39" class="edge">
 <title>Node2&#45;&gt;Node21</title>
-<path fill="none" stroke="midnightblue" d="M733.24,-530.08C650.11,-521.45 509.7,-497.88 408,-434 369.97,-410.11 337.81,-370.48 316.07,-338.68"/>
+<path fill="none" stroke="midnightblue" d="M733.24,-530.08C650.11,-521.45 509.7,-497.88 408,-434 367.74,-408.71 334.06,-365.78 312.36,-333.17"/>
 <polygon fill="none" stroke="midnightblue" points="733.04,-533.58 743.33,-531.09 733.73,-526.61 733.04,-533.58"/>
 </g>
 <!-- Node22 -->
@@ -690,7 +689,7 @@
 <!-- Node21&#45;&gt;Node2 -->
 <g id="edge38" class="edge">
 <title>Node21&#45;&gt;Node2</title>
-<path fill="none" stroke="#404040" d="M321.81,-338.6C338.02,-358.13 358.57,-379.34 381,-394 491.69,-466.35 643.06,-504.99 731.2,-522.65"/>
+<path fill="none" stroke="#404040" d="M317.25,-333.01C334.08,-353.98 356.41,-377.93 381,-394 491.69,-466.35 643.06,-504.99 731.2,-522.65"/>
 <polygon fill="none" stroke="#404040" points="731.43,-522.7 738.09,-519.93 743.2,-525.01 736.55,-527.78 731.43,-522.7"/>
 <text text-anchor="middle" x="471.5" y="-420.5" font-family="Helvetica,sans-Serif" font-size="10.00"> +set_values</text>
 </g>

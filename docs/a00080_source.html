@@ -404,240 +404,240 @@ $(document).ready(function(){initNavTree('a00080_source.html',''); initResizable
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;}</div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160; </div>
 <div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160; </div>
-<div class="line"><a name="l00580"></a><span class="lineno"><a class="line" href="a00366.html#ga7254c2b9b20683649633c28896d539c4">  580</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00366.html#ga7254c2b9b20683649633c28896d539c4">p33c_PwmGenerator_GetInstance</a>(<span class="keyword">volatile</span> <span class="keyword">struct</span> <a class="code" href="a01106.html">P33C_PWM_GENERATOR_s</a>* pg)</div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;{</div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;    <span class="keyword">volatile</span> uint16_t retval=1;</div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160; </div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;    <span class="comment">// Null-pointer protection</span></div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    <span class="keywordflow">if</span> (pg == NULL)</div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;        <span class="keywordflow">return</span>(0);</div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160; </div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;    <span class="comment">// Capture Instance: set pointer to memory address of desired PWM instance</span></div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;    retval = (<span class="keyword">volatile</span> uint16_t)</div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;        (((<span class="keyword">volatile</span> uint16_t)&amp;pg-&gt;<a class="code" href="a01106.html#ac68c50348498f25686caaca8f65552a1">PGxCONL</a> - (<span class="keyword">volatile</span> uint16_t)&amp;PG1CONL) / P33C_PWMGEN_SFR_OFFSET) + 1;</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;            </div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;    <span class="keywordflow">if</span> (retval &gt; P33C_PG_COUNT)</div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;        <span class="keywordflow">return</span>(0); <span class="comment">// PWM generator not member of a valid group </span></div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160; </div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    <span class="keywordflow">return</span>(retval);</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;}</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160; </div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160; </div>
-<div class="line"><a name="l00612"></a><span class="lineno"><a class="line" href="a00366.html#gae4eba2cc810c1148c025f94cb9b73755">  612</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00366.html#gae4eba2cc810c1148c025f94cb9b73755">p33c_PwmGenerator_GetGroup</a>(<span class="keyword">volatile</span> <span class="keyword">struct</span> <a class="code" href="a01106.html">P33C_PWM_GENERATOR_s</a>* pg)</div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;{</div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    <span class="keyword">volatile</span> uint16_t retval=1;</div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    <span class="keyword">volatile</span> uint16_t pgInstance;</div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160; </div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    <span class="comment">// Null-pointer protection</span></div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;    <span class="keywordflow">if</span> (pg == NULL)</div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;        <span class="keywordflow">return</span>(0);</div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160; </div>
-<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;    <span class="comment">// Get group of PWM generator</span></div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;    pgInstance = (<span class="keyword">volatile</span> uint16_t)</div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;        (((<span class="keyword">volatile</span> uint16_t)&amp;pg-&gt;<a class="code" href="a01106.html#ac68c50348498f25686caaca8f65552a1">PGxCONL</a> - (<span class="keyword">volatile</span> uint16_t)&amp;PG1CONL) / P33C_PWMGEN_SFR_OFFSET + 1);</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;    </div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;    <span class="comment">// Verify PWM generator group is valid and available</span></div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;    <span class="keywordflow">if</span> (pgInstance &gt; P33C_PG_COUNT)</div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;        <span class="keywordflow">return</span>(0); <span class="comment">// PWM generator not member of a valid group </span></div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pgInstance &gt; 4)</div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;        retval = 2; <span class="comment">// PWM generator is member of group #2 [PG5-PG8]</span></div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;        retval = 1; <span class="comment">// PWM generator is member of group #1 [PG1-PG4]</span></div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160; </div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;    <span class="keywordflow">return</span>(retval);</div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;}</div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160; </div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160; </div>
-<div class="line"><a name="l00670"></a><span class="lineno"><a class="line" href="a00374.html#gaf8f0ea73e96ecddb846d1361098c09fe">  670</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00366.html#ga9e915aaf4de147d97a05e808113d86d6">p33c_PwmGenerator_SyncGenerators</a>(</div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;                            <span class="keyword">volatile</span> <span class="keyword">struct</span> <a class="code" href="a01106.html">P33C_PWM_GENERATOR_s</a>* pgHandleMother, </div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;                            <span class="keyword">volatile</span> uint16_t pgMotherTriggerOutput,</div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;                            <span class="keyword">volatile</span> <span class="keyword">struct</span> <a class="code" href="a01106.html">P33C_PWM_GENERATOR_s</a>* pgHandleChild,</div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;                            <span class="keyword">volatile</span> <span class="keywordtype">bool</span> ChildImmediateUpdate</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    )</div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;{</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    <span class="keyword">volatile</span> uint16_t retval=1;</div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    <span class="keyword">volatile</span> uint16_t pgMotherInstance=0;</div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    <span class="keyword">volatile</span> uint16_t pgChildInstance=0;</div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;    <span class="keyword">volatile</span> uint16_t pgMotherGroup=0;</div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;    <span class="keyword">volatile</span> uint16_t pgChildGroup=0;</div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;    <span class="keyword">volatile</span> uint16_t pgInstance;</div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    </div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    <span class="comment">// Null-pointer protection</span></div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    <span class="keywordflow">if</span> ((pgHandleMother == NULL) || (pgHandleChild == NULL))</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;        <span class="keywordflow">return</span>(0);</div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;    </div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    <span class="comment">// Capture PWM generator instances and groups for given handles</span></div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    pgMotherInstance = <a class="code" href="a00366.html#ga7254c2b9b20683649633c28896d539c4">p33c_PwmGenerator_GetInstance</a>(pgHandleMother);</div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;    pgMotherGroup = <a class="code" href="a00366.html#gae4eba2cc810c1148c025f94cb9b73755">p33c_PwmGenerator_GetGroup</a>(pgHandleMother);</div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    </div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    pgChildInstance = <a class="code" href="a00366.html#ga7254c2b9b20683649633c28896d539c4">p33c_PwmGenerator_GetInstance</a>(pgHandleChild);</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    pgChildGroup = <a class="code" href="a00366.html#gae4eba2cc810c1148c025f94cb9b73755">p33c_PwmGenerator_GetGroup</a>(pgHandleChild);</div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    </div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    <span class="comment">// Enable update trigger broadcast in Mother PWM</span></div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;    <span class="comment">// PWM generator broadcasts software set/clear of the UPDREQ status bit and EOC signal</span></div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    pgHandleMother-&gt;<a class="code" href="a01106.html#a326fd5646a7e7fedfdaa469bd7c599b6">PGxCONH</a>.<a class="code" href="a01106.html#a7868e10d1c192507a75b4098a7aa1043">bits</a>.MSTEN = 1;  </div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160; </div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    <span class="comment">// PWM Generator Trigger Output Selection</span></div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    <span class="comment">// 0b011 = PGxTRIGC compare event is the PWM Generator trigger</span></div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    <span class="comment">// 0b010 = PGxTRIGB compare event is the PWM Generator trigger</span></div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    <span class="comment">// 0b001 = PGxTRIGA compare event is the PWM Generator trigger</span></div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;    <span class="comment">// 0b000 = EOC event is the PWM Generator trigger</span></div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;    pgHandleMother-&gt;<a class="code" href="a01106.html#a96cc0e1070aba3eb17d7116fc97493c3">PGxEVTL</a>.<a class="code" href="a01106.html#a7868e10d1c192507a75b4098a7aa1043">bits</a>.PGTRGSEL = (pgMotherTriggerOutput &amp; 0x0003);  </div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160; </div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    <span class="comment">// Configure child PWM in slaved mode, incorporating immediate of EOC selection</span></div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;    pgHandleChild-&gt;<a class="code" href="a01106.html#a326fd5646a7e7fedfdaa469bd7c599b6">PGxCONH</a>.<a class="code" href="a01106.html#a7868e10d1c192507a75b4098a7aa1043">bits</a>.UPDMOD = (0b010 | ChildImmediateUpdate); <span class="comment">// Slaved SOC update </span></div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    pgHandleChild-&gt;<a class="code" href="a01106.html#a326fd5646a7e7fedfdaa469bd7c599b6">PGxCONH</a>.<a class="code" href="a01106.html#a7868e10d1c192507a75b4098a7aa1043">bits</a>.TRGMOD = 1;     <span class="comment">// PWM Generator operates in Retriggerable mode</span></div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    pgHandleChild-&gt;<a class="code" href="a01106.html#a96cc0e1070aba3eb17d7116fc97493c3">PGxEVTL</a>.<a class="code" href="a01106.html#a7868e10d1c192507a75b4098a7aa1043">bits</a>.UPDTRG = 0b00;  <span class="comment">// Timing register updates triggered through UPDREQ bit (PGxSTAT[3])</span></div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    pgHandleChild-&gt;<a class="code" href="a01106.html#ac68c50348498f25686caaca8f65552a1">PGxCONL</a>.<a class="code" href="a01106.html#a7868e10d1c192507a75b4098a7aa1043">bits</a>.MODSEL = 0b000; <span class="comment">// Independent Edge PWM mode;</span></div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;    </div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    <span class="comment">/* Set sync trigger input to Child generator</span></div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;<span class="comment">    </span></div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;<span class="comment">    SOCS[3:0]: Start-of-Cycle Selection bits(1,2,3)</span></div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;<span class="comment">    1111 = TRIG bit or PCI Sync function only (no hardware trigger source is selected)</span></div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;<span class="comment">    1110-0101 = Reserved</span></div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;<span class="comment">    0100 = Trigger output selected by PG4 or PG8 PGTRGSEL[2:0] bits (PGxEVTL[2:0])</span></div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;<span class="comment">    0011 = Trigger output selected by PG3 or PG7 PGTRGSEL[2:0] bits (PGxEVTL[2:0])</span></div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;<span class="comment">    0010 = Trigger output selected by PG2 or PG6 PGTRGSEL[2:0] bits (PGxEVTL[2:0])</span></div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;<span class="comment">    0001 = Trigger output selected by PG1 or PG5 PGTRGSEL[2:0] bits (PGxEVTL[2:0])</span></div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;<span class="comment">    0000 = Local EOC ? PWM Generator is self-triggered</span></div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;<span class="comment">    </span></div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;<span class="comment">    */</span></div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;    </div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;   <span class="keywordflow">if</span> (pgMotherGroup == pgChildGroup)</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;   { </div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;       <span class="comment">// If both PWM generators are member of the same group, </span></div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;       <span class="comment">// direct synchronization can be used</span></div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;       </div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;       <span class="keywordflow">if</span> (pgMotherGroup == 1)</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;           pgHandleChild-&gt;<a class="code" href="a01106.html#a326fd5646a7e7fedfdaa469bd7c599b6">PGxCONH</a>.<a class="code" href="a01106.html#a7868e10d1c192507a75b4098a7aa1043">bits</a>.SOCS = pgMotherInstance;</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;       <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pgMotherGroup == 2)</div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;           pgHandleChild-&gt;<a class="code" href="a01106.html#a326fd5646a7e7fedfdaa469bd7c599b6">PGxCONH</a>.<a class="code" href="a01106.html#a7868e10d1c192507a75b4098a7aa1043">bits</a>.SOCS = (pgMotherInstance - 4);</div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;       <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;           <span class="keywordflow">return</span>(0); <span class="comment">// Exit if PWM generator group is out of range</span></div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;       </div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;   }</div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;   <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;   {</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;        <span class="comment">// Synchronization across PWM generator groups need to be routed </span></div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;        <span class="comment">// through the PCI Sync function </span></div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;        </div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;        pgInstance = <a class="code" href="a00366.html#ga7254c2b9b20683649633c28896d539c4">p33c_PwmGenerator_GetInstance</a>(pgHandleChild);</div>
+<div class="line"><a name="l00582"></a><span class="lineno"><a class="line" href="a00366.html#ga7254c2b9b20683649633c28896d539c4">  582</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00366.html#ga7254c2b9b20683649633c28896d539c4">p33c_PwmGenerator_GetInstance</a>(<span class="keyword">volatile</span> <span class="keyword">struct</span> <a class="code" href="a01106.html">P33C_PWM_GENERATOR_s</a>* pg)</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;{</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;    <span class="keyword">volatile</span> uint16_t retval=1;</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160; </div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    <span class="comment">// Null-pointer protection</span></div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    <span class="keywordflow">if</span> (pg == NULL)</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;        <span class="keywordflow">return</span>(0);</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160; </div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    <span class="comment">// Capture Instance: set pointer to memory address of desired PWM instance</span></div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    retval = (<span class="keyword">volatile</span> uint16_t)</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;        (((<span class="keyword">volatile</span> uint16_t)&amp;pg-&gt;<a class="code" href="a01106.html#ac68c50348498f25686caaca8f65552a1">PGxCONL</a> - (<span class="keyword">volatile</span> uint16_t)&amp;PG1CONL) / P33C_PWMGEN_SFR_OFFSET) + 1;</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;            </div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    <span class="keywordflow">if</span> (retval &gt; P33C_PG_COUNT)</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;        <span class="keywordflow">return</span>(0); <span class="comment">// PWM generator not member of a valid group </span></div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160; </div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    <span class="keywordflow">return</span>(retval);</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;}</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160; </div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160; </div>
+<div class="line"><a name="l00614"></a><span class="lineno"><a class="line" href="a00366.html#gae4eba2cc810c1148c025f94cb9b73755">  614</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00366.html#gae4eba2cc810c1148c025f94cb9b73755">p33c_PwmGenerator_GetGroup</a>(<span class="keyword">volatile</span> <span class="keyword">struct</span> <a class="code" href="a01106.html">P33C_PWM_GENERATOR_s</a>* pg)</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;{</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;    <span class="keyword">volatile</span> uint16_t retval=1;</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    <span class="keyword">volatile</span> uint16_t pgInstance;</div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160; </div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    <span class="comment">// Null-pointer protection</span></div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;    <span class="keywordflow">if</span> (pg == NULL)</div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;        <span class="keywordflow">return</span>(0);</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160; </div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;    <span class="comment">// Get group of PWM generator</span></div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;    pgInstance = (<span class="keyword">volatile</span> uint16_t)</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;        (((<span class="keyword">volatile</span> uint16_t)&amp;pg-&gt;<a class="code" href="a01106.html#ac68c50348498f25686caaca8f65552a1">PGxCONL</a> - (<span class="keyword">volatile</span> uint16_t)&amp;PG1CONL) / P33C_PWMGEN_SFR_OFFSET + 1);</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;    </div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;    <span class="comment">// Verify PWM generator group is valid and available</span></div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;    <span class="keywordflow">if</span> (pgInstance &gt; P33C_PG_COUNT)</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;        <span class="keywordflow">return</span>(0); <span class="comment">// PWM generator not member of a valid group </span></div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pgInstance &gt; 4)</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;        retval = 2; <span class="comment">// PWM generator is member of group #2 [PG5-PG8]</span></div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;        retval = 1; <span class="comment">// PWM generator is member of group #1 [PG1-PG4]</span></div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160; </div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;    <span class="keywordflow">return</span>(retval);</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;}</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160; </div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160; </div>
+<div class="line"><a name="l00672"></a><span class="lineno"><a class="line" href="a00374.html#gaf8f0ea73e96ecddb846d1361098c09fe">  672</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00366.html#ga9e915aaf4de147d97a05e808113d86d6">p33c_PwmGenerator_SyncGenerators</a>(</div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;                            <span class="keyword">volatile</span> <span class="keyword">struct</span> <a class="code" href="a01106.html">P33C_PWM_GENERATOR_s</a>* pgHandleMother, </div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;                            <span class="keyword">volatile</span> uint16_t pgMotherTriggerOutput,</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;                            <span class="keyword">volatile</span> <span class="keyword">struct</span> <a class="code" href="a01106.html">P33C_PWM_GENERATOR_s</a>* pgHandleChild,</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;                            <span class="keyword">volatile</span> <span class="keywordtype">bool</span> ChildImmediateUpdate</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    )</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;{</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    <span class="keyword">volatile</span> uint16_t retval=1;</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;    <span class="keyword">volatile</span> uint16_t pgMotherInstance=0;</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;    <span class="keyword">volatile</span> uint16_t pgChildInstance=0;</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;    <span class="keyword">volatile</span> uint16_t pgMotherGroup=0;</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    <span class="keyword">volatile</span> uint16_t pgChildGroup=0;</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    <span class="keyword">volatile</span> uint16_t pgInstance;</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    </div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    <span class="comment">// Null-pointer protection</span></div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;    <span class="keywordflow">if</span> ((pgHandleMother == NULL) || (pgHandleChild == NULL))</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;        <span class="keywordflow">return</span>(0);</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    </div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;    <span class="comment">// Capture PWM generator instances and groups for given handles</span></div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    pgMotherInstance = <a class="code" href="a00366.html#ga7254c2b9b20683649633c28896d539c4">p33c_PwmGenerator_GetInstance</a>(pgHandleMother);</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    pgMotherGroup = <a class="code" href="a00366.html#gae4eba2cc810c1148c025f94cb9b73755">p33c_PwmGenerator_GetGroup</a>(pgHandleMother);</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    </div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    pgChildInstance = <a class="code" href="a00366.html#ga7254c2b9b20683649633c28896d539c4">p33c_PwmGenerator_GetInstance</a>(pgHandleChild);</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    pgChildGroup = <a class="code" href="a00366.html#gae4eba2cc810c1148c025f94cb9b73755">p33c_PwmGenerator_GetGroup</a>(pgHandleChild);</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;    </div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    <span class="comment">// Enable update trigger broadcast in Mother PWM</span></div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    <span class="comment">// PWM generator broadcasts software set/clear of the UPDREQ status bit and EOC signal</span></div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    pgHandleMother-&gt;<a class="code" href="a01106.html#a326fd5646a7e7fedfdaa469bd7c599b6">PGxCONH</a>.<a class="code" href="a01106.html#a7868e10d1c192507a75b4098a7aa1043">bits</a>.MSTEN = 1;  </div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160; </div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    <span class="comment">// PWM Generator Trigger Output Selection</span></div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    <span class="comment">// 0b011 = PGxTRIGC compare event is the PWM Generator trigger</span></div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;    <span class="comment">// 0b010 = PGxTRIGB compare event is the PWM Generator trigger</span></div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;    <span class="comment">// 0b001 = PGxTRIGA compare event is the PWM Generator trigger</span></div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;    <span class="comment">// 0b000 = EOC event is the PWM Generator trigger</span></div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    pgHandleMother-&gt;<a class="code" href="a01106.html#a96cc0e1070aba3eb17d7116fc97493c3">PGxEVTL</a>.<a class="code" href="a01106.html#a7868e10d1c192507a75b4098a7aa1043">bits</a>.PGTRGSEL = (pgMotherTriggerOutput &amp; 0x0003);  </div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160; </div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    <span class="comment">// Configure child PWM in slaved mode, incorporating immediate of EOC selection</span></div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    pgHandleChild-&gt;<a class="code" href="a01106.html#a326fd5646a7e7fedfdaa469bd7c599b6">PGxCONH</a>.<a class="code" href="a01106.html#a7868e10d1c192507a75b4098a7aa1043">bits</a>.UPDMOD = (0b010 | ChildImmediateUpdate); <span class="comment">// Slaved SOC update </span></div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    pgHandleChild-&gt;<a class="code" href="a01106.html#a326fd5646a7e7fedfdaa469bd7c599b6">PGxCONH</a>.<a class="code" href="a01106.html#a7868e10d1c192507a75b4098a7aa1043">bits</a>.TRGMOD = 1;     <span class="comment">// PWM Generator operates in Retriggerable mode</span></div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;    pgHandleChild-&gt;<a class="code" href="a01106.html#a96cc0e1070aba3eb17d7116fc97493c3">PGxEVTL</a>.<a class="code" href="a01106.html#a7868e10d1c192507a75b4098a7aa1043">bits</a>.UPDTRG = 0b00;  <span class="comment">// Timing register updates triggered through UPDREQ bit (PGxSTAT[3])</span></div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    pgHandleChild-&gt;<a class="code" href="a01106.html#ac68c50348498f25686caaca8f65552a1">PGxCONL</a>.<a class="code" href="a01106.html#a7868e10d1c192507a75b4098a7aa1043">bits</a>.MODSEL = 0b000; <span class="comment">// Independent Edge PWM mode;</span></div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    </div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    <span class="comment">/* Set sync trigger input to Child generator</span></div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;<span class="comment">    </span></div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;<span class="comment">    SOCS[3:0]: Start-of-Cycle Selection bits(1,2,3)</span></div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;<span class="comment">    1111 = TRIG bit or PCI Sync function only (no hardware trigger source is selected)</span></div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;<span class="comment">    1110-0101 = Reserved</span></div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;<span class="comment">    0100 = Trigger output selected by PG4 or PG8 PGTRGSEL[2:0] bits (PGxEVTL[2:0])</span></div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;<span class="comment">    0011 = Trigger output selected by PG3 or PG7 PGTRGSEL[2:0] bits (PGxEVTL[2:0])</span></div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;<span class="comment">    0010 = Trigger output selected by PG2 or PG6 PGTRGSEL[2:0] bits (PGxEVTL[2:0])</span></div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;<span class="comment">    0001 = Trigger output selected by PG1 or PG5 PGTRGSEL[2:0] bits (PGxEVTL[2:0])</span></div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;<span class="comment">    0000 = Local EOC ? PWM Generator is self-triggered</span></div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;<span class="comment">    </span></div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;<span class="comment">    */</span></div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;    </div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;   <span class="keywordflow">if</span> (pgMotherGroup == pgChildGroup)</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;   { </div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;       <span class="comment">// If both PWM generators are member of the same group, </span></div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;       <span class="comment">// direct synchronization can be used</span></div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;       </div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;       <span class="keywordflow">if</span> (pgMotherGroup == 1)</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;           pgHandleChild-&gt;<a class="code" href="a01106.html#a326fd5646a7e7fedfdaa469bd7c599b6">PGxCONH</a>.<a class="code" href="a01106.html#a7868e10d1c192507a75b4098a7aa1043">bits</a>.SOCS = pgMotherInstance;</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;       <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pgMotherGroup == 2)</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;           pgHandleChild-&gt;<a class="code" href="a01106.html#a326fd5646a7e7fedfdaa469bd7c599b6">PGxCONH</a>.<a class="code" href="a01106.html#a7868e10d1c192507a75b4098a7aa1043">bits</a>.SOCS = (pgMotherInstance - 4);</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;       <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;           <span class="keywordflow">return</span>(0); <span class="comment">// Exit if PWM generator group is out of range</span></div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;       </div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;   }</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;   <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;   {</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;        <span class="comment">// Synchronization across PWM generator groups need to be routed </span></div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;        <span class="comment">// through the PCI Sync function </span></div>
 <div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;        </div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;        pgHandleChild-&gt;<a class="code" href="a01106.html#a326fd5646a7e7fedfdaa469bd7c599b6">PGxCONH</a>.<a class="code" href="a01106.html#a7868e10d1c192507a75b4098a7aa1043">bits</a>.SOCS = 0b1111; </div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;        pgHandleChild-&gt;<a class="code" href="a01106.html#aa5865a73db618bb36b6ed59bcf0e1f7e">PGxSPCIL</a>.<a class="code" href="a01106.html#a7868e10d1c192507a75b4098a7aa1043">bits</a>.PSS = 0b00001; <span class="comment">// Internally connected to the output of PWMPCI[2:0] MUX</span></div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;        pgHandleChild-&gt;<a class="code" href="a01106.html#aa3c6e2341890016e75dee496ff358d43">PGxLEBH</a>.<a class="code" href="a01106.html#a7868e10d1c192507a75b4098a7aa1043">bits</a>.PWMPCI = pgInstance; </div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    }</div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;    </div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    </div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;    <span class="keywordflow">return</span>(retval);       </div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160; </div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;}</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;        pgInstance = <a class="code" href="a00366.html#ga7254c2b9b20683649633c28896d539c4">p33c_PwmGenerator_GetInstance</a>(pgHandleChild);</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;        </div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;        pgHandleChild-&gt;<a class="code" href="a01106.html#a326fd5646a7e7fedfdaa469bd7c599b6">PGxCONH</a>.<a class="code" href="a01106.html#a7868e10d1c192507a75b4098a7aa1043">bits</a>.SOCS = 0b1111; </div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;        pgHandleChild-&gt;<a class="code" href="a01106.html#aa5865a73db618bb36b6ed59bcf0e1f7e">PGxSPCIL</a>.<a class="code" href="a01106.html#a7868e10d1c192507a75b4098a7aa1043">bits</a>.PSS = 0b00001; <span class="comment">// Internally connected to the output of PWMPCI[2:0] MUX</span></div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;        pgHandleChild-&gt;<a class="code" href="a01106.html#aa3c6e2341890016e75dee496ff358d43">PGxLEBH</a>.<a class="code" href="a01106.html#a7868e10d1c192507a75b4098a7aa1043">bits</a>.PWMPCI = pgInstance; </div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    }</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;    </div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;    </div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;    <span class="keywordflow">return</span>(retval);       </div>
 <div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160; </div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;<span class="comment">/* ********************************************************************************************* * </span></div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;<span class="comment"> * PWM MODULE BASE CONFIGURATION TEMPLATES</span></div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;<span class="comment"> * ********************************************************************************************* */</span></div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160; </div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160; </div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00922.html">P33C_PWM_MODULE_s</a> <a class="code" href="a00374.html#gafeca0163f581790a35cef7b99a276adc">pwmConfigClear</a> = { </div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;    </div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;        .<a class="code" href="a00922.html#a2c58be76db6f74191e135506e4f842d4">vPCLKCON</a>.<a class="code" href="a00922.html#a900b69af7d674b8db3bceae754b4955a">value</a> = 0x0000, <span class="comment">// HRRDY=0, HRERR=0, LOCK=0, DIVSEL=0b00, MCLKSEL=0b00</span></div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;        .vFSCL.value = 0x0000, <span class="comment">// FSCL=0</span></div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;        .vFSMINPER.value = 0x0000, <span class="comment">// FSMINPER=0</span></div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;        .vMPHASE.value = 0x0000, <span class="comment">// MPHASE=0</span></div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;        .vMDC.value = 0x0000, <span class="comment">// MDC=0</span></div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;        .vMPER.value = 0x0000, <span class="comment">// MPER=0</span></div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;        .vLFSR.value = 0x0000, <span class="comment">// LFSR=0</span></div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;        .vCMBTRIGL.value = 0x0000, <span class="comment">// CTA1EN=0, CTA2EN=0, CTA3EN=0, CTA4EN=0, CTA5EN=0, CTA6EN=0, CTA7EN=0, CTA8EN=0</span></div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;        .vCMBTRIGH.value = 0x0000, <span class="comment">// CTB1EN=0, CTB2EN=0, CTB3EN=0, CTB4EN=0, CTB5EN=0, CTB6EN=0, CTB7EN=0, CTB8EN=0</span></div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;        .LOGCON_A.value = 0x0000, <span class="comment">// PWMS1A=0b0000, PWMS2A=0b0000, S1APOL=0, S2APOL=0, PWMLFA=0b00, PWMLFAD=0b000</span></div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;        .LOGCON_B.value = 0x0000, <span class="comment">// PWMS1B=0b0000, PWMS2B=0b0000, S1BPOL=0, S2BPOL=0, PWMLFB=0b00, PWMLFBD=0b000</span></div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;        .LOGCON_C.value = 0x0000, <span class="comment">// PWMS1C=0b0000, PWMS2C=0b0000, S1CPOL=0, S2CPOL=0, PWMLFC=0b00, PWMLFCD=0b000</span></div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;        .LOGCON_D.value = 0x0000, <span class="comment">// PWMS1D=0b0000, PWMS2D=0b0000, S1DPOL=0, S2DPOL=0, PWMLFD=0b00, PWMLFDD=0b000</span></div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;        .LOGCON_E.value = 0x0000, <span class="comment">// PWMS1E=0b0000, PWMS2E=0b0000, S1EPOL=0, S2EPOL=0, PWMLFE=0b00, PWMLFED=0b000</span></div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;        .LOGCON_F.value = 0x0000, <span class="comment">// PWMS1F=0b0000, PWMS2F=0b0000, S1FPOL=0, S2FPOL=0, PWMLFF=0b00, PWMLFFD=0b000</span></div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;        .PWMEVT_A.value = 0x0000, <span class="comment">// EVTAOEN=0, EVTAPOL=0, EVTASTRD=0, EVTASYNC=0, EVTASEL=0b000, EVTAPGS=0b000</span></div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;        .PWMEVT_B.value = 0x0000, <span class="comment">// EVTBOEN=0, EVTBPOL=0, EVTBSTRD=0, EVTBSYNC=0, EVTBSEL=0b000, EVTBPGS=0b000</span></div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;        .PWMEVT_C.value = 0x0000, <span class="comment">// EVTCOEN=0, EVTCPOL=0, EVTCSTRD=0, EVTCSYNC=0, EVTCSEL=0b000, EVTCPGS=0b000</span></div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;        .PWMEVT_D.value = 0x0000, <span class="comment">// EVTDOEN=0, EVTDPOL=0, EVTDSTRD=0, EVTDSYNC=0, EVTDSEL=0b000, EVTDPGS=0b000</span></div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;        .PWMEVT_E.value = 0x0000, <span class="comment">// EVTEOEN=0, EVTEPOL=0, EVTESTRD=0, EVTESYNC=0, EVTESEL=0b000, EVTEPGS=0b000</span></div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;        .PWMEVT_F.value = 0x0000  <span class="comment">// EVTFOEN=0, EVTFPOL=0, EVTFSTRD=0, EVTFSYNC=0, EVTFSEL=0b000, EVTFPGS=0b000</span></div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;   };</div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160; </div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160; </div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00922.html">P33C_PWM_MODULE_s</a> <a class="code" href="a00374.html#gaf8f0ea73e96ecddb846d1361098c09fe">pwmConfigDefault</a> = { </div>
-<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;    </div>
-<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;        .<a class="code" href="a00922.html#a2c58be76db6f74191e135506e4f842d4">vPCLKCON</a>.<a class="code" href="a00922.html#a900b69af7d674b8db3bceae754b4955a">value</a> = 0x0003,   <span class="comment">// HRRDY=0, HRERR=0, LOCK=0, DIVSEL=0b00, MCLKSEL=0b11</span></div>
-<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;        .vFSCL.value = 0x0000,      <span class="comment">// FSCL=0</span></div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;        .vFSMINPER.value = 0x0000,  <span class="comment">// FSMINPER=0</span></div>
-<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;        .vMPHASE.value = 0x0000,    <span class="comment">// MPHASE=0</span></div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;        .vMDC.value = 0x0000,       <span class="comment">// MDC=0</span></div>
-<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;        .vMPER.value = 0x0000,      <span class="comment">// MPER=0</span></div>
-<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;        .vLFSR.value = 0x0000,      <span class="comment">// LFSR=0</span></div>
-<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;        .vCMBTRIGL.value = 0x0000,  <span class="comment">// CTA1EN=0, CTA2EN=0, CTA3EN=0, CTA4EN=0, CTA5EN=0, CTA6EN=0, CTA7EN=0, CTA8EN=0</span></div>
-<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;        .vCMBTRIGH.value = 0x0000,  <span class="comment">// CTB1EN=0, CTB2EN=0, CTB3EN=0, CTB4EN=0, CTB5EN=0, CTB6EN=0, CTB7EN=0, CTB8EN=0</span></div>
-<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;        .LOGCON_A.value = 0x0000,   <span class="comment">// PWMS1A=0b0000, PWMS2A=0b0000, S1APOL=0, S2APOL=0, PWMLFA=0b00, PWMLFAD=0b000</span></div>
-<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;        .LOGCON_B.value = 0x0000,   <span class="comment">// PWMS1B=0b0000, PWMS2B=0b0000, S1BPOL=0, S2BPOL=0, PWMLFB=0b00, PWMLFBD=0b000</span></div>
-<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;        .LOGCON_C.value = 0x0000,   <span class="comment">// PWMS1C=0b0000, PWMS2C=0b0000, S1CPOL=0, S2CPOL=0, PWMLFC=0b00, PWMLFCD=0b000</span></div>
-<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;        .LOGCON_D.value = 0x0000,   <span class="comment">// PWMS1D=0b0000, PWMS2D=0b0000, S1DPOL=0, S2DPOL=0, PWMLFD=0b00, PWMLFDD=0b000</span></div>
-<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;        .LOGCON_E.value = 0x0000,   <span class="comment">// PWMS1E=0b0000, PWMS2E=0b0000, S1EPOL=0, S2EPOL=0, PWMLFE=0b00, PWMLFED=0b000</span></div>
-<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;        .LOGCON_F.value = 0x0000,   <span class="comment">// PWMS1F=0b0000, PWMS2F=0b0000, S1FPOL=0, S2FPOL=0, PWMLFF=0b00, PWMLFFD=0b000</span></div>
-<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;        .PWMEVT_A.value = 0x0000,   <span class="comment">// EVTAOEN=0, EVTAPOL=0, EVTASTRD=0, EVTASYNC=0, EVTASEL=0b000, EVTAPGS=0b000</span></div>
-<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;        .PWMEVT_B.value = 0x0000,   <span class="comment">// EVTBOEN=0, EVTBPOL=0, EVTBSTRD=0, EVTBSYNC=0, EVTBSEL=0b000, EVTBPGS=0b000</span></div>
-<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;        .PWMEVT_C.value = 0x0000,   <span class="comment">// EVTCOEN=0, EVTCPOL=0, EVTCSTRD=0, EVTCSYNC=0, EVTCSEL=0b000, EVTCPGS=0b000</span></div>
-<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;        .PWMEVT_D.value = 0x0000,   <span class="comment">// EVTDOEN=0, EVTDPOL=0, EVTDSTRD=0, EVTDSYNC=0, EVTDSEL=0b000, EVTDPGS=0b000</span></div>
-<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;        .PWMEVT_E.value = 0x0000,   <span class="comment">// EVTEOEN=0, EVTEPOL=0, EVTESTRD=0, EVTESYNC=0, EVTESEL=0b000, EVTEPGS=0b000</span></div>
-<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;        .PWMEVT_F.value = 0x0000    <span class="comment">// EVTFOEN=0, EVTFPOL=0, EVTFSTRD=0, EVTFSYNC=0, EVTFSEL=0b000, EVTFPGS=0b000</span></div>
-<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;   };</div>
-<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160; </div>
-<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;<span class="comment">/* ********************************************************************************************* * </span></div>
-<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;<span class="comment"> * PWM GENERATOR CONFIGURATION TEMPLATES</span></div>
-<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;<span class="comment"> * ********************************************************************************************* */</span></div>
-<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160; </div>
-<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160; </div>
-<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a01106.html">P33C_PWM_GENERATOR_s</a> <a class="code" href="a00374.html#ga75ca6374eb31a3224a8e7bcfd4cd56a0">pgConfigClear</a> = {</div>
-<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;    </div>
-<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;        .<a class="code" href="a01106.html#ac68c50348498f25686caaca8f65552a1">PGxCONL</a>.<a class="code" href="a01106.html#a900b69af7d674b8db3bceae754b4955a">value</a> = 0x0000,    <span class="comment">// ON=0, TRGCNT=0b000, HREN=0, CLKSEL=b00, MODSEL=0b000</span></div>
-<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;        .PGxCONH.value = 0x0000,    <span class="comment">// MDCSEL=0, MPERSEL=0, MPHSEL=0, MSTEN=0, UPDMOD=0b000, TRGMOD=0, SOCS=0b0000</span></div>
-<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;        .PGxSTAT.value = 0x0000,    <span class="comment">// SEVT=0, FLTEVT=0, CLEVT=0, FFEVT=0, SACT=0, FLTACT=0, CLACT=0, FFACT=0, TRSET=0, TRCLR=0, CAP=0, UPDATE=0, UPDREQ=0, STEER=0, CAHALF=0, TRIG=0</span></div>
-<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;        .PGxIOCONL.value = 0x0000,  <span class="comment">// CLMOD=0, SWAP=0, OVRENH=0, OVRENL=0, OVRDAT=0, OSYNC=0b00, FLTDAT=0, CLDAT=0, FFDAT=0, DBDAT=0</span></div>
-<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;        .PGxIOCONH.value = 0x0000,  <span class="comment">// CAPSRC=0b000, DTCMPSEL=0, PMOD=0b00, PENH=0, PENL=0, POLH=0, POLL=0</span></div>
-<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;        .PGxEVTL.value = 0x0000,    <span class="comment">// ADTR1PS=0b00000, ADTR1EN3=0, ADTR1EN2=0, ADTR1EN1=0, UPDTRG=0b00, PGTRGSEL=0b000</span></div>
-<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;        .PGxEVTH.value = 0x0000,    <span class="comment">// FLTIEN=0, CLIEN=0, FFIEN=0, SIEN=0, IEVTSEL=0b00, ADTR2EN3=0, ADTR2EN2=0, ADTR2EN1=0, ADTR1OFS=0b00000</span></div>
-<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;        .PGxFPCIL.value = 0x0000,   <span class="comment">// TSYNCDIS=0, TERM=0b000, AQPS=0, AQSS=0b000, SWTERM=0, PSYNC=0, PPS=0, PSS=0b00000</span></div>
-<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;        .PGxFPCIH.value = 0x0000,   <span class="comment">// BPEN=0, BPSEL=0b000, ACP0b000, SWPCI=0, SWPCIM=0b00, LATMOD=0, TQPS=0, TQSS=0b000</span></div>
-<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;        .PGxCLPCIL.value = 0x0000,  <span class="comment">// TSYNCDIS=0, TERM=0b000, AQPS=0, AQSS=0b000, SWTERM=0, PSYNC=0, PPS=0, PSS=0b00000</span></div>
-<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;        .PGxCLPCIH.value = 0x0000,  <span class="comment">// BPEN=0, BPSEL=0b000, ACP0b000, SWPCI=0, SWPCIM=0b00, LATMOD=0, TQPS=0, TQSS=0b000</span></div>
-<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;        .PGxFFPCIL.value = 0x0000,  <span class="comment">// TSYNCDIS=0, TERM=0b000, AQPS=0, AQSS=0b000, SWTERM=0, PSYNC=0, PPS=0, PSS=0b00000</span></div>
-<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;        .PGxFFPCIH.value = 0x0000,  <span class="comment">// BPEN=0, BPSEL=0b000, ACP0b000, SWPCI=0, SWPCIM=0b00, LATMOD=0, TQPS=0, TQSS=0b000</span></div>
-<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;        .PGxSPCIL.value = 0x0000,   <span class="comment">// TSYNCDIS=0, TERM=0b000, AQPS=0, AQSS=0b000, SWTERM=0, PSYNC=0, PPS=0, PSS=0b00000</span></div>
-<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;        .PGxSPCIH.value = 0x0000,   <span class="comment">// BPEN=0, BPSEL=0b000, ACP0b000, SWPCI=0, SWPCIM=0b00, LATMOD=0, TQPS=0, TQSS=0b000</span></div>
-<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;        .PGxLEBL.value = 0x0000,    <span class="comment">// LEB=0</span></div>
-<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;        .PGxLEBH.value = 0x0000,    <span class="comment">// PWMPCI=0b000, PHR=0, PHF=0, PLR=0, PLF=0, </span></div>
-<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;        .PGxPHASE.value = 0x0000,   <span class="comment">// PGxPHASE=0</span></div>
-<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;        .PGxDC.value = 0x0000,      <span class="comment">// PGxDC=0</span></div>
-<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;        .PGxDCA.value = 0x0000,     <span class="comment">// PGxDCA=0</span></div>
-<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;        .PGxPER.value = 0x0000,     <span class="comment">// PGxPER=0</span></div>
-<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;        .PGxTRIGA.value = 0x0000,   <span class="comment">// PGxTRIGA=0</span></div>
-<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;        .PGxTRIGB.value = 0x0000,   <span class="comment">// PGxTRIGB=0</span></div>
-<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;        .PGxTRIGC.value = 0x0000,   <span class="comment">// PGxTRIGC=0</span></div>
-<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;        .PGxDTL.value = 0x0000,     <span class="comment">// DTL=0</span></div>
-<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;        .PGxDTH.value = 0x0000,     <span class="comment">// DTH=0</span></div>
-<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;        .PGxCAP.value = 0x0000      <span class="comment">// CAP=0</span></div>
-<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;    };</div>
-<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160; </div>
-<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160; </div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;}</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160; </div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;<span class="comment">/* ********************************************************************************************* * </span></div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;<span class="comment"> * PWM MODULE BASE CONFIGURATION TEMPLATES</span></div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;<span class="comment"> * ********************************************************************************************* */</span></div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160; </div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160; </div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00922.html">P33C_PWM_MODULE_s</a> <a class="code" href="a00374.html#gafeca0163f581790a35cef7b99a276adc">pwmConfigClear</a> = { </div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;    </div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;        .<a class="code" href="a00922.html#a2c58be76db6f74191e135506e4f842d4">vPCLKCON</a>.<a class="code" href="a00922.html#a900b69af7d674b8db3bceae754b4955a">value</a> = 0x0000, <span class="comment">// HRRDY=0, HRERR=0, LOCK=0, DIVSEL=0b00, MCLKSEL=0b00</span></div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;        .vFSCL.value = 0x0000, <span class="comment">// FSCL=0</span></div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;        .vFSMINPER.value = 0x0000, <span class="comment">// FSMINPER=0</span></div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;        .vMPHASE.value = 0x0000, <span class="comment">// MPHASE=0</span></div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;        .vMDC.value = 0x0000, <span class="comment">// MDC=0</span></div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;        .vMPER.value = 0x0000, <span class="comment">// MPER=0</span></div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;        .vLFSR.value = 0x0000, <span class="comment">// LFSR=0</span></div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;        .vCMBTRIGL.value = 0x0000, <span class="comment">// CTA1EN=0, CTA2EN=0, CTA3EN=0, CTA4EN=0, CTA5EN=0, CTA6EN=0, CTA7EN=0, CTA8EN=0</span></div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;        .vCMBTRIGH.value = 0x0000, <span class="comment">// CTB1EN=0, CTB2EN=0, CTB3EN=0, CTB4EN=0, CTB5EN=0, CTB6EN=0, CTB7EN=0, CTB8EN=0</span></div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;        .LOGCON_A.value = 0x0000, <span class="comment">// PWMS1A=0b0000, PWMS2A=0b0000, S1APOL=0, S2APOL=0, PWMLFA=0b00, PWMLFAD=0b000</span></div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;        .LOGCON_B.value = 0x0000, <span class="comment">// PWMS1B=0b0000, PWMS2B=0b0000, S1BPOL=0, S2BPOL=0, PWMLFB=0b00, PWMLFBD=0b000</span></div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;        .LOGCON_C.value = 0x0000, <span class="comment">// PWMS1C=0b0000, PWMS2C=0b0000, S1CPOL=0, S2CPOL=0, PWMLFC=0b00, PWMLFCD=0b000</span></div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;        .LOGCON_D.value = 0x0000, <span class="comment">// PWMS1D=0b0000, PWMS2D=0b0000, S1DPOL=0, S2DPOL=0, PWMLFD=0b00, PWMLFDD=0b000</span></div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;        .LOGCON_E.value = 0x0000, <span class="comment">// PWMS1E=0b0000, PWMS2E=0b0000, S1EPOL=0, S2EPOL=0, PWMLFE=0b00, PWMLFED=0b000</span></div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;        .LOGCON_F.value = 0x0000, <span class="comment">// PWMS1F=0b0000, PWMS2F=0b0000, S1FPOL=0, S2FPOL=0, PWMLFF=0b00, PWMLFFD=0b000</span></div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;        .PWMEVT_A.value = 0x0000, <span class="comment">// EVTAOEN=0, EVTAPOL=0, EVTASTRD=0, EVTASYNC=0, EVTASEL=0b000, EVTAPGS=0b000</span></div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;        .PWMEVT_B.value = 0x0000, <span class="comment">// EVTBOEN=0, EVTBPOL=0, EVTBSTRD=0, EVTBSYNC=0, EVTBSEL=0b000, EVTBPGS=0b000</span></div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;        .PWMEVT_C.value = 0x0000, <span class="comment">// EVTCOEN=0, EVTCPOL=0, EVTCSTRD=0, EVTCSYNC=0, EVTCSEL=0b000, EVTCPGS=0b000</span></div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;        .PWMEVT_D.value = 0x0000, <span class="comment">// EVTDOEN=0, EVTDPOL=0, EVTDSTRD=0, EVTDSYNC=0, EVTDSEL=0b000, EVTDPGS=0b000</span></div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;        .PWMEVT_E.value = 0x0000, <span class="comment">// EVTEOEN=0, EVTEPOL=0, EVTESTRD=0, EVTESYNC=0, EVTESEL=0b000, EVTEPGS=0b000</span></div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;        .PWMEVT_F.value = 0x0000  <span class="comment">// EVTFOEN=0, EVTFPOL=0, EVTFSTRD=0, EVTFSYNC=0, EVTFSEL=0b000, EVTFPGS=0b000</span></div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;   };</div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160; </div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160; </div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00922.html">P33C_PWM_MODULE_s</a> <a class="code" href="a00374.html#gaf8f0ea73e96ecddb846d1361098c09fe">pwmConfigDefault</a> = { </div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;    </div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;        .<a class="code" href="a00922.html#a2c58be76db6f74191e135506e4f842d4">vPCLKCON</a>.<a class="code" href="a00922.html#a900b69af7d674b8db3bceae754b4955a">value</a> = 0x0003,   <span class="comment">// HRRDY=0, HRERR=0, LOCK=0, DIVSEL=0b00, MCLKSEL=0b11</span></div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;        .vFSCL.value = 0x0000,      <span class="comment">// FSCL=0</span></div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;        .vFSMINPER.value = 0x0000,  <span class="comment">// FSMINPER=0</span></div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;        .vMPHASE.value = 0x0000,    <span class="comment">// MPHASE=0</span></div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;        .vMDC.value = 0x0000,       <span class="comment">// MDC=0</span></div>
+<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;        .vMPER.value = 0x0000,      <span class="comment">// MPER=0</span></div>
+<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;        .vLFSR.value = 0x0000,      <span class="comment">// LFSR=0</span></div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;        .vCMBTRIGL.value = 0x0000,  <span class="comment">// CTA1EN=0, CTA2EN=0, CTA3EN=0, CTA4EN=0, CTA5EN=0, CTA6EN=0, CTA7EN=0, CTA8EN=0</span></div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;        .vCMBTRIGH.value = 0x0000,  <span class="comment">// CTB1EN=0, CTB2EN=0, CTB3EN=0, CTB4EN=0, CTB5EN=0, CTB6EN=0, CTB7EN=0, CTB8EN=0</span></div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;        .LOGCON_A.value = 0x0000,   <span class="comment">// PWMS1A=0b0000, PWMS2A=0b0000, S1APOL=0, S2APOL=0, PWMLFA=0b00, PWMLFAD=0b000</span></div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;        .LOGCON_B.value = 0x0000,   <span class="comment">// PWMS1B=0b0000, PWMS2B=0b0000, S1BPOL=0, S2BPOL=0, PWMLFB=0b00, PWMLFBD=0b000</span></div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;        .LOGCON_C.value = 0x0000,   <span class="comment">// PWMS1C=0b0000, PWMS2C=0b0000, S1CPOL=0, S2CPOL=0, PWMLFC=0b00, PWMLFCD=0b000</span></div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;        .LOGCON_D.value = 0x0000,   <span class="comment">// PWMS1D=0b0000, PWMS2D=0b0000, S1DPOL=0, S2DPOL=0, PWMLFD=0b00, PWMLFDD=0b000</span></div>
+<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;        .LOGCON_E.value = 0x0000,   <span class="comment">// PWMS1E=0b0000, PWMS2E=0b0000, S1EPOL=0, S2EPOL=0, PWMLFE=0b00, PWMLFED=0b000</span></div>
+<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;        .LOGCON_F.value = 0x0000,   <span class="comment">// PWMS1F=0b0000, PWMS2F=0b0000, S1FPOL=0, S2FPOL=0, PWMLFF=0b00, PWMLFFD=0b000</span></div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;        .PWMEVT_A.value = 0x0000,   <span class="comment">// EVTAOEN=0, EVTAPOL=0, EVTASTRD=0, EVTASYNC=0, EVTASEL=0b000, EVTAPGS=0b000</span></div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;        .PWMEVT_B.value = 0x0000,   <span class="comment">// EVTBOEN=0, EVTBPOL=0, EVTBSTRD=0, EVTBSYNC=0, EVTBSEL=0b000, EVTBPGS=0b000</span></div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;        .PWMEVT_C.value = 0x0000,   <span class="comment">// EVTCOEN=0, EVTCPOL=0, EVTCSTRD=0, EVTCSYNC=0, EVTCSEL=0b000, EVTCPGS=0b000</span></div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;        .PWMEVT_D.value = 0x0000,   <span class="comment">// EVTDOEN=0, EVTDPOL=0, EVTDSTRD=0, EVTDSYNC=0, EVTDSEL=0b000, EVTDPGS=0b000</span></div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;        .PWMEVT_E.value = 0x0000,   <span class="comment">// EVTEOEN=0, EVTEPOL=0, EVTESTRD=0, EVTESYNC=0, EVTESEL=0b000, EVTEPGS=0b000</span></div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;        .PWMEVT_F.value = 0x0000    <span class="comment">// EVTFOEN=0, EVTFPOL=0, EVTFSTRD=0, EVTFSYNC=0, EVTFSEL=0b000, EVTFPGS=0b000</span></div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;   };</div>
+<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160; </div>
+<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;<span class="comment">/* ********************************************************************************************* * </span></div>
+<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;<span class="comment"> * PWM GENERATOR CONFIGURATION TEMPLATES</span></div>
+<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;<span class="comment"> * ********************************************************************************************* */</span></div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160; </div>
+<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160; </div>
+<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a01106.html">P33C_PWM_GENERATOR_s</a> <a class="code" href="a00374.html#ga75ca6374eb31a3224a8e7bcfd4cd56a0">pgConfigClear</a> = {</div>
+<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;    </div>
+<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;        .<a class="code" href="a01106.html#ac68c50348498f25686caaca8f65552a1">PGxCONL</a>.<a class="code" href="a01106.html#a900b69af7d674b8db3bceae754b4955a">value</a> = 0x0000,    <span class="comment">// ON=0, TRGCNT=0b000, HREN=0, CLKSEL=b00, MODSEL=0b000</span></div>
+<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;        .PGxCONH.value = 0x0000,    <span class="comment">// MDCSEL=0, MPERSEL=0, MPHSEL=0, MSTEN=0, UPDMOD=0b000, TRGMOD=0, SOCS=0b0000</span></div>
+<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;        .PGxSTAT.value = 0x0000,    <span class="comment">// SEVT=0, FLTEVT=0, CLEVT=0, FFEVT=0, SACT=0, FLTACT=0, CLACT=0, FFACT=0, TRSET=0, TRCLR=0, CAP=0, UPDATE=0, UPDREQ=0, STEER=0, CAHALF=0, TRIG=0</span></div>
+<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;        .PGxIOCONL.value = 0x0000,  <span class="comment">// CLMOD=0, SWAP=0, OVRENH=0, OVRENL=0, OVRDAT=0, OSYNC=0b00, FLTDAT=0, CLDAT=0, FFDAT=0, DBDAT=0</span></div>
+<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;        .PGxIOCONH.value = 0x0000,  <span class="comment">// CAPSRC=0b000, DTCMPSEL=0, PMOD=0b00, PENH=0, PENL=0, POLH=0, POLL=0</span></div>
+<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;        .PGxEVTL.value = 0x0000,    <span class="comment">// ADTR1PS=0b00000, ADTR1EN3=0, ADTR1EN2=0, ADTR1EN1=0, UPDTRG=0b00, PGTRGSEL=0b000</span></div>
+<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;        .PGxEVTH.value = 0x0000,    <span class="comment">// FLTIEN=0, CLIEN=0, FFIEN=0, SIEN=0, IEVTSEL=0b00, ADTR2EN3=0, ADTR2EN2=0, ADTR2EN1=0, ADTR1OFS=0b00000</span></div>
+<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;        .PGxFPCIL.value = 0x0000,   <span class="comment">// TSYNCDIS=0, TERM=0b000, AQPS=0, AQSS=0b000, SWTERM=0, PSYNC=0, PPS=0, PSS=0b00000</span></div>
+<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;        .PGxFPCIH.value = 0x0000,   <span class="comment">// BPEN=0, BPSEL=0b000, ACP0b000, SWPCI=0, SWPCIM=0b00, LATMOD=0, TQPS=0, TQSS=0b000</span></div>
+<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;        .PGxCLPCIL.value = 0x0000,  <span class="comment">// TSYNCDIS=0, TERM=0b000, AQPS=0, AQSS=0b000, SWTERM=0, PSYNC=0, PPS=0, PSS=0b00000</span></div>
+<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;        .PGxCLPCIH.value = 0x0000,  <span class="comment">// BPEN=0, BPSEL=0b000, ACP0b000, SWPCI=0, SWPCIM=0b00, LATMOD=0, TQPS=0, TQSS=0b000</span></div>
+<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;        .PGxFFPCIL.value = 0x0000,  <span class="comment">// TSYNCDIS=0, TERM=0b000, AQPS=0, AQSS=0b000, SWTERM=0, PSYNC=0, PPS=0, PSS=0b00000</span></div>
+<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;        .PGxFFPCIH.value = 0x0000,  <span class="comment">// BPEN=0, BPSEL=0b000, ACP0b000, SWPCI=0, SWPCIM=0b00, LATMOD=0, TQPS=0, TQSS=0b000</span></div>
+<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;        .PGxSPCIL.value = 0x0000,   <span class="comment">// TSYNCDIS=0, TERM=0b000, AQPS=0, AQSS=0b000, SWTERM=0, PSYNC=0, PPS=0, PSS=0b00000</span></div>
+<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;        .PGxSPCIH.value = 0x0000,   <span class="comment">// BPEN=0, BPSEL=0b000, ACP0b000, SWPCI=0, SWPCIM=0b00, LATMOD=0, TQPS=0, TQSS=0b000</span></div>
+<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;        .PGxLEBL.value = 0x0000,    <span class="comment">// LEB=0</span></div>
+<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;        .PGxLEBH.value = 0x0000,    <span class="comment">// PWMPCI=0b000, PHR=0, PHF=0, PLR=0, PLF=0, </span></div>
+<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;        .PGxPHASE.value = 0x0000,   <span class="comment">// PGxPHASE=0</span></div>
+<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;        .PGxDC.value = 0x0000,      <span class="comment">// PGxDC=0</span></div>
+<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;        .PGxDCA.value = 0x0000,     <span class="comment">// PGxDCA=0</span></div>
+<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;        .PGxPER.value = 0x0000,     <span class="comment">// PGxPER=0</span></div>
+<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;        .PGxTRIGA.value = 0x0000,   <span class="comment">// PGxTRIGA=0</span></div>
+<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;        .PGxTRIGB.value = 0x0000,   <span class="comment">// PGxTRIGB=0</span></div>
+<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;        .PGxTRIGC.value = 0x0000,   <span class="comment">// PGxTRIGC=0</span></div>
+<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;        .PGxDTL.value = 0x0000,     <span class="comment">// DTL=0</span></div>
+<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;        .PGxDTH.value = 0x0000,     <span class="comment">// DTH=0</span></div>
+<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;        .PGxCAP.value = 0x0000      <span class="comment">// CAP=0</span></div>
+<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;    };</div>
 <div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160; </div>
-<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;<span class="comment">// end of file</span></div>
+<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160; </div>
+<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160; </div>
+<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;<span class="comment">// end of file</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa00374_html_ga75ca6374eb31a3224a8e7bcfd4cd56a0"><div class="ttname"><a href="a00374.html#ga75ca6374eb31a3224a8e7bcfd4cd56a0">pgConfigClear</a></div><div class="ttdeci">volatile struct P33C_PWM_GENERATOR_s pgConfigClear</div><div class="ttdoc">Default RESET configuration of one PWM generator instance SFRs.</div><div class="ttdef"><b>Definition:</b> <a href="a00080_source.html#l00670">p33c_pwm.c:856</a></div></div>
+<div class="ttc" id="aa00374_html_ga75ca6374eb31a3224a8e7bcfd4cd56a0"><div class="ttname"><a href="a00374.html#ga75ca6374eb31a3224a8e7bcfd4cd56a0">pgConfigClear</a></div><div class="ttdeci">volatile struct P33C_PWM_GENERATOR_s pgConfigClear</div><div class="ttdoc">Default RESET configuration of one PWM generator instance SFRs.</div><div class="ttdef"><b>Definition:</b> <a href="a00080_source.html#l00672">p33c_pwm.c:858</a></div></div>
 <div class="ttc" id="aa00366_html_ga7f245f6acccb755eebcac17c50ac45a7"><div class="ttname"><a href="a00366.html#ga7f245f6acccb755eebcac17c50ac45a7">p33c_PwmGenerator_Resume</a></div><div class="ttdeci">volatile uint16_t p33c_PwmGenerator_Resume(volatile struct P33C_PWM_GENERATOR_s *pg)</div><div class="ttdoc">Disables a PWM generator IOs.</div><div class="ttdef"><b>Definition:</b> <a href="a00080_source.html#l00400">p33c_pwm.c:400</a></div></div>
 <div class="ttc" id="aa00366_html_gac24b378de17cd1f040a2a562a3839084"><div class="ttname"><a href="a00366.html#gac24b378de17cd1f040a2a562a3839084">p33c_PwmModule_Initialize</a></div><div class="ttdeci">volatile uint16_t p33c_PwmModule_Initialize(void)</div><div class="ttdoc">Initializes the PWM base module by resetting all its registers to default.</div><div class="ttdef"><b>Definition:</b> <a href="a00080_source.html#l00050">p33c_pwm.c:50</a></div></div>
 <div class="ttc" id="aa00366_html_ga1678ef9a6a8fc23f52150c07831a55a3"><div class="ttname"><a href="a00366.html#ga1678ef9a6a8fc23f52150c07831a55a3">p33c_PwmGenerator_SetDutyCycle</a></div><div class="ttdeci">volatile uint16_t p33c_PwmGenerator_SetDutyCycle(volatile struct P33C_PWM_GENERATOR_s *pg, volatile uint16_t duty)</div><div class="ttdoc">Sets the on-time of a given PWM generator.</div><div class="ttdef"><b>Definition:</b> <a href="a00080_source.html#l00490">p33c_pwm.c:490</a></div></div>
 <div class="ttc" id="aa01106_html_a1f70aa22c7e2f66244bf9228b674dd12"><div class="ttname"><a href="a01106.html#a1f70aa22c7e2f66244bf9228b674dd12">P33C_PWM_GENERATOR_s::PGxIOCONH</a></div><div class="ttdeci">union P33C_PWM_GENERATOR_s::@58 PGxIOCONH</div></div>
 <div class="ttc" id="aa01106_html_a3ea835fc06d83f47e13fb97659f3748f"><div class="ttname"><a href="a01106.html#a3ea835fc06d83f47e13fb97659f3748f">P33C_PWM_GENERATOR_s::PGxIOCONL</a></div><div class="ttdeci">union P33C_PWM_GENERATOR_s::@57 PGxIOCONL</div></div>
 <div class="ttc" id="aa00366_html_ga1f7d2b88d83ae73245701a727724fb1f"><div class="ttname"><a href="a00366.html#ga1f7d2b88d83ae73245701a727724fb1f">p33c_PwmGenerator_SetPeriod</a></div><div class="ttdeci">volatile uint16_t p33c_PwmGenerator_SetPeriod(volatile struct P33C_PWM_GENERATOR_s *pg, volatile uint16_t period)</div><div class="ttdoc">Sets the period of a given PWM generator.</div><div class="ttdef"><b>Definition:</b> <a href="a00080_source.html#l00457">p33c_pwm.c:457</a></div></div>
-<div class="ttc" id="aa00366_html_ga9e915aaf4de147d97a05e808113d86d6"><div class="ttname"><a href="a00366.html#ga9e915aaf4de147d97a05e808113d86d6">p33c_PwmGenerator_SyncGenerators</a></div><div class="ttdeci">volatile uint16_t p33c_PwmGenerator_SyncGenerators(volatile struct P33C_PWM_GENERATOR_s *pgHandleMother, volatile uint16_t pgMotherTriggerOutput, volatile struct P33C_PWM_GENERATOR_s *pgHandleChild, volatile bool ChildImmediateUpdate)</div><div class="ttdoc">Sets the synchronization triggers of two PWM generators, of which the Mother PWM generator is the tri...</div><div class="ttdef"><b>Definition:</b> <a href="a00080_source.html#l00670">p33c_pwm.c:670</a></div></div>
+<div class="ttc" id="aa00366_html_ga9e915aaf4de147d97a05e808113d86d6"><div class="ttname"><a href="a00366.html#ga9e915aaf4de147d97a05e808113d86d6">p33c_PwmGenerator_SyncGenerators</a></div><div class="ttdeci">volatile uint16_t p33c_PwmGenerator_SyncGenerators(volatile struct P33C_PWM_GENERATOR_s *pgHandleMother, volatile uint16_t pgMotherTriggerOutput, volatile struct P33C_PWM_GENERATOR_s *pgHandleChild, volatile bool ChildImmediateUpdate)</div><div class="ttdoc">Sets the synchronization triggers of two PWM generators, of which the Mother PWM generator is the tri...</div><div class="ttdef"><b>Definition:</b> <a href="a00080_source.html#l00672">p33c_pwm.c:672</a></div></div>
 <div class="ttc" id="aa01106_html_a900b69af7d674b8db3bceae754b4955a"><div class="ttname"><a href="a01106.html#a900b69af7d674b8db3bceae754b4955a">P33C_PWM_GENERATOR_s::value</a></div><div class="ttdeci">uint16_t value</div><div class="ttdef"><b>Definition:</b> <a href="a00083_source.html#l00198">p33c_pwm.h:198</a></div></div>
 <div class="ttc" id="aa00366_html_ga3ec29908681232dd9d7115f58e34caeb"><div class="ttname"><a href="a00366.html#ga3ec29908681232dd9d7115f58e34caeb">p33c_PwmGenerator_Suspend</a></div><div class="ttdeci">volatile uint16_t p33c_PwmGenerator_Suspend(volatile struct P33C_PWM_GENERATOR_s *pg)</div><div class="ttdoc">Disables the PWM generator outputs but keeps the module running.</div><div class="ttdef"><b>Definition:</b> <a href="a00080_source.html#l00428">p33c_pwm.c:428</a></div></div>
 <div class="ttc" id="aa00922_html"><div class="ttname"><a href="a00922.html">P33C_PWM_MODULE_s</a></div><div class="ttdef"><b>Definition:</b> <a href="a00083_source.html#l00086">p33c_pwm.h:86</a></div></div>
@@ -657,20 +657,20 @@ $(document).ready(function(){initNavTree('a00080_source.html',''); initResizable
 <div class="ttc" id="aa00366_html_ga7bd8f64fdb01cdde9182468d434a1a82"><div class="ttname"><a href="a00366.html#ga7bd8f64fdb01cdde9182468d434a1a82">p33c_PwmGenerator_Enable</a></div><div class="ttdeci">volatile uint16_t p33c_PwmGenerator_Enable(volatile struct P33C_PWM_GENERATOR_s *pg)</div><div class="ttdoc">Enables a given PWM generator with output pins disabled.</div><div class="ttdef"><b>Definition:</b> <a href="a00080_source.html#l00316">p33c_pwm.c:316</a></div></div>
 <div class="ttc" id="aa01106_html_aa3c6e2341890016e75dee496ff358d43"><div class="ttname"><a href="a01106.html#aa3c6e2341890016e75dee496ff358d43">P33C_PWM_GENERATOR_s::PGxLEBH</a></div><div class="ttdeci">union P33C_PWM_GENERATOR_s::@70 PGxLEBH</div></div>
 <div class="ttc" id="aa01106_html_a96cc0e1070aba3eb17d7116fc97493c3"><div class="ttname"><a href="a01106.html#a96cc0e1070aba3eb17d7116fc97493c3">P33C_PWM_GENERATOR_s::PGxEVTL</a></div><div class="ttdeci">union P33C_PWM_GENERATOR_s::@59 PGxEVTL</div></div>
-<div class="ttc" id="aa00374_html_gafeca0163f581790a35cef7b99a276adc"><div class="ttname"><a href="a00374.html#gafeca0163f581790a35cef7b99a276adc">pwmConfigClear</a></div><div class="ttdeci">volatile struct P33C_PWM_MODULE_s pwmConfigClear</div><div class="ttdoc">Default RESET configuration of the PWM module SFRs.</div><div class="ttdef"><b>Definition:</b> <a href="a00080_source.html#l00670">p33c_pwm.c:773</a></div></div>
+<div class="ttc" id="aa00374_html_gafeca0163f581790a35cef7b99a276adc"><div class="ttname"><a href="a00374.html#gafeca0163f581790a35cef7b99a276adc">pwmConfigClear</a></div><div class="ttdeci">volatile struct P33C_PWM_MODULE_s pwmConfigClear</div><div class="ttdoc">Default RESET configuration of the PWM module SFRs.</div><div class="ttdef"><b>Definition:</b> <a href="a00080_source.html#l00672">p33c_pwm.c:775</a></div></div>
 <div class="ttc" id="aa00366_html_gad58be387853f783af7e5764791c0ac36"><div class="ttname"><a href="a00366.html#gad58be387853f783af7e5764791c0ac36">p33c_PwmGenerator_Disable</a></div><div class="ttdeci">volatile uint16_t p33c_PwmGenerator_Disable(volatile struct P33C_PWM_GENERATOR_s *pg)</div><div class="ttdoc">Disables a given PWM generator.</div><div class="ttdef"><b>Definition:</b> <a href="a00080_source.html#l00366">p33c_pwm.c:366</a></div></div>
-<div class="ttc" id="aa00366_html_ga7254c2b9b20683649633c28896d539c4"><div class="ttname"><a href="a00366.html#ga7254c2b9b20683649633c28896d539c4">p33c_PwmGenerator_GetInstance</a></div><div class="ttdeci">volatile uint16_t p33c_PwmGenerator_GetInstance(volatile struct P33C_PWM_GENERATOR_s *pg)</div><div class="ttdoc">Get the PWM generator instance index of a known PWM object pointer address.</div><div class="ttdef"><b>Definition:</b> <a href="a00080_source.html#l00580">p33c_pwm.c:580</a></div></div>
+<div class="ttc" id="aa00366_html_ga7254c2b9b20683649633c28896d539c4"><div class="ttname"><a href="a00366.html#ga7254c2b9b20683649633c28896d539c4">p33c_PwmGenerator_GetInstance</a></div><div class="ttdeci">volatile uint16_t p33c_PwmGenerator_GetInstance(volatile struct P33C_PWM_GENERATOR_s *pg)</div><div class="ttdoc">Get the PWM generator index.</div><div class="ttdef"><b>Definition:</b> <a href="a00080_source.html#l00582">p33c_pwm.c:582</a></div></div>
 <div class="ttc" id="aa00366_html_ga5bb4954e471caa1dbbb505b513257821"><div class="ttname"><a href="a00366.html#ga5bb4954e471caa1dbbb505b513257821">p33c_PwmModule_ConfigRead</a></div><div class="ttdeci">volatile struct P33C_PWM_MODULE_s p33c_PwmModule_ConfigRead(void)</div><div class="ttdoc">Read the current configuration from the PWM base module registers.</div><div class="ttdef"><b>Definition:</b> <a href="a00080_source.html#l00104">p33c_pwm.c:127</a></div></div>
 <div class="ttc" id="aa01106_html_a326fd5646a7e7fedfdaa469bd7c599b6"><div class="ttname"><a href="a01106.html#a326fd5646a7e7fedfdaa469bd7c599b6">P33C_PWM_GENERATOR_s::PGxCONH</a></div><div class="ttdeci">union P33C_PWM_GENERATOR_s::@55 PGxCONH</div></div>
 <div class="ttc" id="aa01106_html"><div class="ttname"><a href="a01106.html">P33C_PWM_GENERATOR_s</a></div><div class="ttdef"><b>Definition:</b> <a href="a00083_source.html#l00195">p33c_pwm.h:195</a></div></div>
-<div class="ttc" id="aa00374_html_gaf8f0ea73e96ecddb846d1361098c09fe"><div class="ttname"><a href="a00374.html#gaf8f0ea73e96ecddb846d1361098c09fe">pwmConfigDefault</a></div><div class="ttdeci">volatile struct P33C_PWM_MODULE_s pwmConfigDefault</div><div class="ttdoc">Default initialization configuration of the PWM module SFRs.</div><div class="ttdef"><b>Definition:</b> <a href="a00080_source.html#l00670">p33c_pwm.c:813</a></div></div>
+<div class="ttc" id="aa00374_html_gaf8f0ea73e96ecddb846d1361098c09fe"><div class="ttname"><a href="a00374.html#gaf8f0ea73e96ecddb846d1361098c09fe">pwmConfigDefault</a></div><div class="ttdeci">volatile struct P33C_PWM_MODULE_s pwmConfigDefault</div><div class="ttdoc">Default initialization configuration of the PWM module SFRs.</div><div class="ttdef"><b>Definition:</b> <a href="a00080_source.html#l00672">p33c_pwm.c:815</a></div></div>
 <div class="ttc" id="aa01106_html_acc1e94de85a51b3e7af44480485560ef"><div class="ttname"><a href="a01106.html#acc1e94de85a51b3e7af44480485560ef">P33C_PWM_GENERATOR_s::PGxDTL</a></div><div class="ttdeci">union P33C_PWM_GENERATOR_s::@78 PGxDTL</div></div>
 <div class="ttc" id="aa00922_html_a900b69af7d674b8db3bceae754b4955a"><div class="ttname"><a href="a00922.html#a900b69af7d674b8db3bceae754b4955a">P33C_PWM_MODULE_s::value</a></div><div class="ttdeci">uint16_t value</div><div class="ttdef"><b>Definition:</b> <a href="a00083_source.html#l00090">p33c_pwm.h:90</a></div></div>
 <div class="ttc" id="aa00366_html_ga3ed5f08051a70f5cb426b8254119845f"><div class="ttname"><a href="a00366.html#ga3ed5f08051a70f5cb426b8254119845f">p33c_PwmModule_GetHandle</a></div><div class="ttdeci">volatile struct P33C_PWM_MODULE_s * p33c_PwmModule_GetHandle(void)</div><div class="ttdoc">Gets pointer to PWM module SFR set.</div><div class="ttdef"><b>Definition:</b> <a href="a00080_source.html#l00074">p33c_pwm.c:74</a></div></div>
 <div class="ttc" id="aa01106_html_af02d448235c46a1a93504da0889a8f7c"><div class="ttname"><a href="a01106.html#af02d448235c46a1a93504da0889a8f7c">P33C_PWM_GENERATOR_s::PGxSTAT</a></div><div class="ttdeci">union P33C_PWM_GENERATOR_s::@56 PGxSTAT</div></div>
 <div class="ttc" id="aa01106_html_a7868e10d1c192507a75b4098a7aa1043"><div class="ttname"><a href="a01106.html#a7868e10d1c192507a75b4098a7aa1043">P33C_PWM_GENERATOR_s::bits</a></div><div class="ttdeci">struct tagPG1CONLBITS bits</div><div class="ttdef"><b>Definition:</b> <a href="a00083_source.html#l00096">p33c_pwm.h:197</a></div></div>
 <div class="ttc" id="aa00366_html_ga7f779276e0cf4c974267fdbb7c1ea86c"><div class="ttname"><a href="a00366.html#ga7f779276e0cf4c974267fdbb7c1ea86c">p33c_PwmGenerator_Initialize</a></div><div class="ttdeci">volatile uint16_t p33c_PwmGenerator_Initialize(volatile uint16_t pgInstance)</div><div class="ttdoc">Initializes a given PWM generator by resetting all its registers to default.</div><div class="ttdef"><b>Definition:</b> <a href="a00080_source.html#l00250">p33c_pwm.c:250</a></div></div>
-<div class="ttc" id="aa00366_html_gae4eba2cc810c1148c025f94cb9b73755"><div class="ttname"><a href="a00366.html#gae4eba2cc810c1148c025f94cb9b73755">p33c_PwmGenerator_GetGroup</a></div><div class="ttdeci">volatile uint16_t p33c_PwmGenerator_GetGroup(volatile struct P33C_PWM_GENERATOR_s *pg)</div><div class="ttdoc">Get the PWM generator group.</div><div class="ttdef"><b>Definition:</b> <a href="a00080_source.html#l00612">p33c_pwm.c:612</a></div></div>
+<div class="ttc" id="aa00366_html_gae4eba2cc810c1148c025f94cb9b73755"><div class="ttname"><a href="a00366.html#gae4eba2cc810c1148c025f94cb9b73755">p33c_PwmGenerator_GetGroup</a></div><div class="ttdeci">volatile uint16_t p33c_PwmGenerator_GetGroup(volatile struct P33C_PWM_GENERATOR_s *pg)</div><div class="ttdoc">Get the PWM generator group.</div><div class="ttdef"><b>Definition:</b> <a href="a00080_source.html#l00614">p33c_pwm.c:614</a></div></div>
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

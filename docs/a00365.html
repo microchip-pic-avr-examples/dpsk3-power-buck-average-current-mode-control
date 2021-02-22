@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('a00365.html',''); initResizable(); });
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Public Functions<div class="ingroups"><a class="el" href="a00534.html">Library Driver Layer</a> &raquo; <a class="el" href="a00350.html">Peripheral Register Abstraction Layer (PRAL) Library</a> &raquo; <a class="el" href="a00357.html">Peripheral Pin Select Module (PPS)</a></div></div>  </div>
+<div class="title">Public Functions<div class="ingroups"><a class="el" href="a00533.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00350.html">Peripheral Register Abstraction Layer (PRAL) Library</a> &raquo; <a class="el" href="a00357.html">Peripheral Pin Select Module (PPS)</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -194,8 +194,8 @@ Functions</h2></td></tr>
 <p>Assigns a pin to a digital function input. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pinno</td><td>Index number of the RPx-pin of type uint8_t, which should be assigned to the function </td></tr>
-    <tr><td class="paramname">peripheral</td><td>Pointer to peripheral/function of type uint8_t, which should be assigned to the pin </td></tr>
+    <tr><td class="paramname">uint8_t</td><td>pinno: Number of the RPx-pin, which should be assigned to the function </td></tr>
+    <tr><td class="paramname">uint8_t</td><td>*peripheral: Pointer to peripheral, which should be assigned to the pin </td></tr>
   </table>
   </dd>
 </dl>
@@ -246,8 +246,8 @@ Functions</h2></td></tr>
 <p>Assigns a digital function output to a pin. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pinno</td><td>Index number of the RPx-pin of type uint8_t, which should be assigned to the function </td></tr>
-    <tr><td class="paramname">peripheral</td><td>Peripheral/Function ID of type uint8_t, which should be assigned to the pin </td></tr>
+    <tr><td class="paramname">uint8_t</td><td>pinno: Number of the RPx-pin, which should be assigned to the function </td></tr>
+    <tr><td class="paramname">uint8_t</td><td>peripheral: Function, which should be assigned to the pin </td></tr>
   </table>
   </dd>
 </dl>
@@ -314,7 +314,7 @@ Functions</h2></td></tr>
 <p>Disconnects a pin from a digital function input. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">peripheral</td><td>Pointer to peripheral of type uint8_t, which should be assigned to the pin </td></tr>
+    <tr><td class="paramname">uint8_t</td><td>*peripheral: Pointer to peripheral, which should be assigned to the pin </td></tr>
   </table>
   </dd>
 </dl>
@@ -356,7 +356,7 @@ Functions</h2></td></tr>
 <p>Disconnects a pin from a digital function output. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pinno</td><td>Index number of the RPx-pin of type uint8_t, which should be assigned to the function </td></tr>
+    <tr><td class="paramname">uint8_t</td><td>pinno: Number of the RPx-pin </td></tr>
   </table>
   </dd>
 </dl>

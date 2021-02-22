@@ -103,9 +103,6 @@ $(document).ready(function(){initNavTree('a00898.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 
-<p>Global data structure holding system frequencies of different clock domains.  
- <a href="a00898.html#details">More...</a></p>
-
 <p><code>#include &lt;<a class="el" href="a00071_source.html">common/p33c_pral/p33c_osc.h</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for OSCILLATOR_SYSTEM_FREQUENCIES_s:</div>
@@ -144,15 +141,15 @@ Data Fields</h2></td></tr>
 <tr class="separator:a037a9c6449fdf2750adbc66db343d1dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Global data structure holding system frequencies of different clock domains. </p>
-<p>The data structure "system_frequencies" of type OSCILLATOR_SYSTEM_FREQUENCIES_t is used to broadcast most recent system frequencies of multiple clock domains. Contents of this data structure are NOT updated automatically.</p>
-<p>The function <a class="el" href="a00364.html#ga5aae9e22b336a4664e85d66dd943a59f" title="This routine reads all oscillator related SFRs recalculating the various frequencies across clock dom...">p33c_Osc_GetFrequencies()</a> must be called from user code to update/refresh the contents of this data structure every time a oscillator configuration has been changed.</p>
-<p><b>Example:</b></p>
-<p>The following code lines initialize the internal FRC oscillator for 100 MIPS operation and the auxiliary PLL for 500 MHz to support 250ps resolution of the PWM module. After both configurations have been set, the function 'osc_get_frequencies()' is used to update the most recent frequencies of multiple clock domains.</p>
-<div class="fragment"><div class="line">init_FRCCLK_Defaults(CPU_SPEED_100_MIPS);   <span class="comment">// Initialize FRC for 100 MIPS operation</span></div>
-<div class="line">init_AUXCLK_500MHz();                       <span class="comment">// Initialize AuxPLL for 500 MHz clock output</span></div>
-<div class="line">osc_get_frequencies(0);                     <span class="comment">// Update system frequencies data structure</span></div>
-</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>When an external oscillator is used, the function osc_get_frequencies() must be called to set the external frequency value in [Hz] and update all related frequencies accordingly. If only the internal FRC oscillator is used, this parameter should be set = 0. </dd></dl>
+<div class="textblock"><p>System OSCILLATOR_SYSTEM_FREQUENCIES_t</p>
+<hr  />
+<p> Summary: Global data structure holding system frequencies of different clock domains</p>
+<p>Description: The data structure "system_frequencies" of type OSCILLATOR_SYSTEM_FREQUENCIES_t is used to broadcast most recent system frequencies of multiple clock domains. Contents of this data structure are NOT updated automatically.</p>
+<p>The function osc_get_frequencies() must be called from user code to update/refresh the contents of this data structure every time a oscillator configuration has been changed.</p>
+<p>Example: The following code lines initialize the internal FRC oscillator for 100 MIPS operation and the auxiliary PLL for 500 MHz to support 250ps resolution of the PWM module. After both configurations have been set, the function 'osc_get_frequencies()' is used to update the most recent frequencies of multiple clock domains. </p><pre class="fragment"> init_FRCCLK_Defaults(CPU_SPEED_100_MIPS);   // Initialize FRC for 100 MIPS operation
+ init_AUXCLK_500MHz();                       // Initialize AuxPLL for 500 MHz clock output
+ osc_get_frequencies(0);                     // Update system frequencies data structure
+</pre><p>Please note: When an external oscillator is used, the function osc_get_frequencies() must be called to set the external frequency value in [Hz] and update all related frequencies accordingly. If only the internal FRC oscillator is used, this parameter should be set = 0. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00071_source.html#l00125">125</a> of file <a class="el" href="a00071_source.html">p33c_osc.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>

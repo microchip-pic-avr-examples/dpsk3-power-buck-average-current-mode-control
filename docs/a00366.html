@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('a00366.html',''); initResizable(); });
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Public Functions<div class="ingroups"><a class="el" href="a00534.html">Library Driver Layer</a> &raquo; <a class="el" href="a00350.html">Peripheral Register Abstraction Layer (PRAL) Library</a> &raquo; <a class="el" href="a00358.html">High-Speed PWM Module (HSPWM)</a></div></div>  </div>
+<div class="title">Public Functions<div class="ingroups"><a class="el" href="a00533.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00350.html">Peripheral Register Abstraction Layer (PRAL) Library</a> &raquo; <a class="el" href="a00358.html">High-Speed PWM Module (HSPWM)</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -117,7 +117,7 @@ $(document).ready(function(){initNavTree('a00366.html',''); initResizable(); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga7254c2b9b20683649633c28896d539c4"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00366.html#ga7254c2b9b20683649633c28896d539c4">p33c_PwmGenerator_GetInstance</a> (volatile struct <a class="el" href="a01106.html">P33C_PWM_GENERATOR_s</a> *pg)</td></tr>
-<tr class="memdesc:ga7254c2b9b20683649633c28896d539c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the PWM generator instance index of a known PWM object pointer address.  <a href="a00366.html#ga7254c2b9b20683649633c28896d539c4">More...</a><br /></td></tr>
+<tr class="memdesc:ga7254c2b9b20683649633c28896d539c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the PWM generator index.  <a href="a00366.html#ga7254c2b9b20683649633c28896d539c4">More...</a><br /></td></tr>
 <tr class="separator:ga7254c2b9b20683649633c28896d539c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae4eba2cc810c1148c025f94cb9b73755"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00366.html#gae4eba2cc810c1148c025f94cb9b73755">p33c_PwmGenerator_GetGroup</a> (volatile struct <a class="el" href="a01106.html">P33C_PWM_GENERATOR_s</a> *pg)</td></tr>
 <tr class="memdesc:gae4eba2cc810c1148c025f94cb9b73755"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the PWM generator group.  <a href="a00366.html#gae4eba2cc810c1148c025f94cb9b73755">More...</a><br /></td></tr>
@@ -200,11 +200,11 @@ Functions</h2></td></tr>
 <p>Disposes a given PWM generator by resetting all its registers to default. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pgInstance</td><td>Instance of the PWM generator (e.g. 1 = PG1, 2=PG2, etc.) of type unsigned integer </td></tr>
+    <tr><td class="paramname">uint16_t</td><td>pgInstance: Instance of the PWM generator (e.g. 1 = PG1, 2=PG2, etc.) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Generic PWM generator Special Function Register set of type struct <a class="el" href="a01106.html">P33C_PWM_GENERATOR_s</a></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>struct <a class="el" href="a01106.html">P33C_PWM_GENERATOR_s</a>: generic PWM generator Special Function Register set</dd></dl>
 <p>This function copies the contents of all PWM generator registers of the specified generator instance (e.g. PG2) to a user variable of type P33C_PWM_GENERATOR_t. This 'virtual' PWM configuration can then , for <br  />
  example, be analyzed and/or modified in user code and applied to another PWM generator using the function p33c_PwmGenerator_ConfigWrite(...). </p>
 
@@ -241,8 +241,8 @@ Functions</h2></td></tr>
 <p>Disposes a given PWM generator by resetting all its registers to default. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pgInstance</td><td>Instance of the PWM generator of type unsigned integer (e.g. 1=PG1, 2=PG2, etc.) </td></tr>
-    <tr><td class="paramname">pgConfig</td><td>Generic PWM generator Special Function Register set of type struct <a class="el" href="a01106.html">P33C_PWM_GENERATOR_s</a> </td></tr>
+    <tr><td class="paramname">pgInstance</td><td>Instance of the PWM generator (e.g. 1 = PG1, 2=PG2, etc.) </td></tr>
+    <tr><td class="paramname">struct</td><td><a class="el" href="a01106.html">P33C_PWM_GENERATOR_s</a>: generic PWM generator Special Function Register set </td></tr>
   </table>
   </dd>
 </dl>
@@ -282,7 +282,7 @@ Functions</h2></td></tr>
 <p>Disables a given PWM generator. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pg</td><td>Pointer to PWM generator peripheral instance register set of type struct <a class="el" href="a01106.html">P33C_PWM_GENERATOR_s</a> </td></tr>
+    <tr><td class="paramname">struct</td><td>P33C_PWM_GENERATOR_s* pg </td></tr>
   </table>
   </dd>
 </dl>
@@ -322,7 +322,7 @@ Functions</h2></td></tr>
 <p>Disposes a given PWM generator by resetting all its registers to default. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pgInstance</td><td>Instance of the PWM generator of type unsigned integer (e.g. 1=PG1, 2=PG2, etc.) </td></tr>
+    <tr><td class="paramname">uint16_t</td><td>pgInstance: Instance of the PWM generator (e.g. 1 = PG1, 2=PG2, etc.) </td></tr>
   </table>
   </dd>
 </dl>
@@ -362,7 +362,7 @@ Functions</h2></td></tr>
 <p>Enables a given PWM generator with output pins disabled. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pg</td><td>Pointer to PWM generator peripheral instance register set of type struct <a class="el" href="a01106.html">P33C_PWM_GENERATOR_s</a> </td></tr>
+    <tr><td class="paramname">struct</td><td>P33C_PWM_GENERATOR_s* pg </td></tr>
   </table>
   </dd>
 </dl>
@@ -396,7 +396,7 @@ Functions</h2></td></tr>
 <p>volatile uint16_t <a class="el" href="a00366.html#gae4eba2cc810c1148c025f94cb9b73755" title="Get the PWM generator group.">p33c_PwmGenerator_GetGroup(volatile struct P33C_PWM_GENERATOR_s* pg)</a></p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pg</td><td>Pointer to PWM generator peripheral instance register set of type struct <a class="el" href="a01106.html">P33C_PWM_GENERATOR_s</a> </td></tr>
+    <tr><td class="paramname">struct</td><td>P33C_PWM_GENERATOR_s* pg: Pointer to PWM generator instance SFRs </td></tr>
   </table>
   </dd>
 </dl>
@@ -405,9 +405,9 @@ Functions</h2></td></tr>
 1 = PWM generator is in group #1 </dd>
 <dd>
 2 = PWM generator is in group #2</dd></dl>
-<p>This function identify the group to which the PWM generator instance belongs (1 = [PG1-PG4], 2 = [PG5-PG8]) and verifies if the PWMgenerator group is valid and available. If no group is found, the function returns '0' </p>
+<p>This function identify the group toi which PWM generator belongs (1 = [PG1-PG4], 2 = [PG5-PG8]) and verify if the PWMgenerator group is valid and available. If no group is found, the function returns '0' </p>
 
-<p class="definition">Definition at line <a class="el" href="a00080_source.html#l00612">612</a> of file <a class="el" href="a00080_source.html">p33c_pwm.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00080_source.html#l00614">614</a> of file <a class="el" href="a00080_source.html">p33c_pwm.c</a>.</p>
 
 </div>
 </div>
@@ -430,12 +430,12 @@ Functions</h2></td></tr>
 <p>Returns the PWM generator index. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pgInstance</td><td>Instance of the PWM generator of type unsigned integer (e.g. 1=PG1, 2=PG2, etc.) </td></tr>
+    <tr><td class="paramname">uint16_t</td><td>pgInstance: Index of the selected PWM generator (1=PG1, 2=PG2, etc.) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Pointer address to PWM generator instance of type struct <a class="el" href="a01106.html">P33C_PWM_GENERATOR_s</a> specified by parameter pgInstance</dd></dl>
-<p>This function returns the address pointer (pgHandle) of the PWM generator Special Function Register set specified by parameter pgInstance. pgHandle can be used to assign a global variable in user code, which allows to directly read from/write to PWM registers of the selected PWM generator with zero API overhead. </p>
+<dl class="section return"><dt>Returns</dt><dd>struct P33C_PWM_GENERATOR_s*: Pointer to PWM generator object of the selected PWM generator instance</dd></dl>
+<p>This function returns the PWM generator index, the PWM generator group (1 = [PG1-PG4], 2 = [PG5-PG8]) and the address pointer (pgHandle) of the PWM generator Special Function Register set. pgHandle can be used to directly read from/write to PWM registers of the selected PWM generator with zero API overhead. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00080_source.html#l00555">555</a> of file <a class="el" href="a00080_source.html">p33c_pwm.c</a>.</p>
 <div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -465,18 +465,20 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the PWM generator instance index of a known PWM object pointer address. </p>
-<p>volatile uint16_t <a class="el" href="a00366.html#ga7254c2b9b20683649633c28896d539c4" title="Get the PWM generator instance index of a known PWM object pointer address.">p33c_PwmGenerator_GetInstance(volatile struct P33C_PWM_GENERATOR_s* pg)</a></p>
+<p>Get the PWM generator index. </p>
+<p>volatile uint16_t <a class="el" href="a00366.html#ga7254c2b9b20683649633c28896d539c4" title="Get the PWM generator index.">p33c_PwmGenerator_GetInstance(volatile struct P33C_PWM_GENERATOR_s* pg)</a></p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pg</td><td>Pointer to PWM generator peripheral instance register set of type struct <a class="el" href="a01106.html">P33C_PWM_GENERATOR_s</a> </td></tr>
+    <tr><td class="paramname">struct</td><td>P33C_PWM_GENERATOR_s* pg: Pointer to PWM generator instance SFRs </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>index of PWM generator instance of type unsigned integer</dd></dl>
-<p>This function returns the non-zero PWM generator instance index of the PWM generator of the PWM generator Special Function Register set referenced by the pointer address of function parameter pg. If the memory address does not match any available PWM generator instance start address, this function returns '0'. </p>
+<dl class="section return"><dt>Returns</dt><dd>0 = failure, disabling PWM generator was not successful </dd>
+<dd>
+1 = success, disabling PWM generator was successful</dd></dl>
+<p>This function gets the PWM generator index, the PWM generator group (1 = [PG1-PG4], 2 = [PG5-PG8]) and the address pointer (pgInstance) of the PWM generator Special Function Register set. pgInstance can be used to directly read from/write to PWM registers of the selected PWM generator with zero API overhead. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00080_source.html#l00580">580</a> of file <a class="el" href="a00080_source.html">p33c_pwm.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00080_source.html#l00582">582</a> of file <a class="el" href="a00080_source.html">p33c_pwm.c</a>.</p>
 
 </div>
 </div>
@@ -499,7 +501,7 @@ Functions</h2></td></tr>
 <p>Initializes a given PWM generator by resetting all its registers to default. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pgInstance</td><td>Instance of the PWM generator of type unsigned integer (e.g. 1=PG1, 2=PG2, etc.) </td></tr>
+    <tr><td class="paramname">uint16_t</td><td>pgInstance: Instance of the PWM generator (e.g. 1 = PG1, 2=PG2, etc.) </td></tr>
   </table>
   </dd>
 </dl>
@@ -539,7 +541,7 @@ Functions</h2></td></tr>
 <p>Disables a PWM generator IOs. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pg</td><td>Pointer to PWM generator peripheral instance register set of type struct <a class="el" href="a01106.html">P33C_PWM_GENERATOR_s</a> </td></tr>
+    <tr><td class="paramname">struct</td><td>P33C_PWM_GENERATOR_s* pg </td></tr>
   </table>
   </dd>
 </dl>
@@ -587,9 +589,9 @@ Functions</h2></td></tr>
 <p>Sets the dead-times of a given PWM generator. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pg</td><td>Pointer to PWM generator peripheral instance register set of type struct <a class="el" href="a01106.html">P33C_PWM_GENERATOR_s</a> </td></tr>
-    <tr><td class="paramname">dead_time_rising</td><td>Rising edge dead time counter value of type unsigned integer /</td></tr>
-    <tr><td class="paramname">dead_time_falling</td><td>Falling edge dead time counter value of type unsigned integer </td></tr>
+    <tr><td class="paramname">struct</td><td>P33C_PWM_GENERATOR_s* pg </td></tr>
+    <tr><td class="paramname">uint16_t</td><td>dead_time_rising /</td></tr>
+    <tr><td class="paramname">uint16_t</td><td>dead_time_falling </td></tr>
   </table>
   </dd>
 </dl>
@@ -631,8 +633,8 @@ Functions</h2></td></tr>
 <p>Sets the on-time of a given PWM generator. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pg</td><td>Pointer to PWM generator peripheral instance register set of type struct <a class="el" href="a01106.html">P33C_PWM_GENERATOR_s</a> </td></tr>
-    <tr><td class="paramname">duty</td><td>Duty cycle counter value of type unsigned integer </td></tr>
+    <tr><td class="paramname">struct</td><td>P33C_PWM_GENERATOR_s* pg </td></tr>
+    <tr><td class="paramname">uint16_t</td><td>duty </td></tr>
   </table>
   </dd>
 </dl>
@@ -674,8 +676,8 @@ Functions</h2></td></tr>
 <p>Sets the period of a given PWM generator. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pg</td><td>Pointer to PWM generator peripheral instance register set of type struct <a class="el" href="a01106.html">P33C_PWM_GENERATOR_s</a> </td></tr>
-    <tr><td class="paramname">period</td><td>Counter compare value of type unsigned integer of the PWM generator time base </td></tr>
+    <tr><td class="paramname">struct</td><td>P33C_PWM_GENERATOR_s* pg </td></tr>
+    <tr><td class="paramname">uint16_t</td><td>period: Counter compare value of the generator time base </td></tr>
   </table>
   </dd>
 </dl>
@@ -707,7 +709,7 @@ Functions</h2></td></tr>
 <p>Disables the PWM generator outputs but keeps the module running. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pg</td><td>Pointer to PWM generator peripheral instance register set of type struct <a class="el" href="a01106.html">P33C_PWM_GENERATOR_s</a> </td></tr>
+    <tr><td class="paramname">struct</td><td>P33C_PWM_GENERATOR_s* pg </td></tr>
   </table>
   </dd>
 </dl>
@@ -761,10 +763,10 @@ Functions</h2></td></tr>
 <p>Sets the synchronization triggers of two PWM generators, of which the Mother PWM generator is the trigger provider and the Child PWM generator is the synchronization trigger receiver. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pgHandleMother</td><td>Pointer to PWM generator object of type struct <a class="el" href="a01106.html">P33C_PWM_GENERATOR_s</a> of triggering PWM generator (sync trigger provider) </td></tr>
-    <tr><td class="paramname">pgMotherTriggerOutput</td><td>Trigger output selection of type unsigned integer of Sync Trigger Provider of the selected PWM generator instance 0 = EOC/SOC 1 = PGxTRIGA 2 = PGxTRIGB 3 = PGxTRIGC </td></tr>
-    <tr><td class="paramname">pgHandleChild</td><td>Pointer to PWM generator object of type struct <a class="el" href="a01106.html">P33C_PWM_GENERATOR_s</a> of triggered PWM generator (sync trigger receiver) </td></tr>
-    <tr><td class="paramname">ChildImmediateUpdate</td><td>true = synchronization trigger synchronizes Child PWM generator at trigger edge false = synchronization trigger synchronizes Child PWM generator at EOC/SOC </td></tr>
+    <tr><td class="paramname">struct</td><td>P33C_PWM_GENERATOR_s* pgHandleMother: PWM generator object of triggering PWM generator (sync trigger provider) </td></tr>
+    <tr><td class="paramname">uint16_t</td><td>pgMotherTriggerOutput: Trigger output selection of sync trigger provider PWM generator 0 = EOC/SOC 1 = PGxTRIGA 2 = PGxTRIGB 3 = PGxTRIGC </td></tr>
+    <tr><td class="paramname">struct</td><td>P33C_PWM_GENERATOR_s* pgHandleChild: PWM generator object of triggered PWM generator (sync trigger receiver) </td></tr>
+    <tr><td class="paramname">bool</td><td>ChildImmediateUpdate: true = synchronization trigger synchronizes Child PWM generator at trigger edge false = synchronization trigger synchronizes Child PWM generator at EOC/SOC </td></tr>
   </table>
   </dd>
 </dl>
@@ -775,7 +777,7 @@ Functions</h2></td></tr>
 <p>The Mother PWM generator is configured to broadcast its UPDATE bit and provides one of four, selectable synchronization trigger outputs (EOC/SOC, PGxTRIGA, PGxTRIGB or PGxTRIGC). The Mother PWM generator can be independent or being triggered by another PWM generator.</p>
 <p>The Child PWM generator is configured to trigger on the event generated by the Mother PWM generator as configured above. The optional selection of immediate synchronization or synchronization of the SOC event is set by parameter ChildImmediateUpdate. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00080_source.html#l00670">670</a> of file <a class="el" href="a00080_source.html">p33c_pwm.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00080_source.html#l00672">672</a> of file <a class="el" href="a00080_source.html">p33c_pwm.c</a>.</p>
 
 </div>
 </div>
@@ -823,7 +825,7 @@ Functions</h2></td></tr>
 <p>Writes a user-defined configuration to the PWM base module registers. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pwmConfig</td><td>PWM module register set of type struct <a class="el" href="a00922.html">P33C_PWM_MODULE_s</a> </td></tr>
+    <tr><td class="paramname">struct</td><td><a class="el" href="a00922.html">P33C_PWM_MODULE_s</a> pwmConfig </td></tr>
   </table>
   </dd>
 </dl>

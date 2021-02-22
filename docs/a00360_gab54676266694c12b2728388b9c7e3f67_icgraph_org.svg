@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="a00360.html#ga39037bccfba783fdd8c9a52cbe651ca4" target="_top" xlink:title="Resets all DAC Instance registers to their RESET default values.">
+<g id="a_node2"><a xlink:href="a00360.html#ga8c5d9f59e23cfa8fae4f67019e38f48a" target="_top" xlink:title="Resets all DAC Instance registers to their RESET default values.">
 <polygon fill="white" stroke="black" points="292,-6 292,-25 429,-25 429,-6 292,-6"/>
 <text text-anchor="middle" x="360.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">p33c_DacInstance_Dispose</text>
 </a>

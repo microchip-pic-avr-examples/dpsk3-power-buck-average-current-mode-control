@@ -393,7 +393,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
 <p>This phase of the soft-start ramp is only executed in average current mode and will only take effect when the declared current limit is hit before the nominal voltage regulation point. In this case the outer voltage loop will clamp the current reference value and the state will be switched to IRampUp, where the clamping value of the voltage loop output is ramped up to the declared maximum current reference value. This additional state allows powering up the power converter against highly capacitive loads preventing overshoots caused by down-stream capacitor inrush currents or when the converter is used as battery charger, where this state will tune into the constant current charging mode. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00269_source.html#l00310">310</a> of file <a class="el" href="a00269_source.html">dev_buck_substates.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00269_source.html#l00313">313</a> of file <a class="el" href="a00269_source.html">dev_buck_substates.c</a>.</p>
 
 </div>
 </div>
@@ -423,7 +423,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
 <p>In this phase of the soft-start procedure a counter is incremented until the power good delay has expired before the soft-start process is marked as COMPLETED. If option for driving a user-defined general purpose output (PG output) is enabled in proprietary user code, this pin will be set automatically. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00269_source.html#l00360">360</a> of file <a class="el" href="a00269_source.html">dev_buck_substates.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00269_source.html#l00363">363</a> of file <a class="el" href="a00269_source.html">dev_buck_substates.c</a>.</p>
 <div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
@@ -524,7 +524,7 @@ Functions</h2></td></tr>
 <p>This is the essential step in which the output voltage is ramped up by incrementing the outer control loop reference. In voltage mode the output <br  />
  voltage will ramp up to the nominal regulation point. In average current mode the inner loop will limit the voltage as soon as the current reference limit is hit and the output is switched to constant current mode. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00269_source.html#l00227">227</a> of file <a class="el" href="a00269_source.html">dev_buck_substates.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00269_source.html#l00230">230</a> of file <a class="el" href="a00269_source.html">dev_buck_substates.c</a>.</p>
 <div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">

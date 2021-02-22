@@ -18,6 +18,5 @@ var a00405 =
     [ "BUCK_ISNS_NORM_SCALER", "a00405.html#gaf32bbfa61d6f4519876d7db9164a8c61", null ],
     [ "BUCK_ISNS_OCL", "a00405.html#ga4d1c14d9a17cb1e372741350cc46552f", null ],
     [ "BUCK_ISNS_OCL_RELEASE", "a00405.html#gaa3a7fb2feaa8c138d4c52f504075e802", null ],
-    [ "BUCK_ISNS_REF", "a00405.html#ga781cfc9802c86ba6e1813b2615adac21", null ],
-    [ "BUCK_ISNS_REF_STARTUP", "a00405.html#ga984d62cb7c1136c9f1de5d544ef0ac5b", null ]
+    [ "BUCK_ISNS_REF", "a00405.html#ga781cfc9802c86ba6e1813b2615adac21", null ]
 ];

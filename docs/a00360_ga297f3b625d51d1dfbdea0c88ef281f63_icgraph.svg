@@ -67,7 +67,7 @@ var sectionId = 'dynsection-5';
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="a00360.html#gaf0ea62728fde73f2119e47f67baf2ff0" target="_top" xlink:title="Resets all DAC Module registers to their RESET default values.">
+<g id="a_node2"><a xlink:href="a00360.html#ga69650432cc58a87cc19ac5837f1e5cf9" target="_top" xlink:title="Resets all DAC Module registers to their RESET default values.">
 <polygon fill="white" stroke="black" points="295,-25 295,-44 427,-44 427,-25 295,-25"/>
 <text text-anchor="middle" x="361" y="-32" font-family="Helvetica,sans-Serif" font-size="10.00">p33c_DacModule_Dispose</text>
 </a>
@@ -150,7 +150,7 @@ var sectionId = 'dynsection-5';
         </g>
         <svg viewBox="0 0 15 15" width="100%" height="30px" preserveAspectRatio="xMaxYMin meet">
          <g id="arrow_out" transform="scale(0.3 0.3)">
-          <a xlink:href="a00360_gaddf7b491a947c7f557b89235588c0219_icgraph_org.svg" target="_base">
+          <a xlink:href="a00360_ga297f3b625d51d1dfbdea0c88ef281f63_icgraph_org.svg" target="_base">
            <rect id="button" ry="5" rx="5" y="6" x="6" height="38" width="38"
                 fill="#f2f5e9" fill-opacity="0.5" stroke="#606060" stroke-width="1.0"/>
            <path id="arrow"

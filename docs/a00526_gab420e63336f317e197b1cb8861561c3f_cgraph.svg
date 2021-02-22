@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="a00360.html#gaddf7b491a947c7f557b89235588c0219" target="_top" xlink:title="Writes a user&#45;defined configuration to the DAC module base registers.">
+<g id="a_node2"><a xlink:href="a00360.html#ga297f3b625d51d1dfbdea0c88ef281f63" target="_top" xlink:title="Writes a user&#45;defined configuration to the DAC module base registers.">
 <polygon fill="white" stroke="black" points="337,-57.5 337,-76.5 484,-76.5 484,-57.5 337,-57.5"/>
 <text text-anchor="middle" x="410.5" y="-64.5" font-family="Helvetica,sans-Serif" font-size="10.00">p33c_DacModule_ConfigWrite</text>
 </a>
@@ -36,7 +36,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="a00360.html#gaf0ea62728fde73f2119e47f67baf2ff0" target="_top" xlink:title="Resets all DAC Module registers to their RESET default values.">
+<g id="a_node3"><a xlink:href="a00360.html#ga69650432cc58a87cc19ac5837f1e5cf9" target="_top" xlink:title="Resets all DAC Module registers to their RESET default values.">
 <polygon fill="white" stroke="black" points="163.5,-38.5 163.5,-57.5 295.5,-57.5 295.5,-38.5 163.5,-38.5"/>
 <text text-anchor="middle" x="229.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">p33c_DacModule_Dispose</text>
 </a>
@@ -51,7 +51,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="a00360.html#ga72e7cdf4177d0403e8ff925314ec1bc7" target="_top" xlink:title="Gets pointer to DAC Module SFR set.">
+<g id="a_node4"><a xlink:href="a00360.html#ga53de75da823cd978cbe5693ae8d2204a" target="_top" xlink:title="Gets pointer to DAC Module SFR set.">
 <polygon fill="white" stroke="black" points="158,-0.5 158,-19.5 301,-19.5 301,-0.5 158,-0.5"/>
 <text text-anchor="middle" x="229.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">p33c_DacModule_GetHandle</text>
 </a>
