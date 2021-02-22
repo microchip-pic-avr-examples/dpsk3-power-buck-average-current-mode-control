@@ -9,6 +9,6 @@ cd ../../
 #git gitk subrepo-buck-update
 #$ git push "https://bitbucket.microchip.com/scm/mcu16asmpsl/subrepo-buck-converter.git" subrepo-buck:version-update
 
-git subtree pull --prefix="dpsk_buck_vmc.X/sources/power_control/devices" subrepo-buck main --no-squash 
+git subtree pull --prefix="dpsk_buck_vmc.X/sources/power_control/devices" subrepo-buck main --squash 
 echo Press Enter to exit
 read
