@@ -337,7 +337,7 @@ volatile uint16_t SubState_IRampUp(volatile struct BUCK_CONVERTER_s *buckInstanc
             retval = BUCK_OPSRET_REPEAT;
         }
     }
-    else // Non-Current Loops Ending up here need to be lifted to PG_DELAY
+    else // In Non-Current Mode ramp-up ends up here and needs to be lifted to PG_DELAY
     { 
         buckInstance->v_loop.controller->Limits.MaxOutput = buckInstance->v_loop.maximum;
         retval = BUCK_OPSRET_COMPLETE; 
