@@ -102,7 +102,7 @@ volatile uint16_t SubState_PrepareVRampUp(volatile struct BUCK_CONVERTER_s *buck
     // Set BUSY bit until process is complete
     buckInstance->status.bits.busy = true;
     
-    // Copy user setting for voltage reference
+    // Copy user setting of voltage reference into loop reference
     buckInstance->v_loop.reference = buckInstance->set_values.v_ref;
     
     // Hijack voltage loop controller reference
