@@ -287,7 +287,7 @@ volatile uint16_t appPowerSupply_ControllerInitialize(void)
     buck.v_loop.controller->Ports.AltTarget.NormFactor = 0x7FFF; // Secondary control output normalization factor fractional 
     
     // Configure controller control ports
-    buck.v_loop.controller->Ports.ptrControlReference = &buck.set_values.v_ref; // Set pointer to Reference
+    buck.v_loop.controller->Ports.ptrControlReference = &buck.v_loop.reference; // Set pointer to Reference
     
     // Data Input/Output Limit Configuration
     buck.v_loop.controller->Limits.MinOutput = buck.v_loop.minimum;
