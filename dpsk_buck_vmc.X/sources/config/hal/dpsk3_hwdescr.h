@@ -553,8 +553,7 @@
     #define BUCK_ISNS_MINIMUM           (float) 0.000   ///< absolute total minimum output current (average)
     #define BUCK_ISNS_MAXIMUM           (float) 2.500   ///< absolute total maximum output current (average)
     #define BUCK_ISNS_RELEASE           (float) 2.000   ///< current reset level after over current event
-    #define BUCK_ISNS_REFERENCE         (float) 2.500   ///< output current reference (average)
-    #define BUCK_ISNS_REFERENCE_STARTUP (float) 2.500   ///< maximum output current (average) at startup
+    #define BUCK_ISNS_REFERENCE         (float) 2.000   ///< output current reference (average)
     #define BUCK_ISNS_ADC_TRG_DELAY     (float) 80.0e-9 ///< ADC trigger delay for current sense in [sec]
     #define BUCK_ISNS_FEEDBACK_OFFSET   (float) 0.000   ///< Current sense feedback offset (average)
 
@@ -592,7 +591,6 @@
 #define BUCK_ISNS_OCL           (uint16_t)(((BUCK_ISNS_MAXIMUM-BUCK_ISNS_FEEDBACK_OFFSET) * BUCK_ISNS_FEEDBACK_GAIN) / ADC_GRANULARITY)  ///< Over Current Limit
 #define BUCK_ISNS_OCL_RELEASE   (uint16_t)(((BUCK_ISNS_RELEASE-BUCK_ISNS_FEEDBACK_OFFSET) * BUCK_ISNS_FEEDBACK_GAIN) / ADC_GRANULARITY)  ///< Over Current Release Level
 #define BUCK_ISNS_REF           (uint16_t)((BUCK_ISNS_REFERENCE * BUCK_ISNS_FEEDBACK_GAIN) / ADC_GRANULARITY)  ///< Output Current Reference
-#define BUCK_ISNS_REF_STARTUP   (uint16_t)((BUCK_ISNS_REFERENCE_STARTUP * BUCK_ISNS_FEEDBACK_GAIN) / ADC_GRANULARITY)  ///< Output Current Startup Reference
 #define BUCK_ISNS_FB_OFFSET     (uint16_t)(BUCK_ISNS_FEEDBACK_OFFSET / ADC_GRANULARITY)
 #define BUCK_ISNS_ADC_TRGDLY    (uint16_t)(BUCK_ISNS_ADC_TRG_DELAY / PWM_CLOCK_PERIOD)
 
