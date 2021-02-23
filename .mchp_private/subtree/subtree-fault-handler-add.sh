@@ -6,7 +6,7 @@ git remote add subrepo-fault https://bitbucket.microchip.com/scm/mcu16asmpsl/sub
 echo Adding subtree repository complete
 echo 
 echo Downloading subtree contents into project repository...
-git subtree add --prefix="dpsk_buck_vmc.X/sources/fault_handler/drivers" subrepo-fault main --squash
+git subtree add --prefix="dpsk_buck_agc.X/sources/fault_handler/drivers" subrepo-fault main --squash
 echo Download source files complete
 echo
 echo Press Enter to exit

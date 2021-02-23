@@ -6,7 +6,7 @@ git remote add subrepo-buck https://bitbucket.microchip.com/scm/mcu16asmpsl/subr
 echo Adding subtree repository complete
 echo 
 echo Downloading subtree contents into project repository...
-git subtree add --prefix="dpsk_buck_vmc.X/sources/power_control/devices" subrepo-buck main --squash
+git subtree add --prefix="dpsk_buck_agc.X/sources/power_control/devices" subrepo-buck main --squash
 echo Download source files complete
 echo
 echo Press Enter to exit
