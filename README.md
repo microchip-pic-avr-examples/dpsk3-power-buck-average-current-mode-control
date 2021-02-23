@@ -2,7 +2,7 @@
 
 --- 
 # dsPIC33C Digital Power Starter Kit
-### Synchronous Buck Converter: Voltage Mode Control
+### Synchronous Buck Converter: Adaptive Gain Control
 
 
 <p><center><a target="_blank" href="https://www.microchip.com/DM330017-3" rel="nofollow">
@@ -25,19 +25,19 @@ dsPIC33C Digital Power Starter Kit (DPSK3) (Part-No. DM330017-3)
 - - -
 
 ## Summary
-Voltage mode control example for the buck converter on the Digital Power Starter Kit, version 3 (DPSK3) featuring the dsPIC33CK family of devices.
+Real-time adaptive gain modulation of voltage mode control example for the buck converter on the Digital Power Starter Kit, version 3 (DPSK3) featuring the dsPIC33CK family of devices.
 
 - - -
 
 ## Description
-This code example demonstrates the implementation of a simple voltage mode control loop for the synchronous buck converter. The loop implementation also includes the required state machine managing board status analysis, start-up control, operation monitoring, fault handling and auto-restart capability. The buck converter state machine is based on a generic library package, which is configured and executed in user code.
+This code example demonstrates the implementation of an enhanced voltage mode control loop for the synchronous buck converter using in-loop adaptive loop gain modulation to compensate for gain variations in the power plant caused by changes in the voltage across the inductor. The loop implementation also includes the required state machine managing board status analysis, start-up control, operation monitoring, fault handling and auto-restart capability. The buck converter state machine is based on a generic library package, which is configured and executed in user code.
 
-This code example also includes the LCD driver allowing users to observe runtime data on the on-board LC display. The on-board user switch `USER` is allows users to change the active display page to observe input voltage, output voltage, output current and board temperature.
+This code example also includes the LCD driver allowing users to observe runtime data on the on-board LC display. The on-board user switch `USER` allows users to change the active display page to observe input voltage, output voltage, output current and board temperature.
 
 ## Related Documentation
 
 #### Firmware Documentation
-- [Online Firmware Documentation of this Code Example](https://microchip-pic-avr-examples.github.io/dpsk3-power-buck-voltage-mode-control/)
+- [Online Firmware Documentation of this Code Example](https://microchip-pic-avr-examples.github.io/dpsk3-power-buck-adaptive-gain-control/)
 
 #### Hardware and Target Device Documentation
 - [Digital Power Starter Kit 3 User Guide](https://www.microchip.com/50002867)
@@ -97,7 +97,7 @@ Unattended operating power supplies are always a potential safety risk as short 
 ## Setup
 - Connect dsPIC33C Digital Power Starter Kit to the PC using the micro-USB cable
 - Open and compile the firmware; program the target device
-- Attach the 9V power supply to the board and observe the real-time values on the LC display
+- Attach the 9V power supply to the board and observe the run-time values on the LC display
 
 <center>
 <img src="images/dm330017-3-3.jpg" width="960">
@@ -119,10 +119,10 @@ When pressing the on-board button `USER` for one second or longer, the screen ca
 
 By pressing the `Buck Load` on-board push button on the right edge of the board for ***less*** than a second, changes the static load level in four steps:
 
-- no LED:  0% (0 mA)
-- 1 LEDs: 10% (100 mA)
-- 2 LEDs: 25% (500 mA)
-- 3 LEDs: 50% (1000 mA)
+- no LED:   0% (0 mA)
+- 1 LEDs:  10% (100 mA)
+- 2 LEDs:  50% (500 mA)
+- 3 LEDs: 100% (1000 mA)
 
 (value accuracy +/- 10%)
 
@@ -133,9 +133,9 @@ By pressing the `Buck Load` on-board push button on the right edge of the board 
 
 Pressing the `Buck Load` on-board push button again for ***less*** than a second, the step load can be adjusted between
 
-- 10% to 25% Load (100-500 mA)
-- 10% to 50% Load (100-1000 mA)
-- 25% to 50% Load (500-1000 mA)
+- 10% to 50% Load (100-500 mA)
+- 10% to 100% Load (100-1000 mA)
+- 50% to 100% Load (500-1000 mA)
 
 (value accuracy +/- 10%)
 
