@@ -22,6 +22,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="mchp.css" rel="stylesheet" type="text/css"/>
 <link href="mchp_theme.css" rel="stylesheet" type="text/css"/>
@@ -212,19 +219,13 @@ $(document).ready(function(){initNavTree('a00311_source.html',''); initResizable
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    );</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> v_loop_AGCFactorUpdate(               <span class="comment">// Calls the AGC Factor Modulation Observer Function (Assembly)</span></div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        <span class="keyword">volatile</span> <a class="code" href="a01620.html">NPNZ16b_t</a>* controller            <span class="comment">// Pointer to nPnZ data type object</span></div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    );                                            </div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="preprocessor">#endif                                            // end of __SPECIAL_FUNCTION_LAYER_V_LOOP_H__</span></div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="comment">//**********************************************************************************</span></div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="comment">// Download latest version of this tool here: https://areiter128.github.io/DCLD</span></div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="comment">//**********************************************************************************</span></div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="preprocessor">#endif                                            // end of __SPECIAL_FUNCTION_LAYER_V_LOOP_H__</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="comment">//**********************************************************************************</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="comment">// Download latest version of this tool here: https://areiter128.github.io/DCLD</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="comment">//**********************************************************************************</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aa00503_html_gabb35e824b8586b680f54d59975ada3c7"><div class="ttname"><a href="a00503.html#gabb35e824b8586b680f54d59975ada3c7">v_loop_Reset</a></div><div class="ttdeci">void v_loop_Reset(volatile struct NPNZ16b_s *controller)</div><div class="ttdoc">Prototype of the Assembly routine '_v_loop_Reset' clearing the NPNZ16b controller output and error hi...</div></div>

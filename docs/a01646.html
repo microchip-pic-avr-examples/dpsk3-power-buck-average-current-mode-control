@@ -22,6 +22,13 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="mchp.css" rel="stylesheet" type="text/css"/>
 <link href="mchp_theme.css" rel="stylesheet" type="text/css"/>
@@ -103,7 +110,7 @@ $(document).ready(function(){initNavTree('a01646.html',''); initResizable(); });
 <div class="textblock"><p><span id="startDoc"> </span> </p><div style="text-align:left"> <img src="images/startbanner.png" alt="Firmware Quick-Start Guide" height="70" width="880" class="inline"/> </div><h1><a class="anchor" id="autotoc_md21"></a>
 Table of Contents</h1>
 <ul>
-<li><a href="#vmc_1">DPSK3 Buck Converter Voltage Mode Control Loop Implementation</a></li>
+<li><a href="#vmc_1">DPSK3 Buck Converter Adaptive Gain Control Implementation</a></li>
 <li><a href="#vmc_2">Control Loop Block Diagram</a></li>
 <li><a href="#vmc_3">Control Loop Timing</a></li>
 <li><a href="#vmc_4">Control Loop Flow Chart</a></li>
@@ -111,7 +118,7 @@ Table of Contents</h1>
 </ul>
 <p><span id="vmc_1"> </span></p>
 <h1><a class="anchor" id="autotoc_md22"></a>
-1) DPSK3 Buck Converter Voltage Mode Control Loop Implementation</h1>
+1) DPSK3 Buck Converter Adaptive Gain Control Implementation</h1>
 <p>This firmware demonstrates the implementation of a simple, single loop voltage mode controller used to regulate the constant output voltage of the on-board step-down converter of the Digital Power Starter Kit 3 (DPSK3). The implementation of the Voltage Feedback Loop requires one Analog-to-Digital Converter (ADC) input oversampling the output voltage of the converter and two PWM outputs (PWM high and PWM low) to drive the power converter half-bridge switch node in synchronous mode.</p>
 <p>[<a href="#startDoc">back</a>] <span id="vmc_2"> </span></p>
 <h1><a class="anchor" id="autotoc_md23"></a>

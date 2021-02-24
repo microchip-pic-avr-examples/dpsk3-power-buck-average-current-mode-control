@@ -48,7 +48,7 @@ var NAVTREE =
     ] ],
     [ "Power Supply Control", "a01646.html", [
       [ "Table of Contents", "a01646.html#autotoc_md21", null ],
-      [ "1) DPSK3 Buck Converter Voltage Mode Control Loop Implementation", "a01646.html#autotoc_md22", null ],
+      [ "1) DPSK3 Buck Converter Adaptive Gain Control Implementation", "a01646.html#autotoc_md22", null ],
       [ "2) Control Loop Block Diagram", "a01646.html#autotoc_md23", null ],
       [ "3) Control Loop Timing", "a01646.html#autotoc_md24", null ],
       [ "4) Control Loop Flow Chart", "a01646.html#autotoc_md25", null ],
