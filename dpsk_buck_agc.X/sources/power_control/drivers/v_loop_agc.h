@@ -36,6 +36,7 @@
 /*********************************************************************************
  * @fn void v_loop_AGCFactorUpdate(volatile struct NPNZ16b_s* controller)
  * @ingroup special-function-layer-npnz16-functions
+ * @{
  * @brief Prototype of the Assembly Adaptive Gain Control Observer routine helping to call the v_loop AGC observer from C-code
  * @param controller: Pointer to NPNZ16b data object of type struct NPNZ16b_s*
  *
@@ -62,10 +63,11 @@
  * 
  * Please refer to the PS-DCLD user guide for more detailed information.
  ********************************************************************************/
+extern void v_loop_AGCFactorUpdate(				  // Calls the AGC Factor Modulation Observer Function (Assembly)
+		volatile NPNZ16b_t* controller 			  // Pointer to nPnZ data type object
+    );                                            
 
-extern void __attribute__((near)) v_loop_AGCFactorUpdate(volatile NPNZ16b_t* controller); ///< Pointer to nPnZ data type object
-                                                // Calls the AGC Factor Modulation Observer Function (Assembly)
-
+ /** @} */ // End of function declaration
 
 #endif	/* __SPECIAL_FUNCTION_LAYER_V_LOOP_AGC_H__ */
 

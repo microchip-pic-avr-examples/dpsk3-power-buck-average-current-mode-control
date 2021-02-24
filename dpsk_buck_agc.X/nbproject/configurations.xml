@@ -61,9 +61,9 @@
             <itemPath>sources/power_control/devices/dev_buck_special_functions.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f3" displayName="drivers" projectFiles="true">
+            <itemPath>sources/power_control/drivers/npnz16b.inc</itemPath>
             <itemPath>sources/power_control/drivers/npnz16b.h</itemPath>
             <itemPath>sources/power_control/drivers/v_loop.h</itemPath>
-            <itemPath>sources/power_control/drivers/npnz16b.inc</itemPath>
             <itemPath>sources/power_control/drivers/v_loop_agc.h</itemPath>
           </logicalFolder>
         </logicalFolder>

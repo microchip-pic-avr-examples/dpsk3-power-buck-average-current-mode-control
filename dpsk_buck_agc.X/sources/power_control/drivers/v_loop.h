@@ -140,7 +140,7 @@ extern volatile uint16_t v_loop_Initialize(       // v_loop initialization funct
  * @details
  * This Assembly function clears the NPNZ16b controller output and
  * error histories by settings all elements of the delay lines to zero. This
- * resets the controller to ist default state. This function should be called
+ * resets the controller to its default state. This function should be called
  * every time before the control loop is started from a disabled, unbiased output.
  * @note
  * Use function 'v_loop_Precharge' to start the feedback loop controller when
@@ -217,6 +217,7 @@ extern void v_loop_Update(                        // Calls the 4P4Z controller (
 extern void v_loop_PTermUpdate(                   // Calls the P-Term controller (Assembly)
         volatile struct NPNZ16b_s* controller     // Pointer to NPNZ16b data object
     );
+
 
 #endif                                            // end of __SPECIAL_FUNCTION_LAYER_V_LOOP_H__
 
