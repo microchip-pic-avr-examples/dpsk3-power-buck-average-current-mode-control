@@ -63,8 +63,8 @@
  * 
  * Please refer to the PS-DCLD user guide for more detailed information.
  ********************************************************************************/
-extern void v_loop_AGCFactorUpdate(				  // Calls the AGC Factor Modulation Observer Function (Assembly)
-		volatile NPNZ16b_t* controller 			  // Pointer to nPnZ data type object
+extern void __attribute__((near))v_loop_AGCFactorUpdate( // Calls the AGC Factor Modulation Observer Function (Assembly)
+		volatile NPNZ16b_t* controller 			  		 // Pointer to nPnZ data type object
     );                                            
 
  /** @} */ // End of function declaration
