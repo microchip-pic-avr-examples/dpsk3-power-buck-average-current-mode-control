@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: dpsk_buck_vmc.X/sources/power_control/devices/dev_buck_opstates.h Source File</title>
+<title>Digital Power Starter Kit 3 Firmware: dpsk_buck_agc.X/sources/power_control/devices/dev_buck_opstates.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
   <td id="projectalign" style="padding-left: 0.0em;">
    <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
-   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Adaptive Gain Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -119,11 +119,11 @@ $(document).ready(function(){initNavTree('a00254_source.html',''); initResizable
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span> <span class="comment">// include standard boolean data types</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> uint16_t (*<a class="code" href="a00475.html#ga34e9e076d0bb91ad7b4ce328bc03dfee">BuckConverterStateMachine</a>[])</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            (<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a01554.html">BUCK_CONVERTER_s</a> *buckInstance); </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> uint16_t (*<a class="code" href="a00481.html#ga34e9e076d0bb91ad7b4ce328bc03dfee">BuckConverterStateMachine</a>[])</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            (<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a01560.html">BUCK_CONVERTER_s</a> *buckInstance); </div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> uint16_t <a class="code" href="a00475.html#ga908907079f862f9793ac00bd89d653ce">BuckStateList_size</a>; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> uint16_t <a class="code" href="a00481.html#ga908907079f862f9793ac00bd89d653ce">BuckStateList_size</a>; </div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* BUCK_CONVERTER_OPERATION_STATES_H */</span><span class="preprocessor"></span></div>
@@ -131,14 +131,14 @@ $(document).ready(function(){initNavTree('a00254_source.html',''); initResizable
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">// END OF FILE</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa01554_html"><div class="ttname"><a href="a01554.html">BUCK_CONVERTER_s</a></div><div class="ttdoc">BUCK control &amp; monitoring data structure.</div><div class="ttdef"><b>Definition:</b> <a href="a00278_source.html#l00500">dev_buck_typedef.h:501</a></div></div>
-<div class="ttc" id="aa00475_html_ga34e9e076d0bb91ad7b4ce328bc03dfee"><div class="ttname"><a href="a00475.html#ga34e9e076d0bb91ad7b4ce328bc03dfee">BuckConverterStateMachine</a></div><div class="ttdeci">volatile uint16_t(* BuckConverterStateMachine[])(volatile struct BUCK_CONVERTER_s *buckInstance)</div><div class="ttdoc">Buck converter state machine function pointer array.</div></div>
-<div class="ttc" id="aa00475_html_ga908907079f862f9793ac00bd89d653ce"><div class="ttname"><a href="a00475.html#ga908907079f862f9793ac00bd89d653ce">BuckStateList_size</a></div><div class="ttdeci">volatile uint16_t BuckStateList_size</div><div class="ttdoc">Buck converter state machine function pointer array size.</div><div class="ttdef"><b>Definition:</b> <a href="a00251_source.html#l00039">dev_buck_opstates.c:39</a></div></div>
+<div class="ttc" id="aa00481_html_ga34e9e076d0bb91ad7b4ce328bc03dfee"><div class="ttname"><a href="a00481.html#ga34e9e076d0bb91ad7b4ce328bc03dfee">BuckConverterStateMachine</a></div><div class="ttdeci">volatile uint16_t(* BuckConverterStateMachine[])(volatile struct BUCK_CONVERTER_s *buckInstance)</div><div class="ttdoc">Buck converter state machine function pointer array.</div></div>
+<div class="ttc" id="aa01560_html"><div class="ttname"><a href="a01560.html">BUCK_CONVERTER_s</a></div><div class="ttdoc">BUCK control &amp; monitoring data structure.</div><div class="ttdef"><b>Definition:</b> <a href="a00278_source.html#l00500">dev_buck_typedef.h:501</a></div></div>
+<div class="ttc" id="aa00481_html_ga908907079f862f9793ac00bd89d653ce"><div class="ttname"><a href="a00481.html#ga908907079f862f9793ac00bd89d653ce">BuckStateList_size</a></div><div class="ttdeci">volatile uint16_t BuckStateList_size</div><div class="ttdoc">Buck converter state machine function pointer array size.</div><div class="ttdef"><b>Definition:</b> <a href="a00251_source.html#l00039">dev_buck_opstates.c:39</a></div></div>
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_01066bb7b1e33c391de0f39ab7f37964.html">dpsk_buck_vmc.X</a></li><li class="navelem"><a class="el" href="dir_4775101750c4dd55cff8a4809201f12a.html">sources</a></li><li class="navelem"><a class="el" href="dir_fbd00860b1a2a86e7db4f141643e7a42.html">power_control</a></li><li class="navelem"><a class="el" href="dir_1e7729441992c637444f14d3c8887daa.html">devices</a></li><li class="navelem"><b>dev_buck_opstates.h</b></li>
+    <li class="navelem"><a class="el" href="dir_4ee7c398c7a1a06f47d8fbc48027983f.html">dpsk_buck_agc.X</a></li><li class="navelem"><a class="el" href="dir_07fd0e222032ef0bb4c4c4bd39064c1a.html">sources</a></li><li class="navelem"><a class="el" href="dir_0fcaf799429564fbdc2868287a8e3593.html">power_control</a></li><li class="navelem"><a class="el" href="dir_48507c9de5b2ce4419f3fb2517742caf.html">devices</a></li><li class="navelem"><b>dev_buck_opstates.h</b></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

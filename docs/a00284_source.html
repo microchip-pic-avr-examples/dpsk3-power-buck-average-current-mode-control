@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: dpsk_buck_vmc.X/sources/power_control/devices/templates/dev_buck_ptemp_adc.h Source File</title>
+<title>Digital Power Starter Kit 3 Firmware: dpsk_buck_agc.X/sources/power_control/devices/templates/dev_buck_ptemp_adc.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
   <td id="projectalign" style="padding-left: 0.0em;">
    <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
-   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Adaptive Gain Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -142,21 +142,21 @@ $(document).ready(function(){initNavTree('a00284_source.html',''); initResizable
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">/* ********************************************************************************</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> * ADC BASE MODULE BASE REGISTERS CONFIGURATION</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> * *******************************************************************************/</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="a00495.html#ga1b53aa998d151a03b54feaccfa0e6529">   51</a></span>&#160;<span class="preprocessor">#define ADC_POWERUP_TIMEOUT  5000</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="a00501.html#ga1b53aa998d151a03b54feaccfa0e6529">   51</a></span>&#160;<span class="preprocessor">#define ADC_POWERUP_TIMEOUT  5000</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">/* SLPxDAT: DACx SLOPE DATA REGISTER =&gt; Timing Register: User value will be set in code */</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">// ADC specific declarations</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="a00495.html#ga2f18a4ac55243c434199e4c03a1916d0">   59</a></span>&#160;<span class="comment"></span><span class="preprocessor">#define ADC_CORE_MASK           0b0000000010001111</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="a00501.html#ga2f18a4ac55243c434199e4c03a1916d0">   59</a></span>&#160;<span class="comment"></span><span class="preprocessor">#define ADC_CORE_MASK           0b0000000010001111</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="a00495.html#ga5cd06b0701dd972bea484aa284b538fb">   65</a></span>&#160;<span class="preprocessor">#define ADC_CORE0_MASK_INDEX    0b0000000000000001</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="a00501.html#ga5cd06b0701dd972bea484aa284b538fb">   65</a></span>&#160;<span class="preprocessor">#define ADC_CORE0_MASK_INDEX    0b0000000000000001</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="a00495.html#ga22888dc4e47b6c12697bb0d833a104d2">   71</a></span>&#160;<span class="preprocessor">#define ADC_CORE1_MASK_INDEX    0b0000000000000010</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="a00501.html#ga22888dc4e47b6c12697bb0d833a104d2">   71</a></span>&#160;<span class="preprocessor">#define ADC_CORE1_MASK_INDEX    0b0000000000000010</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="a00495.html#ga0d134fed01267e7e24128c763c0bcbf4">   77</a></span>&#160;<span class="preprocessor">#define ADC_CORE2_MASK_INDEX    0b0000000000000100</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="a00501.html#ga0d134fed01267e7e24128c763c0bcbf4">   77</a></span>&#160;<span class="preprocessor">#define ADC_CORE2_MASK_INDEX    0b0000000000000100</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="a00495.html#ga20a79307af387c2b58e0a26eba340201">   83</a></span>&#160;<span class="preprocessor">#define ADC_CORE3_MASK_INDEX    0b0000000000001000</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="a00501.html#ga20a79307af387c2b58e0a26eba340201">   83</a></span>&#160;<span class="preprocessor">#define ADC_CORE3_MASK_INDEX    0b0000000000001000</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="a00495.html#ga759d38bf0d8fb74fd456d3c9aa1b0bae">   89</a></span>&#160;<span class="preprocessor">#define ADC_SHRCORE_MASK_INDEX  0b0000000010000000</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="a00501.html#ga759d38bf0d8fb74fd456d3c9aa1b0bae">   89</a></span>&#160;<span class="preprocessor">#define ADC_SHRCORE_MASK_INDEX  0b0000000010000000</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">/* ********************************************************************************</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment"> * ADC INPUT INSTANCE CONFIGURATION</span></div>
@@ -195,7 +195,7 @@ $(document).ready(function(){initNavTree('a00284_source.html',''); initResizable
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_01066bb7b1e33c391de0f39ab7f37964.html">dpsk_buck_vmc.X</a></li><li class="navelem"><a class="el" href="dir_4775101750c4dd55cff8a4809201f12a.html">sources</a></li><li class="navelem"><a class="el" href="dir_fbd00860b1a2a86e7db4f141643e7a42.html">power_control</a></li><li class="navelem"><a class="el" href="dir_1e7729441992c637444f14d3c8887daa.html">devices</a></li><li class="navelem"><a class="el" href="dir_13fab0fb39093992243b35ed271124ac.html">templates</a></li><li class="navelem"><b>dev_buck_ptemp_adc.h</b></li>
+    <li class="navelem"><a class="el" href="dir_4ee7c398c7a1a06f47d8fbc48027983f.html">dpsk_buck_agc.X</a></li><li class="navelem"><a class="el" href="dir_07fd0e222032ef0bb4c4c4bd39064c1a.html">sources</a></li><li class="navelem"><a class="el" href="dir_0fcaf799429564fbdc2868287a8e3593.html">power_control</a></li><li class="navelem"><a class="el" href="dir_48507c9de5b2ce4419f3fb2517742caf.html">devices</a></li><li class="navelem"><a class="el" href="dir_3e5c61376a945b15dc5c442348f41a8b.html">templates</a></li><li class="navelem"><b>dev_buck_ptemp_adc.h</b></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

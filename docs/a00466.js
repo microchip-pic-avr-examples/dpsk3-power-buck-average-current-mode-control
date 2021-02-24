@@ -1,4 +1,5 @@
 var a00466 =
 [
-    [ "BUCK_MPHASE_COUNT", "a00466.html#ga74df4d33c3d762495bc67b88bb6aa524", null ]
+    [ "Buck Converter Library API", "a00467.html", "a00467" ],
+    [ "Buck Converter Library Modules", "a00477.html", "a00477" ]
 ];

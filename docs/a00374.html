@@ -36,7 +36,7 @@
   <td id="projectalign" style="padding-left: 0.0em;">
    <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
-   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Adaptive Gain Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -99,169 +99,120 @@ $(document).ready(function(){initNavTree('a00374.html',''); initResizable(); });
   <div class="summary">
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">Private Properties<div class="ingroups"><a class="el" href="a00533.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00350.html">Peripheral Register Abstraction Layer (PRAL) Library</a> &raquo; <a class="el" href="a00358.html">High-Speed PWM Module (HSPWM)</a></div></div>  </div>
+<div class="title">Private Properties<div class="ingroups"><a class="el" href="a00539.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00356.html">Peripheral Register Abstraction Layer (PRAL) Library</a> &raquo; <a class="el" href="a00358.html">Digital-To-Analog Converter Module (DAC)</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Private properties of the HSPWM PRAL driver.  
+<p>Private properties of the SDAC PRAL driver.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Private Properties:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00374.svg" width="355" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00374.svg" width="362" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:gafeca0163f581790a35cef7b99a276adc"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a00922.html">P33C_PWM_MODULE_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html#gafeca0163f581790a35cef7b99a276adc">pwmConfigClear</a></td></tr>
-<tr class="memdesc:gafeca0163f581790a35cef7b99a276adc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default RESET configuration of the PWM module SFRs.  <a href="a00374.html#gafeca0163f581790a35cef7b99a276adc">More...</a><br /></td></tr>
-<tr class="separator:gafeca0163f581790a35cef7b99a276adc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf8f0ea73e96ecddb846d1361098c09fe"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a00922.html">P33C_PWM_MODULE_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html#gaf8f0ea73e96ecddb846d1361098c09fe">pwmConfigDefault</a></td></tr>
-<tr class="memdesc:gaf8f0ea73e96ecddb846d1361098c09fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default initialization configuration of the PWM module SFRs.  <a href="a00374.html#gaf8f0ea73e96ecddb846d1361098c09fe">More...</a><br /></td></tr>
-<tr class="separator:gaf8f0ea73e96ecddb846d1361098c09fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga75ca6374eb31a3224a8e7bcfd4cd56a0"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01106.html">P33C_PWM_GENERATOR_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html#ga75ca6374eb31a3224a8e7bcfd4cd56a0">pgConfigClear</a></td></tr>
-<tr class="memdesc:ga75ca6374eb31a3224a8e7bcfd4cd56a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default RESET configuration of one PWM generator instance SFRs.  <a href="a00374.html#ga75ca6374eb31a3224a8e7bcfd4cd56a0">More...</a><br /></td></tr>
-<tr class="separator:ga75ca6374eb31a3224a8e7bcfd4cd56a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga533a5e749ab3eb533348dcc12c328e89"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a00724.html">P33C_DAC_MODULE_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html#ga533a5e749ab3eb533348dcc12c328e89">dacModuleConfigClear</a></td></tr>
+<tr class="memdesc:ga533a5e749ab3eb533348dcc12c328e89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default RESET configuration of the DAC module base SFRs.  <a href="a00374.html#ga533a5e749ab3eb533348dcc12c328e89">More...</a><br /></td></tr>
+<tr class="separator:ga533a5e749ab3eb533348dcc12c328e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2c035262266900ab045b40d8f9d007b9"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a00724.html">P33C_DAC_MODULE_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html#ga2c035262266900ab045b40d8f9d007b9">dacModuleDefault</a></td></tr>
+<tr class="memdesc:ga2c035262266900ab045b40d8f9d007b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default configuration of DAC module running from 500 MHz input clock.  <a href="a00374.html#ga2c035262266900ab045b40d8f9d007b9">More...</a><br /></td></tr>
+<tr class="separator:ga2c035262266900ab045b40d8f9d007b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab89a67798717a61affd24c0a5ca9a71f"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a00752.html">P33C_DAC_INSTANCE_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html#gab89a67798717a61affd24c0a5ca9a71f">dacConfigClear</a></td></tr>
+<tr class="memdesc:gab89a67798717a61affd24c0a5ca9a71f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default RESET configuration of one DAC instance channel SFRs.  <a href="a00374.html#gab89a67798717a61affd24c0a5ca9a71f">More...</a><br /></td></tr>
+<tr class="separator:gab89a67798717a61affd24c0a5ca9a71f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Private properties of the HSPWM PRAL driver. </p>
-<p>This is the detailed description of privte variables, data types, enumerations, defines and macros of the HSPWM PRAL driver </p>
+<p>Private properties of the SDAC PRAL driver. </p>
+<p>This is the detailed description of privte variables, data types, enumerations, defines and macros of the DAC PRAL driver </p>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="ga75ca6374eb31a3224a8e7bcfd4cd56a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga75ca6374eb31a3224a8e7bcfd4cd56a0">&#9670;&nbsp;</a></span>pgConfigClear</h2>
+<a id="gab89a67798717a61affd24c0a5ca9a71f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab89a67798717a61affd24c0a5ca9a71f">&#9670;&nbsp;</a></span>dacConfigClear</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="a01106.html">P33C_PWM_GENERATOR_s</a> pgConfigClear</td>
+          <td class="memname">dacConfigClear</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
 <div class="line">    </div>
-<div class="line">        .PGxCONL.value = 0x0000,    </div>
-<div class="line">        .PGxCONH.value = 0x0000,    </div>
-<div class="line">        .PGxSTAT.value = 0x0000,    </div>
-<div class="line">        .PGxIOCONL.value = 0x0000,  </div>
-<div class="line">        .PGxIOCONH.value = 0x0000,  </div>
-<div class="line">        .PGxEVTL.value = 0x0000,    </div>
-<div class="line">        .PGxEVTH.value = 0x0000,    </div>
-<div class="line">        .PGxFPCIL.value = 0x0000,   </div>
-<div class="line">        .PGxFPCIH.value = 0x0000,   </div>
-<div class="line">        .PGxCLPCIL.value = 0x0000,  </div>
-<div class="line">        .PGxCLPCIH.value = 0x0000,  </div>
-<div class="line">        .PGxFFPCIL.value = 0x0000,  </div>
-<div class="line">        .PGxFFPCIH.value = 0x0000,  </div>
-<div class="line">        .PGxSPCIL.value = 0x0000,   </div>
-<div class="line">        .PGxSPCIH.value = 0x0000,   </div>
-<div class="line">        .PGxLEBL.value = 0x0000,    </div>
-<div class="line">        .PGxLEBH.value = 0x0000,    </div>
-<div class="line">        .PGxPHASE.value = 0x0000,   </div>
-<div class="line">        .PGxDC.value = 0x0000,      </div>
-<div class="line">        .PGxDCA.value = 0x0000,     </div>
-<div class="line">        .PGxPER.value = 0x0000,     </div>
-<div class="line">        .PGxTRIGA.value = 0x0000,   </div>
-<div class="line">        .PGxTRIGB.value = 0x0000,   </div>
-<div class="line">        .PGxTRIGC.value = 0x0000,   </div>
-<div class="line">        .PGxDTL.value = 0x0000,     </div>
-<div class="line">        .PGxDTH.value = 0x0000,     </div>
-<div class="line">        .PGxCAP.value = 0x0000      </div>
+<div class="line">    .DACxCONL.value = 0x0000,</div>
+<div class="line">    .DACxCONH.value = 0x0000,</div>
+<div class="line">    .DACxDATL.value = 0x0000,</div>
+<div class="line">    .DACxDATH.value = 0x0000,</div>
+<div class="line">    .SLPxCONL.value = 0x0000,</div>
+<div class="line">    .SLPxCONH.value = 0x0000,</div>
+<div class="line">    .SLPxDAT.value  = 0x0000</div>
+<div class="line">        </div>
 <div class="line">    }</div>
 </div><!-- fragment -->
-<p>Default RESET configuration of one PWM generator instance SFRs. </p>
-<p>Default configuration of the PWM generator SFRs with all its registers being reset to their default state when the device comes out of RESET. Programmers can use this template to reset (dispose) a previously used PWM generator when it's not used anymore or to secure a known startup condition before writing individual configurations to its SFRs. </p>
+<p>Default RESET configuration of one DAC instance channel SFRs. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dacConfigClear</td><td>DAC instance Special Function Register (SFR) set</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Default configuration of the DAC instance SFRs with all its registers being reset to their default state when the device comes out of RESET. Programmers can use this template to reset (dispose) a previously used DAC instance when it's not used anymore or to secure a known startup condition before writing individual configurations to its SFRs. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00080_source.html#l00672">672</a> of file <a class="el" href="a00080_source.html">p33c_pwm.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00041_source.html#l00252">252</a> of file <a class="el" href="a00041_source.html">p33c_dac.c</a>.</p>
 
 </div>
 </div>
-<a id="gafeca0163f581790a35cef7b99a276adc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gafeca0163f581790a35cef7b99a276adc">&#9670;&nbsp;</a></span>pwmConfigClear</h2>
+<a id="ga533a5e749ab3eb533348dcc12c328e89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga533a5e749ab3eb533348dcc12c328e89">&#9670;&nbsp;</a></span>dacModuleConfigClear</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="a00922.html">P33C_PWM_MODULE_s</a> pwmConfigClear</td>
+          <td class="memname">dacModuleConfigClear</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= { </div>
-<div class="line">    </div>
-<div class="line">        .vPCLKCON.value = 0x0000, </div>
-<div class="line">        .vFSCL.value = 0x0000, </div>
-<div class="line">        .vFSMINPER.value = 0x0000, </div>
-<div class="line">        .vMPHASE.value = 0x0000, </div>
-<div class="line">        .vMDC.value = 0x0000, </div>
-<div class="line">        .vMPER.value = 0x0000, </div>
-<div class="line">        .vLFSR.value = 0x0000, </div>
-<div class="line">        .vCMBTRIGL.value = 0x0000, </div>
-<div class="line">        .vCMBTRIGH.value = 0x0000, </div>
-<div class="line">        .LOGCON_A.value = 0x0000, </div>
-<div class="line">        .LOGCON_B.value = 0x0000, </div>
-<div class="line">        .LOGCON_C.value = 0x0000, </div>
-<div class="line">        .LOGCON_D.value = 0x0000, </div>
-<div class="line">        .LOGCON_E.value = 0x0000, </div>
-<div class="line">        .LOGCON_F.value = 0x0000, </div>
-<div class="line">        .PWMEVT_A.value = 0x0000, </div>
-<div class="line">        .PWMEVT_B.value = 0x0000, </div>
-<div class="line">        .PWMEVT_C.value = 0x0000, </div>
-<div class="line">        .PWMEVT_D.value = 0x0000, </div>
-<div class="line">        .PWMEVT_E.value = 0x0000, </div>
-<div class="line">        .PWMEVT_F.value = 0x0000  </div>
-<div class="line">   }</div>
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line"> </div>
+<div class="line">    .DacModuleCtrl1L.value = 0x0000,</div>
+<div class="line">    .DacModuleCtrl2L.value = 0x0000,</div>
+<div class="line">    .DacModuleCtrl2H.value = 0x0000</div>
+<div class="line"> </div>
+<div class="line">    }</div>
 </div><!-- fragment -->
-<p>Default RESET configuration of the PWM module SFRs. </p>
-<p>Default configuration of the PWM module SFRs with all its registers being reset to their default state when the device comes out of RESET. Programmers can use this template to reset (dispose) a previously used PWM module when it's not used anymore or to secure a known startup condition before writing individual configurations to its SFRs. </p>
+<p>Default RESET configuration of the DAC module base SFRs. </p>
+<p>Default configuration of the DAC module SFRs with all its registers being reset to their default state when the device comes out of RESET. Programmers can use this template to reset (dispose) a previously used DAC module when it's not used anymore or to ensure a known startup condition before writing individual configurations to its SFRs. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00080_source.html#l00672">672</a> of file <a class="el" href="a00080_source.html">p33c_pwm.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00041_source.html#l00252">252</a> of file <a class="el" href="a00041_source.html">p33c_dac.c</a>.</p>
 
 </div>
 </div>
-<a id="gaf8f0ea73e96ecddb846d1361098c09fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf8f0ea73e96ecddb846d1361098c09fe">&#9670;&nbsp;</a></span>pwmConfigDefault</h2>
+<a id="ga2c035262266900ab045b40d8f9d007b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2c035262266900ab045b40d8f9d007b9">&#9670;&nbsp;</a></span>dacModuleDefault</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="a00922.html">P33C_PWM_MODULE_s</a> pwmConfigDefault</td>
+          <td class="memname">dacModuleDefault</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= { </div>
-<div class="line">    </div>
-<div class="line">        .vPCLKCON.value = 0x0003,   </div>
-<div class="line">        .vFSCL.value = 0x0000,      </div>
-<div class="line">        .vFSMINPER.value = 0x0000,  </div>
-<div class="line">        .vMPHASE.value = 0x0000,    </div>
-<div class="line">        .vMDC.value = 0x0000,       </div>
-<div class="line">        .vMPER.value = 0x0000,      </div>
-<div class="line">        .vLFSR.value = 0x0000,      </div>
-<div class="line">        .vCMBTRIGL.value = 0x0000,  </div>
-<div class="line">        .vCMBTRIGH.value = 0x0000,  </div>
-<div class="line">        .LOGCON_A.value = 0x0000,   </div>
-<div class="line">        .LOGCON_B.value = 0x0000,   </div>
-<div class="line">        .LOGCON_C.value = 0x0000,   </div>
-<div class="line">        .LOGCON_D.value = 0x0000,   </div>
-<div class="line">        .LOGCON_E.value = 0x0000,   </div>
-<div class="line">        .LOGCON_F.value = 0x0000,   </div>
-<div class="line">        .PWMEVT_A.value = 0x0000,   </div>
-<div class="line">        .PWMEVT_B.value = 0x0000,   </div>
-<div class="line">        .PWMEVT_C.value = 0x0000,   </div>
-<div class="line">        .PWMEVT_D.value = 0x0000,   </div>
-<div class="line">        .PWMEVT_E.value = 0x0000,   </div>
-<div class="line">        .PWMEVT_F.value = 0x0000    </div>
-<div class="line">   }</div>
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    .DacModuleCtrl1L.value = 0x0080, </div>
+<div class="line">    .DacModuleCtrl2H.bits.SSTIME = 0x008A, </div>
+<div class="line">    .DacModuleCtrl2L.bits.TMODTIME = 0x0055 </div>
+<div class="line">}</div>
 </div><!-- fragment -->
-<p>Default initialization configuration of the PWM module SFRs. </p>
-<p>Default configuration of the PWM module SFRs for normal operation at maximum performance using the auxiliary clock input, expecting a 500 MHz input clock. All other functions of the PWM module base registers, such as combinatorial logic blocks, are turned off. Programmers can use this template to initialize the PWM module in default mode before writing individual configurations to its SFRs. </p>
+<p>Default configuration of DAC module running from 500 MHz input clock. </p>
+<p>Default configuration of the DAC module SFRs with all its registers being reset to their default state when the device comes out of RESET. The timing settings for settling time and transition mode time of the built-in Pulse-Density Modulator ramp generator are reset to their recommended default values when operated from a 500 MHz clock input. (Please read the device data sheet for details)</p>
+<p>Programmers can use this template to reset a previously used DAC module when it's not used anymore or to ensure a known startup condition before writing individual configurations to its SFRs. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00080_source.html#l00672">672</a> of file <a class="el" href="a00080_source.html">p33c_pwm.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00041_source.html#l00252">252</a> of file <a class="el" href="a00041_source.html">p33c_dac.c</a>.</p>
 
 </div>
 </div>

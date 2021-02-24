@@ -1,7 +1,5 @@
 var a00493 =
 [
-    [ "buckDacInstanceConfig", "a00493.html#gab25d1a3889c78f4213ba349255d346c7", null ],
-    [ "buckDacModuleConfig", "a00493.html#gac26c1311a275f3076a198a09227e8147", null ],
-    [ "buckPwmGeneratorConfig", "a00493.html#gae543c7d56ffc52bf7455d0a58d5ad70b", null ],
-    [ "buckPwmModuleConfig", "a00493.html#ga2d420ce844bd8e8c1f81d173d3c3b549", null ]
+    [ "adcore_diff_mask", "a00493.html#ga215a815cad00177161895a74f526cfc1", null ],
+    [ "adcore_mask", "a00493.html#ga8312ee90c2e73a1ad6bc8b0e545368c2", null ]
 ];

@@ -1,5 +1,5 @@
 var a00392 =
 [
-    [ "Converter Phase #1", "a00393.html", "a00393" ],
-    [ "Converter Phase #2", "a00394.html", null ]
+    [ "User Settings", "a00393.html", "a00393" ],
+    [ "Conversion Macros", "a00394.html", "a00394" ]
 ];

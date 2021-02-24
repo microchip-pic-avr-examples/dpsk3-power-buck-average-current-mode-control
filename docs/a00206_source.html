@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: dpsk_buck_vmc.X/sources/lcd/drivers/drv_lcd_interface.h Source File</title>
+<title>Digital Power Starter Kit 3 Firmware: dpsk_buck_agc.X/sources/lcd/drivers/drv_lcd_interface.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
   <td id="projectalign" style="padding-left: 0.0em;">
    <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
-   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Adaptive Gain Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -127,23 +127,23 @@ $(document).ready(function(){initNavTree('a00206_source.html',''); initResizable
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00445.html#gaeb25fdecced4c325cd0d986a30d57e90">drv_LcdInterface_Initialize</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00445.html#ga3f10606b6c67ff33338ab2c5c6a2d4c8">drv_LcdInterface_Reset</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00445.html#ga3e045335a3463f6a53e4fd91b50bb0ca">drv_LcdInterface_SendCmd</a>(<span class="keyword">const</span> uint8_t cmd);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00451.html#gaeb25fdecced4c325cd0d986a30d57e90">drv_LcdInterface_Initialize</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00451.html#ga3f10606b6c67ff33338ab2c5c6a2d4c8">drv_LcdInterface_Reset</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00451.html#ga3e045335a3463f6a53e4fd91b50bb0ca">drv_LcdInterface_SendCmd</a>(<span class="keyword">const</span> uint8_t cmd);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> drv_LcdInterface_SendChar(<span class="keyword">const</span> <span class="keywordtype">char</span> c);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif // _DRV_LCD_INTERFACE_H_</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa00445_html_gaeb25fdecced4c325cd0d986a30d57e90"><div class="ttname"><a href="a00445.html#gaeb25fdecced4c325cd0d986a30d57e90">drv_LcdInterface_Initialize</a></div><div class="ttdeci">void drv_LcdInterface_Initialize(void)</div><div class="ttdoc">Initializes the LCD interface driver.</div><div class="ttdef"><b>Definition:</b> <a href="a00203_source.html#l00052">drv_lcd_interface.c:52</a></div></div>
-<div class="ttc" id="aa00445_html_ga3e045335a3463f6a53e4fd91b50bb0ca"><div class="ttname"><a href="a00445.html#ga3e045335a3463f6a53e4fd91b50bb0ca">drv_LcdInterface_SendCmd</a></div><div class="ttdeci">void drv_LcdInterface_SendCmd(const uint8_t cmd)</div><div class="ttdoc">Sends a command to the LCD controller.</div><div class="ttdef"><b>Definition:</b> <a href="a00203_source.html#l00092">drv_lcd_interface.c:92</a></div></div>
-<div class="ttc" id="aa00445_html_ga3f10606b6c67ff33338ab2c5c6a2d4c8"><div class="ttname"><a href="a00445.html#ga3f10606b6c67ff33338ab2c5c6a2d4c8">drv_LcdInterface_Reset</a></div><div class="ttdeci">void drv_LcdInterface_Reset(void)</div><div class="ttdoc">Resets the LCD controller.</div><div class="ttdef"><b>Definition:</b> <a href="a00203_source.html#l00076">drv_lcd_interface.c:76</a></div></div>
+<div class="ttc" id="aa00451_html_gaeb25fdecced4c325cd0d986a30d57e90"><div class="ttname"><a href="a00451.html#gaeb25fdecced4c325cd0d986a30d57e90">drv_LcdInterface_Initialize</a></div><div class="ttdeci">void drv_LcdInterface_Initialize(void)</div><div class="ttdoc">Initializes the LCD interface driver.</div><div class="ttdef"><b>Definition:</b> <a href="a00203_source.html#l00052">drv_lcd_interface.c:52</a></div></div>
+<div class="ttc" id="aa00451_html_ga3e045335a3463f6a53e4fd91b50bb0ca"><div class="ttname"><a href="a00451.html#ga3e045335a3463f6a53e4fd91b50bb0ca">drv_LcdInterface_SendCmd</a></div><div class="ttdeci">void drv_LcdInterface_SendCmd(const uint8_t cmd)</div><div class="ttdoc">Sends a command to the LCD controller.</div><div class="ttdef"><b>Definition:</b> <a href="a00203_source.html#l00092">drv_lcd_interface.c:92</a></div></div>
+<div class="ttc" id="aa00451_html_ga3f10606b6c67ff33338ab2c5c6a2d4c8"><div class="ttname"><a href="a00451.html#ga3f10606b6c67ff33338ab2c5c6a2d4c8">drv_LcdInterface_Reset</a></div><div class="ttdeci">void drv_LcdInterface_Reset(void)</div><div class="ttdoc">Resets the LCD controller.</div><div class="ttdef"><b>Definition:</b> <a href="a00203_source.html#l00076">drv_lcd_interface.c:76</a></div></div>
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_01066bb7b1e33c391de0f39ab7f37964.html">dpsk_buck_vmc.X</a></li><li class="navelem"><a class="el" href="dir_4775101750c4dd55cff8a4809201f12a.html">sources</a></li><li class="navelem"><a class="el" href="dir_fd5d2382912bdb192ccebaa60cfb8953.html">lcd</a></li><li class="navelem"><a class="el" href="dir_b530ee8bf0d4afb77ffcf26c45447c6e.html">drivers</a></li><li class="navelem"><b>drv_lcd_interface.h</b></li>
+    <li class="navelem"><a class="el" href="dir_4ee7c398c7a1a06f47d8fbc48027983f.html">dpsk_buck_agc.X</a></li><li class="navelem"><a class="el" href="dir_07fd0e222032ef0bb4c4c4bd39064c1a.html">sources</a></li><li class="navelem"><a class="el" href="dir_6f4af3a952385da556cac8db1c724ee3.html">lcd</a></li><li class="navelem"><a class="el" href="dir_01b9636e9cb93076976447730883a7d2.html">drivers</a></li><li class="navelem"><b>drv_lcd_interface.h</b></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

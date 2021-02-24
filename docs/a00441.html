@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Public Properties</title>
+<title>Digital Power Starter Kit 3 Firmware: Public Functions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
   <td id="projectalign" style="padding-left: 0.0em;">
    <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
-   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Adaptive Gain Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -97,96 +97,155 @@ $(document).ready(function(){initNavTree('a00441.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Public Properties<div class="ingroups"><a class="el" href="a00533.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00439.html">LC-Display Library</a></div></div>  </div>
+<div class="title">Public Functions<div class="ingroups"><a class="el" href="a00538.html">Application Layer</a> &raquo; <a class="el" href="a00440.html">LC-Display Application Layer</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Public properties of the LC display device driver library.  
+<p>Public functions of the LC display task.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Public Properties:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Public Functions:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00441.svg" width="308" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00441.svg" width="331" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:gaa48e1d1e103805c72fd112486be3d38f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00441.html#gaa48e1d1e103805c72fd112486be3d38f">TEMPSTR_LCD_SIZE</a>&#160;&#160;&#160;40</td></tr>
-<tr class="memdesc:gaa48e1d1e103805c72fd112486be3d38f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the total string length of the LC display.  <a href="a00441.html#gaa48e1d1e103805c72fd112486be3d38f">More...</a><br /></td></tr>
-<tr class="separator:gaa48e1d1e103805c72fd112486be3d38f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaeabde9cf4c09da1935c1dff5f1bda0c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00441.html#gaeabde9cf4c09da1935c1dff5f1bda0c1">PrintLcd</a>(LINE, ...)</td></tr>
-<tr class="memdesc:gaeabde9cf4c09da1935c1dff5f1bda0c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a complete line to the LC display.  <a href="a00441.html#gaeabde9cf4c09da1935c1dff5f1bda0c1">More...</a><br /></td></tr>
-<tr class="separator:gaeabde9cf4c09da1935c1dff5f1bda0c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gab93992748ced72fdc2989d0b0f369e54"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00441.html#gab93992748ced72fdc2989d0b0f369e54">appLCD_Initialize</a> (void)</td></tr>
+<tr class="memdesc:gab93992748ced72fdc2989d0b0f369e54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the LC display.  <a href="a00441.html#gab93992748ced72fdc2989d0b0f369e54">More...</a><br /></td></tr>
+<tr class="separator:gab93992748ced72fdc2989d0b0f369e54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacd8e3f8ca8af94f13f7efa0df7ced6f5"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00441.html#gacd8e3f8ca8af94f13f7efa0df7ced6f5">appLCD_Execute</a> (void)</td></tr>
+<tr class="memdesc:gacd8e3f8ca8af94f13f7efa0df7ced6f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refreshes the LC display.  <a href="a00441.html#gacd8e3f8ca8af94f13f7efa0df7ced6f5">More...</a><br /></td></tr>
+<tr class="separator:gacd8e3f8ca8af94f13f7efa0df7ced6f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga38c10d91e208e9eb081d0341792954d7"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00441.html#ga38c10d91e208e9eb081d0341792954d7">appLCD_Dispose</a> (void)</td></tr>
+<tr class="memdesc:ga38c10d91e208e9eb081d0341792954d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unloads the LC display data object and resources.  <a href="a00441.html#ga38c10d91e208e9eb081d0341792954d7">More...</a><br /></td></tr>
+<tr class="separator:ga38c10d91e208e9eb081d0341792954d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Public properties of the LC display device driver library. </p>
-<p>This is the detailed description of public variables, data types, enumerations, defines and macros of the LC display device driver library. </p>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="gaeabde9cf4c09da1935c1dff5f1bda0c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaeabde9cf4c09da1935c1dff5f1bda0c1">&#9670;&nbsp;</a></span>PrintLcd</h2>
+<p>Public functions of the LC display task. </p>
+<p>This is the detailed description of public API functions of the LC display task. </p>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga38c10d91e208e9eb081d0341792954d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga38c10d91e208e9eb081d0341792954d7">&#9670;&nbsp;</a></span>appLCD_Dispose()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define PrintLcd</td>
+          <td class="memname">volatile uint16_t appLCD_Dispose </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">LINE, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>...</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span>{ \</div>
-<div class="line">        char __print_utils_string[<a class="code" href="a00441.html#gaa48e1d1e103805c72fd112486be3d38f">TEMPSTR_LCD_SIZE</a>]; \</div>
-<div class="line">        sprintf(__print_utils_string, __VA_ARGS__); \</div>
-<div class="line">        dev_Lcd_WriteStringXY(0, LINE, __print_utils_string); \</div>
-<div class="line">    } <span class="keywordflow">while</span>(0)</div>
-</div><!-- fragment -->
-<p>Writes a complete line to the LC display. </p>
-<p>This macro can be used to write a complete line to the LC display. If the length of the string exceeds the available number of characters in one line, the position will overflow into the next line. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00197_source.html#l00045">45</a> of file <a class="el" href="a00197_source.html">dev_lcd.h</a>.</p>
+<p>Unloads the LC display data object and resources. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned int (0=failure, 1=success)  This function unloads the LC display data object and frees its resources. The <a class="el" href="a01476.html" title="Declaration of public LC display data object.">LCD_s</a> data object of this display needs to be reinitialized before the LC display can be used again. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="a00185_source.html#l00203">203</a> of file <a class="el" href="a00185_source.html">app_lcd.c</a>.</p>
 
 </div>
 </div>
-<a id="gaa48e1d1e103805c72fd112486be3d38f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa48e1d1e103805c72fd112486be3d38f">&#9670;&nbsp;</a></span>TEMPSTR_LCD_SIZE</h2>
+<a id="gacd8e3f8ca8af94f13f7efa0df7ced6f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacd8e3f8ca8af94f13f7efa0df7ced6f5">&#9670;&nbsp;</a></span>appLCD_Execute()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define TEMPSTR_LCD_SIZE&#160;&#160;&#160;40</td>
+          <td class="memname">volatile uint16_t appLCD_Execute </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Defines the total string length of the LC display. </p>
-<p>This defines the total number of characters which can be displayed on the LC display. This number may be subject to change if another LC display type is used. </p>
+<p>Refreshes the LC display. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned int (0=failure, 1=success)  This function is frequently called by the task scheduler automatically updating currently displayed data and/or loading the most recent screen if a screen switch has been triggered by externally. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="a00197_source.html#l00033">33</a> of file <a class="el" href="a00197_source.html">dev_lcd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00185_source.html#l00106">106</a> of file <a class="el" href="a00185_source.html">app_lcd.c</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00441_gacd8e3f8ca8af94f13f7efa0df7ced6f5_cgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00441_gacd8e3f8ca8af94f13f7efa0df7ced6f5_icgraph.svg" width="324" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="gab93992748ced72fdc2989d0b0f369e54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab93992748ced72fdc2989d0b0f369e54">&#9670;&nbsp;</a></span>appLCD_Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t appLCD_Initialize </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the LC display. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned int (0=failure, 1=success)  This function initializes the LC display driver data object and loads the startup screen. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="a00185_source.html#l00076">76</a> of file <a class="el" href="a00185_source.html">app_lcd.c</a>.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00441_gab93992748ced72fdc2989d0b0f369e54_cgraph.svg" width="100%" height="480"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00441_gab93992748ced72fdc2989d0b0f369e54_icgraph.svg" width="340" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa00441_html_gaa48e1d1e103805c72fd112486be3d38f"><div class="ttname"><a href="a00441.html#gaa48e1d1e103805c72fd112486be3d38f">TEMPSTR_LCD_SIZE</a></div><div class="ttdeci">#define TEMPSTR_LCD_SIZE</div><div class="ttdoc">Defines the total string length of the LC display.</div><div class="ttdef"><b>Definition:</b> <a href="a00197_source.html#l00033">dev_lcd.h:33</a></div></div>
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

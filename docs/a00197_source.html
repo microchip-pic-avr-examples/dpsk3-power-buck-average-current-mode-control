@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: dpsk_buck_vmc.X/sources/lcd/devices/dev_lcd.h Source File</title>
+<title>Digital Power Starter Kit 3 Firmware: dpsk_buck_agc.X/sources/lcd/devices/dev_lcd.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
   <td id="projectalign" style="padding-left: 0.0em;">
    <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
-   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Adaptive Gain Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -124,10 +124,10 @@ $(document).ready(function(){initNavTree('a00197_source.html',''); initResizable
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;lcd/drivers/drv_lcd_interface.h&quot;</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a00441.html#gaa48e1d1e103805c72fd112486be3d38f">   33</a></span>&#160;<span class="preprocessor">#define TEMPSTR_LCD_SIZE    40</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a00447.html#gaa48e1d1e103805c72fd112486be3d38f">   33</a></span>&#160;<span class="preprocessor">#define TEMPSTR_LCD_SIZE    40</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="a00441.html#gaeabde9cf4c09da1935c1dff5f1bda0c1">   45</a></span>&#160;<span class="preprocessor">#define PrintLcd(LINE, ...) \</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="a00447.html#gaeabde9cf4c09da1935c1dff5f1bda0c1">   45</a></span>&#160;<span class="preprocessor">#define PrintLcd(LINE, ...) \</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">    do{ \</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">        char __print_utils_string[TEMPSTR_LCD_SIZE]; \</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">        sprintf(__print_utils_string, __VA_ARGS__); \</span></div>
@@ -136,27 +136,27 @@ $(document).ready(function(){initNavTree('a00197_source.html',''); initResizable
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00440.html#ga5d8f09855e28846e87400692d186781a">dev_Lcd_Initialize</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00440.html#ga5c431635cb94750b2f6e938d7f1f0cf1">dev_Lcd_GotoXY</a>(<span class="keyword">volatile</span> uint8_t x, <span class="keyword">volatile</span> uint8_t y);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00440.html#ga3cb1303cba012af043a87af0bcab16d8">dev_Lcd_WriteChar</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> ch);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00440.html#gac07de05132918ca2db8cf4492819eca6">dev_Lcd_WriteString</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *str);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00440.html#ga24701a4c3ae760e7e0b9c70d93370ff3">dev_Lcd_WriteStringXY</a>(<span class="keyword">volatile</span> uint8_t column_index, <span class="keyword">volatile</span> uint8_t line_index, <span class="keyword">const</span> <span class="keywordtype">char</span> *str);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00446.html#ga5d8f09855e28846e87400692d186781a">dev_Lcd_Initialize</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00446.html#ga5c431635cb94750b2f6e938d7f1f0cf1">dev_Lcd_GotoXY</a>(<span class="keyword">volatile</span> uint8_t x, <span class="keyword">volatile</span> uint8_t y);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00446.html#ga3cb1303cba012af043a87af0bcab16d8">dev_Lcd_WriteChar</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> ch);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00446.html#gac07de05132918ca2db8cf4492819eca6">dev_Lcd_WriteString</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *str);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00446.html#ga24701a4c3ae760e7e0b9c70d93370ff3">dev_Lcd_WriteStringXY</a>(<span class="keyword">volatile</span> uint8_t column_index, <span class="keyword">volatile</span> uint8_t line_index, <span class="keyword">const</span> <span class="keywordtype">char</span> *str);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif  // _Dev_LCD_H_</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa00440_html_ga5c431635cb94750b2f6e938d7f1f0cf1"><div class="ttname"><a href="a00440.html#ga5c431635cb94750b2f6e938d7f1f0cf1">dev_Lcd_GotoXY</a></div><div class="ttdeci">void dev_Lcd_GotoXY(volatile uint8_t x, volatile uint8_t y)</div><div class="ttdoc">Sets the cursor position to the given x- and y-coordinates.</div><div class="ttdef"><b>Definition:</b> <a href="a00194_source.html#l00184">dev_lcd.c:184</a></div></div>
-<div class="ttc" id="aa00440_html_ga3cb1303cba012af043a87af0bcab16d8"><div class="ttname"><a href="a00440.html#ga3cb1303cba012af043a87af0bcab16d8">dev_Lcd_WriteChar</a></div><div class="ttdeci">void dev_Lcd_WriteChar(const char ch)</div><div class="ttdoc">Writes a character on the LCD screen.</div><div class="ttdef"><b>Definition:</b> <a href="a00194_source.html#l00209">dev_lcd.c:209</a></div></div>
-<div class="ttc" id="aa00440_html_gac07de05132918ca2db8cf4492819eca6"><div class="ttname"><a href="a00440.html#gac07de05132918ca2db8cf4492819eca6">dev_Lcd_WriteString</a></div><div class="ttdeci">void dev_Lcd_WriteString(const char *str)</div><div class="ttdoc">Writes a complete string on the LCD screen.</div><div class="ttdef"><b>Definition:</b> <a href="a00194_source.html#l00272">dev_lcd.c:272</a></div></div>
-<div class="ttc" id="aa00440_html_ga5d8f09855e28846e87400692d186781a"><div class="ttname"><a href="a00440.html#ga5d8f09855e28846e87400692d186781a">dev_Lcd_Initialize</a></div><div class="ttdeci">void dev_Lcd_Initialize(void)</div><div class="ttdoc">Initializes the LCD Device.</div><div class="ttdef"><b>Definition:</b> <a href="a00194_source.html#l00126">dev_lcd.c:126</a></div></div>
-<div class="ttc" id="aa00440_html_ga24701a4c3ae760e7e0b9c70d93370ff3"><div class="ttname"><a href="a00440.html#ga24701a4c3ae760e7e0b9c70d93370ff3">dev_Lcd_WriteStringXY</a></div><div class="ttdeci">void dev_Lcd_WriteStringXY(volatile uint8_t column_index, volatile uint8_t line_index, const char *str)</div><div class="ttdoc">Sets the cursor position to the given x- and y-coordinates and writes the given string on the lcd scr...</div><div class="ttdef"><b>Definition:</b> <a href="a00194_source.html#l00305">dev_lcd.c:305</a></div></div>
+<div class="ttc" id="aa00446_html_ga5d8f09855e28846e87400692d186781a"><div class="ttname"><a href="a00446.html#ga5d8f09855e28846e87400692d186781a">dev_Lcd_Initialize</a></div><div class="ttdeci">void dev_Lcd_Initialize(void)</div><div class="ttdoc">Initializes the LCD Device.</div><div class="ttdef"><b>Definition:</b> <a href="a00194_source.html#l00126">dev_lcd.c:126</a></div></div>
+<div class="ttc" id="aa00446_html_gac07de05132918ca2db8cf4492819eca6"><div class="ttname"><a href="a00446.html#gac07de05132918ca2db8cf4492819eca6">dev_Lcd_WriteString</a></div><div class="ttdeci">void dev_Lcd_WriteString(const char *str)</div><div class="ttdoc">Writes a complete string on the LCD screen.</div><div class="ttdef"><b>Definition:</b> <a href="a00194_source.html#l00272">dev_lcd.c:272</a></div></div>
+<div class="ttc" id="aa00446_html_ga24701a4c3ae760e7e0b9c70d93370ff3"><div class="ttname"><a href="a00446.html#ga24701a4c3ae760e7e0b9c70d93370ff3">dev_Lcd_WriteStringXY</a></div><div class="ttdeci">void dev_Lcd_WriteStringXY(volatile uint8_t column_index, volatile uint8_t line_index, const char *str)</div><div class="ttdoc">Sets the cursor position to the given x- and y-coordinates and writes the given string on the lcd scr...</div><div class="ttdef"><b>Definition:</b> <a href="a00194_source.html#l00305">dev_lcd.c:305</a></div></div>
+<div class="ttc" id="aa00446_html_ga3cb1303cba012af043a87af0bcab16d8"><div class="ttname"><a href="a00446.html#ga3cb1303cba012af043a87af0bcab16d8">dev_Lcd_WriteChar</a></div><div class="ttdeci">void dev_Lcd_WriteChar(const char ch)</div><div class="ttdoc">Writes a character on the LCD screen.</div><div class="ttdef"><b>Definition:</b> <a href="a00194_source.html#l00209">dev_lcd.c:209</a></div></div>
+<div class="ttc" id="aa00446_html_ga5c431635cb94750b2f6e938d7f1f0cf1"><div class="ttname"><a href="a00446.html#ga5c431635cb94750b2f6e938d7f1f0cf1">dev_Lcd_GotoXY</a></div><div class="ttdeci">void dev_Lcd_GotoXY(volatile uint8_t x, volatile uint8_t y)</div><div class="ttdoc">Sets the cursor position to the given x- and y-coordinates.</div><div class="ttdef"><b>Definition:</b> <a href="a00194_source.html#l00184">dev_lcd.c:184</a></div></div>
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_01066bb7b1e33c391de0f39ab7f37964.html">dpsk_buck_vmc.X</a></li><li class="navelem"><a class="el" href="dir_4775101750c4dd55cff8a4809201f12a.html">sources</a></li><li class="navelem"><a class="el" href="dir_fd5d2382912bdb192ccebaa60cfb8953.html">lcd</a></li><li class="navelem"><a class="el" href="dir_e7b453d8ee265e3923f6f52b98cd9107.html">devices</a></li><li class="navelem"><b>dev_lcd.h</b></li>
+    <li class="navelem"><a class="el" href="dir_4ee7c398c7a1a06f47d8fbc48027983f.html">dpsk_buck_agc.X</a></li><li class="navelem"><a class="el" href="dir_07fd0e222032ef0bb4c4c4bd39064c1a.html">sources</a></li><li class="navelem"><a class="el" href="dir_6f4af3a952385da556cac8db1c724ee3.html">lcd</a></li><li class="navelem"><a class="el" href="dir_12673593e0853a1bf388cae3672bff36.html">devices</a></li><li class="navelem"><b>dev_lcd.h</b></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: dpsk_buck_vmc.X/sources/fault_handler/drivers/drv_trap_handler.c Source File</title>
+<title>Digital Power Starter Kit 3 Firmware: dpsk_buck_agc.X/sources/fault_handler/drivers/drv_trap_handler.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
   <td id="projectalign" style="padding-left: 0.0em;">
    <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
-   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Adaptive Gain Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('a00176_source.html',''); initResizable
 <div class="title">drv_trap_handler.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="a00428.html#ga952a98e41cf813dc50567ad60b3e860c">    1</a></span>&#160;<span class="comment">/* **************************************************************************************************</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="a00434.html#ga952a98e41cf813dc50567ad60b3e860c">    1</a></span>&#160;<span class="comment">/* **************************************************************************************************</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * © 2006 Microchip Technology Inc.</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * FileName:        fdrv_TrapHandler.c</span></div>
@@ -161,11 +161,11 @@ $(document).ready(function(){initNavTree('a00176_source.html',''); initResizable
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#include &quot;drv_trap_handler.h&quot;</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a01466.html">TRAP_LOGGER_s</a> <a class="code" href="a00428.html#ga952a98e41cf813dc50567ad60b3e860c">traplog</a>; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a01472.html">TRAP_LOGGER_s</a> <a class="code" href="a00434.html#ga952a98e41cf813dc50567ad60b3e860c">traplog</a>; </div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="a00424.html#ga3b96ecc924931497bada0ea1957f0634">   90</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00424.html#ga3b96ecc924931497bada0ea1957f0634">drv_TrapHandler_SoftTrapsInitialize</a>(</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="a00430.html#ga3b96ecc924931497bada0ea1957f0634">   90</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00430.html#ga3b96ecc924931497bada0ea1957f0634">drv_TrapHandler_SoftTrapsInitialize</a>(</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="keywordtype">bool</span> accumulator_a_overflow_trap_enable, </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <span class="keywordtype">bool</span> accumulator_b_overflow_trap_enable, </div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="keywordtype">bool</span> accumulator_catastrophic_overflow_trap_enable)</div>
@@ -179,11 +179,11 @@ $(document).ready(function(){initNavTree('a00176_source.html',''); initResizable
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="a00424.html#ga0250f20caa12da59ca4f42c807cff152">  116</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00424.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(<span class="keyword">enum</span> <a class="code" href="a00429.html#gaee63654a5e14dd3b2bab6179a5cbe2ab">TRAP_ID_e</a> <a class="code" href="a01466.html#a6e7be26899e4fa61a356b5e7eeec83d1">trap_id</a>) {</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="a00430.html#ga0250f20caa12da59ca4f42c807cff152">  116</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00430.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(<span class="keyword">enum</span> <a class="code" href="a00435.html#gaee63654a5e14dd3b2bab6179a5cbe2ab">TRAP_ID_e</a> <a class="code" href="a01472.html#a6e7be26899e4fa61a356b5e7eeec83d1">trap_id</a>) {</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">// Capture Trap logger values</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="a00428.html#ga952a98e41cf813dc50567ad60b3e860c">traplog</a>.<a class="code" href="a01466.html#a6e7be26899e4fa61a356b5e7eeec83d1">trap_id</a> = <a class="code" href="a01466.html#a6e7be26899e4fa61a356b5e7eeec83d1">trap_id</a>; <span class="comment">// Capture Trap ID</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="a00428.html#ga952a98e41cf813dc50567ad60b3e860c">traplog</a>.<a class="code" href="a01466.html#a9216196898128a7f976617aabd34ba77">trap_count</a>++; <span class="comment">// Capture occurrence </span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="a00434.html#ga952a98e41cf813dc50567ad60b3e860c">traplog</a>.<a class="code" href="a01472.html#a6e7be26899e4fa61a356b5e7eeec83d1">trap_id</a> = <a class="code" href="a01472.html#a6e7be26899e4fa61a356b5e7eeec83d1">trap_id</a>; <span class="comment">// Capture Trap ID</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="a00434.html#ga952a98e41cf813dc50567ad60b3e860c">traplog</a>.<a class="code" href="a01472.html#a9216196898128a7f976617aabd34ba77">trap_count</a>++; <span class="comment">// Capture occurrence </span></div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="comment">// These Nop()s can be used to place breakpoints </span></div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="comment">// during debugging.</span></div>
@@ -195,9 +195,9 @@ $(document).ready(function(){initNavTree('a00176_source.html',''); initResizable
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    Nop();</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="comment">// If the CPU RESET TRIGGER is enabled, reset CPU here</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="a00428.html#ga952a98e41cf813dc50567ad60b3e860c">traplog</a>.<a class="code" href="a01466.html#a67fe8ce905ea66883a557013c4069068">status</a>.bits.<a class="code" href="a01450.html#a121370958c3700325011062cf1ac9895">cpu_reset_trigger</a>)</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="a00434.html#ga952a98e41cf813dc50567ad60b3e860c">traplog</a>.<a class="code" href="a01472.html#a67fe8ce905ea66883a557013c4069068">status</a>.bits.<a class="code" href="a01456.html#a121370958c3700325011062cf1ac9895">cpu_reset_trigger</a>)</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    {</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <a class="code" href="a00428.html#ga952a98e41cf813dc50567ad60b3e860c">traplog</a>.<a class="code" href="a01466.html#a95744ea4cf032674585b4e25a114c31a">reset_count</a>++; <span class="comment">// Capture RESET occurrence </span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <a class="code" href="a00434.html#ga952a98e41cf813dc50567ad60b3e860c">traplog</a>.<a class="code" href="a01472.html#a95744ea4cf032674585b4e25a114c31a">reset_count</a>++; <span class="comment">// Capture RESET occurrence </span></div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keyword">asm</span> <span class="keyword">volatile</span> (<span class="stringliteral">&quot;RESET\n&quot;</span>); <span class="comment">// Reset CPU</span></div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    </div>
@@ -212,41 +212,41 @@ $(document).ready(function(){initNavTree('a00176_source.html',''); initResizable
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _ReservedTrap5(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <a class="code" href="a00424.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_RESERVED_TRAP_5_ERROR); <span class="comment">// Call default trap handler</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <a class="code" href="a00430.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_RESERVED_TRAP_5_ERROR); <span class="comment">// Call default trap handler</span></div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;}</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _ReservedTrap7(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <a class="code" href="a00424.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_RESERVED_TRAP_7_ERROR); <span class="comment">// Call default trap handler</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <a class="code" href="a00430.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_RESERVED_TRAP_7_ERROR); <span class="comment">// Call default trap handler</span></div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;}</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _HardTrapError(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <a class="code" href="a00424.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_HARD_TRAP_ERROR); <span class="comment">// Call default trap handler</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <a class="code" href="a00430.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_HARD_TRAP_ERROR); <span class="comment">// Call default trap handler</span></div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;}</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _SoftTrapError(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <a class="code" href="a00424.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_SOFT_TRAP_ERROR);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <a class="code" href="a00430.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_SOFT_TRAP_ERROR);</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;}</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _OscillatorFail(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <a class="code" href="a00424.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_OSCILLATOR_FAIL);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <a class="code" href="a00430.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_OSCILLATOR_FAIL);</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;}</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _AddressError(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <a class="code" href="a00424.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_ADDRESS_ERROR);</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <a class="code" href="a00430.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_ADDRESS_ERROR);</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;}</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _StackError(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <a class="code" href="a00424.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_STACK_ERROR);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <a class="code" href="a00430.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_STACK_ERROR);</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;}</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _MathError(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <a class="code" href="a00424.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_MATH_ERROR);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <a class="code" href="a00430.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_MATH_ERROR);</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;}</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="preprocessor">#if (TRAP_DMA_SUPPORT == 1)</span></div>
@@ -256,7 +256,7 @@ $(document).ready(function(){initNavTree('a00176_source.html',''); initResizable
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="comment">// =================================================================================================</span></div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _DMACError(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <a class="code" href="a00424.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_DMA_ERROR);</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <a class="code" href="a00430.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_DMA_ERROR);</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;}</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -276,33 +276,33 @@ $(document).ready(function(){initNavTree('a00176_source.html',''); initResizable
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="preprocessor">#if (__XC16_VERSION &lt; 1030)</span></div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _AltHardTrapError(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <a class="code" href="a00424.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_ALT_HARD_TRAP_ERROR); <span class="comment">// Call default trap handler</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <a class="code" href="a00430.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_ALT_HARD_TRAP_ERROR); <span class="comment">// Call default trap handler</span></div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;}</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _AltSoftTrapError(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <a class="code" href="a00424.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_ALT_SOFT_TRAP_ERROR);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <a class="code" href="a00430.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_ALT_SOFT_TRAP_ERROR);</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;}</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _AltOscillatorFail(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <a class="code" href="a00424.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_ALT_OSCILLATOR_FAIL);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <a class="code" href="a00430.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_ALT_OSCILLATOR_FAIL);</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;}</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _AltAddressError(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <a class="code" href="a00424.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_ALT_ADDRESS_ERROR);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <a class="code" href="a00430.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_ALT_ADDRESS_ERROR);</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;}</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _AltStackError(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <a class="code" href="a00424.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_ALT_STACK_ERROR);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <a class="code" href="a00430.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_ALT_STACK_ERROR);</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;}</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _AltMathError(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <a class="code" href="a00424.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_ALT_MATH_ERROR);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <a class="code" href="a00430.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_ALT_MATH_ERROR);</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;}</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="preprocessor">#if (TRAP_DMA_SUPPORT == 1)</span></div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _AltDMACError(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <a class="code" href="a00424.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_ALT_DMA_ERROR);</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <a class="code" href="a00430.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_ALT_DMA_ERROR);</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;}</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
@@ -312,21 +312,21 @@ $(document).ready(function(){initNavTree('a00176_source.html',''); initResizable
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="comment">// EOF</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa01466_html_a6e7be26899e4fa61a356b5e7eeec83d1"><div class="ttname"><a href="a01466.html#a6e7be26899e4fa61a356b5e7eeec83d1">TRAP_LOGGER_s::trap_id</a></div><div class="ttdeci">enum TRAP_ID_e trap_id</div><div class="ttdoc">Trap-ID of the captured incident.</div><div class="ttdef"><b>Definition:</b> <a href="a00179_source.html#l00283">drv_trap_handler.h:284</a></div></div>
-<div class="ttc" id="aa01466_html"><div class="ttname"><a href="a01466.html">TRAP_LOGGER_s</a></div><div class="ttdoc">Global data structure for trap event capturing.</div><div class="ttdef"><b>Definition:</b> <a href="a00179_source.html#l00280">drv_trap_handler.h:281</a></div></div>
-<div class="ttc" id="aa00429_html_gaee63654a5e14dd3b2bab6179a5cbe2ab"><div class="ttname"><a href="a00429.html#gaee63654a5e14dd3b2bab6179a5cbe2ab">TRAP_ID_e</a></div><div class="ttdeci">TRAP_ID_e</div><div class="ttdoc">defining trap-ID for primary and secondary vectors</div><div class="ttdef"><b>Definition:</b> <a href="a00179_source.html#l00099">drv_trap_handler.h:100</a></div></div>
-<div class="ttc" id="aa01450_html_a121370958c3700325011062cf1ac9895"><div class="ttname"><a href="a01450.html#a121370958c3700325011062cf1ac9895">TRAPLOG_STATUS_s::cpu_reset_trigger</a></div><div class="ttdeci">volatile bool cpu_reset_trigger</div><div class="ttdef"><b>Definition:</b> <a href="a00179_source.html#l00231">drv_trap_handler.h:231</a></div></div>
-<div class="ttc" id="aa00424_html_ga0250f20caa12da59ca4f42c807cff152"><div class="ttname"><a href="a00424.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a></div><div class="ttdeci">void DefaultTrapHandler(enum TRAP_ID_e trap_id)</div><div class="ttdoc">Centralized trap handler routine.</div><div class="ttdef"><b>Definition:</b> <a href="a00176_source.html#l00116">drv_trap_handler.c:116</a></div></div>
-<div class="ttc" id="aa00424_html_ga3b96ecc924931497bada0ea1957f0634"><div class="ttname"><a href="a00424.html#ga3b96ecc924931497bada0ea1957f0634">drv_TrapHandler_SoftTrapsInitialize</a></div><div class="ttdeci">volatile uint16_t drv_TrapHandler_SoftTrapsInitialize(bool accumulator_a_overflow_trap_enable, bool accumulator_b_overflow_trap_enable, bool accumulator_catastrophic_overflow_trap_enable)</div><div class="ttdoc">Configures the software-configurable traps.</div><div class="ttdef"><b>Definition:</b> <a href="a00176_source.html#l00090">drv_trap_handler.c:90</a></div></div>
-<div class="ttc" id="aa01466_html_a67fe8ce905ea66883a557013c4069068"><div class="ttname"><a href="a01466.html#a67fe8ce905ea66883a557013c4069068">TRAP_LOGGER_s::status</a></div><div class="ttdeci">volatile struct TRAPLOG_STATUS_s status</div><div class="ttdoc">Status word of the Trap Logger object.</div><div class="ttdef"><b>Definition:</b> <a href="a00179_source.html#l00267">drv_trap_handler.h:282</a></div></div>
-<div class="ttc" id="aa01466_html_a9216196898128a7f976617aabd34ba77"><div class="ttname"><a href="a01466.html#a9216196898128a7f976617aabd34ba77">TRAP_LOGGER_s::trap_count</a></div><div class="ttdeci">volatile uint16_t trap_count</div><div class="ttdoc">Counter tracking the number of occurrences.</div><div class="ttdef"><b>Definition:</b> <a href="a00179_source.html#l00285">drv_trap_handler.h:285</a></div></div>
-<div class="ttc" id="aa00428_html_ga952a98e41cf813dc50567ad60b3e860c"><div class="ttname"><a href="a00428.html#ga952a98e41cf813dc50567ad60b3e860c">traplog</a></div><div class="ttdeci">volatile struct TRAP_LOGGER_s traplog</div><div class="ttdoc">data structure used as buffer for trap monitoring</div><div class="ttdef"><b>Definition:</b> <a href="a00176_source.html#l00001">drv_trap_handler.c:72</a></div></div>
-<div class="ttc" id="aa01466_html_a95744ea4cf032674585b4e25a114c31a"><div class="ttname"><a href="a01466.html#a95744ea4cf032674585b4e25a114c31a">TRAP_LOGGER_s::reset_count</a></div><div class="ttdeci">volatile uint16_t reset_count</div><div class="ttdoc">Counter of CPU RESET events (read/write)</div><div class="ttdef"><b>Definition:</b> <a href="a00179_source.html#l00283">drv_trap_handler.h:283</a></div></div>
+<div class="ttc" id="aa00430_html_ga0250f20caa12da59ca4f42c807cff152"><div class="ttname"><a href="a00430.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a></div><div class="ttdeci">void DefaultTrapHandler(enum TRAP_ID_e trap_id)</div><div class="ttdoc">Centralized trap handler routine.</div><div class="ttdef"><b>Definition:</b> <a href="a00176_source.html#l00116">drv_trap_handler.c:116</a></div></div>
+<div class="ttc" id="aa01456_html_a121370958c3700325011062cf1ac9895"><div class="ttname"><a href="a01456.html#a121370958c3700325011062cf1ac9895">TRAPLOG_STATUS_s::cpu_reset_trigger</a></div><div class="ttdeci">volatile bool cpu_reset_trigger</div><div class="ttdef"><b>Definition:</b> <a href="a00179_source.html#l00231">drv_trap_handler.h:231</a></div></div>
+<div class="ttc" id="aa01472_html"><div class="ttname"><a href="a01472.html">TRAP_LOGGER_s</a></div><div class="ttdoc">Global data structure for trap event capturing.</div><div class="ttdef"><b>Definition:</b> <a href="a00179_source.html#l00280">drv_trap_handler.h:281</a></div></div>
+<div class="ttc" id="aa00435_html_gaee63654a5e14dd3b2bab6179a5cbe2ab"><div class="ttname"><a href="a00435.html#gaee63654a5e14dd3b2bab6179a5cbe2ab">TRAP_ID_e</a></div><div class="ttdeci">TRAP_ID_e</div><div class="ttdoc">defining trap-ID for primary and secondary vectors</div><div class="ttdef"><b>Definition:</b> <a href="a00179_source.html#l00099">drv_trap_handler.h:100</a></div></div>
+<div class="ttc" id="aa00430_html_ga3b96ecc924931497bada0ea1957f0634"><div class="ttname"><a href="a00430.html#ga3b96ecc924931497bada0ea1957f0634">drv_TrapHandler_SoftTrapsInitialize</a></div><div class="ttdeci">volatile uint16_t drv_TrapHandler_SoftTrapsInitialize(bool accumulator_a_overflow_trap_enable, bool accumulator_b_overflow_trap_enable, bool accumulator_catastrophic_overflow_trap_enable)</div><div class="ttdoc">Configures the software-configurable traps.</div><div class="ttdef"><b>Definition:</b> <a href="a00176_source.html#l00090">drv_trap_handler.c:90</a></div></div>
+<div class="ttc" id="aa01472_html_a67fe8ce905ea66883a557013c4069068"><div class="ttname"><a href="a01472.html#a67fe8ce905ea66883a557013c4069068">TRAP_LOGGER_s::status</a></div><div class="ttdeci">volatile struct TRAPLOG_STATUS_s status</div><div class="ttdoc">Status word of the Trap Logger object.</div><div class="ttdef"><b>Definition:</b> <a href="a00179_source.html#l00267">drv_trap_handler.h:282</a></div></div>
+<div class="ttc" id="aa01472_html_a6e7be26899e4fa61a356b5e7eeec83d1"><div class="ttname"><a href="a01472.html#a6e7be26899e4fa61a356b5e7eeec83d1">TRAP_LOGGER_s::trap_id</a></div><div class="ttdeci">enum TRAP_ID_e trap_id</div><div class="ttdoc">Trap-ID of the captured incident.</div><div class="ttdef"><b>Definition:</b> <a href="a00179_source.html#l00283">drv_trap_handler.h:284</a></div></div>
+<div class="ttc" id="aa01472_html_a9216196898128a7f976617aabd34ba77"><div class="ttname"><a href="a01472.html#a9216196898128a7f976617aabd34ba77">TRAP_LOGGER_s::trap_count</a></div><div class="ttdeci">volatile uint16_t trap_count</div><div class="ttdoc">Counter tracking the number of occurrences.</div><div class="ttdef"><b>Definition:</b> <a href="a00179_source.html#l00285">drv_trap_handler.h:285</a></div></div>
+<div class="ttc" id="aa01472_html_a95744ea4cf032674585b4e25a114c31a"><div class="ttname"><a href="a01472.html#a95744ea4cf032674585b4e25a114c31a">TRAP_LOGGER_s::reset_count</a></div><div class="ttdeci">volatile uint16_t reset_count</div><div class="ttdoc">Counter of CPU RESET events (read/write)</div><div class="ttdef"><b>Definition:</b> <a href="a00179_source.html#l00283">drv_trap_handler.h:283</a></div></div>
+<div class="ttc" id="aa00434_html_ga952a98e41cf813dc50567ad60b3e860c"><div class="ttname"><a href="a00434.html#ga952a98e41cf813dc50567ad60b3e860c">traplog</a></div><div class="ttdeci">volatile struct TRAP_LOGGER_s traplog</div><div class="ttdoc">data structure used as buffer for trap monitoring</div><div class="ttdef"><b>Definition:</b> <a href="a00176_source.html#l00001">drv_trap_handler.c:72</a></div></div>
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_01066bb7b1e33c391de0f39ab7f37964.html">dpsk_buck_vmc.X</a></li><li class="navelem"><a class="el" href="dir_4775101750c4dd55cff8a4809201f12a.html">sources</a></li><li class="navelem"><a class="el" href="dir_9f688730c5967487b4ec5ed0e2c6a4b3.html">fault_handler</a></li><li class="navelem"><a class="el" href="dir_6a289a573eb1526f47bc25c4a2feba42.html">drivers</a></li><li class="navelem"><b>drv_trap_handler.c</b></li>
+    <li class="navelem"><a class="el" href="dir_4ee7c398c7a1a06f47d8fbc48027983f.html">dpsk_buck_agc.X</a></li><li class="navelem"><a class="el" href="dir_07fd0e222032ef0bb4c4c4bd39064c1a.html">sources</a></li><li class="navelem"><a class="el" href="dir_d7eae1e7380fb9f0eb77c3c858399a8c.html">fault_handler</a></li><li class="navelem"><a class="el" href="dir_1d6c74fa1dc3892874f6651f7a8c0c02.html">drivers</a></li><li class="navelem"><b>drv_trap_handler.c</b></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">Â© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

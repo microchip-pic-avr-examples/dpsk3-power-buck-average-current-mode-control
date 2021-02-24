@@ -1,6 +1,7 @@
 var a00368 =
 [
-    [ "dacConfigClear", "a00368.html#gab89a67798717a61affd24c0a5ca9a71f", null ],
-    [ "dacModuleConfigClear", "a00368.html#ga533a5e749ab3eb533348dcc12c328e89", null ],
-    [ "dacModuleDefault", "a00368.html#ga2c035262266900ab045b40d8f9d007b9", null ]
+    [ "p33c_GpioInstance_ConfigRead", "a00368.html#ga57ba471912470e16a01d27589e011147", null ],
+    [ "p33c_GpioInstance_ConfigWrite", "a00368.html#gadf3bba95ba8b4f2c34af8678ea5e7ff0", null ],
+    [ "p33c_GpioInstance_Dispose", "a00368.html#gaa1640e884e367bc54c91864dc3a3d7ed", null ],
+    [ "p33c_GpioInstance_GetHandle", "a00368.html#ga4d67af688d8f7f911d79107974e11e6b", null ]
 ];

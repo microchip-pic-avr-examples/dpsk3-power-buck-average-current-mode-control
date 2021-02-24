@@ -1,4 +1,6 @@
 var a00380 =
 [
-    [ "MAIN_EXECUTION_PERIOD", "a00380.html#gac8489c3fb9bb5db0d15a2e870c3e5def", null ]
+    [ "pgConfigClear", "a00380.html#ga75ca6374eb31a3224a8e7bcfd4cd56a0", null ],
+    [ "pwmConfigClear", "a00380.html#gafeca0163f581790a35cef7b99a276adc", null ],
+    [ "pwmConfigDefault", "a00380.html#gaf8f0ea73e96ecddb846d1361098c09fe", null ]
 ];

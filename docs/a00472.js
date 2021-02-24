@@ -1,5 +1,4 @@
 var a00472 =
 [
-    [ "Functions", "a00473.html", "a00473" ],
-    [ "Properties", "a00474.html", "a00474" ]
+    [ "BUCK_MPHASE_COUNT", "a00472.html#ga74df4d33c3d762495bc67b88bb6aa524", null ]
 ];

@@ -1,17 +1,13 @@
 var a00390 =
 [
-    [ "BOOST_DEAD_TIME_FALLING_EDGE", "a00390.html#gacc7415a2a9fd14abe19588dac5804b22", null ],
-    [ "BOOST_DEAD_TIME_LEADING_EDGE", "a00390.html#ga30bc95c5be03be162bd08c04706e34b2", null ],
-    [ "BOOST_LEADING_EDGE_BLANKING", "a00390.html#gadef417fa6e9b29f43fc1b26321f07750", null ],
-    [ "BOOST_NO_OF_PHASES", "a00390.html#ga5208c54df1cdb14e00e62eb7957820f6", null ],
-    [ "BOOST_PWM_DUTY_CYCLE_MAX", "a00390.html#gafe2eededed4304c44e47642b9093beda", null ],
-    [ "BOOST_PWM_DUTY_CYCLE_MIN", "a00390.html#gaf4b6b5baf07ba17e75f66ec5305c68fb", null ],
-    [ "BOOST_SWITCHING_FREQUENCY", "a00390.html#ga190c68d192a604d70087146623fedd1d", null ],
-    [ "BUCK_DEAD_TIME_FALLING_EDGE", "a00390.html#gafe895b572c7fdeced04221d53c18695d", null ],
-    [ "BUCK_DEAD_TIME_LEADING_EDGE", "a00390.html#gaee8430cb24cfc1cdd3b12dd3c40b09d5", null ],
-    [ "BUCK_LEADING_EDGE_BLANKING", "a00390.html#ga53e830102be3559594f1f107c42e3cb2", null ],
-    [ "BUCK_NO_OF_PHASES", "a00390.html#ga353ba60329e90d1aca97deba7e0bd669", null ],
-    [ "BUCK_PWM_DUTY_CYCLE_MAX", "a00390.html#ga355fe35bc08bc0f4657be7f638a643a6", null ],
-    [ "BUCK_PWM_DUTY_CYCLE_MIN", "a00390.html#gabcc43f4201492160173351db97ddcfda", null ],
-    [ "BUCK_SWITCHING_FREQUENCY", "a00390.html#gadecc3fb9cc6da0d2add11d577d50d5b5", null ]
+    [ "BOOST_CHARGEUP_PERIOD", "a00390.html#ga54fa6c219dce9de5f816617ce4716b35", null ],
+    [ "BOOST_CHARGEUP_TIMEOUT", "a00390.html#gae3597efdac20bf9aee16420f6f6d8be4", null ],
+    [ "BOOST_IRAMP_PERIOD", "a00390.html#ga37bef3bc61987dfa7912227dcd2e8475", null ],
+    [ "BOOST_POWER_GOOD_DELAY", "a00390.html#ga8a44fb1bbfee2714f51174f5ec741c01", null ],
+    [ "BOOST_POWER_ON_DELAY", "a00390.html#ga0c3f62393119606cf410bc110c3485c1", null ],
+    [ "BOOST_VRAMP_PERIOD", "a00390.html#ga96ef5acd0b4aa670827cb7b418fee8a9", null ],
+    [ "BUCK_IRAMP_PERIOD", "a00390.html#ga97ee7cbed4a1ed9ebae5c8576d292103", null ],
+    [ "BUCK_POWER_GOOD_DELAY", "a00390.html#ga4cf9c52e0a9c20641018ebdd2679f3c1", null ],
+    [ "BUCK_POWER_ON_DELAY", "a00390.html#ga4308ebf74c3332bd1edfdb6952629eaa", null ],
+    [ "BUCK_VRAMP_PERIOD", "a00390.html#ga5adf9fb727870e57bf02ead3ac7c63ac", null ]
 ];

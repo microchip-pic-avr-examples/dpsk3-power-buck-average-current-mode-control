@@ -1,5 +1,4 @@
 var a00528 =
 [
-    [ "Operating System Time Base", "a00529.html", "a00529" ],
-    [ "User Task Initialization", "a00530.html", "a00530" ]
+    [ "sysGpio_Initialize", "a00528.html#ga79cb6e309797560a9a262a562fe40fee", null ]
 ];

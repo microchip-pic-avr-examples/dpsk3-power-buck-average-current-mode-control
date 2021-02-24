@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Public Functions</title>
+<title>Digital Power Starter Kit 3 Firmware: Digital Signal Processor Converter Module (DSP)</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
   <td id="projectalign" style="padding-left: 0.0em;">
    <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
-   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Adaptive Gain Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -97,142 +97,34 @@ $(document).ready(function(){initNavTree('a00359.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#groups">Modules</a>  </div>
   <div class="headertitle">
-<div class="title">Public Functions<div class="ingroups"><a class="el" href="a00533.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00350.html">Peripheral Register Abstraction Layer (PRAL) Library</a> &raquo; <a class="el" href="a00351.html">Capture Compare Module (SCCP/MCCP)</a></div></div>  </div>
+<div class="title">Digital Signal Processor Converter Module (DSP)<div class="ingroups"><a class="el" href="a00539.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00356.html">Peripheral Register Abstraction Layer (PRAL) Library</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Public functions of the SCCP/MCCP PRAL driver.  
+<p>Digital Signal Processor Special Function Register Abstraction Driver.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Public Functions:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Digital Signal Processor Converter Module (DSP):</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00359.svg" width="347" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00359.svg" width="528" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga2b27b6ad1318677db2816e0a2020481a"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a00538.html">P33C_CCP_INSTANCE_SFRSET_s</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00359.html#ga2b27b6ad1318677db2816e0a2020481a">p33c_CcpInstance_GetHandle</a> (volatile uint16_t ccpInstance)</td></tr>
-<tr class="memdesc:ga2b27b6ad1318677db2816e0a2020481a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets pointer to CCP instance SFR set.  <a href="a00359.html#ga2b27b6ad1318677db2816e0a2020481a">More...</a><br /></td></tr>
-<tr class="separator:ga2b27b6ad1318677db2816e0a2020481a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad6952d3b506333e2642341c309ee7cdc"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a00538.html">P33C_CCP_INSTANCE_SFRSET_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00359.html#gad6952d3b506333e2642341c309ee7cdc">p33c_CcpInstance_ConfigRead</a> (volatile uint16_t ccpInstance)</td></tr>
-<tr class="memdesc:gad6952d3b506333e2642341c309ee7cdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the current configuration from the CCP instance registers.  <a href="a00359.html#gad6952d3b506333e2642341c309ee7cdc">More...</a><br /></td></tr>
-<tr class="separator:gad6952d3b506333e2642341c309ee7cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadf02a542682e9ac5d9038529261b9ef0"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00359.html#gadf02a542682e9ac5d9038529261b9ef0">p33c_CcpInstance_ConfigWrite</a> (volatile uint16_t ccpInstance, volatile struct <a class="el" href="a00538.html">P33C_CCP_INSTANCE_SFRSET_s</a> ccpConfig)</td></tr>
-<tr class="memdesc:gadf02a542682e9ac5d9038529261b9ef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a user-defined configuration to the CCP instance registers.  <a href="a00359.html#gadf02a542682e9ac5d9038529261b9ef0">More...</a><br /></td></tr>
-<tr class="separator:gadf02a542682e9ac5d9038529261b9ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
+Modules</h2></td></tr>
+<tr class="memitem:a00367"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00367.html">Public Functions</a></td></tr>
+<tr class="memdesc:a00367"><td class="mdescLeft">&#160;</td><td class="mdescRight">Public functions of the DSP PRAL driver. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00375"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00375.html">Private Properties</a></td></tr>
+<tr class="memdesc:a00375"><td class="mdescLeft">&#160;</td><td class="mdescRight">Private properties of the DSP PRAL driver. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Public functions of the SCCP/MCCP PRAL driver. </p>
-<p>This is the detailed description of public functions of the SCCP/MCCP PRAL driver </p>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="gad6952d3b506333e2642341c309ee7cdc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad6952d3b506333e2642341c309ee7cdc">&#9670;&nbsp;</a></span>p33c_CcpInstance_ConfigRead()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="a00538.html">P33C_CCP_INSTANCE_SFRSET_s</a> p33c_CcpInstance_ConfigRead </td>
-          <td>(</td>
-          <td class="paramtype">volatile uint16_t&#160;</td>
-          <td class="paramname"><em>ccpInstance</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Read the current configuration from the CCP instance registers. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">uint16_t</td><td>ccpInstance </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>struct <a class="el" href="a00538.html">P33C_CCP_INSTANCE_SFRSET_s</a>: SCCP/MCCP instance special function register set object</dd></dl>
-<p>This function reads all registers with their current configuration into a data structure of type P33C_CCP_MODULE_SFRSET_s. Users can read and verify of modify the configuration to write it back to any other CCP peripheral instance. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00035_source.html#l00060">60</a> of file <a class="el" href="a00035_source.html">p33c_ccp.c</a>.</p>
-
-</div>
-</div>
-<a id="gadf02a542682e9ac5d9038529261b9ef0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadf02a542682e9ac5d9038529261b9ef0">&#9670;&nbsp;</a></span>p33c_CcpInstance_ConfigWrite()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t p33c_CcpInstance_ConfigWrite </td>
-          <td>(</td>
-          <td class="paramtype">volatile uint16_t&#160;</td>
-          <td class="paramname"><em>ccpInstance</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">volatile struct <a class="el" href="a00538.html">P33C_CCP_INSTANCE_SFRSET_s</a>&#160;</td>
-          <td class="paramname"><em>ccpConfig</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Writes a user-defined configuration to the CCP instance registers. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">uint16_t</td><td>ccpInstance </td></tr>
-    <tr><td class="paramname">struct</td><td><a class="el" href="a00538.html">P33C_CCP_INSTANCE_SFRSET_s</a> ccpConfig </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>0 = failure, writing to CCP instance was not successful </dd>
-<dd>
-1 = success, writing to CCP instance was successful</dd></dl>
-<p>This function writes a user-defined CCP instance configuration of type P33C_CCP_MODULE_SFRSET_s to the CCP instance registers. The individual register configurations have to be set in user-code before calling this function. To simplify the configuration process of standard functions, this driver provides templates, which can be loaded and written directly </p>
-
-<p class="definition">Definition at line <a class="el" href="a00035_source.html#l00116">116</a> of file <a class="el" href="a00035_source.html">p33c_ccp.c</a>.</p>
-
-</div>
-</div>
-<a id="ga2b27b6ad1318677db2816e0a2020481a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2b27b6ad1318677db2816e0a2020481a">&#9670;&nbsp;</a></span>p33c_CcpInstance_GetHandle()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="a00538.html">P33C_CCP_INSTANCE_SFRSET_s</a> * p33c_CcpInstance_GetHandle </td>
-          <td>(</td>
-          <td class="paramtype">volatile uint16_t&#160;</td>
-          <td class="paramname"><em>ccpInstance</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets pointer to CCP instance SFR set. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">uint16_t</td><td>ccpInstance </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>struct P33C_CCP_INSTANCE_SFRSET_s*: Pointer to CCP instance special function register set object</dd></dl>
-<p>This function returns the pointer to a CCP module register set Special Function Register memory space. This pointer can be used to directly write to/read from the Special Function Registers of the CCP peripheral module configuration. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00035_source.html#l00060">60</a> of file <a class="el" href="a00035_source.html">p33c_ccp.c</a>.</p>
-
-</div>
-</div>
+<p>Digital Signal Processor Special Function Register Abstraction Driver. </p>
+<p>Peripheral Module Special Function Register Abstraction Driver for the Digital Signal Processor (DSP) of dsPIC33CK and dsPIC33CH families of devices. </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

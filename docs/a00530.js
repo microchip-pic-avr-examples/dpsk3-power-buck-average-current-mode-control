@@ -1,4 +1,6 @@
 var a00530 =
 [
-    [ "sysUserTasks_Initialize", "a00530.html#ga2be64f5f0b9a2c0c6713f5a69d793e05", null ]
+    [ "User Peripheral Initialization", "a00531.html", "a00531" ],
+    [ "Digital-to-Analog Converter", "a00532.html", "a00532" ],
+    [ "Operational Amplifier Configuration", "a00533.html", "a00533" ]
 ];

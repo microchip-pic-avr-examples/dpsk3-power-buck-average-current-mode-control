@@ -1,4 +1,4 @@
-<map id="User Settings" name="User Settings">
-<area shape="rect" id="node1" title="Parameter defintions using physical quantities." alt="" coords="203,13,304,38"/>
-<area shape="rect" id="node2" href="$a00376.html" title="Declarations of fundamental microcontroller device parameters." alt="" coords="5,5,155,45"/>
+<map id="Private Properties" name="Private Properties">
+<area shape="rect" id="node1" title="Private properties of the AMP PRAL driver." alt="" coords="196,13,320,38"/>
+<area shape="rect" id="node2" href="$a00361.html" title="Operational Amplifier Peripheral Module Special Function Register Abstraction Driver." alt="" coords="5,5,148,45"/>
 </map>

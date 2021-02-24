@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Public Functions</title>
+<title>Digital Power Starter Kit 3 Firmware: Oscillator Module (OSC)</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
   <td id="projectalign" style="padding-left: 0.0em;">
    <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
-   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Adaptive Gain Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -97,213 +97,34 @@ $(document).ready(function(){initNavTree('a00362.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#groups">Modules</a>  </div>
   <div class="headertitle">
-<div class="title">Public Functions<div class="ingroups"><a class="el" href="a00533.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00350.html">Peripheral Register Abstraction Layer (PRAL) Library</a> &raquo; <a class="el" href="a00354.html">General Purpose Input/Output (GPIO)</a></div></div>  </div>
+<div class="title">Oscillator Module (OSC)<div class="ingroups"><a class="el" href="a00539.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00356.html">Peripheral Register Abstraction Layer (PRAL) Library</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Public functions of the GPIO PRAL driver.  
+<p>Oscillator Module Special Function Register Abstraction Driver.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Public Functions:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Oscillator Module (OSC):</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00362.svg" width="328" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00362.svg" width="526" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga4d67af688d8f7f911d79107974e11e6b"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a00818.html">P33C_GPIO_INSTANCE_s</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00362.html#ga4d67af688d8f7f911d79107974e11e6b">p33c_GpioInstance_GetHandle</a> (volatile uint16_t gpioInstance)</td></tr>
-<tr class="memdesc:ga4d67af688d8f7f911d79107974e11e6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets pointer to GPIO Instance SFR set.  <a href="a00362.html#ga4d67af688d8f7f911d79107974e11e6b">More...</a><br /></td></tr>
-<tr class="separator:ga4d67af688d8f7f911d79107974e11e6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa1640e884e367bc54c91864dc3a3d7ed"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00362.html#gaa1640e884e367bc54c91864dc3a3d7ed">p33c_GpioInstance_Dispose</a> (volatile uint16_t gpioInstance)</td></tr>
-<tr class="memdesc:gaa1640e884e367bc54c91864dc3a3d7ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets all GPIO Instance registers to their RESET default values.  <a href="a00362.html#gaa1640e884e367bc54c91864dc3a3d7ed">More...</a><br /></td></tr>
-<tr class="separator:gaa1640e884e367bc54c91864dc3a3d7ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga57ba471912470e16a01d27589e011147"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a00818.html">P33C_GPIO_INSTANCE_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00362.html#ga57ba471912470e16a01d27589e011147">p33c_GpioInstance_ConfigRead</a> (volatile uint16_t gpioInstance)</td></tr>
-<tr class="memdesc:ga57ba471912470e16a01d27589e011147"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the current configuration from the GPIO instance registers <br  />
-  <a href="a00362.html#ga57ba471912470e16a01d27589e011147">More...</a><br /></td></tr>
-<tr class="separator:ga57ba471912470e16a01d27589e011147"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadf3bba95ba8b4f2c34af8678ea5e7ff0"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00362.html#gadf3bba95ba8b4f2c34af8678ea5e7ff0">p33c_GpioInstance_ConfigWrite</a> (volatile uint16_t gpioInstance, volatile struct <a class="el" href="a00818.html">P33C_GPIO_INSTANCE_s</a> gpioConfig)</td></tr>
-<tr class="memdesc:gadf3bba95ba8b4f2c34af8678ea5e7ff0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a user-defined configuration to the GPIO instance registers.  <a href="a00362.html#gadf3bba95ba8b4f2c34af8678ea5e7ff0">More...</a><br /></td></tr>
-<tr class="separator:gadf3bba95ba8b4f2c34af8678ea5e7ff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
+Modules</h2></td></tr>
+<tr class="memitem:a00370"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00370.html">Public Functions</a></td></tr>
+<tr class="memdesc:a00370"><td class="mdescLeft">&#160;</td><td class="mdescRight">Public functions of the OSC PRAL driver. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00378"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00378.html">Private Properties</a></td></tr>
+<tr class="memdesc:a00378"><td class="mdescLeft">&#160;</td><td class="mdescRight">Private properties of the OSC PRAL driver. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Public functions of the GPIO PRAL driver. </p>
-<p>This is the detailed description of public functions of the GPIO PRAL driver </p>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="ga57ba471912470e16a01d27589e011147"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga57ba471912470e16a01d27589e011147">&#9670;&nbsp;</a></span>p33c_GpioInstance_ConfigRead()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="a00818.html">P33C_GPIO_INSTANCE_s</a> p33c_GpioInstance_ConfigRead </td>
-          <td>(</td>
-          <td class="paramtype">volatile uint16_t&#160;</td>
-          <td class="paramname"><em>gpioInstance</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Read the current configuration from the GPIO instance registers <br  />
- </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">uint16_t</td><td>gpioInstance </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>0 = failure, reading GPIO instance was not successful (returns NULL) </dd>
-<dd>
-n = success, reading GPIO instance was successful (returns 16-bit wide pointer)</dd></dl>
-<p>This function reads all registers with their current configuration into a data structure of type <a class="el" href="a00818.html">P33C_GPIO_INSTANCE_s</a>. Users can read and verify or modify the configuration to write it back to the GPIO instance <br  />
- registers or copy configurations to other instances of the same type. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00053_source.html#l00077">77</a> of file <a class="el" href="a00053_source.html">p33c_gpio.c</a>.</p>
-
-</div>
-</div>
-<a id="gadf3bba95ba8b4f2c34af8678ea5e7ff0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadf3bba95ba8b4f2c34af8678ea5e7ff0">&#9670;&nbsp;</a></span>p33c_GpioInstance_ConfigWrite()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t p33c_GpioInstance_ConfigWrite </td>
-          <td>(</td>
-          <td class="paramtype">volatile uint16_t&#160;</td>
-          <td class="paramname"><em>gpioInstance</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">volatile struct <a class="el" href="a00818.html">P33C_GPIO_INSTANCE_s</a>&#160;</td>
-          <td class="paramname"><em>gpioConfig</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Writes a user-defined configuration to the GPIO instance registers. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">uint16_t</td><td>gpioInstance </td></tr>
-    <tr><td class="paramname">struct</td><td><a class="el" href="a00818.html">P33C_GPIO_INSTANCE_s</a> gpioConfig </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>0 = failure, writing GPIO instance was not successful </dd>
-<dd>
-1 = success, writing GPIO instance was successful</dd></dl>
-<p>This function writes a user-defined GPIO instance configuration of type <a class="el" href="a00818.html">P33C_GPIO_INSTANCE_s</a> to the GPIO instance registers. The individual register configurations have to be set in user-code before calling this function. To simplify the configuration process of standard functions, this driver provides templates, which can be loaded and written directly. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00053_source.html#l00133">133</a> of file <a class="el" href="a00053_source.html">p33c_gpio.c</a>.</p>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00362_gadf3bba95ba8b4f2c34af8678ea5e7ff0_icgraph.svg" width="422" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="gaa1640e884e367bc54c91864dc3a3d7ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa1640e884e367bc54c91864dc3a3d7ed">&#9670;&nbsp;</a></span>p33c_GpioInstance_Dispose()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t p33c_GpioInstance_Dispose </td>
-          <td>(</td>
-          <td class="paramtype">volatile uint16_t&#160;</td>
-          <td class="paramname"><em>gpioInstance</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Resets all GPIO Instance registers to their RESET default values. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">uint16_t</td><td>gpioInstance </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>0 = failure, disposing GPIO instance was not successful </dd>
-<dd>
-1 = success, disposing GPIO instance was successful</dd></dl>
-<p>This function clears all GPIO Instance registers to their default values set when the device comes out of RESET.</p>
-<p>Default configuration:</p><ul>
-<li>all outputs are set to logic functions</li>
-<li>all analog functions are disabled</li>
-<li>all pull-up and pull-down resistors are disabled</li>
-<li>all GPIOs are operating in push-pull mode (open drain disabled)</li>
-<li>all GPIOs are configured as input with their signal level HIGH </li>
-</ul>
-
-<p class="definition">Definition at line <a class="el" href="a00053_source.html#l00077">77</a> of file <a class="el" href="a00053_source.html">p33c_gpio.c</a>.</p>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00362_gaa1640e884e367bc54c91864dc3a3d7ed_cgraph.svg" width="422" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="ga4d67af688d8f7f911d79107974e11e6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4d67af688d8f7f911d79107974e11e6b">&#9670;&nbsp;</a></span>p33c_GpioInstance_GetHandle()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="a00818.html">P33C_GPIO_INSTANCE_s</a> * p33c_GpioInstance_GetHandle </td>
-          <td>(</td>
-          <td class="paramtype">volatile uint16_t&#160;</td>
-          <td class="paramname"><em>gpioInstance</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets pointer to GPIO Instance SFR set. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">uint16_t</td><td>gpioInstance: Index of the selected GPIO Instance (1=Port A, 2=Port B, etc.) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>struct <a class="el" href="a00818.html">P33C_GPIO_INSTANCE_s</a>: GPIO instance object of the selected GPIO instance</dd></dl>
-<p>This function returns the pointer to a GPIO instance register set in Special Function Register memory space. This pointer can be used to directly write to/read from the Special Function Registers of a given peripheral instance. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00053_source.html#l00045">45</a> of file <a class="el" href="a00053_source.html">p33c_gpio.c</a>.</p>
-<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00362_ga4d67af688d8f7f911d79107974e11e6b_icgraph.svg" width="100%" height="578"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
-
-</div>
-</div>
+<p>Oscillator Module Special Function Register Abstraction Driver. </p>
+<p>Peripheral Module Special Function Register Abstraction Driver for the Oscillator and PLL/APLL module of dsPIC33CK and dsPIC33CH families of devices. </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

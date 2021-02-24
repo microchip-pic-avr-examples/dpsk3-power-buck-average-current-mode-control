@@ -1,4 +1,6 @@
 var a00457 =
 [
-    [ "_BUCK_VLOOP_Interrupt", "a00412.html#ga4d26e0585523e4ab162ca9868517b878", null ]
+    [ "DEBUGGING_LED_s", "a01480.html", [
+      [ "period", "a01480.html#a48f363c7bcd47589472b59f0a7dfb74b", null ]
+    ] ]
 ];

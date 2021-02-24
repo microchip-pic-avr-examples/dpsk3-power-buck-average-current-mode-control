@@ -1,4 +1,7 @@
-<map id="Main Oscillator Initialization" name="Main Oscillator Initialization">
-<area shape="rect" id="node1" href="$a00519.html" title=" " alt="" coords="5,5,143,45"/>
-<area shape="rect" id="node2" title=" " alt="" coords="191,13,372,38"/>
+<map id="Device Start Up" name="Device Start Up">
+<area shape="rect" id="node1" href="$a00525.html" title=" " alt="" coords="378,5,515,45"/>
+<area shape="rect" id="node2" href="$a00534.html" title=" " alt="" coords="379,69,515,109"/>
+<area shape="rect" id="node3" href="$a00530.html" title=" " alt="" coords="363,133,531,173"/>
+<area shape="rect" id="node4" href="$a00520.html" title="Firmware Flowchart." alt="" coords="5,77,155,102"/>
+<area shape="rect" id="node5" title="Device Start Up." alt="" coords="203,77,315,102"/>
 </map>

@@ -1,8 +1,6 @@
 var a00533 =
 [
-    [ "Peripheral Register Abstraction Layer (PRAL) Library", "a00350.html", "a00350" ],
-    [ "Fault Handler Library", "a00423.html", "a00423" ],
-    [ "LC-Display Library", "a00439.html", "a00439" ],
-    [ "Buck Converter Library", "a00460.html", "a00460" ],
-    [ "Push-Button Library", "a00509.html", "a00509" ]
+    [ "sysOpAmp_Initialize", "a00533.html#gaf4c74cf390185b49d99838e0f9885076", null ],
+    [ "sysOpAmp_ModuleEnable", "a00533.html#ga3cd080c9a48a5d74d8b2f89fdec161da", null ],
+    [ "sysOpAmp_ModuleReset", "a00533.html#ga4dbd2367ecd449226460b0b0a52cbe8b", null ]
 ];

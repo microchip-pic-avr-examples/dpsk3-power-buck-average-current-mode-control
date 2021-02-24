@@ -1,6 +1,6 @@
 var a00374 =
 [
-    [ "pgConfigClear", "a00374.html#ga75ca6374eb31a3224a8e7bcfd4cd56a0", null ],
-    [ "pwmConfigClear", "a00374.html#gafeca0163f581790a35cef7b99a276adc", null ],
-    [ "pwmConfigDefault", "a00374.html#gaf8f0ea73e96ecddb846d1361098c09fe", null ]
+    [ "dacConfigClear", "a00374.html#gab89a67798717a61affd24c0a5ca9a71f", null ],
+    [ "dacModuleConfigClear", "a00374.html#ga533a5e749ab3eb533348dcc12c328e89", null ],
+    [ "dacModuleDefault", "a00374.html#ga2c035262266900ab045b40d8f9d007b9", null ]
 ];

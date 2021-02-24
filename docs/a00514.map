@@ -1,5 +1,4 @@
-<map id="Firmware Architecture" name="Firmware Architecture">
-<area shape="rect" id="node1" href="$a00516.html" title="Main Loop." alt="" coords="217,5,300,31"/>
-<area shape="rect" id="node2" title="Firmware Flowchart." alt="" coords="5,31,155,56"/>
-<area shape="rect" id="node3" href="$a00515.html" title="Device Start Up." alt="" coords="203,55,315,80"/>
+<map id="Private Properties" name="Private Properties">
+<area shape="rect" id="node1" title="Public properties of the application layer of the push button task." alt="" coords="216,13,340,38"/>
+<area shape="rect" id="node2" href="$a00510.html" title=" " alt="" coords="5,5,168,45"/>
 </map>

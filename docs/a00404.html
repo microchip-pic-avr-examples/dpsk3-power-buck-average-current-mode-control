@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: User Settings</title>
+<title>Digital Power Starter Kit 3 Firmware: Microcontroller Abstraction</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
   <td id="projectalign" style="padding-left: 0.0em;">
    <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
-   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Adaptive Gain Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -97,513 +97,359 @@ $(document).ready(function(){initNavTree('a00404.html',''); initResizable(); });
 
 <div class="header">
   <div class="headertitle">
-<div class="title">User Settings<div class="ingroups"><a class="el" href="a00531.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00403.html">Phase Current Feedback</a></div></div>  </div>
+<div class="title">Microcontroller Abstraction<div class="ingroups"><a class="el" href="a00537.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00401.html">Input Voltage Feedback</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>User-declaration of phase current feedback parameters using physical quantities.  
+<p>Device analog input pin, register and interrupt vector assignments of input voltage feedback signal(s)  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for User Settings:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Microcontroller Abstraction:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00404.svg" width="327" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00404.svg" width="395" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
-<tr class="memitem:gaebd1efb9b8040ce1a5d307643b3ed74c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gaebd1efb9b8040ce1a5d307643b3ed74c">BUCK_ISNS_CT</a>&#160;&#160;&#160;0</td></tr>
-<tr class="memdesc:gaebd1efb9b8040ce1a5d307643b3ed74c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration of phase-current feedback properties.  <a href="a00404.html#gaebd1efb9b8040ce1a5d307643b3ed74c">More...</a><br /></td></tr>
-<tr class="separator:gaebd1efb9b8040ce1a5d307643b3ed74c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga914b0eae437fd760f8be0565e9fde7f5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga914b0eae437fd760f8be0565e9fde7f5">BUCK_ISNS_AMP</a>&#160;&#160;&#160;1</td></tr>
-<tr class="memdesc:ga914b0eae437fd760f8be0565e9fde7f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use shunt amplifier as main current feedback source.  <a href="a00404.html#ga914b0eae437fd760f8be0565e9fde7f5">More...</a><br /></td></tr>
-<tr class="separator:ga914b0eae437fd760f8be0565e9fde7f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga21b901808560eec9786d990892642472"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga21b901808560eec9786d990892642472">BUCK_ISNS_OPTION</a>&#160;&#160;&#160;<a class="el" href="a00404.html#gaebd1efb9b8040ce1a5d307643b3ed74c">BUCK_ISNS_CT</a></td></tr>
-<tr class="memdesc:ga21b901808560eec9786d990892642472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select one of the available current sense feedback options.  <a href="a00404.html#ga21b901808560eec9786d990892642472">More...</a><br /></td></tr>
-<tr class="separator:ga21b901808560eec9786d990892642472"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4b80ef68401d82252de9b596cc7a9300"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga4b80ef68401d82252de9b596cc7a9300">BUCK_ISNS_FEEDBACK_GAIN</a>&#160;&#160;&#160;(float) 1.000</td></tr>
-<tr class="memdesc:ga4b80ef68401d82252de9b596cc7a9300"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current Gain in V/A.  <a href="a00404.html#ga4b80ef68401d82252de9b596cc7a9300">More...</a><br /></td></tr>
-<tr class="separator:ga4b80ef68401d82252de9b596cc7a9300"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7eaf7c6b620fda0f1ec13a647c5d7ba2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga7eaf7c6b620fda0f1ec13a647c5d7ba2">BUCK_ISNS_MINIMUM</a>&#160;&#160;&#160;(float) 0.000</td></tr>
-<tr class="memdesc:ga7eaf7c6b620fda0f1ec13a647c5d7ba2"><td class="mdescLeft">&#160;</td><td class="mdescRight">absolute total minimum output current (average)  <a href="a00404.html#ga7eaf7c6b620fda0f1ec13a647c5d7ba2">More...</a><br /></td></tr>
-<tr class="separator:ga7eaf7c6b620fda0f1ec13a647c5d7ba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga254083e30868dac3af9cb6279f2554a7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga254083e30868dac3af9cb6279f2554a7">BUCK_ISNS_MAXIMUM</a>&#160;&#160;&#160;(float) 2.500</td></tr>
-<tr class="memdesc:ga254083e30868dac3af9cb6279f2554a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">absolute total maximum output current (average)  <a href="a00404.html#ga254083e30868dac3af9cb6279f2554a7">More...</a><br /></td></tr>
-<tr class="separator:ga254083e30868dac3af9cb6279f2554a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7208ac3392b96a19243b7ebf817226a0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga7208ac3392b96a19243b7ebf817226a0">BUCK_ISNS_RELEASE</a>&#160;&#160;&#160;(float) 2.000</td></tr>
-<tr class="memdesc:ga7208ac3392b96a19243b7ebf817226a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">current reset level after over current event  <a href="a00404.html#ga7208ac3392b96a19243b7ebf817226a0">More...</a><br /></td></tr>
-<tr class="separator:ga7208ac3392b96a19243b7ebf817226a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga379038e7f84e71d34bc692f9c818668f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga379038e7f84e71d34bc692f9c818668f">BUCK_ISNS_REFERENCE</a>&#160;&#160;&#160;(float) 2.000</td></tr>
-<tr class="memdesc:ga379038e7f84e71d34bc692f9c818668f"><td class="mdescLeft">&#160;</td><td class="mdescRight">output current reference (average)  <a href="a00404.html#ga379038e7f84e71d34bc692f9c818668f">More...</a><br /></td></tr>
-<tr class="separator:ga379038e7f84e71d34bc692f9c818668f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0f95bd1676556b8171cf85aa90ca7c2c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga0f95bd1676556b8171cf85aa90ca7c2c">BUCK_ISNS_ADC_TRG_DELAY</a>&#160;&#160;&#160;(float) 80.0e-9</td></tr>
-<tr class="memdesc:ga0f95bd1676556b8171cf85aa90ca7c2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC trigger delay for current sense in [sec].  <a href="a00404.html#ga0f95bd1676556b8171cf85aa90ca7c2c">More...</a><br /></td></tr>
-<tr class="separator:ga0f95bd1676556b8171cf85aa90ca7c2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4f2c0588965ec1c16d49bde4c956ec4c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga4f2c0588965ec1c16d49bde4c956ec4c">BUCK_ISNS_FEEDBACK_OFFSET</a>&#160;&#160;&#160;(float) 0.000</td></tr>
-<tr class="memdesc:ga4f2c0588965ec1c16d49bde4c956ec4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current sense feedback offset (average)  <a href="a00404.html#ga4f2c0588965ec1c16d49bde4c956ec4c">More...</a><br /></td></tr>
-<tr class="separator:ga4f2c0588965ec1c16d49bde4c956ec4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadddcf4fcb9500af65b7af41a52577335"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gadddcf4fcb9500af65b7af41a52577335">BUCK_ISNS_OFFSET_CALIBRATION_ENABLE</a>&#160;&#160;&#160;false</td></tr>
-<tr class="memdesc:gadddcf4fcb9500af65b7af41a52577335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current Sense Offset Calibration is disabled.  <a href="a00404.html#gadddcf4fcb9500af65b7af41a52577335">More...</a><br /></td></tr>
-<tr class="separator:gadddcf4fcb9500af65b7af41a52577335"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga08e0796a107a57d94b3a61870227dc37"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga08e0796a107a57d94b3a61870227dc37">BOOST_ISNS_LSCS</a>&#160;&#160;&#160;0</td></tr>
-<tr class="memdesc:ga08e0796a107a57d94b3a61870227dc37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration of phase-current feedback properties.  <a href="a00404.html#ga08e0796a107a57d94b3a61870227dc37">More...</a><br /></td></tr>
-<tr class="separator:ga08e0796a107a57d94b3a61870227dc37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga35ff378056dcdb30391750c3c0b25594"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga35ff378056dcdb30391750c3c0b25594">BOOST_ISNS_AMP</a>&#160;&#160;&#160;1</td></tr>
-<tr class="memdesc:ga35ff378056dcdb30391750c3c0b25594"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use shunt amplifier as main current feedback source.  <a href="a00404.html#ga35ff378056dcdb30391750c3c0b25594">More...</a><br /></td></tr>
-<tr class="separator:ga35ff378056dcdb30391750c3c0b25594"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf663b71265f6ddf6ecc649bc2e28f13e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gaf663b71265f6ddf6ecc649bc2e28f13e">BOOST_ISNS_OPTION</a>&#160;&#160;&#160;<a class="el" href="a00404.html#ga08e0796a107a57d94b3a61870227dc37">BOOST_ISNS_LSCS</a></td></tr>
-<tr class="memdesc:gaf663b71265f6ddf6ecc649bc2e28f13e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select one of the available current sense feedback options.  <a href="a00404.html#gaf663b71265f6ddf6ecc649bc2e28f13e">More...</a><br /></td></tr>
-<tr class="separator:gaf663b71265f6ddf6ecc649bc2e28f13e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga902086e51335c2bdc10ca371cbd182e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga902086e51335c2bdc10ca371cbd182e7">BOOST_ISNS_FEEDBACK_GAIN</a>&#160;&#160;&#160;(float) 1.000</td></tr>
-<tr class="memdesc:ga902086e51335c2bdc10ca371cbd182e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current Gain in V/A.  <a href="a00404.html#ga902086e51335c2bdc10ca371cbd182e7">More...</a><br /></td></tr>
-<tr class="separator:ga902086e51335c2bdc10ca371cbd182e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0d4b666b44b7c06c1ae6433756b2637f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga0d4b666b44b7c06c1ae6433756b2637f">BOOST_ISNS_MINIMUM</a>&#160;&#160;&#160;(float) 0.000</td></tr>
-<tr class="memdesc:ga0d4b666b44b7c06c1ae6433756b2637f"><td class="mdescLeft">&#160;</td><td class="mdescRight">absolute total minimum output current (average) in [A]  <a href="a00404.html#ga0d4b666b44b7c06c1ae6433756b2637f">More...</a><br /></td></tr>
-<tr class="separator:ga0d4b666b44b7c06c1ae6433756b2637f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga88f0eadb1bfb6164e982a25e96f338ff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga88f0eadb1bfb6164e982a25e96f338ff">BOOST_ISNS_MAXIMUM</a>&#160;&#160;&#160;(float) 2.500</td></tr>
-<tr class="memdesc:ga88f0eadb1bfb6164e982a25e96f338ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">absolute total maximum output current (average) in [A]  <a href="a00404.html#ga88f0eadb1bfb6164e982a25e96f338ff">More...</a><br /></td></tr>
-<tr class="separator:ga88f0eadb1bfb6164e982a25e96f338ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa3d04325127fcbd86f0ab2c55c3f00d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gaa3d04325127fcbd86f0ab2c55c3f00d4">BOOST_ISNS_RELEASE</a>&#160;&#160;&#160;(float) 1.500</td></tr>
-<tr class="memdesc:gaa3d04325127fcbd86f0ab2c55c3f00d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">current reset level after over current event in [A]  <a href="a00404.html#gaa3d04325127fcbd86f0ab2c55c3f00d4">More...</a><br /></td></tr>
-<tr class="separator:gaa3d04325127fcbd86f0ab2c55c3f00d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacf2b44ee3c53c9802f999c1963af8e80"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gacf2b44ee3c53c9802f999c1963af8e80">BOOST_ISNS_REFERENCE</a>&#160;&#160;&#160;(float) 2.500</td></tr>
-<tr class="memdesc:gacf2b44ee3c53c9802f999c1963af8e80"><td class="mdescLeft">&#160;</td><td class="mdescRight">output current reference (average) in [A]  <a href="a00404.html#gacf2b44ee3c53c9802f999c1963af8e80">More...</a><br /></td></tr>
-<tr class="separator:gacf2b44ee3c53c9802f999c1963af8e80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3c7191f25c28386cdb71ddc16e704392"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga3c7191f25c28386cdb71ddc16e704392">BOOST_ISNS_REFERENCE_STARTUP</a>&#160;&#160;&#160;(float) 2.500</td></tr>
-<tr class="memdesc:ga3c7191f25c28386cdb71ddc16e704392"><td class="mdescLeft">&#160;</td><td class="mdescRight">maximum output current (average) at startup in [A]  <a href="a00404.html#ga3c7191f25c28386cdb71ddc16e704392">More...</a><br /></td></tr>
-<tr class="separator:ga3c7191f25c28386cdb71ddc16e704392"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5a9bda187b106fb0f86cfadbc3f09e93"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga5a9bda187b106fb0f86cfadbc3f09e93">BOOST_ISNS_ADC_TRG_DELAY</a>&#160;&#160;&#160;(float) 200.0e-9</td></tr>
-<tr class="memdesc:ga5a9bda187b106fb0f86cfadbc3f09e93"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC trigger delay for current sense in [sec].  <a href="a00404.html#ga5a9bda187b106fb0f86cfadbc3f09e93">More...</a><br /></td></tr>
-<tr class="separator:ga5a9bda187b106fb0f86cfadbc3f09e93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4ac2b70886a2072e790a13b333b0066d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga4ac2b70886a2072e790a13b333b0066d">BOOST_ISNS_FEEDBACK_OFFSET</a>&#160;&#160;&#160;(float) 1.125</td></tr>
-<tr class="memdesc:ga4ac2b70886a2072e790a13b333b0066d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current sense feedback offset (average) in [V].  <a href="a00404.html#ga4ac2b70886a2072e790a13b333b0066d">More...</a><br /></td></tr>
-<tr class="separator:ga4ac2b70886a2072e790a13b333b0066d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8ae1825df9e06351e416ffb5c0dc1efb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga8ae1825df9e06351e416ffb5c0dc1efb">BOOST_ISNS_OFFSET_CALIBRATION_ENABLE</a>&#160;&#160;&#160;true</td></tr>
-<tr class="memdesc:ga8ae1825df9e06351e416ffb5c0dc1efb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current Sense Offset Calibration is disabled.  <a href="a00404.html#ga8ae1825df9e06351e416ffb5c0dc1efb">More...</a><br /></td></tr>
-<tr class="separator:ga8ae1825df9e06351e416ffb5c0dc1efb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga501721dae24a62c9b8c884d7de0b2611"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga501721dae24a62c9b8c884d7de0b2611">_BUCK_VIN_ADCInterrupt</a>&#160;&#160;&#160;_ADCAN12Interrupt</td></tr>
+<tr class="memdesc:ga501721dae24a62c9b8c884d7de0b2611"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input assignments of input voltage feedback signals.  <a href="a00404.html#ga501721dae24a62c9b8c884d7de0b2611">More...</a><br /></td></tr>
+<tr class="separator:ga501721dae24a62c9b8c884d7de0b2611"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga47cf795321e845b3b6b2bc0679c55e0b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga47cf795321e845b3b6b2bc0679c55e0b">_BUCK_VIN_ADCISR_IF</a>&#160;&#160;&#160;_ADCAN12IF</td></tr>
+<tr class="memdesc:ga47cf795321e845b3b6b2bc0679c55e0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC interrupt flag bit of the input voltage feedback channel.  <a href="a00404.html#ga47cf795321e845b3b6b2bc0679c55e0b">More...</a><br /></td></tr>
+<tr class="separator:ga47cf795321e845b3b6b2bc0679c55e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad69d0fffc2e8bbb40add0c81d05714ee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gad69d0fffc2e8bbb40add0c81d05714ee">BUCK_VIN_ANSEL</a>&#160;&#160;&#160;_ANSELC0</td></tr>
+<tr class="memdesc:gad69d0fffc2e8bbb40add0c81d05714ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO analog function mode enable bit.  <a href="a00404.html#gad69d0fffc2e8bbb40add0c81d05714ee">More...</a><br /></td></tr>
+<tr class="separator:gad69d0fffc2e8bbb40add0c81d05714ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga53db8f7bdb4425578dfa64d6fcff0c79"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga53db8f7bdb4425578dfa64d6fcff0c79">BUCK_VIN_ADCCORE</a>&#160;&#160;&#160;8</td></tr>
+<tr class="memdesc:ga53db8f7bdb4425578dfa64d6fcff0c79"><td class="mdescLeft">&#160;</td><td class="mdescRight">0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core  <a href="a00404.html#ga53db8f7bdb4425578dfa64d6fcff0c79">More...</a><br /></td></tr>
+<tr class="separator:ga53db8f7bdb4425578dfa64d6fcff0c79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9160049921a7c481b69d7098c41f2152"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga9160049921a7c481b69d7098c41f2152">BUCK_VIN_ADCIN</a>&#160;&#160;&#160;12</td></tr>
+<tr class="memdesc:ga9160049921a7c481b69d7098c41f2152"><td class="mdescLeft">&#160;</td><td class="mdescRight">Analog input number (e.g. '5' for 'AN5')  <a href="a00404.html#ga9160049921a7c481b69d7098c41f2152">More...</a><br /></td></tr>
+<tr class="separator:ga9160049921a7c481b69d7098c41f2152"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga677e9cc4284911fb4b20198894b32478"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga677e9cc4284911fb4b20198894b32478">BUCK_VIN_ADCBUF</a>&#160;&#160;&#160;ADCBUF12</td></tr>
+<tr class="memdesc:ga677e9cc4284911fb4b20198894b32478"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input buffer of this ADC channel.  <a href="a00404.html#ga677e9cc4284911fb4b20198894b32478">More...</a><br /></td></tr>
+<tr class="separator:ga677e9cc4284911fb4b20198894b32478"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab3f4ccd582e6df196f114dee7401ae9e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gab3f4ccd582e6df196f114dee7401ae9e">BUCK_VIN_ADCTRIG</a>&#160;&#160;&#160;PG1TRIGB</td></tr>
+<tr class="memdesc:gab3f4ccd582e6df196f114dee7401ae9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register used for trigger placement.  <a href="a00404.html#gab3f4ccd582e6df196f114dee7401ae9e">More...</a><br /></td></tr>
+<tr class="separator:gab3f4ccd582e6df196f114dee7401ae9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaef301b39ff68f0c6f5d96996e5f4e5e4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gaef301b39ff68f0c6f5d96996e5f4e5e4">BUCK_VIN_TRGSRC</a>&#160;&#160;&#160;<a class="el" href="a00399.html#ga58748fe2fe121d5e911032bb48743dfc">BUCK_PWM_TRGSRC_TRG2</a></td></tr>
+<tr class="memdesc:gaef301b39ff68f0c6f5d96996e5f4e5e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM1 (=PG1) Trigger 2 via PGxTRIGB.  <a href="a00404.html#gaef301b39ff68f0c6f5d96996e5f4e5e4">More...</a><br /></td></tr>
+<tr class="separator:gaef301b39ff68f0c6f5d96996e5f4e5e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad307e954c5c557bf8b6bc58aa903ef81"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gad307e954c5c557bf8b6bc58aa903ef81">_BOOST_VIN_ADCInterrupt</a>&#160;&#160;&#160;_ADCAN12Interrupt</td></tr>
+<tr class="memdesc:gad307e954c5c557bf8b6bc58aa903ef81"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input assignments of input voltage feedback signals.  <a href="a00404.html#gad307e954c5c557bf8b6bc58aa903ef81">More...</a><br /></td></tr>
+<tr class="separator:gad307e954c5c557bf8b6bc58aa903ef81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga630ebd77c0370e75ac01f72df812cbfb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga630ebd77c0370e75ac01f72df812cbfb">_BOOST_VIN_ADCISR_IF</a>&#160;&#160;&#160;_ADCAN12IF</td></tr>
+<tr class="memdesc:ga630ebd77c0370e75ac01f72df812cbfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC interrupt flag bit of the input voltage feedback channel.  <a href="a00404.html#ga630ebd77c0370e75ac01f72df812cbfb">More...</a><br /></td></tr>
+<tr class="separator:ga630ebd77c0370e75ac01f72df812cbfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2f8fc3cc23d74cff84b66a15c1a4144a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga2f8fc3cc23d74cff84b66a15c1a4144a">BOOST_VIN_ANSEL</a>&#160;&#160;&#160;_ANSELC0</td></tr>
+<tr class="memdesc:ga2f8fc3cc23d74cff84b66a15c1a4144a"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO analog function mode enable bit.  <a href="a00404.html#ga2f8fc3cc23d74cff84b66a15c1a4144a">More...</a><br /></td></tr>
+<tr class="separator:ga2f8fc3cc23d74cff84b66a15c1a4144a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaebc5ce2006d20b9a9e8e0d380d0a59fc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gaebc5ce2006d20b9a9e8e0d380d0a59fc">BOOST_VIN_ADCCORE</a>&#160;&#160;&#160;8</td></tr>
+<tr class="memdesc:gaebc5ce2006d20b9a9e8e0d380d0a59fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core  <a href="a00404.html#gaebc5ce2006d20b9a9e8e0d380d0a59fc">More...</a><br /></td></tr>
+<tr class="separator:gaebc5ce2006d20b9a9e8e0d380d0a59fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4f8e69a10fcad8fad360d2c72c00d142"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga4f8e69a10fcad8fad360d2c72c00d142">BOOST_VIN_ADCIN</a>&#160;&#160;&#160;12</td></tr>
+<tr class="memdesc:ga4f8e69a10fcad8fad360d2c72c00d142"><td class="mdescLeft">&#160;</td><td class="mdescRight">Analog input number (e.g. '5' for 'AN5')  <a href="a00404.html#ga4f8e69a10fcad8fad360d2c72c00d142">More...</a><br /></td></tr>
+<tr class="separator:ga4f8e69a10fcad8fad360d2c72c00d142"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga37f7db0137b8395eb67247493be227cf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#ga37f7db0137b8395eb67247493be227cf">BOOST_VIN_ADCBUF</a>&#160;&#160;&#160;ADCBUF12</td></tr>
+<tr class="memdesc:ga37f7db0137b8395eb67247493be227cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input buffer of this ADC channel.  <a href="a00404.html#ga37f7db0137b8395eb67247493be227cf">More...</a><br /></td></tr>
+<tr class="separator:ga37f7db0137b8395eb67247493be227cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac2dc7bb665d5a22aa00dbfeb2aed167f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gac2dc7bb665d5a22aa00dbfeb2aed167f">BOOST_VIN_ADCTRIG</a>&#160;&#160;&#160;PG2TRIGB</td></tr>
+<tr class="memdesc:gac2dc7bb665d5a22aa00dbfeb2aed167f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register used for trigger placement.  <a href="a00404.html#gac2dc7bb665d5a22aa00dbfeb2aed167f">More...</a><br /></td></tr>
+<tr class="separator:gac2dc7bb665d5a22aa00dbfeb2aed167f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac40a516f8246206918dc9b0c991a55d6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00404.html#gac40a516f8246206918dc9b0c991a55d6">BOOST_VIN_TRGSRC</a>&#160;&#160;&#160;<a class="el" href="a00399.html#gaa8e5c81a584c25dcb070282ec867bd08">BOOST_PWM_TRGSRC_TRG2</a></td></tr>
+<tr class="memdesc:gac40a516f8246206918dc9b0c991a55d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM2 (=PG2) Trigger 2 via PGxTRIGB.  <a href="a00404.html#gac40a516f8246206918dc9b0c991a55d6">More...</a><br /></td></tr>
+<tr class="separator:gac40a516f8246206918dc9b0c991a55d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>User-declaration of phase current feedback parameters using physical quantities. </p>
+<p>Device analog input pin, register and interrupt vector assignments of input voltage feedback signal(s) </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga5a9bda187b106fb0f86cfadbc3f09e93"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5a9bda187b106fb0f86cfadbc3f09e93">&#9670;&nbsp;</a></span>BOOST_ISNS_ADC_TRG_DELAY</h2>
+<a id="gad307e954c5c557bf8b6bc58aa903ef81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad307e954c5c557bf8b6bc58aa903ef81">&#9670;&nbsp;</a></span>_BOOST_VIN_ADCInterrupt</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_ISNS_ADC_TRG_DELAY&#160;&#160;&#160;(float) 200.0e-9</td>
+          <td class="memname">#define _BOOST_VIN_ADCInterrupt&#160;&#160;&#160;_ADCAN12Interrupt</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>ADC trigger delay for current sense in [sec]. </p>
+<p>ADC input assignments of input voltage feedback signals. </p>
+<p>In this section the ADC input channels, related ADC result buffers, trigger sources and interrupt vectors are defined. These settings allow the fast re-assignments of feedback signals in case of hardware changes. ADC interrupt service routine function call of the input voltage feedback channel </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01184">1184</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01041">1041</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga35ff378056dcdb30391750c3c0b25594"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga35ff378056dcdb30391750c3c0b25594">&#9670;&nbsp;</a></span>BOOST_ISNS_AMP</h2>
+<a id="ga630ebd77c0370e75ac01f72df812cbfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga630ebd77c0370e75ac01f72df812cbfb">&#9670;&nbsp;</a></span>_BOOST_VIN_ADCISR_IF</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_ISNS_AMP&#160;&#160;&#160;1</td>
+          <td class="memname">#define _BOOST_VIN_ADCISR_IF&#160;&#160;&#160;_ADCAN12IF</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Use shunt amplifier as main current feedback source. </p>
+<p>ADC interrupt flag bit of the input voltage feedback channel. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01171">1171</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01042">1042</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga902086e51335c2bdc10ca371cbd182e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga902086e51335c2bdc10ca371cbd182e7">&#9670;&nbsp;</a></span>BOOST_ISNS_FEEDBACK_GAIN</h2>
+<a id="ga501721dae24a62c9b8c884d7de0b2611"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga501721dae24a62c9b8c884d7de0b2611">&#9670;&nbsp;</a></span>_BUCK_VIN_ADCInterrupt</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_ISNS_FEEDBACK_GAIN&#160;&#160;&#160;(float) 1.000</td>
+          <td class="memname">#define _BUCK_VIN_ADCInterrupt&#160;&#160;&#160;_ADCAN12Interrupt</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Current Gain in V/A. </p>
+<p>ADC input assignments of input voltage feedback signals. </p>
+<p>In this section the ADC input channels, related ADC result buffers, trigger sources and interrupt vectors are defined. These settings allow the fast re-assignments of feedback signals in case of hardware changes. ADC interrupt service routine function call of the input voltage feedback channel </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01178">1178</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00408">408</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga4ac2b70886a2072e790a13b333b0066d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4ac2b70886a2072e790a13b333b0066d">&#9670;&nbsp;</a></span>BOOST_ISNS_FEEDBACK_OFFSET</h2>
+<a id="ga47cf795321e845b3b6b2bc0679c55e0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga47cf795321e845b3b6b2bc0679c55e0b">&#9670;&nbsp;</a></span>_BUCK_VIN_ADCISR_IF</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_ISNS_FEEDBACK_OFFSET&#160;&#160;&#160;(float) 1.125</td>
+          <td class="memname">#define _BUCK_VIN_ADCISR_IF&#160;&#160;&#160;_ADCAN12IF</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Current sense feedback offset (average) in [V]. </p>
+<p>ADC interrupt flag bit of the input voltage feedback channel. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01185">1185</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00409">409</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga08e0796a107a57d94b3a61870227dc37"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga08e0796a107a57d94b3a61870227dc37">&#9670;&nbsp;</a></span>BOOST_ISNS_LSCS</h2>
+<a id="ga37f7db0137b8395eb67247493be227cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga37f7db0137b8395eb67247493be227cf">&#9670;&nbsp;</a></span>BOOST_VIN_ADCBUF</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_ISNS_LSCS&#160;&#160;&#160;0</td>
+          <td class="memname">#define BOOST_VIN_ADCBUF&#160;&#160;&#160;ADCBUF12</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Declaration of phase-current feedback properties. </p>
-<p>In this section the phase-current feedback signal scaling, gain, valid signal limits and nominal operating point is specified. Physical quantities are used to define parameter values to ease the system configuration.</p>
-<p>As DPSK3 supports two different current sense devices (current sense transformers and shunt amplifier devices) users can select which one should be used for regulating the output current. Based on the selection made, the appropriate feedback channels and signal scaling values will be used by the firmware.</p>
-<p>Macros are used to convert given physical values into binary (integer) number to be written into SFRs and variables and being used in runtime calculations. <br  />
- (see <a class="el" href="a00405.html">Conversion Macros</a> for details) Use low-side shunt resistor as main current feedback source </p>
+<p>ADC input buffer of this ADC channel. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01170">1170</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01047">1047</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga88f0eadb1bfb6164e982a25e96f338ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga88f0eadb1bfb6164e982a25e96f338ff">&#9670;&nbsp;</a></span>BOOST_ISNS_MAXIMUM</h2>
+<a id="gaebc5ce2006d20b9a9e8e0d380d0a59fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaebc5ce2006d20b9a9e8e0d380d0a59fc">&#9670;&nbsp;</a></span>BOOST_VIN_ADCCORE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_ISNS_MAXIMUM&#160;&#160;&#160;(float) 2.500</td>
+          <td class="memname">#define BOOST_VIN_ADCCORE&#160;&#160;&#160;8</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>absolute total maximum output current (average) in [A] </p>
+<p>0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01180">1180</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01045">1045</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga0d4b666b44b7c06c1ae6433756b2637f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0d4b666b44b7c06c1ae6433756b2637f">&#9670;&nbsp;</a></span>BOOST_ISNS_MINIMUM</h2>
+<a id="ga4f8e69a10fcad8fad360d2c72c00d142"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4f8e69a10fcad8fad360d2c72c00d142">&#9670;&nbsp;</a></span>BOOST_VIN_ADCIN</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_ISNS_MINIMUM&#160;&#160;&#160;(float) 0.000</td>
+          <td class="memname">#define BOOST_VIN_ADCIN&#160;&#160;&#160;12</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>absolute total minimum output current (average) in [A] </p>
+<p>Analog input number (e.g. '5' for 'AN5') </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01179">1179</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01046">1046</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga8ae1825df9e06351e416ffb5c0dc1efb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8ae1825df9e06351e416ffb5c0dc1efb">&#9670;&nbsp;</a></span>BOOST_ISNS_OFFSET_CALIBRATION_ENABLE</h2>
+<a id="gac2dc7bb665d5a22aa00dbfeb2aed167f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac2dc7bb665d5a22aa00dbfeb2aed167f">&#9670;&nbsp;</a></span>BOOST_VIN_ADCTRIG</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_ISNS_OFFSET_CALIBRATION_ENABLE&#160;&#160;&#160;true</td>
+          <td class="memname">#define BOOST_VIN_ADCTRIG&#160;&#160;&#160;PG2TRIGB</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Current Sense Offset Calibration is disabled. </p>
+<p>Register used for trigger placement. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01187">1187</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01048">1048</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gaf663b71265f6ddf6ecc649bc2e28f13e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf663b71265f6ddf6ecc649bc2e28f13e">&#9670;&nbsp;</a></span>BOOST_ISNS_OPTION</h2>
+<a id="ga2f8fc3cc23d74cff84b66a15c1a4144a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2f8fc3cc23d74cff84b66a15c1a4144a">&#9670;&nbsp;</a></span>BOOST_VIN_ANSEL</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_ISNS_OPTION&#160;&#160;&#160;<a class="el" href="a00404.html#ga08e0796a107a57d94b3a61870227dc37">BOOST_ISNS_LSCS</a></td>
+          <td class="memname">#define BOOST_VIN_ANSEL&#160;&#160;&#160;_ANSELC0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Select one of the available current sense feedback options. </p>
+<p>GPIO analog function mode enable bit. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01173">1173</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01044">1044</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gacf2b44ee3c53c9802f999c1963af8e80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gacf2b44ee3c53c9802f999c1963af8e80">&#9670;&nbsp;</a></span>BOOST_ISNS_REFERENCE</h2>
+<a id="gac40a516f8246206918dc9b0c991a55d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac40a516f8246206918dc9b0c991a55d6">&#9670;&nbsp;</a></span>BOOST_VIN_TRGSRC</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_ISNS_REFERENCE&#160;&#160;&#160;(float) 2.500</td>
+          <td class="memname">#define BOOST_VIN_TRGSRC&#160;&#160;&#160;<a class="el" href="a00399.html#gaa8e5c81a584c25dcb070282ec867bd08">BOOST_PWM_TRGSRC_TRG2</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>output current reference (average) in [A] </p>
+<p>PWM2 (=PG2) Trigger 2 via PGxTRIGB. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01182">1182</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01049">1049</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga3c7191f25c28386cdb71ddc16e704392"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3c7191f25c28386cdb71ddc16e704392">&#9670;&nbsp;</a></span>BOOST_ISNS_REFERENCE_STARTUP</h2>
+<a id="ga677e9cc4284911fb4b20198894b32478"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga677e9cc4284911fb4b20198894b32478">&#9670;&nbsp;</a></span>BUCK_VIN_ADCBUF</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_ISNS_REFERENCE_STARTUP&#160;&#160;&#160;(float) 2.500</td>
+          <td class="memname">#define BUCK_VIN_ADCBUF&#160;&#160;&#160;ADCBUF12</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>maximum output current (average) at startup in [A] </p>
+<p>ADC input buffer of this ADC channel. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01183">1183</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00414">414</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gaa3d04325127fcbd86f0ab2c55c3f00d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa3d04325127fcbd86f0ab2c55c3f00d4">&#9670;&nbsp;</a></span>BOOST_ISNS_RELEASE</h2>
+<a id="ga53db8f7bdb4425578dfa64d6fcff0c79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga53db8f7bdb4425578dfa64d6fcff0c79">&#9670;&nbsp;</a></span>BUCK_VIN_ADCCORE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_ISNS_RELEASE&#160;&#160;&#160;(float) 1.500</td>
+          <td class="memname">#define BUCK_VIN_ADCCORE&#160;&#160;&#160;8</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>current reset level after over current event in [A] </p>
+<p>0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01181">1181</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00412">412</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga0f95bd1676556b8171cf85aa90ca7c2c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0f95bd1676556b8171cf85aa90ca7c2c">&#9670;&nbsp;</a></span>BUCK_ISNS_ADC_TRG_DELAY</h2>
+<a id="ga9160049921a7c481b69d7098c41f2152"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9160049921a7c481b69d7098c41f2152">&#9670;&nbsp;</a></span>BUCK_VIN_ADCIN</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_ISNS_ADC_TRG_DELAY&#160;&#160;&#160;(float) 80.0e-9</td>
+          <td class="memname">#define BUCK_VIN_ADCIN&#160;&#160;&#160;12</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>ADC trigger delay for current sense in [sec]. </p>
+<p>Analog input number (e.g. '5' for 'AN5') </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00557">557</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00413">413</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga914b0eae437fd760f8be0565e9fde7f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga914b0eae437fd760f8be0565e9fde7f5">&#9670;&nbsp;</a></span>BUCK_ISNS_AMP</h2>
+<a id="gab3f4ccd582e6df196f114dee7401ae9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab3f4ccd582e6df196f114dee7401ae9e">&#9670;&nbsp;</a></span>BUCK_VIN_ADCTRIG</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_ISNS_AMP&#160;&#160;&#160;1</td>
+          <td class="memname">#define BUCK_VIN_ADCTRIG&#160;&#160;&#160;PG1TRIGB</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Use shunt amplifier as main current feedback source. </p>
+<p>Register used for trigger placement. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00545">545</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00415">415</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gaebd1efb9b8040ce1a5d307643b3ed74c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaebd1efb9b8040ce1a5d307643b3ed74c">&#9670;&nbsp;</a></span>BUCK_ISNS_CT</h2>
+<a id="gad69d0fffc2e8bbb40add0c81d05714ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad69d0fffc2e8bbb40add0c81d05714ee">&#9670;&nbsp;</a></span>BUCK_VIN_ANSEL</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_ISNS_CT&#160;&#160;&#160;0</td>
+          <td class="memname">#define BUCK_VIN_ANSEL&#160;&#160;&#160;_ANSELC0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Declaration of phase-current feedback properties. </p>
-<p>In this section the phase-current feedback signal scaling, gain, valid signal limits and nominal operating point is specified. Physical quantities are used to define parameter values to ease the system configuration.</p>
-<p>As DPSK3 supports two different current sense devices (current sense transformers and shunt amplifier devices) users can select which one should be used for regulating the output current. Based on the selection made, the appropriate feedback channels and signal scaling values will be used by the firmware.</p>
-<p>Macros are used to convert given physical values into binary (integer) number to be written into SFRs and variables and being used in runtime calculations. <br  />
- (see <a class="el" href="a00405.html">Conversion Macros</a> for details) Use current sense transformer as main current feedback source </p>
+<p>GPIO analog function mode enable bit. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00544">544</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00411">411</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga4b80ef68401d82252de9b596cc7a9300"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4b80ef68401d82252de9b596cc7a9300">&#9670;&nbsp;</a></span>BUCK_ISNS_FEEDBACK_GAIN</h2>
+<a id="gaef301b39ff68f0c6f5d96996e5f4e5e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaef301b39ff68f0c6f5d96996e5f4e5e4">&#9670;&nbsp;</a></span>BUCK_VIN_TRGSRC</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_ISNS_FEEDBACK_GAIN&#160;&#160;&#160;(float) 1.000</td>
+          <td class="memname">#define BUCK_VIN_TRGSRC&#160;&#160;&#160;<a class="el" href="a00399.html#ga58748fe2fe121d5e911032bb48743dfc">BUCK_PWM_TRGSRC_TRG2</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Current Gain in V/A. </p>
+<p>PWM1 (=PG1) Trigger 2 via PGxTRIGB. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00552">552</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga4f2c0588965ec1c16d49bde4c956ec4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4f2c0588965ec1c16d49bde4c956ec4c">&#9670;&nbsp;</a></span>BUCK_ISNS_FEEDBACK_OFFSET</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_ISNS_FEEDBACK_OFFSET&#160;&#160;&#160;(float) 0.000</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Current sense feedback offset (average) </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00558">558</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga254083e30868dac3af9cb6279f2554a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga254083e30868dac3af9cb6279f2554a7">&#9670;&nbsp;</a></span>BUCK_ISNS_MAXIMUM</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_ISNS_MAXIMUM&#160;&#160;&#160;(float) 2.500</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>absolute total maximum output current (average) </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00554">554</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga7eaf7c6b620fda0f1ec13a647c5d7ba2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7eaf7c6b620fda0f1ec13a647c5d7ba2">&#9670;&nbsp;</a></span>BUCK_ISNS_MINIMUM</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_ISNS_MINIMUM&#160;&#160;&#160;(float) 0.000</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>absolute total minimum output current (average) </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00553">553</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gadddcf4fcb9500af65b7af41a52577335"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadddcf4fcb9500af65b7af41a52577335">&#9670;&nbsp;</a></span>BUCK_ISNS_OFFSET_CALIBRATION_ENABLE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_ISNS_OFFSET_CALIBRATION_ENABLE&#160;&#160;&#160;false</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Current Sense Offset Calibration is disabled. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00560">560</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga21b901808560eec9786d990892642472"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga21b901808560eec9786d990892642472">&#9670;&nbsp;</a></span>BUCK_ISNS_OPTION</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_ISNS_OPTION&#160;&#160;&#160;<a class="el" href="a00404.html#gaebd1efb9b8040ce1a5d307643b3ed74c">BUCK_ISNS_CT</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Select one of the available current sense feedback options. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00547">547</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga379038e7f84e71d34bc692f9c818668f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga379038e7f84e71d34bc692f9c818668f">&#9670;&nbsp;</a></span>BUCK_ISNS_REFERENCE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_ISNS_REFERENCE&#160;&#160;&#160;(float) 2.000</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>output current reference (average) </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00556">556</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga7208ac3392b96a19243b7ebf817226a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7208ac3392b96a19243b7ebf817226a0">&#9670;&nbsp;</a></span>BUCK_ISNS_RELEASE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_ISNS_RELEASE&#160;&#160;&#160;(float) 2.000</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>current reset level after over current event </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00555">555</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00416">416</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

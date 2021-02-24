@@ -36,7 +36,7 @@
   <td id="projectalign" style="padding-left: 0.0em;">
    <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
-   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Adaptive Gain Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -104,21 +104,21 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <hr  />
  <h1><a class="anchor" id="autotoc_md1"></a>
 dsPIC33C Digital Power Starter Kit</h1>
-<h3>Synchronous Buck Converter: Voltage Mode Control</h3>
+<h3>Synchronous Buck Converter: Adaptive Gain Control</h3>
 <center><a href="https://www.microchip.com/DM330017-3" target="_blank" rel="nofollow"><img src="images/dm330017-3-1.jpg" alt="dsPIC33C Digital Power Starter Kit" width="400" class="inline"/> &#160; <img src="images/dm330017-3-2.jpg" alt="" width="400" class="inline"/> </a> </center> <center> <a href="https://www.microchip.com/DM330017-3" target="_blank" rel="nofollow">dsPIC33C Digital Power Starter Kit (DPSK3) (Part-No. DM330017-3) </a> </center> <hr  />
 <h2><a class="anchor" id="autotoc_md2"></a>
 Summary</h2>
-<p>Voltage mode control example for the buck converter on the Digital Power Starter Kit, version 3 (DPSK3) featuring the dsPIC33CK family of devices.</p>
+<p>Real-time adaptive gain modulation of voltage mode control example for the buck converter on the Digital Power Starter Kit, version 3 (DPSK3) featuring the dsPIC33CK family of devices.</p>
 <hr  />
 <h2><a class="anchor" id="autotoc_md3"></a>
 Description</h2>
-<p>This code example demonstrates the implementation of a simple voltage mode control loop for the synchronous buck converter. The loop implementation also includes the required state machine managing board status analysis, start-up control, operation monitoring, fault handling and auto-restart capability. The buck converter state machine is based on a generic library package, which is configured and executed in user code.</p>
-<p>This code example also includes the LCD driver allowing users to observe runtime data on the on-board LC display. The on-board user switch <code>USER</code> is allows users to change the active display page to observe input voltage, output voltage, output current and board temperature.</p>
+<p>This code example demonstrates the implementation of an enhanced voltage mode control loop for the synchronous buck converter using in-loop adaptive loop gain modulation to compensate for gain variations in the power plant caused by changes in the voltage across the inductor. The loop implementation also includes the required state machine managing board status analysis, start-up control, operation monitoring, fault handling and auto-restart capability. The buck converter state machine is based on a generic library package, which is configured and executed in user code.</p>
+<p>This code example also includes the LCD driver allowing users to observe runtime data on the on-board LC display. The on-board user switch <code>USER</code> allows users to change the active display page to observe input voltage, output voltage, output current and board temperature.</p>
 <h2><a class="anchor" id="autotoc_md4"></a>
 Related Documentation</h2>
 <h4>Firmware Documentation</h4>
 <ul>
-<li><a href="https://microchip-pic-avr-examples.github.io/dpsk3-power-buck-voltage-mode-control/">Online Firmware Documentation of this Code Example</a></li>
+<li><a href="https://microchip-pic-avr-examples.github.io/dpsk3-power-buck-adaptive-gain-control/">Online Firmware Documentation of this Code Example</a></li>
 </ul>
 <h4>Hardware and Target Device Documentation</h4>
 <ul>
@@ -186,7 +186,7 @@ Setup</h2>
 <ul>
 <li>Connect dsPIC33C Digital Power Starter Kit to the PC using the micro-USB cable</li>
 <li>Open and compile the firmware; program the target device</li>
-<li>Attach the 9V power supply to the board and observe the real-time values on the LC display</li>
+<li>Attach the 9V power supply to the board and observe the run-time values on the LC display</li>
 </ul>
 <center> <img src="images/dm330017-3-3.jpg" alt="" width="960" class="inline"/> <br  />
  DPSK3 Buck Converter Test Points </center><hr  />
@@ -203,8 +203,8 @@ Operation</h2>
 <ul>
 <li>no LED: 0% (0 mA)</li>
 <li>1 LEDs: 10% (100 mA)</li>
-<li>2 LEDs: 25% (500 mA)</li>
-<li>3 LEDs: 50% (1000 mA)</li>
+<li>2 LEDs: 50% (500 mA)</li>
+<li>3 LEDs: 100% (1000 mA)</li>
 </ul>
 <p>(value accuracy +/- 10%)</p>
 <p>By pressing the <code>Buck Load</code> on-board push button on the right edge of the board for <em><b>longer</b></em> than a second, the load switches into stepping mode.</p>
@@ -214,9 +214,9 @@ Operation</h2>
 </ul>
 <p>Pressing the <code>Buck Load</code> on-board push button again for <em><b>less</b></em> than a second, the step load can be adjusted between</p>
 <ul>
-<li>10% to 25% Load (100-500 mA)</li>
-<li>10% to 50% Load (100-1000 mA)</li>
-<li>25% to 50% Load (500-1000 mA)</li>
+<li>10% to 50% Load (100-500 mA)</li>
+<li>10% to 100% Load (100-1000 mA)</li>
+<li>50% to 100% Load (500-1000 mA)</li>
 </ul>
 <p>(value accuracy +/- 10%)</p>
 <p>For more information, please read the <a href="https://www.microchip.com/50002867">Digital Power Starter Kit 3 User Guide</a>.</p>

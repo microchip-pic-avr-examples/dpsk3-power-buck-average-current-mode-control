@@ -36,7 +36,7 @@
   <td id="projectalign" style="padding-left: 0.0em;">
    <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
-   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Adaptive Gain Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -96,53 +96,22 @@ $(document).ready(function(){initNavTree('a00482.html',''); initResizable(); });
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
-<div class="title">Data Types<div class="ingroups"><a class="el" href="a00533.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00460.html">Buck Converter Library</a> &raquo; <a class="el" href="a00471.html">Buck Converter Library Modules</a> &raquo; <a class="el" href="a00478.html">Buck Special Functions</a> &raquo; <a class="el" href="a00480.html">Properties</a></div></div>  </div>
+<div class="title">Data Types<div class="ingroups"><a class="el" href="a00539.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00466.html">Buck Converter Library</a> &raquo; <a class="el" href="a00477.html">Buck Converter Library Modules</a> &raquo; <a class="el" href="a00478.html">Buck Converter State Machine</a> &raquo; <a class="el" href="a00480.html">Properties</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>List of data types of the Special Function state machine extensions.  
+<p>Data types of the buck converter state machine.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Data Types:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00482.svg" width="228" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00482.svg" width="228" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-</div>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:ga3c2021030c83c9decfce3a892febcb9d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00482.html#ga3c2021030c83c9decfce3a892febcb9d">BUCK_SPECIAL_FUNCTIONS_e</a> { <b>CS_OFSET_CALIBRATION</b>
- }</td></tr>
-<tr class="memdesc:ga3c2021030c83c9decfce3a892febcb9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of special function sub-states.  <a href="a00482.html#ga3c2021030c83c9decfce3a892febcb9d">More...</a><br /></td></tr>
-<tr class="separator:ga3c2021030c83c9decfce3a892febcb9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>List of data types of the Special Function state machine extensions. </p>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="ga3c2021030c83c9decfce3a892febcb9d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3c2021030c83c9decfce3a892febcb9d">&#9670;&nbsp;</a></span>BUCK_SPECIAL_FUNCTIONS_e</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="a00482.html#ga3c2021030c83c9decfce3a892febcb9d">BUCK_SPECIAL_FUNCTIONS_e</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Enumeration of special function sub-states. </p>
-<p>This enumeration provides labels for indices of the private array BuckConverterSpecialFunctions[]. External functions call special functions by calling the high level function <a class="el" href="a00479.html#ga8573aaa632abde3518f8a4448ff73cf7" title="This is the public function call access point to call dedicated special sub-functions.">drv_BuckConverter_SpecialFunctionExecute()</a> by handing in a pointer to a power converter object and the Special Function state to execute. This allows the extension of state machine to include Special Functions available. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00266_source.html#l00050">50</a> of file <a class="el" href="a00266_source.html">dev_buck_special_functions.h</a>.</p>
-
-</div>
-</div>
+<p>Data types of the buck converter state machine. </p>
+<dl class="section note"><dt>Note</dt><dd>This library module does not provide any data types </dd></dl>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Defines and Macros</title>
+<title>Digital Power Starter Kit 3 Firmware: Buck Converter Library</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
   <td id="projectalign" style="padding-left: 0.0em;">
    <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
-   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Adaptive Gain Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -97,46 +97,30 @@ $(document).ready(function(){initNavTree('a00466.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a>  </div>
+<a href="#groups">Modules</a>  </div>
   <div class="headertitle">
-<div class="title">Defines and Macros<div class="ingroups"><a class="el" href="a00533.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00460.html">Buck Converter Library</a> &raquo; <a class="el" href="a00461.html">Buck Converter Library API</a> &raquo; <a class="el" href="a00463.html">Public Properties</a></div></div>  </div>
+<div class="title">Buck Converter Library<div class="ingroups"><a class="el" href="a00539.html">Device Driver Library Layer</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Defines and Macros:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Buck Converter Library:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00466.svg" width="318" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00466.svg" width="578" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ga74df4d33c3d762495bc67b88bb6aa524"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00466.html#ga74df4d33c3d762495bc67b88bb6aa524">BUCK_MPHASE_COUNT</a>&#160;&#160;&#160;<a class="el" href="a00390.html#ga353ba60329e90d1aca97deba7e0bd669">BUCK_NO_OF_PHASES</a></td></tr>
-<tr class="memdesc:ga74df4d33c3d762495bc67b88bb6aa524"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration of the number of power train phases of the Buck Converter.  <a href="a00466.html#ga74df4d33c3d762495bc67b88bb6aa524">More...</a><br /></td></tr>
-<tr class="separator:ga74df4d33c3d762495bc67b88bb6aa524"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
+Modules</h2></td></tr>
+<tr class="memitem:a00467"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00467.html">Buck Converter Library API</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00477"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00477.html">Buck Converter Library Modules</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga74df4d33c3d762495bc67b88bb6aa524"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga74df4d33c3d762495bc67b88bb6aa524">&#9670;&nbsp;</a></span>BUCK_MPHASE_COUNT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_MPHASE_COUNT&#160;&#160;&#160;<a class="el" href="a00390.html#ga353ba60329e90d1aca97deba7e0bd669">BUCK_NO_OF_PHASES</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Declaration of the number of power train phases of the Buck Converter. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00062">62</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
-
-</div>
-</div>
+<p>The Buck Converter Library is a comprehensive device driver providing a state machine managing initialization, configurable, protected startup, runtime reference tuning and auto-restart capabilities. Special Functions are available to extend the essential features of the state machine supporting specific, optional sub-circuits and functions.</p>
+<p>This device driver also includes functions for the configuration of device peripherals by providing templates of the fundamental peripheral set initialization required to drive and control the supported type of power converter, significantly reducing the amount of parameters users have to select and set.</p>
+<p>All settings are made available through the <a class="el" href="a01560.html" title="BUCK control &amp; monitoring data structure.">BUCK_CONVERTER_s</a> data structure, described in the Public Properties / Data Types section of this documentation. </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

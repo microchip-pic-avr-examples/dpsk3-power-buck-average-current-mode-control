@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Fault Response Settings</title>
+<title>Digital Power Starter Kit 3 Firmware: User Settings</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
   <td id="projectalign" style="padding-left: 0.0em;">
    <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
-   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Adaptive Gain Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -96,35 +96,48 @@ $(document).ready(function(){initNavTree('a00386.html',''); initResizable(); });
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#groups">Modules</a>  </div>
   <div class="headertitle">
-<div class="title">Fault Response Settings<div class="ingroups"><a class="el" href="a00531.html">Hardware Abstraction Layer</a></div></div>  </div>
+<div class="title">User Settings<div class="ingroups"><a class="el" href="a00537.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00385.html">State Machine Settings</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Declaration of fault object trip and recovery delays.  
+<p>Parameter definitions using physical quantities.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Fault Response Settings:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for User Settings:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00386.svg" width="551" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00386.svg" width="319" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
-Modules</h2></td></tr>
-<tr class="memitem:a00387"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00387.html">User Settings</a></td></tr>
-<tr class="memdesc:a00387"><td class="mdescLeft">&#160;</td><td class="mdescRight">User-declaration of fault object trip and recovery delays using physical quantities. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00388"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00388.html">Conversion Macros</a></td></tr>
-<tr class="memdesc:a00388"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion macros for user declarations of fault object trip and recovery delays. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac8489c3fb9bb5db0d15a2e870c3e5def"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>&#160;&#160;&#160;(float)100.0e-6</td></tr>
+<tr class="memdesc:gac8489c3fb9bb5db0d15a2e870c3e5def"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global state-machine user-settings.  <a href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">More...</a><br /></td></tr>
+<tr class="separator:gac8489c3fb9bb5db0d15a2e870c3e5def"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Declaration of fault object trip and recovery delays. </p>
+<p>Parameter definitions using physical quantities. </p>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="gac8489c3fb9bb5db0d15a2e870c3e5def"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac8489c3fb9bb5db0d15a2e870c3e5def">&#9670;&nbsp;</a></span>MAIN_EXECUTION_PERIOD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAIN_EXECUTION_PERIOD&#160;&#160;&#160;(float)100.0e-6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Global state-machine user-settings. </p>
+<p>This section is used to set, modify, enable or disable common state machine parameters and features.</p>
+<p>(Please see individual settings description for detail) main state machine function call period in [sec] </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00137">137</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

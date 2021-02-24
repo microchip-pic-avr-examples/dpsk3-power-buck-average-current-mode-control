@@ -1,9 +1,6 @@
 var a00365 =
 [
-    [ "PPS_LockIO", "a00365.html#gaa09c4349fd01cc9b6b01d435bd022b56", null ],
-    [ "PPS_RemapInput", "a00365.html#ga6be1f27b70496503b7bda6edc2cfb59b", null ],
-    [ "PPS_RemapOutput", "a00365.html#ga592e485a9574eeebc2e1dc6993de1f55", null ],
-    [ "PPS_UnlockIO", "a00365.html#ga64624ae359fb9dd170bb9a3f85dd81f2", null ],
-    [ "PPS_UnmapInput", "a00365.html#ga76a2264a280f74b1e66ff047241e7a5c", null ],
-    [ "PPS_UnmapOutput", "a00365.html#gac40d40430a5237549eaafb4aa6ab3a24", null ]
+    [ "p33c_CcpInstance_ConfigRead", "a00365.html#gad6952d3b506333e2642341c309ee7cdc", null ],
+    [ "p33c_CcpInstance_ConfigWrite", "a00365.html#gadf02a542682e9ac5d9038529261b9ef0", null ],
+    [ "p33c_CcpInstance_GetHandle", "a00365.html#ga2b27b6ad1318677db2816e0a2020481a", null ]
 ];

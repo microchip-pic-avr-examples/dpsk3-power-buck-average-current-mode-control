@@ -1,5 +1,5 @@
 var a00534 =
 [
-    [ "LC-Display Interface Driver", "a00444.html", "a00444" ],
-    [ "Power Converter Control Driver", "a00496.html", "a00496" ]
+    [ "Operating System Time Base", "a00535.html", "a00535" ],
+    [ "User Task Initialization", "a00536.html", "a00536" ]
 ];

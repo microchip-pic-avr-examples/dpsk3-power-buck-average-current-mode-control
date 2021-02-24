@@ -1,5 +1,5 @@
 var a00487 =
 [
-    [ "adcore_diff_mask", "a00487.html#ga215a815cad00177161895a74f526cfc1", null ],
-    [ "adcore_mask", "a00487.html#ga8312ee90c2e73a1ad6bc8b0e545368c2", null ]
+    [ "BuckConverterSpecialFunctions", "a00487.html#ga3ae32433f160a13731fbe7e18e62d621", null ],
+    [ "calib_cs", "a00487.html#ga619f44e96a83b8c723f1e8e24e5c7442", null ]
 ];

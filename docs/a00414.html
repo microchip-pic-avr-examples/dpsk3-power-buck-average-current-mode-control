@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Special Circuit Signals</title>
+<title>Digital Power Starter Kit 3 Firmware: User Settings</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
   <td id="projectalign" style="padding-left: 0.0em;">
    <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
-   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Adaptive Gain Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -96,31 +96,111 @@ $(document).ready(function(){initNavTree('a00414.html',''); initResizable(); });
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#groups">Modules</a>  </div>
   <div class="headertitle">
-<div class="title">Special Circuit Signals<div class="ingroups"><a class="el" href="a00531.html">Hardware Abstraction Layer</a></div></div>  </div>
+<div class="title">User Settings<div class="ingroups"><a class="el" href="a00537.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00413.html">Temperature Feedback</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>User-declaration of temperature feedback parameters using physical quantities.  
+<a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Special Circuit Signals:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for User Settings:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00414.svg" width="610" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00414.svg" width="315" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
-Modules</h2></td></tr>
-<tr class="memitem:a00415"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00415.html">Device GPIO Assignments</a></td></tr>
-<tr class="memdesc:a00415"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment of microcontroller device pins to circuit functions and signals. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00416"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html">Device Peripheral Assignments</a></td></tr>
-<tr class="memdesc:a00416"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment of microcontroller device specific chip-resources to circuit functions and signals. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae1bfd432f4281610523780a3c7dea8c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#gae1bfd432f4281610523780a3c7dea8c2">BUCK_TEMPCAL_ZERO</a>&#160;&#160;&#160;(float) 0.500</td></tr>
+<tr class="memdesc:gae1bfd432f4281610523780a3c7dea8c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration of temperature feedback properties.  <a href="a00414.html#gae1bfd432f4281610523780a3c7dea8c2">More...</a><br /></td></tr>
+<tr class="separator:gae1bfd432f4281610523780a3c7dea8c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabb9a63a36610e526480fce9dbe4e77d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#gabb9a63a36610e526480fce9dbe4e77d7">BUCK_TEMPCAL_SLOPE</a>&#160;&#160;&#160;(float) 0.010</td></tr>
+<tr class="separator:gabb9a63a36610e526480fce9dbe4e77d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6c73550242695c13f4019492d7782fc2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#ga6c73550242695c13f4019492d7782fc2">BOOST_TEMPCAL_ZERO</a>&#160;&#160;&#160;(float) 0.500</td></tr>
+<tr class="memdesc:ga6c73550242695c13f4019492d7782fc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration of temperature feedback properties.  <a href="a00414.html#ga6c73550242695c13f4019492d7782fc2">More...</a><br /></td></tr>
+<tr class="separator:ga6c73550242695c13f4019492d7782fc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa3973a312a9169505ae4ee1f19f8ec87"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#gaa3973a312a9169505ae4ee1f19f8ec87">BOOST_TEMPCAL_SLOPE</a>&#160;&#160;&#160;(float) 0.010</td></tr>
+<tr class="separator:gaa3973a312a9169505ae4ee1f19f8ec87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>User-declaration of temperature feedback parameters using physical quantities. </p>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="gaa3973a312a9169505ae4ee1f19f8ec87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa3973a312a9169505ae4ee1f19f8ec87">&#9670;&nbsp;</a></span>BOOST_TEMPCAL_SLOPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_TEMPCAL_SLOPE&#160;&#160;&#160;(float) 0.010</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01309">1309</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga6c73550242695c13f4019492d7782fc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6c73550242695c13f4019492d7782fc2">&#9670;&nbsp;</a></span>BOOST_TEMPCAL_ZERO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_TEMPCAL_ZERO&#160;&#160;&#160;(float) 0.500</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Declaration of temperature feedback properties. </p>
+<p>In this section the temperature feedback signal scaling, gain and valid signal limits are specified. Physical quantities are used to define parameter values to ease the system configuration.</p>
+<p>As DPSK3 has one, central on-board temperature sensor between the load resistor banks indicating the worst case system temperature.</p>
+<p>Macros are used to convert given physical values into binary (integer) number to be written into SFRs and variables and being used in runtime calculations. <br  />
+ (see <a class="el" href="a00411.html">Conversion Macros</a> for details) </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l01308">1308</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gabb9a63a36610e526480fce9dbe4e77d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabb9a63a36610e526480fce9dbe4e77d7">&#9670;&nbsp;</a></span>BUCK_TEMPCAL_SLOPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_TEMPCAL_SLOPE&#160;&#160;&#160;(float) 0.010</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00675">675</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gae1bfd432f4281610523780a3c7dea8c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae1bfd432f4281610523780a3c7dea8c2">&#9670;&nbsp;</a></span>BUCK_TEMPCAL_ZERO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_TEMPCAL_ZERO&#160;&#160;&#160;(float) 0.500</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Declaration of temperature feedback properties. </p>
+<p>In this section the temperature feedback signal scaling, gain and valid signal limits are specified. Physical quantities are used to define parameter values to ease the system configuration.</p>
+<p>As DPSK3 has one, central on-board temperature sensor between the load resistor banks indicating the worst case system temperature.</p>
+<p>Macros are used to convert given physical values into binary (integer) number to be written into SFRs and variables and being used in runtime calculations. <br  />
+ (see <a class="el" href="a00411.html">Conversion Macros</a> for details) </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00674">674</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

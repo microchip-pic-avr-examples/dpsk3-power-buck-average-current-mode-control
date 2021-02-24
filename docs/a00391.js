@@ -1,19 +1,17 @@
 var a00391 =
 [
-    [ "BOOST_LEB_PERIOD", "a00391.html#ga8a933141f646bbc652df2cd125537355", null ],
-    [ "BOOST_PWM_DC_MAX", "a00391.html#ga80b5db734cfd87c6c86e129cebc41e7d", null ],
-    [ "BOOST_PWM_DC_MIN", "a00391.html#ga2b04d5efbae62e16fd8dfe59f186e0e4", null ],
-    [ "BOOST_PWM_DEAD_TIME_FE", "a00391.html#ga8941ff7355e606ac980fc5002fcb9844", null ],
-    [ "BOOST_PWM_DEAD_TIME_LE", "a00391.html#gaa09f46099993bd71d6af50f3432826e9", null ],
-    [ "BOOST_PWM_PERIOD", "a00391.html#gaea6976b3f447778b9ad2fa13f59d1b6c", null ],
-    [ "BOOST_PWM_PHASE_SHIFT", "a00391.html#ga9307dbea0e54e2e63f9e16474d52cc27", null ],
-    [ "BOOST_SWITCHING_PERIOD", "a00391.html#ga9761ffc82ba31b2d74dc97f7fa9e59d3", null ],
-    [ "BUCK_LEB_PERIOD", "a00391.html#gab995ebe4d204b2618814cea80f7d6eb0", null ],
-    [ "BUCK_PWM_DC_MAX", "a00391.html#ga1d48ac69185f603b84967ce0e8d41713", null ],
-    [ "BUCK_PWM_DC_MIN", "a00391.html#gae2647a90f6c1fd8f7a3bb2a236a3b187", null ],
-    [ "BUCK_PWM_DEAD_TIME_FE", "a00391.html#ga2887c277f2ac42c326c2ccf61b3b1f3d", null ],
-    [ "BUCK_PWM_DEAD_TIME_LE", "a00391.html#gace85e0df46d4d83380cdd555d5e572bb", null ],
-    [ "BUCK_PWM_PERIOD", "a00391.html#gaf74e7d1749ac835a5c6be8c3faa8be80", null ],
-    [ "BUCK_PWM_PHASE_SHIFT", "a00391.html#ga8d1f73f218b93bd2301373cf458f8c85", null ],
-    [ "BUCK_SWITCHING_PERIOD", "a00391.html#gaeee647e1d9ee7976f26810db539bf3d2", null ]
+    [ "BOOST_CHRG_PER", "a00391.html#ga6d1019160fae08bdd0abdb8bf1ac8a54", null ],
+    [ "BOOST_CHRG_TOUT", "a00391.html#ga6d4138bf3b3d53405e2e6b1b45724f07", null ],
+    [ "BOOST_IRAMP_PER", "a00391.html#ga03d052a3ead30691a8f96bea471c1b8c", null ],
+    [ "BOOST_IREF_STEP", "a00391.html#gafe17125cea675453c057c9470a5baf4d", null ],
+    [ "BOOST_PGD", "a00391.html#ga4315f46dc1b4bf866d3de95bb8409774", null ],
+    [ "BOOST_POD", "a00391.html#ga5198f80b878579deb1103362c8ce99bc", null ],
+    [ "BOOST_VRAMP_PER", "a00391.html#ga53112c16890c08377894e6f1b3a1e80d", null ],
+    [ "BOOST_VREF_STEP", "a00391.html#gab110e669b0c43a88be993121558786db", null ],
+    [ "BUCK_IRAMP_PER", "a00391.html#ga44bc7c5f1a38be0df740af9e95a57018", null ],
+    [ "BUCK_IREF_STEP", "a00391.html#ga351c39d5d5de144dc1ce695066a52195", null ],
+    [ "BUCK_PGD", "a00391.html#gaf341b4ac7178e33925ead7e712a2583b", null ],
+    [ "BUCK_POD", "a00391.html#gabba7830b442d410bf3c9beb934f024ad", null ],
+    [ "BUCK_VRAMP_PER", "a00391.html#gaa489d990aa6315f54fee41b013f02fd3", null ],
+    [ "BUCK_VREF_STEP", "a00391.html#ga1e532e985e4d737932c504e40950cc37", null ]
 ];

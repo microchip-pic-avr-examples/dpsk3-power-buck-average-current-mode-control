@@ -1,4 +1,5 @@
 var a00447 =
 [
-    [ "drv_LcdInterface_SpiSend", "a00447.html#ga50b8734fca19fc75dd778a9902c63082", null ]
+    [ "PrintLcd", "a00447.html#gaeabde9cf4c09da1935c1dff5f1bda0c1", null ],
+    [ "TEMPSTR_LCD_SIZE", "a00447.html#gaa48e1d1e103805c72fd112486be3d38f", null ]
 ];

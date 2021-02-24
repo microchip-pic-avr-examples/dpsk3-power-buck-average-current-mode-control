@@ -1,4 +1,4 @@
 <map id="Conversion Macros" name="Conversion Macros">
-<area shape="rect" id="node1" title="Conversion macros converting physical quantities of parameters into binary (integer) numbers for regi..." alt="" coords="160,5,292,31"/>
-<area shape="rect" id="node2" href="$a00389.html" title="Declaration of fundamental PWM parameters." alt="" coords="5,5,112,31"/>
+<area shape="rect" id="node1" href="$a00389.html" title="Declaration of startup timing periods." alt="" coords="5,5,164,31"/>
+<area shape="rect" id="node2" title="Conversion macros for user&#45;declarations of startup timing periods." alt="" coords="212,5,344,31"/>
 </map>

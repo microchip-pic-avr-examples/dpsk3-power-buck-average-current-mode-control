@@ -1,4 +1,4 @@
-<map id="Control Interrupt Vector Declarations" name="Control Interrupt Vector Declarations">
-<area shape="rect" id="node1" href="$a00531.html" title="Hardware Abstraction Layer Declarations." alt="" coords="5,5,152,45"/>
-<area shape="rect" id="node2" title=" " alt="" coords="200,5,356,45"/>
+<map id="Microcontroller Abstraction" name="Microcontroller Abstraction">
+<area shape="rect" id="node1" href="$a00409.html" title="Declaration of phase current feedback parameters." alt="" coords="5,5,172,31"/>
+<area shape="rect" id="node2" title="Device analog input pin, register and interrupt vector assignments of phase current feedback signal(s..." alt="" coords="220,5,397,31"/>
 </map>

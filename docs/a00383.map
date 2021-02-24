@@ -1,6 +1,4 @@
-<map id="Startup Timing Settings" name="Startup Timing Settings">
-<area shape="rect" id="node1" title="Declaration of startup timing periods." alt="" coords="200,31,359,56"/>
-<area shape="rect" id="node3" href="$a00384.html" title="User&#45;declaration of startup timing periods using physical quantities." alt="" coords="422,5,523,31"/>
-<area shape="rect" id="node4" href="$a00385.html" title="Conversion macros for user&#45;declarations of startup timing periods." alt="" coords="407,55,539,80"/>
-<area shape="rect" id="node2" href="$a00531.html" title="Hardware Abstraction Layer Declarations." alt="" coords="5,23,152,63"/>
+<map id="User Settings" name="User Settings">
+<area shape="rect" id="node1" title="Parameter defintions using physical quantities." alt="" coords="203,13,304,38"/>
+<area shape="rect" id="node2" href="$a00382.html" title="Declarations of fundamental microcontroller device parameters." alt="" coords="5,5,155,45"/>
 </map>

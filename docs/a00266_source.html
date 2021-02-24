@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: dpsk_buck_vmc.X/sources/power_control/devices/dev_buck_special_functions.h Source File</title>
+<title>Digital Power Starter Kit 3 Firmware: dpsk_buck_agc.X/sources/power_control/devices/dev_buck_special_functions.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
   <td id="projectalign" style="padding-left: 0.0em;">
    <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
-   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Adaptive Gain Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -139,7 +139,7 @@ $(document).ready(function(){initNavTree('a00266_source.html',''); initResizable
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;stddef.h&gt;</span> <span class="comment">// include standard definition data types</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="a00482.html#ga3c2021030c83c9decfce3a892febcb9d">   50</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="a00482.html#ga3c2021030c83c9decfce3a892febcb9d">BUCK_SPECIAL_FUNCTIONS_e</a> </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="a00488.html#ga3c2021030c83c9decfce3a892febcb9d">   50</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="a00488.html#ga3c2021030c83c9decfce3a892febcb9d">BUCK_SPECIAL_FUNCTIONS_e</a> </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    CS_OFSET_CALIBRATION    </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        </div>
@@ -148,23 +148,23 @@ $(document).ready(function(){initNavTree('a00266_source.html',''); initResizable
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">/* PUBLIC FUNCTION CALL PROTOTYPES */</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> uint16_t <a class="code" href="a00479.html#ga8573aaa632abde3518f8a4448ff73cf7">drv_BuckConverter_SpecialFunctionExecute</a> (</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keyword">volatile</span> <span class="keyword">struct</span> <a class="code" href="a01554.html">BUCK_CONVERTER_s</a> * buckInstance, </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keyword">volatile</span> <span class="keyword">enum</span> <a class="code" href="a00482.html#ga3c2021030c83c9decfce3a892febcb9d">BUCK_SPECIAL_FUNCTIONS_e</a> specialFunction);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> uint16_t <a class="code" href="a00485.html#ga8573aaa632abde3518f8a4448ff73cf7">drv_BuckConverter_SpecialFunctionExecute</a> (</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keyword">volatile</span> <span class="keyword">struct</span> <a class="code" href="a01560.html">BUCK_CONVERTER_s</a> * buckInstance, </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keyword">volatile</span> <span class="keyword">enum</span> <a class="code" href="a00488.html#ga3c2021030c83c9decfce3a892febcb9d">BUCK_SPECIAL_FUNCTIONS_e</a> specialFunction);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* BUCK_CONVERTER_SPECIAL_FUNCTIONS_H */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">// end of file</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa01554_html"><div class="ttname"><a href="a01554.html">BUCK_CONVERTER_s</a></div><div class="ttdoc">BUCK control &amp; monitoring data structure.</div><div class="ttdef"><b>Definition:</b> <a href="a00278_source.html#l00500">dev_buck_typedef.h:501</a></div></div>
-<div class="ttc" id="aa00482_html_ga3c2021030c83c9decfce3a892febcb9d"><div class="ttname"><a href="a00482.html#ga3c2021030c83c9decfce3a892febcb9d">BUCK_SPECIAL_FUNCTIONS_e</a></div><div class="ttdeci">BUCK_SPECIAL_FUNCTIONS_e</div><div class="ttdoc">Enumeration of special function sub-states.</div><div class="ttdef"><b>Definition:</b> <a href="a00266_source.html#l00050">dev_buck_special_functions.h:51</a></div></div>
-<div class="ttc" id="aa00479_html_ga8573aaa632abde3518f8a4448ff73cf7"><div class="ttname"><a href="a00479.html#ga8573aaa632abde3518f8a4448ff73cf7">drv_BuckConverter_SpecialFunctionExecute</a></div><div class="ttdeci">volatile uint16_t drv_BuckConverter_SpecialFunctionExecute(volatile struct BUCK_CONVERTER_s *buckInstance, volatile enum BUCK_SPECIAL_FUNCTIONS_e specialFunction)</div><div class="ttdoc">This is the public function call access point to call dedicated special sub-functions.</div><div class="ttdef"><b>Definition:</b> <a href="a00263_source.html#l00133">dev_buck_special_functions.c:133</a></div></div>
+<div class="ttc" id="aa00485_html_ga8573aaa632abde3518f8a4448ff73cf7"><div class="ttname"><a href="a00485.html#ga8573aaa632abde3518f8a4448ff73cf7">drv_BuckConverter_SpecialFunctionExecute</a></div><div class="ttdeci">volatile uint16_t drv_BuckConverter_SpecialFunctionExecute(volatile struct BUCK_CONVERTER_s *buckInstance, volatile enum BUCK_SPECIAL_FUNCTIONS_e specialFunction)</div><div class="ttdoc">This is the public function call access point to call dedicated special sub-functions.</div><div class="ttdef"><b>Definition:</b> <a href="a00263_source.html#l00133">dev_buck_special_functions.c:133</a></div></div>
+<div class="ttc" id="aa01560_html"><div class="ttname"><a href="a01560.html">BUCK_CONVERTER_s</a></div><div class="ttdoc">BUCK control &amp; monitoring data structure.</div><div class="ttdef"><b>Definition:</b> <a href="a00278_source.html#l00500">dev_buck_typedef.h:501</a></div></div>
+<div class="ttc" id="aa00488_html_ga3c2021030c83c9decfce3a892febcb9d"><div class="ttname"><a href="a00488.html#ga3c2021030c83c9decfce3a892febcb9d">BUCK_SPECIAL_FUNCTIONS_e</a></div><div class="ttdeci">BUCK_SPECIAL_FUNCTIONS_e</div><div class="ttdoc">Enumeration of special function sub-states.</div><div class="ttdef"><b>Definition:</b> <a href="a00266_source.html#l00050">dev_buck_special_functions.h:51</a></div></div>
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_01066bb7b1e33c391de0f39ab7f37964.html">dpsk_buck_vmc.X</a></li><li class="navelem"><a class="el" href="dir_4775101750c4dd55cff8a4809201f12a.html">sources</a></li><li class="navelem"><a class="el" href="dir_fbd00860b1a2a86e7db4f141643e7a42.html">power_control</a></li><li class="navelem"><a class="el" href="dir_1e7729441992c637444f14d3c8887daa.html">devices</a></li><li class="navelem"><b>dev_buck_special_functions.h</b></li>
+    <li class="navelem"><a class="el" href="dir_4ee7c398c7a1a06f47d8fbc48027983f.html">dpsk_buck_agc.X</a></li><li class="navelem"><a class="el" href="dir_07fd0e222032ef0bb4c4c4bd39064c1a.html">sources</a></li><li class="navelem"><a class="el" href="dir_0fcaf799429564fbdc2868287a8e3593.html">power_control</a></li><li class="navelem"><a class="el" href="dir_48507c9de5b2ce4419f3fb2517742caf.html">devices</a></li><li class="navelem"><b>dev_buck_special_functions.h</b></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

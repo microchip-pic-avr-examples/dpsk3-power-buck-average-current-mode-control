@@ -1,6 +1,7 @@
 var a00515 =
 [
-    [ "Initializing Essential Chip Resources", "a00519.html", "a00519" ],
-    [ "Initializing Hardware-Specific Chip Resources", "a00524.html", "a00524" ],
-    [ "Initializing Firmware Tasks", "a00528.html", "a00528" ]
+    [ "Public Functions", "a00516.html", "a00516" ],
+    [ "Public Properties", "a00517.html", "a00517" ],
+    [ "Private Functions", "a00518.html", null ],
+    [ "Private Properties", "a00519.html", null ]
 ];

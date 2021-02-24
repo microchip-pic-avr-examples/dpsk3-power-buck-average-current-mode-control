@@ -1,4 +1,4 @@
-<map id="User Settings" name="User Settings">
-<area shape="rect" id="node1" title="User&#45;declaration of output voltage feedback parameters using physical quantities." alt="" coords="224,5,325,31"/>
-<area shape="rect" id="node2" href="$a00399.html" title="Declaration of output voltage feedback parameters." alt="" coords="5,5,176,31"/>
+<map id="Converter Phase #2" name="Converter Phase #2">
+<area shape="rect" id="node1" href="$a00398.html" title="PWM peripheral output pins, control signals and register assignments." alt="" coords="5,5,183,31"/>
+<area shape="rect" id="node2" title=" " alt="" coords="231,5,365,31"/>
 </map>

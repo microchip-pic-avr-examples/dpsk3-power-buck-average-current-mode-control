@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Buck Peripheral Templates</title>
+<title>Digital Power Starter Kit 3 Firmware: Buck Peripheral Configuration</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
   <td id="projectalign" style="padding-left: 0.0em;">
    <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
-   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Adaptive Gain Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -99,16 +99,15 @@ $(document).ready(function(){initNavTree('a00490.html',''); initResizable(); });
   <div class="summary">
 <a href="#groups">Modules</a>  </div>
   <div class="headertitle">
-<div class="title">Buck Peripheral Templates<div class="ingroups"><a class="el" href="a00533.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00460.html">Buck Converter Library</a> &raquo; <a class="el" href="a00471.html">Buck Converter Library Modules</a></div></div>  </div>
+<div class="title">Buck Peripheral Configuration<div class="ingroups"><a class="el" href="a00539.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00466.html">Buck Converter Library</a> &raquo; <a class="el" href="a00477.html">Buck Converter Library Modules</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Buck Peripheral Templates:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Buck Peripheral Configuration:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00490.svg" width="520" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00490.svg" width="535" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
@@ -121,7 +120,7 @@ Modules</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Peripheral Templates of the power converter device driver are used to preconfigure device peripheral modules required to drive and control the power converter circuit. Specific control modes might include different sets of peripherals. Peripheral templates are provided for each supported control mode as well as for optional and special features such as hardware protection, feedback conditioning, Enable input or Power Good output pins. </p>
+<p>The buck converter device driver self-manages its chip resources required to initialize and drive the converter stage and related control loops. The device driver provides standard configurations for all peripherals which are loaded into the respective Special Function Registers of each peripheral. The generic configuraitons are sublemented by the user-settings written to the converter data structure in the application layer initialization routine. </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

@@ -1,9 +1,4 @@
-<map id="Power Control Application Layer" name="Power Control Application Layer">
-<area shape="rect" id="node1" title=" " alt="" coords="176,97,347,137"/>
-<area shape="rect" id="node2" href="$a00455.html" title="Public functions of the application layer of the power control task." alt="" coords="407,5,526,31"/>
-<area shape="rect" id="node3" href="$a00456.html" title="Public properties of the application layer of the power control task." alt="" coords="406,55,527,80"/>
-<area shape="rect" id="node4" href="$a00458.html" title="Private functions of the application layer of the power control task." alt="" coords="405,104,528,129"/>
-<area shape="rect" id="node6" href="$a00457.html" title="Public events of the application layer of the power control task." alt="" coords="395,153,539,179"/>
-<area shape="rect" id="node7" href="$a00459.html" title="Public properties of the application layer of the power control task." alt="" coords="405,203,529,228"/>
-<area shape="rect" id="node5" href="$a00532.html" title="Task Layer." alt="" coords="5,104,128,129"/>
+<map id="Private Properties" name="Private Properties">
+<area shape="rect" id="node1" title="Private properties of the LC display interface driver." alt="" coords="192,13,316,38"/>
+<area shape="rect" id="node2" href="$a00450.html" title=" " alt="" coords="5,5,144,45"/>
 </map>

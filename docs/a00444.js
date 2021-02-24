@@ -1,7 +1,6 @@
 var a00444 =
 [
-    [ "Public Functions", "a00445.html", "a00445" ],
-    [ "Public Properties", "a00446.html", null ],
-    [ "Private Functions", "a00447.html", "a00447" ],
-    [ "Private Properties", "a00448.html", "a00448" ]
+    [ "LCD_REFRESH", "a00444.html#ga8f1bba8cbdf98ed2ac6e10cc8739e56f", null ],
+    [ "LCD_STARTUP", "a00444.html#ga064b0f92f54c1aab1e6731ff24b4cce7", null ],
+    [ "lcd_cnt", "a00444.html#ga6d471f8bdd24d951c86a09ec25f74ef2", null ]
 ];

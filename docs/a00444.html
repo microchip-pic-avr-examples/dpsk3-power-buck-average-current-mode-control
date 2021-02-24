@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: LC-Display Interface Driver</title>
+<title>Digital Power Starter Kit 3 Firmware: Private Properties</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
   <td id="projectalign" style="padding-left: 0.0em;">
    <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
-   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Adaptive Gain Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -96,38 +96,96 @@ $(document).ready(function(){initNavTree('a00444.html',''); initResizable(); });
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#groups">Modules</a>  </div>
   <div class="headertitle">
-<div class="title">LC-Display Interface Driver<div class="ingroups"><a class="el" href="a00534.html">Library Driver Layer</a></div></div>  </div>
+<div class="title">Private Properties<div class="ingroups"><a class="el" href="a00538.html">Application Layer</a> &raquo; <a class="el" href="a00440.html">LC-Display Application Layer</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Private properties of the LC display task.  
+<a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for LC-Display Interface Driver:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Private Properties:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00444.svg" width="503" height="184"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00444.svg" width="336" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
-Modules</h2></td></tr>
-<tr class="memitem:a00445"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00445.html">Public Functions</a></td></tr>
-<tr class="memdesc:a00445"><td class="mdescLeft">&#160;</td><td class="mdescRight">Public functions of the LC display interface driver. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00446"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00446.html">Public Properties</a></td></tr>
-<tr class="memdesc:a00446"><td class="mdescLeft">&#160;</td><td class="mdescRight">Public properties of the LC display interface driver. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00447"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00447.html">Private Functions</a></td></tr>
-<tr class="memdesc:a00447"><td class="mdescLeft">&#160;</td><td class="mdescRight">Private functions of the LC display interface driver. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00448"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00448.html">Private Properties</a></td></tr>
-<tr class="memdesc:a00448"><td class="mdescLeft">&#160;</td><td class="mdescRight">Private properties of the LC display interface driver. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6d471f8bdd24d951c86a09ec25f74ef2"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00444.html#ga6d471f8bdd24d951c86a09ec25f74ef2">lcd_cnt</a> = 0</td></tr>
+<tr class="memdesc:ga6d471f8bdd24d951c86a09ec25f74ef2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Local counter used to trigger LCD refresh event.  <a href="a00444.html#ga6d471f8bdd24d951c86a09ec25f74ef2">More...</a><br /></td></tr>
+<tr class="separator:ga6d471f8bdd24d951c86a09ec25f74ef2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga064b0f92f54c1aab1e6731ff24b4cce7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00444.html#ga064b0f92f54c1aab1e6731ff24b4cce7">LCD_STARTUP</a>&#160;&#160;&#160;30000</td></tr>
+<tr class="memdesc:ga064b0f92f54c1aab1e6731ff24b4cce7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Startup screen delay compare value.  <a href="a00444.html#ga064b0f92f54c1aab1e6731ff24b4cce7">More...</a><br /></td></tr>
+<tr class="separator:ga064b0f92f54c1aab1e6731ff24b4cce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8f1bba8cbdf98ed2ac6e10cc8739e56f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00444.html#ga8f1bba8cbdf98ed2ac6e10cc8739e56f">LCD_REFRESH</a>&#160;&#160;&#160;2000</td></tr>
+<tr class="memdesc:ga8f1bba8cbdf98ed2ac6e10cc8739e56f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Screen refresh delay compare value.  <a href="a00444.html#ga8f1bba8cbdf98ed2ac6e10cc8739e56f">More...</a><br /></td></tr>
+<tr class="separator:ga8f1bba8cbdf98ed2ac6e10cc8739e56f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>The LC display interface driver is the generic library component used to configure and drive an on-board LC display interface. </p>
+<p>Private properties of the LC display task. </p>
+<p>This is the detailed description of public variables, data types, enumerations, defines and macros of the LC display task. </p>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga8f1bba8cbdf98ed2ac6e10cc8739e56f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8f1bba8cbdf98ed2ac6e10cc8739e56f">&#9670;&nbsp;</a></span>LCD_REFRESH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_REFRESH&#160;&#160;&#160;2000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Screen refresh delay compare value. </p>
+<p>Value of 30000 equals a period of 200 milliseconds.</p>
+<p>Period counter compare value determining the LCD refresh rate </p>
+
+<p class="definition">Definition at line <a class="el" href="a00185_source.html#l00059">59</a> of file <a class="el" href="a00185_source.html">app_lcd.c</a>.</p>
+
+</div>
+</div>
+<a id="ga064b0f92f54c1aab1e6731ff24b4cce7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga064b0f92f54c1aab1e6731ff24b4cce7">&#9670;&nbsp;</a></span>LCD_STARTUP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_STARTUP&#160;&#160;&#160;30000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Startup screen delay compare value. </p>
+<p>Value of 30000 equals a period of 3 seconds.</p>
+<p>Period counter compare value determining how long the startup screen will be shown </p>
+
+<p class="definition">Definition at line <a class="el" href="a00185_source.html#l00047">47</a> of file <a class="el" href="a00185_source.html">app_lcd.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ga6d471f8bdd24d951c86a09ec25f74ef2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6d471f8bdd24d951c86a09ec25f74ef2">&#9670;&nbsp;</a></span>lcd_cnt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lcd_cnt = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Local counter used to trigger LCD refresh event. </p>
+<p>LCD driver time-base counter.</p>
+<p>The LCD driver screen update is performed with a fixed frequency generated by counting task scheduler ticks. The time-base counter 'lcd_cnt' is incremented with every task scheduler call of function <a class="el" href="a00441.html#gacd8e3f8ca8af94f13f7efa0df7ced6f5" title="Refreshes the LC display.">appLCD_Execute()</a>. If the time-base counter value matches or exceeds the constant user value defined by LCD_STARTUP, the startup screen will be switched to the first default LCD screen and regular screen updates will be performed. If the time-base counter value matches or exceeds the constant user value defined by LCD_STARTUP, the screen update will be performed. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00185_source.html#l00035">35</a> of file <a class="el" href="a00185_source.html">app_lcd.c</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

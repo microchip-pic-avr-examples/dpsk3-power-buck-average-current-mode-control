@@ -1,6 +1,4 @@
 var a00524 =
 [
-    [ "User Peripheral Initialization", "a00525.html", "a00525" ],
-    [ "Digital-to-Analog Converter", "a00526.html", "a00526" ],
-    [ "Operational Amplifier Configuration", "a00527.html", "a00527" ]
+    [ "sysHighPriorityTasks_Execute", "a00524.html#ga1873ce221ca3545badd9c72c846bba3d", null ]
 ];

@@ -1,4 +1,4 @@
-<map id="Public Functions" name="Public Functions">
-<area shape="rect" id="node1" title="Public functions of the first application layer task." alt="" coords="220,13,339,38"/>
-<area shape="rect" id="node2" href="$a00418.html" title=" " alt="" coords="5,5,172,45"/>
+<map id="LC Display Interface Declarations" name="LC Display Interface Declarations">
+<area shape="rect" id="node1" href="$a00537.html" title="Hardware Abstraction Layer Declarations." alt="" coords="5,5,152,45"/>
+<area shape="rect" id="node2" title="LC display SPI interface GPIO declarations." alt="" coords="200,5,339,45"/>
 </map>

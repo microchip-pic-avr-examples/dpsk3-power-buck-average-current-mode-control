@@ -1,8 +1,6 @@
 var a00436 =
 [
-    [ "LCD_s", "a01470.html", [
-      [ "enabled", "a01470.html#a085e9fc0863cee4864cf51dcfe1e32df", null ],
-      [ "refresh", "a01470.html#adc2298ffda0c853e699e6da9098f82ae", null ],
-      [ "screen", "a01470.html#aea467a9fc04f0771215b952d26bc4392", null ]
-    ] ]
+    [ "CPU_RESET_TRIGGER_LOW_BIT_MASK", "a00436.html#ga93ad1697099d89b5b6ea6b7b5ff04b6b", null ],
+    [ "FAULT_OBJECT_CPU_RESET_TRIGGER_BIT_MASK", "a00436.html#ga3334fbf341916cab77073f953283999b", null ],
+    [ "TRAP_DMA_SUPPORT", "a00436.html#ga393990cf5c03424419ade69a25bac06a", null ]
 ];

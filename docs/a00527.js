@@ -1,6 +1,5 @@
 var a00527 =
 [
-    [ "sysOpAmp_Initialize", "a00527.html#gaf4c74cf390185b49d99838e0f9885076", null ],
-    [ "sysOpAmp_ModuleEnable", "a00527.html#ga3cd080c9a48a5d74d8b2f89fdec161da", null ],
-    [ "sysOpAmp_ModuleReset", "a00527.html#ga4dbd2367ecd449226460b0b0a52cbe8b", null ]
+    [ "sysAclk_Initialize", "a00527.html#ga3f3f3c22c6c2b95518271fae8f58b03f", null ],
+    [ "sysFosc_Initialize", "a00527.html#ga40d0188218fbc4f682cbddffff9e1269", null ]
 ];

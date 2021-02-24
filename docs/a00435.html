@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Public Functions</title>
+<title>Digital Power Starter Kit 3 Firmware: Data Types</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
   <td id="projectalign" style="padding-left: 0.0em;">
    <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
-   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Voltage Mode Control Example</div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Adaptive Gain Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -96,156 +96,173 @@ $(document).ready(function(){initNavTree('a00435.html',''); initResizable(); });
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Public Functions<div class="ingroups"><a class="el" href="a00532.html">Application Layer</a> &raquo; <a class="el" href="a00434.html">LC-Display Application Layer</a></div></div>  </div>
+<div class="title">Data Types<div class="ingroups"><a class="el" href="a00539.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00429.html">Fault Handler Library</a> &raquo; <a class="el" href="a00431.html">Public Properties</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Public functions of the LC display task.  
-<a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Public Functions:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Data Types:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00435.svg" width="331" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00435.svg" width="268" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:gab93992748ced72fdc2989d0b0f369e54"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#gab93992748ced72fdc2989d0b0f369e54">appLCD_Initialize</a> (void)</td></tr>
-<tr class="memdesc:gab93992748ced72fdc2989d0b0f369e54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the LC display.  <a href="a00435.html#gab93992748ced72fdc2989d0b0f369e54">More...</a><br /></td></tr>
-<tr class="separator:gab93992748ced72fdc2989d0b0f369e54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacd8e3f8ca8af94f13f7efa0df7ced6f5"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#gacd8e3f8ca8af94f13f7efa0df7ced6f5">appLCD_Execute</a> (void)</td></tr>
-<tr class="memdesc:gacd8e3f8ca8af94f13f7efa0df7ced6f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refreshes the LC display.  <a href="a00435.html#gacd8e3f8ca8af94f13f7efa0df7ced6f5">More...</a><br /></td></tr>
-<tr class="separator:gacd8e3f8ca8af94f13f7efa0df7ced6f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga38c10d91e208e9eb081d0341792954d7"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#ga38c10d91e208e9eb081d0341792954d7">appLCD_Dispose</a> (void)</td></tr>
-<tr class="memdesc:ga38c10d91e208e9eb081d0341792954d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unloads the LC display data object and resources.  <a href="a00435.html#ga38c10d91e208e9eb081d0341792954d7">More...</a><br /></td></tr>
-<tr class="separator:ga38c10d91e208e9eb081d0341792954d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaee63654a5e14dd3b2bab6179a5cbe2ab"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#gaee63654a5e14dd3b2bab6179a5cbe2ab">TRAP_ID_e</a> { <br />
+&#160;&#160;<b>TRAP_OSCILLATOR_FAIL</b> = 0x0001, 
+<b>TRAP_ADDRESS_ERROR</b> = 0x0002, 
+<b>TRAP_STACK_ERROR</b> = 0x0004, 
+<b>TRAP_MATH_ERROR</b> = 0x0008, 
+<b>TRAP_DMA_ERROR</b> = 0x0010, 
+<b>TRAP_SOFT_TRAP_ERROR</b> = 0x0020, 
+<b>TRAP_HARD_TRAP_ERROR</b> = 0x0040, 
+<b>TRAP_RESERVED_TRAP_5_ERROR</b> = 0x0080, 
+<b>TRAP_RESERVED_TRAP_7_ERROR</b> = 0x0080, 
+<b>TRAP_ALT_OSCILLATOR_FAIL</b> = 0x0100, 
+<br />
+&#160;&#160;<b>TRAP_ALT_ADDRESS_ERROR</b> = 0x0200, 
+<b>TRAP_ALT_STACK_ERROR</b> = 0x0400, 
+<b>TRAP_ALT_MATH_ERROR</b> = 0x0800, 
+<b>TRAP_ALT_DMA_ERROR</b> = 0x1000, 
+<b>TRAP_ALT_SOFT_TRAP_ERROR</b> = 0x2000, 
+<b>TRAP_ALT_HARD_TRAP_ERROR</b> = 0x4000, 
+<b>TRAP_RESET_MSK</b> = 0x7F1F
+<br />
+ }</td></tr>
+<tr class="memdesc:gaee63654a5e14dd3b2bab6179a5cbe2ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">defining trap-ID for primary and secondary vectors  <a href="a00435.html#gaee63654a5e14dd3b2bab6179a5cbe2ab">More...</a><br /></td></tr>
+<tr class="separator:gaee63654a5e14dd3b2bab6179a5cbe2ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac1a3bb25ab328fe3ed0f3494dd58d41e"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="a00435.html#gaee63654a5e14dd3b2bab6179a5cbe2ab">TRAP_ID_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#gac1a3bb25ab328fe3ed0f3494dd58d41e">TRAP_ID_t</a></td></tr>
+<tr class="separator:gac1a3bb25ab328fe3ed0f3494dd58d41e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga34f8f3a66ba022a11555bcbcc1d7c143"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a01420.html">TRAP_FLAGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#ga34f8f3a66ba022a11555bcbcc1d7c143">TRAP_FLAGS_t</a></td></tr>
+<tr class="separator:ga34f8f3a66ba022a11555bcbcc1d7c143"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga35071dd1d28db260f503cf7783b8562c"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a01432.html">CPU_INTTREG_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#ga35071dd1d28db260f503cf7783b8562c">CPU_INTTREG_t</a></td></tr>
+<tr class="separator:ga35071dd1d28db260f503cf7783b8562c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga727efbb8fb2703832a116d8d7b70f9fa"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a01444.html">CPU_RCON_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#ga727efbb8fb2703832a116d8d7b70f9fa">CPU_RCON_t</a></td></tr>
+<tr class="separator:ga727efbb8fb2703832a116d8d7b70f9fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa086a924e5aaa2bed5a676106fe284c6"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a01456.html">TRAPLOG_STATUS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#gaa086a924e5aaa2bed5a676106fe284c6">TRAPLOG_STATUS_t</a></td></tr>
+<tr class="separator:gaa086a924e5aaa2bed5a676106fe284c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacab9a7bab555242c176709817ecda6f3"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a01468.html">TASK_INFO_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#gacab9a7bab555242c176709817ecda6f3">TASK_INFO_t</a></td></tr>
+<tr class="separator:gacab9a7bab555242c176709817ecda6f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa31136531ddd10f950990ce253c0de78"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a01472.html">TRAP_LOGGER_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#gaa31136531ddd10f950990ce253c0de78">TRAP_LOGGER_t</a></td></tr>
+<tr class="separator:gaa31136531ddd10f950990ce253c0de78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Public functions of the LC display task. </p>
-<p>This is the detailed description of public API functions of the LC display task. </p>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="ga38c10d91e208e9eb081d0341792954d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga38c10d91e208e9eb081d0341792954d7">&#9670;&nbsp;</a></span>appLCD_Dispose()</h2>
+<p>This chapter provides detailed information about the public data types provided by the fault handler library. </p>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="ga35071dd1d28db260f503cf7783b8562c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga35071dd1d28db260f503cf7783b8562c">&#9670;&nbsp;</a></span>CPU_INTTREG_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t appLCD_Dispose </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">typedef struct <a class="el" href="a01432.html">CPU_INTTREG_s</a> <a class="el" href="a00435.html#ga35071dd1d28db260f503cf7783b8562c">CPU_INTTREG_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Unloads the LC display data object and resources. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">void</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned int (0=failure, 1=success)  This function unloads the LC display data object and frees its resources. The <a class="el" href="a01470.html" title="Declaration of public LC display data object.">LCD_s</a> data object of this display needs to be reinitialized before the LC display can be used again. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="a00185_source.html#l00203">203</a> of file <a class="el" href="a00185_source.html">app_lcd.c</a>.</p>
-
 </div>
 </div>
-<a id="gacd8e3f8ca8af94f13f7efa0df7ced6f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gacd8e3f8ca8af94f13f7efa0df7ced6f5">&#9670;&nbsp;</a></span>appLCD_Execute()</h2>
+<a id="ga727efbb8fb2703832a116d8d7b70f9fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga727efbb8fb2703832a116d8d7b70f9fa">&#9670;&nbsp;</a></span>CPU_RCON_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t appLCD_Execute </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">typedef struct <a class="el" href="a01444.html">CPU_RCON_s</a> <a class="el" href="a00435.html#ga727efbb8fb2703832a116d8d7b70f9fa">CPU_RCON_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Refreshes the LC display. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">void</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned int (0=failure, 1=success)  This function is frequently called by the task scheduler automatically updating currently displayed data and/or loading the most recent screen if a screen switch has been triggered by externally. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="a00185_source.html#l00106">106</a> of file <a class="el" href="a00185_source.html">app_lcd.c</a>.</p>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00435_gacd8e3f8ca8af94f13f7efa0df7ced6f5_cgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00435_gacd8e3f8ca8af94f13f7efa0df7ced6f5_icgraph.svg" width="324" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="gab93992748ced72fdc2989d0b0f369e54"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab93992748ced72fdc2989d0b0f369e54">&#9670;&nbsp;</a></span>appLCD_Initialize()</h2>
+<a id="gacab9a7bab555242c176709817ecda6f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacab9a7bab555242c176709817ecda6f3">&#9670;&nbsp;</a></span>TASK_INFO_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t appLCD_Initialize </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">typedef struct <a class="el" href="a01468.html">TASK_INFO_s</a> <a class="el" href="a00435.html#gacab9a7bab555242c176709817ecda6f3">TASK_INFO_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initializes the LC display. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">void</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned int (0=failure, 1=success)  This function initializes the LC display driver data object and loads the startup screen. </dd></dl>
+</div>
+</div>
+<a id="ga34f8f3a66ba022a11555bcbcc1d7c143"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga34f8f3a66ba022a11555bcbcc1d7c143">&#9670;&nbsp;</a></span>TRAP_FLAGS_t</h2>
 
-<p class="definition">Definition at line <a class="el" href="a00185_source.html#l00076">76</a> of file <a class="el" href="a00185_source.html">app_lcd.c</a>.</p>
-<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00435_gab93992748ced72fdc2989d0b0f369e54_cgraph.svg" width="100%" height="480"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
-<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00435_gab93992748ced72fdc2989d0b0f369e54_icgraph.svg" width="340" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="a01420.html">TRAP_FLAGS_s</a> <a class="el" href="a00435.html#ga34f8f3a66ba022a11555bcbcc1d7c143">TRAP_FLAGS_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 </div>
 </div>
+<a id="gac1a3bb25ab328fe3ed0f3494dd58d41e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac1a3bb25ab328fe3ed0f3494dd58d41e">&#9670;&nbsp;</a></span>TRAP_ID_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="a00435.html#gaee63654a5e14dd3b2bab6179a5cbe2ab">TRAP_ID_e</a> <a class="el" href="a00435.html#gac1a3bb25ab328fe3ed0f3494dd58d41e">TRAP_ID_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaa31136531ddd10f950990ce253c0de78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa31136531ddd10f950990ce253c0de78">&#9670;&nbsp;</a></span>TRAP_LOGGER_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="a01472.html">TRAP_LOGGER_s</a> <a class="el" href="a00435.html#gaa31136531ddd10f950990ce253c0de78">TRAP_LOGGER_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaa086a924e5aaa2bed5a676106fe284c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa086a924e5aaa2bed5a676106fe284c6">&#9670;&nbsp;</a></span>TRAPLOG_STATUS_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="a01456.html">TRAPLOG_STATUS_s</a> <a class="el" href="a00435.html#gaa086a924e5aaa2bed5a676106fe284c6">TRAPLOG_STATUS_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="gaee63654a5e14dd3b2bab6179a5cbe2ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaee63654a5e14dd3b2bab6179a5cbe2ab">&#9670;&nbsp;</a></span>TRAP_ID_e</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="a00435.html#gaee63654a5e14dd3b2bab6179a5cbe2ab">TRAP_ID_e</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>defining trap-ID for primary and secondary vectors </p>
+
+<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00099">99</a> of file <a class="el" href="a00179_source.html">drv_trap_handler.h</a>.</p>
 
 </div>
 </div>

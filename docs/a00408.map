@@ -1,4 +1,4 @@
-<map id="User Settings" name="User Settings">
-<area shape="rect" id="node1" href="$a00407.html" title="Declaration of temperature feedback parameters." alt="" coords="5,5,160,31"/>
-<area shape="rect" id="node2" title="User&#45;declaration of temperature feedback parameters using physical quantities." alt="" coords="208,5,309,31"/>
+<map id="Microcontroller Abstraction" name="Microcontroller Abstraction">
+<area shape="rect" id="node1" title="Device analog input pin, register and interrupt vector assignments of output voltage feedback signal(..." alt="" coords="224,5,401,31"/>
+<area shape="rect" id="node2" href="$a00405.html" title="Declaration of output voltage feedback parameters." alt="" coords="5,5,176,31"/>
 </map>

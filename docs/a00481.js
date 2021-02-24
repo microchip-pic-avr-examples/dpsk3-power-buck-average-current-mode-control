@@ -1,5 +1,7 @@
 var a00481 =
 [
-    [ "BuckConverterSpecialFunctions", "a00481.html#ga3ae32433f160a13731fbe7e18e62d621", null ],
-    [ "calib_cs", "a00481.html#ga619f44e96a83b8c723f1e8e24e5c7442", null ]
+    [ "BuckConverterRampUpSubStateMachine", "a00481.html#gad90aaba79b75de05468a961a39c9c018", null ],
+    [ "BuckConverterStateMachine", "a00481.html#ga34e9e076d0bb91ad7b4ce328bc03dfee", null ],
+    [ "BuckRampUpSubStateList_size", "a00481.html#gaf52bd106cdf677965715261049bbc072", null ],
+    [ "BuckStateList_size", "a00481.html#ga908907079f862f9793ac00bd89d653ce", null ]
 ];

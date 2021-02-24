@@ -1,13 +1,22 @@
 var a00411 =
 [
-    [ "BUCK_AGC_FACTOR_MAX", "a00411.html#ga30083345d8b122bce51aa372bc4ce148", null ],
-    [ "BUCK_AGC_IO_NORM_FACTOR", "a00411.html#gabdbb5d2baae550abbc0c8d5cfa515e05", null ],
-    [ "BUCK_AGC_IO_NORM_SCALER", "a00411.html#gafbaa80db67366c907a4dcc3a27e63ff1", null ],
-    [ "BUCK_AGC_MEDIAN", "a00411.html#gab66099c12e6b9f4153aeb8ef6e8487d5", null ],
-    [ "BUCK_AGC_NOM_FACTOR", "a00411.html#gac099d403afaf30b093a91400740b5737", null ],
-    [ "BUCK_AGC_NOM_SCALER", "a00411.html#ga2f08303f166365f97a7390fa1ef1503d", null ],
-    [ "BUCK_VIN_NORM_FCT", "a00411.html#ga64367e1b5414f4ab9ce0bd5f8a7ec618", null ],
-    [ "BUCK_VL_MAXIMUM", "a00411.html#ga16553be6e8fe8ab34f6d078ff6e39cd7", null ],
-    [ "BUCK_VL_MINIMUM", "a00411.html#ga41af1de3fe8252ea181dc05f33c14b68", null ],
-    [ "BUCK_VL_NOMINAL", "a00411.html#ga6999c379d5a1a2c4fb81902bfc1fe3b1", null ]
+    [ "BOOST_ISNS_ADC_TRGDLY", "a00411.html#gae8947ce236c13faf17f185c90516b601", null ],
+    [ "BOOST_ISNS_FB_OFFSET", "a00411.html#ga7deffe1f756ecdc6fcc2da4cc8acc439", null ],
+    [ "BOOST_ISNS_MIN", "a00411.html#ga8e98990970b9b63b412703a4ba21eb32", null ],
+    [ "BOOST_ISNS_NORM_FACTOR", "a00411.html#gac537dce720864ef884b7d0f0784acff2", null ],
+    [ "BOOST_ISNS_NORM_INV_G", "a00411.html#ga27d281445f58d1ebdda4b5309589a297", null ],
+    [ "BOOST_ISNS_NORM_SCALER", "a00411.html#gaf4e2616c16258fac71cc9bd827c86ec8", null ],
+    [ "BOOST_ISNS_OCL", "a00411.html#ga338166f55528286578e68f3e45ba18e6", null ],
+    [ "BOOST_ISNS_OCL_RELEASE", "a00411.html#gad4291d6f1240cde5634efa9b1c3c186e", null ],
+    [ "BOOST_ISNS_REF", "a00411.html#ga1812e11e4cbca75babd9dc3be24579d5", null ],
+    [ "BOOST_ISNS_REF_STARTUP", "a00411.html#gaec3d7b3ee13c4a99831d215bda850388", null ],
+    [ "BUCK_ISNS_ADC_TRGDLY", "a00411.html#gadd7bda921f20e16726f0afb3093c9e9a", null ],
+    [ "BUCK_ISNS_FB_OFFSET", "a00411.html#ga35b597c9d9b5c03a9b82f3d6eb39d5d9", null ],
+    [ "BUCK_ISNS_MIN", "a00411.html#ga42e1f31f04d989b2e435cdbc4d3e7f6f", null ],
+    [ "BUCK_ISNS_NORM_FACTOR", "a00411.html#ga9645ff162de5632caf60de3035e69083", null ],
+    [ "BUCK_ISNS_NORM_INV_G", "a00411.html#ga3267f68828461f4ddcad6f54b2ecaa08", null ],
+    [ "BUCK_ISNS_NORM_SCALER", "a00411.html#gaf32bbfa61d6f4519876d7db9164a8c61", null ],
+    [ "BUCK_ISNS_OCL", "a00411.html#ga4d1c14d9a17cb1e372741350cc46552f", null ],
+    [ "BUCK_ISNS_OCL_RELEASE", "a00411.html#gaa3a7fb2feaa8c138d4c52f504075e802", null ],
+    [ "BUCK_ISNS_REF", "a00411.html#ga781cfc9802c86ba6e1813b2615adac21", null ]
 ];
