@@ -1,5 +1,5 @@
 /* *********************************************************************************
- * z-Domain Control Loop Designer, Version 0.9.12.642
+ * PowerSmart™ Digital Control Library Designer, Version 0.9.12.672
  * *********************************************************************************
  * 4p4z controller function declarations and compensation filter coefficients
  * derived for following operating conditions:
@@ -9,15 +9,20 @@
  *  Sampling Frequency: 500000 Hz
  *  Fixed Point Format: Q15
  *  Scaling Mode:       3 - Dual Bit-Shift Scaling
- *  Input Gain:         0.208791
+ *  Input Gain:         0.5
  *
  * *********************************************************************************
- * CGS Version:         3.0.0
- * CGS Date:            09/07/2020
+ * CGS Version:         3.0.6
+ * CGS Date:            02/03/2021
  * *********************************************************************************
  * User:                M91406
- * Date/Time:           12/06/2020 15:02:37
+ * Date/Time:           02/24/2021 00:14:41
  * ********************************************************************************/
+
+/**
+@file v_loop_agc.h
+@brief AGC observer function call declarations
+*/
 
 // This is a guard condition so that contents of this file are not included
 // more than once.
