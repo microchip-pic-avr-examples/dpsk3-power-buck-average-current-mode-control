@@ -25,19 +25,21 @@ dsPIC33C Digital Power Starter Kit (DPSK3) (Part-No. DM330017-3)
 - - -
 
 ## Summary
-Real-time adaptive gain modulation of voltage mode control example for the buck converter on the Digital Power Starter Kit, version 3 (DPSK3) featuring the dsPIC33CK family of devices.
+Dual-Loop Average Current Mode Control (ACMC) example for the buck converter on the Digital Power Starter Kit, version 3 (DPSK3) featuring the dsPIC33CK family of devices.
 
 - - -
 
 ## Description
-This code example demonstrates the implementation of an enhanced voltage mode control loop for the synchronous buck converter using in-loop adaptive loop gain modulation to compensate for gain variations in the power plant caused by changes in the voltage across the inductor. The loop implementation also includes the required state machine managing board status analysis, start-up control, operation monitoring, fault handling and auto-restart capability. The buck converter state machine is based on a generic library package, which is configured and executed in user code.
+This code example demonstrates the implementation of a dual-loop average current mode controller for the synchronous buck converter, comprised of an outer votlage loop 
+and an inner curretn loop. The loop implementation also includes the required state machine managing board status analysis, start-up control, operation monitoring, 
+fault handling and auto-restart capability. The buck converter state machine is based on a generic buck converter library package, which is configured and executed in user code.
 
 This code example also includes the LCD driver allowing users to observe runtime data on the on-board LC display. The on-board user switch `USER` allows users to change the active display page to observe input voltage, output voltage, output current and board temperature.
 
 ## Related Documentation
 
 #### Firmware Documentation
-- [Online Firmware Documentation of this Code Example](https://microchip-pic-avr-examples.github.io/dpsk3-power-buck-adaptive-gain-control/)
+- [Online Firmware Documentation of this Code Example](https://microchip-pic-avr-examples.github.io/dpsk3-power-buck-average-current-mode-control/)
 
 #### Hardware and Target Device Documentation
 - [Digital Power Starter Kit 3 User Guide](https://www.microchip.com/50002867)

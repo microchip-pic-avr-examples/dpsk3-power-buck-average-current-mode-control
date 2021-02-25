@@ -347,7 +347,7 @@ struct BUCK_LOOP_SETTINGS_s {
     volatile uint16_t reference;            ///< Control loop reference variable
     volatile uint16_t feedback_offset;      ///< Feedback offset value for calibration or bi-direction feedback signals
     volatile uint16_t trigger_offset;       ///< ADC trigger offset value for trigger fine-tuning
-    volatile int16_t  minimum;              ///< output clamping value (minimum)
+    volatile uint16_t minimum;              ///< output clamping value (minimum)
     volatile uint16_t maximum;              ///< output clamping value (maximum)
     // Control Loop Object
     volatile struct NPNZ16b_s* controller;  ///< pointer to control loop object data structure

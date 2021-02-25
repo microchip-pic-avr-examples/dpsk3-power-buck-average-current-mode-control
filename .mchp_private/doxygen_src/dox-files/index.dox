@@ -42,7 +42,7 @@ process of the firmware.
 @code{.c} #pragma config FNOSC = FRCDIVN @endcode
  
  - <b>Step 1 (System Initialization):</b><br><br>
-   The first step focusses on essential IC resources only, such as oscillator and device inputs/outputs.
+   The first step focuses on essential IC resources only, such as oscillator and device inputs/outputs.
    The following modules are initialized in the given order:<br><br>
    - <b>Main Oscillator: </b><br>
    In this design the internal 8 MHz RC oscillator is used. Hence, the very first step in the firmware is to set up 

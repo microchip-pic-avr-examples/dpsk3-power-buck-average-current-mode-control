@@ -67,7 +67,7 @@ volatile uint16_t appPowerSupply_Execute(void)
     // Capture data values
     buck.data.v_in = (BUCK_VIN_ADCBUF - BUCK_VIN_OFFSET);
     buck.data.temp = BUCK_TEMP_ADCBUF;
-    buck.data.i_sns[0] = BUCK_ISNS_ADCBUF;
+//    buck.data.i_sns[0] = BUCK_ISNS_ADCBUF;
     
     // Average inductor current value
     isns_samples += buck.data.i_sns[0];

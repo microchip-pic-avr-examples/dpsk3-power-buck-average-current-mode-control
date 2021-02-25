@@ -65,6 +65,7 @@
             <itemPath>sources/power_control/drivers/npnz16b.h</itemPath>
             <itemPath>sources/power_control/drivers/v_loop.h</itemPath>
             <itemPath>sources/power_control/drivers/v_loop_agc.h</itemPath>
+            <itemPath>sources/power_control/drivers/i_loop.h</itemPath>
           </logicalFolder>
         </logicalFolder>
         <logicalFolder name="f8" displayName="push_button" projectFiles="true">
@@ -152,8 +153,8 @@
           <logicalFolder name="f3" displayName="drivers" projectFiles="true">
             <itemPath>sources/power_control/drivers/v_loop.c</itemPath>
             <itemPath>sources/power_control/drivers/v_loop_asm.s</itemPath>
-            <itemPath>sources/power_control/drivers/v_loop_extensions.s</itemPath>
-            <itemPath>sources/power_control/drivers/v_loop_agc.s</itemPath>
+            <itemPath>sources/power_control/drivers/i_loop.c</itemPath>
+            <itemPath>sources/power_control/drivers/i_loop_asm.s</itemPath>
           </logicalFolder>
         </logicalFolder>
         <logicalFolder name="f2" displayName="push_button" projectFiles="true">
@@ -172,7 +173,8 @@
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
       <itemPath>readme.txt</itemPath>
-      <itemPath>sources/power_control/config/dpsk3_buck_agc.dcld</itemPath>
+      <itemPath>sources/power_control/config/dpsk3_buck_acmc-v_loop.dcld</itemPath>
+      <itemPath>sources/power_control/config/dpsk3_buck_acmc-i_loop.dcld</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -180,7 +182,7 @@
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
-    <conf name="dpsk3_buck_agc" type="2">
+    <conf name="dpsk3_buck_acmc" type="2">
       <toolsSet>
         <developmentServer>localhost</developmentServer>
         <targetDevice>dsPIC33CK256MP505</targetDevice>

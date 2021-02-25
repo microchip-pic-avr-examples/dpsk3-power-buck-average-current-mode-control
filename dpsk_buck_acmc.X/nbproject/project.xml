@@ -3,7 +3,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>dpsk_buck_agc</name>
+            <name>dpsk_buck_acmc</name>
             <creation-uuid>fdac5ced-dfa7-4368-a3cb-42bdf808e3c1</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>
@@ -17,7 +17,7 @@
             </sourceRootList>
             <confList>
                 <confElem>
-                    <name>dpsk3_buck_agc</name>
+                    <name>dpsk3_buck_acmc</name>
                     <type>2</type>
                 </confElem>
             </confList>

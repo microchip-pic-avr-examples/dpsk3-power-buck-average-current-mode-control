@@ -16,7 +16,7 @@
 
 #include "devices/dev_buck_converter.h" // include the buck covnerter device driver
 #include "drivers/v_loop.h" // include voltage mode control feedback loop object header
-#include "./drivers/v_loop_agc.h" // include adaptive gain control observer header
+#include "drivers/i_loop.h" // include current mode control feedback loop object header
 
 /*******************************************************************************
  * @ingroup app-layer-power-control-functions-private
@@ -49,7 +49,7 @@ volatile uint16_t appPowerSupply_ConverterObjectInitialize(void)
     buck.state_id.value = BUCK_OPSTATE_INITIALIZE; // Reset Buck State Machine
     
     // Set Reference values
-    buck.set_values.control_mode = BUCK_CONTROL_MODE_VMC; // Set Control Mode
+    buck.set_values.control_mode = BUCK_CONTROL_MODE_ACMC; // Set Control Mode
     buck.set_values.no_of_phases = BUCK_NO_OF_PHASES; // Set number of power train phases
     buck.set_values.i_ref = BUCK_ISNS_REF; // Set current loop reference
     buck.set_values.v_ref = BUCK_VOUT_REF; // Set voltage loop reference
@@ -250,8 +250,8 @@ volatile uint16_t appPowerSupply_ControllerInitialize(void)
     // Initialize Default Loop Configuration
     buck.v_loop.feedback_offset = BUCK_VOUT_OFFSET;
     buck.v_loop.reference = BUCK_VOUT_REF;
-    buck.v_loop.minimum = BUCK_PWM_DC_MIN;
-    buck.v_loop.maximum = BUCK_PWM_DC_MAX;
+    buck.v_loop.minimum = BUCK_ISNS_MIN;
+    buck.v_loop.maximum = BUCK_ISNS_OCL;
     
     // Move trigger point 400 ns further in to leave enough room for the AGC computation
     buck.v_loop.trigger_offset = ((BUCK_PWM_PERIOD >> 1) + BUCK_VOUT_ADC_TRGDLY) - BUCK_AGC_EXEC_DLY; 
@@ -278,7 +278,7 @@ volatile uint16_t appPowerSupply_ControllerInitialize(void)
     buck.v_loop.controller->Ports.AltSource.NormFactor = BUCK_VIN_NORM_FACTOR; // Input voltage normalization factor fractional
 
     // Configure controller output ports
-    buck.v_loop.controller->Ports.Target.ptrAddress = &BUCK_PWM_PDC; // PWM Duty Cycle is Control Target
+    buck.v_loop.controller->Ports.Target.ptrAddress = &buck.i_loop[0].reference; // Current loop reference is Control Target
     buck.v_loop.controller->Ports.Target.Offset = 0; // Static primary output value offset
     buck.v_loop.controller->Ports.Target.NormScaler = 0; // Primary control output normalization factor bit-shift scaler 
     buck.v_loop.controller->Ports.Target.NormFactor = 0x7FFF; // Primary control output normalization factor fractional 
@@ -297,11 +297,11 @@ volatile uint16_t appPowerSupply_ControllerInitialize(void)
     buck.v_loop.controller->Limits.AltMinOutput = 0; // not used
     buck.v_loop.controller->Limits.AltMaxOutput = 0; // not used
 
-    // ADC Trigger Control Configuration
-    buck.v_loop.controller->ADCTriggerControl.ptrADCTriggerARegister = &BUCK_VOUT_ADCTRIG;
-    buck.v_loop.controller->ADCTriggerControl.ADCTriggerAOffset = buck.v_loop.trigger_offset;
-    buck.v_loop.controller->ADCTriggerControl.ptrADCTriggerBRegister = &BUCK_ISNS_ADCTRIG;
-    buck.v_loop.controller->ADCTriggerControl.ADCTriggerBOffset = BUCK_ISNS_ADC_TRGDLY; 
+    // ADC Trigger Control Configuration (ADC trigger controlled by current loop)
+    buck.v_loop.controller->ADCTriggerControl.ptrADCTriggerARegister = NULL;
+    buck.v_loop.controller->ADCTriggerControl.ADCTriggerAOffset = 0;
+    buck.v_loop.controller->ADCTriggerControl.ptrADCTriggerBRegister = NULL;
+    buck.v_loop.controller->ADCTriggerControl.ADCTriggerBOffset = 0; 
     
     // Data Provider Configuration
     buck.v_loop.controller->DataProviders.ptrDProvControlInput = &buck.data.control_input; 
@@ -341,19 +341,19 @@ volatile uint16_t appPowerSupply_ControllerInitialize(void)
     buck.v_loop.controller->ExtensionHooks.ExtHookTargetFunctionParam = 0;
     buck.v_loop.controller->ExtensionHooks.ptrExtHookStopFunction = NULL;
     buck.v_loop.controller->ExtensionHooks.ExtHookStopFunctionParam = 0;
-    buck.v_loop.controller->ExtensionHooks.ptrExtHookEndFunction = NULL;
-    buck.v_loop.controller->ExtensionHooks.ExtHookEndFunctionParam = 0;
+    buck.v_loop.controller->ExtensionHooks.ptrExtHookEndFunction = (uint16_t)&i_loop_Update;
+    buck.v_loop.controller->ExtensionHooks.ExtHookEndFunctionParam = (uint16_t)&i_loop;
     
     // Adaptive Gain Control configuration
-    buck.v_loop.controller->GainControl.AgcFactor = BUCK_AGC_NOM_FACTOR;
-    buck.v_loop.controller->GainControl.AgcScaler = -BUCK_AGC_NOM_SCALER;
-    buck.v_loop.controller->GainControl.AgcMedian = BUCK_AGC_MEDIAN;
+    buck.v_loop.controller->GainControl.AgcFactor = 0;
+    buck.v_loop.controller->GainControl.AgcScaler = 0;
+    buck.v_loop.controller->GainControl.AgcMedian = 0;
 
-    buck.v_loop.controller->GainControl.ptrAgcObserverFunction = (uint16_t)&v_loop_AGCFactorUpdate;
+    buck.v_loop.controller->GainControl.ptrAgcObserverFunction = NULL;
 
     // Custom Advanced Control Settings
-    buck.v_loop.controller->Advanced.usrParam0 = (uint16_t)(-BUCK_AGC_IO_NORM_SCALER);
-    buck.v_loop.controller->Advanced.usrParam1 = BUCK_AGC_IO_NORM_FACTOR;
+    buck.v_loop.controller->Advanced.usrParam0 = 0; // No additional advanced control options used
+    buck.v_loop.controller->Advanced.usrParam1 = 0; // No additional advanced control options used
     buck.v_loop.controller->Advanced.usrParam2 = 0; // No additional advanced control options used
     buck.v_loop.controller->Advanced.usrParam3 = 0; // No additional advanced control options used
     buck.v_loop.controller->Advanced.usrParam4 = 0; // No additional advanced control options used
@@ -372,6 +372,134 @@ volatile uint16_t appPowerSupply_ControllerInitialize(void)
 
     // ~~~ VOLTAGE LOOP CONFIGURATION END ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     
+
+    // ~~~ CURRENT LOOP CONFIGURATION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    
+    // Initialize Default Loop Configuration
+    buck.i_loop[0].feedback_offset = BUCK_ISNS_FB_OFFSET;
+    buck.i_loop[0].reference = BUCK_ISNS_REF;
+    buck.i_loop[0].minimum = BUCK_PWM_DC_MIN;
+    buck.i_loop[0].maximum = BUCK_PWM_DC_MAX;
+    
+    // Move trigger point to compensate for propagation delays
+    buck.i_loop[0].trigger_offset = BUCK_ISNS_ADC_TRGDLY; 
+    
+     // Set Controller Object of Current Loop
+    buck.i_loop[0].controller = &i_loop;
+    buck.i_loop[0].ctrl_Initialize = &i_loop_Initialize;
+    buck.i_loop[0].ctrl_Update = &i_loop_Update;
+    buck.i_loop[0].ctrl_Reset = &i_loop_Reset;
+    buck.i_loop[0].ctrl_Precharge = &i_loop_Precharge;
+    
+    // Configure Voltage Loop Controller Object
+    buck.i_loop[0].ctrl_Initialize(&i_loop);   // Call Initialization Routine setting histories and scaling
+    
+    // Configure controller input ports
+    buck.i_loop[0].controller->Ports.Source.ptrAddress = &BUCK_ISNS_ADCBUF; // Inductor Current is Common Source
+    buck.i_loop[0].controller->Ports.Source.Offset = buck.i_loop[0].feedback_offset; // Inductor Current feedback signal offset 
+    buck.i_loop[0].controller->Ports.Source.NormScaler = BUCK_VOUT_NORM_SCALER; // Inductor Current normalization factor bit-shift scaler 
+    buck.i_loop[0].controller->Ports.Source.NormFactor = BUCK_VOUT_NORM_FACTOR; // Inductor Current normalization factor fractional
+    
+    buck.i_loop[0].controller->Ports.AltSource.ptrAddress = NULL; // No alternate source used 
+    buck.i_loop[0].controller->Ports.AltSource.Offset = 0; // Static secondary input value offset
+    buck.i_loop[0].controller->Ports.AltSource.NormScaler = 0; // Secondary control input normalization factor bit-shift scaler
+    buck.i_loop[0].controller->Ports.AltSource.NormFactor = 0; // Secondary control input normalization factor fractional 
+
+    // Configure controller output ports
+    buck.i_loop[0].controller->Ports.Target.ptrAddress = &BUCK_PWM_PDC; // PWM Duty Cycle is Control Target
+    buck.i_loop[0].controller->Ports.Target.Offset = 0; // Static primary output value offset
+    buck.i_loop[0].controller->Ports.Target.NormScaler = 0; // Primary control output normalization factor bit-shift scaler 
+    buck.i_loop[0].controller->Ports.Target.NormFactor = 0x7FFF; // Primary control output normalization factor fractional 
+
+    buck.i_loop[0].controller->Ports.AltTarget.ptrAddress = NULL; // No alternate target used
+    buck.i_loop[0].controller->Ports.AltTarget.Offset = 0; // Static secondary output value offset
+    buck.i_loop[0].controller->Ports.AltTarget.NormScaler = 0; // Secondary control output normalization factor bit-shift scaler
+    buck.i_loop[0].controller->Ports.AltTarget.NormFactor = 0x7FFF; // Secondary control output normalization factor fractional 
+    
+    // Configure controller control ports
+    buck.i_loop[0].controller->Ports.ptrControlReference = &buck.i_loop[0].reference; // Set pointer to Reference
+    
+    // Data Input/Output Limit Configuration
+    buck.i_loop[0].controller->Limits.MinOutput = buck.i_loop[0].minimum;
+    buck.i_loop[0].controller->Limits.MaxOutput = buck.i_loop[0].maximum;
+    buck.i_loop[0].controller->Limits.AltMinOutput = 0; // not used
+    buck.i_loop[0].controller->Limits.AltMaxOutput = 0; // not used
+
+    // ADC Trigger Control Configuration
+    buck.i_loop[0].controller->ADCTriggerControl.ptrADCTriggerARegister = &BUCK_VOUT_ADCTRIG;
+    buck.i_loop[0].controller->ADCTriggerControl.ADCTriggerAOffset = buck.v_loop.trigger_offset;
+    buck.i_loop[0].controller->ADCTriggerControl.ptrADCTriggerBRegister = &BUCK_ISNS_ADCTRIG;
+    buck.i_loop[0].controller->ADCTriggerControl.ADCTriggerBOffset = BUCK_ISNS_ADC_TRGDLY; 
+    
+    // Data Provider Configuration
+    buck.i_loop[0].controller->DataProviders.ptrDProvControlInput = NULL; 
+    buck.i_loop[0].controller->DataProviders.ptrDProvControlInputCompensated = &buck.data.i_sns[0]; 
+    buck.i_loop[0].controller->DataProviders.ptrDProvControlError = NULL; 
+    buck.i_loop[0].controller->DataProviders.ptrDProvControlOutput = NULL;
+    
+    // User Extension Function Configuration
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     * 
+     * PowerSmart DCLD allows users to create and call user extension 
+     * functions from specific locations of the main control loop to 
+     * cover design-specific requirements and features which are not
+     * supported by the main controller by default.
+     * 
+     * Control Loop User Extension Declaration Example:
+     * 
+     *  buck.i_loop[0].controller->ExtensionHooks.ptrExtHookStartFunction = (uint16_t)&my_function; 
+     * 
+     * Control Loop User Extension Parameter Declaration Example (optional):
+     * 
+     *  buck.i_loop[0].controller->ExtensionHooks.ExtHookStartFunctionParam = 512;
+     * 
+     * Please refer to the PowerSmart DCLD User Guide for more details about
+     * how to use this feature, its requirements and limitations.
+     * 
+     * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    */
+    
+    buck.i_loop[0].controller->ExtensionHooks.ptrExtHookStartFunction = NULL;
+    buck.i_loop[0].controller->ExtensionHooks.ExtHookStartFunctionParam = 0;
+    buck.i_loop[0].controller->ExtensionHooks.ptrExtHookSourceFunction = NULL;
+    buck.i_loop[0].controller->ExtensionHooks.ExtHookSourceFunctionParam = 0;
+    buck.i_loop[0].controller->ExtensionHooks.ptrExtHookPreAntiWindupFunction = NULL;
+    buck.i_loop[0].controller->ExtensionHooks.ExtHookPreAntiWindupFunctionParam = 0;
+    buck.i_loop[0].controller->ExtensionHooks.ptrExtHookTargetFunction = NULL;
+    buck.i_loop[0].controller->ExtensionHooks.ExtHookTargetFunctionParam = 0;
+    buck.i_loop[0].controller->ExtensionHooks.ptrExtHookStopFunction = NULL;
+    buck.i_loop[0].controller->ExtensionHooks.ExtHookStopFunctionParam = 0;
+    buck.i_loop[0].controller->ExtensionHooks.ptrExtHookEndFunction = NULL;
+    buck.i_loop[0].controller->ExtensionHooks.ExtHookEndFunctionParam = 0;
+    
+    // Adaptive Gain Control configuration
+    buck.i_loop[0].controller->GainControl.AgcFactor = 0;
+    buck.i_loop[0].controller->GainControl.AgcScaler = 0;
+    buck.i_loop[0].controller->GainControl.AgcMedian = 0;
+
+    buck.i_loop[0].controller->GainControl.ptrAgcObserverFunction = NULL;
+
+    // Custom Advanced Control Settings
+    buck.i_loop[0].controller->Advanced.usrParam0 = 0; // No additional advanced control options used
+    buck.i_loop[0].controller->Advanced.usrParam1 = 0; // No additional advanced control options used
+    buck.i_loop[0].controller->Advanced.usrParam2 = 0; // No additional advanced control options used
+    buck.i_loop[0].controller->Advanced.usrParam3 = 0; // No additional advanced control options used
+    buck.i_loop[0].controller->Advanced.usrParam4 = 0; // No additional advanced control options used
+    buck.i_loop[0].controller->Advanced.usrParam5 = 0; // No additional advanced control options used
+    buck.i_loop[0].controller->Advanced.usrParam6 = 0; // No additional advanced control options used
+    buck.i_loop[0].controller->Advanced.usrParam7 = 0; // No additional advanced control options used
+    
+    // Reset Controller Status
+    buck.i_loop[0].controller->status.bits.enabled = false; // Keep controller disabled
+    buck.i_loop[0].controller->status.bits.swap_source = false; // use SOURCE as major control input
+    buck.i_loop[0].controller->status.bits.swap_target = false; // use TARGET as major control output
+    buck.i_loop[0].controller->status.bits.invert_input = false; // Do not invert input value
+    buck.i_loop[0].controller->status.bits.lower_saturation_event = false; // Reset Anti-Windup Minimum Status bit
+    buck.i_loop[0].controller->status.bits.upper_saturation_event = false; // Reset Anti-Windup Minimum Status bits
+    buck.i_loop[0].controller->status.bits.agc_enabled = false;   // Enable Adaptive Gain Modulation by default
+
+    // ~~~ CURRENT LOOP CONFIGURATION END ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
     
     return(retval);
 }

@@ -82,7 +82,7 @@ volatile uint16_t appLCD_Initialize(void)
     
     dev_Lcd_Initialize();
     dev_Lcd_WriteStringXY(0,0,"==== DPSK-3 ====");
-    dev_Lcd_WriteStringXY(0,1," BUCK VMC + AGC ");
+    dev_Lcd_WriteStringXY(0,1,"   BUCK  ACMC   ");
 
     lcd_cnt = 0;
     lcd.enabled = true;
@@ -156,6 +156,10 @@ volatile uint16_t appLCD_Execute(void)
                 {
                     PrintLcd(1, "ISNS    = %1.2f A", (double)isns);
                 }
+                break;
+
+            case 3:     // Firmware Version Number
+                PrintLcd(1, "Firmware: v1.0.0");
                 break;
 
             default:    // Output voltage display

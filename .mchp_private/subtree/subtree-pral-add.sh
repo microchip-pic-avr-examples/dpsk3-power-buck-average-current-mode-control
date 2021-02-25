@@ -6,7 +6,7 @@ git remote add subrepo-pral https://bitbucket.microchip.com/scm/mcu16asmpsl/p33c
 echo Adding subtree repository complete
 echo 
 echo Downloading subtree contents into project repository...
-git subtree add --prefix="dpsk_buck_agc.X/sources/common/p33c_pral" subrepo-pral main --squash 
+git subtree add --prefix="dpsk_buck_acmc.X/sources/common/p33c_pral" subrepo-pral main --squash 
 echo Download source files complete
 echo
 echo Press Enter to exit

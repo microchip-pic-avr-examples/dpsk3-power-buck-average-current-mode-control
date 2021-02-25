@@ -1,11 +1,11 @@
 /* *********************************************************************************
  * PowerSmart™ Digital Control Library Designer, Version 0.9.12.672
  * *********************************************************************************
- * 4p4z controller function declarations and compensation filter coefficients
+ * 3p3z controller function declarations and compensation filter coefficients
  * derived for following operating conditions:
  * *********************************************************************************
  *
- *  Controller Type:    4P4Z - Advanced High-Q Compensator
+ *  Controller Type:    3P3Z - Basic Voltage Mode Compensator
  *  Sampling Frequency: 500000 Hz
  *  Fixed Point Format: Q15
  *  Scaling Mode:       3 - Dual Bit-Shift Scaling
@@ -16,7 +16,7 @@
  * CGS Date:            02/03/2021
  * *********************************************************************************
  * User:                M91406
- * Date/Time:           02/24/2021 00:14:41
+ * Date/Time:           02/25/2021 15:02:36
  * ********************************************************************************/
 
 #include "v_loop.h"
@@ -50,48 +50,40 @@ volatile uint16_t v_loop_ErrorHistory_size = (sizeof(v_loop_histories.ErrorHisto
  * Pole&Zero Placement:
  * *********************************************************************************
  *
- *    fP0:    604 Hz
- *    fP1:    82540 Hz
- *    fP2:    118860 Hz
- *    fP3:    220000 Hz
- *    fZ1:    2021 Hz
- *    fZ2:    3833 Hz
- *    fZ3:    49866 Hz
+ *    fP0:    280 Hz
+ *    fP1:    180000 Hz
+ *    fP2:    220000 Hz
+ *    fZ1:    280 Hz
+ *    fZ2:    7600 Hz
  *
  * *********************************************************************************
  * Filter Coefficients and Parameters:
  * ********************************************************************************/
 
-volatile int32_t v_loop_ACoefficients [4] =
+volatile int32_t v_loop_ACoefficients [3] =
 {
-    0x0000534C, // Coefficient A1 will be multiplied with controller output u(n-1)
-    0x0000EE83, // Coefficient A2 will be multiplied with controller output u(n-2)
-    0x0000FDBA, // Coefficient A3 will be multiplied with controller output u(n-3)
-    0x00000079  // Coefficient A4 will be multiplied with controller output u(n-4)
+    0x00006398, // Coefficient A1 will be multiplied with controller output u(n-1)
+    0x00001B26, // Coefficient A2 will be multiplied with controller output u(n-2)
+    0x00000144  // Coefficient A3 will be multiplied with controller output u(n-3)
 };
 
-volatile int32_t v_loop_BCoefficients [5] =
+volatile int32_t v_loop_BCoefficients [4] =
 {
-    0x00004924, // Coefficient B0 will be multiplied with error input e(n-0)
-    0x000095E6, // Coefficient B1 will be multiplied with error input e(n-1)
-    0x0000DA6F, // Coefficient B2 will be multiplied with error input e(n-2)
-    0x00006A25, // Coefficient B3 will be multiplied with error input e(n-3)
-    0x0000DC79  // Coefficient B4 will be multiplied with error input e(n-4)
+    0x00006C53, // Coefficient B0 will be multiplied with error input e(n-0)
+    0x00009DEF, // Coefficient B1 will be multiplied with error input e(n-1)
+    0x000093B7, // Coefficient B2 will be multiplied with error input e(n-2)
+    0x0000621B  // Coefficient B3 will be multiplied with error input e(n-3)
 };
 
 // Coefficient normalization factors
 volatile int16_t v_loop_pre_scaler = 3;           // Bit-shift value used to perform input value normalization
-volatile int16_t v_loop_post_shift_A = -1;        // Bit-shift value A used to perform control output value backward normalization
+volatile int16_t v_loop_post_shift_A = 0;         // Bit-shift value A used to perform control output value backward normalization
 volatile int16_t v_loop_post_shift_B = -4;        // Bit-shift value B used to perform control output value backward normalization
 volatile fractional v_loop_post_scaler = 0x0000;  // Q15 fractional factor used to perform control output value backward normalization
 
 // P-Term Coefficient for Plant Measurements
 volatile int16_t v_loop_pterm_factor = 0x639F;    // Q15 fractional of the P-Term factor
 volatile int16_t v_loop_pterm_scaler = 0xFFFF;    // Bit-shift scaler of the P-Term factor
-
-//Adaptive Gain Control Coefficient
-volatile int16_t v_loop_agc_factor_default = 0x7FFF; // Q15 fractional of the AGC factor
-volatile int16_t v_loop_agc_scaler_default = 0x0000; // Bit-shift scaler of the AGC factor
 
 
 // User-defined NPNZ16b_s controller data object
@@ -135,7 +127,6 @@ volatile uint16_t v_loop_Initialize(volatile struct NPNZ16b_s* controller)
         v_loop_coefficients.ACoefficients[i] = v_loop_ACoefficients[i]; // Load coefficient A1 value into v_loop coefficient data space
         v_loop_coefficients.ACoefficients[i] = v_loop_ACoefficients[i]; // Load coefficient A2 value into v_loop coefficient data space
         v_loop_coefficients.ACoefficients[i] = v_loop_ACoefficients[i]; // Load coefficient A3 value into v_loop coefficient data space
-        v_loop_coefficients.ACoefficients[i] = v_loop_ACoefficients[i]; // Load coefficient A4 value into v_loop coefficient data space
     }
 
     // Load default set of B-coefficients from user RAM into controller B-array located in X-Space
@@ -145,7 +136,6 @@ volatile uint16_t v_loop_Initialize(volatile struct NPNZ16b_s* controller)
         v_loop_coefficients.BCoefficients[i] = v_loop_BCoefficients[i]; // Load coefficient B1 value into v_loop coefficient data space
         v_loop_coefficients.BCoefficients[i] = v_loop_BCoefficients[i]; // Load coefficient B2 value into v_loop coefficient data space
         v_loop_coefficients.BCoefficients[i] = v_loop_BCoefficients[i]; // Load coefficient B3 value into v_loop coefficient data space
-        v_loop_coefficients.BCoefficients[i] = v_loop_BCoefficients[i]; // Load coefficient B4 value into v_loop coefficient data space
     }
 
     // Clear error and control histories of the 3P3Z controller
@@ -154,10 +144,6 @@ volatile uint16_t v_loop_Initialize(volatile struct NPNZ16b_s* controller)
     // Load P-Term factor and scaler into data structure
     controller->Filter.PTermFactor = v_loop_pterm_factor;
     controller->Filter.PTermScaler = v_loop_pterm_scaler;
-    
-    // Load initial AGC factor and scaler into data structure
-    controller->GainControl.AgcFactor = v_loop_agc_factor_default;
-    controller->GainControl.AgcScaler = v_loop_agc_scaler_default;
     
     return(1);
 }

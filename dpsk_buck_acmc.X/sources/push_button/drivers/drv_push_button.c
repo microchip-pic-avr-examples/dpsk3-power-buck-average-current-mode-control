@@ -23,7 +23,7 @@
  *  The push button driver offers typical functions of a human-machine interface
  *  push button such as 
  * 
- *   - hardware debouncing
+ *   - hardware de-bouncing
  *   - detection of short press
  *   - detection of long press
  *   - push-button status (pressed/unpressed)
@@ -42,7 +42,7 @@ volatile uint16_t drv_PushButton_Initialize(volatile struct PUSH_BUTTON_OBJECT_s
     SW_USER_Init();   // Initialize GPIO used to read switch
 
     // Initializing switch object 
-    pushbtn->debounce_delay = 0;              // Clear debounce delay
+    pushbtn->debounce_delay = 0;              // Clear de-bounce delay
     pushbtn->long_press_delay = 0;            // Clear 'long press" delay
     pushbtn->status.bits.pressed = false;     // Reset PRESSED status
     pushbtn->status.bits.long_press = false;  // Reset LONG_PRESS status
@@ -80,7 +80,7 @@ volatile uint16_t drv_PushButton_Execute(volatile struct PUSH_BUTTON_OBJECT_s* p
         return(1);  // Exit function
     }
     
-	// Trigger on a PRESSED event with applied debouncing
+	// Trigger on a PRESSED event with applied de-bouncing
 	if ((!SW_USER_Get()) && (!pushbtn->status.bits.pressed)) { 
 		
         // switch button PRESSED event
@@ -90,7 +90,7 @@ volatile uint16_t drv_PushButton_Execute(volatile struct PUSH_BUTTON_OBJECT_s* p
                 pushbtn->event_btn_down();
         }
 	}
-	// Trigger on a LONG PRESS event with applied debouncing
+	// Trigger on a LONG PRESS event with applied de-bouncing
     else if ((!SW_USER_Get()) && (pushbtn->status.bits.pressed)) {
 
         // switch button LONG PRESS event
@@ -109,7 +109,7 @@ volatile uint16_t drv_PushButton_Execute(volatile struct PUSH_BUTTON_OBJECT_s* p
         }
         
     }
-    // Trigger on a RELEASE event with applied debouncing
+    // Trigger on a RELEASE event with applied de-bouncing
 	else if ((SW_USER_Get()) && (pushbtn->status.bits.pressed)) {  
         
         // switch button RELEASE event
@@ -122,8 +122,8 @@ volatile uint16_t drv_PushButton_Execute(volatile struct PUSH_BUTTON_OBJECT_s* p
         }
     }
     else {
-        press_cnt = 0;   // Clear switch debounce counter PRESSED
-        release_cnt = 0; // Clear switch debounce counter RELEASE
+        press_cnt = 0;   // Clear switch de-bounce counter PRESSED
+        release_cnt = 0; // Clear switch de-bounce counter RELEASE
     }
     
     // Trigger on switch events
