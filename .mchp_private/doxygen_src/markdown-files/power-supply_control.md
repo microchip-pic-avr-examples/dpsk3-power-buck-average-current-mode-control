@@ -7,7 +7,7 @@
 
 ## Table of Contents
 
-- [DPSK3 Buck Converter Adaptive Gain Control Implementation](#vmc_1)
+- [DPSK3 Buck Converter Average Current Mode Control Implementation](#vmc_1)
 - [Control Loop Block Diagram](#vmc_2)
 - [Control Loop Timing](#vmc_3)
 - [Control Loop Flow Chart](#vmc_4)
@@ -16,7 +16,7 @@
 
 <span id="vmc_1"> </span>
 
-## 1) DPSK3 Buck Converter Adaptive Gain Control Implementation
+## 1) DPSK3 Buck Converter Average Current Mode Control Implementation
 
 This firmware demonstrates the implementation of a simple, single loop voltage mode controller used to regulate the constant output voltage of the on-board  step-down converter of the Digital Power Starter Kit 3 (DPSK3). The implementation of the Voltage Feedback Loop requires one Analog-to-Digital Converter (ADC) input oversampling the output voltage of the converter and two PWM outputs (PWM high and PWM low) to drive the power converter half-bridge switch node in synchronous mode. 
 
