@@ -558,7 +558,7 @@
 #if (BUCK_ISNS_OPTION == BUCK_ISNS_CT)
 
     #define BUCK_ISNS_FEEDBACK_GAIN     (float) 1.000   ///< Current Gain in V/A
-    #define BUCK_ISNS_MINIMUM           (float)-2.500   ///< absolute total minimum output current (average)
+    #define BUCK_ISNS_MINIMUM           (float)-1.000   ///< absolute total minimum output current (average)
     #define BUCK_ISNS_MAXIMUM           (float) 2.500   ///< absolute total maximum output current (average)
     #define BUCK_ISNS_RELEASE           (float) 2.000   ///< current reset level after over current event
     #define BUCK_ISNS_REFERENCE         (float) 2.000   ///< output current reference (average)
