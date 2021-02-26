@@ -1,4 +1,6 @@
 var a00470 =
 [
-    [ "BuckConverterConstants", "a00470.html#ga41fc86eca9c5ca2037f458a9f425047e", null ]
+    [ "Variables & Constants", "a00471.html", null ],
+    [ "Data Types", "a00472.html", "a00472" ],
+    [ "Defines and Macros", "a00473.html", null ]
 ];

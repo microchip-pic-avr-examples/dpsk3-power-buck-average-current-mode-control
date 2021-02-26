@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: User Settings</title>
+<title>Digital Power Starter Kit 3 Firmware: Converter Phase #1</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -43,7 +43,7 @@
   <td id="projectalign" style="padding-left: 0.0em;">
    <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
-   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Adaptive Gain Control Example</div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Average Current Mode Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -104,318 +104,1108 @@ $(document).ready(function(){initNavTree('a00396.html',''); initResizable(); });
 
 <div class="header">
   <div class="headertitle">
-<div class="title">User Settings<div class="ingroups"><a class="el" href="a00537.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00395.html">PWM Settings</a></div></div>  </div>
+<div class="title">Converter Phase #1<div class="ingroups"><a class="el" href="a00534.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00392.html">PWM Settings</a> &raquo; <a class="el" href="a00395.html">Microcontroller Abstraction</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Parameter defintions using physical quantities.  
-<a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for User Settings:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Converter Phase #1:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00396.svg" width="267" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00396.svg" width="371" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
-<tr class="memitem:ga353ba60329e90d1aca97deba7e0bd669"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga353ba60329e90d1aca97deba7e0bd669">BUCK_NO_OF_PHASES</a>&#160;&#160;&#160;1U</td></tr>
-<tr class="memdesc:ga353ba60329e90d1aca97deba7e0bd669"><td class="mdescLeft">&#160;</td><td class="mdescRight">User-declaration of global defines for PWM signal generator settings.  <a href="a00396.html#ga353ba60329e90d1aca97deba7e0bd669">More...</a><br /></td></tr>
-<tr class="separator:ga353ba60329e90d1aca97deba7e0bd669"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadecc3fb9cc6da0d2add11d577d50d5b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#gadecc3fb9cc6da0d2add11d577d50d5b5">BUCK_SWITCHING_FREQUENCY</a>&#160;&#160;&#160;(float)500.0e+3</td></tr>
-<tr class="memdesc:gadecc3fb9cc6da0d2add11d577d50d5b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fixed Switching frequency in [Hz].  <a href="a00396.html#gadecc3fb9cc6da0d2add11d577d50d5b5">More...</a><br /></td></tr>
-<tr class="separator:gadecc3fb9cc6da0d2add11d577d50d5b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabcc43f4201492160173351db97ddcfda"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#gabcc43f4201492160173351db97ddcfda">BUCK_PWM_DUTY_CYCLE_MIN</a>&#160;&#160;&#160;(float)0.010</td></tr>
-<tr class="memdesc:gabcc43f4201492160173351db97ddcfda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum on/off-time ratio (duty ratio) in [%].  <a href="a00396.html#gabcc43f4201492160173351db97ddcfda">More...</a><br /></td></tr>
-<tr class="separator:gabcc43f4201492160173351db97ddcfda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga355fe35bc08bc0f4657be7f638a643a6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga355fe35bc08bc0f4657be7f638a643a6">BUCK_PWM_DUTY_CYCLE_MAX</a>&#160;&#160;&#160;(float)0.900</td></tr>
-<tr class="memdesc:ga355fe35bc08bc0f4657be7f638a643a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum on/off-time ratio (duty ratio) in [%].  <a href="a00396.html#ga355fe35bc08bc0f4657be7f638a643a6">More...</a><br /></td></tr>
-<tr class="separator:ga355fe35bc08bc0f4657be7f638a643a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga53e830102be3559594f1f107c42e3cb2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga53e830102be3559594f1f107c42e3cb2">BUCK_LEADING_EDGE_BLANKING</a>&#160;&#160;&#160;(float)120.0e-9</td></tr>
-<tr class="memdesc:ga53e830102be3559594f1f107c42e3cb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leading Edge Blanking period in [sec].  <a href="a00396.html#ga53e830102be3559594f1f107c42e3cb2">More...</a><br /></td></tr>
-<tr class="separator:ga53e830102be3559594f1f107c42e3cb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaee8430cb24cfc1cdd3b12dd3c40b09d5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#gaee8430cb24cfc1cdd3b12dd3c40b09d5">BUCK_DEAD_TIME_LEADING_EDGE</a>&#160;&#160;&#160;(float)20.0e-9</td></tr>
-<tr class="memdesc:gaee8430cb24cfc1cdd3b12dd3c40b09d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leading Edge Dead Time delay in [sec].  <a href="a00396.html#gaee8430cb24cfc1cdd3b12dd3c40b09d5">More...</a><br /></td></tr>
-<tr class="separator:gaee8430cb24cfc1cdd3b12dd3c40b09d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafe895b572c7fdeced04221d53c18695d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#gafe895b572c7fdeced04221d53c18695d">BUCK_DEAD_TIME_FALLING_EDGE</a>&#160;&#160;&#160;(float)60.0e-9</td></tr>
-<tr class="memdesc:gafe895b572c7fdeced04221d53c18695d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Falling Edge Dead Time delay in [sec].  <a href="a00396.html#gafe895b572c7fdeced04221d53c18695d">More...</a><br /></td></tr>
-<tr class="separator:gafe895b572c7fdeced04221d53c18695d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5208c54df1cdb14e00e62eb7957820f6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga5208c54df1cdb14e00e62eb7957820f6">BOOST_NO_OF_PHASES</a>&#160;&#160;&#160;1U</td></tr>
-<tr class="memdesc:ga5208c54df1cdb14e00e62eb7957820f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">User-declaration of global defines for PWM signal generator settings.  <a href="a00396.html#ga5208c54df1cdb14e00e62eb7957820f6">More...</a><br /></td></tr>
-<tr class="separator:ga5208c54df1cdb14e00e62eb7957820f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga190c68d192a604d70087146623fedd1d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga190c68d192a604d70087146623fedd1d">BOOST_SWITCHING_FREQUENCY</a>&#160;&#160;&#160;(float)500.0e+3</td></tr>
-<tr class="memdesc:ga190c68d192a604d70087146623fedd1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fixed Switching frequency in [Hz].  <a href="a00396.html#ga190c68d192a604d70087146623fedd1d">More...</a><br /></td></tr>
-<tr class="separator:ga190c68d192a604d70087146623fedd1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf4b6b5baf07ba17e75f66ec5305c68fb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#gaf4b6b5baf07ba17e75f66ec5305c68fb">BOOST_PWM_DUTY_CYCLE_MIN</a>&#160;&#160;&#160;(float)0.040</td></tr>
-<tr class="memdesc:gaf4b6b5baf07ba17e75f66ec5305c68fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum on/off-time ratio (duty ratio) in [%].  <a href="a00396.html#gaf4b6b5baf07ba17e75f66ec5305c68fb">More...</a><br /></td></tr>
-<tr class="separator:gaf4b6b5baf07ba17e75f66ec5305c68fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafe2eededed4304c44e47642b9093beda"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#gafe2eededed4304c44e47642b9093beda">BOOST_PWM_DUTY_CYCLE_MAX</a>&#160;&#160;&#160;(float)0.850</td></tr>
-<tr class="memdesc:gafe2eededed4304c44e47642b9093beda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum on/off-time ratio (duty ratio) in [%].  <a href="a00396.html#gafe2eededed4304c44e47642b9093beda">More...</a><br /></td></tr>
-<tr class="separator:gafe2eededed4304c44e47642b9093beda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadef417fa6e9b29f43fc1b26321f07750"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#gadef417fa6e9b29f43fc1b26321f07750">BOOST_LEADING_EDGE_BLANKING</a>&#160;&#160;&#160;(float)120.0e-9</td></tr>
-<tr class="memdesc:gadef417fa6e9b29f43fc1b26321f07750"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leading Edge Blanking period in [sec].  <a href="a00396.html#gadef417fa6e9b29f43fc1b26321f07750">More...</a><br /></td></tr>
-<tr class="separator:gadef417fa6e9b29f43fc1b26321f07750"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga30bc95c5be03be162bd08c04706e34b2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga30bc95c5be03be162bd08c04706e34b2">BOOST_DEAD_TIME_LEADING_EDGE</a>&#160;&#160;&#160;(float) 0.0e-9</td></tr>
-<tr class="memdesc:ga30bc95c5be03be162bd08c04706e34b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leading Edge Dead Time delay in [sec].  <a href="a00396.html#ga30bc95c5be03be162bd08c04706e34b2">More...</a><br /></td></tr>
-<tr class="separator:ga30bc95c5be03be162bd08c04706e34b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacc7415a2a9fd14abe19588dac5804b22"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#gacc7415a2a9fd14abe19588dac5804b22">BOOST_DEAD_TIME_FALLING_EDGE</a>&#160;&#160;&#160;(float) 0.0e-9</td></tr>
-<tr class="memdesc:gacc7415a2a9fd14abe19588dac5804b22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Falling Edge Dead Time delay in [sec].  <a href="a00396.html#gacc7415a2a9fd14abe19588dac5804b22">More...</a><br /></td></tr>
-<tr class="separator:gacc7415a2a9fd14abe19588dac5804b22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga61df29741cab195009bbfb71d99d5be1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga61df29741cab195009bbfb71d99d5be1">BUCK_PWM_CHANNEL</a>&#160;&#160;&#160;1U</td></tr>
+<tr class="memdesc:ga61df29741cab195009bbfb71d99d5be1"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM peripheral output pins, control signals and register assignments of converter phase #1.  <a href="a00396.html#ga61df29741cab195009bbfb71d99d5be1">More...</a><br /></td></tr>
+<tr class="separator:ga61df29741cab195009bbfb71d99d5be1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf19e399d1f0093a4007c00959c046098"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#gaf19e399d1f0093a4007c00959c046098">BUCK_PWM_GPIO_INSTANCE</a>&#160;&#160;&#160;1U</td></tr>
+<tr class="memdesc:gaf19e399d1f0093a4007c00959c046098"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number indicating device port, where 0=Port RA, 0=Port RB, 0=Port RC, etc.  <a href="a00396.html#gaf19e399d1f0093a4007c00959c046098">More...</a><br /></td></tr>
+<tr class="separator:gaf19e399d1f0093a4007c00959c046098"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1bb398d449eab922f02c520af38be36f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga1bb398d449eab922f02c520af38be36f">BUCK_PWM_GPIO_PORT_PINH</a>&#160;&#160;&#160;14U</td></tr>
+<tr class="memdesc:ga1bb398d449eab922f02c520af38be36f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Port Pin Number.  <a href="a00396.html#ga1bb398d449eab922f02c520af38be36f">More...</a><br /></td></tr>
+<tr class="separator:ga1bb398d449eab922f02c520af38be36f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae1fbe0f70b1d7a42d37531d6d2965bba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#gae1fbe0f70b1d7a42d37531d6d2965bba">BUCK_PWM_GPIO_PORT_PINL</a>&#160;&#160;&#160;15U</td></tr>
+<tr class="memdesc:gae1fbe0f70b1d7a42d37531d6d2965bba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Port Pin Number.  <a href="a00396.html#gae1fbe0f70b1d7a42d37531d6d2965bba">More...</a><br /></td></tr>
+<tr class="separator:gae1fbe0f70b1d7a42d37531d6d2965bba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacd0fe449d364732b7096f12260cb97f6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#gacd0fe449d364732b7096f12260cb97f6">BUCK_PWM_OUTPUT_SWAP</a>&#160;&#160;&#160;false</td></tr>
+<tr class="memdesc:gacd0fe449d364732b7096f12260cb97f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">true = PWMxH is the leading PWM output, false = PWMxL is the leading PWM output  <a href="a00396.html#gacd0fe449d364732b7096f12260cb97f6">More...</a><br /></td></tr>
+<tr class="separator:gacd0fe449d364732b7096f12260cb97f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab4497dfda3603e074c0c61a70756bb22"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#gab4497dfda3603e074c0c61a70756bb22">BUCK_PWM_PDC</a>&#160;&#160;&#160;PG1DC</td></tr>
+<tr class="memdesc:gab4497dfda3603e074c0c61a70756bb22"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM Instance Duty Cycle Register.  <a href="a00396.html#gab4497dfda3603e074c0c61a70756bb22">More...</a><br /></td></tr>
+<tr class="separator:gab4497dfda3603e074c0c61a70756bb22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab999a3110eec8fe8cd6666b6313489a7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#gab999a3110eec8fe8cd6666b6313489a7">BUCK_PWMH_TRIS</a>&#160;&#160;&#160;_TRISB14</td></tr>
+<tr class="memdesc:gab999a3110eec8fe8cd6666b6313489a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device Port TRIS register.  <a href="a00396.html#gab999a3110eec8fe8cd6666b6313489a7">More...</a><br /></td></tr>
+<tr class="separator:gab999a3110eec8fe8cd6666b6313489a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga826c5f47e145c7d2b4deff76b0afc6c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga826c5f47e145c7d2b4deff76b0afc6c1">BUCK_PWMH_WR</a>&#160;&#160;&#160;_LATB14</td></tr>
+<tr class="memdesc:ga826c5f47e145c7d2b4deff76b0afc6c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device Pin WRITE.  <a href="a00396.html#ga826c5f47e145c7d2b4deff76b0afc6c1">More...</a><br /></td></tr>
+<tr class="separator:ga826c5f47e145c7d2b4deff76b0afc6c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf0fc2cd2f22a4b055c3a89984df87e54"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#gaf0fc2cd2f22a4b055c3a89984df87e54">BUCK_PWMH_RD</a>&#160;&#160;&#160;_RB14</td></tr>
+<tr class="memdesc:gaf0fc2cd2f22a4b055c3a89984df87e54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device Pin READ.  <a href="a00396.html#gaf0fc2cd2f22a4b055c3a89984df87e54">More...</a><br /></td></tr>
+<tr class="separator:gaf0fc2cd2f22a4b055c3a89984df87e54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga58fe45974993e44af0ac870ca290d7ba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga58fe45974993e44af0ac870ca290d7ba">BUCK_PWMH_RPx</a>&#160;&#160;&#160;(uint8_t)46</td></tr>
+<tr class="memdesc:ga58fe45974993e44af0ac870ca290d7ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device Pin output remappable pin number (RPx)  <a href="a00396.html#ga58fe45974993e44af0ac870ca290d7ba">More...</a><br /></td></tr>
+<tr class="separator:ga58fe45974993e44af0ac870ca290d7ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga26f10a51b8418dcf1067f2fbe22ce462"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga26f10a51b8418dcf1067f2fbe22ce462">BUCK_PWML_TRIS</a>&#160;&#160;&#160;_TRISB15</td></tr>
+<tr class="memdesc:ga26f10a51b8418dcf1067f2fbe22ce462"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device Port TRIS register.  <a href="a00396.html#ga26f10a51b8418dcf1067f2fbe22ce462">More...</a><br /></td></tr>
+<tr class="separator:ga26f10a51b8418dcf1067f2fbe22ce462"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga47eaeb7e3bd57af71fd44a89f6bc077e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga47eaeb7e3bd57af71fd44a89f6bc077e">BUCK_PWML_WR</a>&#160;&#160;&#160;_LATB15</td></tr>
+<tr class="memdesc:ga47eaeb7e3bd57af71fd44a89f6bc077e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device Pin WRITE.  <a href="a00396.html#ga47eaeb7e3bd57af71fd44a89f6bc077e">More...</a><br /></td></tr>
+<tr class="separator:ga47eaeb7e3bd57af71fd44a89f6bc077e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf5318845cbefe89ab33f265353d213dc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#gaf5318845cbefe89ab33f265353d213dc">BUCK_PWML_RD</a>&#160;&#160;&#160;_RB15</td></tr>
+<tr class="memdesc:gaf5318845cbefe89ab33f265353d213dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device Pin READ.  <a href="a00396.html#gaf5318845cbefe89ab33f265353d213dc">More...</a><br /></td></tr>
+<tr class="separator:gaf5318845cbefe89ab33f265353d213dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga63745e9d85fe9aa792978d7d02fdf719"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga63745e9d85fe9aa792978d7d02fdf719">BUCK_PWML_RPx</a>&#160;&#160;&#160;(uint8_t)47</td></tr>
+<tr class="memdesc:ga63745e9d85fe9aa792978d7d02fdf719"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device Pin output remappable pin number (RPx)  <a href="a00396.html#ga63745e9d85fe9aa792978d7d02fdf719">More...</a><br /></td></tr>
+<tr class="separator:ga63745e9d85fe9aa792978d7d02fdf719"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad15d74e3f7c60c19c2b7cccc597aa248"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#gad15d74e3f7c60c19c2b7cccc597aa248">_BUCK_PWM_Interrupt</a>&#160;&#160;&#160;_PWM1Interrupt</td></tr>
+<tr class="memdesc:gad15d74e3f7c60c19c2b7cccc597aa248"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM Interrupt Service Routine label.  <a href="a00396.html#gad15d74e3f7c60c19c2b7cccc597aa248">More...</a><br /></td></tr>
+<tr class="separator:gad15d74e3f7c60c19c2b7cccc597aa248"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga534d16ea3d83a3b1ebd14c0a53de78d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga534d16ea3d83a3b1ebd14c0a53de78d3">BUCK_PWM_IF</a>&#160;&#160;&#160;_PWM1IF</td></tr>
+<tr class="memdesc:ga534d16ea3d83a3b1ebd14c0a53de78d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM Interrupt Flag Bit.  <a href="a00396.html#ga534d16ea3d83a3b1ebd14c0a53de78d3">More...</a><br /></td></tr>
+<tr class="separator:ga534d16ea3d83a3b1ebd14c0a53de78d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7f0d349ccc477eb9d417866853d6cc86"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga7f0d349ccc477eb9d417866853d6cc86">BUCK_PWM_IE</a>&#160;&#160;&#160;_PWM1IE</td></tr>
+<tr class="memdesc:ga7f0d349ccc477eb9d417866853d6cc86"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM Interrupt Enable Bit.  <a href="a00396.html#ga7f0d349ccc477eb9d417866853d6cc86">More...</a><br /></td></tr>
+<tr class="separator:ga7f0d349ccc477eb9d417866853d6cc86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5b3f326d828aa3623ad9b69506cfc002"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga5b3f326d828aa3623ad9b69506cfc002">BUCK_PWM_IP</a>&#160;&#160;&#160;_PWM1IP</td></tr>
+<tr class="memdesc:ga5b3f326d828aa3623ad9b69506cfc002"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM Interrupt Priority.  <a href="a00396.html#ga5b3f326d828aa3623ad9b69506cfc002">More...</a><br /></td></tr>
+<tr class="separator:ga5b3f326d828aa3623ad9b69506cfc002"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7220e89a59d6abd8bf7611a3ed4da166"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga7220e89a59d6abd8bf7611a3ed4da166">BUCK_PWM_TRGSRC_TRG1</a>&#160;&#160;&#160;0b00100</td></tr>
+<tr class="memdesc:ga7220e89a59d6abd8bf7611a3ed4da166"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM Trigger #1 Trigger Source of this channel.  <a href="a00396.html#ga7220e89a59d6abd8bf7611a3ed4da166">More...</a><br /></td></tr>
+<tr class="separator:ga7220e89a59d6abd8bf7611a3ed4da166"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga58748fe2fe121d5e911032bb48743dfc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga58748fe2fe121d5e911032bb48743dfc">BUCK_PWM_TRGSRC_TRG2</a>&#160;&#160;&#160;0b00101</td></tr>
+<tr class="memdesc:ga58748fe2fe121d5e911032bb48743dfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM Trigger #2 Trigger Source of this channel.  <a href="a00396.html#ga58748fe2fe121d5e911032bb48743dfc">More...</a><br /></td></tr>
+<tr class="separator:ga58748fe2fe121d5e911032bb48743dfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae080940bf83faadbb14e14e47c234e8a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#gae080940bf83faadbb14e14e47c234e8a">BUCK_PWM_PGxTRIGA</a>&#160;&#160;&#160;PG1TRIGA</td></tr>
+<tr class="memdesc:gae080940bf83faadbb14e14e47c234e8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM trigger register A.  <a href="a00396.html#gae080940bf83faadbb14e14e47c234e8a">More...</a><br /></td></tr>
+<tr class="separator:gae080940bf83faadbb14e14e47c234e8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2b4d82ec2ac225241e6017b693782988"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga2b4d82ec2ac225241e6017b693782988">BUCK_PWM_PGxTRIGB</a>&#160;&#160;&#160;PG1TRIGB</td></tr>
+<tr class="memdesc:ga2b4d82ec2ac225241e6017b693782988"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM trigger register B.  <a href="a00396.html#ga2b4d82ec2ac225241e6017b693782988">More...</a><br /></td></tr>
+<tr class="separator:ga2b4d82ec2ac225241e6017b693782988"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7efd5a1dc7f9726bc18adc8552443dac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga7efd5a1dc7f9726bc18adc8552443dac">BUCK_PWM_PGxTRIGC</a>&#160;&#160;&#160;PG1TRIGC</td></tr>
+<tr class="memdesc:ga7efd5a1dc7f9726bc18adc8552443dac"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM trigger register C.  <a href="a00396.html#ga7efd5a1dc7f9726bc18adc8552443dac">More...</a><br /></td></tr>
+<tr class="separator:ga7efd5a1dc7f9726bc18adc8552443dac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6c1bec863482765538c66573908b9807"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga6c1bec863482765538c66573908b9807">BUCK_PWM_ADTR1OFS</a>&#160;&#160;&#160;0U</td></tr>
+<tr class="memdesc:ga6c1bec863482765538c66573908b9807"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC Trigger 1 Offset: 0...31.  <a href="a00396.html#ga6c1bec863482765538c66573908b9807">More...</a><br /></td></tr>
+<tr class="separator:ga6c1bec863482765538c66573908b9807"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4b25420372869d2d02e1e7a61575003a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga4b25420372869d2d02e1e7a61575003a">BUCK_PWM_ADTR1PS</a>&#160;&#160;&#160;0U</td></tr>
+<tr class="memdesc:ga4b25420372869d2d02e1e7a61575003a"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC Trigger 1 Postscaler: 0...31.  <a href="a00396.html#ga4b25420372869d2d02e1e7a61575003a">More...</a><br /></td></tr>
+<tr class="separator:ga4b25420372869d2d02e1e7a61575003a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa9b9ccb3e63d1bcaf459d29909f26643"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#gaa9b9ccb3e63d1bcaf459d29909f26643">BUCK_PWM_UPDREQ</a>&#160;&#160;&#160;PG1STATbits.UPDREQ</td></tr>
+<tr class="separator:gaa9b9ccb3e63d1bcaf459d29909f26643"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5cb359a65629bb1b15e6f97f8e0af1b9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga5cb359a65629bb1b15e6f97f8e0af1b9">BOOST_PWM_CHANNEL</a>&#160;&#160;&#160;2U</td></tr>
+<tr class="memdesc:ga5cb359a65629bb1b15e6f97f8e0af1b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM peripheral output pins, control signals and register assignments of converter phase #1.  <a href="a00396.html#ga5cb359a65629bb1b15e6f97f8e0af1b9">More...</a><br /></td></tr>
+<tr class="separator:ga5cb359a65629bb1b15e6f97f8e0af1b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac517164dbfae71172c243ac0e5f00599"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#gac517164dbfae71172c243ac0e5f00599">BOOST_PWM_GPIO_INSTANCE</a>&#160;&#160;&#160;1U</td></tr>
+<tr class="memdesc:gac517164dbfae71172c243ac0e5f00599"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number indicating device port, where 0=Port RA, 0=Port RB, 0=Port RC, etc.  <a href="a00396.html#gac517164dbfae71172c243ac0e5f00599">More...</a><br /></td></tr>
+<tr class="separator:gac517164dbfae71172c243ac0e5f00599"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8ae86ca88826ee6a7095cb06f7ccb349"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga8ae86ca88826ee6a7095cb06f7ccb349">BOOST_PWM_GPIO_PORT_PINH</a>&#160;&#160;&#160;13U</td></tr>
+<tr class="memdesc:ga8ae86ca88826ee6a7095cb06f7ccb349"><td class="mdescLeft">&#160;</td><td class="mdescRight">Port Pin Number.  <a href="a00396.html#ga8ae86ca88826ee6a7095cb06f7ccb349">More...</a><br /></td></tr>
+<tr class="separator:ga8ae86ca88826ee6a7095cb06f7ccb349"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1cafc817678d9316733aa352d2666a07"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga1cafc817678d9316733aa352d2666a07">BOOST_PWM_GPIO_PORT_PINL</a>&#160;&#160;&#160;12U</td></tr>
+<tr class="memdesc:ga1cafc817678d9316733aa352d2666a07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Port Pin Number.  <a href="a00396.html#ga1cafc817678d9316733aa352d2666a07">More...</a><br /></td></tr>
+<tr class="separator:ga1cafc817678d9316733aa352d2666a07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga40e4d0e3bfc52b1fe5fe023dd0d124ce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga40e4d0e3bfc52b1fe5fe023dd0d124ce">BOOST_PWM_OUTPUT_SWAP</a>&#160;&#160;&#160;true</td></tr>
+<tr class="memdesc:ga40e4d0e3bfc52b1fe5fe023dd0d124ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">true = PWMxH is the leading PWM output, false = PWMxL is the leading PWM output  <a href="a00396.html#ga40e4d0e3bfc52b1fe5fe023dd0d124ce">More...</a><br /></td></tr>
+<tr class="separator:ga40e4d0e3bfc52b1fe5fe023dd0d124ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7138355d7ee786e56d1383f29e482a8e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga7138355d7ee786e56d1383f29e482a8e">BOOST_PWM_PDC</a>&#160;&#160;&#160;PG2DC</td></tr>
+<tr class="memdesc:ga7138355d7ee786e56d1383f29e482a8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM Instance Duty Cycle Register.  <a href="a00396.html#ga7138355d7ee786e56d1383f29e482a8e">More...</a><br /></td></tr>
+<tr class="separator:ga7138355d7ee786e56d1383f29e482a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa6ab1eac5dd0d79dbac98d13d1b5b770"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#gaa6ab1eac5dd0d79dbac98d13d1b5b770">BOOST_PWMH_TRIS</a>&#160;&#160;&#160;_TRISB12</td></tr>
+<tr class="memdesc:gaa6ab1eac5dd0d79dbac98d13d1b5b770"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device Port TRIS register.  <a href="a00396.html#gaa6ab1eac5dd0d79dbac98d13d1b5b770">More...</a><br /></td></tr>
+<tr class="separator:gaa6ab1eac5dd0d79dbac98d13d1b5b770"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0933126df8302b60ac475eeebf8ac6ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga0933126df8302b60ac475eeebf8ac6ed">BOOST_PWMH_WR</a>&#160;&#160;&#160;_LATB12</td></tr>
+<tr class="memdesc:ga0933126df8302b60ac475eeebf8ac6ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device Pin WRITE.  <a href="a00396.html#ga0933126df8302b60ac475eeebf8ac6ed">More...</a><br /></td></tr>
+<tr class="separator:ga0933126df8302b60ac475eeebf8ac6ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabf2ad9b2299924fa6c2a9fb609923d4c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#gabf2ad9b2299924fa6c2a9fb609923d4c">BOOST_PWMH_RD</a>&#160;&#160;&#160;_RB12</td></tr>
+<tr class="memdesc:gabf2ad9b2299924fa6c2a9fb609923d4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device Pin READ.  <a href="a00396.html#gabf2ad9b2299924fa6c2a9fb609923d4c">More...</a><br /></td></tr>
+<tr class="separator:gabf2ad9b2299924fa6c2a9fb609923d4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadf55b9dd12ffeadcb86cd29c2030eb50"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#gadf55b9dd12ffeadcb86cd29c2030eb50">BOOST_PWMH_RPx</a>&#160;&#160;&#160;(uint8_t)44</td></tr>
+<tr class="memdesc:gadf55b9dd12ffeadcb86cd29c2030eb50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device Pin output remappable pin number (RPx)  <a href="a00396.html#gadf55b9dd12ffeadcb86cd29c2030eb50">More...</a><br /></td></tr>
+<tr class="separator:gadf55b9dd12ffeadcb86cd29c2030eb50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga96a7f582626af3df4c8898e29fe2d422"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga96a7f582626af3df4c8898e29fe2d422">BOOST_PWML_TRIS</a>&#160;&#160;&#160;_TRISB13</td></tr>
+<tr class="memdesc:ga96a7f582626af3df4c8898e29fe2d422"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device Port TRIS register.  <a href="a00396.html#ga96a7f582626af3df4c8898e29fe2d422">More...</a><br /></td></tr>
+<tr class="separator:ga96a7f582626af3df4c8898e29fe2d422"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7f798730924f9d26e3f599448bfa56a0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga7f798730924f9d26e3f599448bfa56a0">BOOST_PWML_WR</a>&#160;&#160;&#160;_LATB13</td></tr>
+<tr class="memdesc:ga7f798730924f9d26e3f599448bfa56a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device Pin WRITE.  <a href="a00396.html#ga7f798730924f9d26e3f599448bfa56a0">More...</a><br /></td></tr>
+<tr class="separator:ga7f798730924f9d26e3f599448bfa56a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3c5beee330106c2ddee3b6133b98983b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga3c5beee330106c2ddee3b6133b98983b">BOOST_PWML_RD</a>&#160;&#160;&#160;_RB13</td></tr>
+<tr class="memdesc:ga3c5beee330106c2ddee3b6133b98983b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device Pin READ.  <a href="a00396.html#ga3c5beee330106c2ddee3b6133b98983b">More...</a><br /></td></tr>
+<tr class="separator:ga3c5beee330106c2ddee3b6133b98983b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga076f6ae0272cc6d98686cf00a8ce14da"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga076f6ae0272cc6d98686cf00a8ce14da">BOOST_PWML_RPx</a>&#160;&#160;&#160;(uint8_t)45</td></tr>
+<tr class="memdesc:ga076f6ae0272cc6d98686cf00a8ce14da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device Pin output remappable pin number (RPx)  <a href="a00396.html#ga076f6ae0272cc6d98686cf00a8ce14da">More...</a><br /></td></tr>
+<tr class="separator:ga076f6ae0272cc6d98686cf00a8ce14da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6e968d5ef4d5d790aef9792c0f6406a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga6e968d5ef4d5d790aef9792c0f6406a3">_BOOST_PWM_Interrupt</a>&#160;&#160;&#160;_PWM2Interrupt</td></tr>
+<tr class="memdesc:ga6e968d5ef4d5d790aef9792c0f6406a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM Interrupt Service Routine label.  <a href="a00396.html#ga6e968d5ef4d5d790aef9792c0f6406a3">More...</a><br /></td></tr>
+<tr class="separator:ga6e968d5ef4d5d790aef9792c0f6406a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaad594c4db675732b0d98c533717eecca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#gaad594c4db675732b0d98c533717eecca">BOOST_PWM_IF</a>&#160;&#160;&#160;_PWM2IF</td></tr>
+<tr class="memdesc:gaad594c4db675732b0d98c533717eecca"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM Interrupt Flag Bit.  <a href="a00396.html#gaad594c4db675732b0d98c533717eecca">More...</a><br /></td></tr>
+<tr class="separator:gaad594c4db675732b0d98c533717eecca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafe8ce03953ed9b57aefc72964b40c2d8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#gafe8ce03953ed9b57aefc72964b40c2d8">BOOST_PWM_IE</a>&#160;&#160;&#160;_PWM2IE</td></tr>
+<tr class="memdesc:gafe8ce03953ed9b57aefc72964b40c2d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM Interrupt Enable Bit.  <a href="a00396.html#gafe8ce03953ed9b57aefc72964b40c2d8">More...</a><br /></td></tr>
+<tr class="separator:gafe8ce03953ed9b57aefc72964b40c2d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5a3313e86719910d27ea14298cd5d209"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga5a3313e86719910d27ea14298cd5d209">BOOST_PWM_IP</a>&#160;&#160;&#160;_PWM2IP</td></tr>
+<tr class="memdesc:ga5a3313e86719910d27ea14298cd5d209"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM Interrupt Priority.  <a href="a00396.html#ga5a3313e86719910d27ea14298cd5d209">More...</a><br /></td></tr>
+<tr class="separator:ga5a3313e86719910d27ea14298cd5d209"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacea17e5f96aee1f9a4cf0ecb825749aa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#gacea17e5f96aee1f9a4cf0ecb825749aa">BOOST_PWM_TRGSRC_TRG1</a>&#160;&#160;&#160;0b00110</td></tr>
+<tr class="memdesc:gacea17e5f96aee1f9a4cf0ecb825749aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM Trigger #1 Trigger Source of this channel.  <a href="a00396.html#gacea17e5f96aee1f9a4cf0ecb825749aa">More...</a><br /></td></tr>
+<tr class="separator:gacea17e5f96aee1f9a4cf0ecb825749aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa8e5c81a584c25dcb070282ec867bd08"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#gaa8e5c81a584c25dcb070282ec867bd08">BOOST_PWM_TRGSRC_TRG2</a>&#160;&#160;&#160;0b00111</td></tr>
+<tr class="memdesc:gaa8e5c81a584c25dcb070282ec867bd08"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM Trigger #2 Trigger Source of this channel.  <a href="a00396.html#gaa8e5c81a584c25dcb070282ec867bd08">More...</a><br /></td></tr>
+<tr class="separator:gaa8e5c81a584c25dcb070282ec867bd08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaabec90626feff62dcecdfe396510ebf5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#gaabec90626feff62dcecdfe396510ebf5">BOOST_PWM_PGxTRIGA</a>&#160;&#160;&#160;PG2TRIGA</td></tr>
+<tr class="memdesc:gaabec90626feff62dcecdfe396510ebf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM trigger register A.  <a href="a00396.html#gaabec90626feff62dcecdfe396510ebf5">More...</a><br /></td></tr>
+<tr class="separator:gaabec90626feff62dcecdfe396510ebf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga86ec018143beb6f6c04d5bab1992f6a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga86ec018143beb6f6c04d5bab1992f6a9">BOOST_PWM_PGxTRIGB</a>&#160;&#160;&#160;PG2TRIGB</td></tr>
+<tr class="memdesc:ga86ec018143beb6f6c04d5bab1992f6a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM trigger register B.  <a href="a00396.html#ga86ec018143beb6f6c04d5bab1992f6a9">More...</a><br /></td></tr>
+<tr class="separator:ga86ec018143beb6f6c04d5bab1992f6a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga80d6dd4e963f9f92d5afd6114909a882"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga80d6dd4e963f9f92d5afd6114909a882">BOOST_PWM_PGxTRIGC</a>&#160;&#160;&#160;PG2TRIGC</td></tr>
+<tr class="memdesc:ga80d6dd4e963f9f92d5afd6114909a882"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM trigger register C.  <a href="a00396.html#ga80d6dd4e963f9f92d5afd6114909a882">More...</a><br /></td></tr>
+<tr class="separator:ga80d6dd4e963f9f92d5afd6114909a882"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7a34b4c07a19a371165b13347b2ddb9b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga7a34b4c07a19a371165b13347b2ddb9b">BOOST_PWM_ADTR1OFS</a>&#160;&#160;&#160;0U</td></tr>
+<tr class="memdesc:ga7a34b4c07a19a371165b13347b2ddb9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC Trigger 1 Offset: 0...31.  <a href="a00396.html#ga7a34b4c07a19a371165b13347b2ddb9b">More...</a><br /></td></tr>
+<tr class="separator:ga7a34b4c07a19a371165b13347b2ddb9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga01be7c52fa791cc1d5233a0dab9f201c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ga01be7c52fa791cc1d5233a0dab9f201c">BOOST_PWM_ADTR1PS</a>&#160;&#160;&#160;0U</td></tr>
+<tr class="memdesc:ga01be7c52fa791cc1d5233a0dab9f201c"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC Trigger 1 Postscaler: 0...31.  <a href="a00396.html#ga01be7c52fa791cc1d5233a0dab9f201c">More...</a><br /></td></tr>
+<tr class="separator:ga01be7c52fa791cc1d5233a0dab9f201c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae6a50f1b81d5150204e003ec36805b71"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#gae6a50f1b81d5150204e003ec36805b71">BOOST_PWM_UPDREQ</a>&#160;&#160;&#160;PG2STATbits.UPDREQ</td></tr>
+<tr class="separator:gae6a50f1b81d5150204e003ec36805b71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Parameter defintions using physical quantities. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="gacc7415a2a9fd14abe19588dac5804b22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gacc7415a2a9fd14abe19588dac5804b22">&#9670;&nbsp;</a></span>BOOST_DEAD_TIME_FALLING_EDGE</h2>
+<a id="ga6e968d5ef4d5d790aef9792c0f6406a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6e968d5ef4d5d790aef9792c0f6406a3">&#9670;&nbsp;</a></span>_BOOST_PWM_Interrupt</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_DEAD_TIME_FALLING_EDGE&#160;&#160;&#160;(float) 0.0e-9</td>
+          <td class="memname">#define _BOOST_PWM_Interrupt&#160;&#160;&#160;_PWM2Interrupt</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Falling Edge Dead Time delay in [sec]. </p>
+<p>PWM Interrupt Service Routine label. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00927">927</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00961">961</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga30bc95c5be03be162bd08c04706e34b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga30bc95c5be03be162bd08c04706e34b2">&#9670;&nbsp;</a></span>BOOST_DEAD_TIME_LEADING_EDGE</h2>
+<a id="gad15d74e3f7c60c19c2b7cccc597aa248"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad15d74e3f7c60c19c2b7cccc597aa248">&#9670;&nbsp;</a></span>_BUCK_PWM_Interrupt</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_DEAD_TIME_LEADING_EDGE&#160;&#160;&#160;(float) 0.0e-9</td>
+          <td class="memname">#define _BUCK_PWM_Interrupt&#160;&#160;&#160;_PWM1Interrupt</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Leading Edge Dead Time delay in [sec]. </p>
+<p>PWM Interrupt Service Routine label. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00926">926</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00328">328</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gadef417fa6e9b29f43fc1b26321f07750"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadef417fa6e9b29f43fc1b26321f07750">&#9670;&nbsp;</a></span>BOOST_LEADING_EDGE_BLANKING</h2>
+<a id="ga7a34b4c07a19a371165b13347b2ddb9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7a34b4c07a19a371165b13347b2ddb9b">&#9670;&nbsp;</a></span>BOOST_PWM_ADTR1OFS</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_LEADING_EDGE_BLANKING&#160;&#160;&#160;(float)120.0e-9</td>
+          <td class="memname">#define BOOST_PWM_ADTR1OFS&#160;&#160;&#160;0U</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Leading Edge Blanking period in [sec]. </p>
+<p>ADC Trigger 1 Offset: 0...31. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00925">925</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00971">971</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga5208c54df1cdb14e00e62eb7957820f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5208c54df1cdb14e00e62eb7957820f6">&#9670;&nbsp;</a></span>BOOST_NO_OF_PHASES</h2>
+<a id="ga01be7c52fa791cc1d5233a0dab9f201c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga01be7c52fa791cc1d5233a0dab9f201c">&#9670;&nbsp;</a></span>BOOST_PWM_ADTR1PS</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_NO_OF_PHASES&#160;&#160;&#160;1U</td>
+          <td class="memname">#define BOOST_PWM_ADTR1PS&#160;&#160;&#160;0U</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>User-declaration of global defines for PWM signal generator settings. </p>
-<p>This section defines fundamental PWM settings required for the on-board boost converter of DPSK3. These settings are determined by hardware and defined using physical quantities. Pre-compiler macros are used to convert physical values into binary (integer) numbers to be written to Special Function Registers (SFR). Number of power converter phases of this design </p>
+<p>ADC Trigger 1 Postscaler: 0...31. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00920">920</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00972">972</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gafe2eededed4304c44e47642b9093beda"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gafe2eededed4304c44e47642b9093beda">&#9670;&nbsp;</a></span>BOOST_PWM_DUTY_CYCLE_MAX</h2>
+<a id="ga5cb359a65629bb1b15e6f97f8e0af1b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5cb359a65629bb1b15e6f97f8e0af1b9">&#9670;&nbsp;</a></span>BOOST_PWM_CHANNEL</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_PWM_DUTY_CYCLE_MAX&#160;&#160;&#160;(float)0.850</td>
+          <td class="memname">#define BOOST_PWM_CHANNEL&#160;&#160;&#160;2U</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Maximum on/off-time ratio (duty ratio) in [%]. </p>
+<p>PWM peripheral output pins, control signals and register assignments of converter phase #1. </p>
+<p>Converter phase #1 uses a simple half-bridge to commutate the switch node. The signal source therefore only requires a single PWM generator instance to be configured in fixed frequency complementary mode with dead times. Additional PWM peripheral features are used by the firmware to respond to interrupts, trigger ADC conversions, control device output pins during startup and fault responses and to change timing settings on the fly.</p>
+<p>Please review the device data sheet for details about register names and settings. PWM Instance Index (e.g. 1=PWM1, 2=PWM2, etc.) </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00924">924</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00945">945</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gaf4b6b5baf07ba17e75f66ec5305c68fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf4b6b5baf07ba17e75f66ec5305c68fb">&#9670;&nbsp;</a></span>BOOST_PWM_DUTY_CYCLE_MIN</h2>
+<a id="gac517164dbfae71172c243ac0e5f00599"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac517164dbfae71172c243ac0e5f00599">&#9670;&nbsp;</a></span>BOOST_PWM_GPIO_INSTANCE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_PWM_DUTY_CYCLE_MIN&#160;&#160;&#160;(float)0.040</td>
+          <td class="memname">#define BOOST_PWM_GPIO_INSTANCE&#160;&#160;&#160;1U</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Minimum on/off-time ratio (duty ratio) in [%]. </p>
+<p>Number indicating device port, where 0=Port RA, 0=Port RB, 0=Port RC, etc. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00923">923</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00946">946</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga190c68d192a604d70087146623fedd1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga190c68d192a604d70087146623fedd1d">&#9670;&nbsp;</a></span>BOOST_SWITCHING_FREQUENCY</h2>
+<a id="ga8ae86ca88826ee6a7095cb06f7ccb349"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8ae86ca88826ee6a7095cb06f7ccb349">&#9670;&nbsp;</a></span>BOOST_PWM_GPIO_PORT_PINH</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_SWITCHING_FREQUENCY&#160;&#160;&#160;(float)500.0e+3</td>
+          <td class="memname">#define BOOST_PWM_GPIO_PORT_PINH&#160;&#160;&#160;13U</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Fixed Switching frequency in [Hz]. </p>
+<p>Port Pin Number. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00922">922</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00947">947</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gafe895b572c7fdeced04221d53c18695d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gafe895b572c7fdeced04221d53c18695d">&#9670;&nbsp;</a></span>BUCK_DEAD_TIME_FALLING_EDGE</h2>
+<a id="ga1cafc817678d9316733aa352d2666a07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1cafc817678d9316733aa352d2666a07">&#9670;&nbsp;</a></span>BOOST_PWM_GPIO_PORT_PINL</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_DEAD_TIME_FALLING_EDGE&#160;&#160;&#160;(float)60.0e-9</td>
+          <td class="memname">#define BOOST_PWM_GPIO_PORT_PINL&#160;&#160;&#160;12U</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Falling Edge Dead Time delay in [sec]. </p>
+<p>Port Pin Number. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00294">294</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00948">948</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gaee8430cb24cfc1cdd3b12dd3c40b09d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaee8430cb24cfc1cdd3b12dd3c40b09d5">&#9670;&nbsp;</a></span>BUCK_DEAD_TIME_LEADING_EDGE</h2>
+<a id="gafe8ce03953ed9b57aefc72964b40c2d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafe8ce03953ed9b57aefc72964b40c2d8">&#9670;&nbsp;</a></span>BOOST_PWM_IE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_DEAD_TIME_LEADING_EDGE&#160;&#160;&#160;(float)20.0e-9</td>
+          <td class="memname">#define BOOST_PWM_IE&#160;&#160;&#160;_PWM2IE</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Leading Edge Dead Time delay in [sec]. </p>
+<p>PWM Interrupt Enable Bit. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00293">293</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00963">963</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga53e830102be3559594f1f107c42e3cb2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga53e830102be3559594f1f107c42e3cb2">&#9670;&nbsp;</a></span>BUCK_LEADING_EDGE_BLANKING</h2>
+<a id="gaad594c4db675732b0d98c533717eecca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaad594c4db675732b0d98c533717eecca">&#9670;&nbsp;</a></span>BOOST_PWM_IF</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_LEADING_EDGE_BLANKING&#160;&#160;&#160;(float)120.0e-9</td>
+          <td class="memname">#define BOOST_PWM_IF&#160;&#160;&#160;_PWM2IF</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Leading Edge Blanking period in [sec]. </p>
+<p>PWM Interrupt Flag Bit. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00292">292</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00962">962</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga353ba60329e90d1aca97deba7e0bd669"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga353ba60329e90d1aca97deba7e0bd669">&#9670;&nbsp;</a></span>BUCK_NO_OF_PHASES</h2>
+<a id="ga5a3313e86719910d27ea14298cd5d209"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5a3313e86719910d27ea14298cd5d209">&#9670;&nbsp;</a></span>BOOST_PWM_IP</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_NO_OF_PHASES&#160;&#160;&#160;1U</td>
+          <td class="memname">#define BOOST_PWM_IP&#160;&#160;&#160;_PWM2IP</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>User-declaration of global defines for PWM signal generator settings. </p>
-<p>This section defines fundamental PWM settings required for the on-board buck converter of DPSK3. These settings are determined by hardware and defined using physical quantities. Pre-compiler macros are used to convert physical values into binary (integer) numbers to be written to Special Function Registers (SFR). Number of power converter phases of this design </p>
+<p>PWM Interrupt Priority. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00287">287</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00964">964</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga355fe35bc08bc0f4657be7f638a643a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga355fe35bc08bc0f4657be7f638a643a6">&#9670;&nbsp;</a></span>BUCK_PWM_DUTY_CYCLE_MAX</h2>
+<a id="ga40e4d0e3bfc52b1fe5fe023dd0d124ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga40e4d0e3bfc52b1fe5fe023dd0d124ce">&#9670;&nbsp;</a></span>BOOST_PWM_OUTPUT_SWAP</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_PWM_DUTY_CYCLE_MAX&#160;&#160;&#160;(float)0.900</td>
+          <td class="memname">#define BOOST_PWM_OUTPUT_SWAP&#160;&#160;&#160;true</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Maximum on/off-time ratio (duty ratio) in [%]. </p>
+<p>true = PWMxH is the leading PWM output, false = PWMxL is the leading PWM output </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00291">291</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00949">949</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gabcc43f4201492160173351db97ddcfda"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabcc43f4201492160173351db97ddcfda">&#9670;&nbsp;</a></span>BUCK_PWM_DUTY_CYCLE_MIN</h2>
+<a id="ga7138355d7ee786e56d1383f29e482a8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7138355d7ee786e56d1383f29e482a8e">&#9670;&nbsp;</a></span>BOOST_PWM_PDC</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_PWM_DUTY_CYCLE_MIN&#160;&#160;&#160;(float)0.010</td>
+          <td class="memname">#define BOOST_PWM_PDC&#160;&#160;&#160;PG2DC</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Minimum on/off-time ratio (duty ratio) in [%]. </p>
+<p>PWM Instance Duty Cycle Register. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00290">290</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00951">951</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gadecc3fb9cc6da0d2add11d577d50d5b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadecc3fb9cc6da0d2add11d577d50d5b5">&#9670;&nbsp;</a></span>BUCK_SWITCHING_FREQUENCY</h2>
+<a id="gaabec90626feff62dcecdfe396510ebf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaabec90626feff62dcecdfe396510ebf5">&#9670;&nbsp;</a></span>BOOST_PWM_PGxTRIGA</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_SWITCHING_FREQUENCY&#160;&#160;&#160;(float)500.0e+3</td>
+          <td class="memname">#define BOOST_PWM_PGxTRIGA&#160;&#160;&#160;PG2TRIGA</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Fixed Switching frequency in [Hz]. </p>
+<p>PWM trigger register A. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00289">289</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00967">967</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga86ec018143beb6f6c04d5bab1992f6a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga86ec018143beb6f6c04d5bab1992f6a9">&#9670;&nbsp;</a></span>BOOST_PWM_PGxTRIGB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PWM_PGxTRIGB&#160;&#160;&#160;PG2TRIGB</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PWM trigger register B. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00968">968</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga80d6dd4e963f9f92d5afd6114909a882"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga80d6dd4e963f9f92d5afd6114909a882">&#9670;&nbsp;</a></span>BOOST_PWM_PGxTRIGC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PWM_PGxTRIGC&#160;&#160;&#160;PG2TRIGC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PWM trigger register C. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00969">969</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gacea17e5f96aee1f9a4cf0ecb825749aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacea17e5f96aee1f9a4cf0ecb825749aa">&#9670;&nbsp;</a></span>BOOST_PWM_TRGSRC_TRG1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PWM_TRGSRC_TRG1&#160;&#160;&#160;0b00110</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PWM Trigger #1 Trigger Source of this channel. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00965">965</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gaa8e5c81a584c25dcb070282ec867bd08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa8e5c81a584c25dcb070282ec867bd08">&#9670;&nbsp;</a></span>BOOST_PWM_TRGSRC_TRG2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PWM_TRGSRC_TRG2&#160;&#160;&#160;0b00111</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PWM Trigger #2 Trigger Source of this channel. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00966">966</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gae6a50f1b81d5150204e003ec36805b71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae6a50f1b81d5150204e003ec36805b71">&#9670;&nbsp;</a></span>BOOST_PWM_UPDREQ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PWM_UPDREQ&#160;&#160;&#160;PG2STATbits.UPDREQ</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00974">974</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gabf2ad9b2299924fa6c2a9fb609923d4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabf2ad9b2299924fa6c2a9fb609923d4c">&#9670;&nbsp;</a></span>BOOST_PWMH_RD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PWMH_RD&#160;&#160;&#160;_RB12</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Device Pin READ. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00954">954</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gadf55b9dd12ffeadcb86cd29c2030eb50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadf55b9dd12ffeadcb86cd29c2030eb50">&#9670;&nbsp;</a></span>BOOST_PWMH_RPx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PWMH_RPx&#160;&#160;&#160;(uint8_t)44</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Device Pin output remappable pin number (RPx) </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00955">955</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gaa6ab1eac5dd0d79dbac98d13d1b5b770"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa6ab1eac5dd0d79dbac98d13d1b5b770">&#9670;&nbsp;</a></span>BOOST_PWMH_TRIS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PWMH_TRIS&#160;&#160;&#160;_TRISB12</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Device Port TRIS register. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00952">952</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga0933126df8302b60ac475eeebf8ac6ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0933126df8302b60ac475eeebf8ac6ed">&#9670;&nbsp;</a></span>BOOST_PWMH_WR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PWMH_WR&#160;&#160;&#160;_LATB12</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Device Pin WRITE. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00953">953</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga3c5beee330106c2ddee3b6133b98983b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3c5beee330106c2ddee3b6133b98983b">&#9670;&nbsp;</a></span>BOOST_PWML_RD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PWML_RD&#160;&#160;&#160;_RB13</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Device Pin READ. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00958">958</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga076f6ae0272cc6d98686cf00a8ce14da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga076f6ae0272cc6d98686cf00a8ce14da">&#9670;&nbsp;</a></span>BOOST_PWML_RPx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PWML_RPx&#160;&#160;&#160;(uint8_t)45</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Device Pin output remappable pin number (RPx) </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00959">959</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga96a7f582626af3df4c8898e29fe2d422"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga96a7f582626af3df4c8898e29fe2d422">&#9670;&nbsp;</a></span>BOOST_PWML_TRIS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PWML_TRIS&#160;&#160;&#160;_TRISB13</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Device Port TRIS register. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00956">956</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga7f798730924f9d26e3f599448bfa56a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7f798730924f9d26e3f599448bfa56a0">&#9670;&nbsp;</a></span>BOOST_PWML_WR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PWML_WR&#160;&#160;&#160;_LATB13</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Device Pin WRITE. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00957">957</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga6c1bec863482765538c66573908b9807"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6c1bec863482765538c66573908b9807">&#9670;&nbsp;</a></span>BUCK_PWM_ADTR1OFS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_PWM_ADTR1OFS&#160;&#160;&#160;0U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ADC Trigger 1 Offset: 0...31. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00338">338</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga4b25420372869d2d02e1e7a61575003a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4b25420372869d2d02e1e7a61575003a">&#9670;&nbsp;</a></span>BUCK_PWM_ADTR1PS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_PWM_ADTR1PS&#160;&#160;&#160;0U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ADC Trigger 1 Postscaler: 0...31. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00339">339</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga61df29741cab195009bbfb71d99d5be1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga61df29741cab195009bbfb71d99d5be1">&#9670;&nbsp;</a></span>BUCK_PWM_CHANNEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_PWM_CHANNEL&#160;&#160;&#160;1U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PWM peripheral output pins, control signals and register assignments of converter phase #1. </p>
+<p>Converter phase #1 uses a simple half-bridge to commutate the switch node. The signal source therefore only requires a single PWM generator instance to be configured in fixed frequency complementary mode with dead times. Additional PWM peripheral features are used by the firmware to respond to interrupts, trigger ADC conversions, control device output pins during startup and fault responses and to change timing settings on the fly.</p>
+<p>Please review the device data sheet for details about register names and settings. PWM Instance Index (e.g. 1=PWM1, 2=PWM2, etc.) </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00312">312</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gaf19e399d1f0093a4007c00959c046098"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf19e399d1f0093a4007c00959c046098">&#9670;&nbsp;</a></span>BUCK_PWM_GPIO_INSTANCE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_PWM_GPIO_INSTANCE&#160;&#160;&#160;1U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number indicating device port, where 0=Port RA, 0=Port RB, 0=Port RC, etc. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00313">313</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga1bb398d449eab922f02c520af38be36f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1bb398d449eab922f02c520af38be36f">&#9670;&nbsp;</a></span>BUCK_PWM_GPIO_PORT_PINH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_PWM_GPIO_PORT_PINH&#160;&#160;&#160;14U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Port Pin Number. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00314">314</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gae1fbe0f70b1d7a42d37531d6d2965bba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae1fbe0f70b1d7a42d37531d6d2965bba">&#9670;&nbsp;</a></span>BUCK_PWM_GPIO_PORT_PINL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_PWM_GPIO_PORT_PINL&#160;&#160;&#160;15U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Port Pin Number. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00315">315</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga7f0d349ccc477eb9d417866853d6cc86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7f0d349ccc477eb9d417866853d6cc86">&#9670;&nbsp;</a></span>BUCK_PWM_IE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_PWM_IE&#160;&#160;&#160;_PWM1IE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PWM Interrupt Enable Bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00330">330</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga534d16ea3d83a3b1ebd14c0a53de78d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga534d16ea3d83a3b1ebd14c0a53de78d3">&#9670;&nbsp;</a></span>BUCK_PWM_IF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_PWM_IF&#160;&#160;&#160;_PWM1IF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PWM Interrupt Flag Bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00329">329</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga5b3f326d828aa3623ad9b69506cfc002"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5b3f326d828aa3623ad9b69506cfc002">&#9670;&nbsp;</a></span>BUCK_PWM_IP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_PWM_IP&#160;&#160;&#160;_PWM1IP</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PWM Interrupt Priority. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00331">331</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gacd0fe449d364732b7096f12260cb97f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacd0fe449d364732b7096f12260cb97f6">&#9670;&nbsp;</a></span>BUCK_PWM_OUTPUT_SWAP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_PWM_OUTPUT_SWAP&#160;&#160;&#160;false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>true = PWMxH is the leading PWM output, false = PWMxL is the leading PWM output </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00316">316</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gab4497dfda3603e074c0c61a70756bb22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab4497dfda3603e074c0c61a70756bb22">&#9670;&nbsp;</a></span>BUCK_PWM_PDC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_PWM_PDC&#160;&#160;&#160;PG1DC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PWM Instance Duty Cycle Register. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00318">318</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gae080940bf83faadbb14e14e47c234e8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae080940bf83faadbb14e14e47c234e8a">&#9670;&nbsp;</a></span>BUCK_PWM_PGxTRIGA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_PWM_PGxTRIGA&#160;&#160;&#160;PG1TRIGA</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PWM trigger register A. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00334">334</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga2b4d82ec2ac225241e6017b693782988"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2b4d82ec2ac225241e6017b693782988">&#9670;&nbsp;</a></span>BUCK_PWM_PGxTRIGB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_PWM_PGxTRIGB&#160;&#160;&#160;PG1TRIGB</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PWM trigger register B. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00335">335</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga7efd5a1dc7f9726bc18adc8552443dac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7efd5a1dc7f9726bc18adc8552443dac">&#9670;&nbsp;</a></span>BUCK_PWM_PGxTRIGC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_PWM_PGxTRIGC&#160;&#160;&#160;PG1TRIGC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PWM trigger register C. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00336">336</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga7220e89a59d6abd8bf7611a3ed4da166"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7220e89a59d6abd8bf7611a3ed4da166">&#9670;&nbsp;</a></span>BUCK_PWM_TRGSRC_TRG1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_PWM_TRGSRC_TRG1&#160;&#160;&#160;0b00100</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PWM Trigger #1 Trigger Source of this channel. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00332">332</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga58748fe2fe121d5e911032bb48743dfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga58748fe2fe121d5e911032bb48743dfc">&#9670;&nbsp;</a></span>BUCK_PWM_TRGSRC_TRG2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_PWM_TRGSRC_TRG2&#160;&#160;&#160;0b00101</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PWM Trigger #2 Trigger Source of this channel. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00333">333</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gaa9b9ccb3e63d1bcaf459d29909f26643"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa9b9ccb3e63d1bcaf459d29909f26643">&#9670;&nbsp;</a></span>BUCK_PWM_UPDREQ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_PWM_UPDREQ&#160;&#160;&#160;PG1STATbits.UPDREQ</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00341">341</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gaf0fc2cd2f22a4b055c3a89984df87e54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf0fc2cd2f22a4b055c3a89984df87e54">&#9670;&nbsp;</a></span>BUCK_PWMH_RD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_PWMH_RD&#160;&#160;&#160;_RB14</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Device Pin READ. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00321">321</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga58fe45974993e44af0ac870ca290d7ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga58fe45974993e44af0ac870ca290d7ba">&#9670;&nbsp;</a></span>BUCK_PWMH_RPx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_PWMH_RPx&#160;&#160;&#160;(uint8_t)46</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Device Pin output remappable pin number (RPx) </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00322">322</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gab999a3110eec8fe8cd6666b6313489a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab999a3110eec8fe8cd6666b6313489a7">&#9670;&nbsp;</a></span>BUCK_PWMH_TRIS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_PWMH_TRIS&#160;&#160;&#160;_TRISB14</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Device Port TRIS register. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00319">319</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga826c5f47e145c7d2b4deff76b0afc6c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga826c5f47e145c7d2b4deff76b0afc6c1">&#9670;&nbsp;</a></span>BUCK_PWMH_WR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_PWMH_WR&#160;&#160;&#160;_LATB14</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Device Pin WRITE. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00320">320</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gaf5318845cbefe89ab33f265353d213dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf5318845cbefe89ab33f265353d213dc">&#9670;&nbsp;</a></span>BUCK_PWML_RD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_PWML_RD&#160;&#160;&#160;_RB15</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Device Pin READ. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00325">325</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga63745e9d85fe9aa792978d7d02fdf719"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga63745e9d85fe9aa792978d7d02fdf719">&#9670;&nbsp;</a></span>BUCK_PWML_RPx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_PWML_RPx&#160;&#160;&#160;(uint8_t)47</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Device Pin output remappable pin number (RPx) </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00326">326</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga26f10a51b8418dcf1067f2fbe22ce462"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga26f10a51b8418dcf1067f2fbe22ce462">&#9670;&nbsp;</a></span>BUCK_PWML_TRIS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_PWML_TRIS&#160;&#160;&#160;_TRISB15</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Device Port TRIS register. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00323">323</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga47eaeb7e3bd57af71fd44a89f6bc077e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga47eaeb7e3bd57af71fd44a89f6bc077e">&#9670;&nbsp;</a></span>BUCK_PWML_WR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_PWML_WR&#160;&#160;&#160;_LATB15</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Device Pin WRITE. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00324">324</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

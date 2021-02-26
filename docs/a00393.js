@@ -1,19 +1,17 @@
 var a00393 =
 [
-    [ "BOOST_OCP_RECOVERY_DELAY", "a00393.html#ga21aabda6c863b4f02b903056dd51a886", null ],
-    [ "BOOST_OCP_TRIP_DELAY", "a00393.html#ga679b8b944ffd26351d12e757af8b37a7", null ],
-    [ "BOOST_OVLO_RECOVERY_DELAY", "a00393.html#gaf80ca0477099dc8e4c20d0e20bdd96a2", null ],
-    [ "BOOST_OVLO_TRIP_DELAY", "a00393.html#gad5600ac9bfc38bec9b7bfe5be02540f2", null ],
-    [ "BOOST_REGERR_RECOVERY_DELAY", "a00393.html#gaabf755c80166ab949147643eb8ea5ba1", null ],
-    [ "BOOST_REGERR_TRIP_DELAY", "a00393.html#ga6020ebc1bd9132e1127b17c461d78189", null ],
-    [ "BOOST_UVLO_RECOVERY_DELAY", "a00393.html#ga54f72937fe8f99c6ceb4d115d4d913f3", null ],
-    [ "BOOST_UVLO_TRIP_DELAY", "a00393.html#ga3b1fff439d1fc72471a4bd5f9f9d13ee", null ],
-    [ "BUCK_OCP_RECOVERY_DELAY", "a00393.html#ga6cc849023abc581aad3e0fc9175bf6b7", null ],
-    [ "BUCK_OCP_TRIP_DELAY", "a00393.html#ga401ff320085d325a621e3482bb1b3810", null ],
-    [ "BUCK_OVLO_RECOVERY_DELAY", "a00393.html#ga5c7756adddc4911f015fedb890f8270d", null ],
-    [ "BUCK_OVLO_TRIP_DELAY", "a00393.html#ga486d5b4101d10ebea3f97ec009cf779d", null ],
-    [ "BUCK_REGERR_RECOVERY_DELAY", "a00393.html#gabcc3a6cdf3286b554f1c01d64871b016", null ],
-    [ "BUCK_REGERR_TRIP_DELAY", "a00393.html#ga916bec2e79815eb2364e14fc9926e551", null ],
-    [ "BUCK_UVLO_RECOVERY_DELAY", "a00393.html#ga8fc5cc0b86b1896492fba096f1177c9e", null ],
-    [ "BUCK_UVLO_TRIP_DELAY", "a00393.html#gad91c6030149a6a40c03c236c6245195b", null ]
+    [ "BOOST_DEAD_TIME_FALLING_EDGE", "a00393.html#gacc7415a2a9fd14abe19588dac5804b22", null ],
+    [ "BOOST_DEAD_TIME_LEADING_EDGE", "a00393.html#ga30bc95c5be03be162bd08c04706e34b2", null ],
+    [ "BOOST_LEADING_EDGE_BLANKING", "a00393.html#gadef417fa6e9b29f43fc1b26321f07750", null ],
+    [ "BOOST_NO_OF_PHASES", "a00393.html#ga5208c54df1cdb14e00e62eb7957820f6", null ],
+    [ "BOOST_PWM_DUTY_CYCLE_MAX", "a00393.html#gafe2eededed4304c44e47642b9093beda", null ],
+    [ "BOOST_PWM_DUTY_CYCLE_MIN", "a00393.html#gaf4b6b5baf07ba17e75f66ec5305c68fb", null ],
+    [ "BOOST_SWITCHING_FREQUENCY", "a00393.html#ga190c68d192a604d70087146623fedd1d", null ],
+    [ "BUCK_DEAD_TIME_FALLING_EDGE", "a00393.html#gafe895b572c7fdeced04221d53c18695d", null ],
+    [ "BUCK_DEAD_TIME_LEADING_EDGE", "a00393.html#gaee8430cb24cfc1cdd3b12dd3c40b09d5", null ],
+    [ "BUCK_LEADING_EDGE_BLANKING", "a00393.html#ga53e830102be3559594f1f107c42e3cb2", null ],
+    [ "BUCK_NO_OF_PHASES", "a00393.html#ga353ba60329e90d1aca97deba7e0bd669", null ],
+    [ "BUCK_PWM_DUTY_CYCLE_MAX", "a00393.html#ga355fe35bc08bc0f4657be7f638a643a6", null ],
+    [ "BUCK_PWM_DUTY_CYCLE_MIN", "a00393.html#gabcc43f4201492160173351db97ddcfda", null ],
+    [ "BUCK_SWITCHING_FREQUENCY", "a00393.html#gadecc3fb9cc6da0d2add11d577d50d5b5", null ]
 ];

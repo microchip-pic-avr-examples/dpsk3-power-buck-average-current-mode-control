@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Events and Interrupts</title>
+<title>Digital Power Starter Kit 3 Firmware: Buck Converter Library</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -43,7 +43,7 @@
   <td id="projectalign" style="padding-left: 0.0em;">
    <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
-   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Adaptive Gain Control Example</div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Average Current Mode Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -103,61 +103,32 @@ $(document).ready(function(){initNavTree('a00463.html',''); initResizable(); });
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#groups">Modules</a>  </div>
   <div class="headertitle">
-<div class="title">Events and Interrupts<div class="ingroups"><a class="el" href="a00538.html">Application Layer</a> &raquo; <a class="el" href="a00460.html">Power Control Application Layer</a></div></div>  </div>
+<div class="title">Buck Converter Library<div class="ingroups"><a class="el" href="a00536.html">Device Driver Library Layer</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Public events of the application layer of the power control task.  
-<a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Events and Interrupts:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Buck Converter Library:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00463.svg" width="374" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00463.svg" width="578" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
-<tr class="memitem:ga4d26e0585523e4ab162ca9868517b878"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00418.html#ga4d26e0585523e4ab162ca9868517b878">_BUCK_VLOOP_Interrupt</a>&#160;&#160;&#160;_PWM1Interrupt</td></tr>
-<tr class="memdesc:ga4d26e0585523e4ab162ca9868517b878"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt vector function call label.  <a href="a00418.html#ga4d26e0585523e4ab162ca9868517b878">More...</a><br /></td></tr>
-<tr class="separator:ga4d26e0585523e4ab162ca9868517b878"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
+Modules</h2></td></tr>
+<tr class="memitem:a00464"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00464.html">Buck Converter Library API</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00474"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00474.html">Buck Converter Library Modules</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Public events of the application layer of the power control task. </p>
-<p>This is the event level of the first application layer task. </p>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga4d26e0585523e4ab162ca9868517b878"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4d26e0585523e4ab162ca9868517b878">&#9670;&nbsp;</a></span>_BUCK_VLOOP_Interrupt</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void _BUCK_VLOOP_Interrupt</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">void</td><td>)</td>
-          <td>&#160;&#160;&#160;_PWM1Interrupt</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Interrupt vector function call label. </p>
-<p>Main Control Interrupt.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">void</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>void</dd></dl>
-<p>The control interrupt is calling the control loop. The point in time where this interrupt is thrown is determined by selecting the BUCK_VOUT_TRIGGER_MODE option. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00898">898</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
+<p>The Buck Converter Library is a comprehensive device driver providing a state machine managing initialization, configurable, protected startup, runtime reference tuning and auto-restart capabilities. Special Functions are available to extend the essential features of the state machine supporting specific, optional sub-circuits and functions.</p>
+<p>This device driver also includes functions for the configuration of device peripherals by providing templates of the fundamental peripheral set initialization required to drive and control the supported type of power converter, significantly reducing the amount of parameters users have to select and set.</p>
+<p>All settings are made available through the <a class="el" href="a01557.html" title="BUCK control &amp; monitoring data structure.">BUCK_CONVERTER_s</a> data structure, described in the Public Properties / Data Types section of this documentation. </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

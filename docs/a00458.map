@@ -1,4 +1,4 @@
-<map id="Private Functions" name="Private Functions">
-<area shape="rect" id="node1" title="Private functions of the application layer of the debugging LED task." alt="" coords="233,13,356,38"/>
-<area shape="rect" id="node2" href="$a00455.html" title=" " alt="" coords="5,5,185,45"/>
+<map id="Public Functions" name="Public Functions">
+<area shape="rect" id="node1" href="$a00457.html" title=" " alt="" coords="5,5,176,45"/>
+<area shape="rect" id="node2" title="Public functions of the application layer of the power control task." alt="" coords="224,13,343,38"/>
 </map>

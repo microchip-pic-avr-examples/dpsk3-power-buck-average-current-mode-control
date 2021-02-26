@@ -1,4 +1,4 @@
-<map id="Basic MCU Initialization" name="Basic MCU Initialization">
-<area shape="rect" id="node1" title=" " alt="" coords="191,13,351,38"/>
-<area shape="rect" id="node2" href="$a00525.html" title=" " alt="" coords="5,5,143,45"/>
+<map id="Digital Signal Processor Configuration" name="Digital Signal Processor Configuration">
+<area shape="rect" id="node1" href="$a00522.html" title=" " alt="" coords="5,5,143,45"/>
+<area shape="rect" id="node2" title=" " alt="" coords="191,5,352,45"/>
 </map>

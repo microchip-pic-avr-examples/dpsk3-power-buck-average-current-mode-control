@@ -1,7 +1,5 @@
 var a00532 =
 [
-    [ "sysDacModule_Initialize", "a00532.html#gab420e63336f317e197b1cb8861561c3f", null ],
-    [ "sysDacOutput_Disable", "a00532.html#gae4c70ecb7b13f328f1458f5f2cfbe48a", null ],
-    [ "sysDacOutput_Enable", "a00532.html#ga2f97c3082e0d6f724cea482c10c2d08f", null ],
-    [ "sysDacOutput_Initialize", "a00532.html#ga231ffdd65b0ae520b467cbc6fbbf8d03", null ]
+    [ "sysOsTimer_Enable", "a00532.html#ga4c811c3414a3785423f828be293562f0", null ],
+    [ "sysOsTimer_Initialize", "a00532.html#ga8e89a1a4ee5bf8c794bd29163b92bf49", null ]
 ];

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Initializing Essential Chip Resources</title>
+<title>Digital Power Starter Kit 3 Firmware: Device Pin Configuration</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -43,7 +43,7 @@
   <td id="projectalign" style="padding-left: 0.0em;">
    <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
-   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Adaptive Gain Control Example</div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Average Current Mode Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -104,33 +104,61 @@ $(document).ready(function(){initNavTree('a00525.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#groups">Modules</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Initializing Essential Chip Resources<div class="ingroups"><a class="el" href="a00520.html">Firmware Architecture</a> &raquo; <a class="el" href="a00521.html">Device Start Up</a></div></div>  </div>
+<div class="title">Device Pin Configuration<div class="ingroups"><a class="el" href="a00517.html">Firmware Architecture</a> &raquo; <a class="el" href="a00518.html">Device Start Up</a> &raquo; <a class="el" href="a00522.html">Initializing Essential Chip Resources</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Initializing Essential Chip Resources:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Device Pin Configuration:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00525.svg" width="538" height="200"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00525.svg" width="359" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
-Modules</h2></td></tr>
-<tr class="memitem:a00526"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00526.html">Basic MCU Initialization</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00527"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00527.html">Main Oscillator Initialization</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00528"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00528.html">Device Pin Configuration</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00529"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00529.html">Digital Signal Processor Configuration</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga79cb6e309797560a9a262a562fe40fee"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00525.html#ga79cb6e309797560a9a262a562fe40fee">sysGpio_Initialize</a> (void)</td></tr>
+<tr class="memdesc:ga79cb6e309797560a9a262a562fe40fee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the device input/output pins to digital inputs.  <a href="a00525.html#ga79cb6e309797560a9a262a562fe40fee">More...</a><br /></td></tr>
+<tr class="separator:ga79cb6e309797560a9a262a562fe40fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>The initialization of essential chip resources includes main oscillator initialization, GPIO reset and peripheral power management. All other chip resources are managed by each individual task or are initialized in the user peripehral initialization called after the essential chip resources have been configured. </p>
+<p>When the device comes out of RESET, all general purpose inputs/outputs (GPIO) are configured as high-impedance inputs. Sample and hold (S&amp;H) circuits of ADC inputs are active and digital functions are blocked. Depending on the application, this may or may not be desired. Hence, this routine is used to set a different default state at startup where GPIOs are high impedance inputs but all analog functions are disabled. </p>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga79cb6e309797560a9a262a562fe40fee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga79cb6e309797560a9a262a562fe40fee">&#9670;&nbsp;</a></span>sysGpio_Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t sysGpio_Initialize </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resets the device input/output pins to digital inputs. </p>
+<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
+<p>When the device is coming out of RESET, all device pins are configured as inputs and all analog functions will be enabled. Enabled analog functions are a potential source for conflicts and are therefore turned off by default during device startup to allow all peripheral configuration drivers to start from a defined default state. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00119_source.html#l00027">27</a> of file <a class="el" href="a00119_source.html">init_gpio.c</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00525_ga79cb6e309797560a9a262a562fe40fee_icgraph.svg" width="314" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

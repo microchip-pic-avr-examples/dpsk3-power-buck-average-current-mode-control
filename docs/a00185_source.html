@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: dpsk_buck_agc.X/sources/lcd/app_lcd.c Source File</title>
+<title>Digital Power Starter Kit 3 Firmware: dpsk_buck_acmc.X/sources/lcd/devices/dev_lcd.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -43,7 +43,7 @@
   <td id="projectalign" style="padding-left: 0.0em;">
    <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
-   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Adaptive Gain Control Example</div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Average Current Mode Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -104,193 +104,66 @@ $(document).ready(function(){initNavTree('a00185_source.html',''); initResizable
 
 <div class="header">
   <div class="headertitle">
-<div class="title">app_lcd.c</div>  </div>
+<div class="title">dev_lcd.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:   app_lcd.c</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Author: M91406</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created on March 12, 2020, 12:10 PM</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;lcd/app_lcd.h&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// Additional header files required by this task</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;config/apps.h&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;config/hal.h&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// PRIVATE VARIABLE DELARATIONS</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a01476.html">LCD_s</a> lcd;      <span class="comment">// declare one LCD data object</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//======================================================================================================================</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Copyright(c) 2018 Microchip Technology Inc. and its subsidiaries.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Subject to your compliance with these terms, you may use Microchip software and any derivatives exclusively with</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Microchip products. It is your responsibility to comply with third party license terms applicable to your use of</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// third-party software (including open source software) that may accompany Microchip software.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// THIS SOFTWARE IS SUPPLIED BY MICROCHIP &quot;AS IS&quot;. NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, APPLY TO</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// PURPOSE.</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE,</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS BEEN ADVISED</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP&#39;S TOTAL LIABILITY</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// ON ALL CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, THAT YOU HAVE</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//======================================================================================================================</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifndef _Dev_LCD_H_</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define _Dev_LCD_H_</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a00444.html#ga6d471f8bdd24d951c86a09ec25f74ef2">   35</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00444.html#ga6d471f8bdd24d951c86a09ec25f74ef2">lcd_cnt</a> = 0;  </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; <span class="comment">// end of group app-layer-lcd-properties-private</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="a00444.html#ga064b0f92f54c1aab1e6731ff24b4cce7">   47</a></span>&#160;<span class="preprocessor">#define LCD_STARTUP   30000     </span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor"></span> </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; <span class="comment">// end of group app-layer-lcd-properties-private</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;lcd/drivers/drv_lcd_interface.h&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a00444.html#gaa48e1d1e103805c72fd112486be3d38f">   33</a></span>&#160;<span class="preprocessor">#define TEMPSTR_LCD_SIZE    40</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="a00444.html#gaeabde9cf4c09da1935c1dff5f1bda0c1">   45</a></span>&#160;<span class="preprocessor">#define PrintLcd(LINE, ...) \</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">    do{ \</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">        char __print_utils_string[TEMPSTR_LCD_SIZE]; \</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">        sprintf(__print_utils_string, __VA_ARGS__); \</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">        dev_Lcd_WriteStringXY(0, LINE, __print_utils_string); \</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">    } while(0)</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="a00444.html#ga8f1bba8cbdf98ed2ac6e10cc8739e56f">   59</a></span>&#160;<span class="preprocessor">#define LCD_REFRESH   2000      </span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor"></span> </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; <span class="comment">// end of group app-layer-lcd-properties-private</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00443.html#ga5d8f09855e28846e87400692d186781a">dev_Lcd_Initialize</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00443.html#ga5c431635cb94750b2f6e938d7f1f0cf1">dev_Lcd_GotoXY</a>(<span class="keyword">volatile</span> uint8_t x, <span class="keyword">volatile</span> uint8_t y);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00443.html#ga3cb1303cba012af043a87af0bcab16d8">dev_Lcd_WriteChar</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> ch);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00443.html#gac07de05132918ca2db8cf4492819eca6">dev_Lcd_WriteString</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *str);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00443.html#ga24701a4c3ae760e7e0b9c70d93370ff3">dev_Lcd_WriteStringXY</a>(<span class="keyword">volatile</span> uint8_t column_index, <span class="keyword">volatile</span> uint8_t line_index, <span class="keyword">const</span> <span class="keywordtype">char</span> *str);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif  // _Dev_LCD_H_</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="a00441.html#gab93992748ced72fdc2989d0b0f369e54">   76</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00441.html#gab93992748ced72fdc2989d0b0f369e54">appLCD_Initialize</a>(<span class="keywordtype">void</span>) </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">volatile</span> uint16_t retval = 1;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">if</span> (lcd.<a class="code" href="a01476.html#adc2298ffda0c853e699e6da9098f82ae">refresh</a> == 0)</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        lcd.<a class="code" href="a01476.html#adc2298ffda0c853e699e6da9098f82ae">refresh</a> = <a class="code" href="a00444.html#ga064b0f92f54c1aab1e6731ff24b4cce7">LCD_STARTUP</a>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="a00446.html#ga5d8f09855e28846e87400692d186781a">dev_Lcd_Initialize</a>();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="a00446.html#ga24701a4c3ae760e7e0b9c70d93370ff3">dev_Lcd_WriteStringXY</a>(0,0,<span class="stringliteral">&quot;==== DPSK-3 ====&quot;</span>);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="a00446.html#ga24701a4c3ae760e7e0b9c70d93370ff3">dev_Lcd_WriteStringXY</a>(0,1,<span class="stringliteral">&quot; BUCK VMC + AGC &quot;</span>);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="a00444.html#ga6d471f8bdd24d951c86a09ec25f74ef2">lcd_cnt</a> = 0;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    lcd.<a class="code" href="a01476.html#a085e9fc0863cee4864cf51dcfe1e32df">enabled</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span>(retval);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="a00441.html#gacd8e3f8ca8af94f13f7efa0df7ced6f5">  106</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00441.html#gacd8e3f8ca8af94f13f7efa0df7ced6f5">appLCD_Execute</a>(<span class="keywordtype">void</span>) </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;{</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keyword">volatile</span> uint16_t retval = 1;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">volatile</span> <span class="keywordtype">float</span> vi=0.0, vo=0.0, isns=0.0, temp=0.0;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">// IF LCD output is disabled, exit here</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">if</span>(!lcd.<a class="code" href="a01476.html#a085e9fc0863cee4864cf51dcfe1e32df">enabled</a>)</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">return</span>(retval);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">// Refresh LCD and reset refresh counter</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="a00444.html#ga6d471f8bdd24d951c86a09ec25f74ef2">lcd_cnt</a>++;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">// If REFRESH period has expired, update LCD contents</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="a00444.html#ga6d471f8bdd24d951c86a09ec25f74ef2">lcd_cnt</a> == lcd.<a class="code" href="a01476.html#adc2298ffda0c853e699e6da9098f82ae">refresh</a>) {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="comment">// Calculate output values</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        vi = ((<a class="code" href="a00462.html#gad251307f33c9d1fd60c1a55535d61955">buck</a>.<a class="code" href="a01560.html#ace365e404e1a839717de3d05ee55d27a">data</a>.<a class="code" href="a01524.html#af34b61c0a55244bf4aa166666a322efa">v_in</a> &lt;&lt; 3) * <a class="code" href="a00384.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>); <span class="comment">// Scale ADC value to physical unit</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        vi = (float)(<span class="keywordtype">int</span>)(100.0 * vi);      <span class="comment">// Rounding operation required to prevent display</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        vi /= 100.0;                        <span class="comment">// rounding issues around 9.99 and 10.0 ° C</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="comment">// Input voltage display</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">if</span>((<span class="keywordtype">double</span>)vi &lt; 10.000)</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <a class="code" href="a00447.html#gaeabde9cf4c09da1935c1dff5f1bda0c1">PrintLcd</a>(0, <span class="stringliteral">&quot;VIN     = %2.2f V&quot;</span>, (<span class="keywordtype">double</span>)vi);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <a class="code" href="a00447.html#gaeabde9cf4c09da1935c1dff5f1bda0c1">PrintLcd</a>(0, <span class="stringliteral">&quot;VIN     = %2.1f V&quot;</span>, (<span class="keywordtype">double</span>)vi);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">switch</span> (lcd.<a class="code" href="a01476.html#aea467a9fc04f0771215b952d26bc4392">screen</a>)</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        {</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="keywordflow">case</span> 1:     <span class="comment">// Show Temperature Output</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                temp = ((float)(<a class="code" href="a00462.html#gad251307f33c9d1fd60c1a55535d61955">buck</a>.<a class="code" href="a01560.html#ace365e404e1a839717de3d05ee55d27a">data</a>.<a class="code" href="a01524.html#aa9f24b0c02dbbc6659649c7b7a124dc4">temp</a> - <a class="code" href="a00415.html#gacde6c3fa85c34fe5414566acd2e77ca8">BUCK_FB_TEMP_ZERO</a>) / <a class="code" href="a00415.html#ga014133f88cd82218241bf16985302cd4">BUCK_FB_TEMP_SLOPE</a>); <span class="comment">// Scale ADC value to physical unit</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                temp = (float)(<span class="keywordtype">int</span>)(100.0 * temp);  <span class="comment">// Rounding operation required to prevent display </span></div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                temp /= 100.0;                      <span class="comment">// rounding issues around 9.99 and 10.0 V</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                <span class="keywordflow">if</span>((<span class="keywordtype">double</span>)temp &lt; 10.000)</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                    <a class="code" href="a00447.html#gaeabde9cf4c09da1935c1dff5f1bda0c1">PrintLcd</a>(1, <span class="stringliteral">&quot;TEMP    = %2.2f C&quot;</span>, (<span class="keywordtype">double</span>)temp);</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                    <a class="code" href="a00447.html#gaeabde9cf4c09da1935c1dff5f1bda0c1">PrintLcd</a>(1, <span class="stringliteral">&quot;TEMP    = %2.1f C&quot;</span>, (<span class="keywordtype">double</span>)temp);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <span class="keywordflow">case</span> 2:     <span class="comment">// Show Current Output</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                isns = ((<a class="code" href="a00462.html#gad251307f33c9d1fd60c1a55535d61955">buck</a>.<a class="code" href="a01560.html#ace365e404e1a839717de3d05ee55d27a">data</a>.<a class="code" href="a01524.html#a9e418d7d3d756a1d9e0b63765d5392a4">i_out</a> * <a class="code" href="a00384.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>) /  <a class="code" href="a00410.html#ga4b80ef68401d82252de9b596cc7a9300">BUCK_ISNS_FEEDBACK_GAIN</a>); <span class="comment">// Scale ADC value to physical unit</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                <span class="keywordflow">if</span>((<span class="keywordtype">double</span>)isns &lt; 1.000)</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                {</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                    isns *= 1000.0;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                    <a class="code" href="a00447.html#gaeabde9cf4c09da1935c1dff5f1bda0c1">PrintLcd</a>(1, <span class="stringliteral">&quot;ISNS    = %3d mA&quot;</span>, (<span class="keywordtype">int</span>)isns);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                }</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                {</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                    <a class="code" href="a00447.html#gaeabde9cf4c09da1935c1dff5f1bda0c1">PrintLcd</a>(1, <span class="stringliteral">&quot;ISNS    = %1.2f A&quot;</span>, (<span class="keywordtype">double</span>)isns);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                }</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <span class="keywordflow">default</span>:    <span class="comment">// Output voltage display</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                </div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                vo = ((<a class="code" href="a00462.html#gad251307f33c9d1fd60c1a55535d61955">buck</a>.<a class="code" href="a01560.html#ace365e404e1a839717de3d05ee55d27a">data</a>.<a class="code" href="a01524.html#a81d40bc6e9f5a711379a1d3d40123bd9">v_out</a> &lt;&lt; 1) * <a class="code" href="a00384.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>); <span class="comment">// Scale ADC value to physical unit</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                <span class="keywordflow">if</span>((<span class="keywordtype">double</span>)vo &lt; 10.000)</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                    <a class="code" href="a00447.html#gaeabde9cf4c09da1935c1dff5f1bda0c1">PrintLcd</a>(1, <span class="stringliteral">&quot;VOUT    = %2.2f V&quot;</span>, (<span class="keywordtype">double</span>)vo);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                    <a class="code" href="a00447.html#gaeabde9cf4c09da1935c1dff5f1bda0c1">PrintLcd</a>(1, <span class="stringliteral">&quot;VOUT    = %2.1f V&quot;</span>, (<span class="keywordtype">double</span>)vo);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="a00462.html#gad251307f33c9d1fd60c1a55535d61955">buck</a>.<a class="code" href="a01560.html#a3f64d0961e6a7e4534dafa86d60348b1">status</a>.bits.<a class="code" href="a01492.html#ac1c13a249f66fa45797ad435bf8ee402">fault_active</a>)</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                {</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                    <span class="keywordflow">if</span> (<a class="code" href="a00426.html#ga295ec0d409fed7ec6f9104a238c686fb">fltobj_BuckUVLO</a>.<a class="code" href="a01416.html#a5682be08ea825740d924680de9b7af60">Status</a>.bits.<a class="code" href="a01396.html#a028f8fd8c38c1a2669efbf670ee1d222">FaultStatus</a>)</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                        <a class="code" href="a00446.html#ga24701a4c3ae760e7e0b9c70d93370ff3">dev_Lcd_WriteStringXY</a>(4, 1, <span class="stringliteral">&quot;(UV)&quot;</span>);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="a00426.html#ga96ccc7eb53ed10fa68fbe5aae4793d32">fltobj_BuckOVLO</a>.<a class="code" href="a01416.html#a5682be08ea825740d924680de9b7af60">Status</a>.bits.<a class="code" href="a01396.html#a028f8fd8c38c1a2669efbf670ee1d222">FaultStatus</a>)</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                        <a class="code" href="a00446.html#ga24701a4c3ae760e7e0b9c70d93370ff3">dev_Lcd_WriteStringXY</a>(4, 1, <span class="stringliteral">&quot;(OV)&quot;</span>);</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="a00426.html#ga9a42288edd61441b896e9caa0ebd8303">fltobj_BuckRegErr</a>.<a class="code" href="a01416.html#a5682be08ea825740d924680de9b7af60">Status</a>.bits.<a class="code" href="a01396.html#a028f8fd8c38c1a2669efbf670ee1d222">FaultStatus</a>)</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                        <a class="code" href="a00446.html#ga24701a4c3ae760e7e0b9c70d93370ff3">dev_Lcd_WriteStringXY</a>(4, 1, <span class="stringliteral">&quot;(RE)&quot;</span>);</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                }</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        }</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        </div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        lcd.<a class="code" href="a01476.html#adc2298ffda0c853e699e6da9098f82ae">refresh</a> = <a class="code" href="a00444.html#ga8f1bba8cbdf98ed2ac6e10cc8739e56f">LCD_REFRESH</a>;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <a class="code" href="a00444.html#ga6d471f8bdd24d951c86a09ec25f74ef2">lcd_cnt</a> = 0; <span class="comment">// Reset internal interval counter</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    }</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordflow">return</span>(retval);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;}</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
-<div class="line"><a name="l00203"></a><span class="lineno"><a class="line" href="a00441.html#ga38c10d91e208e9eb081d0341792954d7">  203</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00441.html#ga38c10d91e208e9eb081d0341792954d7">appLCD_Dispose</a>(<span class="keywordtype">void</span>) </div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;{</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keyword">volatile</span> uint16_t retval = 1;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    </div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="comment">/* PLACE DISPOSE CODE HERE */</span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordflow">return</span>(retval);</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;}</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="comment">// end of file</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa01560_html_ace365e404e1a839717de3d05ee55d27a"><div class="ttname"><a href="a01560.html#ace365e404e1a839717de3d05ee55d27a">BUCK_CONVERTER_s::data</a></div><div class="ttdeci">volatile struct BUCK_CONVERTER_DATA_s data</div><div class="ttdoc">BUCK runtime data.</div><div class="ttdef"><b>Definition:</b> <a href="a00278_source.html#l00476">dev_buck_typedef.h:506</a></div></div>
-<div class="ttc" id="aa00410_html_ga4b80ef68401d82252de9b596cc7a9300"><div class="ttname"><a href="a00410.html#ga4b80ef68401d82252de9b596cc7a9300">BUCK_ISNS_FEEDBACK_GAIN</a></div><div class="ttdeci">#define BUCK_ISNS_FEEDBACK_GAIN</div><div class="ttdoc">Current Gain in V/A.</div><div class="ttdef"><b>Definition:</b> <a href="a00104_source.html#l00560">dpsk3_hwdescr.h:560</a></div></div>
-<div class="ttc" id="aa00441_html_gacd8e3f8ca8af94f13f7efa0df7ced6f5"><div class="ttname"><a href="a00441.html#gacd8e3f8ca8af94f13f7efa0df7ced6f5">appLCD_Execute</a></div><div class="ttdeci">volatile uint16_t appLCD_Execute(void)</div><div class="ttdoc">Refreshes the LC display.</div><div class="ttdef"><b>Definition:</b> <a href="a00185_source.html#l00106">app_lcd.c:106</a></div></div>
-<div class="ttc" id="aa00441_html_ga38c10d91e208e9eb081d0341792954d7"><div class="ttname"><a href="a00441.html#ga38c10d91e208e9eb081d0341792954d7">appLCD_Dispose</a></div><div class="ttdeci">volatile uint16_t appLCD_Dispose(void)</div><div class="ttdoc">Unloads the LC display data object and resources.</div><div class="ttdef"><b>Definition:</b> <a href="a00185_source.html#l00203">app_lcd.c:203</a></div></div>
-<div class="ttc" id="aa00446_html_ga5d8f09855e28846e87400692d186781a"><div class="ttname"><a href="a00446.html#ga5d8f09855e28846e87400692d186781a">dev_Lcd_Initialize</a></div><div class="ttdeci">void dev_Lcd_Initialize(void)</div><div class="ttdoc">Initializes the LCD Device.</div><div class="ttdef"><b>Definition:</b> <a href="a00194_source.html#l00126">dev_lcd.c:126</a></div></div>
-<div class="ttc" id="aa01476_html_aea467a9fc04f0771215b952d26bc4392"><div class="ttname"><a href="a01476.html#aea467a9fc04f0771215b952d26bc4392">LCD_s::screen</a></div><div class="ttdeci">volatile uint16_t screen</div><div class="ttdef"><b>Definition:</b> <a href="a00188_source.html#l00057">app_lcd.h:57</a></div></div>
-<div class="ttc" id="aa00462_html_gad251307f33c9d1fd60c1a55535d61955"><div class="ttname"><a href="a00462.html#gad251307f33c9d1fd60c1a55535d61955">buck</a></div><div class="ttdeci">volatile struct BUCK_CONVERTER_s buck</div><div class="ttdoc">Global data object for a BUCK CONVERTER.</div><div class="ttdef"><b>Definition:</b> <a href="a00230_source.html#l00001">app_power_control.c:28</a></div></div>
-<div class="ttc" id="aa01396_html_a028f8fd8c38c1a2669efbf670ee1d222"><div class="ttname"><a href="a01396.html#a028f8fd8c38c1a2669efbf670ee1d222">FLT_OBJECT_STATUS_s::FaultStatus</a></div><div class="ttdeci">volatile bool FaultStatus</div><div class="ttdoc">Bit 0: Flag bit indicating if FAULT has been tripped.</div><div class="ttdef"><b>Definition:</b> <a href="a00173_source.html#l00084">drv_fault_handler.h:84</a></div></div>
-<div class="ttc" id="aa00446_html_ga24701a4c3ae760e7e0b9c70d93370ff3"><div class="ttname"><a href="a00446.html#ga24701a4c3ae760e7e0b9c70d93370ff3">dev_Lcd_WriteStringXY</a></div><div class="ttdeci">void dev_Lcd_WriteStringXY(volatile uint8_t column_index, volatile uint8_t line_index, const char *str)</div><div class="ttdoc">Sets the cursor position to the given x- and y-coordinates and writes the given string on the lcd scr...</div><div class="ttdef"><b>Definition:</b> <a href="a00194_source.html#l00305">dev_lcd.c:305</a></div></div>
-<div class="ttc" id="aa01524_html_a9e418d7d3d756a1d9e0b63765d5392a4"><div class="ttname"><a href="a01524.html#a9e418d7d3d756a1d9e0b63765d5392a4">BUCK_CONVERTER_DATA_s::i_out</a></div><div class="ttdeci">volatile uint16_t i_out</div><div class="ttdoc">BUCK common output current.</div><div class="ttdef"><b>Definition:</b> <a href="a00278_source.html#l00299">dev_buck_typedef.h:299</a></div></div>
-<div class="ttc" id="aa01524_html_aa9f24b0c02dbbc6659649c7b7a124dc4"><div class="ttname"><a href="a01524.html#aa9f24b0c02dbbc6659649c7b7a124dc4">BUCK_CONVERTER_DATA_s::temp</a></div><div class="ttdeci">volatile uint16_t temp</div><div class="ttdoc">BUCK board temperature.</div><div class="ttdef"><b>Definition:</b> <a href="a00278_source.html#l00302">dev_buck_typedef.h:302</a></div></div>
-<div class="ttc" id="aa00426_html_ga9a42288edd61441b896e9caa0ebd8303"><div class="ttname"><a href="a00426.html#ga9a42288edd61441b896e9caa0ebd8303">fltobj_BuckRegErr</a></div><div class="ttdeci">volatile struct FAULT_OBJECT_s fltobj_BuckRegErr</div><div class="ttdoc">Regulation Error Fault Object.</div><div class="ttdef"><b>Definition:</b> <a href="a00161_source.html#l00001">app_fault_monitor.c:53</a></div></div>
-<div class="ttc" id="aa00415_html_gacde6c3fa85c34fe5414566acd2e77ca8"><div class="ttname"><a href="a00415.html#gacde6c3fa85c34fe5414566acd2e77ca8">BUCK_FB_TEMP_ZERO</a></div><div class="ttdeci">#define BUCK_FB_TEMP_ZERO</div><div class="ttdoc">Conversion macros of temperature feedback parameters.</div><div class="ttdef"><b>Definition:</b> <a href="a00104_source.html#l00690">dpsk3_hwdescr.h:690</a></div></div>
-<div class="ttc" id="aa00415_html_ga014133f88cd82218241bf16985302cd4"><div class="ttname"><a href="a00415.html#ga014133f88cd82218241bf16985302cd4">BUCK_FB_TEMP_SLOPE</a></div><div class="ttdeci">#define BUCK_FB_TEMP_SLOPE</div><div class="ttdef"><b>Definition:</b> <a href="a00104_source.html#l00691">dpsk3_hwdescr.h:691</a></div></div>
-<div class="ttc" id="aa01416_html_a5682be08ea825740d924680de9b7af60"><div class="ttname"><a href="a01416.html#a5682be08ea825740d924680de9b7af60">FAULT_OBJECT_s::Status</a></div><div class="ttdeci">volatile struct FLT_OBJECT_STATUS_s Status</div><div class="ttdoc">Status word of this fault object.</div><div class="ttdef"><b>Definition:</b> <a href="a00173_source.html#l00122">drv_fault_handler.h:133</a></div></div>
-<div class="ttc" id="aa01492_html_ac1c13a249f66fa45797ad435bf8ee402"><div class="ttname"><a href="a01492.html#ac1c13a249f66fa45797ad435bf8ee402">BUCK_CONVERTER_STATUS_s::fault_active</a></div><div class="ttdeci">volatile bool fault_active</div><div class="ttdoc">Bit #5: Flag bit indicating system is in enforced shut down mode (usually due to a fault condition)</div><div class="ttdef"><b>Definition:</b> <a href="a00278_source.html#l00213">dev_buck_typedef.h:213</a></div></div>
-<div class="ttc" id="aa01524_html_a81d40bc6e9f5a711379a1d3d40123bd9"><div class="ttname"><a href="a01524.html#a81d40bc6e9f5a711379a1d3d40123bd9">BUCK_CONVERTER_DATA_s::v_out</a></div><div class="ttdeci">volatile uint16_t v_out</div><div class="ttdoc">BUCK output voltage.</div><div class="ttdef"><b>Definition:</b> <a href="a00278_source.html#l00301">dev_buck_typedef.h:301</a></div></div>
-<div class="ttc" id="aa00441_html_gab93992748ced72fdc2989d0b0f369e54"><div class="ttname"><a href="a00441.html#gab93992748ced72fdc2989d0b0f369e54">appLCD_Initialize</a></div><div class="ttdeci">volatile uint16_t appLCD_Initialize(void)</div><div class="ttdoc">Initializes the LC display.</div><div class="ttdef"><b>Definition:</b> <a href="a00185_source.html#l00076">app_lcd.c:76</a></div></div>
-<div class="ttc" id="aa00384_html_gaa8be0a86b0847147a521dd1efec43d1c"><div class="ttname"><a href="a00384.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a></div><div class="ttdeci">#define ADC_GRANULARITY</div><div class="ttdoc">ADC granularity in [V/tick].</div><div class="ttdef"><b>Definition:</b> <a href="a00104_source.html#l00118">dpsk3_hwdescr.h:118</a></div></div>
-<div class="ttc" id="aa01476_html"><div class="ttname"><a href="a01476.html">LCD_s</a></div><div class="ttdoc">Declaration of public LC display data object.</div><div class="ttdef"><b>Definition:</b> <a href="a00188_source.html#l00054">app_lcd.h:54</a></div></div>
-<div class="ttc" id="aa00447_html_gaeabde9cf4c09da1935c1dff5f1bda0c1"><div class="ttname"><a href="a00447.html#gaeabde9cf4c09da1935c1dff5f1bda0c1">PrintLcd</a></div><div class="ttdeci">#define PrintLcd(LINE,...)</div><div class="ttdoc">Writes a complete line to the LC display.</div><div class="ttdef"><b>Definition:</b> <a href="a00197_source.html#l00045">dev_lcd.h:45</a></div></div>
-<div class="ttc" id="aa00444_html_ga6d471f8bdd24d951c86a09ec25f74ef2"><div class="ttname"><a href="a00444.html#ga6d471f8bdd24d951c86a09ec25f74ef2">lcd_cnt</a></div><div class="ttdeci">volatile uint16_t lcd_cnt</div><div class="ttdoc">Local counter used to trigger LCD refresh event.</div><div class="ttdef"><b>Definition:</b> <a href="a00185_source.html#l00035">app_lcd.c:35</a></div></div>
-<div class="ttc" id="aa01476_html_a085e9fc0863cee4864cf51dcfe1e32df"><div class="ttname"><a href="a01476.html#a085e9fc0863cee4864cf51dcfe1e32df">LCD_s::enabled</a></div><div class="ttdeci">volatile bool enabled</div><div class="ttdef"><b>Definition:</b> <a href="a00188_source.html#l00055">app_lcd.h:55</a></div></div>
-<div class="ttc" id="aa01476_html_adc2298ffda0c853e699e6da9098f82ae"><div class="ttname"><a href="a01476.html#adc2298ffda0c853e699e6da9098f82ae">LCD_s::refresh</a></div><div class="ttdeci">volatile uint16_t refresh</div><div class="ttdef"><b>Definition:</b> <a href="a00188_source.html#l00056">app_lcd.h:56</a></div></div>
-<div class="ttc" id="aa01524_html_af34b61c0a55244bf4aa166666a322efa"><div class="ttname"><a href="a01524.html#af34b61c0a55244bf4aa166666a322efa">BUCK_CONVERTER_DATA_s::v_in</a></div><div class="ttdeci">volatile uint16_t v_in</div><div class="ttdoc">BUCK input voltage.</div><div class="ttdef"><b>Definition:</b> <a href="a00278_source.html#l00300">dev_buck_typedef.h:300</a></div></div>
-<div class="ttc" id="aa01560_html_a3f64d0961e6a7e4534dafa86d60348b1"><div class="ttname"><a href="a01560.html#a3f64d0961e6a7e4534dafa86d60348b1">BUCK_CONVERTER_s::status</a></div><div class="ttdeci">volatile struct BUCK_CONVERTER_STATUS_s status</div><div class="ttdoc">BUCK operation status bits.</div><div class="ttdef"><b>Definition:</b> <a href="a00278_source.html#l00476">dev_buck_typedef.h:502</a></div></div>
-<div class="ttc" id="aa00444_html_ga064b0f92f54c1aab1e6731ff24b4cce7"><div class="ttname"><a href="a00444.html#ga064b0f92f54c1aab1e6731ff24b4cce7">LCD_STARTUP</a></div><div class="ttdeci">#define LCD_STARTUP</div><div class="ttdoc">Startup screen delay compare value.</div><div class="ttdef"><b>Definition:</b> <a href="a00185_source.html#l00047">app_lcd.c:47</a></div></div>
-<div class="ttc" id="aa00444_html_ga8f1bba8cbdf98ed2ac6e10cc8739e56f"><div class="ttname"><a href="a00444.html#ga8f1bba8cbdf98ed2ac6e10cc8739e56f">LCD_REFRESH</a></div><div class="ttdeci">#define LCD_REFRESH</div><div class="ttdoc">Screen refresh delay compare value.</div><div class="ttdef"><b>Definition:</b> <a href="a00185_source.html#l00059">app_lcd.c:59</a></div></div>
-<div class="ttc" id="aa00426_html_ga96ccc7eb53ed10fa68fbe5aae4793d32"><div class="ttname"><a href="a00426.html#ga96ccc7eb53ed10fa68fbe5aae4793d32">fltobj_BuckOVLO</a></div><div class="ttdeci">volatile struct FAULT_OBJECT_s fltobj_BuckOVLO</div><div class="ttdoc">Over Voltage Lock Out Fault Object.</div><div class="ttdef"><b>Definition:</b> <a href="a00161_source.html#l00001">app_fault_monitor.c:51</a></div></div>
-<div class="ttc" id="aa00426_html_ga295ec0d409fed7ec6f9104a238c686fb"><div class="ttname"><a href="a00426.html#ga295ec0d409fed7ec6f9104a238c686fb">fltobj_BuckUVLO</a></div><div class="ttdeci">volatile struct FAULT_OBJECT_s fltobj_BuckUVLO</div><div class="ttdoc">Under Voltage Lock Out Fault Object.</div><div class="ttdef"><b>Definition:</b> <a href="a00161_source.html#l00001">app_fault_monitor.c:50</a></div></div>
+<div class="ttc" id="aa00443_html_ga5d8f09855e28846e87400692d186781a"><div class="ttname"><a href="a00443.html#ga5d8f09855e28846e87400692d186781a">dev_Lcd_Initialize</a></div><div class="ttdeci">void dev_Lcd_Initialize(void)</div><div class="ttdoc">Initializes the LCD Device.</div><div class="ttdef"><b>Definition:</b> <a href="a00182_source.html#l00126">dev_lcd.c:126</a></div></div>
+<div class="ttc" id="aa00443_html_gac07de05132918ca2db8cf4492819eca6"><div class="ttname"><a href="a00443.html#gac07de05132918ca2db8cf4492819eca6">dev_Lcd_WriteString</a></div><div class="ttdeci">void dev_Lcd_WriteString(const char *str)</div><div class="ttdoc">Writes a complete string on the LCD screen.</div><div class="ttdef"><b>Definition:</b> <a href="a00182_source.html#l00272">dev_lcd.c:272</a></div></div>
+<div class="ttc" id="aa00443_html_ga24701a4c3ae760e7e0b9c70d93370ff3"><div class="ttname"><a href="a00443.html#ga24701a4c3ae760e7e0b9c70d93370ff3">dev_Lcd_WriteStringXY</a></div><div class="ttdeci">void dev_Lcd_WriteStringXY(volatile uint8_t column_index, volatile uint8_t line_index, const char *str)</div><div class="ttdoc">Sets the cursor position to the given x- and y-coordinates and writes the given string on the lcd scr...</div><div class="ttdef"><b>Definition:</b> <a href="a00182_source.html#l00305">dev_lcd.c:305</a></div></div>
+<div class="ttc" id="aa00443_html_ga5c431635cb94750b2f6e938d7f1f0cf1"><div class="ttname"><a href="a00443.html#ga5c431635cb94750b2f6e938d7f1f0cf1">dev_Lcd_GotoXY</a></div><div class="ttdeci">void dev_Lcd_GotoXY(volatile uint8_t x, volatile uint8_t y)</div><div class="ttdoc">Sets the cursor position to the given x- and y-coordinates.</div><div class="ttdef"><b>Definition:</b> <a href="a00182_source.html#l00184">dev_lcd.c:184</a></div></div>
+<div class="ttc" id="aa00443_html_ga3cb1303cba012af043a87af0bcab16d8"><div class="ttname"><a href="a00443.html#ga3cb1303cba012af043a87af0bcab16d8">dev_Lcd_WriteChar</a></div><div class="ttdeci">void dev_Lcd_WriteChar(const char ch)</div><div class="ttdoc">Writes a character on the LCD screen.</div><div class="ttdef"><b>Definition:</b> <a href="a00182_source.html#l00209">dev_lcd.c:209</a></div></div>
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_4ee7c398c7a1a06f47d8fbc48027983f.html">dpsk_buck_agc.X</a></li><li class="navelem"><a class="el" href="dir_07fd0e222032ef0bb4c4c4bd39064c1a.html">sources</a></li><li class="navelem"><a class="el" href="dir_6f4af3a952385da556cac8db1c724ee3.html">lcd</a></li><li class="navelem"><b>app_lcd.c</b></li>
+    <li class="navelem"><a class="el" href="dir_5c9e57b9bcd9b7f50d88ecfbd194c0ae.html">dpsk_buck_acmc.X</a></li><li class="navelem"><a class="el" href="dir_0b7fd148aa9e0e6d20cdcee736988614.html">sources</a></li><li class="navelem"><a class="el" href="dir_173fc3f985a10fdb16f26d689cd8f89a.html">lcd</a></li><li class="navelem"><a class="el" href="dir_963314fbf6578517a56569dc377807b7.html">devices</a></li><li class="navelem"><b>dev_lcd.h</b></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">Â© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

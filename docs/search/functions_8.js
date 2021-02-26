@@ -1,4 +1,32 @@
 var searchData=
 [
-  ['uvlo_5ffaultinitialize_1624',['uvlo_FaultInitialize',['../a00427.html#ga9441220f8a7d4a6805467d04b734e6b5',1,'app_fault_monitor.c']]]
+  ['state_5ferror_1605',['State_Error',['../a00476.html#ga47717557335be2404de223606ccf829a',1,'dev_buck_opstates.c']]],
+  ['state_5finitialize_1606',['State_Initialize',['../a00476.html#ga4e1d6ade6dbba61649d1e427bf2c8a4a',1,'dev_buck_opstates.c']]],
+  ['state_5fonline_1607',['State_Online',['../a00476.html#gabe3da533896385a0914427027b61a87d',1,'dev_buck_opstates.c']]],
+  ['state_5frampup_1608',['State_RampUp',['../a00476.html#gaae585944f715e190bcb32fea42fcf346',1,'dev_buck_opstates.c']]],
+  ['state_5freset_1609',['State_Reset',['../a00476.html#ga493de6f9e2dbb41c2ff6ac082bcf36a1',1,'dev_buck_opstates.c']]],
+  ['state_5fstandby_1610',['State_Standby',['../a00476.html#ga0663613cf4f11bade4c79d11aed30bfd',1,'dev_buck_opstates.c']]],
+  ['substate_5firampup_1611',['SubState_IRampUp',['../a00476.html#gac217b97e2348a000fdd66fd828174487',1,'dev_buck_substates.c']]],
+  ['substate_5fpowergooddelay_1612',['SubState_PowerGoodDelay',['../a00476.html#ga93fe19751c6c8aebbbcc69e9fed56bb7',1,'dev_buck_substates.c']]],
+  ['substate_5fpowerondelay_1613',['SubState_PowerOnDelay',['../a00476.html#gaf92eb22ba325d7b88ad487acff641ce5',1,'dev_buck_substates.c']]],
+  ['substate_5fpreparevrampup_1614',['SubState_PrepareVRampUp',['../a00476.html#ga58cd10d1ea69eca5fb4b702ff42659fb',1,'dev_buck_substates.c']]],
+  ['substate_5fvrampup_1615',['SubState_VRampUp',['../a00476.html#ga11e02a3b52d1d9731ad6eff8f804d841',1,'dev_buck_substates.c']]],
+  ['sysaclk_5finitialize_1616',['sysAclk_Initialize',['../a00524.html#ga3f3f3c22c6c2b95518271fae8f58b03f',1,'sysAclk_Initialize(void):&#160;init_fosc.c'],['../a00524.html#ga3f3f3c22c6c2b95518271fae8f58b03f',1,'sysAclk_Initialize(void):&#160;init_fosc.c']]],
+  ['sysdacmodule_5finitialize_1617',['sysDacModule_Initialize',['../a00529.html#gab420e63336f317e197b1cb8861561c3f',1,'sysDacModule_Initialize(void):&#160;init_dac.c'],['../a00529.html#gab420e63336f317e197b1cb8861561c3f',1,'sysDacModule_Initialize(void):&#160;init_dac.c']]],
+  ['sysdacoutput_5fdisable_1618',['sysDacOutput_Disable',['../a00529.html#gae4c70ecb7b13f328f1458f5f2cfbe48a',1,'init_dac.c']]],
+  ['sysdacoutput_5fenable_1619',['sysDacOutput_Enable',['../a00529.html#ga2f97c3082e0d6f724cea482c10c2d08f',1,'init_dac.c']]],
+  ['sysdacoutput_5finitialize_1620',['sysDacOutput_Initialize',['../a00529.html#ga231ffdd65b0ae520b467cbc6fbbf8d03',1,'init_dac.c']]],
+  ['sysdsp_5finitialize_1621',['sysDsp_Initialize',['../a00526.html#gae104c8e1fd4160f749fefbcf540f5a07',1,'sysDsp_Initialize(void):&#160;init_dsp.c'],['../a00526.html#gae104c8e1fd4160f749fefbcf540f5a07',1,'sysDsp_Initialize(void):&#160;init_dsp.c']]],
+  ['sysfosc_5finitialize_1622',['sysFosc_Initialize',['../a00524.html#ga40d0188218fbc4f682cbddffff9e1269',1,'sysFosc_Initialize(void):&#160;init_fosc.c'],['../a00524.html#ga40d0188218fbc4f682cbddffff9e1269',1,'sysFosc_Initialize(void):&#160;init_fosc.c']]],
+  ['sysgpio_5finitialize_1623',['sysGpio_Initialize',['../a00525.html#ga79cb6e309797560a9a262a562fe40fee',1,'sysGpio_Initialize(void):&#160;init_gpio.c'],['../a00525.html#ga79cb6e309797560a9a262a562fe40fee',1,'sysGpio_Initialize(void):&#160;init_gpio.c'],['../a00525.html#ga79cb6e309797560a9a262a562fe40fee',1,'sysGpio_Initialize(void):&#160;init_gpio.c']]],
+  ['syshighprioritytasks_5fexecute_1624',['sysHighPriorityTasks_Execute',['../a00521.html#ga1873ce221ca3545badd9c72c846bba3d',1,'main.c']]],
+  ['syslowprioritytasks_5fexecute_1625',['sysLowPriorityTasks_Execute',['../a00520.html#gaa1ec8154dbf983b02b3b2dc186c5079d',1,'main.c']]],
+  ['sysopamp_5finitialize_1626',['sysOpAmp_Initialize',['../a00530.html#gaf4c74cf390185b49d99838e0f9885076',1,'sysOpAmp_Initialize(volatile uint16_t opaInstance, volatile bool disable_n_channel):&#160;init_opa.c'],['../a00530.html#gaf4c74cf390185b49d99838e0f9885076',1,'sysOpAmp_Initialize(volatile uint16_t opaInstance, volatile bool disable_n_channel):&#160;init_opa.c']]],
+  ['sysopamp_5fmoduleenable_1627',['sysOpAmp_ModuleEnable',['../a00530.html#ga3cd080c9a48a5d74d8b2f89fdec161da',1,'init_opa.c']]],
+  ['sysopamp_5fmodulereset_1628',['sysOpAmp_ModuleReset',['../a00530.html#ga4dbd2367ecd449226460b0b0a52cbe8b',1,'init_opa.c']]],
+  ['sysostimer_5fenable_1629',['sysOsTimer_Enable',['../a00532.html#ga4c811c3414a3785423f828be293562f0',1,'init_timer1.c']]],
+  ['sysostimer_5finitialize_1630',['sysOsTimer_Initialize',['../a00532.html#ga8e89a1a4ee5bf8c794bd29163b92bf49',1,'sysOsTimer_Initialize(void):&#160;init_timer1.c'],['../a00532.html#ga8e89a1a4ee5bf8c794bd29163b92bf49',1,'sysOsTimer_Initialize(void):&#160;init_timer1.c']]],
+  ['system_5finitialize_1631',['SYSTEM_Initialize',['../a00523.html#ga12ce46460ff0657fc879f5b23ed8ccb1',1,'SYSTEM_Initialize(void):&#160;system.c'],['../a00523.html#ga12ce46460ff0657fc879f5b23ed8ccb1',1,'SYSTEM_Initialize(void):&#160;system.c']]],
+  ['sysuserperiperhals_5finitialize_1632',['sysUserPeriperhals_Initialize',['../a00528.html#ga70c5cba054e38a4e8c8285a187ff61fa',1,'sysUserPeriperhals_Initialize(void):&#160;system.c'],['../a00528.html#ga70c5cba054e38a4e8c8285a187ff61fa',1,'sysUserPeriperhals_Initialize(void):&#160;system.c']]],
+  ['sysusertasks_5finitialize_1633',['sysUserTasks_Initialize',['../a00533.html#ga2be64f5f0b9a2c0c6713f5a69d793e05',1,'sysUserTasks_Initialize(void):&#160;system.c'],['../a00533.html#ga2be64f5f0b9a2c0c6713f5a69d793e05',1,'sysUserTasks_Initialize(void):&#160;system.c']]]
 ];

@@ -1,8 +1,7 @@
 var a00442 =
 [
-    [ "LCD_s", "a01476.html", [
-      [ "enabled", "a01476.html#a085e9fc0863cee4864cf51dcfe1e32df", null ],
-      [ "refresh", "a01476.html#adc2298ffda0c853e699e6da9098f82ae", null ],
-      [ "screen", "a01476.html#aea467a9fc04f0771215b952d26bc4392", null ]
-    ] ]
+    [ "Public Functions", "a00443.html", "a00443" ],
+    [ "Public Properties", "a00444.html", "a00444" ],
+    [ "Private Functions", "a00445.html", null ],
+    [ "Private Properties", "a00446.html", "a00446" ]
 ];

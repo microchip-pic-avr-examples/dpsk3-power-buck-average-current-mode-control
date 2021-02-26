@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Buck Special Functions</title>
+<title>Digital Power Starter Kit 3 Firmware: Variables &amp; Constants</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -43,7 +43,7 @@
   <td id="projectalign" style="padding-left: 0.0em;">
    <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
-   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Adaptive Gain Control Example</div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Average Current Mode Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -104,33 +104,96 @@ $(document).ready(function(){initNavTree('a00484.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#groups">Modules</a>  </div>
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">Buck Special Functions<div class="ingroups"><a class="el" href="a00539.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00466.html">Buck Converter Library</a> &raquo; <a class="el" href="a00477.html">Buck Converter Library Modules</a></div></div>  </div>
+<div class="title">Variables &amp; Constants<div class="ingroups"><a class="el" href="a00536.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00463.html">Buck Converter Library</a> &raquo; <a class="el" href="a00474.html">Buck Converter Library Modules</a> &raquo; <a class="el" href="a00481.html">Buck Special Functions</a> &raquo; <a class="el" href="a00483.html">Properties</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>List of variables of the Special Function state machine extensions.  
+<a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Buck Special Functions:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Variables &amp; Constants:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00484.svg" width="502" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00484.svg" width="292" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
-Modules</h2></td></tr>
-<tr class="memitem:a00485"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00485.html">Functions</a></td></tr>
-<tr class="memdesc:a00485"><td class="mdescLeft">&#160;</td><td class="mdescRight">Public functions of the second library layer. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00486"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00486.html">Properties</a></td></tr>
-<tr class="memdesc:a00486"><td class="mdescLeft">&#160;</td><td class="mdescRight">Public properties of the second library layer. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ga619f44e96a83b8c723f1e8e24e5c7442"><td class="memItemLeft" align="right" valign="top">volatile struct CS_CALIBRATION_s&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00484.html#ga619f44e96a83b8c723f1e8e24e5c7442">calib_cs</a> [<a class="el" href="a00469.html#ga74df4d33c3d762495bc67b88bb6aa524">BUCK_MPHASE_COUNT</a>]</td></tr>
+<tr class="memdesc:ga619f44e96a83b8c723f1e8e24e5c7442"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array of current sense calibration data objects of type CS_CALIBRATION_t.  <a href="a00484.html#ga619f44e96a83b8c723f1e8e24e5c7442">More...</a><br /></td></tr>
+<tr class="separator:ga619f44e96a83b8c723f1e8e24e5c7442"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3ae32433f160a13731fbe7e18e62d621"><td class="memItemLeft" align="right" valign="top">volatile uint16_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00484.html#ga3ae32433f160a13731fbe7e18e62d621">BuckConverterSpecialFunctions</a> [])(volatile struct <a class="el" href="a01557.html">BUCK_CONVERTER_s</a> *buckInstance)</td></tr>
+<tr class="memdesc:ga3ae32433f160a13731fbe7e18e62d621"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function pointer list of all special function sub-state functions.  <a href="a00484.html#ga3ae32433f160a13731fbe7e18e62d621">More...</a><br /></td></tr>
+<tr class="separator:ga3ae32433f160a13731fbe7e18e62d621"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>The Special Function layer of the power converter state machine provides optional extension states to the common state machine functions, which may only be applicable to specific power converter architectures or in presence of specific sub-circuit types. The common state machine incorporates calls of Special Function states at an approriate point making them optionally available through user configuration in the <a class="el" href="a01560.html" title="BUCK control &amp; monitoring data structure.">BUCK_CONVERTER_s</a> data structure. </p>
+<p>List of variables of the Special Function state machine extensions. </p>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ga3ae32433f160a13731fbe7e18e62d621"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3ae32433f160a13731fbe7e18e62d621">&#9670;&nbsp;</a></span>BuckConverterSpecialFunctions</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BuckConverterSpecialFunctions</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= </div>
+<div class="line">{</div>
+<div class="line">    <a class="code" href="a00482.html#ga337549d1d76534d9b092d7c8bdaf686a">CurrentSenseOffsetCalibration</a> </div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p>Function pointer list of all special function sub-state functions. </p>
+<p>The function pointer list BuckConverterSpecialFunctions[] is providing public access to a list of functions serving special purposes supporting specific power converter configuration options. Each function mapped into this array as function pointer is a self-contained, independent sub-state, which can be called from any level of the main state machine being treated like a common sub-state.</p>
+<p>Each function needs to be called by handing over a parameter of type</p>
+<ul>
+<li>struct <a class="el" href="a01557.html" title="BUCK control &amp; monitoring data structure.">BUCK_CONVERTER_s</a></li>
+</ul>
+<p>Each function returns of type unsigned integer:</p>
+<ul>
+<li>0 = BUCK_OPSRET_ERROR</li>
+<li>1 = BUCK_OPSRET_COMPLETE</li>
+<li>2 = BUCK_OPSRET_REPEAT</li>
+</ul>
+<p><b>Recently available Special Functions&lt;b&gt;<br  />
+</b></p>
+<p><b></p><ul>
+<li>Current Sense Feedback Offset Calibration </li>
+</ul>
+<p></b></p>
+
+<p class="definition">Definition at line <a class="el" href="a00251_source.html#l00088">88</a> of file <a class="el" href="a00251_source.html">dev_buck_special_functions.c</a>.</p>
+
+</div>
+</div>
+<a id="ga619f44e96a83b8c723f1e8e24e5c7442"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga619f44e96a83b8c723f1e8e24e5c7442">&#9670;&nbsp;</a></span>calib_cs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct CS_CALIBRATION_s calib_cs[<a class="el" href="a00469.html#ga74df4d33c3d762495bc67b88bb6aa524">BUCK_MPHASE_COUNT</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Array of current sense calibration data objects of type CS_CALIBRATION_t. </p>
+<p>The current sense feedback offset calibration requires a data space to accumulate and average the static feedback offset value. The final result is written to the feedback channel configuration of the buck converter data object, hence, the CS_CALIBRATION_s data structure used for the current sense feedback offset calibration is kept private and inaccessible from external firmware modules. This variable is declared as array reserving a data set for each current sense feedback channel. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00251_source.html#l00001">1</a> of file <a class="el" href="a00251_source.html">dev_buck_special_functions.c</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aa00482_html_ga337549d1d76534d9b092d7c8bdaf686a"><div class="ttname"><a href="a00482.html#ga337549d1d76534d9b092d7c8bdaf686a">CurrentSenseOffsetCalibration</a></div><div class="ttdeci">volatile uint16_t CurrentSenseOffsetCalibration(volatile struct BUCK_CONVERTER_s *buckInstance)</div><div class="ttdoc">Performs an offset calibration of the current sense feedback signal(s)</div><div class="ttdef"><b>Definition:</b> <a href="a00251_source.html#l00178">dev_buck_special_functions.c:178</a></div></div>
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

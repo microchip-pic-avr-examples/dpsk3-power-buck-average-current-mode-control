@@ -1,4 +1,6 @@
-<map id="Private Properties" name="Private Properties">
-<area shape="rect" id="node1" href="$a00363.html" title="Peripheral Pin Select Module Special Function Register Abstraction Driver." alt="" coords="5,5,149,45"/>
-<area shape="rect" id="node2" title="Private properties of the PPS PRAL driver." alt="" coords="197,13,321,38"/>
+<map id="Microcontroller Device Abstraction" name="Microcontroller Device Abstraction">
+<area shape="rect" id="node1" href="$a00534.html" title="Hardware Abstraction Layer Declarations." alt="" coords="5,23,152,63"/>
+<area shape="rect" id="node4" title="Declarations of fundamental microcontroller device parameters." alt="" coords="200,23,349,63"/>
+<area shape="rect" id="node2" href="$a00381.html" title="Conversion macros converting physical quantities of parameters into binary (integer) numbers for regi..." alt="" coords="397,5,529,31"/>
+<area shape="rect" id="node3" href="$a00380.html" title="Parameter defintions using physical quantities." alt="" coords="413,55,514,80"/>
 </map>

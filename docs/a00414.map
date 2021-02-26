@@ -1,4 +1,4 @@
-<map id="User Settings" name="User Settings">
-<area shape="rect" id="node1" href="$a00413.html" title="Declaration of temperature feedback parameters." alt="" coords="5,5,160,31"/>
-<area shape="rect" id="node2" title="User&#45;declaration of temperature feedback parameters using physical quantities." alt="" coords="208,5,309,31"/>
+<map id="Adaptive Gain Control Feed Forward" name="Adaptive Gain Control Feed Forward">
+<area shape="rect" id="node1" href="$a00534.html" title="Hardware Abstraction Layer Declarations." alt="" coords="5,5,152,45"/>
+<area shape="rect" id="node2" title="Declaration of macros calculating additional parameters for Adaptive Gain Modulation." alt="" coords="200,5,347,45"/>
 </map>

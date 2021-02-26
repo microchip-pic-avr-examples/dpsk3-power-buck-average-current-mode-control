@@ -1,6 +1,4 @@
-<map id="Oscillator Module (OSC)" name="Oscillator Module (OSC)">
-<area shape="rect" id="node1" title="Oscillator Module Special Function Register Abstraction Driver." alt="" coords="185,31,348,56"/>
-<area shape="rect" id="node2" href="$a00378.html" title="Private properties of the OSC PRAL driver." alt="" coords="396,5,520,31"/>
-<area shape="rect" id="node4" href="$a00370.html" title="Public functions of the OSC PRAL driver." alt="" coords="399,55,517,80"/>
-<area shape="rect" id="node3" href="$a00356.html" title=" " alt="" coords="5,16,137,71"/>
+<map id="Public Functions" name="Public Functions">
+<area shape="rect" id="node1" href="$a00354.html" title="Capture Compare Peripheral Module Special Function Register Abstraction Driver." alt="" coords="5,5,175,45"/>
+<area shape="rect" id="node2" title="Public functions of the SCCP/MCCP PRAL driver." alt="" coords="223,13,341,38"/>
 </map>

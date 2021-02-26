@@ -1,4 +1,4 @@
-<map id="Public Functions" name="Public Functions">
-<area shape="rect" id="node1" href="$a00362.html" title="Oscillator Module Special Function Register Abstraction Driver." alt="" coords="5,5,168,31"/>
-<area shape="rect" id="node2" title="Public functions of the OSC PRAL driver." alt="" coords="216,5,335,31"/>
+<map id="Private Properties" name="Private Properties">
+<area shape="rect" id="node1" title="Private properties of the SCCP/MCCP PRAL driver." alt="" coords="223,13,347,38"/>
+<area shape="rect" id="node2" href="$a00354.html" title="Capture Compare Peripheral Module Special Function Register Abstraction Driver." alt="" coords="5,5,175,45"/>
 </map>

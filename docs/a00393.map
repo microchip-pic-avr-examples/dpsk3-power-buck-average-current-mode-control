@@ -1,4 +1,4 @@
 <map id="User Settings" name="User Settings">
-<area shape="rect" id="node1" title="User&#45;declaration of fault object trip and recovery delays using physical quantities." alt="" coords="219,5,320,31"/>
-<area shape="rect" id="node2" href="$a00392.html" title="Declaration of fault object trip and recovery delays." alt="" coords="5,5,171,31"/>
+<area shape="rect" id="node1" title="Parameter defintions using physical quantities." alt="" coords="160,5,261,31"/>
+<area shape="rect" id="node2" href="$a00392.html" title="Declaration of fundamental PWM parameters." alt="" coords="5,5,112,31"/>
 </map>

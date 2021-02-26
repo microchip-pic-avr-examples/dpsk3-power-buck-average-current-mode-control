@@ -1,6 +1,8 @@
 var a00457 =
 [
-    [ "DEBUGGING_LED_s", "a01480.html", [
-      [ "period", "a01480.html#a48f363c7bcd47589472b59f0a7dfb74b", null ]
-    ] ]
+    [ "Public Functions", "a00458.html", "a00458" ],
+    [ "Public Properties", "a00459.html", "a00459" ],
+    [ "Events and Interrupts", "a00460.html", "a00460" ],
+    [ "Private Functions", "a00461.html", "a00461" ],
+    [ "Private Properties", "a00462.html", null ]
 ];

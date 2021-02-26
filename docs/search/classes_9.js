@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['task_5finfo_5fs_1471',['TASK_INFO_s',['../a01468.html',1,'']]],
-  ['trap_5fflags_5fs_1472',['TRAP_FLAGS_s',['../a01420.html',1,'']]],
-  ['trap_5flogger_5fs_1473',['TRAP_LOGGER_s',['../a01472.html',1,'']]],
-  ['traplog_5fstatus_5fs_1474',['TRAPLOG_STATUS_s',['../a01456.html',1,'']]]
+  ['regblk_5fclkdiv_5fconfig_5ft_1473',['REGBLK_CLKDIV_CONFIG_t',['../a00913.html',1,'']]],
+  ['regblk_5fosccon_5fconfig_5ft_1474',['REGBLK_OSCCON_CONFIG_t',['../a00909.html',1,'']]],
+  ['regblk_5fosctun_5fconfig_5ft_1475',['REGBLK_OSCTUN_CONFIG_t',['../a00921.html',1,'']]],
+  ['regblk_5fpllfbd_5fconfig_5ft_1476',['REGBLK_PLLFBD_CONFIG_t',['../a00917.html',1,'']]]
 ];

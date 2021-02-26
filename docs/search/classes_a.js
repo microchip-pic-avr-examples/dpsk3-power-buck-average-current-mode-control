@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['v_5floop_5fcontrol_5floop_5fcoefficients_5fs_1475',['V_LOOP_CONTROL_LOOP_COEFFICIENTS_s',['../a01624.html',1,'']]],
-  ['v_5floop_5fcontrol_5floop_5fhistories_5fs_1476',['V_LOOP_CONTROL_LOOP_HISTORIES_s',['../a01628.html',1,'']]]
+  ['task_5finfo_5fs_1477',['TASK_INFO_s',['../a01465.html',1,'']]],
+  ['trap_5fflags_5fs_1478',['TRAP_FLAGS_s',['../a01417.html',1,'']]],
+  ['trap_5flogger_5fs_1479',['TRAP_LOGGER_s',['../a01469.html',1,'']]],
+  ['traplog_5fstatus_5fs_1480',['TRAPLOG_STATUS_s',['../a01453.html',1,'']]]
 ];

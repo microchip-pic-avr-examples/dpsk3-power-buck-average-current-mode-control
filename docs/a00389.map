@@ -1,6 +1,6 @@
-<map id="Startup Timing Settings" name="Startup Timing Settings">
-<area shape="rect" id="node1" title="Declaration of startup timing periods." alt="" coords="200,31,359,56"/>
-<area shape="rect" id="node3" href="$a00390.html" title="User&#45;declaration of startup timing periods using physical quantities." alt="" coords="422,5,523,31"/>
-<area shape="rect" id="node4" href="$a00391.html" title="Conversion macros for user&#45;declarations of startup timing periods." alt="" coords="407,55,539,80"/>
-<area shape="rect" id="node2" href="$a00537.html" title="Hardware Abstraction Layer Declarations." alt="" coords="5,23,152,63"/>
+<map id="Fault Response Settings" name="Fault Response Settings">
+<area shape="rect" id="node1" href="$a00534.html" title="Hardware Abstraction Layer Declarations." alt="" coords="5,23,152,63"/>
+<area shape="rect" id="node3" title="Declaration of fault object trip and recovery delays." alt="" coords="200,31,365,56"/>
+<area shape="rect" id="node2" href="$a00390.html" title="User&#45;declaration of fault object trip and recovery delays using physical quantities." alt="" coords="429,5,530,31"/>
+<area shape="rect" id="node4" href="$a00391.html" title="Conversion macros for user declarations of fault object trip and recovery delays." alt="" coords="413,55,545,80"/>
 </map>

@@ -1,4 +1,4 @@
-<map id="Private Properties" name="Private Properties">
-<area shape="rect" id="node1" href="$a00364.html" title="High&#45;Speed PWM Module Special Function Register Abstraction Driver." alt="" coords="5,5,177,45"/>
-<area shape="rect" id="node2" title="Private properties of the HSPWM PRAL driver." alt="" coords="225,13,349,38"/>
+<map id="User Settings" name="User Settings">
+<area shape="rect" id="node1" title="Parameter defintions using physical quantities." alt="" coords="203,13,304,38"/>
+<area shape="rect" id="node2" href="$a00379.html" title="Declarations of fundamental microcontroller device parameters." alt="" coords="5,5,155,45"/>
 </map>

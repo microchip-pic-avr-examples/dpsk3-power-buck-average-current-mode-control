@@ -43,7 +43,7 @@
   <td id="projectalign" style="padding-left: 0.0em;">
    <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
-   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Adaptive Gain Control Example</div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Average Current Mode Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -111,21 +111,21 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <hr  />
  <h1><a class="anchor" id="autotoc_md1"></a>
 dsPIC33C Digital Power Starter Kit</h1>
-<h3>Synchronous Buck Converter: Adaptive Gain Control</h3>
+<h3>Synchronous Buck Converter: Average Current Mode Control</h3>
 <center><a href="https://www.microchip.com/DM330017-3" target="_blank" rel="nofollow"><img src="images/dm330017-3-1.jpg" alt="dsPIC33C Digital Power Starter Kit" width="400" class="inline"/> &#160; <img src="images/dm330017-3-2.jpg" alt="" width="400" class="inline"/> </a> </center> <center> <a href="https://www.microchip.com/DM330017-3" target="_blank" rel="nofollow">dsPIC33C Digital Power Starter Kit (DPSK3) (Part-No. DM330017-3) </a> </center> <hr  />
 <h2><a class="anchor" id="autotoc_md2"></a>
 Summary</h2>
-<p>Real-time adaptive gain modulation of voltage mode control example for the buck converter on the Digital Power Starter Kit, version 3 (DPSK3) featuring the dsPIC33CK family of devices.</p>
+<p>Dual-Loop Average Current Mode Control (ACMC) example for the buck converter on the Digital Power Starter Kit, version 3 (DPSK3) featuring the dsPIC33CK family of devices.</p>
 <hr  />
 <h2><a class="anchor" id="autotoc_md3"></a>
 Description</h2>
-<p>This code example demonstrates the implementation of an enhanced voltage mode control loop for the synchronous buck converter using in-loop adaptive loop gain modulation to compensate for gain variations in the power plant caused by changes in the voltage across the inductor. The loop implementation also includes the required state machine managing board status analysis, start-up control, operation monitoring, fault handling and auto-restart capability. The buck converter state machine is based on a generic library package, which is configured and executed in user code.</p>
+<p>This code example demonstrates the implementation of a dual-loop average current mode controller for the synchronous buck converter, comprised of an outer voltage loop and an inner current loop. The loop implementation also includes the required state machine managing board status analysis, start-up control, operation monitoring, fault handling and auto-restart capability. The buck converter state machine is based on a generic buck converter library package, which is configured and executed in user code.</p>
 <p>This code example also includes the LCD driver allowing users to observe runtime data on the on-board LC display. The on-board user switch <code>USER</code> allows users to change the active display page to observe input voltage, output voltage, output current and board temperature.</p>
 <h2><a class="anchor" id="autotoc_md4"></a>
 Related Documentation</h2>
 <h4>Firmware Documentation</h4>
 <ul>
-<li><a href="https://microchip-pic-avr-examples.github.io/dpsk3-power-buck-adaptive-gain-control/">Online Firmware Documentation of this Code Example</a></li>
+<li><a href="https://microchip-pic-avr-examples.github.io/dpsk3-power-buck-average-current-mode-control/">Online Firmware Documentation of this Code Example</a></li>
 </ul>
 <h4>Hardware and Target Device Documentation</h4>
 <ul>

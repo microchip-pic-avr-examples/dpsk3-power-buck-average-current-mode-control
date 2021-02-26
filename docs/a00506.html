@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Data Objects</title>
+<title>Digital Power Starter Kit 3 Firmware: Variables</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -43,7 +43,7 @@
   <td id="projectalign" style="padding-left: 0.0em;">
    <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
-   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Adaptive Gain Control Example</div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Average Current Mode Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -104,38 +104,72 @@ $(document).ready(function(){initNavTree('a00506.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a>  </div>
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">Data Objects<div class="ingroups"><a class="el" href="a00540.html">Library Driver Layer</a> &raquo; <a class="el" href="a00502.html">Power Converter Control Driver</a> &raquo; <a class="el" href="a00505.html">Properties</a></div></div>  </div>
+<div class="title">Variables<div class="ingroups"><a class="el" href="a00537.html">Library Driver Layer</a> &raquo; <a class="el" href="a00499.html">Power Converter Control Driver</a> &raquo; <a class="el" href="a00502.html">Properties</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Public properties of the Power Converter Control driver.  
+<p>Public variables of the Power Converter Control driver.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Data Objects:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Variables:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00506.svg" width="239" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00506.svg" width="216" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01620.html">NPNZ16b_s</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global NPNZ controller data object.  <a href="a01620.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01624.html">V_LOOP_CONTROL_LOOP_COEFFICIENTS_s</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data structure packing A- and B- coefficient arrays in a linear memory space for optimized DSP code execution.  <a href="a01624.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01628.html">V_LOOP_CONTROL_LOOP_HISTORIES_s</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data structure packing A- and B- coefficient arrays in a linear memory space for optimized DSP code execution.  <a href="a01628.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:gae1ef8104d52fe123c04e1107fd8ff55f"><td class="memItemLeft" align="right" valign="top">volatile int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00506.html#gae1ef8104d52fe123c04e1107fd8ff55f">v_loop_pterm_factor</a> = 0x639F</td></tr>
+<tr class="memdesc:gae1ef8104d52fe123c04e1107fd8ff55f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Q15 fractional of the P-Term Coefficient for Plant Measurements.  <a href="a00506.html#gae1ef8104d52fe123c04e1107fd8ff55f">More...</a><br /></td></tr>
+<tr class="separator:gae1ef8104d52fe123c04e1107fd8ff55f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga566701f8f607a93f33e17e799fae6ac5"><td class="memItemLeft" align="right" valign="top">volatile int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00506.html#ga566701f8f607a93f33e17e799fae6ac5">v_loop_pterm_scaler</a> = 0xFFFF</td></tr>
+<tr class="memdesc:ga566701f8f607a93f33e17e799fae6ac5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit-shift scaler of the P-Term Coefficient for Plant Measurements.  <a href="a00506.html#ga566701f8f607a93f33e17e799fae6ac5">More...</a><br /></td></tr>
+<tr class="separator:ga566701f8f607a93f33e17e799fae6ac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Public properties of the Power Converter Control driver. </p>
-<p>This is the detailed description of public data objects of the Power Converter Control driver. </p>
+<p>Public variables of the Power Converter Control driver. </p>
+<p>This is the detailed description of public variables of the Power Converter Control driver. </p>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="gae1ef8104d52fe123c04e1107fd8ff55f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae1ef8104d52fe123c04e1107fd8ff55f">&#9670;&nbsp;</a></span>v_loop_pterm_factor</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">v_loop_pterm_factor = 0x639F</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Q15 fractional of the P-Term Coefficient for Plant Measurements. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00305_source.html#l00085">85</a> of file <a class="el" href="a00305_source.html">v_loop.c</a>.</p>
+
+</div>
+</div>
+<a id="ga566701f8f607a93f33e17e799fae6ac5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga566701f8f607a93f33e17e799fae6ac5">&#9670;&nbsp;</a></span>v_loop_pterm_scaler</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">v_loop_pterm_scaler = 0xFFFF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit-shift scaler of the P-Term Coefficient for Plant Measurements. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00305_source.html#l00086">86</a> of file <a class="el" href="a00305_source.html">v_loop.c</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['ocp_5ffaultinitialize_1542',['ocp_FaultInitialize',['../a00427.html#ga54f9db91ea0782b08aa16ee77a57c5e5',1,'app_fault_monitor.c']]],
-  ['ovlo_5ffaultinitialize_1543',['ovlo_FaultInitialize',['../a00427.html#gade437244e8f6e5ff7c57a73442063350',1,'app_fault_monitor.c']]]
+  ['i_5floop_5finitialize_1548',['i_loop_Initialize',['../a00500.html#ga3d32e66188691f64885c2223f6e08d20',1,'i_loop_Initialize(volatile struct NPNZ16b_s *controller):&#160;i_loop.c'],['../a00500.html#ga3d32e66188691f64885c2223f6e08d20',1,'i_loop_Initialize(volatile struct NPNZ16b_s *controller):&#160;i_loop.c']]],
+  ['i_5floop_5fprecharge_1549',['i_loop_Precharge',['../a00500.html#ga15932f07e150c94059c8dc35566dfa36',1,'i_loop.h']]],
+  ['i_5floop_5freset_1550',['i_loop_Reset',['../a00500.html#gaade67bca1738eccdbf511c980e79339f',1,'i_loop.h']]],
+  ['i_5floop_5fupdate_1551',['i_loop_Update',['../a00500.html#gaeb19529055f7bef1a4817c3005605c23',1,'i_loop.h']]]
 ];

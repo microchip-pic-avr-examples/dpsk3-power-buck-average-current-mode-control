@@ -1,6 +1,7 @@
 var a00451 =
 [
-    [ "drv_LcdInterface_Initialize", "a00451.html#gaeb25fdecced4c325cd0d986a30d57e90", null ],
-    [ "drv_LcdInterface_Reset", "a00451.html#ga3f10606b6c67ff33338ab2c5c6a2d4c8", null ],
-    [ "drv_LcdInterface_SendCmd", "a00451.html#ga3e045335a3463f6a53e4fd91b50bb0ca", null ]
+    [ "LCD_CS_nSELECTED", "a00451.html#ga54b80311c5aac1052284a52ad5824fc9", null ],
+    [ "LCD_CS_SELECTED", "a00451.html#gab579f782fdb44ac74dd8c2681503f71a", null ],
+    [ "LCD_RS_COMMAND", "a00451.html#ga6f7c55d9c8246fa677ae8d8d2c88df9e", null ],
+    [ "LCD_RS_DATA", "a00451.html#ga9993ce43cdf8d8cb194c2e23c3d2698d", null ]
 ];

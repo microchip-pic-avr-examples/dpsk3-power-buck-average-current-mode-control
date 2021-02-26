@@ -1,4 +1,4 @@
-<map id="Microcontroller Abstraction" name="Microcontroller Abstraction">
-<area shape="rect" id="node1" title="Device analog input pin, register and interrupt vector assignments of temperature feedback signal(s)" alt="" coords="208,5,385,31"/>
-<area shape="rect" id="node2" href="$a00413.html" title="Declaration of temperature feedback parameters." alt="" coords="5,5,160,31"/>
+<map id="LC Display Interface Declarations" name="LC Display Interface Declarations">
+<area shape="rect" id="node1" href="$a00534.html" title="Hardware Abstraction Layer Declarations." alt="" coords="5,5,152,45"/>
+<area shape="rect" id="node2" title="LC display SPI interface GPIO declarations." alt="" coords="200,5,339,45"/>
 </map>

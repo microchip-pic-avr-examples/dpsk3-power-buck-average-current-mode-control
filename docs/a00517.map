@@ -1,4 +1,5 @@
-<map id="Public Properties" name="Public Properties">
-<area shape="rect" id="node1" title="Public properties of the push button device driver library." alt="" coords="191,5,312,31"/>
-<area shape="rect" id="node2" href="$a00515.html" title=" " alt="" coords="5,5,143,31"/>
+<map id="Firmware Architecture" name="Firmware Architecture">
+<area shape="rect" id="node1" href="$a00519.html" title="Main Loop." alt="" coords="217,5,300,31"/>
+<area shape="rect" id="node2" title="Firmware Flowchart." alt="" coords="5,31,155,56"/>
+<area shape="rect" id="node3" href="$a00518.html" title="Device Start Up." alt="" coords="203,55,315,80"/>
 </map>

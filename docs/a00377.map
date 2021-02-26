@@ -1,4 +1,4 @@
 <map id="Private Properties" name="Private Properties">
-<area shape="rect" id="node1" title="Private properties of the AMP PRAL driver." alt="" coords="196,13,320,38"/>
-<area shape="rect" id="node2" href="$a00361.html" title="Operational Amplifier Peripheral Module Special Function Register Abstraction Driver." alt="" coords="5,5,148,45"/>
+<area shape="rect" id="node1" href="$a00361.html" title="High&#45;Speed PWM Module Special Function Register Abstraction Driver." alt="" coords="5,5,177,45"/>
+<area shape="rect" id="node2" title="Private properties of the HSPWM PRAL driver." alt="" coords="225,13,349,38"/>
 </map>

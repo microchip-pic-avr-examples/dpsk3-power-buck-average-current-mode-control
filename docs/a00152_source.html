@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: dpsk_buck_agc.X/sources/config/init/init_timer1.h Source File</title>
+<title>Digital Power Starter Kit 3 Firmware: dpsk_buck_acmc.X/sources/fault_handler/app_fault_monitor.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -43,7 +43,7 @@
   <td id="projectalign" style="padding-left: 0.0em;">
    <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
-   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Adaptive Gain Control Example</div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Average Current Mode Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -104,7 +104,7 @@ $(document).ready(function(){initNavTree('a00152_source.html',''); initResizable
 
 <div class="header">
   <div class="headertitle">
-<div class="title">init_timer1.h</div>  </div>
+<div class="title">app_fault_monitor.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* Microchip Technology Inc. and its subsidiaries.  You may use this software </span></div>
@@ -129,37 +129,52 @@ $(document).ready(function(){initNavTree('a00152_source.html',''); initResizable
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/* </span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * File:   init_timer1.h</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * File:   app_fault_monitor.h</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * Author: M91406</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * Comments: header file of the operating system/main task scheduler timer initialization</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * Comments: global fault handler application layer API</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * Revision history: </span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> * 1.0  initial version</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// This is a guard condition so that contents of this file are not included</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// more than once.  </span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#ifndef SYSTEM_INITIALIZE_OS_TIMER_H</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define SYSTEM_INITIALIZE_OS_TIMER_H</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;xc.h&gt;</span> <span class="comment">// include processor files - each processor file is guarded.  </span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span> <span class="comment">// include standard integer types header file</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span> <span class="comment">// include standard boolean types header file</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// This is a guard condition so that contents of this file are not included</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// more than once.  </span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#ifndef APPLICATION_LAYER_FAULTS_HEADER_H</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define APPLICATION_LAYER_FAULTS_HEADER_H </span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;xc.h&gt;</span> <span class="comment">// include processor files - each processor file is guarded.  </span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span> <span class="comment">// include standard integer data types</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span> <span class="comment">// include standard boolean data types</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;stddef.h&gt;</span> <span class="comment">// include standard definition data types</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> uint16_t <a class="code" href="a00535.html#ga8e89a1a4ee5bf8c794bd29163b92bf49">sysOsTimer_Initialize</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> uint16_t <a class="code" href="a00535.html#ga4c811c3414a3785423f828be293562f0">sysOsTimer_Enable</a> (</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keyword">volatile</span> <span class="keywordtype">bool</span> interrupt_enable, <span class="keyword">volatile</span> uint8_t interrupt_priority );</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* SYSTEM_INITIALIZE_OS_TIMER_H */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;drivers/drv_fault_handler.h&quot;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// Public Variable Declaration</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a01413.html">FAULT_OBJECT_s</a> <a class="code" href="a00423.html#ga295ec0d409fed7ec6f9104a238c686fb">fltobj_BuckUVLO</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a01413.html">FAULT_OBJECT_s</a> <a class="code" href="a00423.html#ga96ccc7eb53ed10fa68fbe5aae4793d32">fltobj_BuckOVLO</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a01413.html">FAULT_OBJECT_s</a> <a class="code" href="a00423.html#ga9a42288edd61441b896e9caa0ebd8303">fltobj_BuckRegErr</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a01413.html">FAULT_OBJECT_s</a> <a class="code" href="a00423.html#ga94bfe2ce5dda4f256be991d41bf23514">fltobj_BuckOCP</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">// PUBLIC FUNCTION PROTOTYPE DECLARATIONS</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> uint16_t <a class="code" href="a00422.html#ga830e5c7087a8e5ee8ea39b7e3df94b68">appFaultMonitor_Initialize</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> uint16_t <a class="code" href="a00422.html#ga30537acd44b4c1bae429a78aeccad56e">appFaultMonitor_Execute</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> uint16_t <a class="code" href="a00422.html#gad5163ce00df7fdfe67b5e1a617080fda">appFaultMonitor_Dispose</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* APPLICATION_LAYER_FAULTS_HEADER_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa00535_html_ga8e89a1a4ee5bf8c794bd29163b92bf49"><div class="ttname"><a href="a00535.html#ga8e89a1a4ee5bf8c794bd29163b92bf49">sysOsTimer_Initialize</a></div><div class="ttdeci">volatile uint16_t sysOsTimer_Initialize(void)</div><div class="ttdoc">Initializes the timer used as time-base for the task scheduler.</div><div class="ttdef"><b>Definition:</b> <a href="a00149_source.html#l00040">init_timer1.c:40</a></div></div>
-<div class="ttc" id="aa00535_html_ga4c811c3414a3785423f828be293562f0"><div class="ttname"><a href="a00535.html#ga4c811c3414a3785423f828be293562f0">sysOsTimer_Enable</a></div><div class="ttdeci">volatile uint16_t sysOsTimer_Enable(volatile bool interrupt_enable, volatile uint8_t interrupt_priority)</div><div class="ttdef"><b>Definition:</b> <a href="a00149_source.html#l00081">init_timer1.c:81</a></div></div>
+<div class="ttc" id="aa00422_html_gad5163ce00df7fdfe67b5e1a617080fda"><div class="ttname"><a href="a00422.html#gad5163ce00df7fdfe67b5e1a617080fda">appFaultMonitor_Dispose</a></div><div class="ttdeci">volatile uint16_t appFaultMonitor_Dispose(void)</div><div class="ttdoc">Function clearing all fault object settings.</div><div class="ttdef"><b>Definition:</b> <a href="a00149_source.html#l00150">app_fault_monitor.c:150</a></div></div>
+<div class="ttc" id="aa00423_html_ga295ec0d409fed7ec6f9104a238c686fb"><div class="ttname"><a href="a00423.html#ga295ec0d409fed7ec6f9104a238c686fb">fltobj_BuckUVLO</a></div><div class="ttdeci">volatile struct FAULT_OBJECT_s fltobj_BuckUVLO</div><div class="ttdoc">Under Voltage Lock Out Fault Object.</div><div class="ttdef"><b>Definition:</b> <a href="a00149_source.html#l00001">app_fault_monitor.c:50</a></div></div>
+<div class="ttc" id="aa00422_html_ga830e5c7087a8e5ee8ea39b7e3df94b68"><div class="ttname"><a href="a00422.html#ga830e5c7087a8e5ee8ea39b7e3df94b68">appFaultMonitor_Initialize</a></div><div class="ttdeci">volatile uint16_t appFaultMonitor_Initialize(void)</div><div class="ttdoc">Initialization of user-defined fault objects.</div><div class="ttdef"><b>Definition:</b> <a href="a00149_source.html#l00123">app_fault_monitor.c:123</a></div></div>
+<div class="ttc" id="aa01413_html"><div class="ttname"><a href="a01413.html">FAULT_OBJECT_s</a></div><div class="ttdoc">This data structure is a collection of data structures for fault handling.</div><div class="ttdef"><b>Definition:</b> <a href="a00161_source.html#l00131">drv_fault_handler.h:131</a></div></div>
+<div class="ttc" id="aa00422_html_ga30537acd44b4c1bae429a78aeccad56e"><div class="ttname"><a href="a00422.html#ga30537acd44b4c1bae429a78aeccad56e">appFaultMonitor_Execute</a></div><div class="ttdeci">volatile uint16_t appFaultMonitor_Execute(void)</div><div class="ttdoc">Application wide fault object monitoring routine.</div><div class="ttdef"><b>Definition:</b> <a href="a00149_source.html#l00063">app_fault_monitor.c:56</a></div></div>
+<div class="ttc" id="aa00423_html_ga94bfe2ce5dda4f256be991d41bf23514"><div class="ttname"><a href="a00423.html#ga94bfe2ce5dda4f256be991d41bf23514">fltobj_BuckOCP</a></div><div class="ttdeci">volatile struct FAULT_OBJECT_s fltobj_BuckOCP</div><div class="ttdoc">Over Current Protection Fault Object.</div><div class="ttdef"><b>Definition:</b> <a href="a00149_source.html#l00001">app_fault_monitor.c:52</a></div></div>
+<div class="ttc" id="aa00423_html_ga96ccc7eb53ed10fa68fbe5aae4793d32"><div class="ttname"><a href="a00423.html#ga96ccc7eb53ed10fa68fbe5aae4793d32">fltobj_BuckOVLO</a></div><div class="ttdeci">volatile struct FAULT_OBJECT_s fltobj_BuckOVLO</div><div class="ttdoc">Over Voltage Lock Out Fault Object.</div><div class="ttdef"><b>Definition:</b> <a href="a00149_source.html#l00001">app_fault_monitor.c:51</a></div></div>
+<div class="ttc" id="aa00423_html_ga9a42288edd61441b896e9caa0ebd8303"><div class="ttname"><a href="a00423.html#ga9a42288edd61441b896e9caa0ebd8303">fltobj_BuckRegErr</a></div><div class="ttdeci">volatile struct FAULT_OBJECT_s fltobj_BuckRegErr</div><div class="ttdoc">Regulation Error Fault Object.</div><div class="ttdef"><b>Definition:</b> <a href="a00149_source.html#l00001">app_fault_monitor.c:53</a></div></div>
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_4ee7c398c7a1a06f47d8fbc48027983f.html">dpsk_buck_agc.X</a></li><li class="navelem"><a class="el" href="dir_07fd0e222032ef0bb4c4c4bd39064c1a.html">sources</a></li><li class="navelem"><a class="el" href="dir_211b4db1c675c4cc8f5787a6c41b6ec0.html">config</a></li><li class="navelem"><a class="el" href="dir_d37d4c30a8f8820e97553f462ec3a255.html">init</a></li><li class="navelem"><b>init_timer1.h</b></li>
+    <li class="navelem"><a class="el" href="dir_5c9e57b9bcd9b7f50d88ecfbd194c0ae.html">dpsk_buck_acmc.X</a></li><li class="navelem"><a class="el" href="dir_0b7fd148aa9e0e6d20cdcee736988614.html">sources</a></li><li class="navelem"><a class="el" href="dir_d5befb491116c02525cd8031c73d3ab0.html">fault_handler</a></li><li class="navelem"><b>app_fault_monitor.h</b></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

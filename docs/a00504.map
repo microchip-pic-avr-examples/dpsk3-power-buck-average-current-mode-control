@@ -1,4 +1,4 @@
-<map id="Objects" name="Objects">
-<area shape="rect" id="node1" href="$a00502.html" title=" " alt="" coords="5,5,167,45"/>
-<area shape="rect" id="node2" title="Public Objects of the Power Converter Control driver." alt="" coords="215,13,281,38"/>
+<map id="Data Object Members" name="Data Object Members">
+<area shape="rect" id="node1" href="$a00502.html" title="Public properties of the Power Converter Control driver." alt="" coords="5,5,87,31"/>
+<area shape="rect" id="node2" title="Public properties of the Power Converter Control driver." alt="" coords="135,5,284,31"/>
 </map>

@@ -1,4 +1,4 @@
-<map id="Public Functions" name="Public Functions">
-<area shape="rect" id="node1" title="Public functions of the HSPWM PRAL driver." alt="" coords="225,13,344,38"/>
-<area shape="rect" id="node2" href="$a00364.html" title="High&#45;Speed PWM Module Special Function Register Abstraction Driver." alt="" coords="5,5,177,45"/>
+<map id="Private Properties" name="Private Properties">
+<area shape="rect" id="node1" title="Private properties of the DSP PRAL driver." alt="" coords="219,13,343,38"/>
+<area shape="rect" id="node2" href="$a00356.html" title="Digital Signal Processor Special Function Register Abstraction Driver." alt="" coords="5,5,171,45"/>
 </map>

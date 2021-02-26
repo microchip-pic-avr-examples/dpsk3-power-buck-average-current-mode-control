@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Fault Monitor Application Layer</title>
+<title>Digital Power Starter Kit 3 Firmware: Private Functions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -43,7 +43,7 @@
   <td id="projectalign" style="padding-left: 0.0em;">
    <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
-   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Adaptive Gain Control Example</div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Average Current Mode Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -104,37 +104,212 @@ $(document).ready(function(){initNavTree('a00424.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#groups">Modules</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Fault Monitor Application Layer<div class="ingroups"><a class="el" href="a00538.html">Application Layer</a></div></div>  </div>
+<div class="title">Private Functions<div class="ingroups"><a class="el" href="a00535.html">Application Layer</a> &raquo; <a class="el" href="a00421.html">Fault Monitor Application Layer</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Private functions of the first application layer task.  
+<a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Fault Monitor Application Layer:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Private Functions:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00424.svg" width="520" height="184"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00424.svg" width="348" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
-Modules</h2></td></tr>
-<tr class="memitem:a00425"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00425.html">Public Functions</a></td></tr>
-<tr class="memdesc:a00425"><td class="mdescLeft">&#160;</td><td class="mdescRight">Public functions of the first application layer task. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00426"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00426.html">Public Properties</a></td></tr>
-<tr class="memdesc:a00426"><td class="mdescLeft">&#160;</td><td class="mdescRight">Public properties of the first application layer task. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00427"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00427.html">Private Functions</a></td></tr>
-<tr class="memdesc:a00427"><td class="mdescLeft">&#160;</td><td class="mdescRight">Private functions of the first application layer task. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00428"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00428.html">Private Properties</a></td></tr>
-<tr class="memdesc:a00428"><td class="mdescLeft">&#160;</td><td class="mdescRight">Private properties of the first application layer task. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga9441220f8a7d4a6805467d04b734e6b5"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00424.html#ga9441220f8a7d4a6805467d04b734e6b5">uvlo_FaultInitialize</a> (void)</td></tr>
+<tr class="memdesc:ga9441220f8a7d4a6805467d04b734e6b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the user-defined fault objects for under-voltage lockout.  <a href="a00424.html#ga9441220f8a7d4a6805467d04b734e6b5">More...</a><br /></td></tr>
+<tr class="separator:ga9441220f8a7d4a6805467d04b734e6b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade437244e8f6e5ff7c57a73442063350"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00424.html#gade437244e8f6e5ff7c57a73442063350">ovlo_FaultInitialize</a> (void)</td></tr>
+<tr class="memdesc:gade437244e8f6e5ff7c57a73442063350"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the user-defined fault objects for overvoltage lockout.  <a href="a00424.html#gade437244e8f6e5ff7c57a73442063350">More...</a><br /></td></tr>
+<tr class="separator:gade437244e8f6e5ff7c57a73442063350"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga82dc317e3adac0308e5ac3f5ad321605"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00424.html#ga82dc317e3adac0308e5ac3f5ad321605">regerr_FaultInitialize</a> (void)</td></tr>
+<tr class="memdesc:ga82dc317e3adac0308e5ac3f5ad321605"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the user-defined fault objects for regulation error.  <a href="a00424.html#ga82dc317e3adac0308e5ac3f5ad321605">More...</a><br /></td></tr>
+<tr class="separator:ga82dc317e3adac0308e5ac3f5ad321605"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga54f9db91ea0782b08aa16ee77a57c5e5"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00424.html#ga54f9db91ea0782b08aa16ee77a57c5e5">ocp_FaultInitialize</a> (void)</td></tr>
+<tr class="memdesc:ga54f9db91ea0782b08aa16ee77a57c5e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the user-defined fault objects for overcurrent protection.  <a href="a00424.html#ga54f9db91ea0782b08aa16ee77a57c5e5">More...</a><br /></td></tr>
+<tr class="separator:ga54f9db91ea0782b08aa16ee77a57c5e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>This generic fault monitor device driver declares a fault object data structure, which can be used in user code to create various different fault objects, which will get scanned and managed by the fault monitor functions during runtime. The main function of this fault monitor is restricted to detecting fault conditions, differentiating between trip and release conditions. Fault conditions are defined in user code individually for each fault object. </p>
+<p>Private functions of the first application layer task. </p>
+<p>This is the detailed description of private functions of the fault monitor application layer. </p><dl class="section note"><dt>Note</dt><dd></dd></dl>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga54f9db91ea0782b08aa16ee77a57c5e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga54f9db91ea0782b08aa16ee77a57c5e5">&#9670;&nbsp;</a></span>ocp_FaultInitialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t ocp_FaultInitialize </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the user-defined fault objects for overcurrent protection. </p>
+<dl class="section return"><dt>Returns</dt><dd>0=failure </dd>
+<dd>
+1=success</dd></dl>
+<p>In this function all user-defined fault objects are initialize and set to the thresholds for overcurrent protection. The ADC channel that monitors the voltage from the circuit is set in SourceObject while the threshold violation and recovery are set by TripResponse and RecoveryResponse objects. <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="a00149_source.html#l00310">310</a> of file <a class="el" href="a00149_source.html">app_fault_monitor.c</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00424_ga54f9db91ea0782b08aa16ee77a57c5e5_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00424_ga54f9db91ea0782b08aa16ee77a57c5e5_icgraph.svg" width="562" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="gade437244e8f6e5ff7c57a73442063350"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gade437244e8f6e5ff7c57a73442063350">&#9670;&nbsp;</a></span>ovlo_FaultInitialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t ovlo_FaultInitialize </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the user-defined fault objects for overvoltage lockout. </p>
+<dl class="section return"><dt>Returns</dt><dd>0=failure </dd>
+<dd>
+1=success</dd></dl>
+<p>In this function all user-defined fault objects are initialize and set the threshold violations for overvoltage lockout. The ADC channel that monitors the voltage from the circuit is set in SourceObject while the threshold violation and recovery are set by TripResponse and RecoveryResponse objects. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00149_source.html#l00224">224</a> of file <a class="el" href="a00149_source.html">app_fault_monitor.c</a>.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00424_gade437244e8f6e5ff7c57a73442063350_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00424_gade437244e8f6e5ff7c57a73442063350_icgraph.svg" width="562" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ga82dc317e3adac0308e5ac3f5ad321605"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga82dc317e3adac0308e5ac3f5ad321605">&#9670;&nbsp;</a></span>regerr_FaultInitialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t regerr_FaultInitialize </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the user-defined fault objects for regulation error. </p>
+<dl class="section return"><dt>Returns</dt><dd>0=failure </dd>
+<dd>
+1=success</dd></dl>
+<p>In this function all user-defined fault objects are initialize and set to the threshold violations for Regulation Error. The ADC channel that monitors the voltage from the circuit is set in SourceObject while the threshold violation and recovery are set by TripResponse and RecoveryResponse objects. <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="a00149_source.html#l00267">267</a> of file <a class="el" href="a00149_source.html">app_fault_monitor.c</a>.</p>
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00424_ga82dc317e3adac0308e5ac3f5ad321605_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00424_ga82dc317e3adac0308e5ac3f5ad321605_icgraph.svg" width="574" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ga9441220f8a7d4a6805467d04b734e6b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9441220f8a7d4a6805467d04b734e6b5">&#9670;&nbsp;</a></span>uvlo_FaultInitialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t uvlo_FaultInitialize </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the user-defined fault objects for under-voltage lockout. </p>
+<dl class="section return"><dt>Returns</dt><dd>0=failure </dd>
+<dd>
+1=success</dd></dl>
+<p>In this function all user-defined fault objects are initialize and set to the threshold violations for under-voltage lockout. The ADC channel that monitors the voltage from the circuit is set in SourceObject while the threshold violation and recovery are set by TripResponse and RecoveryResponse objects. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00149_source.html#l00179">179</a> of file <a class="el" href="a00149_source.html">app_fault_monitor.c</a>.</p>
+<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00424_ga9441220f8a7d4a6805467d04b734e6b5_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00424_ga9441220f8a7d4a6805467d04b734e6b5_icgraph.svg" width="562" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

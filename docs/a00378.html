@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Private Properties</title>
+<title>Digital Power Starter Kit 3 Firmware: Hardware Version ID</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -43,7 +43,7 @@
   <td id="projectalign" style="padding-left: 0.0em;">
    <div id="projectname" style="color: white; font-size:16px;">Digital Power Starter Kit 3 Firmware
    </div>
-   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Adaptive Gain Control Example</div>
+   <div id="projectbrief" style="color: grey; font-size:12px;">dsPIC33C Buck Converter Average Current Mode Control Example</div>
   </td>
    <td style="padding-top: 10px; height: 20px; vertical-align: top;">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -103,72 +103,48 @@ $(document).ready(function(){initNavTree('a00378.html',''); initResizable(); });
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#define-members">Macros</a> &#124;
-<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">Private Properties<div class="ingroups"><a class="el" href="a00539.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00356.html">Peripheral Register Abstraction Layer (PRAL) Library</a> &raquo; <a class="el" href="a00362.html">Oscillator Module (OSC)</a></div></div>  </div>
+<div class="title">Hardware Version ID<div class="ingroups"><a class="el" href="a00534.html">Hardware Abstraction Layer</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Private properties of the OSC PRAL driver.  
+<p>Global identified to the hardware version used.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Private Properties:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Hardware Version ID:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00378.svg" width="346" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00378.svg" width="346" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ga357534a95fc647ca58434b7208581d27"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00378.html#ga357534a95fc647ca58434b7208581d27">OSC_CLKSW_TIMEOUT</a>&#160;&#160;&#160;50000</td></tr>
-<tr class="memdesc:ga357534a95fc647ca58434b7208581d27"><td class="mdescLeft">&#160;</td><td class="mdescRight">value to set the timeout for clock switching operations  <a href="a00378.html#ga357534a95fc647ca58434b7208581d27">More...</a><br /></td></tr>
-<tr class="separator:ga357534a95fc647ca58434b7208581d27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ga46b6a266d748ecc4aee5e5036ff2ffe1"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a00904.html">OSCILLATOR_SYSTEM_FREQUENCIES_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00378.html#ga46b6a266d748ecc4aee5e5036ff2ffe1">system_frequencies</a></td></tr>
-<tr class="separator:ga46b6a266d748ecc4aee5e5036ff2ffe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafff853e38ff5aca0cdf027be10f6a043"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00378.html#gafff853e38ff5aca0cdf027be10f6a043">__DPSK3_R30__</a></td></tr>
+<tr class="memdesc:gafff853e38ff5aca0cdf027be10f6a043"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global macro identifying the hardware version supported by.  <a href="a00378.html#gafff853e38ff5aca0cdf027be10f6a043">More...</a><br /></td></tr>
+<tr class="separator:gafff853e38ff5aca0cdf027be10f6a043"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Private properties of the OSC PRAL driver. </p>
-<p>This is the detailed description of privte variables, data types, enumerations, defines and macros of the OSC PRAL driver </p>
+<p>Global identified to the hardware version used. </p>
+<p>The main purpose or a hardware abstraction layer is to provide one central point in complex firmware architectures where hardware dependencies can be specified, signal scalings can be defined and specific chip resources can be assigned to support/ connect generic software functions to the hardware.</p>
+<p>This central definitions allow fast modifications and optimizations but also support fast code migration between different hardware platforms. Thus, fast adaptation of new hardware can be achieved by modifying this set of centralized definitions.</p>
+<p>By including a hardware abstraction header file in a project results in an automated adaptation of all parameters available. To ensure no conflicts occur, each hardware abstraction layer header file needs a unique identifier. This unique identifier is provided by the so-called Hardware Version ID. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga357534a95fc647ca58434b7208581d27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga357534a95fc647ca58434b7208581d27">&#9670;&nbsp;</a></span>OSC_CLKSW_TIMEOUT</h2>
+<a id="gafff853e38ff5aca0cdf027be10f6a043"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafff853e38ff5aca0cdf027be10f6a043">&#9670;&nbsp;</a></span>__DPSK3_R30__</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define OSC_CLKSW_TIMEOUT&#160;&#160;&#160;50000</td>
+          <td class="memname">#define __DPSK3_R30__</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>value to set the timeout for clock switching operations </p>
+<p>Global macro identifying the hardware version supported by. </p>
+<p>This global macro is used to identify the hardware version supported by this hardware abstraction layer header file. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00068_source.html#l00023">23</a> of file <a class="el" href="a00068_source.html">p33c_osc.c</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="ga46b6a266d748ecc4aee5e5036ff2ffe1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga46b6a266d748ecc4aee5e5036ff2ffe1">&#9670;&nbsp;</a></span>system_frequencies</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="a00904.html">OSCILLATOR_SYSTEM_FREQUENCIES_s</a> system_frequencies</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00068_source.html#l00001">1</a> of file <a class="el" href="a00068_source.html">p33c_osc.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00052">52</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

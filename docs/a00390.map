@@ -1,4 +1,4 @@
 <map id="User Settings" name="User Settings">
-<area shape="rect" id="node1" href="$a00389.html" title="Declaration of startup timing periods." alt="" coords="5,5,164,31"/>
-<area shape="rect" id="node2" title="User&#45;declaration of startup timing periods using physical quantities." alt="" coords="212,5,313,31"/>
+<area shape="rect" id="node1" title="User&#45;declaration of fault object trip and recovery delays using physical quantities." alt="" coords="219,5,320,31"/>
+<area shape="rect" id="node2" href="$a00389.html" title="Declaration of fault object trip and recovery delays." alt="" coords="5,5,171,31"/>
 </map>

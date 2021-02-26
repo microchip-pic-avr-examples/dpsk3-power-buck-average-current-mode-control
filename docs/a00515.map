@@ -1,8 +1,4 @@
-<map id="Push&#45;Button Library" name="Push&#45;Button Library">
-<area shape="rect" id="node1" href="$a00517.html" title="Public properties of the push button device driver library." alt="" coords="379,5,500,31"/>
-<area shape="rect" id="node2" href="$a00519.html" title="Private properties of the push button device driver library." alt="" coords="377,55,501,80"/>
-<area shape="rect" id="node3" href="$a00516.html" title="Public functions of the push button device driver library." alt="" coords="380,104,499,129"/>
-<area shape="rect" id="node4" title=" " alt="" coords="192,80,329,105"/>
-<area shape="rect" id="node6" href="$a00518.html" title="Private functions of the push button device driver library." alt="" coords="378,153,501,179"/>
-<area shape="rect" id="node5" href="$a00539.html" title="Generic Device Driver Layer." alt="" coords="5,73,144,113"/>
+<map id="Private Functions" name="Private Functions">
+<area shape="rect" id="node1" href="$a00512.html" title=" " alt="" coords="5,5,143,31"/>
+<area shape="rect" id="node2" title="Private functions of the push button device driver library." alt="" coords="191,5,313,31"/>
 </map>

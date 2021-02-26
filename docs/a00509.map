@@ -1,4 +1,4 @@
-<map id="Variables" name="Variables">
-<area shape="rect" id="node1" title="Public variables of the Power Converter Control driver." alt="" coords="135,5,211,31"/>
-<area shape="rect" id="node2" href="$a00505.html" title="Public properties of the Power Converter Control driver." alt="" coords="5,5,87,31"/>
+<map id="Public Properties" name="Public Properties">
+<area shape="rect" id="node1" href="$a00507.html" title=" " alt="" coords="5,5,168,45"/>
+<area shape="rect" id="node2" title="Public properties of the application layer of the push button task." alt="" coords="216,13,337,38"/>
 </map>

@@ -1,9 +1,22 @@
 var a00468 =
 [
-    [ "drv_BuckConverter_Execute", "a00468.html#gab9877f90ffb129964ae42ce2921b3fe1", null ],
-    [ "drv_BuckConverter_Initialize", "a00468.html#gaf3c64772d6dfd473d6924fb8893bd180", null ],
-    [ "drv_BuckConverter_Resume", "a00468.html#gaadb710d81053fd0ab75b305f1f329bf6", null ],
-    [ "drv_BuckConverter_Start", "a00468.html#ga86289c82938655142075e84ac90aa603", null ],
-    [ "drv_BuckConverter_Stop", "a00468.html#ga61726ccfa8287fe57683d2aa6423d6e0", null ],
-    [ "drv_BuckConverter_Suspend", "a00468.html#ga0d68d132b52175c43503c9b5794bae64", null ]
+    [ "BUCK_CONVERTER_CONSTANTS_s", "a01485.html", [
+      [ "ControlModes", "a01485.html#ae6ee4010e24872f5eda7319fd21ee25f", null ],
+      [ "OpStateOpCodes", "a01485.html#a828f1c330e2aeb5b9d2db1c5936cf086", null ],
+      [ "OpStateReturnValues", "a01485.html#aedb094fb2eddc45cd58e26d47139f34e", null ],
+      [ "StatusFlags", "a01485.html#a6724e9f45f6aa73bf8322d0aaecbce89", null ],
+      [ "SubStateOpCodes", "a01485.html#a9b09dca4c4bd35f70befa5fb5fcf03b3", null ]
+    ] ],
+    [ "BUCK_CONVERTER_s", "a01557.html", [
+      [ "data", "a01557.html#ace365e404e1a839717de3d05ee55d27a", null ],
+      [ "feedback", "a01557.html#a4bdf290e23328593c3529fc00cb5d988", null ],
+      [ "gpio", "a01557.html#a9655fde1811cf7e7a047c1db518e43b2", null ],
+      [ "i_loop", "a01557.html#ae543a879ec2d43fb4047319426c431b4", null ],
+      [ "set_values", "a01557.html#acf310bb58637ce822a55aea5e6ee80de", null ],
+      [ "startup", "a01557.html#ae6f84e16ed482dd002e9e109ccede1b0", null ],
+      [ "state_id", "a01557.html#a39dcaff2683f776cab8d19f12e4ee7a5", null ],
+      [ "status", "a01557.html#a3f64d0961e6a7e4534dafa86d60348b1", null ],
+      [ "sw_node", "a01557.html#a17d0c1176b7be906e4e009e2cf10e3ff", null ],
+      [ "v_loop", "a01557.html#acc8ce31db94494416ddda164332a40c9", null ]
+    ] ]
 ];

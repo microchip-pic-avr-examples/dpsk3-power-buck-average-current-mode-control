@@ -1,6 +1,7 @@
-<map id="Fault Response Settings" name="Fault Response Settings">
-<area shape="rect" id="node1" href="$a00537.html" title="Hardware Abstraction Layer Declarations." alt="" coords="5,23,152,63"/>
-<area shape="rect" id="node3" title="Declaration of fault object trip and recovery delays." alt="" coords="200,31,365,56"/>
-<area shape="rect" id="node2" href="$a00393.html" title="User&#45;declaration of fault object trip and recovery delays using physical quantities." alt="" coords="429,5,530,31"/>
-<area shape="rect" id="node4" href="$a00394.html" title="Conversion macros for user declarations of fault object trip and recovery delays." alt="" coords="413,55,545,80"/>
+<map id="PWM Settings" name="PWM Settings">
+<area shape="rect" id="node1" href="$a00534.html" title="Hardware Abstraction Layer Declarations." alt="" coords="5,47,152,87"/>
+<area shape="rect" id="node5" title="Declaration of fundamental PWM parameters." alt="" coords="200,55,307,80"/>
+<area shape="rect" id="node2" href="$a00395.html" title="PWM peripheral output pins, control signals and register assignments." alt="" coords="355,5,532,31"/>
+<area shape="rect" id="node3" href="$a00394.html" title="Conversion macros converting physical quantities of parameters into binary (integer) numbers for regi..." alt="" coords="377,55,509,80"/>
+<area shape="rect" id="node4" href="$a00393.html" title="Parameter defintions using physical quantities." alt="" coords="393,104,494,129"/>
 </map>
