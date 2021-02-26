@@ -104,360 +104,360 @@ $(document).ready(function(){initNavTree('a00394.html',''); initResizable(); });
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Conversion Macros<div class="ingroups"><a class="el" href="a00534.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00392.html">PWM Settings</a></div></div>  </div>
+<div class="title">Conversion Macros<div class="ingroups"><a class="el" href="a00537.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00392.html">Fault Response Settings</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Conversion macros converting physical quantities of parameters into binary (integer) numbers for registers and variables.  
+<p>Conversion macros for user declarations of fault object trip and recovery delays.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Conversion Macros:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00394.svg" width="298" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00394.svg" width="356" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
-<tr class="memitem:gaeee647e1d9ee7976f26810db539bf3d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#gaeee647e1d9ee7976f26810db539bf3d2">BUCK_SWITCHING_PERIOD</a>&#160;&#160;&#160;(float)(1.0/<a class="el" href="a00393.html#gadecc3fb9cc6da0d2add11d577d50d5b5">BUCK_SWITCHING_FREQUENCY</a>)</td></tr>
-<tr class="memdesc:gaeee647e1d9ee7976f26810db539bf3d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion macros for user-declarations of PWM parameters.  <a href="a00394.html#gaeee647e1d9ee7976f26810db539bf3d2">More...</a><br /></td></tr>
-<tr class="separator:gaeee647e1d9ee7976f26810db539bf3d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf74e7d1749ac835a5c6be8c3faa8be80"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#gaf74e7d1749ac835a5c6be8c3faa8be80">BUCK_PWM_PERIOD</a>&#160;&#160;&#160;(uint16_t)(float)(<a class="el" href="a00394.html#gaeee647e1d9ee7976f26810db539bf3d2">BUCK_SWITCHING_PERIOD</a> / <a class="el" href="a00381.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td></tr>
-<tr class="memdesc:gaf74e7d1749ac835a5c6be8c3faa8be80"><td class="mdescLeft">&#160;</td><td class="mdescRight">This sets the switching period of the converter.  <a href="a00394.html#gaf74e7d1749ac835a5c6be8c3faa8be80">More...</a><br /></td></tr>
-<tr class="separator:gaf74e7d1749ac835a5c6be8c3faa8be80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8d1f73f218b93bd2301373cf458f8c85"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#ga8d1f73f218b93bd2301373cf458f8c85">BUCK_PWM_PHASE_SHIFT</a>&#160;&#160;&#160;(uint16_t)((float)<a class="el" href="a00394.html#gaf74e7d1749ac835a5c6be8c3faa8be80">BUCK_PWM_PERIOD</a> / (float)<a class="el" href="a00393.html#ga353ba60329e90d1aca97deba7e0bd669">BUCK_NO_OF_PHASES</a>)</td></tr>
-<tr class="memdesc:ga8d1f73f218b93bd2301373cf458f8c85"><td class="mdescLeft">&#160;</td><td class="mdescRight">This sets the phase shift between phase #1 and #2.  <a href="a00394.html#ga8d1f73f218b93bd2301373cf458f8c85">More...</a><br /></td></tr>
-<tr class="separator:ga8d1f73f218b93bd2301373cf458f8c85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae2647a90f6c1fd8f7a3bb2a236a3b187"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#gae2647a90f6c1fd8f7a3bb2a236a3b187">BUCK_PWM_DC_MIN</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00393.html#gabcc43f4201492160173351db97ddcfda">BUCK_PWM_DUTY_CYCLE_MIN</a> * (float)<a class="el" href="a00394.html#gaf74e7d1749ac835a5c6be8c3faa8be80">BUCK_PWM_PERIOD</a>)</td></tr>
-<tr class="memdesc:gae2647a90f6c1fd8f7a3bb2a236a3b187"><td class="mdescLeft">&#160;</td><td class="mdescRight">This sets the minimum duty cycle.  <a href="a00394.html#gae2647a90f6c1fd8f7a3bb2a236a3b187">More...</a><br /></td></tr>
-<tr class="separator:gae2647a90f6c1fd8f7a3bb2a236a3b187"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1d48ac69185f603b84967ce0e8d41713"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#ga1d48ac69185f603b84967ce0e8d41713">BUCK_PWM_DC_MAX</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00393.html#ga355fe35bc08bc0f4657be7f638a643a6">BUCK_PWM_DUTY_CYCLE_MAX</a> * (float)<a class="el" href="a00394.html#gaf74e7d1749ac835a5c6be8c3faa8be80">BUCK_PWM_PERIOD</a>)</td></tr>
-<tr class="memdesc:ga1d48ac69185f603b84967ce0e8d41713"><td class="mdescLeft">&#160;</td><td class="mdescRight">This sets the maximum duty cycle.  <a href="a00394.html#ga1d48ac69185f603b84967ce0e8d41713">More...</a><br /></td></tr>
-<tr class="separator:ga1d48ac69185f603b84967ce0e8d41713"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab995ebe4d204b2618814cea80f7d6eb0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#gab995ebe4d204b2618814cea80f7d6eb0">BUCK_LEB_PERIOD</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00393.html#ga53e830102be3559594f1f107c42e3cb2">BUCK_LEADING_EDGE_BLANKING</a> / (float)<a class="el" href="a00381.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td></tr>
-<tr class="memdesc:gab995ebe4d204b2618814cea80f7d6eb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leading Edge Blanking = n x PWM resolution (here: 50 x 2ns = 100ns)  <a href="a00394.html#gab995ebe4d204b2618814cea80f7d6eb0">More...</a><br /></td></tr>
-<tr class="separator:gab995ebe4d204b2618814cea80f7d6eb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gace85e0df46d4d83380cdd555d5e572bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#gace85e0df46d4d83380cdd555d5e572bb">BUCK_PWM_DEAD_TIME_LE</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00393.html#gaee8430cb24cfc1cdd3b12dd3c40b09d5">BUCK_DEAD_TIME_LEADING_EDGE</a> / (float)<a class="el" href="a00381.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td></tr>
-<tr class="memdesc:gace85e0df46d4d83380cdd555d5e572bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rising edge dead time [tick = 250ps].  <a href="a00394.html#gace85e0df46d4d83380cdd555d5e572bb">More...</a><br /></td></tr>
-<tr class="separator:gace85e0df46d4d83380cdd555d5e572bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2887c277f2ac42c326c2ccf61b3b1f3d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#ga2887c277f2ac42c326c2ccf61b3b1f3d">BUCK_PWM_DEAD_TIME_FE</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00393.html#gafe895b572c7fdeced04221d53c18695d">BUCK_DEAD_TIME_FALLING_EDGE</a> / (float)<a class="el" href="a00381.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td></tr>
-<tr class="memdesc:ga2887c277f2ac42c326c2ccf61b3b1f3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Falling edge dead time [tick = 250ps].  <a href="a00394.html#ga2887c277f2ac42c326c2ccf61b3b1f3d">More...</a><br /></td></tr>
-<tr class="separator:ga2887c277f2ac42c326c2ccf61b3b1f3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9761ffc82ba31b2d74dc97f7fa9e59d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#ga9761ffc82ba31b2d74dc97f7fa9e59d3">BOOST_SWITCHING_PERIOD</a>&#160;&#160;&#160;(float)(1.0/<a class="el" href="a00393.html#ga190c68d192a604d70087146623fedd1d">BOOST_SWITCHING_FREQUENCY</a>)</td></tr>
-<tr class="memdesc:ga9761ffc82ba31b2d74dc97f7fa9e59d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion macros for user-declarations of PWM parameters.  <a href="a00394.html#ga9761ffc82ba31b2d74dc97f7fa9e59d3">More...</a><br /></td></tr>
-<tr class="separator:ga9761ffc82ba31b2d74dc97f7fa9e59d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaea6976b3f447778b9ad2fa13f59d1b6c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#gaea6976b3f447778b9ad2fa13f59d1b6c">BOOST_PWM_PERIOD</a>&#160;&#160;&#160;(uint16_t)(float)(<a class="el" href="a00394.html#ga9761ffc82ba31b2d74dc97f7fa9e59d3">BOOST_SWITCHING_PERIOD</a> / <a class="el" href="a00381.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td></tr>
-<tr class="memdesc:gaea6976b3f447778b9ad2fa13f59d1b6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This sets the switching period of the converter.  <a href="a00394.html#gaea6976b3f447778b9ad2fa13f59d1b6c">More...</a><br /></td></tr>
-<tr class="separator:gaea6976b3f447778b9ad2fa13f59d1b6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9307dbea0e54e2e63f9e16474d52cc27"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#ga9307dbea0e54e2e63f9e16474d52cc27">BOOST_PWM_PHASE_SHIFT</a>&#160;&#160;&#160;(uint16_t)((float)<a class="el" href="a00394.html#gaea6976b3f447778b9ad2fa13f59d1b6c">BOOST_PWM_PERIOD</a> / (float)<a class="el" href="a00393.html#ga5208c54df1cdb14e00e62eb7957820f6">BOOST_NO_OF_PHASES</a>)</td></tr>
-<tr class="memdesc:ga9307dbea0e54e2e63f9e16474d52cc27"><td class="mdescLeft">&#160;</td><td class="mdescRight">This sets the phase shift between phase #1 and #2.  <a href="a00394.html#ga9307dbea0e54e2e63f9e16474d52cc27">More...</a><br /></td></tr>
-<tr class="separator:ga9307dbea0e54e2e63f9e16474d52cc27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2b04d5efbae62e16fd8dfe59f186e0e4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#ga2b04d5efbae62e16fd8dfe59f186e0e4">BOOST_PWM_DC_MIN</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00393.html#gaf4b6b5baf07ba17e75f66ec5305c68fb">BOOST_PWM_DUTY_CYCLE_MIN</a> * (float)<a class="el" href="a00394.html#gaea6976b3f447778b9ad2fa13f59d1b6c">BOOST_PWM_PERIOD</a>)</td></tr>
-<tr class="memdesc:ga2b04d5efbae62e16fd8dfe59f186e0e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This sets the minimum duty cycle.  <a href="a00394.html#ga2b04d5efbae62e16fd8dfe59f186e0e4">More...</a><br /></td></tr>
-<tr class="separator:ga2b04d5efbae62e16fd8dfe59f186e0e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga80b5db734cfd87c6c86e129cebc41e7d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#ga80b5db734cfd87c6c86e129cebc41e7d">BOOST_PWM_DC_MAX</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00393.html#gafe2eededed4304c44e47642b9093beda">BOOST_PWM_DUTY_CYCLE_MAX</a> * (float)<a class="el" href="a00394.html#gaea6976b3f447778b9ad2fa13f59d1b6c">BOOST_PWM_PERIOD</a>)</td></tr>
-<tr class="memdesc:ga80b5db734cfd87c6c86e129cebc41e7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This sets the maximum duty cycle.  <a href="a00394.html#ga80b5db734cfd87c6c86e129cebc41e7d">More...</a><br /></td></tr>
-<tr class="separator:ga80b5db734cfd87c6c86e129cebc41e7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8a933141f646bbc652df2cd125537355"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#ga8a933141f646bbc652df2cd125537355">BOOST_LEB_PERIOD</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00393.html#gadef417fa6e9b29f43fc1b26321f07750">BOOST_LEADING_EDGE_BLANKING</a> / (float)<a class="el" href="a00381.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td></tr>
-<tr class="memdesc:ga8a933141f646bbc652df2cd125537355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leading Edge Blanking = n x PWM resolution (here: 50 x 2ns = 100ns)  <a href="a00394.html#ga8a933141f646bbc652df2cd125537355">More...</a><br /></td></tr>
-<tr class="separator:ga8a933141f646bbc652df2cd125537355"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa09f46099993bd71d6af50f3432826e9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#gaa09f46099993bd71d6af50f3432826e9">BOOST_PWM_DEAD_TIME_LE</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00393.html#ga30bc95c5be03be162bd08c04706e34b2">BOOST_DEAD_TIME_LEADING_EDGE</a> / (float)<a class="el" href="a00381.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td></tr>
-<tr class="memdesc:gaa09f46099993bd71d6af50f3432826e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rising edge dead time [tick = 250ps].  <a href="a00394.html#gaa09f46099993bd71d6af50f3432826e9">More...</a><br /></td></tr>
-<tr class="separator:gaa09f46099993bd71d6af50f3432826e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8941ff7355e606ac980fc5002fcb9844"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#ga8941ff7355e606ac980fc5002fcb9844">BOOST_PWM_DEAD_TIME_FE</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00393.html#gacc7415a2a9fd14abe19588dac5804b22">BOOST_DEAD_TIME_FALLING_EDGE</a> / (float)<a class="el" href="a00381.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td></tr>
-<tr class="memdesc:ga8941ff7355e606ac980fc5002fcb9844"><td class="mdescLeft">&#160;</td><td class="mdescRight">Falling edge dead time [tick = 250ps].  <a href="a00394.html#ga8941ff7355e606ac980fc5002fcb9844">More...</a><br /></td></tr>
-<tr class="separator:ga8941ff7355e606ac980fc5002fcb9844"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf019187252e22bf0b5ba36f8c24a796b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#gaf019187252e22bf0b5ba36f8c24a796b">BUCK_UVLO_TDLY</a>&#160;&#160;&#160;(uint16_t)(((float)      <a class="el" href="a00393.html#gad91c6030149a6a40c03c236c6245195b">BUCK_UVLO_TRIP_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
+<tr class="memdesc:gaf019187252e22bf0b5ba36f8c24a796b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion Macros of Fault Response Timing Settings.  <a href="a00394.html#gaf019187252e22bf0b5ba36f8c24a796b">More...</a><br /></td></tr>
+<tr class="separator:gaf019187252e22bf0b5ba36f8c24a796b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga26802d3c1f81381aabd8828738450559"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#ga26802d3c1f81381aabd8828738450559">BUCK_UVLO_RDLY</a>&#160;&#160;&#160;(uint16_t)(((float)  <a class="el" href="a00393.html#ga8fc5cc0b86b1896492fba096f1177c9e">BUCK_UVLO_RECOVERY_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
+<tr class="memdesc:ga26802d3c1f81381aabd8828738450559"><td class="mdescLeft">&#160;</td><td class="mdescRight">under voltage lock out recovery delay conversion nacro  <a href="a00394.html#ga26802d3c1f81381aabd8828738450559">More...</a><br /></td></tr>
+<tr class="separator:ga26802d3c1f81381aabd8828738450559"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2f95f26dbb49e01a4e4352b251ac1ac4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#ga2f95f26dbb49e01a4e4352b251ac1ac4">BUCK_OVLO_TDLY</a>&#160;&#160;&#160;(uint16_t)(((float)      <a class="el" href="a00393.html#ga486d5b4101d10ebea3f97ec009cf779d">BUCK_OVLO_TRIP_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
+<tr class="memdesc:ga2f95f26dbb49e01a4e4352b251ac1ac4"><td class="mdescLeft">&#160;</td><td class="mdescRight">over voltage lock out trip delay conversion nacro  <a href="a00394.html#ga2f95f26dbb49e01a4e4352b251ac1ac4">More...</a><br /></td></tr>
+<tr class="separator:ga2f95f26dbb49e01a4e4352b251ac1ac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeaf0ac8cd4701531aea9cbc915cf0048"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#gaeaf0ac8cd4701531aea9cbc915cf0048">BUCK_OVLO_RDLY</a>&#160;&#160;&#160;(uint16_t)(((float)  <a class="el" href="a00393.html#ga5c7756adddc4911f015fedb890f8270d">BUCK_OVLO_RECOVERY_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
+<tr class="memdesc:gaeaf0ac8cd4701531aea9cbc915cf0048"><td class="mdescLeft">&#160;</td><td class="mdescRight">over voltage lock out recovery delay conversion nacro  <a href="a00394.html#gaeaf0ac8cd4701531aea9cbc915cf0048">More...</a><br /></td></tr>
+<tr class="separator:gaeaf0ac8cd4701531aea9cbc915cf0048"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7ba8b1157772d52ae804f727da6a7585"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#ga7ba8b1157772d52ae804f727da6a7585">BUCK_REGERR_TDLY</a>&#160;&#160;&#160;(uint16_t)(((float)    <a class="el" href="a00393.html#ga916bec2e79815eb2364e14fc9926e551">BUCK_REGERR_TRIP_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
+<tr class="memdesc:ga7ba8b1157772d52ae804f727da6a7585"><td class="mdescLeft">&#160;</td><td class="mdescRight">regulation error trip delay conversion macro  <a href="a00394.html#ga7ba8b1157772d52ae804f727da6a7585">More...</a><br /></td></tr>
+<tr class="separator:ga7ba8b1157772d52ae804f727da6a7585"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5d7876048e15068d5e6651a5f46f84fc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#ga5d7876048e15068d5e6651a5f46f84fc">BUCK_REGERR_RDLY</a>&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00393.html#gabcc3a6cdf3286b554f1c01d64871b016">BUCK_REGERR_RECOVERY_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
+<tr class="memdesc:ga5d7876048e15068d5e6651a5f46f84fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">regulation error recovery delay conversion macro  <a href="a00394.html#ga5d7876048e15068d5e6651a5f46f84fc">More...</a><br /></td></tr>
+<tr class="separator:ga5d7876048e15068d5e6651a5f46f84fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga12a19c7fa0770351c8a4f0bfc10511e8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#ga12a19c7fa0770351c8a4f0bfc10511e8">BUCK_OCP_TDLY</a>&#160;&#160;&#160;(uint16_t)(((float)       <a class="el" href="a00393.html#ga401ff320085d325a621e3482bb1b3810">BUCK_OCP_TRIP_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
+<tr class="memdesc:ga12a19c7fa0770351c8a4f0bfc10511e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">over current protection trip Delay conversion macro  <a href="a00394.html#ga12a19c7fa0770351c8a4f0bfc10511e8">More...</a><br /></td></tr>
+<tr class="separator:ga12a19c7fa0770351c8a4f0bfc10511e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa711f0459b9c6a44ee47ef6f680cac49"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#gaa711f0459b9c6a44ee47ef6f680cac49">BUCK_OCP_RDLY</a>&#160;&#160;&#160;(uint16_t)(((float)   <a class="el" href="a00393.html#ga6cc849023abc581aad3e0fc9175bf6b7">BUCK_OCP_RECOVERY_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
+<tr class="memdesc:gaa711f0459b9c6a44ee47ef6f680cac49"><td class="mdescLeft">&#160;</td><td class="mdescRight">over current protection recovery delay conversion nacro  <a href="a00394.html#gaa711f0459b9c6a44ee47ef6f680cac49">More...</a><br /></td></tr>
+<tr class="separator:gaa711f0459b9c6a44ee47ef6f680cac49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab8b2a67978f222add5f842866e90d563"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#gab8b2a67978f222add5f842866e90d563">BOOST_UVLO_TDLY</a>&#160;&#160;&#160;(uint16_t)(((float)      <a class="el" href="a00393.html#ga3b1fff439d1fc72471a4bd5f9f9d13ee">BOOST_UVLO_TRIP_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
+<tr class="memdesc:gab8b2a67978f222add5f842866e90d563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion Macros of Fault Response Timing Settings.  <a href="a00394.html#gab8b2a67978f222add5f842866e90d563">More...</a><br /></td></tr>
+<tr class="separator:gab8b2a67978f222add5f842866e90d563"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac8ac88a56309cb5dcb5133d5403d8396"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#gac8ac88a56309cb5dcb5133d5403d8396">BOOST_UVLO_RDLY</a>&#160;&#160;&#160;(uint16_t)(((float)  <a class="el" href="a00393.html#ga54f72937fe8f99c6ceb4d115d4d913f3">BOOST_UVLO_RECOVERY_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
+<tr class="memdesc:gac8ac88a56309cb5dcb5133d5403d8396"><td class="mdescLeft">&#160;</td><td class="mdescRight">under voltage lock out recovery delay conversion nacro  <a href="a00394.html#gac8ac88a56309cb5dcb5133d5403d8396">More...</a><br /></td></tr>
+<tr class="separator:gac8ac88a56309cb5dcb5133d5403d8396"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab7ed723b159671948862bbd5938fc014"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#gab7ed723b159671948862bbd5938fc014">BOOST_OVLO_TDLY</a>&#160;&#160;&#160;(uint16_t)(((float)      <a class="el" href="a00393.html#gad5600ac9bfc38bec9b7bfe5be02540f2">BOOST_OVLO_TRIP_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
+<tr class="memdesc:gab7ed723b159671948862bbd5938fc014"><td class="mdescLeft">&#160;</td><td class="mdescRight">over voltage lock out trip delay conversion nacro  <a href="a00394.html#gab7ed723b159671948862bbd5938fc014">More...</a><br /></td></tr>
+<tr class="separator:gab7ed723b159671948862bbd5938fc014"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga74eeca885f03d35d861a135acfefcc9f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#ga74eeca885f03d35d861a135acfefcc9f">BOOST_OVLO_RDLY</a>&#160;&#160;&#160;(uint16_t)(((float)  <a class="el" href="a00393.html#gaf80ca0477099dc8e4c20d0e20bdd96a2">BOOST_OVLO_RECOVERY_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
+<tr class="memdesc:ga74eeca885f03d35d861a135acfefcc9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">over voltage lock out recovery delay conversion nacro  <a href="a00394.html#ga74eeca885f03d35d861a135acfefcc9f">More...</a><br /></td></tr>
+<tr class="separator:ga74eeca885f03d35d861a135acfefcc9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabe8eb9e44ffb20e8fbd4e27bf9605518"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#gabe8eb9e44ffb20e8fbd4e27bf9605518">BOOST_REGERR_TDLY</a>&#160;&#160;&#160;(uint16_t)(((float)    <a class="el" href="a00393.html#ga6020ebc1bd9132e1127b17c461d78189">BOOST_REGERR_TRIP_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
+<tr class="memdesc:gabe8eb9e44ffb20e8fbd4e27bf9605518"><td class="mdescLeft">&#160;</td><td class="mdescRight">regulation error trip delay conversion macro  <a href="a00394.html#gabe8eb9e44ffb20e8fbd4e27bf9605518">More...</a><br /></td></tr>
+<tr class="separator:gabe8eb9e44ffb20e8fbd4e27bf9605518"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3bc85c3c81befdb6e648607e7963f873"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#ga3bc85c3c81befdb6e648607e7963f873">BOOST_REGERR_RDLY</a>&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00393.html#gaabf755c80166ab949147643eb8ea5ba1">BOOST_REGERR_RECOVERY_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
+<tr class="memdesc:ga3bc85c3c81befdb6e648607e7963f873"><td class="mdescLeft">&#160;</td><td class="mdescRight">regulation error recovery delay conversion macro  <a href="a00394.html#ga3bc85c3c81befdb6e648607e7963f873">More...</a><br /></td></tr>
+<tr class="separator:ga3bc85c3c81befdb6e648607e7963f873"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad2f97b558d7cafe96553b6fb634bd92c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#gad2f97b558d7cafe96553b6fb634bd92c">BOOST_OCP_TDLY</a>&#160;&#160;&#160;(uint16_t)(((float)       <a class="el" href="a00393.html#ga679b8b944ffd26351d12e757af8b37a7">BOOST_OCP_TRIP_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
+<tr class="memdesc:gad2f97b558d7cafe96553b6fb634bd92c"><td class="mdescLeft">&#160;</td><td class="mdescRight">over current protection trip Delay conversion macro  <a href="a00394.html#gad2f97b558d7cafe96553b6fb634bd92c">More...</a><br /></td></tr>
+<tr class="separator:gad2f97b558d7cafe96553b6fb634bd92c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5d1f75618cb0c1b174e1d071ad85afe9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00394.html#ga5d1f75618cb0c1b174e1d071ad85afe9">BOOST_OCP_RDLY</a>&#160;&#160;&#160;(uint16_t)(((float)   <a class="el" href="a00393.html#ga21aabda6c863b4f02b903056dd51a886">BOOST_OCP_RECOVERY_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
+<tr class="memdesc:ga5d1f75618cb0c1b174e1d071ad85afe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">over current protection recovery delay conversion nacro  <a href="a00394.html#ga5d1f75618cb0c1b174e1d071ad85afe9">More...</a><br /></td></tr>
+<tr class="separator:ga5d1f75618cb0c1b174e1d071ad85afe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Conversion macros converting physical quantities of parameters into binary (integer) numbers for registers and variables. </p>
+<p>Conversion macros for user declarations of fault object trip and recovery delays. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga8a933141f646bbc652df2cd125537355"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8a933141f646bbc652df2cd125537355">&#9670;&nbsp;</a></span>BOOST_LEB_PERIOD</h2>
+<a id="ga5d1f75618cb0c1b174e1d071ad85afe9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5d1f75618cb0c1b174e1d071ad85afe9">&#9670;&nbsp;</a></span>BOOST_OCP_RDLY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_LEB_PERIOD&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00393.html#gadef417fa6e9b29f43fc1b26321f07750">BOOST_LEADING_EDGE_BLANKING</a> / (float)<a class="el" href="a00381.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td>
+          <td class="memname">#define BOOST_OCP_RDLY&#160;&#160;&#160;(uint16_t)(((float)   <a class="el" href="a00393.html#ga21aabda6c863b4f02b903056dd51a886">BOOST_OCP_RECOVERY_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Leading Edge Blanking = n x PWM resolution (here: 50 x 2ns = 100ns) </p>
+<p>over current protection recovery delay conversion nacro </p>
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00995">995</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01504">1504</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga80b5db734cfd87c6c86e129cebc41e7d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga80b5db734cfd87c6c86e129cebc41e7d">&#9670;&nbsp;</a></span>BOOST_PWM_DC_MAX</h2>
+<a id="gad2f97b558d7cafe96553b6fb634bd92c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad2f97b558d7cafe96553b6fb634bd92c">&#9670;&nbsp;</a></span>BOOST_OCP_TDLY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_PWM_DC_MAX&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00393.html#gafe2eededed4304c44e47642b9093beda">BOOST_PWM_DUTY_CYCLE_MAX</a> * (float)<a class="el" href="a00394.html#gaea6976b3f447778b9ad2fa13f59d1b6c">BOOST_PWM_PERIOD</a>)</td>
+          <td class="memname">#define BOOST_OCP_TDLY&#160;&#160;&#160;(uint16_t)(((float)       <a class="el" href="a00393.html#ga679b8b944ffd26351d12e757af8b37a7">BOOST_OCP_TRIP_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>This sets the maximum duty cycle. </p>
+<p>over current protection trip Delay conversion macro </p>
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00994">994</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01503">1503</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga2b04d5efbae62e16fd8dfe59f186e0e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2b04d5efbae62e16fd8dfe59f186e0e4">&#9670;&nbsp;</a></span>BOOST_PWM_DC_MIN</h2>
+<a id="ga74eeca885f03d35d861a135acfefcc9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga74eeca885f03d35d861a135acfefcc9f">&#9670;&nbsp;</a></span>BOOST_OVLO_RDLY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_PWM_DC_MIN&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00393.html#gaf4b6b5baf07ba17e75f66ec5305c68fb">BOOST_PWM_DUTY_CYCLE_MIN</a> * (float)<a class="el" href="a00394.html#gaea6976b3f447778b9ad2fa13f59d1b6c">BOOST_PWM_PERIOD</a>)</td>
+          <td class="memname">#define BOOST_OVLO_RDLY&#160;&#160;&#160;(uint16_t)(((float)  <a class="el" href="a00393.html#gaf80ca0477099dc8e4c20d0e20bdd96a2">BOOST_OVLO_RECOVERY_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>This sets the minimum duty cycle. </p>
+<p>over voltage lock out recovery delay conversion nacro </p>
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00993">993</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01500">1500</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga8941ff7355e606ac980fc5002fcb9844"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8941ff7355e606ac980fc5002fcb9844">&#9670;&nbsp;</a></span>BOOST_PWM_DEAD_TIME_FE</h2>
+<a id="gab7ed723b159671948862bbd5938fc014"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab7ed723b159671948862bbd5938fc014">&#9670;&nbsp;</a></span>BOOST_OVLO_TDLY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_PWM_DEAD_TIME_FE&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00393.html#gacc7415a2a9fd14abe19588dac5804b22">BOOST_DEAD_TIME_FALLING_EDGE</a> / (float)<a class="el" href="a00381.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td>
+          <td class="memname">#define BOOST_OVLO_TDLY&#160;&#160;&#160;(uint16_t)(((float)      <a class="el" href="a00393.html#gad5600ac9bfc38bec9b7bfe5be02540f2">BOOST_OVLO_TRIP_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Falling edge dead time [tick = 250ps]. </p>
+<p>over voltage lock out trip delay conversion nacro </p>
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00997">997</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01499">1499</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gaa09f46099993bd71d6af50f3432826e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa09f46099993bd71d6af50f3432826e9">&#9670;&nbsp;</a></span>BOOST_PWM_DEAD_TIME_LE</h2>
+<a id="ga3bc85c3c81befdb6e648607e7963f873"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3bc85c3c81befdb6e648607e7963f873">&#9670;&nbsp;</a></span>BOOST_REGERR_RDLY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_PWM_DEAD_TIME_LE&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00393.html#ga30bc95c5be03be162bd08c04706e34b2">BOOST_DEAD_TIME_LEADING_EDGE</a> / (float)<a class="el" href="a00381.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td>
+          <td class="memname">#define BOOST_REGERR_RDLY&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00393.html#gaabf755c80166ab949147643eb8ea5ba1">BOOST_REGERR_RECOVERY_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Rising edge dead time [tick = 250ps]. </p>
+<p>regulation error recovery delay conversion macro </p>
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00996">996</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01502">1502</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gaea6976b3f447778b9ad2fa13f59d1b6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaea6976b3f447778b9ad2fa13f59d1b6c">&#9670;&nbsp;</a></span>BOOST_PWM_PERIOD</h2>
+<a id="gabe8eb9e44ffb20e8fbd4e27bf9605518"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabe8eb9e44ffb20e8fbd4e27bf9605518">&#9670;&nbsp;</a></span>BOOST_REGERR_TDLY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_PWM_PERIOD&#160;&#160;&#160;(uint16_t)(float)(<a class="el" href="a00394.html#ga9761ffc82ba31b2d74dc97f7fa9e59d3">BOOST_SWITCHING_PERIOD</a> / <a class="el" href="a00381.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td>
+          <td class="memname">#define BOOST_REGERR_TDLY&#160;&#160;&#160;(uint16_t)(((float)    <a class="el" href="a00393.html#ga6020ebc1bd9132e1127b17c461d78189">BOOST_REGERR_TRIP_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>This sets the switching period of the converter. </p>
+<p>regulation error trip delay conversion macro </p>
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00991">991</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01501">1501</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga9307dbea0e54e2e63f9e16474d52cc27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9307dbea0e54e2e63f9e16474d52cc27">&#9670;&nbsp;</a></span>BOOST_PWM_PHASE_SHIFT</h2>
+<a id="gac8ac88a56309cb5dcb5133d5403d8396"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac8ac88a56309cb5dcb5133d5403d8396">&#9670;&nbsp;</a></span>BOOST_UVLO_RDLY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_PWM_PHASE_SHIFT&#160;&#160;&#160;(uint16_t)((float)<a class="el" href="a00394.html#gaea6976b3f447778b9ad2fa13f59d1b6c">BOOST_PWM_PERIOD</a> / (float)<a class="el" href="a00393.html#ga5208c54df1cdb14e00e62eb7957820f6">BOOST_NO_OF_PHASES</a>)</td>
+          <td class="memname">#define BOOST_UVLO_RDLY&#160;&#160;&#160;(uint16_t)(((float)  <a class="el" href="a00393.html#ga54f72937fe8f99c6ceb4d115d4d913f3">BOOST_UVLO_RECOVERY_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>This sets the phase shift between phase #1 and #2. </p>
+<p>under voltage lock out recovery delay conversion nacro </p>
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00992">992</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01498">1498</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga9761ffc82ba31b2d74dc97f7fa9e59d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9761ffc82ba31b2d74dc97f7fa9e59d3">&#9670;&nbsp;</a></span>BOOST_SWITCHING_PERIOD</h2>
+<a id="gab8b2a67978f222add5f842866e90d563"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab8b2a67978f222add5f842866e90d563">&#9670;&nbsp;</a></span>BOOST_UVLO_TDLY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_SWITCHING_PERIOD&#160;&#160;&#160;(float)(1.0/<a class="el" href="a00393.html#ga190c68d192a604d70087146623fedd1d">BOOST_SWITCHING_FREQUENCY</a>)</td>
+          <td class="memname">#define BOOST_UVLO_TDLY&#160;&#160;&#160;(uint16_t)(((float)      <a class="el" href="a00393.html#ga3b1fff439d1fc72471a4bd5f9f9d13ee">BOOST_UVLO_TRIP_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Conversion macros for user-declarations of PWM parameters. </p>
-<p>These conversion macros are used to convert user settings defined as physical quantities into binary (integer) numbers, which will be written to registers and variables and used in calculations throughout the firmware. Switching period in [sec] </p>
+<p>Conversion Macros of Fault Response Timing Settings. </p>
+<p>These conversion macros are used to convert user settings defined as physical quantities into binary (integer) numbers, which will be written to registers and variables and used in calculations throughout the firmware. under voltage lock out trip delay conversion nacro </p>
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00990">990</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01497">1497</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gab995ebe4d204b2618814cea80f7d6eb0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab995ebe4d204b2618814cea80f7d6eb0">&#9670;&nbsp;</a></span>BUCK_LEB_PERIOD</h2>
+<a id="gaa711f0459b9c6a44ee47ef6f680cac49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa711f0459b9c6a44ee47ef6f680cac49">&#9670;&nbsp;</a></span>BUCK_OCP_RDLY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_LEB_PERIOD&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00393.html#ga53e830102be3559594f1f107c42e3cb2">BUCK_LEADING_EDGE_BLANKING</a> / (float)<a class="el" href="a00381.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td>
+          <td class="memname">#define BUCK_OCP_RDLY&#160;&#160;&#160;(uint16_t)(((float)   <a class="el" href="a00393.html#ga6cc849023abc581aad3e0fc9175bf6b7">BUCK_OCP_RECOVERY_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Leading Edge Blanking = n x PWM resolution (here: 50 x 2ns = 100ns) </p>
+<p>over current protection recovery delay conversion nacro </p>
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00362">362</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00865">865</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga1d48ac69185f603b84967ce0e8d41713"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga1d48ac69185f603b84967ce0e8d41713">&#9670;&nbsp;</a></span>BUCK_PWM_DC_MAX</h2>
+<a id="ga12a19c7fa0770351c8a4f0bfc10511e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga12a19c7fa0770351c8a4f0bfc10511e8">&#9670;&nbsp;</a></span>BUCK_OCP_TDLY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_PWM_DC_MAX&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00393.html#ga355fe35bc08bc0f4657be7f638a643a6">BUCK_PWM_DUTY_CYCLE_MAX</a> * (float)<a class="el" href="a00394.html#gaf74e7d1749ac835a5c6be8c3faa8be80">BUCK_PWM_PERIOD</a>)</td>
+          <td class="memname">#define BUCK_OCP_TDLY&#160;&#160;&#160;(uint16_t)(((float)       <a class="el" href="a00393.html#ga401ff320085d325a621e3482bb1b3810">BUCK_OCP_TRIP_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>This sets the maximum duty cycle. </p>
+<p>over current protection trip Delay conversion macro </p>
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00361">361</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00864">864</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gae2647a90f6c1fd8f7a3bb2a236a3b187"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae2647a90f6c1fd8f7a3bb2a236a3b187">&#9670;&nbsp;</a></span>BUCK_PWM_DC_MIN</h2>
+<a id="gaeaf0ac8cd4701531aea9cbc915cf0048"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaeaf0ac8cd4701531aea9cbc915cf0048">&#9670;&nbsp;</a></span>BUCK_OVLO_RDLY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_PWM_DC_MIN&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00393.html#gabcc43f4201492160173351db97ddcfda">BUCK_PWM_DUTY_CYCLE_MIN</a> * (float)<a class="el" href="a00394.html#gaf74e7d1749ac835a5c6be8c3faa8be80">BUCK_PWM_PERIOD</a>)</td>
+          <td class="memname">#define BUCK_OVLO_RDLY&#160;&#160;&#160;(uint16_t)(((float)  <a class="el" href="a00393.html#ga5c7756adddc4911f015fedb890f8270d">BUCK_OVLO_RECOVERY_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>This sets the minimum duty cycle. </p>
+<p>over voltage lock out recovery delay conversion nacro </p>
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00360">360</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00861">861</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga2887c277f2ac42c326c2ccf61b3b1f3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2887c277f2ac42c326c2ccf61b3b1f3d">&#9670;&nbsp;</a></span>BUCK_PWM_DEAD_TIME_FE</h2>
+<a id="ga2f95f26dbb49e01a4e4352b251ac1ac4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2f95f26dbb49e01a4e4352b251ac1ac4">&#9670;&nbsp;</a></span>BUCK_OVLO_TDLY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_PWM_DEAD_TIME_FE&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00393.html#gafe895b572c7fdeced04221d53c18695d">BUCK_DEAD_TIME_FALLING_EDGE</a> / (float)<a class="el" href="a00381.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td>
+          <td class="memname">#define BUCK_OVLO_TDLY&#160;&#160;&#160;(uint16_t)(((float)      <a class="el" href="a00393.html#ga486d5b4101d10ebea3f97ec009cf779d">BUCK_OVLO_TRIP_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Falling edge dead time [tick = 250ps]. </p>
+<p>over voltage lock out trip delay conversion nacro </p>
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00364">364</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00860">860</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gace85e0df46d4d83380cdd555d5e572bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gace85e0df46d4d83380cdd555d5e572bb">&#9670;&nbsp;</a></span>BUCK_PWM_DEAD_TIME_LE</h2>
+<a id="ga5d7876048e15068d5e6651a5f46f84fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5d7876048e15068d5e6651a5f46f84fc">&#9670;&nbsp;</a></span>BUCK_REGERR_RDLY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_PWM_DEAD_TIME_LE&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00393.html#gaee8430cb24cfc1cdd3b12dd3c40b09d5">BUCK_DEAD_TIME_LEADING_EDGE</a> / (float)<a class="el" href="a00381.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td>
+          <td class="memname">#define BUCK_REGERR_RDLY&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00393.html#gabcc3a6cdf3286b554f1c01d64871b016">BUCK_REGERR_RECOVERY_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Rising edge dead time [tick = 250ps]. </p>
+<p>regulation error recovery delay conversion macro </p>
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00363">363</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00863">863</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gaf74e7d1749ac835a5c6be8c3faa8be80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf74e7d1749ac835a5c6be8c3faa8be80">&#9670;&nbsp;</a></span>BUCK_PWM_PERIOD</h2>
+<a id="ga7ba8b1157772d52ae804f727da6a7585"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7ba8b1157772d52ae804f727da6a7585">&#9670;&nbsp;</a></span>BUCK_REGERR_TDLY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_PWM_PERIOD&#160;&#160;&#160;(uint16_t)(float)(<a class="el" href="a00394.html#gaeee647e1d9ee7976f26810db539bf3d2">BUCK_SWITCHING_PERIOD</a> / <a class="el" href="a00381.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td>
+          <td class="memname">#define BUCK_REGERR_TDLY&#160;&#160;&#160;(uint16_t)(((float)    <a class="el" href="a00393.html#ga916bec2e79815eb2364e14fc9926e551">BUCK_REGERR_TRIP_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>This sets the switching period of the converter. </p>
+<p>regulation error trip delay conversion macro </p>
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00358">358</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00862">862</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga8d1f73f218b93bd2301373cf458f8c85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8d1f73f218b93bd2301373cf458f8c85">&#9670;&nbsp;</a></span>BUCK_PWM_PHASE_SHIFT</h2>
+<a id="ga26802d3c1f81381aabd8828738450559"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga26802d3c1f81381aabd8828738450559">&#9670;&nbsp;</a></span>BUCK_UVLO_RDLY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_PWM_PHASE_SHIFT&#160;&#160;&#160;(uint16_t)((float)<a class="el" href="a00394.html#gaf74e7d1749ac835a5c6be8c3faa8be80">BUCK_PWM_PERIOD</a> / (float)<a class="el" href="a00393.html#ga353ba60329e90d1aca97deba7e0bd669">BUCK_NO_OF_PHASES</a>)</td>
+          <td class="memname">#define BUCK_UVLO_RDLY&#160;&#160;&#160;(uint16_t)(((float)  <a class="el" href="a00393.html#ga8fc5cc0b86b1896492fba096f1177c9e">BUCK_UVLO_RECOVERY_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>This sets the phase shift between phase #1 and #2. </p>
+<p>under voltage lock out recovery delay conversion nacro </p>
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00359">359</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00859">859</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gaeee647e1d9ee7976f26810db539bf3d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaeee647e1d9ee7976f26810db539bf3d2">&#9670;&nbsp;</a></span>BUCK_SWITCHING_PERIOD</h2>
+<a id="gaf019187252e22bf0b5ba36f8c24a796b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf019187252e22bf0b5ba36f8c24a796b">&#9670;&nbsp;</a></span>BUCK_UVLO_TDLY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_SWITCHING_PERIOD&#160;&#160;&#160;(float)(1.0/<a class="el" href="a00393.html#gadecc3fb9cc6da0d2add11d577d50d5b5">BUCK_SWITCHING_FREQUENCY</a>)</td>
+          <td class="memname">#define BUCK_UVLO_TDLY&#160;&#160;&#160;(uint16_t)(((float)      <a class="el" href="a00393.html#gad91c6030149a6a40c03c236c6245195b">BUCK_UVLO_TRIP_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Conversion macros for user-declarations of PWM parameters. </p>
-<p>These conversion macros are used to convert user settings defined as physical quantities into binary (integer) numbers, which will be written to registers and variables and used in calculations throughout the firmware. Switching period in [sec] </p>
+<p>Conversion Macros of Fault Response Timing Settings. </p>
+<p>These conversion macros are used to convert user settings defined as physical quantities into binary (integer) numbers, which will be written to registers and variables and used in calculations throughout the firmware. under voltage lock out trip delay conversion nacro </p>
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00357">357</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00858">858</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

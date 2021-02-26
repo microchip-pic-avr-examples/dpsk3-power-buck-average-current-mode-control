@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Library Driver Layer</title>
+<title>Digital Power Starter Kit 3 Firmware: Hardware Abstraction Layer</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,32 +106,67 @@ $(document).ready(function(){initNavTree('a00537.html',''); initResizable(); });
   <div class="summary">
 <a href="#groups">Modules</a>  </div>
   <div class="headertitle">
-<div class="title">Library Driver Layer</div>  </div>
+<div class="title">Hardware Abstraction Layer</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Generic Library Driver Layer.  
+<p>Hardware Abstraction Layer Declarations.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Library Driver Layer:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Hardware Abstraction Layer:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00537.svg" width="354" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00537.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
 Modules</h2></td></tr>
-<tr class="memitem:a00447"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00447.html">LC-Display Interface Driver</a></td></tr>
+<tr class="memitem:a00381"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00381.html">Hardware Version ID</a></td></tr>
+<tr class="memdesc:a00381"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global identified to the hardware version used. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00499"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00499.html">Power Converter Control Driver</a></td></tr>
+<tr class="memitem:a00382"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00382.html">Microcontroller Device Abstraction</a></td></tr>
+<tr class="memdesc:a00382"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declarations of fundamental microcontroller device parameters. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00385"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00385.html">State Machine Settings</a></td></tr>
+<tr class="memdesc:a00385"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration of global state-machine parameters. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00389"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00389.html">Startup Timing Settings</a></td></tr>
+<tr class="memdesc:a00389"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration of startup timing periods. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00392"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00392.html">Fault Response Settings</a></td></tr>
+<tr class="memdesc:a00392"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration of fault object trip and recovery delays. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00395"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00395.html">PWM Settings</a></td></tr>
+<tr class="memdesc:a00395"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration of fundamental PWM parameters. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00401"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00401.html">Input Voltage Feedback</a></td></tr>
+<tr class="memdesc:a00401"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration of input voltage feedback parameters. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00405"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html">Output Voltage Feedback</a></td></tr>
+<tr class="memdesc:a00405"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration of output voltage feedback parameters. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00409"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00409.html">Phase Current Feedback</a></td></tr>
+<tr class="memdesc:a00409"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration of phase current feedback parameters. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00413"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00413.html">Temperature Feedback</a></td></tr>
+<tr class="memdesc:a00413"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration of temperature feedback parameters. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00417"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00417.html">Adaptive Gain Control Feed Forward</a></td></tr>
+<tr class="memdesc:a00417"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration of macros calculating additional parameters for Adaptive Gain Modulation. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00419"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html">LC Display Interface Declarations</a></td></tr>
+<tr class="memdesc:a00419"><td class="mdescLeft">&#160;</td><td class="mdescRight">LC display SPI interface GPIO declarations. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00420"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00420.html">Special Circuit Signals</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00423"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00423.html">Special Firmware Options</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Generic Library Driver Layer. </p>
-<p>Library drivers are generic function libraries providing specific sub-functions for library modules. Each library driver is widely self-contained and includes functional software routines and resource management functions. Because of their generic nature, each library driver requires to be configured by proprietary user code to tailor their function to a specific application. The settings required to set up the library driver data objects are routed through the overlaying device driver, which also provides the API and public data objects holding the library driver settings.</p>
-<p>Please refer to the specific library driver for more information. </p>
+<p>Hardware Abstraction Layer Declarations. </p>
+<p>The hardware abstraction layer introduces global defines which can be used in the firmware section of the source code to reference hardware dependent parameters and device peripheral instances and features. This abstraction is essential to adapt to hardware changes including migration across microcontroller device families and hardware versions with minimum risk and time efforts. As the microcontroller used in this design is a fixed, irreplaceable board component, this particular Hardware Abstraction Layer (HAL) covers declarations of circuit control and feedback signals as well as associated microcontroller peripheral instances and features. </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

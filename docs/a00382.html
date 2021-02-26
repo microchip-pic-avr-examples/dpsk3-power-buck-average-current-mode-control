@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: State Machine Settings</title>
+<title>Digital Power Starter Kit 3 Firmware: Microcontroller Device Abstraction</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,36 +106,33 @@ $(document).ready(function(){initNavTree('a00382.html',''); initResizable(); });
   <div class="summary">
 <a href="#groups">Modules</a>  </div>
   <div class="headertitle">
-<div class="title">State Machine Settings<div class="ingroups"><a class="el" href="a00534.html">Hardware Abstraction Layer</a></div></div>  </div>
+<div class="title">Microcontroller Device Abstraction<div class="ingroups"><a class="el" href="a00537.html">Hardware Abstraction Layer</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Declaration of global state-machine parameters.  
+<p>Declarations of fundamental microcontroller device parameters.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for State Machine Settings:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Microcontroller Device Abstraction:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00382.svg" width="615" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00382.svg" width="535" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
 Modules</h2></td></tr>
 <tr class="memitem:a00383"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00383.html">User Settings</a></td></tr>
-<tr class="memdesc:a00383"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameter definitions using physical quantities. <br /></td></tr>
+<tr class="memdesc:a00383"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameter defintions using physical quantities. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00384"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00384.html">Conversion Macros</a></td></tr>
 <tr class="memdesc:a00384"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion macros converting physical quantities of parameters into binary (integer) numbers for registers and variables. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00385"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00385.html">Device Peripheral Assignments</a></td></tr>
-<tr class="memdesc:a00385"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment of microcontroller device specific chip-resources to circuit functions and signals. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Declaration of global state-machine parameters. </p>
-<p>This section is used to set global state-machine settings such as the main execution call interval. All parameters are declared using physical quantities. Pre-compiler macros are used to convert user settings into binary (integer) numbers to be written to SFRs and variables. </p>
+<p>Declarations of fundamental microcontroller device parameters. </p>
+<p>This section is used to define device specific parameters like ADC reference and resolution, main execution clock frequency and peripheral time base settings. All parameters are defined using physical quantities. Pre-compiler macros are used to convert physical values into binary (integer) numbers to be written to variables and SFRs. </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

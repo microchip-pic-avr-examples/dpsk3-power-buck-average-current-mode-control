@@ -106,239 +106,85 @@ $(document).ready(function(){initNavTree('a00367.html',''); initResizable(); });
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Public Functions<div class="ingroups"><a class="el" href="a00536.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00353.html">Peripheral Register Abstraction Layer (PRAL) Library</a> &raquo; <a class="el" href="a00359.html">Oscillator Module (OSC)</a></div></div>  </div>
+<div class="title">Public Functions<div class="ingroups"><a class="el" href="a00539.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00356.html">Peripheral Register Abstraction Layer (PRAL) Library</a> &raquo; <a class="el" href="a00359.html">Digital Signal Processor Converter Module (DSP)</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Public functions of the OSC PRAL driver.  
+<p>Public functions of the DSP PRAL driver.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Public Functions:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00367.svg" width="340" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00367.svg" width="343" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga110faf14914c3a8ebb3a4c1486aefb9d"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00367.html#ga110faf14914c3a8ebb3a4c1486aefb9d">p33c_OscFrc_DefaultInitialize</a> (volatile enum CPU_SPEED_DEFAULTS_e cpu_speed)</td></tr>
-<tr class="memdesc:ga110faf14914c3a8ebb3a4c1486aefb9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the major oscillator and the PLL module step by step by using clock switching in software. Each step is tested and verified. PLL settings here are pulled from pre-defined settings set for default CPU speeds from 40 MIPS to 100 MIPS.  <a href="a00367.html#ga110faf14914c3a8ebb3a4c1486aefb9d">More...</a><br /></td></tr>
-<tr class="separator:ga110faf14914c3a8ebb3a4c1486aefb9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga403dde98e61fc953d50bbe210f1b7834"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00367.html#ga403dde98e61fc953d50bbe210f1b7834">p33c_OscFrc_Initialize</a> (volatile enum CLKDIV_FRCDIVN_e frc_div, volatile enum OSCTUN_TUN_e frc_tune)</td></tr>
-<tr class="memdesc:ga403dde98e61fc953d50bbe210f1b7834"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the internal RC oscillator divider and tuning register.  <a href="a00367.html#ga403dde98e61fc953d50bbe210f1b7834">More...</a><br /></td></tr>
-<tr class="separator:ga403dde98e61fc953d50bbe210f1b7834"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0dc798eaba70c8dedec7eec7c2b7e18d"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00367.html#ga0dc798eaba70c8dedec7eec7c2b7e18d">p33c_OscAuxClk_Initialize</a> (volatile struct AUXOSC_CONFIG_s aux_clock_config)</td></tr>
-<tr class="memdesc:ga0dc798eaba70c8dedec7eec7c2b7e18d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the auxiliary clock and its PLL module step by step in software. Each step is tested and verified.  <a href="a00367.html#ga0dc798eaba70c8dedec7eec7c2b7e18d">More...</a><br /></td></tr>
-<tr class="separator:ga0dc798eaba70c8dedec7eec7c2b7e18d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab06b90f28b398245a399304dde2c1576"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00367.html#gab06b90f28b398245a399304dde2c1576">p33c_OscAuxClk_DefaultInitialize</a> (volatile enum AUX_PLL_DEFAULTS_e afpllo_frequency)</td></tr>
-<tr class="memdesc:gab06b90f28b398245a399304dde2c1576"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the auxiliary clock and its PLL module step by step in software. Each step is tested and verified.  <a href="a00367.html#gab06b90f28b398245a399304dde2c1576">More...</a><br /></td></tr>
-<tr class="separator:gab06b90f28b398245a399304dde2c1576"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5aae9e22b336a4664e85d66dd943a59f"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00367.html#ga5aae9e22b336a4664e85d66dd943a59f">p33c_Osc_GetFrequencies</a> (volatile uint32_t main_osc_frequency)</td></tr>
-<tr class="memdesc:ga5aae9e22b336a4664e85d66dd943a59f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This routine reads all oscillator related SFRs recalculating the various frequencies across clock domains. These frequencies are broadcasted in the global data structure 'system_frequencies'.  <a href="a00367.html#ga5aae9e22b336a4664e85d66dd943a59f">More...</a><br /></td></tr>
-<tr class="separator:ga5aae9e22b336a4664e85d66dd943a59f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf288dad5df78426690b7296f0a38bce4"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00367.html#gaf288dad5df78426690b7296f0a38bce4">Dsp_SetConfig</a> (volatile struct <a class="el" href="a00812.html">DSP_CONFIG_s</a> dsp_cfg)</td></tr>
+<tr class="memdesc:gaf288dad5df78426690b7296f0a38bce4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the DSP engine in accordance to user settings.  <a href="a00367.html#gaf288dad5df78426690b7296f0a38bce4">More...</a><br /></td></tr>
+<tr class="separator:gaf288dad5df78426690b7296f0a38bce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa6137620b2ae63fce63701725d97ee89"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a00812.html">DSP_CONFIG_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00367.html#gaa6137620b2ae63fce63701725d97ee89">Dsp_GetConfig</a> (void)</td></tr>
+<tr class="memdesc:gaa6137620b2ae63fce63701725d97ee89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the DSP engine configuration.  <a href="a00367.html#gaa6137620b2ae63fce63701725d97ee89">More...</a><br /></td></tr>
+<tr class="separator:gaa6137620b2ae63fce63701725d97ee89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Public functions of the OSC PRAL driver. </p>
-<p>This is the detailed description of public functions of the OSC PRAL driver </p>
+<p>Public functions of the DSP PRAL driver. </p>
+<p>This is the detailed description of public functions of the DSP PRAL driver </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga5aae9e22b336a4664e85d66dd943a59f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5aae9e22b336a4664e85d66dd943a59f">&#9670;&nbsp;</a></span>p33c_Osc_GetFrequencies()</h2>
+<a id="gaa6137620b2ae63fce63701725d97ee89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa6137620b2ae63fce63701725d97ee89">&#9670;&nbsp;</a></span>Dsp_GetConfig()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t p33c_Osc_GetFrequencies </td>
+          <td class="memname">struct <a class="el" href="a00812.html">DSP_CONFIG_s</a> Dsp_GetConfig </td>
           <td>(</td>
-          <td class="paramtype">volatile uint32_t&#160;</td>
-          <td class="paramname"><em>main_osc_frequency</em></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>This routine reads all oscillator related SFRs recalculating the various frequencies across clock domains. These frequencies are broadcasted in the global data structure 'system_frequencies'. </p>
-<p>smpsOSC_GetFrequencies()</p>
-<hr  />
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">uint32_t</td><td>main_osc_frequency: external oscillator frequency in [Hz] as 32-bit number Set to 0 if no external oscillator is used</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned integer 0 = reading oscillator settings failed 1 = reading oscillator settings successfully</dd></dl>
-<p>Microchip's 16-Bit devices offer multiple clock sources to clock the CPU. This routine reads the most recent, oscillator related Special Function Registers (SFR) and determines the recently active main clock and its frequency and calculates the resulting clock frequencies of other clock domains.</p>
-<p>The results are broadcasted through the 'system_frequencies' data structure which is globally accessible in user code and can be used to calculate other oscillator dependent settings such as timer periods or baud rates of communication interfaces</p>
-<p>Please note: The contents of data structure 'system_frequencies' is NOT updated automatically. It is recommended to call the function 'osc_get_frequencies' in user code every time after clock settings have been modified. </p>
+<p>Reads the DSP engine configuration. </p>
+<dl class="section return"><dt>Returns</dt><dd>struct <a class="el" href="a00812.html">DSP_CONFIG_s</a></dd></dl>
+<p>This routine writes a DSP user-configuration into the core configuration register and verifies the data has been written correctly. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00056_source.html#l00420">420</a> of file <a class="el" href="a00056_source.html">p33c_osc.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00038_source.html#l00053">53</a> of file <a class="el" href="a00038_source.html">p33c_dsp.c</a>.</p>
 
 </div>
 </div>
-<a id="gab06b90f28b398245a399304dde2c1576"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab06b90f28b398245a399304dde2c1576">&#9670;&nbsp;</a></span>p33c_OscAuxClk_DefaultInitialize()</h2>
+<a id="gaf288dad5df78426690b7296f0a38bce4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf288dad5df78426690b7296f0a38bce4">&#9670;&nbsp;</a></span>Dsp_SetConfig()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t p33c_OscAuxClk_DefaultInitialize </td>
+          <td class="memname">uint16_t Dsp_SetConfig </td>
           <td>(</td>
-          <td class="paramtype">volatile enum AUX_PLL_DEFAULTS_e&#160;</td>
-          <td class="paramname"><em>afpllo_frequency</em></td><td>)</td>
+          <td class="paramtype">volatile struct <a class="el" href="a00812.html">DSP_CONFIG_s</a>&#160;</td>
+          <td class="paramname"><em>dsp_cfg</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initializes the auxiliary clock and its PLL module step by step in software. Each step is tested and verified. </p>
+<p>Initializes the DSP engine in accordance to user settings. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">AUX_PLL_DEFAULTS_e</td><td>afpllo_frequency</td></tr>
+    <tr><td class="paramname">struct</td><td><a class="el" href="a00812.html">DSP_CONFIG_s</a> dsp_cfg </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>0 = unspecified clock failure detected 1 = clock switch successful 2 = clock switch failed 4 = currently selected clock differs from selected clock source 8 = PLL didn't lock in within given time frame</dd></dl>
-<p>The auxiliary clock is generated by a separate PLL module, which is driven from one of the main clock signals or PLL outputs. This auxiliary clock can be used to drive ADCs, PWM, DACs and other peripherals. Each of them might have individual requirements. Please refer to the specific peripheral sections in the device data sheet to learn how to configure the auxiliary clock. </p>
+<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
+<p>This routine writes a DSP user-configuration into the core configuration register and verifies the data has been written correctly. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00056_source.html#l00353">353</a> of file <a class="el" href="a00056_source.html">p33c_osc.c</a>.</p>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00367_gab06b90f28b398245a399304dde2c1576_cgraph.svg" width="454" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00367_gab06b90f28b398245a399304dde2c1576_icgraph.svg" width="578" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="ga0dc798eaba70c8dedec7eec7c2b7e18d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0dc798eaba70c8dedec7eec7c2b7e18d">&#9670;&nbsp;</a></span>p33c_OscAuxClk_Initialize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t p33c_OscAuxClk_Initialize </td>
-          <td>(</td>
-          <td class="paramtype">volatile struct AUXOSC_CONFIG_s&#160;</td>
-          <td class="paramname"><em>aux_clock_config</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Initializes the auxiliary clock and its PLL module step by step in software. Each step is tested and verified. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">struct</td><td>AUXOSC_CONFIG_s aux_clock_config: Auxiliary oscillator configuration</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>0 = unspecified clock failure detected 1 = clock switch successful 2 = clock switch failed 4 = currently selected clock differs from selected clock source 8 = PLL didn't lock in within given time frame</dd></dl>
-<p>The auxiliary clock is generated by a separate PLL module, which is driven from one of the main clock signals or PLL outputs. This auxiliary clock can be used to drive ADCs, PWM, DACs and other peripherals. Each of them might have individual requirements. Please refer to the specific peripheral sections in the device data sheet to learn how to configure the auxiliary clock. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00056_source.html#l00301">301</a> of file <a class="el" href="a00056_source.html">p33c_osc.c</a>.</p>
-<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00367_ga0dc798eaba70c8dedec7eec7c2b7e18d_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
-
-</div>
-</div>
-<a id="ga110faf14914c3a8ebb3a4c1486aefb9d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga110faf14914c3a8ebb3a4c1486aefb9d">&#9670;&nbsp;</a></span>p33c_OscFrc_DefaultInitialize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t p33c_OscFrc_DefaultInitialize </td>
-          <td>(</td>
-          <td class="paramtype">volatile enum CPU_SPEED_DEFAULTS_e&#160;</td>
-          <td class="paramname"><em>cpu_speed</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Initializes the major oscillator and the PLL module step by step by using clock switching in software. Each step is tested and verified. PLL settings here are pulled from pre-defined settings set for default CPU speeds from 40 MIPS to 100 MIPS. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">enum</td><td>CPU_SPEED_DEFAULTS_e cpu_speed </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned integer 0 = unspecified clock failure detected 1 = clock switch successful 2 = clock switch failed 4 = currently selected clock differs from selected clock source 8 = PLL didn't lock in within given time frame</dd></dl>
-<p>Microchip's 16-Bit devices offer a safe 2-step start-up mode, using the internal FRC during power up, followed by a user defined switch-over to the desired oscillator. Though this can also be done in hardware automatically, this software-version of the switch-over offers a better solution to verify each step and enables the user to implement some error handling in the case of failure. This function can be used to select a new oscillator at runtime. Each configuration step will be verified before the next step is performed.</p>
-<dl class="section note"><dt>Note</dt><dd>If a oscillator switch-over is performed, additional settings in the _FOSCSEL and _FOSC registers of the configuration bits may be required </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="a00056_source.html#l00062">62</a> of file <a class="el" href="a00056_source.html">p33c_osc.c</a>.</p>
-<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00367_ga110faf14914c3a8ebb3a4c1486aefb9d_icgraph.svg" width="559" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="ga403dde98e61fc953d50bbe210f1b7834"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga403dde98e61fc953d50bbe210f1b7834">&#9670;&nbsp;</a></span>p33c_OscFrc_Initialize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t p33c_OscFrc_Initialize </td>
-          <td>(</td>
-          <td class="paramtype">volatile enum CLKDIV_FRCDIVN_e&#160;</td>
-          <td class="paramname"><em>frc_div</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">volatile enum OSCTUN_TUN_e&#160;</td>
-          <td class="paramname"><em>frc_tune</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Initializes the internal RC oscillator divider and tuning register. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">enum</td><td>CLKDIV_FRCDIVN_e frc_div </td></tr>
-    <tr><td class="paramname">enum</td><td>OSCTUN_TUN_e frc_tune </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>0 = unspecified clock failure detected 1 = clock switch successful 2 = clock switch failed 4 = currently selected clock differs from selected clock source 8 = PLL didn't lock in within given time frame</dd></dl>
-<p>Microchip's 16-Bit devices offer a safe 2-step start-up mode, using the internal FRC during power up, followed by a user defined switch-over to the desired oscillator. Though this can also be done in hardware automatically, this software-version of the switch-over offers a better solution to verify each step and enables the user to implement some error handling in the case of failure. This function can be used to select a new oscillator at runtime. Each configuration step will be verified before the next step is performed.</p>
-<dl class="section note"><dt>Note</dt><dd>If a oscillator switch-over is performed, additional settings in the _FOSCSEL and _FOSC registers of the configuration bits may be required </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="a00056_source.html#l00138">138</a> of file <a class="el" href="a00056_source.html">p33c_osc.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00038_source.html#l00053">53</a> of file <a class="el" href="a00038_source.html">p33c_dsp.c</a>.</p>
 
 </div>
 </div>

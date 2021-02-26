@@ -104,360 +104,282 @@ $(document).ready(function(){initNavTree('a00391.html',''); initResizable(); });
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Conversion Macros<div class="ingroups"><a class="el" href="a00534.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00389.html">Fault Response Settings</a></div></div>  </div>
+<div class="title">Conversion Macros<div class="ingroups"><a class="el" href="a00537.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00389.html">Startup Timing Settings</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Conversion macros for user declarations of fault object trip and recovery delays.  
+<p>Conversion macros for user-declarations of startup timing periods.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Conversion Macros:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00391.svg" width="356" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00391.svg" width="350" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
-<tr class="memitem:gaf019187252e22bf0b5ba36f8c24a796b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00391.html#gaf019187252e22bf0b5ba36f8c24a796b">BUCK_UVLO_TDLY</a>&#160;&#160;&#160;(uint16_t)(((float)      <a class="el" href="a00390.html#gad91c6030149a6a40c03c236c6245195b">BUCK_UVLO_TRIP_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
-<tr class="memdesc:gaf019187252e22bf0b5ba36f8c24a796b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion Macros of Fault Response Timing Settings.  <a href="a00391.html#gaf019187252e22bf0b5ba36f8c24a796b">More...</a><br /></td></tr>
-<tr class="separator:gaf019187252e22bf0b5ba36f8c24a796b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga26802d3c1f81381aabd8828738450559"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00391.html#ga26802d3c1f81381aabd8828738450559">BUCK_UVLO_RDLY</a>&#160;&#160;&#160;(uint16_t)(((float)  <a class="el" href="a00390.html#ga8fc5cc0b86b1896492fba096f1177c9e">BUCK_UVLO_RECOVERY_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
-<tr class="memdesc:ga26802d3c1f81381aabd8828738450559"><td class="mdescLeft">&#160;</td><td class="mdescRight">under voltage lock out recovery delay conversion nacro  <a href="a00391.html#ga26802d3c1f81381aabd8828738450559">More...</a><br /></td></tr>
-<tr class="separator:ga26802d3c1f81381aabd8828738450559"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2f95f26dbb49e01a4e4352b251ac1ac4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00391.html#ga2f95f26dbb49e01a4e4352b251ac1ac4">BUCK_OVLO_TDLY</a>&#160;&#160;&#160;(uint16_t)(((float)      <a class="el" href="a00390.html#ga486d5b4101d10ebea3f97ec009cf779d">BUCK_OVLO_TRIP_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
-<tr class="memdesc:ga2f95f26dbb49e01a4e4352b251ac1ac4"><td class="mdescLeft">&#160;</td><td class="mdescRight">over voltage lock out trip delay conversion nacro  <a href="a00391.html#ga2f95f26dbb49e01a4e4352b251ac1ac4">More...</a><br /></td></tr>
-<tr class="separator:ga2f95f26dbb49e01a4e4352b251ac1ac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaeaf0ac8cd4701531aea9cbc915cf0048"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00391.html#gaeaf0ac8cd4701531aea9cbc915cf0048">BUCK_OVLO_RDLY</a>&#160;&#160;&#160;(uint16_t)(((float)  <a class="el" href="a00390.html#ga5c7756adddc4911f015fedb890f8270d">BUCK_OVLO_RECOVERY_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
-<tr class="memdesc:gaeaf0ac8cd4701531aea9cbc915cf0048"><td class="mdescLeft">&#160;</td><td class="mdescRight">over voltage lock out recovery delay conversion nacro  <a href="a00391.html#gaeaf0ac8cd4701531aea9cbc915cf0048">More...</a><br /></td></tr>
-<tr class="separator:gaeaf0ac8cd4701531aea9cbc915cf0048"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7ba8b1157772d52ae804f727da6a7585"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00391.html#ga7ba8b1157772d52ae804f727da6a7585">BUCK_REGERR_TDLY</a>&#160;&#160;&#160;(uint16_t)(((float)    <a class="el" href="a00390.html#ga916bec2e79815eb2364e14fc9926e551">BUCK_REGERR_TRIP_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
-<tr class="memdesc:ga7ba8b1157772d52ae804f727da6a7585"><td class="mdescLeft">&#160;</td><td class="mdescRight">regulation error trip delay conversion macro  <a href="a00391.html#ga7ba8b1157772d52ae804f727da6a7585">More...</a><br /></td></tr>
-<tr class="separator:ga7ba8b1157772d52ae804f727da6a7585"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5d7876048e15068d5e6651a5f46f84fc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00391.html#ga5d7876048e15068d5e6651a5f46f84fc">BUCK_REGERR_RDLY</a>&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00390.html#gabcc3a6cdf3286b554f1c01d64871b016">BUCK_REGERR_RECOVERY_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
-<tr class="memdesc:ga5d7876048e15068d5e6651a5f46f84fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">regulation error recovery delay conversion macro  <a href="a00391.html#ga5d7876048e15068d5e6651a5f46f84fc">More...</a><br /></td></tr>
-<tr class="separator:ga5d7876048e15068d5e6651a5f46f84fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga12a19c7fa0770351c8a4f0bfc10511e8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00391.html#ga12a19c7fa0770351c8a4f0bfc10511e8">BUCK_OCP_TDLY</a>&#160;&#160;&#160;(uint16_t)(((float)       <a class="el" href="a00390.html#ga401ff320085d325a621e3482bb1b3810">BUCK_OCP_TRIP_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
-<tr class="memdesc:ga12a19c7fa0770351c8a4f0bfc10511e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">over current protection trip Delay conversion macro  <a href="a00391.html#ga12a19c7fa0770351c8a4f0bfc10511e8">More...</a><br /></td></tr>
-<tr class="separator:ga12a19c7fa0770351c8a4f0bfc10511e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa711f0459b9c6a44ee47ef6f680cac49"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00391.html#gaa711f0459b9c6a44ee47ef6f680cac49">BUCK_OCP_RDLY</a>&#160;&#160;&#160;(uint16_t)(((float)   <a class="el" href="a00390.html#ga6cc849023abc581aad3e0fc9175bf6b7">BUCK_OCP_RECOVERY_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
-<tr class="memdesc:gaa711f0459b9c6a44ee47ef6f680cac49"><td class="mdescLeft">&#160;</td><td class="mdescRight">over current protection recovery delay conversion nacro  <a href="a00391.html#gaa711f0459b9c6a44ee47ef6f680cac49">More...</a><br /></td></tr>
-<tr class="separator:gaa711f0459b9c6a44ee47ef6f680cac49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab8b2a67978f222add5f842866e90d563"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00391.html#gab8b2a67978f222add5f842866e90d563">BOOST_UVLO_TDLY</a>&#160;&#160;&#160;(uint16_t)(((float)      <a class="el" href="a00390.html#ga3b1fff439d1fc72471a4bd5f9f9d13ee">BOOST_UVLO_TRIP_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
-<tr class="memdesc:gab8b2a67978f222add5f842866e90d563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion Macros of Fault Response Timing Settings.  <a href="a00391.html#gab8b2a67978f222add5f842866e90d563">More...</a><br /></td></tr>
-<tr class="separator:gab8b2a67978f222add5f842866e90d563"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac8ac88a56309cb5dcb5133d5403d8396"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00391.html#gac8ac88a56309cb5dcb5133d5403d8396">BOOST_UVLO_RDLY</a>&#160;&#160;&#160;(uint16_t)(((float)  <a class="el" href="a00390.html#ga54f72937fe8f99c6ceb4d115d4d913f3">BOOST_UVLO_RECOVERY_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
-<tr class="memdesc:gac8ac88a56309cb5dcb5133d5403d8396"><td class="mdescLeft">&#160;</td><td class="mdescRight">under voltage lock out recovery delay conversion nacro  <a href="a00391.html#gac8ac88a56309cb5dcb5133d5403d8396">More...</a><br /></td></tr>
-<tr class="separator:gac8ac88a56309cb5dcb5133d5403d8396"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab7ed723b159671948862bbd5938fc014"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00391.html#gab7ed723b159671948862bbd5938fc014">BOOST_OVLO_TDLY</a>&#160;&#160;&#160;(uint16_t)(((float)      <a class="el" href="a00390.html#gad5600ac9bfc38bec9b7bfe5be02540f2">BOOST_OVLO_TRIP_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
-<tr class="memdesc:gab7ed723b159671948862bbd5938fc014"><td class="mdescLeft">&#160;</td><td class="mdescRight">over voltage lock out trip delay conversion nacro  <a href="a00391.html#gab7ed723b159671948862bbd5938fc014">More...</a><br /></td></tr>
-<tr class="separator:gab7ed723b159671948862bbd5938fc014"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga74eeca885f03d35d861a135acfefcc9f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00391.html#ga74eeca885f03d35d861a135acfefcc9f">BOOST_OVLO_RDLY</a>&#160;&#160;&#160;(uint16_t)(((float)  <a class="el" href="a00390.html#gaf80ca0477099dc8e4c20d0e20bdd96a2">BOOST_OVLO_RECOVERY_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
-<tr class="memdesc:ga74eeca885f03d35d861a135acfefcc9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">over voltage lock out recovery delay conversion nacro  <a href="a00391.html#ga74eeca885f03d35d861a135acfefcc9f">More...</a><br /></td></tr>
-<tr class="separator:ga74eeca885f03d35d861a135acfefcc9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabe8eb9e44ffb20e8fbd4e27bf9605518"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00391.html#gabe8eb9e44ffb20e8fbd4e27bf9605518">BOOST_REGERR_TDLY</a>&#160;&#160;&#160;(uint16_t)(((float)    <a class="el" href="a00390.html#ga6020ebc1bd9132e1127b17c461d78189">BOOST_REGERR_TRIP_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
-<tr class="memdesc:gabe8eb9e44ffb20e8fbd4e27bf9605518"><td class="mdescLeft">&#160;</td><td class="mdescRight">regulation error trip delay conversion macro  <a href="a00391.html#gabe8eb9e44ffb20e8fbd4e27bf9605518">More...</a><br /></td></tr>
-<tr class="separator:gabe8eb9e44ffb20e8fbd4e27bf9605518"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3bc85c3c81befdb6e648607e7963f873"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00391.html#ga3bc85c3c81befdb6e648607e7963f873">BOOST_REGERR_RDLY</a>&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00390.html#gaabf755c80166ab949147643eb8ea5ba1">BOOST_REGERR_RECOVERY_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
-<tr class="memdesc:ga3bc85c3c81befdb6e648607e7963f873"><td class="mdescLeft">&#160;</td><td class="mdescRight">regulation error recovery delay conversion macro  <a href="a00391.html#ga3bc85c3c81befdb6e648607e7963f873">More...</a><br /></td></tr>
-<tr class="separator:ga3bc85c3c81befdb6e648607e7963f873"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad2f97b558d7cafe96553b6fb634bd92c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00391.html#gad2f97b558d7cafe96553b6fb634bd92c">BOOST_OCP_TDLY</a>&#160;&#160;&#160;(uint16_t)(((float)       <a class="el" href="a00390.html#ga679b8b944ffd26351d12e757af8b37a7">BOOST_OCP_TRIP_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
-<tr class="memdesc:gad2f97b558d7cafe96553b6fb634bd92c"><td class="mdescLeft">&#160;</td><td class="mdescRight">over current protection trip Delay conversion macro  <a href="a00391.html#gad2f97b558d7cafe96553b6fb634bd92c">More...</a><br /></td></tr>
-<tr class="separator:gad2f97b558d7cafe96553b6fb634bd92c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5d1f75618cb0c1b174e1d071ad85afe9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00391.html#ga5d1f75618cb0c1b174e1d071ad85afe9">BOOST_OCP_RDLY</a>&#160;&#160;&#160;(uint16_t)(((float)   <a class="el" href="a00390.html#ga21aabda6c863b4f02b903056dd51a886">BOOST_OCP_RECOVERY_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
-<tr class="memdesc:ga5d1f75618cb0c1b174e1d071ad85afe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">over current protection recovery delay conversion nacro  <a href="a00391.html#ga5d1f75618cb0c1b174e1d071ad85afe9">More...</a><br /></td></tr>
-<tr class="separator:ga5d1f75618cb0c1b174e1d071ad85afe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabba7830b442d410bf3c9beb934f024ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00391.html#gabba7830b442d410bf3c9beb934f024ad">BUCK_POD</a>&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00390.html#ga4308ebf74c3332bd1edfdb6952629eaa">BUCK_POWER_ON_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
+<tr class="memdesc:gabba7830b442d410bf3c9beb934f024ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion Macros of Startup Timing Settings.  <a href="a00391.html#gabba7830b442d410bf3c9beb934f024ad">More...</a><br /></td></tr>
+<tr class="separator:gabba7830b442d410bf3c9beb934f024ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa489d990aa6315f54fee41b013f02fd3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00391.html#gaa489d990aa6315f54fee41b013f02fd3">BUCK_VRAMP_PER</a>&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00390.html#ga5adf9fb727870e57bf02ead3ac7c63ac">BUCK_VRAMP_PERIOD</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
+<tr class="separator:gaa489d990aa6315f54fee41b013f02fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1e532e985e4d737932c504e40950cc37"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00391.html#ga1e532e985e4d737932c504e40950cc37">BUCK_VREF_STEP</a>&#160;&#160;&#160;(uint16_t)((float)<a class="el" href="a00407.html#ga42d8626bfa1f343d89033f82963fd2b5">BUCK_VOUT_REF</a> / (float)(<a class="el" href="a00391.html#gaa489d990aa6315f54fee41b013f02fd3">BUCK_VRAMP_PER</a> + 1.0))</td></tr>
+<tr class="separator:ga1e532e985e4d737932c504e40950cc37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga44bc7c5f1a38be0df740af9e95a57018"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00391.html#ga44bc7c5f1a38be0df740af9e95a57018">BUCK_IRAMP_PER</a>&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00390.html#ga97ee7cbed4a1ed9ebae5c8576d292103">BUCK_IRAMP_PERIOD</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
+<tr class="separator:ga44bc7c5f1a38be0df740af9e95a57018"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga351c39d5d5de144dc1ce695066a52195"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00391.html#ga351c39d5d5de144dc1ce695066a52195">BUCK_IREF_STEP</a>&#160;&#160;&#160;(uint16_t)((float)<a class="el" href="a00411.html#ga781cfc9802c86ba6e1813b2615adac21">BUCK_ISNS_REF</a> / (float)(<a class="el" href="a00391.html#gaa489d990aa6315f54fee41b013f02fd3">BUCK_VRAMP_PER</a> + 1.0))</td></tr>
+<tr class="separator:ga351c39d5d5de144dc1ce695066a52195"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf341b4ac7178e33925ead7e712a2583b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00391.html#gaf341b4ac7178e33925ead7e712a2583b">BUCK_PGD</a>&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00390.html#ga4cf9c52e0a9c20641018ebdd2679f3c1">BUCK_POWER_GOOD_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
+<tr class="separator:gaf341b4ac7178e33925ead7e712a2583b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5198f80b878579deb1103362c8ce99bc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00391.html#ga5198f80b878579deb1103362c8ce99bc">BOOST_POD</a>&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00390.html#ga0c3f62393119606cf410bc110c3485c1">BOOST_POWER_ON_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
+<tr class="memdesc:ga5198f80b878579deb1103362c8ce99bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion Macros of Startup Timing Settings.  <a href="a00391.html#ga5198f80b878579deb1103362c8ce99bc">More...</a><br /></td></tr>
+<tr class="separator:ga5198f80b878579deb1103362c8ce99bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga53112c16890c08377894e6f1b3a1e80d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00391.html#ga53112c16890c08377894e6f1b3a1e80d">BOOST_VRAMP_PER</a>&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00390.html#ga96ef5acd0b4aa670827cb7b418fee8a9">BOOST_VRAMP_PERIOD</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
+<tr class="separator:ga53112c16890c08377894e6f1b3a1e80d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab110e669b0c43a88be993121558786db"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00391.html#gab110e669b0c43a88be993121558786db">BOOST_VREF_STEP</a>&#160;&#160;&#160;(uint16_t)((float)<a class="el" href="a00407.html#gacdf6d826f314362d3aef5c3b31d40a80">BOOST_VOUT_REF</a> / (float)(<a class="el" href="a00391.html#ga53112c16890c08377894e6f1b3a1e80d">BOOST_VRAMP_PER</a> + 1.0))</td></tr>
+<tr class="separator:gab110e669b0c43a88be993121558786db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga03d052a3ead30691a8f96bea471c1b8c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00391.html#ga03d052a3ead30691a8f96bea471c1b8c">BOOST_IRAMP_PER</a>&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00390.html#ga37bef3bc61987dfa7912227dcd2e8475">BOOST_IRAMP_PERIOD</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
+<tr class="separator:ga03d052a3ead30691a8f96bea471c1b8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafe17125cea675453c057c9470a5baf4d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00391.html#gafe17125cea675453c057c9470a5baf4d">BOOST_IREF_STEP</a>&#160;&#160;&#160;(uint16_t)((float)<a class="el" href="a00411.html#ga1812e11e4cbca75babd9dc3be24579d5">BOOST_ISNS_REF</a> / (float)(<a class="el" href="a00391.html#ga53112c16890c08377894e6f1b3a1e80d">BOOST_VRAMP_PER</a> + 1.0))</td></tr>
+<tr class="separator:gafe17125cea675453c057c9470a5baf4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4315f46dc1b4bf866d3de95bb8409774"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00391.html#ga4315f46dc1b4bf866d3de95bb8409774">BOOST_PGD</a>&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00390.html#ga8a44fb1bbfee2714f51174f5ec741c01">BOOST_POWER_GOOD_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
+<tr class="separator:ga4315f46dc1b4bf866d3de95bb8409774"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6d1019160fae08bdd0abdb8bf1ac8a54"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00391.html#ga6d1019160fae08bdd0abdb8bf1ac8a54">BOOST_CHRG_PER</a>&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00390.html#ga54fa6c219dce9de5f816617ce4716b35">BOOST_CHARGEUP_PERIOD</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
+<tr class="separator:ga6d1019160fae08bdd0abdb8bf1ac8a54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6d4138bf3b3d53405e2e6b1b45724f07"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00391.html#ga6d4138bf3b3d53405e2e6b1b45724f07">BOOST_CHRG_TOUT</a>&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00390.html#gae3597efdac20bf9aee16420f6f6d8be4">BOOST_CHARGEUP_TIMEOUT</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td></tr>
+<tr class="separator:ga6d4138bf3b3d53405e2e6b1b45724f07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Conversion macros for user declarations of fault object trip and recovery delays. </p>
+<p>Conversion macros for user-declarations of startup timing periods. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga5d1f75618cb0c1b174e1d071ad85afe9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5d1f75618cb0c1b174e1d071ad85afe9">&#9670;&nbsp;</a></span>BOOST_OCP_RDLY</h2>
+<a id="ga6d1019160fae08bdd0abdb8bf1ac8a54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6d1019160fae08bdd0abdb8bf1ac8a54">&#9670;&nbsp;</a></span>BOOST_CHRG_PER</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_OCP_RDLY&#160;&#160;&#160;(uint16_t)(((float)   <a class="el" href="a00390.html#ga21aabda6c863b4f02b903056dd51a886">BOOST_OCP_RECOVERY_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
+          <td class="memname">#define BOOST_CHRG_PER&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00390.html#ga54fa6c219dce9de5f816617ce4716b35">BOOST_CHARGEUP_PERIOD</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>over current protection recovery delay conversion nacro </p>
-
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01504">1504</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01449">1449</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gad2f97b558d7cafe96553b6fb634bd92c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad2f97b558d7cafe96553b6fb634bd92c">&#9670;&nbsp;</a></span>BOOST_OCP_TDLY</h2>
+<a id="ga6d4138bf3b3d53405e2e6b1b45724f07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6d4138bf3b3d53405e2e6b1b45724f07">&#9670;&nbsp;</a></span>BOOST_CHRG_TOUT</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_OCP_TDLY&#160;&#160;&#160;(uint16_t)(((float)       <a class="el" href="a00390.html#ga679b8b944ffd26351d12e757af8b37a7">BOOST_OCP_TRIP_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
+          <td class="memname">#define BOOST_CHRG_TOUT&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00390.html#gae3597efdac20bf9aee16420f6f6d8be4">BOOST_CHARGEUP_TIMEOUT</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>over current protection trip Delay conversion macro </p>
-
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01503">1503</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01450">1450</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga74eeca885f03d35d861a135acfefcc9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga74eeca885f03d35d861a135acfefcc9f">&#9670;&nbsp;</a></span>BOOST_OVLO_RDLY</h2>
+<a id="ga03d052a3ead30691a8f96bea471c1b8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga03d052a3ead30691a8f96bea471c1b8c">&#9670;&nbsp;</a></span>BOOST_IRAMP_PER</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_OVLO_RDLY&#160;&#160;&#160;(uint16_t)(((float)  <a class="el" href="a00390.html#gaf80ca0477099dc8e4c20d0e20bdd96a2">BOOST_OVLO_RECOVERY_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
+          <td class="memname">#define BOOST_IRAMP_PER&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00390.html#ga37bef3bc61987dfa7912227dcd2e8475">BOOST_IRAMP_PERIOD</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>over voltage lock out recovery delay conversion nacro </p>
-
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01500">1500</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01446">1446</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gab7ed723b159671948862bbd5938fc014"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab7ed723b159671948862bbd5938fc014">&#9670;&nbsp;</a></span>BOOST_OVLO_TDLY</h2>
+<a id="gafe17125cea675453c057c9470a5baf4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafe17125cea675453c057c9470a5baf4d">&#9670;&nbsp;</a></span>BOOST_IREF_STEP</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_OVLO_TDLY&#160;&#160;&#160;(uint16_t)(((float)      <a class="el" href="a00390.html#gad5600ac9bfc38bec9b7bfe5be02540f2">BOOST_OVLO_TRIP_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
+          <td class="memname">#define BOOST_IREF_STEP&#160;&#160;&#160;(uint16_t)((float)<a class="el" href="a00411.html#ga1812e11e4cbca75babd9dc3be24579d5">BOOST_ISNS_REF</a> / (float)(<a class="el" href="a00391.html#ga53112c16890c08377894e6f1b3a1e80d">BOOST_VRAMP_PER</a> + 1.0))</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>over voltage lock out trip delay conversion nacro </p>
-
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01499">1499</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01447">1447</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga3bc85c3c81befdb6e648607e7963f873"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3bc85c3c81befdb6e648607e7963f873">&#9670;&nbsp;</a></span>BOOST_REGERR_RDLY</h2>
+<a id="ga4315f46dc1b4bf866d3de95bb8409774"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4315f46dc1b4bf866d3de95bb8409774">&#9670;&nbsp;</a></span>BOOST_PGD</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_REGERR_RDLY&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00390.html#gaabf755c80166ab949147643eb8ea5ba1">BOOST_REGERR_RECOVERY_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
+          <td class="memname">#define BOOST_PGD&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00390.html#ga8a44fb1bbfee2714f51174f5ec741c01">BOOST_POWER_GOOD_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>regulation error recovery delay conversion macro </p>
-
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01502">1502</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01448">1448</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gabe8eb9e44ffb20e8fbd4e27bf9605518"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabe8eb9e44ffb20e8fbd4e27bf9605518">&#9670;&nbsp;</a></span>BOOST_REGERR_TDLY</h2>
+<a id="ga5198f80b878579deb1103362c8ce99bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5198f80b878579deb1103362c8ce99bc">&#9670;&nbsp;</a></span>BOOST_POD</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_REGERR_TDLY&#160;&#160;&#160;(uint16_t)(((float)    <a class="el" href="a00390.html#ga6020ebc1bd9132e1127b17c461d78189">BOOST_REGERR_TRIP_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
+          <td class="memname">#define BOOST_POD&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00390.html#ga0c3f62393119606cf410bc110c3485c1">BOOST_POWER_ON_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>regulation error trip delay conversion macro </p>
+<p>Conversion Macros of Startup Timing Settings. </p>
+<p>These conversion macros are used to convert user settings defined as physical quantities into binary (integer) numbers, which will be written to registers and variables and used in calculations throughout the firmware. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01501">1501</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01443">1443</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gac8ac88a56309cb5dcb5133d5403d8396"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac8ac88a56309cb5dcb5133d5403d8396">&#9670;&nbsp;</a></span>BOOST_UVLO_RDLY</h2>
+<a id="ga53112c16890c08377894e6f1b3a1e80d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga53112c16890c08377894e6f1b3a1e80d">&#9670;&nbsp;</a></span>BOOST_VRAMP_PER</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_UVLO_RDLY&#160;&#160;&#160;(uint16_t)(((float)  <a class="el" href="a00390.html#ga54f72937fe8f99c6ceb4d115d4d913f3">BOOST_UVLO_RECOVERY_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
+          <td class="memname">#define BOOST_VRAMP_PER&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00390.html#ga96ef5acd0b4aa670827cb7b418fee8a9">BOOST_VRAMP_PERIOD</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>under voltage lock out recovery delay conversion nacro </p>
-
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01498">1498</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01444">1444</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gab8b2a67978f222add5f842866e90d563"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab8b2a67978f222add5f842866e90d563">&#9670;&nbsp;</a></span>BOOST_UVLO_TDLY</h2>
+<a id="gab110e669b0c43a88be993121558786db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab110e669b0c43a88be993121558786db">&#9670;&nbsp;</a></span>BOOST_VREF_STEP</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_UVLO_TDLY&#160;&#160;&#160;(uint16_t)(((float)      <a class="el" href="a00390.html#ga3b1fff439d1fc72471a4bd5f9f9d13ee">BOOST_UVLO_TRIP_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
+          <td class="memname">#define BOOST_VREF_STEP&#160;&#160;&#160;(uint16_t)((float)<a class="el" href="a00407.html#gacdf6d826f314362d3aef5c3b31d40a80">BOOST_VOUT_REF</a> / (float)(<a class="el" href="a00391.html#ga53112c16890c08377894e6f1b3a1e80d">BOOST_VRAMP_PER</a> + 1.0))</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Conversion Macros of Fault Response Timing Settings. </p>
-<p>These conversion macros are used to convert user settings defined as physical quantities into binary (integer) numbers, which will be written to registers and variables and used in calculations throughout the firmware. under voltage lock out trip delay conversion nacro </p>
-
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01497">1497</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01445">1445</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gaa711f0459b9c6a44ee47ef6f680cac49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa711f0459b9c6a44ee47ef6f680cac49">&#9670;&nbsp;</a></span>BUCK_OCP_RDLY</h2>
+<a id="ga44bc7c5f1a38be0df740af9e95a57018"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga44bc7c5f1a38be0df740af9e95a57018">&#9670;&nbsp;</a></span>BUCK_IRAMP_PER</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_OCP_RDLY&#160;&#160;&#160;(uint16_t)(((float)   <a class="el" href="a00390.html#ga6cc849023abc581aad3e0fc9175bf6b7">BUCK_OCP_RECOVERY_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
+          <td class="memname">#define BUCK_IRAMP_PER&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00390.html#ga97ee7cbed4a1ed9ebae5c8576d292103">BUCK_IRAMP_PERIOD</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>over current protection recovery delay conversion nacro </p>
-
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00865">865</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00809">809</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga12a19c7fa0770351c8a4f0bfc10511e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga12a19c7fa0770351c8a4f0bfc10511e8">&#9670;&nbsp;</a></span>BUCK_OCP_TDLY</h2>
+<a id="ga351c39d5d5de144dc1ce695066a52195"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga351c39d5d5de144dc1ce695066a52195">&#9670;&nbsp;</a></span>BUCK_IREF_STEP</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_OCP_TDLY&#160;&#160;&#160;(uint16_t)(((float)       <a class="el" href="a00390.html#ga401ff320085d325a621e3482bb1b3810">BUCK_OCP_TRIP_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
+          <td class="memname">#define BUCK_IREF_STEP&#160;&#160;&#160;(uint16_t)((float)<a class="el" href="a00411.html#ga781cfc9802c86ba6e1813b2615adac21">BUCK_ISNS_REF</a> / (float)(<a class="el" href="a00391.html#gaa489d990aa6315f54fee41b013f02fd3">BUCK_VRAMP_PER</a> + 1.0))</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>over current protection trip Delay conversion macro </p>
-
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00864">864</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00810">810</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gaeaf0ac8cd4701531aea9cbc915cf0048"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaeaf0ac8cd4701531aea9cbc915cf0048">&#9670;&nbsp;</a></span>BUCK_OVLO_RDLY</h2>
+<a id="gaf341b4ac7178e33925ead7e712a2583b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf341b4ac7178e33925ead7e712a2583b">&#9670;&nbsp;</a></span>BUCK_PGD</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_OVLO_RDLY&#160;&#160;&#160;(uint16_t)(((float)  <a class="el" href="a00390.html#ga5c7756adddc4911f015fedb890f8270d">BUCK_OVLO_RECOVERY_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
+          <td class="memname">#define BUCK_PGD&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00390.html#ga4cf9c52e0a9c20641018ebdd2679f3c1">BUCK_POWER_GOOD_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>over voltage lock out recovery delay conversion nacro </p>
-
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00861">861</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00811">811</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga2f95f26dbb49e01a4e4352b251ac1ac4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2f95f26dbb49e01a4e4352b251ac1ac4">&#9670;&nbsp;</a></span>BUCK_OVLO_TDLY</h2>
+<a id="gabba7830b442d410bf3c9beb934f024ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabba7830b442d410bf3c9beb934f024ad">&#9670;&nbsp;</a></span>BUCK_POD</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_OVLO_TDLY&#160;&#160;&#160;(uint16_t)(((float)      <a class="el" href="a00390.html#ga486d5b4101d10ebea3f97ec009cf779d">BUCK_OVLO_TRIP_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
+          <td class="memname">#define BUCK_POD&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00390.html#ga4308ebf74c3332bd1edfdb6952629eaa">BUCK_POWER_ON_DELAY</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>over voltage lock out trip delay conversion nacro </p>
+<p>Conversion Macros of Startup Timing Settings. </p>
+<p>These conversion macros are used to convert user settings defined as physical quantities into binary (integer) numbers, which will be written to registers and variables and used in calculations throughout the firmware. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00860">860</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00806">806</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga5d7876048e15068d5e6651a5f46f84fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5d7876048e15068d5e6651a5f46f84fc">&#9670;&nbsp;</a></span>BUCK_REGERR_RDLY</h2>
+<a id="gaa489d990aa6315f54fee41b013f02fd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa489d990aa6315f54fee41b013f02fd3">&#9670;&nbsp;</a></span>BUCK_VRAMP_PER</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_REGERR_RDLY&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00390.html#gabcc3a6cdf3286b554f1c01d64871b016">BUCK_REGERR_RECOVERY_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
+          <td class="memname">#define BUCK_VRAMP_PER&#160;&#160;&#160;(uint16_t)(((float)<a class="el" href="a00390.html#ga5adf9fb727870e57bf02ead3ac7c63ac">BUCK_VRAMP_PERIOD</a> / (float)<a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>regulation error recovery delay conversion macro </p>
-
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00863">863</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00807">807</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga7ba8b1157772d52ae804f727da6a7585"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7ba8b1157772d52ae804f727da6a7585">&#9670;&nbsp;</a></span>BUCK_REGERR_TDLY</h2>
+<a id="ga1e532e985e4d737932c504e40950cc37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1e532e985e4d737932c504e40950cc37">&#9670;&nbsp;</a></span>BUCK_VREF_STEP</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_REGERR_TDLY&#160;&#160;&#160;(uint16_t)(((float)    <a class="el" href="a00390.html#ga916bec2e79815eb2364e14fc9926e551">BUCK_REGERR_TRIP_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
+          <td class="memname">#define BUCK_VREF_STEP&#160;&#160;&#160;(uint16_t)((float)<a class="el" href="a00407.html#ga42d8626bfa1f343d89033f82963fd2b5">BUCK_VOUT_REF</a> / (float)(<a class="el" href="a00391.html#gaa489d990aa6315f54fee41b013f02fd3">BUCK_VRAMP_PER</a> + 1.0))</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>regulation error trip delay conversion macro </p>
-
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00862">862</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga26802d3c1f81381aabd8828738450559"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga26802d3c1f81381aabd8828738450559">&#9670;&nbsp;</a></span>BUCK_UVLO_RDLY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_UVLO_RDLY&#160;&#160;&#160;(uint16_t)(((float)  <a class="el" href="a00390.html#ga8fc5cc0b86b1896492fba096f1177c9e">BUCK_UVLO_RECOVERY_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>under voltage lock out recovery delay conversion nacro </p>
-
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00859">859</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gaf019187252e22bf0b5ba36f8c24a796b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf019187252e22bf0b5ba36f8c24a796b">&#9670;&nbsp;</a></span>BUCK_UVLO_TDLY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_UVLO_TDLY&#160;&#160;&#160;(uint16_t)(((float)      <a class="el" href="a00390.html#gad91c6030149a6a40c03c236c6245195b">BUCK_UVLO_TRIP_DELAY</a> / (float)<a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>)-1.0)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Conversion Macros of Fault Response Timing Settings. </p>
-<p>These conversion macros are used to convert user settings defined as physical quantities into binary (integer) numbers, which will be written to registers and variables and used in calculations throughout the firmware. under voltage lock out trip delay conversion nacro </p>
-
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l00858">858</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00808">808</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

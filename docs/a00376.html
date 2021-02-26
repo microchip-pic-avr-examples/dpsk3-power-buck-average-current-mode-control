@@ -103,23 +103,69 @@ $(document).ready(function(){initNavTree('a00376.html',''); initResizable(); });
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">Private Properties<div class="ingroups"><a class="el" href="a00536.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00353.html">Peripheral Register Abstraction Layer (PRAL) Library</a> &raquo; <a class="el" href="a00360.html">Peripheral Pin Select Module (PPS)</a></div></div>  </div>
+<div class="title">Private Properties<div class="ingroups"><a class="el" href="a00539.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00356.html">Peripheral Register Abstraction Layer (PRAL) Library</a> &raquo; <a class="el" href="a00360.html">General Purpose Input/Output (GPIO)</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Private properties of the PPS PRAL driver.  
+<p>Private properties of the GPIO PRAL driver.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Private Properties:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00376.svg" width="327" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00376.svg" width="334" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
-<p>Private properties of the PPS PRAL driver. </p>
-<p>This is the detailed description of privte variables, data types, enumerations, defines and macros of the PPS PRAL driver </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:gab964f86f667e2391e953d4c267d09663"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a00824.html">P33C_GPIO_INSTANCE_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00376.html#gab964f86f667e2391e953d4c267d09663">gpioConfigClear</a></td></tr>
+<tr class="memdesc:gab964f86f667e2391e953d4c267d09663"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default RESET configuration of one GPIO instance SFRs.  <a href="a00376.html#gab964f86f667e2391e953d4c267d09663">More...</a><br /></td></tr>
+<tr class="separator:gab964f86f667e2391e953d4c267d09663"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Private properties of the GPIO PRAL driver. </p>
+<p>This is the detailed description of privte variables, data types, enumerations, defines and macros of the GPIO PRAL driver </p>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="gab964f86f667e2391e953d4c267d09663"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab964f86f667e2391e953d4c267d09663">&#9670;&nbsp;</a></span>gpioConfigClear</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gpioConfigClear</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    </div>
+<div class="line">        .ANSELx.value = 0x0000, </div>
+<div class="line">        .CNCONx.value = 0x0000, </div>
+<div class="line">        .CNEN0x.value = 0x0000, </div>
+<div class="line">        .CNEN1x.value = 0x0000, </div>
+<div class="line">        .CNFx.value = 0x0000, </div>
+<div class="line">        .CNPDx.value = 0x0000, </div>
+<div class="line">        .CNPUx.value = 0x0000, </div>
+<div class="line">        .CNSTATx.value = 0x0000, </div>
+<div class="line">        .LATx.value = 0x0000, </div>
+<div class="line">        .ODCx.value = 0x0000, </div>
+<div class="line">        .PORTx.value = 0x0000, </div>
+<div class="line">        .TRISx.value = 0x1111, </div>
+<div class="line">        </div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p>Default RESET configuration of one GPIO instance SFRs. </p>
+<p>Default configuration of the GPIO instance SFRs with all its registers being reset to their default state when the device comes out of RESET. Programmers can use this template to reset (dispose) a previously used GPIO instance when it's not used anymore or to secure a known startup condition before writing individual configurations to its SFRs. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00133">133</a> of file <a class="el" href="a00044_source.html">p33c_gpio.c</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

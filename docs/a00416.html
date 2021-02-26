@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: LC Display Interface Declarations</title>
+<title>Digital Power Starter Kit 3 Firmware: Microcontroller Abstraction</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,656 +104,342 @@ $(document).ready(function(){initNavTree('a00416.html',''); initResizable(); });
 
 <div class="header">
   <div class="headertitle">
-<div class="title">LC Display Interface Declarations<div class="ingroups"><a class="el" href="a00534.html">Hardware Abstraction Layer</a></div></div>  </div>
+<div class="title">Microcontroller Abstraction<div class="ingroups"><a class="el" href="a00537.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00413.html">Temperature Feedback</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>LC display SPI interface GPIO declarations.  
+<p>Device analog input pin, register and interrupt vector assignments of temperature feedback signal(s)  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for LC Display Interface Declarations:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Microcontroller Abstraction:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00416.svg" width="344" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00416.svg" width="391" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
-<tr class="memitem:gaa9402f02b36f1fec44e4e87fafdb817b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#gaa9402f02b36f1fec44e4e87fafdb817b">LCD_SCL_SetHigh</a>()&#160;&#160;&#160;_LATC5 = 1</td></tr>
-<tr class="memdesc:gaa9402f02b36f1fec44e4e87fafdb817b"><td class="mdescLeft">&#160;</td><td class="mdescRight">LC Display Interface Declarations.  <a href="a00416.html#gaa9402f02b36f1fec44e4e87fafdb817b">More...</a><br /></td></tr>
-<tr class="separator:gaa9402f02b36f1fec44e4e87fafdb817b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafbfedfcd2988a1fef6709ad56f7af61f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#gafbfedfcd2988a1fef6709ad56f7af61f">LCD_SCL_SetLow</a>()&#160;&#160;&#160;_LATC5 = 0</td></tr>
-<tr class="separator:gafbfedfcd2988a1fef6709ad56f7af61f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3136542f8e65397970c5de77865fb116"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#ga3136542f8e65397970c5de77865fb116">LCD_SCL_Toggle</a>()&#160;&#160;&#160;_LATC5 ^= 1</td></tr>
-<tr class="separator:ga3136542f8e65397970c5de77865fb116"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3a27f82b8cb41529fc9651bf5159792c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#ga3a27f82b8cb41529fc9651bf5159792c">LCD_SCL_GetValue</a>()&#160;&#160;&#160;_RC5</td></tr>
-<tr class="separator:ga3a27f82b8cb41529fc9651bf5159792c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9acae30823c664b7b3ff4f708f67a11f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#ga9acae30823c664b7b3ff4f708f67a11f">LCD_SCL_SetDigitalInput</a>()&#160;&#160;&#160;_TRISC5 = 1</td></tr>
-<tr class="separator:ga9acae30823c664b7b3ff4f708f67a11f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga69ff4891bcb2880e50cd2c9171723912"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#ga69ff4891bcb2880e50cd2c9171723912">LCD_SCL_SetDigitalOutput</a>()&#160;&#160;&#160;_TRISC5 = 0</td></tr>
-<tr class="separator:ga69ff4891bcb2880e50cd2c9171723912"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga73d5022528fa731ea7ef27312472209a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#ga73d5022528fa731ea7ef27312472209a">LCD_SDI_SetHigh</a>()&#160;&#160;&#160;_LATC4 = 1</td></tr>
-<tr class="separator:ga73d5022528fa731ea7ef27312472209a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga03f57a80c82216fef78a18b92cf09a68"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#ga03f57a80c82216fef78a18b92cf09a68">LCD_SDI_SetLow</a>()&#160;&#160;&#160;_LATC4 = 0</td></tr>
-<tr class="separator:ga03f57a80c82216fef78a18b92cf09a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafdf7312085e344f8588e0dd77ceaffc0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#gafdf7312085e344f8588e0dd77ceaffc0">LCD_SDI_Toggle</a>()&#160;&#160;&#160;_LATC4 ^= 1</td></tr>
-<tr class="separator:gafdf7312085e344f8588e0dd77ceaffc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5adb907f3466db0ff4ea6dc1ef9a23e2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#ga5adb907f3466db0ff4ea6dc1ef9a23e2">LCD_SDI_GetValue</a>()&#160;&#160;&#160;_RC4</td></tr>
-<tr class="separator:ga5adb907f3466db0ff4ea6dc1ef9a23e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga397e38fd8ccd3d7376f0bd767e416002"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#ga397e38fd8ccd3d7376f0bd767e416002">LCD_SDI_SetDigitalInput</a>()&#160;&#160;&#160;_TRISC4 = 1</td></tr>
-<tr class="separator:ga397e38fd8ccd3d7376f0bd767e416002"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga406187bfac1f96601580b8dc14afa73d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#ga406187bfac1f96601580b8dc14afa73d">LCD_SDI_SetDigitalOutput</a>()&#160;&#160;&#160;_TRISC4 = 0</td></tr>
-<tr class="separator:ga406187bfac1f96601580b8dc14afa73d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaac69a266bd88f02fbe10059aee1566f6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#gaac69a266bd88f02fbe10059aee1566f6">LCD_CS_SetHigh</a>()&#160;&#160;&#160;_LATD8 = 1</td></tr>
-<tr class="separator:gaac69a266bd88f02fbe10059aee1566f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab4f0f052518d81d65830b216d68a8300"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#gab4f0f052518d81d65830b216d68a8300">LCD_CS_SetLow</a>()&#160;&#160;&#160;_LATD8 = 0</td></tr>
-<tr class="separator:gab4f0f052518d81d65830b216d68a8300"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga70ed509b8e57e8f589db3a20d71cc1bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#ga70ed509b8e57e8f589db3a20d71cc1bd">LCD_CS_Toggle</a>()&#160;&#160;&#160;_LATD8 ^= 1</td></tr>
-<tr class="separator:ga70ed509b8e57e8f589db3a20d71cc1bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9202660e08ee2488e5e0faec08ae6b14"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#ga9202660e08ee2488e5e0faec08ae6b14">LCD_CS_GetValue</a>()&#160;&#160;&#160;_RD8</td></tr>
-<tr class="separator:ga9202660e08ee2488e5e0faec08ae6b14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae49482de9c08f4631e50b39fb9eca140"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#gae49482de9c08f4631e50b39fb9eca140">LCD_CS_SetDigitalInput</a>()&#160;&#160;&#160;_TRISD8 = 1</td></tr>
-<tr class="separator:gae49482de9c08f4631e50b39fb9eca140"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5e40a0178f0e23dc0d20669561dd7099"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#ga5e40a0178f0e23dc0d20669561dd7099">LCD_CS_SetDigitalOutput</a>()&#160;&#160;&#160;_TRISD8 = 0</td></tr>
-<tr class="separator:ga5e40a0178f0e23dc0d20669561dd7099"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7d336117627d35e9323d6ec7acc344f8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#ga7d336117627d35e9323d6ec7acc344f8">LCD_RST_SetHigh</a>()&#160;&#160;&#160;_LATC8 = 1</td></tr>
-<tr class="separator:ga7d336117627d35e9323d6ec7acc344f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga76f8f56762d39688cc7e5d1883642433"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#ga76f8f56762d39688cc7e5d1883642433">LCD_RST_SetLow</a>()&#160;&#160;&#160;_LATC8 = 0</td></tr>
-<tr class="separator:ga76f8f56762d39688cc7e5d1883642433"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga749fb50183cd9ac6cefc595159b9e925"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#ga749fb50183cd9ac6cefc595159b9e925">LCD_RST_Toggle</a>()&#160;&#160;&#160;_LATC8 ^= 1</td></tr>
-<tr class="separator:ga749fb50183cd9ac6cefc595159b9e925"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac41ef83918bece90b2c35a3b33a51409"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#gac41ef83918bece90b2c35a3b33a51409">LCD_RST_GetValue</a>()&#160;&#160;&#160;_RC8</td></tr>
-<tr class="separator:gac41ef83918bece90b2c35a3b33a51409"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga72cedc14ba8396a4672e467983b80604"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#ga72cedc14ba8396a4672e467983b80604">LCD_RST_SetDigitalInput</a>()&#160;&#160;&#160;_TRISC8 = 1</td></tr>
-<tr class="separator:ga72cedc14ba8396a4672e467983b80604"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0af443d764e5faaa75d4cd2e8b703c49"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#ga0af443d764e5faaa75d4cd2e8b703c49">LCD_RST_SetDigitalOutput</a>()&#160;&#160;&#160;_TRISC8 = 0</td></tr>
-<tr class="separator:ga0af443d764e5faaa75d4cd2e8b703c49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga19c41c1494a15bd66a0af8a1a8c864dd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#ga19c41c1494a15bd66a0af8a1a8c864dd">LCD_RS_SetHigh</a>()&#160;&#160;&#160;_LATC9 = 1</td></tr>
-<tr class="separator:ga19c41c1494a15bd66a0af8a1a8c864dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4e073e0e85a0e0abdc1de7d883274daa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#ga4e073e0e85a0e0abdc1de7d883274daa">LCD_RS_SetLow</a>()&#160;&#160;&#160;_LATC9 = 0</td></tr>
-<tr class="separator:ga4e073e0e85a0e0abdc1de7d883274daa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf66e9d17c45a3dfa410b0ba0d5ec0309"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#gaf66e9d17c45a3dfa410b0ba0d5ec0309">LCD_RS_Toggle</a>()&#160;&#160;&#160;_LATC9 ^= 1</td></tr>
-<tr class="separator:gaf66e9d17c45a3dfa410b0ba0d5ec0309"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaaf58146131941d1c6ef9d0a523fafa3f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#gaaf58146131941d1c6ef9d0a523fafa3f">LCD_RS_GetValue</a>()&#160;&#160;&#160;_RC9</td></tr>
-<tr class="separator:gaaf58146131941d1c6ef9d0a523fafa3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae1a34566aa213eecb785f2e1a1781e5c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#gae1a34566aa213eecb785f2e1a1781e5c">LCD_RS_SetDigitalInput</a>()&#160;&#160;&#160;_TRISC9 = 1</td></tr>
-<tr class="separator:gae1a34566aa213eecb785f2e1a1781e5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga475da773b8a8cee0e3a2d6ff393dc1db"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#ga475da773b8a8cee0e3a2d6ff393dc1db">LCD_RS_SetDigitalOutput</a>()&#160;&#160;&#160;_TRISC9 = 0</td></tr>
-<tr class="separator:ga475da773b8a8cee0e3a2d6ff393dc1db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0b7be0893cc684d4b6648a6c3c509039"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#ga0b7be0893cc684d4b6648a6c3c509039">_BUCK_TEMP_ADCInterrupt</a>&#160;&#160;&#160;_ADCAN2Interrupt</td></tr>
+<tr class="memdesc:ga0b7be0893cc684d4b6648a6c3c509039"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input assignments of temperature feedback signals.  <a href="a00416.html#ga0b7be0893cc684d4b6648a6c3c509039">More...</a><br /></td></tr>
+<tr class="separator:ga0b7be0893cc684d4b6648a6c3c509039"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga674e1e3d93d30d98028c51569d50cf99"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#ga674e1e3d93d30d98028c51569d50cf99">_BUCK_TEMP_ADCISR_IF</a>&#160;&#160;&#160;_ADCAN2IF</td></tr>
+<tr class="memdesc:ga674e1e3d93d30d98028c51569d50cf99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt Service Routine Flag Bit.  <a href="a00416.html#ga674e1e3d93d30d98028c51569d50cf99">More...</a><br /></td></tr>
+<tr class="separator:ga674e1e3d93d30d98028c51569d50cf99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga951cf80538bdaab3dc46fc10a906a4c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#ga951cf80538bdaab3dc46fc10a906a4c1">BUCK_TEMP_ANSEL</a>&#160;&#160;&#160;_ANSELB7</td></tr>
+<tr class="memdesc:ga951cf80538bdaab3dc46fc10a906a4c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO analog function mode enable bit.  <a href="a00416.html#ga951cf80538bdaab3dc46fc10a906a4c1">More...</a><br /></td></tr>
+<tr class="separator:ga951cf80538bdaab3dc46fc10a906a4c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga34d54b71aa34e14ae7899691b398c143"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#ga34d54b71aa34e14ae7899691b398c143">BUCK_TEMP_ADCCORE</a>&#160;&#160;&#160;8</td></tr>
+<tr class="separator:ga34d54b71aa34e14ae7899691b398c143"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1390c9b7eb6211bf82f41548c2559769"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#ga1390c9b7eb6211bf82f41548c2559769">BUCK_TEMP_ADCIN</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:ga1390c9b7eb6211bf82f41548c2559769"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac1882746fdaa93688a88870fd243a2b3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#gac1882746fdaa93688a88870fd243a2b3">BUCK_TEMP_ADCBUF</a>&#160;&#160;&#160;ADCBUF2</td></tr>
+<tr class="memdesc:gac1882746fdaa93688a88870fd243a2b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO analog function mode enable bit.  <a href="a00416.html#gac1882746fdaa93688a88870fd243a2b3">More...</a><br /></td></tr>
+<tr class="separator:gac1882746fdaa93688a88870fd243a2b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeac79e4136c87ddc66c021ae6ac06902"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#gaeac79e4136c87ddc66c021ae6ac06902">BUCK_TEMP_ADCTRIG</a>&#160;&#160;&#160;PG1TRIGB</td></tr>
+<tr class="memdesc:gaeac79e4136c87ddc66c021ae6ac06902"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register used for trigger placement.  <a href="a00416.html#gaeac79e4136c87ddc66c021ae6ac06902">More...</a><br /></td></tr>
+<tr class="separator:gaeac79e4136c87ddc66c021ae6ac06902"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac40eaecce71e8e5aff7b1742fa4833b3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#gac40eaecce71e8e5aff7b1742fa4833b3">BUCK_TEMP_TRGSRC</a>&#160;&#160;&#160;<a class="el" href="a00399.html#ga58748fe2fe121d5e911032bb48743dfc">BUCK_PWM_TRGSRC_TRG2</a></td></tr>
+<tr class="separator:gac40eaecce71e8e5aff7b1742fa4833b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadc0cf7db58fdcce9ff4a95981cd8e3a4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#gadc0cf7db58fdcce9ff4a95981cd8e3a4">_BOOST_TEMP_ADCInterrupt</a>&#160;&#160;&#160;_ADCAN2Interrupt</td></tr>
+<tr class="memdesc:gadc0cf7db58fdcce9ff4a95981cd8e3a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input assignments of temperature feedback signals.  <a href="a00416.html#gadc0cf7db58fdcce9ff4a95981cd8e3a4">More...</a><br /></td></tr>
+<tr class="separator:gadc0cf7db58fdcce9ff4a95981cd8e3a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa8a5e038eb4a48ebce7d153827040781"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#gaa8a5e038eb4a48ebce7d153827040781">_BOOST_TEMP_ADCISR_IF</a>&#160;&#160;&#160;_ADCAN2IF</td></tr>
+<tr class="memdesc:gaa8a5e038eb4a48ebce7d153827040781"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt Service Routine Flag Bit.  <a href="a00416.html#gaa8a5e038eb4a48ebce7d153827040781">More...</a><br /></td></tr>
+<tr class="separator:gaa8a5e038eb4a48ebce7d153827040781"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae21cea027e71ad93d4372a693170fee5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#gae21cea027e71ad93d4372a693170fee5">BOOST_TEMP_ANSEL</a>&#160;&#160;&#160;_ANSELB7</td></tr>
+<tr class="memdesc:gae21cea027e71ad93d4372a693170fee5"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO analog function mode enable bit.  <a href="a00416.html#gae21cea027e71ad93d4372a693170fee5">More...</a><br /></td></tr>
+<tr class="separator:gae21cea027e71ad93d4372a693170fee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae09cb57d1c3431e9a48e443310ee3c30"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#gae09cb57d1c3431e9a48e443310ee3c30">BOOST_TEMP_ADCCORE</a>&#160;&#160;&#160;8</td></tr>
+<tr class="separator:gae09cb57d1c3431e9a48e443310ee3c30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2af68000fa5d1b4bced1b9429ddaaef5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#ga2af68000fa5d1b4bced1b9429ddaaef5">BOOST_TEMP_ADCIN</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:ga2af68000fa5d1b4bced1b9429ddaaef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga78599bd669ae88ae6209fcd45b0fb242"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#ga78599bd669ae88ae6209fcd45b0fb242">BOOST_TEMP_ADCBUF</a>&#160;&#160;&#160;ADCBUF2</td></tr>
+<tr class="memdesc:ga78599bd669ae88ae6209fcd45b0fb242"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO analog function mode enable bit.  <a href="a00416.html#ga78599bd669ae88ae6209fcd45b0fb242">More...</a><br /></td></tr>
+<tr class="separator:ga78599bd669ae88ae6209fcd45b0fb242"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf452e6622f44ee5b1a1c4e8fe7958363"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#gaf452e6622f44ee5b1a1c4e8fe7958363">BOOST_TEMP_ADCTRIG</a>&#160;&#160;&#160;PG2TRIGB</td></tr>
+<tr class="memdesc:gaf452e6622f44ee5b1a1c4e8fe7958363"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register used for trigger placement.  <a href="a00416.html#gaf452e6622f44ee5b1a1c4e8fe7958363">More...</a><br /></td></tr>
+<tr class="separator:gaf452e6622f44ee5b1a1c4e8fe7958363"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga97b24b342e987a92a0d14a3f364e1bbe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html#ga97b24b342e987a92a0d14a3f364e1bbe">BOOST_TEMP_TRGSRC</a>&#160;&#160;&#160;<a class="el" href="a00399.html#gaa8e5c81a584c25dcb070282ec867bd08">BOOST_PWM_TRGSRC_TRG2</a></td></tr>
+<tr class="separator:ga97b24b342e987a92a0d14a3f364e1bbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>LC display SPI interface GPIO declarations. </p>
+<p>Device analog input pin, register and interrupt vector assignments of temperature feedback signal(s) </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga9202660e08ee2488e5e0faec08ae6b14"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9202660e08ee2488e5e0faec08ae6b14">&#9670;&nbsp;</a></span>LCD_CS_GetValue</h2>
+<a id="gadc0cf7db58fdcce9ff4a95981cd8e3a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadc0cf7db58fdcce9ff4a95981cd8e3a4">&#9670;&nbsp;</a></span>_BOOST_TEMP_ADCInterrupt</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LCD_CS_GetValue</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_RD8</td>
+          <td class="memname">#define _BOOST_TEMP_ADCInterrupt&#160;&#160;&#160;_ADCAN2Interrupt</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01575">1575</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p>ADC input assignments of temperature feedback signals. </p>
+<p>In this section the ADC input channels, related ADC result buffers, trigger sources and interrupt vectors are defined. These settings allow the fast re-assignments of feedback signals in case of hardware changes. Interrupt Service Routine function name </p>
+
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01341">1341</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gae49482de9c08f4631e50b39fb9eca140"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae49482de9c08f4631e50b39fb9eca140">&#9670;&nbsp;</a></span>LCD_CS_SetDigitalInput</h2>
+<a id="gaa8a5e038eb4a48ebce7d153827040781"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa8a5e038eb4a48ebce7d153827040781">&#9670;&nbsp;</a></span>_BOOST_TEMP_ADCISR_IF</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LCD_CS_SetDigitalInput</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_TRISD8 = 1</td>
+          <td class="memname">#define _BOOST_TEMP_ADCISR_IF&#160;&#160;&#160;_ADCAN2IF</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01576">1576</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p>Interrupt Service Routine Flag Bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01342">1342</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga5e40a0178f0e23dc0d20669561dd7099"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5e40a0178f0e23dc0d20669561dd7099">&#9670;&nbsp;</a></span>LCD_CS_SetDigitalOutput</h2>
+<a id="ga0b7be0893cc684d4b6648a6c3c509039"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0b7be0893cc684d4b6648a6c3c509039">&#9670;&nbsp;</a></span>_BUCK_TEMP_ADCInterrupt</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LCD_CS_SetDigitalOutput</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_TRISD8 = 0</td>
+          <td class="memname">#define _BUCK_TEMP_ADCInterrupt&#160;&#160;&#160;_ADCAN2Interrupt</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01577">1577</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p>ADC input assignments of temperature feedback signals. </p>
+<p>In this section the ADC input channels, related ADC result buffers, trigger sources and interrupt vectors are defined. These settings allow the fast re-assignments of feedback signals in case of hardware changes. Interrupt Service Routine function name </p>
+
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00707">707</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gaac69a266bd88f02fbe10059aee1566f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaac69a266bd88f02fbe10059aee1566f6">&#9670;&nbsp;</a></span>LCD_CS_SetHigh</h2>
+<a id="ga674e1e3d93d30d98028c51569d50cf99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga674e1e3d93d30d98028c51569d50cf99">&#9670;&nbsp;</a></span>_BUCK_TEMP_ADCISR_IF</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LCD_CS_SetHigh</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_LATD8 = 1</td>
+          <td class="memname">#define _BUCK_TEMP_ADCISR_IF&#160;&#160;&#160;_ADCAN2IF</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01572">1572</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p>Interrupt Service Routine Flag Bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00708">708</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gab4f0f052518d81d65830b216d68a8300"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab4f0f052518d81d65830b216d68a8300">&#9670;&nbsp;</a></span>LCD_CS_SetLow</h2>
+<a id="ga78599bd669ae88ae6209fcd45b0fb242"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga78599bd669ae88ae6209fcd45b0fb242">&#9670;&nbsp;</a></span>BOOST_TEMP_ADCBUF</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LCD_CS_SetLow</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_LATD8 = 0</td>
+          <td class="memname">#define BOOST_TEMP_ADCBUF&#160;&#160;&#160;ADCBUF2</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01573">1573</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p>GPIO analog function mode enable bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01347">1347</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga70ed509b8e57e8f589db3a20d71cc1bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga70ed509b8e57e8f589db3a20d71cc1bd">&#9670;&nbsp;</a></span>LCD_CS_Toggle</h2>
+<a id="gae09cb57d1c3431e9a48e443310ee3c30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae09cb57d1c3431e9a48e443310ee3c30">&#9670;&nbsp;</a></span>BOOST_TEMP_ADCCORE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LCD_CS_Toggle</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_LATD8 ^= 1</td>
+          <td class="memname">#define BOOST_TEMP_ADCCORE&#160;&#160;&#160;8</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01574">1574</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01345">1345</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gaaf58146131941d1c6ef9d0a523fafa3f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaaf58146131941d1c6ef9d0a523fafa3f">&#9670;&nbsp;</a></span>LCD_RS_GetValue</h2>
+<a id="ga2af68000fa5d1b4bced1b9429ddaaef5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2af68000fa5d1b4bced1b9429ddaaef5">&#9670;&nbsp;</a></span>BOOST_TEMP_ADCIN</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LCD_RS_GetValue</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_RC9</td>
+          <td class="memname">#define BOOST_TEMP_ADCIN&#160;&#160;&#160;2</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01589">1589</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01346">1346</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gae1a34566aa213eecb785f2e1a1781e5c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae1a34566aa213eecb785f2e1a1781e5c">&#9670;&nbsp;</a></span>LCD_RS_SetDigitalInput</h2>
+<a id="gaf452e6622f44ee5b1a1c4e8fe7958363"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf452e6622f44ee5b1a1c4e8fe7958363">&#9670;&nbsp;</a></span>BOOST_TEMP_ADCTRIG</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LCD_RS_SetDigitalInput</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_TRISC9 = 1</td>
+          <td class="memname">#define BOOST_TEMP_ADCTRIG&#160;&#160;&#160;PG2TRIGB</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01590">1590</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p>Register used for trigger placement. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01348">1348</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga475da773b8a8cee0e3a2d6ff393dc1db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga475da773b8a8cee0e3a2d6ff393dc1db">&#9670;&nbsp;</a></span>LCD_RS_SetDigitalOutput</h2>
+<a id="gae21cea027e71ad93d4372a693170fee5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae21cea027e71ad93d4372a693170fee5">&#9670;&nbsp;</a></span>BOOST_TEMP_ANSEL</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LCD_RS_SetDigitalOutput</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_TRISC9 = 0</td>
+          <td class="memname">#define BOOST_TEMP_ANSEL&#160;&#160;&#160;_ANSELB7</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01591">1591</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p>GPIO analog function mode enable bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01344">1344</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga19c41c1494a15bd66a0af8a1a8c864dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga19c41c1494a15bd66a0af8a1a8c864dd">&#9670;&nbsp;</a></span>LCD_RS_SetHigh</h2>
+<a id="ga97b24b342e987a92a0d14a3f364e1bbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga97b24b342e987a92a0d14a3f364e1bbe">&#9670;&nbsp;</a></span>BOOST_TEMP_TRGSRC</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LCD_RS_SetHigh</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_LATC9 = 1</td>
+          <td class="memname">#define BOOST_TEMP_TRGSRC&#160;&#160;&#160;<a class="el" href="a00399.html#gaa8e5c81a584c25dcb070282ec867bd08">BOOST_PWM_TRGSRC_TRG2</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01586">1586</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01349">1349</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga4e073e0e85a0e0abdc1de7d883274daa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4e073e0e85a0e0abdc1de7d883274daa">&#9670;&nbsp;</a></span>LCD_RS_SetLow</h2>
+<a id="gac1882746fdaa93688a88870fd243a2b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac1882746fdaa93688a88870fd243a2b3">&#9670;&nbsp;</a></span>BUCK_TEMP_ADCBUF</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LCD_RS_SetLow</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_LATC9 = 0</td>
+          <td class="memname">#define BUCK_TEMP_ADCBUF&#160;&#160;&#160;ADCBUF2</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01587">1587</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p>GPIO analog function mode enable bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00713">713</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gaf66e9d17c45a3dfa410b0ba0d5ec0309"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf66e9d17c45a3dfa410b0ba0d5ec0309">&#9670;&nbsp;</a></span>LCD_RS_Toggle</h2>
+<a id="ga34d54b71aa34e14ae7899691b398c143"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga34d54b71aa34e14ae7899691b398c143">&#9670;&nbsp;</a></span>BUCK_TEMP_ADCCORE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LCD_RS_Toggle</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_LATC9 ^= 1</td>
+          <td class="memname">#define BUCK_TEMP_ADCCORE&#160;&#160;&#160;8</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01588">1588</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00711">711</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gac41ef83918bece90b2c35a3b33a51409"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac41ef83918bece90b2c35a3b33a51409">&#9670;&nbsp;</a></span>LCD_RST_GetValue</h2>
+<a id="ga1390c9b7eb6211bf82f41548c2559769"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1390c9b7eb6211bf82f41548c2559769">&#9670;&nbsp;</a></span>BUCK_TEMP_ADCIN</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LCD_RST_GetValue</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_RC8</td>
+          <td class="memname">#define BUCK_TEMP_ADCIN&#160;&#160;&#160;2</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01582">1582</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00712">712</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga72cedc14ba8396a4672e467983b80604"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga72cedc14ba8396a4672e467983b80604">&#9670;&nbsp;</a></span>LCD_RST_SetDigitalInput</h2>
+<a id="gaeac79e4136c87ddc66c021ae6ac06902"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaeac79e4136c87ddc66c021ae6ac06902">&#9670;&nbsp;</a></span>BUCK_TEMP_ADCTRIG</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LCD_RST_SetDigitalInput</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_TRISC8 = 1</td>
+          <td class="memname">#define BUCK_TEMP_ADCTRIG&#160;&#160;&#160;PG1TRIGB</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01583">1583</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p>Register used for trigger placement. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00714">714</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga0af443d764e5faaa75d4cd2e8b703c49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0af443d764e5faaa75d4cd2e8b703c49">&#9670;&nbsp;</a></span>LCD_RST_SetDigitalOutput</h2>
+<a id="ga951cf80538bdaab3dc46fc10a906a4c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga951cf80538bdaab3dc46fc10a906a4c1">&#9670;&nbsp;</a></span>BUCK_TEMP_ANSEL</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LCD_RST_SetDigitalOutput</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_TRISC8 = 0</td>
+          <td class="memname">#define BUCK_TEMP_ANSEL&#160;&#160;&#160;_ANSELB7</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01584">1584</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p>GPIO analog function mode enable bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00710">710</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga7d336117627d35e9323d6ec7acc344f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7d336117627d35e9323d6ec7acc344f8">&#9670;&nbsp;</a></span>LCD_RST_SetHigh</h2>
+<a id="gac40eaecce71e8e5aff7b1742fa4833b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac40eaecce71e8e5aff7b1742fa4833b3">&#9670;&nbsp;</a></span>BUCK_TEMP_TRGSRC</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LCD_RST_SetHigh</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_LATC8 = 1</td>
+          <td class="memname">#define BUCK_TEMP_TRGSRC&#160;&#160;&#160;<a class="el" href="a00399.html#ga58748fe2fe121d5e911032bb48743dfc">BUCK_PWM_TRGSRC_TRG2</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01579">1579</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga76f8f56762d39688cc7e5d1883642433"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga76f8f56762d39688cc7e5d1883642433">&#9670;&nbsp;</a></span>LCD_RST_SetLow</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LCD_RST_SetLow</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_LATC8 = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01580">1580</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga749fb50183cd9ac6cefc595159b9e925"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga749fb50183cd9ac6cefc595159b9e925">&#9670;&nbsp;</a></span>LCD_RST_Toggle</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LCD_RST_Toggle</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_LATC8 ^= 1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01581">1581</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga3a27f82b8cb41529fc9651bf5159792c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3a27f82b8cb41529fc9651bf5159792c">&#9670;&nbsp;</a></span>LCD_SCL_GetValue</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LCD_SCL_GetValue</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_RC5</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01561">1561</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga9acae30823c664b7b3ff4f708f67a11f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9acae30823c664b7b3ff4f708f67a11f">&#9670;&nbsp;</a></span>LCD_SCL_SetDigitalInput</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LCD_SCL_SetDigitalInput</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_TRISC5 = 1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01562">1562</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga69ff4891bcb2880e50cd2c9171723912"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga69ff4891bcb2880e50cd2c9171723912">&#9670;&nbsp;</a></span>LCD_SCL_SetDigitalOutput</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LCD_SCL_SetDigitalOutput</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_TRISC5 = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01563">1563</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gaa9402f02b36f1fec44e4e87fafdb817b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa9402f02b36f1fec44e4e87fafdb817b">&#9670;&nbsp;</a></span>LCD_SCL_SetHigh</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LCD_SCL_SetHigh</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_LATC5 = 1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>LC Display Interface Declarations. </p>
-<p>The LCD device driver is controlling the on-board LC display via a SPI interface. The required SPI interface device pin assignments are declared here. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01558">1558</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gafbfedfcd2988a1fef6709ad56f7af61f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gafbfedfcd2988a1fef6709ad56f7af61f">&#9670;&nbsp;</a></span>LCD_SCL_SetLow</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LCD_SCL_SetLow</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_LATC5 = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01559">1559</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga3136542f8e65397970c5de77865fb116"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3136542f8e65397970c5de77865fb116">&#9670;&nbsp;</a></span>LCD_SCL_Toggle</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LCD_SCL_Toggle</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_LATC5 ^= 1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01560">1560</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga5adb907f3466db0ff4ea6dc1ef9a23e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5adb907f3466db0ff4ea6dc1ef9a23e2">&#9670;&nbsp;</a></span>LCD_SDI_GetValue</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LCD_SDI_GetValue</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_RC4</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01568">1568</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga397e38fd8ccd3d7376f0bd767e416002"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga397e38fd8ccd3d7376f0bd767e416002">&#9670;&nbsp;</a></span>LCD_SDI_SetDigitalInput</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LCD_SDI_SetDigitalInput</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_TRISC4 = 1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01569">1569</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga406187bfac1f96601580b8dc14afa73d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga406187bfac1f96601580b8dc14afa73d">&#9670;&nbsp;</a></span>LCD_SDI_SetDigitalOutput</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LCD_SDI_SetDigitalOutput</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_TRISC4 = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01570">1570</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga73d5022528fa731ea7ef27312472209a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga73d5022528fa731ea7ef27312472209a">&#9670;&nbsp;</a></span>LCD_SDI_SetHigh</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LCD_SDI_SetHigh</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_LATC4 = 1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01565">1565</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga03f57a80c82216fef78a18b92cf09a68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga03f57a80c82216fef78a18b92cf09a68">&#9670;&nbsp;</a></span>LCD_SDI_SetLow</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LCD_SDI_SetLow</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_LATC4 = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01566">1566</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gafdf7312085e344f8588e0dd77ceaffc0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gafdf7312085e344f8588e0dd77ceaffc0">&#9670;&nbsp;</a></span>LCD_SDI_Toggle</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LCD_SDI_Toggle</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;_LATC4 ^= 1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00092_source.html#l01567">1567</a> of file <a class="el" href="a00092_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00715">715</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

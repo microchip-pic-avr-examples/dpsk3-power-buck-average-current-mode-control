@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Operating System Time Base</title>
+<title>Digital Power Starter Kit 3 Firmware: Digital-to-Analog Converter</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,46 +104,158 @@ $(document).ready(function(){initNavTree('a00532.html',''); initResizable(); });
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Operating System Time Base<div class="ingroups"><a class="el" href="a00517.html">Firmware Architecture</a> &raquo; <a class="el" href="a00518.html">Device Start Up</a> &raquo; <a class="el" href="a00531.html">Initializing Firmware Tasks</a></div></div>  </div>
+<div class="title">Digital-to-Analog Converter<div class="ingroups"><a class="el" href="a00520.html">Firmware Architecture</a> &raquo; <a class="el" href="a00521.html">Device Start Up</a> &raquo; <a class="el" href="a00530.html">Initializing Hardware-Specific Chip Resources</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Operating System Time Base:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Digital-to-Analog Converter:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00532.svg" width="388" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00532.svg" width="402" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
-<tr class="memitem:ga8e89a1a4ee5bf8c794bd29163b92bf49"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00532.html#ga8e89a1a4ee5bf8c794bd29163b92bf49">sysOsTimer_Initialize</a> (void)</td></tr>
-<tr class="memdesc:ga8e89a1a4ee5bf8c794bd29163b92bf49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the timer used as time-base for the task scheduler.  <a href="a00532.html#ga8e89a1a4ee5bf8c794bd29163b92bf49">More...</a><br /></td></tr>
-<tr class="separator:ga8e89a1a4ee5bf8c794bd29163b92bf49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4c811c3414a3785423f828be293562f0"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00532.html#ga4c811c3414a3785423f828be293562f0">sysOsTimer_Enable</a> (volatile bool interrupt_enable, volatile uint8_t interrupt_priority)</td></tr>
-<tr class="separator:ga4c811c3414a3785423f828be293562f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab420e63336f317e197b1cb8861561c3f"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00532.html#gab420e63336f317e197b1cb8861561c3f">sysDacModule_Initialize</a> (void)</td></tr>
+<tr class="memdesc:gab420e63336f317e197b1cb8861561c3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">DAC Module Base Register Initialization.  <a href="a00532.html#gab420e63336f317e197b1cb8861561c3f">More...</a><br /></td></tr>
+<tr class="separator:gab420e63336f317e197b1cb8861561c3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga231ffdd65b0ae520b467cbc6fbbf8d03"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00532.html#ga231ffdd65b0ae520b467cbc6fbbf8d03">sysDacOutput_Initialize</a> (volatile uint16_t dacInstance, volatile uint16_t initValue)</td></tr>
+<tr class="memdesc:ga231ffdd65b0ae520b467cbc6fbbf8d03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a user specified DAC instance with DAC output enabled.  <a href="a00532.html#ga231ffdd65b0ae520b467cbc6fbbf8d03">More...</a><br /></td></tr>
+<tr class="separator:ga231ffdd65b0ae520b467cbc6fbbf8d03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2f97c3082e0d6f724cea482c10c2d08f"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00532.html#ga2f97c3082e0d6f724cea482c10c2d08f">sysDacOutput_Enable</a> (volatile uint16_t dacInstance)</td></tr>
+<tr class="separator:ga2f97c3082e0d6f724cea482c10c2d08f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae4c70ecb7b13f328f1458f5f2cfbe48a"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00532.html#gae4c70ecb7b13f328f1458f5f2cfbe48a">sysDacOutput_Disable</a> (volatile uint16_t dacInstance)</td></tr>
+<tr class="separator:gae4c70ecb7b13f328f1458f5f2cfbe48a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>A simple 16-bit timer is used to generate the time base of the operating system. This timer is set to overflow after the time period specified by <a class="el" href="a00383.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a> in the hardware abstraction layer. This time period is used to pace the high- and low priority task sequences of the main program.</p>
-<p>Two public functions are provided to initialize the time base, configuring its desired period as well as setting up the interrupt priority of the high priority task sequence execution, and an ENABLE function, enabling the high priority task sequence execution interrupt.</p>
-<p>Once the OS Timer and its interrupts are enabled, the main program will start to execute the user tasks with their respective priority and in their given order. </p>
+<p>DPSK3 uses one of the available on-chip Digital-to-Analog Converters (DAC) to generate a dynamic, analog output signal, which can be used for enhanced debugging of high-speed processes such as control output monitoring. </p><dl class="section note"><dt>Note</dt><dd>The DAC output signal is buffered by utilizing one of the available on-chip operational amplifiers. Please refer to the Operational Amplifier Configuration section for details. </dd></dl>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga4c811c3414a3785423f828be293562f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4c811c3414a3785423f828be293562f0">&#9670;&nbsp;</a></span>sysOsTimer_Enable()</h2>
+<a id="gab420e63336f317e197b1cb8861561c3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab420e63336f317e197b1cb8861561c3f">&#9670;&nbsp;</a></span>sysDacModule_Initialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t sysOsTimer_Enable </td>
+          <td class="memname">uint16_t sysDacModule_Initialize </td>
           <td>(</td>
-          <td class="paramtype">volatile bool&#160;</td>
-          <td class="paramname"><em>interrupt_enable</em>, </td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DAC Module Base Register Initialization. </p>
+<dl class="section return"><dt>Returns</dt><dd>unsigned integer </dd>
+<dd>
+0=failure </dd>
+<dd>
+1=success</dd></dl>
+<p>This function initializes the DAC module base registers for being operated by the auxiliary oscillator at an input clock frequency of 500 MHz.</p>
+<p>In this application the DAC is used to provide a constant reference voltage of VDD/2 = 1.65 V to the external current sense shunt amplifier devices. Neither, built-in comparator nor Pulse-Density Modulator (PDM) ramp generator are used. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00039">39</a> of file <a class="el" href="a00104_source.html">init_dac.c</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00532_gab420e63336f317e197b1cb8861561c3f_cgraph.svg" width="656" height="114"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00532_gab420e63336f317e197b1cb8861561c3f_icgraph.svg" width="356" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="gae4c70ecb7b13f328f1458f5f2cfbe48a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae4c70ecb7b13f328f1458f5f2cfbe48a">&#9670;&nbsp;</a></span>sysDacOutput_Disable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t sysDacOutput_Disable </td>
+          <td>(</td>
+          <td class="paramtype">volatile uint16_t&#160;</td>
+          <td class="paramname"><em>dacInstance</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00129">129</a> of file <a class="el" href="a00104_source.html">init_dac.c</a>.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00532_gae4c70ecb7b13f328f1458f5f2cfbe48a_cgraph.svg" width="411" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ga2f97c3082e0d6f724cea482c10c2d08f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2f97c3082e0d6f724cea482c10c2d08f">&#9670;&nbsp;</a></span>sysDacOutput_Enable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t sysDacOutput_Enable </td>
+          <td>(</td>
+          <td class="paramtype">volatile uint16_t&#160;</td>
+          <td class="paramname"><em>dacInstance</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00099">99</a> of file <a class="el" href="a00104_source.html">init_dac.c</a>.</p>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00532_ga2f97c3082e0d6f724cea482c10c2d08f_cgraph.svg" width="408" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00532_ga2f97c3082e0d6f724cea482c10c2d08f_icgraph.svg" width="346" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ga231ffdd65b0ae520b467cbc6fbbf8d03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga231ffdd65b0ae520b467cbc6fbbf8d03">&#9670;&nbsp;</a></span>sysDacOutput_Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t sysDacOutput_Initialize </td>
+          <td>(</td>
+          <td class="paramtype">volatile uint16_t&#160;</td>
+          <td class="paramname"><em>dacInstance</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">volatile uint8_t&#160;</td>
-          <td class="paramname"><em>interrupt_priority</em>&#160;</td>
+          <td class="paramtype">volatile uint16_t&#160;</td>
+          <td class="paramname"><em>initValue</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -153,42 +265,33 @@ $(document).ready(function(){initNavTree('a00532.html',''); initResizable(); });
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00137_source.html#l00081">81</a> of file <a class="el" href="a00137_source.html">init_timer1.c</a>.</p>
+<p>Initializes a user specified DAC instance with DAC output enabled. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dacInstance</td><td>Index of the selected DAC Instance (1=DAC1, 2=DAC2, etc.) </td></tr>
+    <tr><td class="paramname">initValue</td><td>Integer value at startup of the DAC peripheral instance </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
+<p>This function clears all registers of the declared DAC instance and initializes the registers required by a static Digital-to-Analog Converter output with the given default values.</p>
+<dl class="section note"><dt>Note</dt><dd>The initialization function does not enable the DAC instance. Please use function <a class="el" href="a00532.html#ga2f97c3082e0d6f724cea482c10c2d08f">sysDacOutput_Enable()</a> to turn on the DAC instance at the appropriate time. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00071">71</a> of file <a class="el" href="a00104_source.html">init_dac.c</a>.</p>
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00532_ga231ffdd65b0ae520b467cbc6fbbf8d03_cgraph.svg" width="666" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
-<a id="ga8e89a1a4ee5bf8c794bd29163b92bf49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8e89a1a4ee5bf8c794bd29163b92bf49">&#9670;&nbsp;</a></span>sysOsTimer_Initialize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t sysOsTimer_Initialize </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Initializes the timer used as time-base for the task scheduler. </p>
-<p>The internal PLL is set up to operate the CPU at maximum speed of 100 MIPS (100 MHz instruction cycle).</p>
-<dl class="section return"><dt>Returns</dt><dd>unsigned integer </dd>
-<dd>
-0=failure </dd>
-<dd>
-1=success</dd></dl>
-<p>The task scheduler runs on a specific, usually fixed time base specified in the state machine section of the hardware abstraction layer (e.g. 100us). This routine initializes a device timer exclusively used for that purpose which is not shared with other tasks/peripherals to ensure stable, deterministic behavior of the firmware. The timer does not use interrupts. The scheduler task execution period is controlled by polling on the timer overrun bit, allowing some more relaxed timing while not putting additional burden on the CPU. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00137_source.html#l00040">40</a> of file <a class="el" href="a00137_source.html">init_timer1.c</a>.</p>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00532_ga8e89a1a4ee5bf8c794bd29163b92bf49_icgraph.svg" width="364" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00532_ga231ffdd65b0ae520b467cbc6fbbf8d03_icgraph.svg" width="352" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 

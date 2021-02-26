@@ -1,6 +1,7 @@
 var a00477 =
 [
-    [ "Variables & Constants", "a00478.html", "a00478" ],
-    [ "Data Types", "a00479.html", null ],
-    [ "Defines and Macros", "a00480.html", null ]
+    [ "Buck Converter State Machine", "a00478.html", "a00478" ],
+    [ "Buck Special Functions", "a00484.html", "a00484" ],
+    [ "Buck Peripheral Configuration", "a00490.html", "a00490" ],
+    [ "Buck Peripheral Templates", "a00496.html", "a00496" ]
 ];

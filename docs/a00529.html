@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Digital-to-Analog Converter</title>
+<title>Digital Power Starter Kit 3 Firmware: Digital Signal Processor Configuration</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -103,41 +103,38 @@ $(document).ready(function(){initNavTree('a00529.html',''); initResizable(); });
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Digital-to-Analog Converter<div class="ingroups"><a class="el" href="a00517.html">Firmware Architecture</a> &raquo; <a class="el" href="a00518.html">Device Start Up</a> &raquo; <a class="el" href="a00527.html">Initializing Hardware-Specific Chip Resources</a></div></div>  </div>
+<div class="title">Digital Signal Processor Configuration<div class="ingroups"><a class="el" href="a00520.html">Firmware Architecture</a> &raquo; <a class="el" href="a00521.html">Device Start Up</a> &raquo; <a class="el" href="a00525.html">Initializing Essential Chip Resources</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Digital-to-Analog Converter:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Digital Signal Processor Configuration:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00529.svg" width="402" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00529.svg" width="358" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
-<tr class="memitem:gab420e63336f317e197b1cb8861561c3f"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00529.html#gab420e63336f317e197b1cb8861561c3f">sysDacModule_Initialize</a> (void)</td></tr>
-<tr class="memdesc:gab420e63336f317e197b1cb8861561c3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">DAC Module Base Register Initialization.  <a href="a00529.html#gab420e63336f317e197b1cb8861561c3f">More...</a><br /></td></tr>
-<tr class="separator:gab420e63336f317e197b1cb8861561c3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga231ffdd65b0ae520b467cbc6fbbf8d03"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00529.html#ga231ffdd65b0ae520b467cbc6fbbf8d03">sysDacOutput_Initialize</a> (volatile uint16_t dacInstance, volatile uint16_t initValue)</td></tr>
-<tr class="memdesc:ga231ffdd65b0ae520b467cbc6fbbf8d03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a user specified DAC instance with DAC output enabled.  <a href="a00529.html#ga231ffdd65b0ae520b467cbc6fbbf8d03">More...</a><br /></td></tr>
-<tr class="separator:ga231ffdd65b0ae520b467cbc6fbbf8d03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2f97c3082e0d6f724cea482c10c2d08f"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00529.html#ga2f97c3082e0d6f724cea482c10c2d08f">sysDacOutput_Enable</a> (volatile uint16_t dacInstance)</td></tr>
-<tr class="separator:ga2f97c3082e0d6f724cea482c10c2d08f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae4c70ecb7b13f328f1458f5f2cfbe48a"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00529.html#gae4c70ecb7b13f328f1458f5f2cfbe48a">sysDacOutput_Disable</a> (volatile uint16_t dacInstance)</td></tr>
-<tr class="separator:gae4c70ecb7b13f328f1458f5f2cfbe48a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gae104c8e1fd4160f749fefbcf540f5a07"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00529.html#gae104c8e1fd4160f749fefbcf540f5a07">sysDsp_Initialize</a> (void)</td></tr>
+<tr class="memdesc:gae104c8e1fd4160f749fefbcf540f5a07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Digital Signal Processor initialization.  <a href="a00529.html#gae104c8e1fd4160f749fefbcf540f5a07">More...</a><br /></td></tr>
+<tr class="separator:gae104c8e1fd4160f749fefbcf540f5a07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>DPSK3 uses one of the available on-chip Digital-to-Analog Converters (DAC) to generate a dynamic, analog output signal, which can be used for enhanced debugging of high-speed processes such as control output monitoring. </p><dl class="section note"><dt>Note</dt><dd>The DAC output signal is buffered by utilizing one of the available on-chip operational amplifiers. Please refer to the Operational Amplifier Configuration section for details. </dd></dl>
+<p>The Digital Signal Processor (DSP) of dsPIC33C can be configured to support specific functions optimized for fixed-point arithmetic of a normalized number space as well as enhanced features such as accumulator and write-back saturation. As there is no other software instance using the DSP other than the power supply control loops, the DSP is configured at device start to save time during high frequency computations of the high-speed control loop. </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="gab420e63336f317e197b1cb8861561c3f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab420e63336f317e197b1cb8861561c3f">&#9670;&nbsp;</a></span>sysDacModule_Initialize()</h2>
+<a id="gae104c8e1fd4160f749fefbcf540f5a07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae104c8e1fd4160f749fefbcf540f5a07">&#9670;&nbsp;</a></span>sysDsp_Initialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t sysDacModule_Initialize </td>
+          <td class="memname">uint16_t sysDsp_Initialize </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -146,152 +143,19 @@ $(document).ready(function(){initNavTree('a00529.html',''); initResizable(); });
       </table>
 </div><div class="memdoc">
 
-<p>DAC Module Base Register Initialization. </p>
-<dl class="section return"><dt>Returns</dt><dd>unsigned integer </dd>
-<dd>
-0=failure </dd>
-<dd>
-1=success</dd></dl>
-<p>This function initializes the DAC module base registers for being operated by the auxiliary oscillator at an input clock frequency of 500 MHz.</p>
-<p>In this application the DAC is used to provide a constant reference voltage of VDD/2 = 1.65 V to the external current sense shunt amplifier devices. Neither, built-in comparator nor Pulse-Density Modulator (PDM) ramp generator are used. </p>
+<p>Digital Signal Processor initialization. </p>
+<dl class="section return"><dt>Returns</dt><dd>unsigned integer 0=failure 1=success</dd></dl>
+<p>This routine initializes the default configuration of the DSP core for performing SMPS control loop libraries. If any other section of the firmware needs to use the DSP with different settings, this code module would have to make sure the core configuration is reset to these defaults when the SMPS control library is executed.</p>
+<dl class="section note"><dt>Note</dt><dd>: The configuration of the control library allows to add its own core configuration save &amp; restore cycle in the control code. Please enable this function in the control loop configuration if conflicts between different DSP configurations cannot be resolved differently within the firmware. This routine initializes the default configuration of the DSP core for performing SMPS control loop libraries. If any other section of the firmware needs to use the DSP with different settings, this code module would have to make sure the core configuration is reset to these defaults when the SMPS control library is executed.</dd></dl>
+<p>The configuration of the control library allows to add its own core configuration save &amp; restore cycle in the control code. Please enable this function in the control loop configuration if conflicts between different DSP configurations cannot be resolved differently within the firmware. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00101_source.html#l00039">39</a> of file <a class="el" href="a00101_source.html">init_dac.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00110_source.html#l00048">48</a> of file <a class="el" href="a00110_source.html">init_dsp.c</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00529_gab420e63336f317e197b1cb8861561c3f_cgraph.svg" width="656" height="114"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00529_gab420e63336f317e197b1cb8861561c3f_icgraph.svg" width="356" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="gae4c70ecb7b13f328f1458f5f2cfbe48a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae4c70ecb7b13f328f1458f5f2cfbe48a">&#9670;&nbsp;</a></span>sysDacOutput_Disable()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t sysDacOutput_Disable </td>
-          <td>(</td>
-          <td class="paramtype">volatile uint16_t&#160;</td>
-          <td class="paramname"><em>dacInstance</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00101_source.html#l00129">129</a> of file <a class="el" href="a00101_source.html">init_dac.c</a>.</p>
-<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00529_gae4c70ecb7b13f328f1458f5f2cfbe48a_cgraph.svg" width="411" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="ga2f97c3082e0d6f724cea482c10c2d08f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2f97c3082e0d6f724cea482c10c2d08f">&#9670;&nbsp;</a></span>sysDacOutput_Enable()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t sysDacOutput_Enable </td>
-          <td>(</td>
-          <td class="paramtype">volatile uint16_t&#160;</td>
-          <td class="paramname"><em>dacInstance</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00101_source.html#l00099">99</a> of file <a class="el" href="a00101_source.html">init_dac.c</a>.</p>
-<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00529_ga2f97c3082e0d6f724cea482c10c2d08f_cgraph.svg" width="408" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00529_ga2f97c3082e0d6f724cea482c10c2d08f_icgraph.svg" width="346" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="ga231ffdd65b0ae520b467cbc6fbbf8d03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga231ffdd65b0ae520b467cbc6fbbf8d03">&#9670;&nbsp;</a></span>sysDacOutput_Initialize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t sysDacOutput_Initialize </td>
-          <td>(</td>
-          <td class="paramtype">volatile uint16_t&#160;</td>
-          <td class="paramname"><em>dacInstance</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">volatile uint16_t&#160;</td>
-          <td class="paramname"><em>initValue</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Initializes a user specified DAC instance with DAC output enabled. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">dacInstance</td><td>Index of the selected DAC Instance (1=DAC1, 2=DAC2, etc.) </td></tr>
-    <tr><td class="paramname">initValue</td><td>Integer value at startup of the DAC peripheral instance </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned integer (0=failure, 1=success)</dd></dl>
-<p>This function clears all registers of the declared DAC instance and initializes the registers required by a static Digital-to-Analog Converter output with the given default values.</p>
-<dl class="section note"><dt>Note</dt><dd>The initialization function does not enable the DAC instance. Please use function <a class="el" href="a00529.html#ga2f97c3082e0d6f724cea482c10c2d08f">sysDacOutput_Enable()</a> to turn on the DAC instance at the appropriate time. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="a00101_source.html#l00071">71</a> of file <a class="el" href="a00101_source.html">init_dac.c</a>.</p>
-<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00529_ga231ffdd65b0ae520b467cbc6fbbf8d03_cgraph.svg" width="666" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00529_ga231ffdd65b0ae520b467cbc6fbbf8d03_icgraph.svg" width="352" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00529_gae104c8e1fd4160f749fefbcf540f5a07_icgraph.svg" width="310" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 

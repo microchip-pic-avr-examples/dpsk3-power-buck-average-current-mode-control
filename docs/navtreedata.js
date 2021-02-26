@@ -36,23 +36,23 @@ var NAVTREE =
       [ "Setup", "index.html#autotoc_md9", null ],
       [ "Operation", "index.html#autotoc_md10", null ]
     ] ],
-    [ "Getting Started", "a01650.html", [
-      [ "Table of Contents", "a01650.html#autotoc_md12", null ],
-      [ "1) Microchip SMPS Firmware Framework Architecture Overview", "a01650.html#autotoc_md13", null ],
-      [ "2) Buck Converter State Machine", "a01650.html#autotoc_md14", null ],
-      [ "3) Real Start-Up Timing of DPSK3", "a01650.html#autotoc_md15", null ],
-      [ "4) Fault Monitor", "a01650.html#autotoc_md16", null ],
-      [ "5) Evaluation, Customization and Code Migration", "a01650.html#autotoc_md17", null ],
-      [ "6) Digital Controller Design", "a01650.html#autotoc_md18", null ],
-      [ "7) Power Plant Measurement Support", "a01650.html#autotoc_md19", null ]
+    [ "Getting Started", "a01653.html", [
+      [ "Table of Contents", "a01653.html#autotoc_md12", null ],
+      [ "1) Microchip SMPS Firmware Framework Architecture Overview", "a01653.html#autotoc_md13", null ],
+      [ "2) Buck Converter State Machine", "a01653.html#autotoc_md14", null ],
+      [ "3) Real Start-Up Timing of DPSK3", "a01653.html#autotoc_md15", null ],
+      [ "4) Fault Monitor", "a01653.html#autotoc_md16", null ],
+      [ "5) Evaluation, Customization and Code Migration", "a01653.html#autotoc_md17", null ],
+      [ "6) Digital Controller Design", "a01653.html#autotoc_md18", null ],
+      [ "7) Power Plant Measurement Support", "a01653.html#autotoc_md19", null ]
     ] ],
-    [ "Power Supply Control", "a01651.html", [
-      [ "Table of Contents", "a01651.html#autotoc_md21", null ],
-      [ "1) DPSK3 Buck Converter Average Current Mode Control Implementation", "a01651.html#autotoc_md22", null ],
-      [ "2) Control Loop Block Diagram", "a01651.html#autotoc_md23", null ],
-      [ "3) Control Loop Timing", "a01651.html#autotoc_md24", null ],
-      [ "4) Control Loop Flow Chart", "a01651.html#autotoc_md25", null ],
-      [ "5) Control Loop Firmware Implementation", "a01651.html#autotoc_md26", null ]
+    [ "Power Supply Control", "a01654.html", [
+      [ "Table of Contents", "a01654.html#autotoc_md21", null ],
+      [ "1) DPSK3 Buck Converter Average Current Mode Control Implementation", "a01654.html#autotoc_md22", null ],
+      [ "2) Control Loop Block Diagram", "a01654.html#autotoc_md23", null ],
+      [ "3) Control Loop Timing", "a01654.html#autotoc_md24", null ],
+      [ "4) Control Loop Flow Chart", "a01654.html#autotoc_md25", null ],
+      [ "5) Control Loop Firmware Implementation", "a01654.html#autotoc_md26", null ]
     ] ],
     [ "Software Overview", "modules.html", "modules" ],
     [ "Data Structures", "annotated.html", [
@@ -68,13 +68,13 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"a00353.html",
-"a00396.html#gabf2ad9b2299924fa6c2a9fb609923d4c",
-"a00416.html",
-"a00469.html",
-"a00541.html#adc08ef06ae70448a10169a769070bf95",
-"a01441.html#a7f07a2e8a867dd37118fa2624121fe84",
-"a01625.html#a971260b757f0c8822315d8c82a603142"
+"a00356.html",
+"a00399.html#gabf2ad9b2299924fa6c2a9fb609923d4c",
+"a00419.html",
+"a00472.html",
+"a00544.html#adc08ef06ae70448a10169a769070bf95",
+"a01444.html#a7f07a2e8a867dd37118fa2624121fe84",
+"a01628.html#a971260b757f0c8822315d8c82a603142"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

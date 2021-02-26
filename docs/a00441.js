@@ -1,6 +1,6 @@
 var a00441 =
 [
-    [ "LCD_REFRESH", "a00441.html#ga8f1bba8cbdf98ed2ac6e10cc8739e56f", null ],
-    [ "LCD_STARTUP", "a00441.html#ga064b0f92f54c1aab1e6731ff24b4cce7", null ],
-    [ "lcd_cnt", "a00441.html#ga6d471f8bdd24d951c86a09ec25f74ef2", null ]
+    [ "appLCD_Dispose", "a00441.html#ga38c10d91e208e9eb081d0341792954d7", null ],
+    [ "appLCD_Execute", "a00441.html#gacd8e3f8ca8af94f13f7efa0df7ced6f5", null ],
+    [ "appLCD_Initialize", "a00441.html#gab93992748ced72fdc2989d0b0f369e54", null ]
 ];

@@ -1,6 +1,5 @@
 var a00362 =
 [
-    [ "p33c_CcpInstance_ConfigRead", "a00362.html#gad6952d3b506333e2642341c309ee7cdc", null ],
-    [ "p33c_CcpInstance_ConfigWrite", "a00362.html#gadf02a542682e9ac5d9038529261b9ef0", null ],
-    [ "p33c_CcpInstance_GetHandle", "a00362.html#ga2b27b6ad1318677db2816e0a2020481a", null ]
+    [ "Public Functions", "a00370.html", "a00370" ],
+    [ "Private Properties", "a00378.html", "a00378" ]
 ];

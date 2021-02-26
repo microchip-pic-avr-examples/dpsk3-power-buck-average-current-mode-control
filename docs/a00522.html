@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Initializing Essential Chip Resources</title>
+<title>Digital Power Starter Kit 3 Firmware: Main Loop</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,31 +106,33 @@ $(document).ready(function(){initNavTree('a00522.html',''); initResizable(); });
   <div class="summary">
 <a href="#groups">Modules</a>  </div>
   <div class="headertitle">
-<div class="title">Initializing Essential Chip Resources<div class="ingroups"><a class="el" href="a00517.html">Firmware Architecture</a> &raquo; <a class="el" href="a00518.html">Device Start Up</a></div></div>  </div>
+<div class="title">Main Loop<div class="ingroups"><a class="el" href="a00520.html">Firmware Architecture</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Main Loop.  
+<a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Initializing Essential Chip Resources:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Main Loop:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00522.svg" width="538" height="200"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00522.svg" width="523" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
 Modules</h2></td></tr>
-<tr class="memitem:a00523"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00523.html">Basic MCU Initialization</a></td></tr>
+<tr class="memitem:a00523"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00523.html">Low-Priority Task Execution</a></td></tr>
+<tr class="memdesc:a00523"><td class="mdescLeft">&#160;</td><td class="mdescRight">Low priority task execution The execution of the sequence of low priority tasks is called from the main loop at lowest firmware priority #0. Tasks executed on this level may be interrupted by executions of high priority task sequences triggered by the operating system timer interrupt as well as the real-time control sytem interrupts. <br  />
+ <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00524"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00524.html">Main Oscillator Initialization</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00525"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00525.html">Device Pin Configuration</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00526"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00526.html">Digital Signal Processor Configuration</a></td></tr>
+<tr class="memitem:a00524"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00524.html">High-Priority Task Execution</a></td></tr>
+<tr class="memdesc:a00524"><td class="mdescLeft">&#160;</td><td class="mdescRight">High priority task execution. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>The initialization of essential chip resources includes main oscillator initialization, GPIO reset and peripheral power management. All other chip resources are managed by each individual task or are initialized in the user peripehral initialization called after the essential chip resources have been configured. </p>
+<p>Main Loop. </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

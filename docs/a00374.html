@@ -103,23 +103,127 @@ $(document).ready(function(){initNavTree('a00374.html',''); initResizable(); });
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">Private Properties<div class="ingroups"><a class="el" href="a00536.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00353.html">Peripheral Register Abstraction Layer (PRAL) Library</a> &raquo; <a class="el" href="a00358.html">Operational Amplifier Module (AMP)</a></div></div>  </div>
+<div class="title">Private Properties<div class="ingroups"><a class="el" href="a00539.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00356.html">Peripheral Register Abstraction Layer (PRAL) Library</a> &raquo; <a class="el" href="a00358.html">Digital-To-Analog Converter Module (DAC)</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Private properties of the AMP PRAL driver.  
+<p>Private properties of the SDAC PRAL driver.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Private Properties:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00374.svg" width="326" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00374.svg" width="362" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
-<p>Private properties of the AMP PRAL driver. </p>
-<p>This is the detailed description of privte variables, data types, enumerations, defines and macros of the AMP PRAL driver </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ga533a5e749ab3eb533348dcc12c328e89"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a00724.html">P33C_DAC_MODULE_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html#ga533a5e749ab3eb533348dcc12c328e89">dacModuleConfigClear</a></td></tr>
+<tr class="memdesc:ga533a5e749ab3eb533348dcc12c328e89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default RESET configuration of the DAC module base SFRs.  <a href="a00374.html#ga533a5e749ab3eb533348dcc12c328e89">More...</a><br /></td></tr>
+<tr class="separator:ga533a5e749ab3eb533348dcc12c328e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2c035262266900ab045b40d8f9d007b9"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a00724.html">P33C_DAC_MODULE_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html#ga2c035262266900ab045b40d8f9d007b9">dacModuleDefault</a></td></tr>
+<tr class="memdesc:ga2c035262266900ab045b40d8f9d007b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default configuration of DAC module running from 500 MHz input clock.  <a href="a00374.html#ga2c035262266900ab045b40d8f9d007b9">More...</a><br /></td></tr>
+<tr class="separator:ga2c035262266900ab045b40d8f9d007b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab89a67798717a61affd24c0a5ca9a71f"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a00752.html">P33C_DAC_INSTANCE_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html#gab89a67798717a61affd24c0a5ca9a71f">dacConfigClear</a></td></tr>
+<tr class="memdesc:gab89a67798717a61affd24c0a5ca9a71f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default RESET configuration of one DAC instance channel SFRs.  <a href="a00374.html#gab89a67798717a61affd24c0a5ca9a71f">More...</a><br /></td></tr>
+<tr class="separator:gab89a67798717a61affd24c0a5ca9a71f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Private properties of the SDAC PRAL driver. </p>
+<p>This is the detailed description of privte variables, data types, enumerations, defines and macros of the DAC PRAL driver </p>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="gab89a67798717a61affd24c0a5ca9a71f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab89a67798717a61affd24c0a5ca9a71f">&#9670;&nbsp;</a></span>dacConfigClear</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">dacConfigClear</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    </div>
+<div class="line">    .DACxCONL.value = 0x0000,</div>
+<div class="line">    .DACxCONH.value = 0x0000,</div>
+<div class="line">    .DACxDATL.value = 0x0000,</div>
+<div class="line">    .DACxDATH.value = 0x0000,</div>
+<div class="line">    .SLPxCONL.value = 0x0000,</div>
+<div class="line">    .SLPxCONH.value = 0x0000,</div>
+<div class="line">    .SLPxDAT.value  = 0x0000</div>
+<div class="line">        </div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p>Default RESET configuration of one DAC instance channel SFRs. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dacConfigClear</td><td>DAC instance Special Function Register (SFR) set</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Default configuration of the DAC instance SFRs with all its registers being reset to their default state when the device comes out of RESET. Programmers can use this template to reset (dispose) a previously used DAC instance when it's not used anymore or to secure a known startup condition before writing individual configurations to its SFRs. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00032_source.html#l00252">252</a> of file <a class="el" href="a00032_source.html">p33c_dac.c</a>.</p>
+
+</div>
+</div>
+<a id="ga533a5e749ab3eb533348dcc12c328e89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga533a5e749ab3eb533348dcc12c328e89">&#9670;&nbsp;</a></span>dacModuleConfigClear</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">dacModuleConfigClear</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line"> </div>
+<div class="line">    .DacModuleCtrl1L.value = 0x0000,</div>
+<div class="line">    .DacModuleCtrl2L.value = 0x0000,</div>
+<div class="line">    .DacModuleCtrl2H.value = 0x0000</div>
+<div class="line"> </div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p>Default RESET configuration of the DAC module base SFRs. </p>
+<p>Default configuration of the DAC module SFRs with all its registers being reset to their default state when the device comes out of RESET. Programmers can use this template to reset (dispose) a previously used DAC module when it's not used anymore or to ensure a known startup condition before writing individual configurations to its SFRs. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00032_source.html#l00252">252</a> of file <a class="el" href="a00032_source.html">p33c_dac.c</a>.</p>
+
+</div>
+</div>
+<a id="ga2c035262266900ab045b40d8f9d007b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2c035262266900ab045b40d8f9d007b9">&#9670;&nbsp;</a></span>dacModuleDefault</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">dacModuleDefault</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    .DacModuleCtrl1L.value = 0x0080, </div>
+<div class="line">    .DacModuleCtrl2H.bits.SSTIME = 0x008A, </div>
+<div class="line">    .DacModuleCtrl2L.bits.TMODTIME = 0x0055 </div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p>Default configuration of DAC module running from 500 MHz input clock. </p>
+<p>Default configuration of the DAC module SFRs with all its registers being reset to their default state when the device comes out of RESET. The timing settings for settling time and transition mode time of the built-in Pulse-Density Modulator ramp generator are reset to their recommended default values when operated from a 500 MHz clock input. (Please read the device data sheet for details)</p>
+<p>Programmers can use this template to reset a previously used DAC module when it's not used anymore or to ensure a known startup condition before writing individual configurations to its SFRs. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00032_source.html#l00252">252</a> of file <a class="el" href="a00032_source.html">p33c_dac.c</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

@@ -106,63 +106,68 @@ $(document).ready(function(){initNavTree('a00373.html',''); initResizable(); });
   <div class="summary">
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">Private Properties<div class="ingroups"><a class="el" href="a00536.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00353.html">Peripheral Register Abstraction Layer (PRAL) Library</a> &raquo; <a class="el" href="a00357.html">General Purpose Input/Output (GPIO)</a></div></div>  </div>
+<div class="title">Private Properties<div class="ingroups"><a class="el" href="a00539.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00356.html">Peripheral Register Abstraction Layer (PRAL) Library</a> &raquo; <a class="el" href="a00357.html">Capture Compare Module (SCCP/MCCP)</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Private properties of the GPIO PRAL driver.  
+<p>Private properties of the SCCP/MCCP PRAL driver.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Private Properties:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00373.svg" width="334" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00373.svg" width="352" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:gab964f86f667e2391e953d4c267d09663"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a00821.html">P33C_GPIO_INSTANCE_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00373.html#gab964f86f667e2391e953d4c267d09663">gpioConfigClear</a></td></tr>
-<tr class="memdesc:gab964f86f667e2391e953d4c267d09663"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default RESET configuration of one GPIO instance SFRs.  <a href="a00373.html#gab964f86f667e2391e953d4c267d09663">More...</a><br /></td></tr>
-<tr class="separator:gab964f86f667e2391e953d4c267d09663"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaace96580ebc36260c1b6072178f25987"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a00544.html">P33C_CCP_INSTANCE_SFRSET_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00373.html#gaace96580ebc36260c1b6072178f25987">ccpConfigDefault</a></td></tr>
+<tr class="memdesc:gaace96580ebc36260c1b6072178f25987"><td class="mdescLeft">&#160;</td><td class="mdescRight">CCP Register Set reset state template.  <a href="a00373.html#gaace96580ebc36260c1b6072178f25987">More...</a><br /></td></tr>
+<tr class="separator:gaace96580ebc36260c1b6072178f25987"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Private properties of the GPIO PRAL driver. </p>
-<p>This is the detailed description of privte variables, data types, enumerations, defines and macros of the GPIO PRAL driver </p>
+<p>Private properties of the SCCP/MCCP PRAL driver. </p>
+<p>This is the detailed description of privte variables, data types, enumerations, defines and macros of the SCCP/MCCP PRAL driver </p>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="gab964f86f667e2391e953d4c267d09663"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab964f86f667e2391e953d4c267d09663">&#9670;&nbsp;</a></span>gpioConfigClear</h2>
+<a id="gaace96580ebc36260c1b6072178f25987"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaace96580ebc36260c1b6072178f25987">&#9670;&nbsp;</a></span>ccpConfigDefault</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">gpioConfigClear</td>
+          <td class="memname">ccpConfigDefault</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<b>Initial value:</b><div class="fragment"><div class="line">= { </div>
 <div class="line">    </div>
-<div class="line">        .ANSELx.value = 0x0000, </div>
-<div class="line">        .CNCONx.value = 0x0000, </div>
-<div class="line">        .CNEN0x.value = 0x0000, </div>
-<div class="line">        .CNEN1x.value = 0x0000, </div>
-<div class="line">        .CNFx.value = 0x0000, </div>
-<div class="line">        .CNPDx.value = 0x0000, </div>
-<div class="line">        .CNPUx.value = 0x0000, </div>
-<div class="line">        .CNSTATx.value = 0x0000, </div>
-<div class="line">        .LATx.value = 0x0000, </div>
-<div class="line">        .ODCx.value = 0x0000, </div>
-<div class="line">        .PORTx.value = 0x0000, </div>
-<div class="line">        .TRISx.value = 0x1111, </div>
-<div class="line">        </div>
-<div class="line">    }</div>
+<div class="line">    .CCPxTMRL.value = 0,</div>
+<div class="line">    .CCPxTMRH.value = 0,</div>
+<div class="line">    .CCPxBUFH.value = 0,</div>
+<div class="line">    .CCPxBUFL.value = 0,</div>
+<div class="line">    .CCPxPRH.value  = 0,</div>
+<div class="line">    .CCPxPRL.value = 0,</div>
+<div class="line">    .CCPxRAL.value = 0,</div>
+<div class="line">    .CCPxRBL.value = 0,</div>
+<div class="line">    .CCPxCON1H.value= 0,</div>
+<div class="line">    .CCPxCON1L.value = 0x0000,</div>
+<div class="line">    .CCPxCON2H.value = 0,</div>
+<div class="line">    .CCPxCON2L.value = 0,</div>
+<div class="line">    .CCPxCON3H.value= 0,</div>
+<div class="line">    .CCPxSTATL.value= 0</div>
+<div class="line">    </div>
+<div class="line">   }</div>
 </div><!-- fragment -->
-<p>Default RESET configuration of one GPIO instance SFRs. </p>
-<p>Default configuration of the GPIO instance SFRs with all its registers being reset to their default state when the device comes out of RESET. Programmers can use this template to reset (dispose) a previously used GPIO instance when it's not used anymore or to secure a known startup condition before writing individual configurations to its SFRs. </p>
+<p>CCP Register Set reset state template. </p>
+<p>This P33C_CCP_MODULE_SFRSET_s data object provides a template of register configuration values for a CCP peripheral instance.</p>
+<p>Default configuration:</p><ul>
+<li>all options are reset to their default state </li>
+</ul>
 
-<p class="definition">Definition at line <a class="el" href="a00041_source.html#l00133">133</a> of file <a class="el" href="a00041_source.html">p33c_gpio.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00026_source.html#l00001">1</a> of file <a class="el" href="a00026_source.html">p33c_ccp.c</a>.</p>
 
 </div>
 </div>

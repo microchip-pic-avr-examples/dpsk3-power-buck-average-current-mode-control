@@ -1,7 +1,7 @@
 var a00423 =
 [
-    [ "fltobj_BuckOCP", "a00423.html#ga94bfe2ce5dda4f256be991d41bf23514", null ],
-    [ "fltobj_BuckOVLO", "a00423.html#ga96ccc7eb53ed10fa68fbe5aae4793d32", null ],
-    [ "fltobj_BuckRegErr", "a00423.html#ga9a42288edd61441b896e9caa0ebd8303", null ],
-    [ "fltobj_BuckUVLO", "a00423.html#ga295ec0d409fed7ec6f9104a238c686fb", null ]
+    [ "DBGDAC_ENABLE", "a00423.html#ga1fae4fbca01ef05d76f53ca54d362a14", null ],
+    [ "DBGPIN1_ENABLE", "a00423.html#ga558e9be0d6b69c99c432b0e34923921e", null ],
+    [ "DBGPIN2_ENABLE", "a00423.html#ga410c4fdcc59dde5886e61f88917c88e7", null ],
+    [ "PLANT_MEASUREMENT", "a00423.html#ga0bec5510da2215eafb1e118d9dc786c7", null ]
 ];

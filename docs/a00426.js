@@ -1,7 +1,7 @@
 var a00426 =
 [
-    [ "Public Functions", "a00427.html", "a00427" ],
-    [ "Public Properties", "a00428.html", "a00428" ],
-    [ "Private Functions", "a00429.html", null ],
-    [ "Private Properties", "a00430.html", "a00430" ]
+    [ "fltobj_BuckOCP", "a00426.html#ga94bfe2ce5dda4f256be991d41bf23514", null ],
+    [ "fltobj_BuckOVLO", "a00426.html#ga96ccc7eb53ed10fa68fbe5aae4793d32", null ],
+    [ "fltobj_BuckRegErr", "a00426.html#ga9a42288edd61441b896e9caa0ebd8303", null ],
+    [ "fltobj_BuckUVLO", "a00426.html#ga295ec0d409fed7ec6f9104a238c686fb", null ]
 ];

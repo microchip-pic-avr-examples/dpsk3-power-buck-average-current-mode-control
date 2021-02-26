@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Digital Signal Processor Configuration</title>
+<title>Digital Power Starter Kit 3 Firmware: Basic MCU Initialization</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,35 +106,35 @@ $(document).ready(function(){initNavTree('a00526.html',''); initResizable(); });
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Digital Signal Processor Configuration<div class="ingroups"><a class="el" href="a00517.html">Firmware Architecture</a> &raquo; <a class="el" href="a00518.html">Device Start Up</a> &raquo; <a class="el" href="a00522.html">Initializing Essential Chip Resources</a></div></div>  </div>
+<div class="title">Basic MCU Initialization<div class="ingroups"><a class="el" href="a00520.html">Firmware Architecture</a> &raquo; <a class="el" href="a00521.html">Device Start Up</a> &raquo; <a class="el" href="a00525.html">Initializing Essential Chip Resources</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Digital Signal Processor Configuration:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Basic MCU Initialization:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00526.svg" width="358" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00526.svg" width="356" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gae104c8e1fd4160f749fefbcf540f5a07"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00526.html#gae104c8e1fd4160f749fefbcf540f5a07">sysDsp_Initialize</a> (void)</td></tr>
-<tr class="memdesc:gae104c8e1fd4160f749fefbcf540f5a07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Digital Signal Processor initialization.  <a href="a00526.html#gae104c8e1fd4160f749fefbcf540f5a07">More...</a><br /></td></tr>
-<tr class="separator:gae104c8e1fd4160f749fefbcf540f5a07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga12ce46460ff0657fc879f5b23ed8ccb1"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00526.html#ga12ce46460ff0657fc879f5b23ed8ccb1">SYSTEM_Initialize</a> (void)</td></tr>
+<tr class="memdesc:ga12ce46460ff0657fc879f5b23ed8ccb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes essential chip resources.  <a href="a00526.html#ga12ce46460ff0657fc879f5b23ed8ccb1">More...</a><br /></td></tr>
+<tr class="separator:ga12ce46460ff0657fc879f5b23ed8ccb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>The Digital Signal Processor (DSP) of dsPIC33C can be configured to support specific functions optimized for fixed-point arithmetic of a normalized number space as well as enhanced features such as accumulator and write-back saturation. As there is no other software instance using the DSP other than the power supply control loops, the DSP is configured at device start to save time during high frequency computations of the high-speed control loop. </p>
+<p>The initialization of all essential chip resources such as main oscillator, auxiliary clock for PWM, ADC and DAC. GPIO configuration, and the DSP core have been pulled together in on central SYSTEM_Initialize function, where function calls of each essentail chip resource can be executed in a specific sequence and be monitored for their successful completion. </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="gae104c8e1fd4160f749fefbcf540f5a07"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae104c8e1fd4160f749fefbcf540f5a07">&#9670;&nbsp;</a></span>sysDsp_Initialize()</h2>
+<a id="ga12ce46460ff0657fc879f5b23ed8ccb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga12ce46460ff0657fc879f5b23ed8ccb1">&#9670;&nbsp;</a></span>SYSTEM_Initialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t sysDsp_Initialize </td>
+          <td class="memname">uint16_t SYSTEM_Initialize </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -143,19 +143,21 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Digital Signal Processor initialization. </p>
+<p>Initializes essential chip resources. </p>
 <dl class="section return"><dt>Returns</dt><dd>unsigned integer 0=failure 1=success</dd></dl>
-<p>This routine initializes the default configuration of the DSP core for performing SMPS control loop libraries. If any other section of the firmware needs to use the DSP with different settings, this code module would have to make sure the core configuration is reset to these defaults when the SMPS control library is executed.</p>
-<dl class="section note"><dt>Note</dt><dd>: The configuration of the control library allows to add its own core configuration save &amp; restore cycle in the control code. Please enable this function in the control loop configuration if conflicts between different DSP configurations cannot be resolved differently within the firmware. This routine initializes the default configuration of the DSP core for performing SMPS control loop libraries. If any other section of the firmware needs to use the DSP with different settings, this code module would have to make sure the core configuration is reset to these defaults when the SMPS control library is executed.</dd></dl>
-<p>The configuration of the control library allows to add its own core configuration save &amp; restore cycle in the control code. Please enable this function in the control loop configuration if conflicts between different DSP configurations cannot be resolved differently within the firmware. </p>
+<p>The SYSTEM_Initialize function covers the initialization of essential chip resources such as main oscillator, auxiliary oscillator, watchdog timer and general purpose I/Os (GPIO). All other, design specific peripherals are initialized in the User Peripheral Initialization or by the respective User Task Device Drivers included in the firmware project </p>
+<p>&lt; Set up system oscillator for 100 MIPS operation</p>
+<p>&lt; Set up Auxiliary PLL for 500 MHz (source clock to PWM module)</p>
+<p>&lt; Initialize common device GPIOs</p>
+<p>&lt; Initialize the DSP engine for fractional multiplication with saturation</p>
 
-<p class="definition">Definition at line <a class="el" href="a00107_source.html#l00048">48</a> of file <a class="el" href="a00107_source.html">init_dsp.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00146_source.html#l00028">28</a> of file <a class="el" href="a00146_source.html">system.c</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00526_gae104c8e1fd4160f749fefbcf540f5a07_icgraph.svg" width="310" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00526_ga12ce46460ff0657fc879f5b23ed8ccb1_cgraph.svg" width="100%" height="442"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 

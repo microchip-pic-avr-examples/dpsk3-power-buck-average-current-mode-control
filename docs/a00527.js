@@ -1,6 +1,5 @@
 var a00527 =
 [
-    [ "User Peripheral Initialization", "a00528.html", "a00528" ],
-    [ "Digital-to-Analog Converter", "a00529.html", "a00529" ],
-    [ "Operational Amplifier Configuration", "a00530.html", "a00530" ]
+    [ "sysAclk_Initialize", "a00527.html#ga3f3f3c22c6c2b95518271fae8f58b03f", null ],
+    [ "sysFosc_Initialize", "a00527.html#ga40d0188218fbc4f682cbddffff9e1269", null ]
 ];
