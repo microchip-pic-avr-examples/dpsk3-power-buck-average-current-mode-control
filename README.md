@@ -2,7 +2,7 @@
 
 --- 
 # dsPIC33C Digital Power Starter Kit
-### Synchronous Buck Converter: Adaptive Gain Control
+### Synchronous Buck Converter: Average Current Mode Control
 
 
 <p><center><a target="_blank" href="https://www.microchip.com/DM330017-3" rel="nofollow">
@@ -30,8 +30,8 @@ Dual-Loop Average Current Mode Control (ACMC) example for the buck converter on 
 - - -
 
 ## Description
-This code example demonstrates the implementation of a dual-loop average current mode controller for the synchronous buck converter, comprised of an outer votlage loop 
-and an inner curretn loop. The loop implementation also includes the required state machine managing board status analysis, start-up control, operation monitoring, 
+This code example demonstrates the implementation of a dual-loop average current mode controller for the synchronous buck converter, comprised of an outer voltage loop 
+and an inner current loop. The loop implementation also includes the required state machine managing board status analysis, start-up control, operation monitoring, 
 fault handling and auto-restart capability. The buck converter state machine is based on a generic buck converter library package, which is configured and executed in user code.
 
 This code example also includes the LCD driver allowing users to observe runtime data on the on-board LC display. The on-board user switch `USER` allows users to change the active display page to observe input voltage, output voltage, output current and board temperature.
