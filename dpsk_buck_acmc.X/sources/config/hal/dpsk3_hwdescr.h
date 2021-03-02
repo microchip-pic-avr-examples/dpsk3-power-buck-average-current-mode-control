@@ -348,6 +348,7 @@
  * @{ 
  * @brief Conversion macros for user-declarations of PWM parameters
  * 
+ * @details
  * These conversion macros are used to convert user settings defined as physical 
  * quantities into binary (integer) numbers, which will be written to registers and
  * variables and used in calculations throughout the firmware.
@@ -371,6 +372,7 @@
  * @{
  * @brief Declaration of input voltage feedback properties
  * 
+ * @details
  * In this section the output voltage feedback signal scaling, gain, valid signal limits and nominal
  * operating point is specified. Physical quantities are used to define values. Macros are used to 
  * convert given physical values into binary (integer) number to be written into SFRs and variables.
@@ -399,6 +401,7 @@
  * @{ 
  * @brief ADC input assignments of input voltage feedback signals
  * 
+ * @details
  * In this section the ADC input channels, related ADC result buffers, trigger
  * sources and interrupt vectors are defined. These settings allow the fast 
  * re-assignments of feedback signals in case of hardware changes.
@@ -424,6 +427,7 @@
  * @{ 
  * @brief Conversion macros of input voltage feedback parameters
  * 
+ * @details
  * These conversion macros are used to convert user settings defined as physical 
  * quantities into binary (integer) numbers, which will be written to registers and
  * variables and used in calculations throughout the firmware.
@@ -454,6 +458,7 @@
  * @{
  * @brief Declaration of output voltage feedback properties
  * 
+ * @details
  * In this section the output voltage feedback signal scaling, gain, valid signal limits and nominal
  * operating point is specified. Physical quantities are used to define values. Macros are used to 
  * convert given physical values into binary (integer) number to be written into SFRs and variables.
@@ -483,6 +488,7 @@
  * @{ 
  * @brief ADC input assignments of output voltage feedback signals
  * 
+ * @details
  * In this section the ADC input channels, related ADC result buffers, trigger
  * sources and interrupt vectors are defined. These settings allow the fast 
  * re-assignments of feedback signals in case of hardware changes.
@@ -504,6 +510,7 @@
  * @{ 
  * @brief Conversion macros of output voltage feedback parameters
  * 
+ * @details
  * These conversion macros are used to convert user settings defined as physical 
  * quantities into binary (integer) numbers, which will be written to registers and
  * variables and used in calculations throughout the firmware.
@@ -589,6 +596,7 @@
  * @{ 
  * @brief Conversion macros of phase current feedback parameters
  * 
+ * @details
  * These conversion macros are used to convert user settings defined as physical 
  * quantities into binary (integer) numbers, which will be written to registers and
  * variables and used in calculations throughout the firmware.
@@ -682,6 +690,7 @@
  * @{ 
  * @brief Conversion macros of temperature feedback parameters
  * 
+ * @details
  * These conversion macros are used to convert user settings defined as physical 
  * quantities into binary (integer) numbers, which will be written to registers and
  * variables and used in calculations throughout the firmware.
@@ -798,6 +807,7 @@
  * @{ 
  * @brief Conversion Macros of Startup Timing Settings
  * 
+ * @details
  * These conversion macros are used to convert user settings defined as physical 
  * quantities into binary (integer) numbers, which will be written to registers and
  * variables and used in calculations throughout the firmware.
@@ -850,6 +860,7 @@
  * @{ 
  * @brief Conversion Macros of Fault Response Timing Settings
  * 
+ * @details
  * These conversion macros are used to convert user settings defined as physical 
  * quantities into binary (integer) numbers, which will be written to registers and
  * variables and used in calculations throughout the firmware.
@@ -981,6 +992,7 @@
  * @{ 
  * @brief Conversion macros for user-declarations of PWM parameters
  * 
+ * @details
  * These conversion macros are used to convert user settings defined as physical 
  * quantities into binary (integer) numbers, which will be written to registers and
  * variables and used in calculations throughout the firmware.
@@ -1004,6 +1016,7 @@
  * @{
  * @brief Declaration of input voltage feedback properties
  * 
+ * @details
  * In this section the output voltage feedback signal scaling, gain, valid signal limits and nominal
  * operating point is specified. Physical quantities are used to define values. Macros are used to 
  * convert given physical values into binary (integer) number to be written into SFRs and variables.
@@ -1032,6 +1045,7 @@
  * @{ 
  * @brief ADC input assignments of input voltage feedback signals
  * 
+ * @details
  * In this section the ADC input channels, related ADC result buffers, trigger
  * sources and interrupt vectors are defined. These settings allow the fast 
  * re-assignments of feedback signals in case of hardware changes.
@@ -1057,6 +1071,7 @@
  * @{ 
  * @brief Conversion macros of input voltage feedback parameters
  * 
+ * @details
  * These conversion macros are used to convert user settings defined as physical 
  * quantities into binary (integer) numbers, which will be written to registers and
  * variables and used in calculations throughout the firmware.
@@ -1087,6 +1102,7 @@
  * @{
  * @brief Declaration of output voltage feedback properties
  * 
+ * @details
  * In this section the output voltage feedback signal scaling, gain, valid signal limits and nominal
  * operating point is specified. Physical quantities are used to define values. Macros are used to 
  * convert given physical values into binary (integer) number to be written into SFRs and variables.
@@ -1111,6 +1127,7 @@
  * @{ 
  * @brief ADC input assignments of output voltage feedback signals
  * 
+ * @details
  * In this section the ADC input channels, related ADC result buffers, trigger
  * sources and interrupt vectors are defined. These settings allow the fast 
  * re-assignments of feedback signals in case of hardware changes.
@@ -1132,6 +1149,7 @@
  * @{ 
  * @brief Conversion macros of output voltage feedback parameters
  * 
+ * @details
  * These conversion macros are used to convert user settings defined as physical 
  * quantities into binary (integer) numbers, which will be written to registers and
  * variables and used in calculations throughout the firmware.
@@ -1218,6 +1236,7 @@
  * @{ 
  * @brief Conversion macros of phase current feedback parameters
  * 
+ * @details
  * These conversion macros are used to convert user settings defined as physical 
  * quantities into binary (integer) numbers, which will be written to registers and
  * variables and used in calculations throughout the firmware.
@@ -1316,6 +1335,7 @@
  * @{ 
  * @brief Conversion macros of temperature feedback parameters
  * 
+ * @details
  * These conversion macros are used to convert user settings defined as physical 
  * quantities into binary (integer) numbers, which will be written to registers and
  * variables and used in calculations throughout the firmware.
@@ -1435,6 +1455,7 @@
  * @{ 
  * @brief Conversion Macros of Startup Timing Settings
  * 
+ * @details
  * These conversion macros are used to convert user settings defined as physical 
  * quantities into binary (integer) numbers, which will be written to registers and
  * variables and used in calculations throughout the firmware.
@@ -1489,6 +1510,7 @@
  * @{ 
  * @brief Conversion Macros of Fault Response Timing Settings
  * 
+ * @details
  * These conversion macros are used to convert user settings defined as physical 
  * quantities into binary (integer) numbers, which will be written to registers and
  * variables and used in calculations throughout the firmware.
