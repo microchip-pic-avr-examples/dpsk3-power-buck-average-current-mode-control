@@ -446,7 +446,7 @@
 #define BUCK_VIN_OFFSET         (uint16_t)(BUCK_VIN_FEEDBACK_OFFSET / ADC_GRANULARITY) ///< Input voltage feedback offset
 
 #define BUCK_VIN_NORM_INV_G     (float)(1.0/BUCK_VIN_FEEDBACK_GAIN) ///< Inverted feedback gain required for value normalization
-#define BUCK_VIN_NORM_SCALER    (int16_t)(ceil(log(BUCK_VIN_NORM_INV_G)) + 1) ///< VIN normalization  
+#define BUCK_VIN_NORM_SCALER    (int16_t)(ceil(log(BUCK_VIN_NORM_INV_G)/log(2))) ///< VIN normalization  
 #define BUCK_VIN_NORM_FACTOR    (int16_t)((BUCK_VIN_NORM_INV_G / pow(2.0, BUCK_VIN_NORM_SCALER)) * (pow(2.0, 15)-1)) ///< VIN normalization factor scaled in Q15
 
 #define BUCK_VIN_RANGE_MAX      (float)(ADC_REFERENCE * BUCK_VIN_NORM_INV_G)
@@ -528,7 +528,7 @@
 #define BUCK_VOUT_ADC_TRGDLY    (uint16_t)(BUCK_VOUT_ADC_TRG_DELAY / PWM_CLOCK_PERIOD) ///< Macro calculating the integer number equivalent of the signal chain time delay between internal PWM timebase and effective switching edge of the leading FET
 
 #define BUCK_VOUT_NORM_INV_G    (float)(1.0/BUCK_VOUT_FEEDBACK_GAIN) ///< Inverted feedback gain required for value normalization
-#define BUCK_VOUT_NORM_SCALER   (int16_t)(ceil(log(BUCK_VOUT_NORM_INV_G)) + 1) ///< VOUT normalization scaler  
+#define BUCK_VOUT_NORM_SCALER   (int16_t)(ceil(log(BUCK_VOUT_NORM_INV_G)/log(2))) ///< VOUT normalization scaler  
 #define BUCK_VOUT_NORM_FACTOR   (int16_t)((BUCK_VOUT_NORM_INV_G / pow(2.0, BUCK_VOUT_NORM_SCALER)) * (pow(2.0, 15)-1)) ///< VOUT normalization factor scaled in Q15
 
 #define BUCK_VOUT_RANGE_MAX     (float)(BUCK_VOUT_OVER_VOLTAGE - BUCK_VOUT_MINIMUM) ///< Macro calculating the integer number equivalent of the total output voltage range defined by the settings given above in [V]]
@@ -611,7 +611,7 @@
 #define BUCK_ISNS_ADC_TRGDLY    (uint16_t)(BUCK_ISNS_ADC_TRG_DELAY / PWM_CLOCK_PERIOD)
 
 #define BUCK_ISNS_NORM_INV_G    (float)(1.0/BUCK_ISNS_FEEDBACK_GAIN) ///< Inverted feedback gain required for value normalization
-#define BUCK_ISNS_NORM_SCALER   (int16_t)(ceil(log(BUCK_ISNS_NORM_INV_G)) + 1) ///< ISNS normalization  
+#define BUCK_ISNS_NORM_SCALER   (int16_t)(ceil(log(BUCK_ISNS_NORM_INV_G)/log(2))) ///< ISNS normalization  
 #define BUCK_ISNS_NORM_FACTOR   (int16_t)((BUCK_ISNS_NORM_INV_G / pow(2.0, BUCK_ISNS_NORM_SCALER)) * (pow(2.0, 15)-1)) ///< ISNS normalization factor scaled in Q15
 
 /** @} */ // end of group phase-current-feedback-macros ~~~~~~~~~~~~~~~~~~~~~~~
@@ -746,12 +746,12 @@
 // To calculate the voltage across the inductor, input and output voltage ADC results need to be normalized. The normalization factor is determined here
 // Each input voltage sample has to be multiplied with this scaling factor to allow the calculation of the instantaneous voltage across the inductor
 #define BUCK_VIN_NORM_FCT       (float)(BUCK_VOUT_FEEDBACK_GAIN / BUCK_VIN_FEEDBACK_GAIN)   ///< VIN-2-VOUT Normalization Factor
-#define BUCK_AGC_IO_NORM_SCALER (int16_t)(ceil(log(BUCK_VIN_NORM_FCT))) ///< Nominal VL Q15 scaler  
+#define BUCK_AGC_IO_NORM_SCALER (int16_t)(ceil(log(BUCK_VIN_NORM_FCT)/log(2))) ///< Nominal VL Q15 scaler  
 #define BUCK_AGC_IO_NORM_FACTOR (int16_t)((BUCK_VIN_NORM_FCT / pow(2.0, BUCK_AGC_IO_NORM_SCALER)) * (pow(2.0, 15)-1)) ///< Nominal VL Q15 factor 
 
 // The AGC compare value is defined at nominal input voltage and output voltage 
 #define BUCK_AGC_EXEC_DLY       (uint16_t)(BUCK_AGC_EXECUTION_DELAY / PWM_CLOCK_PERIOD) ///< Macro calculating the integer number equivalent of the AGC algorithm computation time
-#define BUCK_AGC_NOM_SCALER     (uint16_t)(ceil(log(BUCK_AGC_FACTOR_MAX))) ///< Bit-shift scaler of the floating point number of the maimum limit of the adaptive gain modulation factor
+#define BUCK_AGC_NOM_SCALER     (uint16_t)(ceil(log(BUCK_AGC_FACTOR_MAX)/log(2))) ///< Bit-shift scaler of the floating point number of the maimum limit of the adaptive gain modulation factor
 #define BUCK_AGC_NOM_FACTOR     (uint16_t)(0x7FFF >> BUCK_AGC_NOM_SCALER) ///< Fractional of the floating point number of the maimum limit of the adaptive gain modulation factor
 #define BUCK_AGC_MEDIAN         (int16_t)(((int16_t)(((float)BUCK_VIN_NOM * BUCK_VIN_NORM_FCT) - BUCK_VOUT_NOM))>>BUCK_AGC_NOM_SCALER) ///< Adaptive gain modulation factor at nominal operating point
 
@@ -1090,7 +1090,7 @@
 #define BOOST_VIN_OFFSET         (uint16_t)(BOOST_VIN_FEEDBACK_OFFSET / ADC_GRANULARITY) ///< Input voltage feedback offset
 
 #define BOOST_VIN_NORM_INV_G     (float)(1.0/BOOST_VIN_FEEDBACK_GAIN) ///< Inverted feedback gain required for value normalization
-#define BOOST_VIN_NORM_SCALER    (int16_t)(ceil(log(BOOST_VIN_NORM_INV_G)) + 1) ///< VIN normalization  
+#define BOOST_VIN_NORM_SCALER    (int16_t)(ceil(log(BOOST_VIN_NORM_INV_G)/log(2))) ///< VIN normalization  
 #define BOOST_VIN_NORM_FACTOR    (int16_t)((BOOST_VIN_NORM_INV_G / pow(2.0, BOOST_VIN_NORM_SCALER)) * (pow(2.0, 15)-1)) ///< VIN normalization factor scaled in Q15
 
 #define BOOST_VIN_RANGE_MAX      (float)(ADC_REFERENCE * BOOST_VIN_NORM_INV_G)
@@ -1166,7 +1166,7 @@
 #define BOOST_VOUT_VFWD_DROP    (uint16_t)(BOOST_VOUT_VFWD_DROP_MAX / ADC_GRANULARITY) ///< Macro calculating the integer number equivalent of the maximum forward voltage drop across teh rectifier diode
 
 #define BOOST_VOUT_NORM_INV_G   (float)(1.0/BOOST_VOUT_FEEDBACK_GAIN) ///< Inverted feedback gain required for value normalization
-#define BOOST_VOUT_NORM_SCALER  (int16_t)(ceil(log(BOOST_VOUT_NORM_INV_G)) + 1) ///< VOUT normalization  
+#define BOOST_VOUT_NORM_SCALER  (int16_t)(ceil(log(BOOST_VOUT_NORM_INV_G)/log(2))) ///< VOUT normalization  
 #define BOOST_VOUT_NORM_FACTOR  (int16_t)((BOOST_VOUT_NORM_INV_G / pow(2.0, BOOST_VOUT_NORM_SCALER)) * (pow(2.0, 15)-1)) ///< VOUT normalization factor scaled in Q15
 
 #define BOOST_VOUT_RANGE_MAX    (float)(ADC_REFERENCE * BOOST_VOUT_NORM_INV_G) ///< Macro calculating the integer number equivalent of the total output voltage range defined by the settings given above in [V]]
@@ -1252,7 +1252,7 @@
 #define BOOST_ISNS_ADC_TRGDLY    (uint16_t)(BOOST_ISNS_ADC_TRG_DELAY / PWM_CLOCK_PERIOD)
 
 #define BOOST_ISNS_NORM_INV_G    (float)(1.0/BOOST_ISNS_FEEDBACK_GAIN) ///< Inverted feedback gain required for value normalization
-#define BOOST_ISNS_NORM_SCALER   (int16_t)(ceil(log(BOOST_ISNS_NORM_INV_G)) + 1) ///< ISNS normalization  
+#define BOOST_ISNS_NORM_SCALER   (int16_t)(ceil(log(BOOST_ISNS_NORM_INV_G)/log(2))) ///< ISNS normalization  
 #define BOOST_ISNS_NORM_FACTOR   (int16_t)((BOOST_ISNS_NORM_INV_G / pow(2.0, BOOST_ISNS_NORM_SCALER)) * (pow(2.0, 15)-1)) ///< ISNS normalization factor scaled in Q15
 
 /** @} */ // end of group phase-current-feedback-macros ~~~~~~~~~~~~~~~~~~~~~~~
@@ -1392,12 +1392,12 @@
 // To calculate the voltage across the inductor, input and output voltage ADC results need to be normalized. The normalization factor is determined here
 // Each input voltage sample has to be multiplied with this scaling factor to allow the calculation of the instantaneous voltage across the inductor
 #define BOOST_VIN_NORM_FCT       (float)(BOOST_VOUT_FEEDBACK_GAIN / BOOST_VIN_FEEDBACK_GAIN)   ///< VIN-2-VOUT Normalization Factor
-#define BOOST_AGC_IO_NORM_SCALER (int16_t)(ceil(log(BOOST_VIN_NORM_FCT)) + 1) ///< Nominal VL Q15 scaler  
+#define BOOST_AGC_IO_NORM_SCALER (int16_t)(ceil(log(BOOST_VIN_NORM_FCT)/log(2))) ///< Nominal VL Q15 scaler  
 #define BOOST_AGC_IO_NORM_FACTOR (int16_t)((BOOST_VIN_NORM_FCT / pow(2.0, BOOST_AGC_IO_NORM_SCALER)) * (pow(2.0, 15)-1)) ///< Nominal VL Q15 factor 
 
 // The AGC compare value is defined at nominal input voltage and output voltage 
 #define BOOST_AGC_MEDIAN         (int16_t)(((float)BOOST_VIN_NOM * BOOST_VIN_NORM_FCT) - BOOST_VOUT_NOM) ///< Adaptive gain modulation factor at nominal operating point
-#define BOOST_AGC_NOM_SCALER     (uint16_t)(ceil(log(BOOST_AGC_FACTOR_MAX)) + 1) ///< Bit-shift scaler of the floating point number of the maimum limit of the adaptive gain modulation factor
+#define BOOST_AGC_NOM_SCALER     (uint16_t)(ceil(log(BOOST_AGC_FACTOR_MAX)/log(2))) ///< Bit-shift scaler of the floating point number of the maimum limit of the adaptive gain modulation factor
 #define BOOST_AGC_NOM_FACTOR     (uint16_t)(0x7FFF >> BOOST_AGC_NOM_SCALER) ///< Fractional of the floating point number of the maimum limit of the adaptive gain modulation factor
 */
 /** @} */ // end of group
