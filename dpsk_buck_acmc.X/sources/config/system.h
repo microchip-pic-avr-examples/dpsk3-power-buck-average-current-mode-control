@@ -36,10 +36,10 @@
 
 /* INCLUDE DEFAULT SYSTEM COMPONENT INITIALIZATION MODULES */
 
-#include "config/init/init_fosc.h"
 #include "config/init/init_dsp.h"
-#include "config/init/init_timer1.h"
+#include "config/init/init_fosc.h"
 #include "config/init/init_gpio.h"
+#include "config/init/init_timer1.h"
 
 /* INCLUDE USER SPECIAL FUNCTION COMPONENT INITIALIZATION MODULES */
 

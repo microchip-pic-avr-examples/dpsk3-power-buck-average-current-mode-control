@@ -43,7 +43,6 @@
 // HARDWARE ABSTRACTION LAYER HEADER FILES
 #if defined (__DPSK3_R30__)
   #include "config/hal/dpsk3_hwdescr.h" // include hardware description declarations of DPSK3 (DM330017-3)
-  #include "config/hal/dpsk3_devcfg.h" // include MCU initialization header of DPSK3 (DM330017-3)
 #endif
 
 #endif	/* APPLICAITON_HARDWARE_ABSTRACTION_LAYER_H */
