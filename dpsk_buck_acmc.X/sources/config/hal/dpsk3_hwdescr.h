@@ -387,11 +387,11 @@
 #define BUCK_VIN_OVER_VOLTAGE       (float)14.300   ///< Over Voltage Lock Out Cut Off in [V]
 #define BUCK_VIN_HYSTERESIS         (float) 1.000   ///< UVLO/OVLO Hysteresis in [V]
     
-#define BUCK_VIN_R1                 (float)(6.980)  ///< Upper voltage divider resistor in [kOhm]
-#define BUCK_VIN_R2                 (float)(1.000)  ///< Lower voltage divider resistor in [kOhm]
+#define BUCK_VIN_R1                 (float) 6.980   ///< Upper voltage divider resistor in [kOhm]
+#define BUCK_VIN_R2                 (float) 1.000   ///< Lower voltage divider resistor in [kOhm]
     
-#define BUCK_VIN_FEEDBACK_OFFSET    (float)(0.0000) ///< Physical, static signal offset in [V]
-#define BUCK_VIN_ADC_TRG_DELAY      (float)(20.0e-9) ///< ADC trigger delay in [sec]
+#define BUCK_VIN_FEEDBACK_OFFSET    (float) 0.0000  ///< Physical, static signal offset in [V]
+#define BUCK_VIN_ADC_TRG_DELAY      (float) 20.0e-9 ///< ADC trigger delay in [sec]
 
 /** @} */ // end of group input-voltage-feedback-settings ~~~~~~~~~~~~~~~~~~~~
 
@@ -465,20 +465,18 @@
  * *************************************************************************************************/
 
 // Feedback Declarations
-#define BUCK_VOUT_NOMINAL           (float)3.300   ///< Nominal output voltage
-#define BUCK_VOUT_MINIMUM           (float)0.000   ///< Absolute minimum output voltage
-#define BUCK_VOUT_OVER_VOLTAGE      (float)4.000   ///< Absolute maximum output voltage (Over Voltage Protection)
-#define BUCK_VOUT_HYSTERESIS        (float)0.500   ///< Over Voltage Protection Hystresis
+#define BUCK_VOUT_MINIMUM           (float) 0.000   ///< Absolute minimum output voltage
+#define BUCK_VOUT_NOMINAL           (float) 3.300   ///< Nominal output voltage
+#define BUCK_VOUT_MAXIMUM           (float) 4.000   ///< Absolute maximum output voltage (Over Voltage Protection)
+#define BUCK_VOUT_HYSTERESIS        (float) 0.500   ///< Over Voltage Protection Hysteresis
 
-#define BUCK_VOUT_TOLERANCE_MAX     (float)0.500   ///< Output voltage tolerance at nominal operating point [+/-]
-#define BUCK_VOUT_TOLERANCE_MIN     (float)0.100   ///< Output voltage tolerance at nominal operating point [+/-]
+#define BUCK_VOUT_TOLERANCE_MAX     (float) 0.500   ///< Output voltage tolerance at nominal operating point [+/-]
+#define BUCK_VOUT_TOLERANCE_MIN     (float) 0.100   ///< Output voltage tolerance at nominal operating point [+/-]
     
-#define BUCK_VOUT_DIV_R1            (float)(1.000) ///< Upper voltage divider resistor in kOhm
-#define BUCK_VOUT_DIV_R2            (float)(1.000) ///< Lower voltage divider resistor in kOhm
-#define BUCK_VOUT_FEEDBACK_OFFSET   (float)(0.0)   ///< Physical, static signal offset in [V]
-#define BUCK_VOUT_ADC_TRG_DELAY     (float)(20.0e-9) ///< Trigger delay in [sec]
-
-#define BUCK_AGC_EXECUTION_DELAY    (float)(370.0e-9) ///< AGC Observer Algorithm Execution Time in [sec]
+#define BUCK_VOUT_DIV_R1            (float) 1.000  ///< Upper voltage divider resistor in kOhm
+#define BUCK_VOUT_DIV_R2            (float) 1.000  ///< Lower voltage divider resistor in kOhm
+#define BUCK_VOUT_FEEDBACK_OFFSET   (float) 0.000  ///< Physical, static signal offset in [V]
+#define BUCK_VOUT_ADC_TRG_DELAY     (float)20.0e-9 ///< Trigger delay in [sec]
 
 /** @} */ // end of group output-voltage-feedback-settings ~~~~~~~~~~~~~~~~~~~~
 
@@ -522,16 +520,16 @@
 #define BUCK_VOUT_NOM           (uint16_t) BUCK_VOUT_REF ///< Alias macro of the integer number equivalent of the nominal output voltage given above in [V]
 #define BUCK_VOUT_DEV_TRIP      (uint16_t)((BUCK_VOUT_TOLERANCE_MAX * BUCK_VOUT_FEEDBACK_GAIN) / ADC_GRANULARITY) ///< Macro calculating the integer number equivalent of the maximum allowed output voltage deviation given above in [V], which will lead to a converter shut down when exceeded.
 #define BUCK_VOUT_DEV_RELEASE   (uint16_t)((BUCK_VOUT_TOLERANCE_MIN * BUCK_VOUT_FEEDBACK_GAIN) / ADC_GRANULARITY) ///< Macro calculating the integer number equivalent of the maximum allowed output voltage deviation given above in [V], which needs to be underrun before a shut-down converter can recover
-#define BUCK_VOUT_OVP_TRIP      (uint16_t)((BUCK_VOUT_OVER_VOLTAGE * BUCK_VOUT_FEEDBACK_GAIN) / ADC_GRANULARITY)  ///< Over Voltage LOck Out voltage
-#define BUCK_VOUT_OVP_RELEASE   (uint16_t)((BUCK_VOUT_OVER_VOLTAGE - BUCK_VOUT_HYSTERESIS) * BUCK_VOUT_FEEDBACK_GAIN / ADC_GRANULARITY)  ///< Over Voltage LOck Out voltage
+#define BUCK_VOUT_OVP_TRIP      (uint16_t)((BUCK_VOUT_MAXIMUM * BUCK_VOUT_FEEDBACK_GAIN) / ADC_GRANULARITY)  ///< Over Voltage Protection voltage trip signal level
+#define BUCK_VOUT_OVP_RELEASE   (uint16_t)((BUCK_VOUT_MAXIMUM - BUCK_VOUT_HYSTERESIS) * BUCK_VOUT_FEEDBACK_GAIN / ADC_GRANULARITY)  ///< Over Voltage Protection voltage recovery signal level
 #define BUCK_VOUT_OFFSET        (uint16_t)(BUCK_VOUT_FEEDBACK_OFFSET / ADC_GRANULARITY) ///< Macro calculating the integer number equivalent of the physical, static signal offset of this feedback channel
 #define BUCK_VOUT_ADC_TRGDLY    (uint16_t)(BUCK_VOUT_ADC_TRG_DELAY / PWM_CLOCK_PERIOD) ///< Macro calculating the integer number equivalent of the signal chain time delay between internal PWM timebase and effective switching edge of the leading FET
 
 #define BUCK_VOUT_NORM_INV_G    (float)(1.0/BUCK_VOUT_FEEDBACK_GAIN) ///< Inverted feedback gain required for value normalization
-#define BUCK_VOUT_NORM_SCALER   (int16_t)(ceil(log(BUCK_VOUT_NORM_INV_G)/log(2))) ///< VOUT normalization scaler  
+#define BUCK_VOUT_NORM_SCALER   (int16_t)(ceil(log(BUCK_VOUT_NORM_INV_G)/log(2))) ///< VOUT normalization bit-shift scaler  
 #define BUCK_VOUT_NORM_FACTOR   (int16_t)((BUCK_VOUT_NORM_INV_G / pow(2.0, BUCK_VOUT_NORM_SCALER)) * (pow(2.0, 15)-1)) ///< VOUT normalization factor scaled in Q15
 
-#define BUCK_VOUT_RANGE_MAX     (float)(BUCK_VOUT_OVER_VOLTAGE - BUCK_VOUT_MINIMUM) ///< Macro calculating the integer number equivalent of the total output voltage range defined by the settings given above in [V]]
+#define BUCK_VOUT_RANGE_MAX     (float)(ADC_REFERENCE * BUCK_VOUT_NORM_INV_G) ///< Macro calculating the integer number equivalent of the total output voltage range defined by the settings given above in [V]]
     
 /** @} */ // end of group output-voltage-feedback-macros ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -726,7 +724,7 @@
 /** @} */ // end of group temperature-feedback-mcal
 
 /**************************************************************************************************
- * @ingroup adaptive-control
+ * @ingroup adaptive-control-settings
  * @{
  * @brief Declaration of additional hardware-specific defines required for adaptive gain control
  * 
@@ -736,12 +734,33 @@
  * sections. Any change of these parameters will also result in a change of the values of the 
  * gain modulation parameters of this section.
  * *************************************************************************************************/
-   
-#define BUCK_VL_MINIMUM         (float)(BUCK_VIN_UNDER_VOLTAGE - BUCK_VOUT_RANGE_MAX) ///< Minimum input voltage - maximum output voltate
-#define BUCK_VL_NOMINAL         (float)(BUCK_VIN_NOMINAL       - BUCK_VOUT_NOMINAL) ///< Nominal input voltage - nominal output voltate
+
+#define BUCK_AGC_EXECUTION_DELAY    (float)(370.0e-9) ///< AGC Observer Algorithm Execution Time in [sec]
+
+/** @} */ // end of group
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/** 
+ * @ingroup adaptive-control-macros
+ * @{ 
+ * @brief Conversion macros of phase current feedback parameters
+ * 
+ * @details
+ * These conversion macros are used to convert user settings defined as physical 
+ * quantities into binary (integer) numbers, which will be written to registers and
+ * variables and used in calculations throughout the firmware.
+ */
+
+#define BUCK_VL_MINIMUM         (float)(BUCK_VIN_UNDER_VOLTAGE - BUCK_VOUT_MAXIMUM) ///< Minimum input voltage - maximum output voltage
+#define BUCK_VL_NOMINAL         (float)(BUCK_VIN_NOMINAL       - BUCK_VOUT_NOMINAL) ///< Nominal input voltage - nominal output voltage
 #define BUCK_VL_MAXIMUM         (float)(BUCK_VIN_RANGE_MAX     - 0) ///< Maximum input voltage - output voltage = 0V
 
+// The AGC compare value is defined at nominal input voltage and output voltage 
+// The maximum modulation factor is normalized to fractional '1' to prevent number overruns
 #define BUCK_AGC_FACTOR_MAX     (float)(BUCK_VL_NOMINAL / BUCK_VL_MINIMUM) ///< Floating point number of the maximumm limit of the adaptive gain modulation factor (float)
+#define BUCK_AGC_NOM_SCALER     (uint16_t)(ceil(log(BUCK_AGC_FACTOR_MAX)/log(2))) ///< Bit-shift scaler of the floating point number of the maimum limit of the adaptive gain modulation factor
+#define BUCK_AGC_NOM_FACTOR     (uint16_t)(0x7FFF >> BUCK_AGC_NOM_SCALER) ///< Fractional of the floating point number of the maimum limit of the adaptive gain modulation factor
+#define BUCK_AGC_MEDIAN         (int16_t)(((int16_t)(((float)BUCK_VIN_NOM * BUCK_VIN_NORM_FCT) - BUCK_VOUT_NOM))>>BUCK_AGC_NOM_SCALER) ///< Adaptive gain modulation factor at nominal operating point
 
 // To calculate the voltage across the inductor, input and output voltage ADC results need to be normalized. The normalization factor is determined here
 // Each input voltage sample has to be multiplied with this scaling factor to allow the calculation of the instantaneous voltage across the inductor
@@ -749,12 +768,8 @@
 #define BUCK_AGC_IO_NORM_SCALER (int16_t)(ceil(log(BUCK_VIN_NORM_FCT)/log(2))) ///< Nominal VL Q15 scaler  
 #define BUCK_AGC_IO_NORM_FACTOR (int16_t)((BUCK_VIN_NORM_FCT / pow(2.0, BUCK_AGC_IO_NORM_SCALER)) * (pow(2.0, 15)-1)) ///< Nominal VL Q15 factor 
 
-// The AGC compare value is defined at nominal input voltage and output voltage 
+// Additional execution time calculation to be considered in trigger delay and overall control timing
 #define BUCK_AGC_EXEC_DLY       (uint16_t)(BUCK_AGC_EXECUTION_DELAY / PWM_CLOCK_PERIOD) ///< Macro calculating the integer number equivalent of the AGC algorithm computation time
-#define BUCK_AGC_NOM_SCALER     (uint16_t)(ceil(log(BUCK_AGC_FACTOR_MAX)/log(2))) ///< Bit-shift scaler of the floating point number of the maimum limit of the adaptive gain modulation factor
-#define BUCK_AGC_NOM_FACTOR     (uint16_t)(0x7FFF >> BUCK_AGC_NOM_SCALER) ///< Fractional of the floating point number of the maimum limit of the adaptive gain modulation factor
-#define BUCK_AGC_MEDIAN         (int16_t)(((int16_t)(((float)BUCK_VIN_NOM * BUCK_VIN_NORM_FCT) - BUCK_VOUT_NOM))>>BUCK_AGC_NOM_SCALER) ///< Adaptive gain modulation factor at nominal operating point
-
 /** @} */ // end of group
 
 /**************************************************************************************************
@@ -1031,11 +1046,11 @@
 #define BOOST_VIN_OVER_VOLTAGE       (float)14.300   ///< Over Voltage Lock Out Cut Off in [V]
 #define BOOST_VIN_HYSTERESIS         (float) 1.000   ///< UVLO/OVLO Hysteresis in [V]
     
-#define BOOST_VIN_R1                 (float)(6.980)  ///< Upper voltage divider resistor in [kOhm]
-#define BOOST_VIN_R2                 (float)(1.000)  ///< Lower voltage divider resistor in [kOhm]
+#define BOOST_VIN_R1                 (float) 6.980   ///< Upper voltage divider resistor in [kOhm]
+#define BOOST_VIN_R2                 (float) 1.000   ///< Lower voltage divider resistor in [kOhm]
     
-#define BOOST_VIN_FEEDBACK_OFFSET    (float)(0.0000) ///< Physical, static signal offset in [V]
-#define BOOST_VIN_ADC_TRG_DELAY      (float)(20.0e-9) ///< ADC trigger delay in [sec]
+#define BOOST_VIN_FEEDBACK_OFFSET    (float) 0.0000  ///< Physical, static signal offset in [V]
+#define BOOST_VIN_ADC_TRG_DELAY      (float)20.0e-9  ///< ADC trigger delay in [sec]
 
 /** @} */ // end of group input-voltage-feedback-settings ~~~~~~~~~~~~~~~~~~~~
 
@@ -1109,15 +1124,19 @@
  * *************************************************************************************************/
 
 // Feedback Declarations
+#define BOOST_VOUT_MINIMUM           (float)14.00   ///< Absolute minimum output voltage
 #define BOOST_VOUT_NOMINAL           (float)15.00   ///< Nominal output voltage
-#define BOOST_VOUT_TOLERANCE_MAX     (float)0.500   ///< Output voltage tolerance [+/-]
-#define BOOST_VOUT_TOLERANCE_MIN     (float)0.100   ///< Output voltage tolerance [+/-]
+#define BOOST_VOUT_MAXIMUM           (float)16.00   ///< Absolute maximum output voltage (Over Voltage Protection)
+#define BOOST_VOUT_HYSTERESIS        (float)0.500   ///< Over Voltage Protection Hysteresis
+
+#define BOOST_VOUT_TOLERANCE_MAX     (float)0.500   ///< Output voltage tolerance at nominal operating point [+/-]
+#define BOOST_VOUT_TOLERANCE_MIN     (float)0.100   ///< Output voltage tolerance at nominal operating point [+/-]
 #define BOOST_VOUT_VFWD_DROP_MAX     (float)0.400   ///< Recitifer diode forward voltage drop maximum
     
-#define BOOST_VOUT_DIV_R1            (float)(6.980) ///< Upper voltage divider resistor in kOhm
-#define BOOST_VOUT_DIV_R2            (float)(1.000) ///< Lower voltage divider resistor in kOhm
-#define BOOST_VOUT_FEEDBACK_OFFSET   (float)(0.0)   ///< Physical, static signal offset in [V]
-#define BOOST_VOUT_ADC_TRG_DELAY     (float)(20.0e-9) ///< Trigger delay in [sec]
+#define BOOST_VOUT_DIV_R1            (float) 6.980  ///< Upper voltage divider resistor in kOhm
+#define BOOST_VOUT_DIV_R2            (float) 1.000  ///< Lower voltage divider resistor in kOhm
+#define BOOST_VOUT_FEEDBACK_OFFSET   (float) 0.000  ///< Physical, static signal offset in [V]
+#define BOOST_VOUT_ADC_TRG_DELAY     (float)20.0e-9 ///< Trigger delay in [sec]
 
 /** @} */ // end of group output-voltage-feedback-settings ~~~~~~~~~~~~~~~~~~~~
 
@@ -1161,6 +1180,8 @@
 #define BOOST_VOUT_NOM          BOOST_VOUT_REF ///< Alias macro of the integer number equivalent of the nominal output voltage given above in [V]
 #define BOOST_VOUT_DEV_TRIP     (uint16_t)(BOOST_VOUT_TOLERANCE_MAX * BOOST_VOUT_FEEDBACK_GAIN / ADC_GRANULARITY) ///< Macro calculating the integer number equivalent of the maximum allowed output voltage deviation given above in [V], which will lead to a converter shut down when exceeded.
 #define BOOST_VOUT_DEV_RELEASE  (uint16_t)(BOOST_VOUT_TOLERANCE_MIN * BOOST_VOUT_FEEDBACK_GAIN / ADC_GRANULARITY) ///< Macro calculating the integer number equivalent of the maximum allowed output voltage deviation given above in [V], which needs to be underrun before a shut-down converter can recover
+#define BOOST_VOUT_OVP_TRIP     (uint16_t)((BOOST_VOUT_MAXIMUM * BOOST_VOUT_FEEDBACK_GAIN) / ADC_GRANULARITY)  ///< Over Voltage Protection voltage trip signal level
+#define BOOST_VOUT_OVP_RELEASE  (uint16_t)((BOOST_VOUT_MAXIMUM - BOOST_VOUT_HYSTERESIS) * BOOST_VOUT_FEEDBACK_GAIN / ADC_GRANULARITY)  ///< Over Voltage Protection voltage recovery signal level
 #define BOOST_VOUT_OFFSET       (uint16_t)(BOOST_VOUT_FEEDBACK_OFFSET / ADC_GRANULARITY) ///< Macro calculating the integer number equivalent of the physical, static signal offset of this feedback channel
 #define BOOST_VOUT_ADC_TRGDLY   (uint16_t)(BOOST_VOUT_ADC_TRG_DELAY / PWM_CLOCK_PERIOD) ///< Macro calculating the integer number equivalent of the signal chain time delay between internal PWM timebase and effective switching edge of the leading FET
 #define BOOST_VOUT_VFWD_DROP    (uint16_t)(BOOST_VOUT_VFWD_DROP_MAX / ADC_GRANULARITY) ///< Macro calculating the integer number equivalent of the maximum forward voltage drop across teh rectifier diode
@@ -1203,12 +1224,12 @@
 #if (BOOST_ISNS_OPTION == BOOST_ISNS_LSCS)
 
     #define BOOST_ISNS_FEEDBACK_GAIN     (float) 1.000      ///< Current Gain in V/A
-    #define BOOST_ISNS_MINIMUM           (float) 0.000      ///< absolute total minimum output current (average) in [A]
+    #define BOOST_ISNS_MINIMUM           (float)-1.000      ///< absolute total minimum output current (average) in [A]
     #define BOOST_ISNS_MAXIMUM           (float) 2.500      ///< absolute total maximum output current (average) in [A]
     #define BOOST_ISNS_RELEASE           (float) 1.500      ///< current reset level after over current event in [A]
     #define BOOST_ISNS_REFERENCE         (float) 2.500      ///< output current reference (average) in [A]
     #define BOOST_ISNS_REFERENCE_STARTUP (float) 2.500      ///< maximum output current (average) at startup in [A]
-    #define BOOST_ISNS_ADC_TRG_DELAY     (float) 200.0e-9   ///< ADC trigger delay for current sense in [sec]
+    #define BOOST_ISNS_ADC_TRG_DELAY     (float)80.0e-9     ///< ADC trigger delay for current sense in [sec]
     #define BOOST_ISNS_FEEDBACK_OFFSET   (float) 1.125      ///< Current sense feedback offset (average) in [V]
 
     #define BOOST_ISNS_OFFSET_CALIBRATION_ENABLE  true       ///< Current Sense Offset Calibration is disabled 
@@ -1371,7 +1392,7 @@
 /** @} */ // end of group temperature-feedback-mcal
 
 /**************************************************************************************************
- * @ingroup adaptive-control
+ * @ingroup adaptive-control-settings
  * @{
  * @brief Declaration of additional hardware-specific defines required for adaptive gain control
  * 
@@ -1381,13 +1402,34 @@
  * sections. Any change of these parameters will also result in a change of the values of the 
  * gain modulation parameters of this section.
  * *************************************************************************************************/
+
+#define BOOST_AGC_EXECUTION_DELAY    (float)(400.0e-9) ///< AGC Observer Algorithm Execution Time in [sec]
+
+/** @} */ // end of group
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/** 
+ * @ingroup adaptive-control-macros
+ * @{ 
+ * @brief Conversion macros of phase current feedback parameters
+ * 
+ * @details
+ * These conversion macros are used to convert user settings defined as physical 
+ * quantities into binary (integer) numbers, which will be written to registers and
+ * variables and used in calculations throughout the firmware.
+ */
 /* ToDo: AGC is temporarily disabled for the boost converter and requires further verification 
 
-#define BOOST_VL_MINIMUM         (float)(BOOST_VIN_UNDER_VOLTAGE - BOOST_VOUT_RANGE_MAX) ///< Minimum input voltage - maximum output voltate
-#define BOOST_VL_NOMINAL         (float)(BOOST_VIN_NOMINAL       - BOOST_VOUT_NOMINAL) ///< Nominal input voltage - nominal output voltate
-#define BOOST_VL_MAXIMUM         (float)(BOOST_VIN_RANGE_MAX     - 0) ///< Maximum input voltage - 0
+#define BOOST_VL_MINIMUM         (float)(BOOST_VIN_UNDER_VOLTAGE) 	///< Minimum input voltage - maximum output voltage
+#define BOOST_VL_NOMINAL         (float)(BOOST_VIN_NOMINAL) 		///< Nominal input voltage - nominal output voltage
+#define BOOST_VL_MAXIMUM         (float)(BOOST_VIN_RANGE_MAX) 		///< Maximum input voltage - output voltage = 0V
 
+// The AGC compare value is defined at nominal input voltage and output voltage 
+// The maximum modulation factor is normalized to fractional '1' to prevent number overruns
 #define BOOST_AGC_FACTOR_MAX     (float)(BOOST_VL_NOMINAL / BOOST_VL_MINIMUM) ///< Floating point number of the maximumm limit of the adaptive gain modulation factor (float)
+#define BOOST_AGC_NOM_SCALER     (uint16_t)(ceil(log(BOOST_AGC_FACTOR_MAX)/log(2))) ///< Bit-shift scaler of the floating point number of the maimum limit of the adaptive gain modulation factor
+#define BOOST_AGC_NOM_FACTOR     (uint16_t)(0x7FFF >> BOOST_AGC_NOM_SCALER) ///< Fractional of the floating point number of the maimum limit of the adaptive gain modulation factor
+#define BOOST_AGC_MEDIAN         (int16_t)(((int16_t)(((float)BOOST_VIN_NOM * BOOST_VIN_NORM_FCT) - BOOST_VOUT_NOM))>>BOOST_AGC_NOM_SCALER) ///< Adaptive gain modulation factor at nominal operating point
 
 // To calculate the voltage across the inductor, input and output voltage ADC results need to be normalized. The normalization factor is determined here
 // Each input voltage sample has to be multiplied with this scaling factor to allow the calculation of the instantaneous voltage across the inductor
@@ -1395,10 +1437,9 @@
 #define BOOST_AGC_IO_NORM_SCALER (int16_t)(ceil(log(BOOST_VIN_NORM_FCT)/log(2))) ///< Nominal VL Q15 scaler  
 #define BOOST_AGC_IO_NORM_FACTOR (int16_t)((BOOST_VIN_NORM_FCT / pow(2.0, BOOST_AGC_IO_NORM_SCALER)) * (pow(2.0, 15)-1)) ///< Nominal VL Q15 factor 
 
-// The AGC compare value is defined at nominal input voltage and output voltage 
-#define BOOST_AGC_MEDIAN         (int16_t)(((float)BOOST_VIN_NOM * BOOST_VIN_NORM_FCT) - BOOST_VOUT_NOM) ///< Adaptive gain modulation factor at nominal operating point
-#define BOOST_AGC_NOM_SCALER     (uint16_t)(ceil(log(BOOST_AGC_FACTOR_MAX)/log(2))) ///< Bit-shift scaler of the floating point number of the maimum limit of the adaptive gain modulation factor
-#define BOOST_AGC_NOM_FACTOR     (uint16_t)(0x7FFF >> BOOST_AGC_NOM_SCALER) ///< Fractional of the floating point number of the maimum limit of the adaptive gain modulation factor
+// Additional execution time calculation to be considered in trigger delay and overall control timing
+#define BOOST_AGC_EXEC_DLY       (uint16_t)(BOOST_AGC_EXECUTION_DELAY / PWM_CLOCK_PERIOD) ///< Macro calculating the integer number equivalent of the AGC algorithm computation time
+
 */
 /** @} */ // end of group
 
@@ -1564,7 +1605,6 @@
 #endif
 
 /** @} */ // end of group control-interrupt-vector-declarations
-
 
 
 /**************************************************************************************************
