@@ -171,7 +171,6 @@
                    displayName="Important Files"
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
-      <itemPath>readme.txt</itemPath>
       <itemPath>sources/power_control/config/dpsk3_buck_acmc-v_loop.dcld</itemPath>
       <itemPath>sources/power_control/config/dpsk3_buck_acmc-i_loop.dcld</itemPath>
     </logicalFolder>
@@ -416,7 +415,7 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-aeff"/>
-        <property key="poweroptions.powerenable" value="false"/>
+        <property key="poweroptions.powerenable" value="true"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.ledbrightness" value="5"/>
