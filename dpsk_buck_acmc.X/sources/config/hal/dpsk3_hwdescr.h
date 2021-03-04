@@ -37,6 +37,13 @@
 #include <stddef.h> // include standard definition data types
 #include <math.h> // include standard math functions library
 
+
+/* DPSK3 BOARD CIRCUIT SEGMENTS */
+
+#define INCLUDE_BUCK    true    // Include buck converter declarations
+#define INCLUDE_BOOST   false   // Include boost converter declarations
+#define INCLUDE_LCD     true    // Include LCD declarations
+
 /**************************************************************************************************
  * @ingroup hardware-id-macro
  * @{
@@ -51,6 +58,7 @@
 #ifndef __DPSK3_R30__
   #define __DPSK3_R30__
 #endif
+
 
 /** @} */ // end of group hardware-id-macro
 
@@ -77,7 +85,7 @@
 
 /**************************************************************************************************
  * @ingroup device-abstraction-settings
- * @{ 
+ * @{
  * @brief Fundamental microcontroller device settings
  * 
  * @details
@@ -105,7 +113,7 @@
 
 /**
  * @ingroup device-abstraction-macros
- * @{ 
+ * @{
  * @brief Conversion macros of fundamental microcontroller device settings
  * 
  * @details
@@ -271,8 +279,12 @@
 
 /** @} */ // end of group circuit-peripheral-mcal
 
+
+#if (INCLUDE_BUCK == true)
+/** @cond INCLUDE_BUCK */
+
 /**************************************************************************************************
- * @ingroup pwm-settings
+ * @ingroup pwm-settings-buck
  * @{
  * @brief User-declaration of global defines for PWM signal generator settings
  * 
@@ -293,11 +305,11 @@
 #define BUCK_DEAD_TIME_LEADING_EDGE    (float)20.0e-9 ///< Leading Edge Dead Time delay in [sec]
 #define BUCK_DEAD_TIME_FALLING_EDGE    (float)60.0e-9 ///< Falling Edge Dead Time delay in [sec]
 
-/** @} */ // end of group pwm-settings ~~~~~~~~~~~~~~~~~~~~
+/** @} */ // end of group pwm-settings-buck ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 /** 
- * @ingroup pwm-mcal-phase1
- * @{ 
+ * @ingroup pwm-mcal-buck
+ * @{
  * @brief PWM peripheral output pins, control signals and register assignments of converter phase #1
  * 
  * @details
@@ -340,12 +352,12 @@
 
 #define BUCK_PWM_UPDREQ             PG1STATbits.UPDREQ
 
-/** @} */ // end of group pwm-mcal-phase1 ~~~~~~~~~~~~~~~~~
+/** @} */ // end of group pwm-mcal-buck ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /** 
- * @ingroup pwm-macros
- * @{ 
+ * @ingroup pwm-macros-buck
+ * @{
  * @brief Conversion macros for user-declarations of PWM parameters
  * 
  * @details
@@ -364,11 +376,11 @@
 #define BUCK_PWM_DEAD_TIME_LE   (uint16_t)(BUCK_DEAD_TIME_LEADING_EDGE / (float)PWM_CLOCK_PERIOD) ///< Rising edge dead time [tick = 250ps]
 #define BUCK_PWM_DEAD_TIME_FE   (uint16_t)(BUCK_DEAD_TIME_FALLING_EDGE / (float)PWM_CLOCK_PERIOD) ///< Falling edge dead time [tick = 250ps]
 
-/** @} */ // end of group pwm-macros ~~~~~~~~~~~~~~~~~~~~~~
+/** @} */ // end of group pwm-macros-buck ~~~~~~~~~~~~~~~~~
 
     
 /**************************************************************************************************
- * @ingroup input-voltage-feedback-settings
+ * @ingroup input-voltage-feedback-settings-buck
  * @{
  * @brief Declaration of input voltage feedback properties
  * 
@@ -393,12 +405,12 @@
 #define BUCK_VIN_FEEDBACK_OFFSET    (float) 0.0000  ///< Physical, static signal offset in [V]
 #define BUCK_VIN_ADC_TRG_DELAY      (float) 20.0e-9 ///< ADC trigger delay in [sec]
 
-/** @} */ // end of group input-voltage-feedback-settings ~~~~~~~~~~~~~~~~~~~~
+/** @} */ // end of group input-voltage-feedback-settings-buck ~~~~~~~~~~~~~~~~
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /** 
- * @ingroup input-voltage-feedback-mcal
- * @{ 
+ * @ingroup input-voltage-feedback-mcal-buck
+ * @{
  * @brief ADC input assignments of input voltage feedback signals
  * 
  * @details
@@ -418,13 +430,13 @@
 #define BUCK_VIN_ADCTRIG        PG1TRIGB    ///< Register used for trigger placement
 #define BUCK_VIN_TRGSRC         BUCK_PWM_TRGSRC_TRG2 ///< PWM1 (=PG1) Trigger 2 via PGxTRIGB
 
-/** @} */ // end of group input-voltage-feedback-mcal ~~~~~~~~~~~~~~~~~~~~~~~~~
+/** @} */ // end of group input-voltage-feedback-mcal-buck ~~~~~~~~~~~~~~~~~~~~
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /** 
- * @ingroup input-voltage-feedback-macros
- * @{ 
+ * @ingroup input-voltage-feedback-macros-buck
+ * @{
  * @brief Conversion macros of input voltage feedback parameters
  * 
  * @details
@@ -451,10 +463,10 @@
 
 #define BUCK_VIN_RANGE_MAX      (float)(ADC_REFERENCE * BUCK_VIN_NORM_INV_G)
 
-/** @} */ // end of group input-voltage-feedback-macros ~~~~~~~~~~~~~~~~~~~~~~
+/** @} */ // end of group input-voltage-feedback-macros-buck ~~~~~~~~~~~~~~~~~~
 
 /**************************************************************************************************
- * @ingroup output-voltage-feedback-settings
+ * @ingroup output-voltage-feedback-settings-buck
  * @{
  * @brief Declaration of output voltage feedback properties
  * 
@@ -478,12 +490,12 @@
 #define BUCK_VOUT_FEEDBACK_OFFSET   (float) 0.000  ///< Physical, static signal offset in [V]
 #define BUCK_VOUT_ADC_TRG_DELAY     (float)20.0e-9 ///< Trigger delay in [sec]
 
-/** @} */ // end of group output-voltage-feedback-settings ~~~~~~~~~~~~~~~~~~~~
+/** @} */ // end of group output-voltage-feedback-settings-buck ~~~~~~~~~~~~~~~
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /** 
- * @ingroup output-voltage-feedback-mcal
- * @{ 
+ * @ingroup output-voltage-feedback-mcal-buck
+ * @{
  * @brief ADC input assignments of output voltage feedback signals
  * 
  * @details
@@ -500,12 +512,12 @@
 #define BUCK_VOUT_ADCTRIG           PG1TRIGA    ///< Register used for trigger placement
 #define BUCK_VOUT_TRGSRC            BUCK_PWM_TRGSRC_TRG1 ///< PWM1 (=PG1) Trigger 1 via PGxTRIGA
 
-/** @} */ // end of group output-voltage-feedback-mcal ~~~~~~~~~~~~~~~~~~~~~~~~~
+/** @} */ // end of group output-voltage-feedback-mcal-buck ~~~~~~~~~~~~~~~~~~~
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /** 
- * @ingroup output-voltage-feedback-macros
- * @{ 
+ * @ingroup output-voltage-feedback-macros-buck
+ * @{
  * @brief Conversion macros of output voltage feedback parameters
  * 
  * @details
@@ -531,10 +543,10 @@
 
 #define BUCK_VOUT_RANGE_MAX     (float)(ADC_REFERENCE * BUCK_VOUT_NORM_INV_G) ///< Macro calculating the integer number equivalent of the total output voltage range defined by the settings given above in [V]]
     
-/** @} */ // end of group output-voltage-feedback-macros ~~~~~~~~~~~~~~~~~~~~~~
+/** @} */ // end of group output-voltage-feedback-macros-buck ~~~~~~~~~~~~~~~~~
 
 /**************************************************************************************************
- * @ingroup phase-current-feedback-settings
+ * @ingroup phase-current-feedback-settings-buck
  * @{
  * @brief Declaration of phase-current feedback properties
  * 
@@ -550,7 +562,7 @@
  * 
  * Macros are used to convert given physical values into binary (integer) number to be written
  * into SFRs and variables and being used in runtime calculations.  
- * (see \ref phase-current-feedback-macros for details)
+ * (see \ref phase-current-feedback-macros-buck for details)
  * *************************************************************************************************/
 
 // Feedback Declarations
@@ -586,12 +598,12 @@
 
 #endif
 
-/** @} */ // end of group
+/** @} */ // end of group phase-current-feedback-settings-buck ~~~~~~~~~~~~~~~~
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /** 
- * @ingroup phase-current-feedback-macros
- * @{ 
+ * @ingroup phase-current-feedback-macros-buck
+ * @{
  * @brief Conversion macros of phase current feedback parameters
  * 
  * @details
@@ -616,8 +628,8 @@
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /** 
- * @ingroup phase-current-feedback-mcal
- * @{ 
+ * @ingroup phase-current-feedback-mcal-buck
+ * @{
  * @brief ADC input assignments of phase current feedback signals
  * 
  * @details
@@ -657,74 +669,10 @@
     #pragma message "hardware abstraction layer warning: no current sense feedback selected."
 #endif
 
-/** @} */ // end of group phase-current-feedback-mcal ~~~~~~~~~~~~~~~~~~~~~~~~~
+/** @} */ // end of group phase-current-feedback-mcal-buck ~~~~~~~~~~~~~~~~~~~~
 
 /**************************************************************************************************
- * @ingroup temperature-feedback-settings
- * @{
- * @brief Declaration of temperature feedback properties
- * 
- * @details
- * In this section the temperature feedback signal scaling, gain and valid signal limits are 
- * specified. Physical quantities are used to define parameter values to ease the system 
- * configuration. 
- * 
- * As DPSK3 has one, central on-board temperature sensor between the load resistor banks 
- * indicating the worst case system temperature.
- * 
- * Macros are used to convert given physical values into binary (integer) number to be written
- * into SFRs and variables and being used in runtime calculations.  
- * (see \ref phase-current-feedback-macros for details)
- * *************************************************************************************************/
-
-#define BUCK_TEMPCAL_ZERO       (float) 0.500   // Temperature sense signal zero point voltage in [V]
-#define BUCK_TEMPCAL_SLOPE      (float) 0.010   // Temperature sense signal slope in [V/K]
-
-/** @} */ // end of group temperature-feedback-settings
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/** 
- * @ingroup temperature-feedback-macros
- * @{ 
- * @brief Conversion macros of temperature feedback parameters
- * 
- * @details
- * These conversion macros are used to convert user settings defined as physical 
- * quantities into binary (integer) numbers, which will be written to registers and
- * variables and used in calculations throughout the firmware.
- */
-
-#define BUCK_FB_TEMP_ZERO       (uint16_t)(BUCK_TEMPCAL_ZERO / ADC_GRANULARITY)
-#define BUCK_FB_TEMP_SLOPE      (float)(BUCK_TEMPCAL_SLOPE / ADC_GRANULARITY)
-
-/** @} */ // end of group temperature-feedback-macros
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/** 
- * @ingroup temperature-feedback-mcal
- * @{ 
- * @brief ADC input assignments of temperature feedback signals
- * 
- * @details
- * In this section the ADC input channels, related ADC result buffers, trigger
- * sources and interrupt vectors are defined. These settings allow the fast 
- * re-assignments of feedback signals in case of hardware changes.
- */
-
-#define _BUCK_TEMP_ADCInterrupt     _ADCAN2Interrupt ///< Interrupt Service Routine function name
-#define _BUCK_TEMP_ADCISR_IF        _ADCAN2IF   ///< Interrupt Service Routine Flag Bit
-
-#define BUCK_TEMP_ANSEL             _ANSELB7    ///< GPIO analog function mode enable bit
-#define BUCK_TEMP_ADCCORE           8           // 0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core
-#define BUCK_TEMP_ADCIN             2           // Analog input number (e.g. '5' for 'AN5')
-#define BUCK_TEMP_ADCBUF            ADCBUF2     ///< GPIO analog function mode enable bit
-#define BUCK_TEMP_ADCTRIG           PG1TRIGB    ///< Register used for trigger placement
-#define BUCK_TEMP_TRGSRC            BUCK_PWM_TRGSRC_TRG2    // PWM1 Trigger 2 via PG1TRIGB
-    
-/** @} */ // end of group temperature-feedback-mcal
-
-/**************************************************************************************************
- * @ingroup adaptive-control-settings
+ * @ingroup adaptive-gain-control-settings-buck
  * @{
  * @brief Declaration of additional hardware-specific defines required for adaptive gain control
  * 
@@ -737,12 +685,12 @@
 
 #define BUCK_AGC_EXECUTION_DELAY    (float)(370.0e-9) ///< AGC Observer Algorithm Execution Time in [sec]
 
-/** @} */ // end of group
+/** @} */ // end of group adaptive-gain-control-settings-buck ~~~~~~~~~~~~~~~~~
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /** 
- * @ingroup adaptive-control-macros
- * @{ 
+ * @ingroup adaptive-gain-control-macros-buck
+ * @{
  * @brief Conversion macros of phase current feedback parameters
  * 
  * @details
@@ -770,130 +718,11 @@
 
 // Additional execution time calculation to be considered in trigger delay and overall control timing
 #define BUCK_AGC_EXEC_DLY       (uint16_t)(BUCK_AGC_EXECUTION_DELAY / PWM_CLOCK_PERIOD) ///< Macro calculating the integer number equivalent of the AGC algorithm computation time
-/** @} */ // end of group
+
+/** @} */ // end of group adaptive-gain-control-macros-buck ~~~~~~~~~~~~~~~~~~~
 
 /**************************************************************************************************
- * @ingroup startup-timing-settings
- * @{
- * @brief Global defines for soft-start specific parameters
- * 
- * @details
- * This section is used to define power supply startup timing settings. The soft-start sequence 
- * is part of the power controller. It allows to program specific timings for 
- *   - Power On Delay
- *   - Ramp Period 
- *   - Power Good Delay
- * 
- * After the startup has passed these three timing periods, the power supply is ending up in 
- * "normal" operation, continuously regulating the output until a fault is detected or the 
- * operating state is changed for any other reason. When the output voltage reference is changed, 
- * the power control state machine will use the voltage ramp slope defined here to tune from the 
- * recent voltage reference to the new reference value. During this period the BUSY-bit of the 
- * power controller (status word, bit #7) will be set. This status bit will be cleared automatically
- * by the power controller state machine once the new reference value has been applied and the 
- * converter is back in constant regulation mode.
- * 
- * Pre-compiler macros are used to translate physical values into binary (integer) numbers to 
- * be written to SFRs and variables.  
- * (see \ref startup-timing-macros for details)
- * 
- * @note
- * On DPSK3 it takes roughly 500 ms until the auxiliary power has been started, the 
- * PIC24 housekeeping controller on the bottom side of the board resets the protection
- * logic and allows the dsPIC to run. After this period the dsPIC controller starts to 
- * execute its firmware.
- *  
- * This additional startup delay of ~500 ms is not considered in the settings below and 
- * needs to be taken into account when adjusting startup timing. Use an independent debugging
- * pin toggle at the beginning of the firmware to verify the specified startup timing is 
- * applied as desired.
- **************************************************************************************************/
-
-#define BUCK_POWER_ON_DELAY          (float) 200e-3 ///< power on delay in [sec]
-#define BUCK_VRAMP_PERIOD            (float) 100e-3 ///< voltage ramp-up period in [sec]
-#define BUCK_IRAMP_PERIOD            (float) 100e-3 ///< output current ramp-up period in [sec]
-#define BUCK_POWER_GOOD_DELAY        (float) 200e-3 ///< power good delay in [sec]
-
-/** @} */ // end of group startup-timing-settings ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/** 
- * @ingroup startup-timing-macros
- * @{ 
- * @brief Conversion Macros of Startup Timing Settings
- * 
- * @details
- * These conversion macros are used to convert user settings defined as physical 
- * quantities into binary (integer) numbers, which will be written to registers and
- * variables and used in calculations throughout the firmware.
- */
-
-#define BUCK_POD       (uint16_t)(((float)BUCK_POWER_ON_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0)
-#define BUCK_VRAMP_PER (uint16_t)(((float)BUCK_VRAMP_PERIOD / (float)MAIN_EXECUTION_PERIOD)-1.0)
-#define BUCK_VREF_STEP (uint16_t)((float)BUCK_VOUT_REF / (float)(BUCK_VRAMP_PER + 1.0))
-#define BUCK_IRAMP_PER (uint16_t)(((float)BUCK_IRAMP_PERIOD / (float)MAIN_EXECUTION_PERIOD)-1.0)
-#define BUCK_IREF_STEP (uint16_t)((float)BUCK_ISNS_REF / (float)(BUCK_VRAMP_PER + 1.0))
-#define BUCK_PGD       (uint16_t)(((float)BUCK_POWER_GOOD_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0)
-
-/** @} */ // end of group startup-timing-macros ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-/**************************************************************************************************
- * @ingroup fault-response-settings
- * @{
- * @brief Global defines for fault-monitor related parameters
- * 
- * @details
- * This section is used to define power supply fault object timing settings. The fault monitor 
- * is continuously monitoring declared data objects at the high-priority task frequency defined by 
- * \ref MAIN_EXECUTION_PERIOD. Based on this known interval, filtering delays for fault trip and 
- * fault recovery events to allow users to adjust the fault detection sensitivity.
- * 
- * - Fault Trip Event Delay   
- * This setting defines for how long a fault condition has to be continuously active before the 
- * effective fault trip status/event will be triggered.
- * 
- * - Fault Recovery Event Delay   
- * This setting defines for how long a fault condition has to be continuously cleared before the 
- * effective fault recovery status/event will be triggered.
- * 
- *************************************************************************************************/
-
-#define BUCK_UVLO_TRIP_DELAY         (float) 5e-3   ///< under voltage lock out trip delay in [sec]
-#define BUCK_UVLO_RECOVERY_DELAY     (float) 500e-3 ///< under voltage lock out recovery delay in [sec]
-#define BUCK_OVLO_TRIP_DELAY         (float) 5e-3   ///< over voltage lock out trip delay in [sec]
-#define BUCK_OVLO_RECOVERY_DELAY     (float) 500e-3 ///< over voltage lock out recovery delay in [sec]
-#define BUCK_REGERR_TRIP_DELAY       (float) 25e-3  ///< regulation error trip delay in [sec]
-#define BUCK_REGERR_RECOVERY_DELAY   (float) 500e-3 ///< regulation error recovery delay in [sec]
-#define BUCK_OCP_TRIP_DELAY          (float) 2e-3   ///< over current proection trip delay in [sec]
-#define BUCK_OCP_RECOVERY_DELAY      (float) 500e-3 ///< over current proection recovery delay in [sec]
-
-/** @} */ // end of group fault-response-settings ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/** 
- * @ingroup fault-response-macros
- * @{ 
- * @brief Conversion Macros of Fault Response Timing Settings
- * 
- * @details
- * These conversion macros are used to convert user settings defined as physical 
- * quantities into binary (integer) numbers, which will be written to registers and
- * variables and used in calculations throughout the firmware.
- */
-
-#define BUCK_UVLO_TDLY   (uint16_t)(((float)      BUCK_UVLO_TRIP_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< under voltage lock out trip delay conversion nacro
-#define BUCK_UVLO_RDLY   (uint16_t)(((float)  BUCK_UVLO_RECOVERY_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< under voltage lock out recovery delay conversion nacro
-#define BUCK_OVLO_TDLY   (uint16_t)(((float)      BUCK_OVLO_TRIP_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< over voltage lock out trip delay conversion nacro
-#define BUCK_OVLO_RDLY   (uint16_t)(((float)  BUCK_OVLO_RECOVERY_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< over voltage lock out recovery delay conversion nacro
-#define BUCK_REGERR_TDLY (uint16_t)(((float)    BUCK_REGERR_TRIP_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< regulation error trip delay conversion macro
-#define BUCK_REGERR_RDLY (uint16_t)(((float)BUCK_REGERR_RECOVERY_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< regulation error recovery delay conversion macro
-#define BUCK_OCP_TDLY    (uint16_t)(((float)       BUCK_OCP_TRIP_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< over current protection trip Delay conversion macro
-#define BUCK_OCP_RDLY    (uint16_t)(((float)   BUCK_OCP_RECOVERY_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< over current protection recovery delay conversion nacro
-
-/** @} */ // end of group fault-response-macros ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    
-/**************************************************************************************************
- * @ingroup control-interrupt-vector-declarations
+ * @ingroup isr-settings-buck
  * @{
  * @brief Control loop Interrupt Vector Settings
  * 
@@ -928,10 +757,136 @@
 
 #endif
 
-/** @} */ // end of group control-interrupt-vector-declarations
+/** @} */ // end of group isr-settings-buck ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 /**************************************************************************************************
- * @ingroup pwm-settings
+ * @ingroup startup-timing-settings-buck
+ * @{
+ * @brief Global defines for soft-start specific parameters
+ * 
+ * @details
+ * This section is used to define power supply startup timing settings. The soft-start sequence 
+ * is part of the power controller. It allows to program specific timings for 
+ *   - Power On Delay
+ *   - Ramp Period 
+ *   - Power Good Delay
+ * 
+ * After the startup has passed these three timing periods, the power supply is ending up in 
+ * "normal" operation, continuously regulating the output until a fault is detected or the 
+ * operating state is changed for any other reason. When the output voltage reference is changed, 
+ * the power control state machine will use the voltage ramp slope defined here to tune from the 
+ * recent voltage reference to the new reference value. During this period the BUSY-bit of the 
+ * power controller (status word, bit #7) will be set. This status bit will be cleared automatically
+ * by the power controller state machine once the new reference value has been applied and the 
+ * converter is back in constant regulation mode.
+ * 
+ * Pre-compiler macros are used to translate physical values into binary (integer) numbers to 
+ * be written to SFRs and variables.  
+ * (see \ref startup-timing-macros-buck for details)
+ * 
+ * @note
+ * On DPSK3 it takes roughly 500 ms until the auxiliary power has been started, the 
+ * PIC24 housekeeping controller on the bottom side of the board resets the protection
+ * logic and allows the dsPIC to run. After this period the dsPIC controller starts to 
+ * execute its firmware.
+ *  
+ * This additional startup delay of ~500 ms is not considered in the settings below and 
+ * needs to be taken into account when adjusting startup timing. Use an independent debugging
+ * pin toggle at the beginning of the firmware to verify the specified startup timing is 
+ * applied as desired.
+ **************************************************************************************************/
+
+#define BUCK_POWER_ON_DELAY          (float) 200e-3 ///< power on delay in [sec]
+#define BUCK_VRAMP_PERIOD            (float) 100e-3 ///< voltage ramp-up period in [sec]
+#define BUCK_IRAMP_PERIOD            (float) 100e-3 ///< output current ramp-up period in [sec]
+#define BUCK_POWER_GOOD_DELAY        (float) 200e-3 ///< power good delay in [sec]
+
+/** @} */ // end of group startup-timing-settings ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/** 
+ * @ingroup startup-timing-macros-buck
+ * @{
+ * @brief Conversion Macros of Startup Timing Settings
+ * 
+ * @details
+ * These conversion macros are used to convert user settings defined as physical 
+ * quantities into binary (integer) numbers, which will be written to registers and
+ * variables and used in calculations throughout the firmware.
+ */
+
+#define BUCK_POD       (uint16_t)(((float)BUCK_POWER_ON_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0)
+#define BUCK_VRAMP_PER (uint16_t)(((float)BUCK_VRAMP_PERIOD / (float)MAIN_EXECUTION_PERIOD)-1.0)
+#define BUCK_VREF_STEP (uint16_t)((float)BUCK_VOUT_REF / (float)(BUCK_VRAMP_PER + 1.0))
+#define BUCK_IRAMP_PER (uint16_t)(((float)BUCK_IRAMP_PERIOD / (float)MAIN_EXECUTION_PERIOD)-1.0)
+#define BUCK_IREF_STEP (uint16_t)((float)BUCK_ISNS_REF / (float)(BUCK_VRAMP_PER + 1.0))
+#define BUCK_PGD       (uint16_t)(((float)BUCK_POWER_GOOD_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0)
+
+/** @} */ // end of group startup-timing-macros-buck ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+/**************************************************************************************************
+ * @ingroup fault-response-settings-buck
+ * @{
+ * @brief Global defines for fault-monitor related parameters
+ * 
+ * @details
+ * This section is used to define power supply fault object timing settings. The fault monitor 
+ * is continuously monitoring declared data objects at the high-priority task frequency defined by 
+ * \ref MAIN_EXECUTION_PERIOD. Based on this known interval, filtering delays for fault trip and 
+ * fault recovery events to allow users to adjust the fault detection sensitivity.
+ * 
+ * - Fault Trip Event Delay   
+ * This setting defines for how long a fault condition has to be continuously active before the 
+ * effective fault trip status/event will be triggered.
+ * 
+ * - Fault Recovery Event Delay   
+ * This setting defines for how long a fault condition has to be continuously cleared before the 
+ * effective fault recovery status/event will be triggered.
+ * 
+ *************************************************************************************************/
+
+#define BUCK_UVLO_TRIP_DELAY         (float) 5e-3   ///< under voltage lock out trip delay in [sec]
+#define BUCK_UVLO_RECOVERY_DELAY     (float) 500e-3 ///< under voltage lock out recovery delay in [sec]
+#define BUCK_OVLO_TRIP_DELAY         (float) 5e-3   ///< over voltage lock out trip delay in [sec]
+#define BUCK_OVLO_RECOVERY_DELAY     (float) 500e-3 ///< over voltage lock out recovery delay in [sec]
+#define BUCK_REGERR_TRIP_DELAY       (float) 25e-3  ///< regulation error trip delay in [sec]
+#define BUCK_REGERR_RECOVERY_DELAY   (float) 500e-3 ///< regulation error recovery delay in [sec]
+#define BUCK_OCP_TRIP_DELAY          (float) 2e-3   ///< over current proection trip delay in [sec]
+#define BUCK_OCP_RECOVERY_DELAY      (float) 500e-3 ///< over current proection recovery delay in [sec]
+
+/** @} */ // end of group fault-response-settings-buck ~~~~~~~~~~~~~~~~~~~~~~~~
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/** 
+ * @ingroup fault-response-macros-buck
+ * @{
+ * @brief Conversion Macros of Fault Response Timing Settings
+ * 
+ * @details
+ * These conversion macros are used to convert user settings defined as physical 
+ * quantities into binary (integer) numbers, which will be written to registers and
+ * variables and used in calculations throughout the firmware.
+ */
+
+#define BUCK_UVLO_TDLY   (uint16_t)(((float)      BUCK_UVLO_TRIP_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< under voltage lock out trip delay conversion nacro
+#define BUCK_UVLO_RDLY   (uint16_t)(((float)  BUCK_UVLO_RECOVERY_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< under voltage lock out recovery delay conversion nacro
+#define BUCK_OVLO_TDLY   (uint16_t)(((float)      BUCK_OVLO_TRIP_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< over voltage lock out trip delay conversion nacro
+#define BUCK_OVLO_RDLY   (uint16_t)(((float)  BUCK_OVLO_RECOVERY_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< over voltage lock out recovery delay conversion nacro
+#define BUCK_REGERR_TDLY (uint16_t)(((float)    BUCK_REGERR_TRIP_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< regulation error trip delay conversion macro
+#define BUCK_REGERR_RDLY (uint16_t)(((float)BUCK_REGERR_RECOVERY_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< regulation error recovery delay conversion macro
+#define BUCK_OCP_TDLY    (uint16_t)(((float)       BUCK_OCP_TRIP_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< over current protection trip Delay conversion macro
+#define BUCK_OCP_RDLY    (uint16_t)(((float)   BUCK_OCP_RECOVERY_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< over current protection recovery delay conversion nacro
+
+/** @} */ // end of group fault-response-macros-buck ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+/** @endcond */ // Doxygen section
+#endif   /* INCLUDE_BUCK */
+
+#if (INCLUDE_BOOST == true)
+/** @cond INCLUDE_BOOST */
+
+/**************************************************************************************************
+ * @ingroup pwm-settings-boost
  * @{
  * @brief User-declaration of global defines for PWM signal generator settings
  * 
@@ -952,11 +907,11 @@
 #define BOOST_DEAD_TIME_LEADING_EDGE    (float) 0.0e-9 ///< Leading Edge Dead Time delay in [sec]
 #define BOOST_DEAD_TIME_FALLING_EDGE    (float) 0.0e-9 ///< Falling Edge Dead Time delay in [sec]
 
-/** @} */ // end of group pwm-settings ~~~~~~~~~~~~~~~~~~~~
+/** @} */ // end of group pwm-settings-boost ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 /** 
- * @ingroup pwm-mcal-phase1
- * @{ 
+ * @ingroup pwm-mcal-boost
+ * @{
  * @brief PWM peripheral output pins, control signals and register assignments of converter phase #1
  * 
  * @details
@@ -999,12 +954,12 @@
 
 #define BOOST_PWM_UPDREQ             PG2STATbits.UPDREQ
 
-/** @} */ // end of group pwm-mcal-phase1 ~~~~~~~~~~~~~~~~~
+/** @} */ // end of group pwm-mcal-boost ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /** 
- * @ingroup pwm-macros
- * @{ 
+ * @ingroup pwm-macros-boost
+ * @{
  * @brief Conversion macros for user-declarations of PWM parameters
  * 
  * @details
@@ -1023,11 +978,11 @@
 #define BOOST_PWM_DEAD_TIME_LE   (uint16_t)(BOOST_DEAD_TIME_LEADING_EDGE / (float)PWM_CLOCK_PERIOD) ///< Rising edge dead time [tick = 250ps]
 #define BOOST_PWM_DEAD_TIME_FE   (uint16_t)(BOOST_DEAD_TIME_FALLING_EDGE / (float)PWM_CLOCK_PERIOD) ///< Falling edge dead time [tick = 250ps]
 
-/** @} */ // end of group pwm-macros ~~~~~~~~~~~~~~~~~~~~~~
+/** @} */ // end of group pwm-macros-boost ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     
 /**************************************************************************************************
- * @ingroup input-voltage-feedback-settings
+ * @ingroup input-voltage-feedback-settings-boost
  * @{
  * @brief Declaration of input voltage feedback properties
  * 
@@ -1052,12 +1007,12 @@
 #define BOOST_VIN_FEEDBACK_OFFSET    (float) 0.0000  ///< Physical, static signal offset in [V]
 #define BOOST_VIN_ADC_TRG_DELAY      (float)20.0e-9  ///< ADC trigger delay in [sec]
 
-/** @} */ // end of group input-voltage-feedback-settings ~~~~~~~~~~~~~~~~~~~~
+/** @} */ // end of group input-voltage-feedback-settings-boost ~~~~~~~~~~~~~~~
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /** 
- * @ingroup input-voltage-feedback-mcal
- * @{ 
+ * @ingroup input-voltage-feedback-mcal-boost
+ * @{
  * @brief ADC input assignments of input voltage feedback signals
  * 
  * @details
@@ -1077,13 +1032,13 @@
 #define BOOST_VIN_ADCTRIG        PG2TRIGB    ///< Register used for trigger placement
 #define BOOST_VIN_TRGSRC         BOOST_PWM_TRGSRC_TRG2 ///< PWM2 (=PG2) Trigger 2 via PGxTRIGB
 
-/** @} */ // end of group input-voltage-feedback-mcal ~~~~~~~~~~~~~~~~~~~~~~~~~
+/** @} */ // end of group input-voltage-feedback-mcal-boost ~~~~~~~~~~~~~~~~~~~
 
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /** 
- * @ingroup input-voltage-feedback-macros
- * @{ 
+ * @ingroup input-voltage-feedback-macros-boost
+ * @{
  * @brief Conversion macros of input voltage feedback parameters
  * 
  * @details
@@ -1110,10 +1065,10 @@
 
 #define BOOST_VIN_RANGE_MAX      (float)(ADC_REFERENCE * BOOST_VIN_NORM_INV_G)
 
-/** @} */ // end of group input-voltage-feedback-macros ~~~~~~~~~~~~~~~~~~~~~~
+/** @} */ // end of group input-voltage-feedback-macros-boost ~~~~~~~~~~~~~~~~~
 
 /**************************************************************************************************
- * @ingroup output-voltage-feedback-settings
+ * @ingroup output-voltage-feedback-settings-boost
  * @{
  * @brief Declaration of output voltage feedback properties
  * 
@@ -1138,12 +1093,12 @@
 #define BOOST_VOUT_FEEDBACK_OFFSET   (float) 0.000  ///< Physical, static signal offset in [V]
 #define BOOST_VOUT_ADC_TRG_DELAY     (float)20.0e-9 ///< Trigger delay in [sec]
 
-/** @} */ // end of group output-voltage-feedback-settings ~~~~~~~~~~~~~~~~~~~~
+/** @} */ // end of group output-voltage-feedback-settings-boost ~~~~~~~~~~~~~~~
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /** 
- * @ingroup output-voltage-feedback-mcal
- * @{ 
+ * @ingroup output-voltage-feedback-mcal-boost
+ * @{
  * @brief ADC input assignments of output voltage feedback signals
  * 
  * @details
@@ -1160,12 +1115,12 @@
 #define BOOST_VOUT_ADCTRIG           PG2TRIGA    ///< Register used for trigger placement
 #define BOOST_VOUT_TRGSRC            BOOST_PWM_TRGSRC_TRG1 ///< PWM2 (=PG2) Trigger 1 via PGxTRIGA
 
-/** @} */ // end of group output-voltage-feedback-mcal ~~~~~~~~~~~~~~~~~~~~~~~~~
+/** @} */ // end of group output-voltage-feedback-mcal-boost ~~~~~~~~~~~~~~~~~~
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /** 
- * @ingroup output-voltage-feedback-macros
- * @{ 
+ * @ingroup output-voltage-feedback-macros-boost
+ * @{
  * @brief Conversion macros of output voltage feedback parameters
  * 
  * @details
@@ -1192,10 +1147,10 @@
 
 #define BOOST_VOUT_RANGE_MAX    (float)(ADC_REFERENCE * BOOST_VOUT_NORM_INV_G) ///< Macro calculating the integer number equivalent of the total output voltage range defined by the settings given above in [V]]
     
-/** @} */ // end of group output-voltage-feedback-macros ~~~~~~~~~~~~~~~~~~~~~~
+/** @} */ // end of group output-voltage-feedback-macros-boost ~~~~~~~~~~~~~~~~
 
 /**************************************************************************************************
- * @ingroup phase-current-feedback-settings
+ * @ingroup phase-current-feedback-settings-boost
  * @{
  * @brief Declaration of phase-current feedback properties
  * 
@@ -1211,7 +1166,7 @@
  * 
  * Macros are used to convert given physical values into binary (integer) number to be written
  * into SFRs and variables and being used in runtime calculations.  
- * (see \ref phase-current-feedback-macros for details)
+ * (see \ref phase-current-feedback-macros-boost for details)
  * *************************************************************************************************/
 
 // Feedback Declarations
@@ -1249,12 +1204,12 @@
 
 #endif
 
-/** @} */ // end of group
+/** @} */ // end of group phase-current-feedback-settings-boost ~~~~~~~~~~~~~~~
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /** 
- * @ingroup phase-current-feedback-macros
- * @{ 
+ * @ingroup phase-current-feedback-macros-boost
+ * @{
  * @brief Conversion macros of phase current feedback parameters
  * 
  * @details
@@ -1276,12 +1231,12 @@
 #define BOOST_ISNS_NORM_SCALER   (int16_t)(ceil(log(BOOST_ISNS_NORM_INV_G)/log(2))) ///< ISNS normalization  
 #define BOOST_ISNS_NORM_FACTOR   (int16_t)((BOOST_ISNS_NORM_INV_G / pow(2.0, BOOST_ISNS_NORM_SCALER)) * (pow(2.0, 15)-1)) ///< ISNS normalization factor scaled in Q15
 
-/** @} */ // end of group phase-current-feedback-macros ~~~~~~~~~~~~~~~~~~~~~~~
+/** @} */ // end of group phase-current-feedback-macros-boost ~~~~~~~~~~~~~~~~~
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /** 
- * @ingroup phase-current-feedback-mcal
- * @{ 
+ * @ingroup phase-current-feedback-mcal-boost
+ * @{
  * @brief ADC input assignments of phase current feedback signals
  * 
  * @details
@@ -1325,74 +1280,10 @@
     #pragma message "hardware abstraction layer warning: no current sense feedback selected."
 #endif
 
-/** @} */ // end of group phase-current-feedback-mcal ~~~~~~~~~~~~~~~~~~~~~~~~~
+/** @} */ // end of group phase-current-feedback-mcal-boost ~~~~~~~~~~~~~~~~~~~
 
 /**************************************************************************************************
- * @ingroup temperature-feedback-settings
- * @{
- * @brief Declaration of temperature feedback properties
- * 
- * @details
- * In this section the temperature feedback signal scaling, gain and valid signal limits are 
- * specified. Physical quantities are used to define parameter values to ease the system 
- * configuration. 
- * 
- * As DPSK3 has one, central on-board temperature sensor between the load resistor banks 
- * indicating the worst case system temperature.
- * 
- * Macros are used to convert given physical values into binary (integer) number to be written
- * into SFRs and variables and being used in runtime calculations.  
- * (see \ref phase-current-feedback-macros for details)
- * *************************************************************************************************/
-
-#define BOOST_TEMPCAL_ZERO       (float) 0.500   // Temperature sense signal zero point voltage in [V]
-#define BOOST_TEMPCAL_SLOPE      (float) 0.010   // Temperature sense signal slope in [V/K]
-
-/** @} */ // end of group temperature-feedback-settings
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/** 
- * @ingroup temperature-feedback-macros
- * @{ 
- * @brief Conversion macros of temperature feedback parameters
- * 
- * @details
- * These conversion macros are used to convert user settings defined as physical 
- * quantities into binary (integer) numbers, which will be written to registers and
- * variables and used in calculations throughout the firmware.
- */
-
-#define BOOST_FB_TEMP_ZERO       (uint16_t)(BOOST_TEMPCAL_ZERO / ADC_GRANULARITY)
-#define BOOST_FB_TEMP_SLOPE      (float)(BOOST_TEMPCAL_SLOPE / ADC_GRANULARITY)
-
-/** @} */ // end of group temperature-feedback-macros
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/** 
- * @ingroup temperature-feedback-mcal
- * @{ 
- * @brief ADC input assignments of temperature feedback signals
- * 
- * @details
- * In this section the ADC input channels, related ADC result buffers, trigger
- * sources and interrupt vectors are defined. These settings allow the fast 
- * re-assignments of feedback signals in case of hardware changes.
- */
-
-#define _BOOST_TEMP_ADCInterrupt     _ADCAN2Interrupt ///< Interrupt Service Routine function name
-#define _BOOST_TEMP_ADCISR_IF        _ADCAN2IF   ///< Interrupt Service Routine Flag Bit
-
-#define BOOST_TEMP_ANSEL             _ANSELB7    ///< GPIO analog function mode enable bit
-#define BOOST_TEMP_ADCCORE           8           // 0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core
-#define BOOST_TEMP_ADCIN             2           // Analog input number (e.g. '5' for 'AN5')
-#define BOOST_TEMP_ADCBUF            ADCBUF2     ///< GPIO analog function mode enable bit
-#define BOOST_TEMP_ADCTRIG           PG2TRIGB    ///< Register used for trigger placement
-#define BOOST_TEMP_TRGSRC            BOOST_PWM_TRGSRC_TRG2    // PWM2 Trigger 2
-    
-/** @} */ // end of group temperature-feedback-mcal
-
-/**************************************************************************************************
- * @ingroup adaptive-control-settings
+ * @ingroup adaptive-gain-control-settings-boost
  * @{
  * @brief Declaration of additional hardware-specific defines required for adaptive gain control
  * 
@@ -1405,12 +1296,12 @@
 
 #define BOOST_AGC_EXECUTION_DELAY    (float)(400.0e-9) ///< AGC Observer Algorithm Execution Time in [sec]
 
-/** @} */ // end of group
+/** @} */ // end of group adaptive-gain-control-settings-boost ~~~~~~~~~~~~~~~~
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /** 
- * @ingroup adaptive-control-macros
- * @{ 
+ * @ingroup adaptive-gain-control-macros-boost
+ * @{
  * @brief Conversion macros of phase current feedback parameters
  * 
  * @details
@@ -1441,135 +1332,10 @@
 #define BOOST_AGC_EXEC_DLY       (uint16_t)(BOOST_AGC_EXECUTION_DELAY / PWM_CLOCK_PERIOD) ///< Macro calculating the integer number equivalent of the AGC algorithm computation time
 
 */
-/** @} */ // end of group
+/** @} */ // end of group adaptive-gain-control-macros-boost ~~~~~~~~~~~~~~~~~~
 
 /**************************************************************************************************
- * @ingroup startup-timing-settings
- * @{
- * @brief Global defines for soft-start specific parameters
- * 
- * @details
- * This section is used to define power supply startup timing settings. The soft-start sequence 
- * is part of the power controller. It allows to program specific timings for 
- *   - Power On Delay
- *   - Ramp Period 
- *   - Power Good Delay
- * 
- * After the startup has passed these three timing periods, the power supply is ending up in 
- * "normal" operation, continuously regulating the output until a fault is detected or the 
- * operating state is changed for any other reason. When the output voltage reference is changed, 
- * the power control state machine will use the voltage ramp slope defined here to tune from the 
- * recent voltage reference to the new reference value. During this period the BUSY-bit of the 
- * power controller (status word, bit #7) will be set. This status bit will be cleared automatically
- * by the power controller state machine once the new reference value has been applied and the 
- * converter is back in constant regulation mode.
- * 
- * Pre-compiler macros are used to translate physical values into binary (integer) numbers to 
- * be written to SFRs and variables.  
- * (see \ref startup-timing-macros for details)
- * 
- * @note
- * On DPSK3 it takes roughly 500 ms until the auxiliary power has been started, the 
- * PIC24 housekeeping controller on the bottom side of the board resets the protection
- * logic and allows the dsPIC to run. After this period the dsPIC controller starts to 
- * execute its firmware.
- *  
- * This additional startup delay of ~500 ms is not considered in the settings below and 
- * needs to be taken into account when adjusting startup timing. Use an independent debugging
- * pin toggle at the beginning of the firmware to verify the specified startup timing is 
- * applied as desired.
- **************************************************************************************************/
-
-#define BOOST_POWER_ON_DELAY        (float) 200e-3 ///< power on delay in [sec]
-#define BOOST_VRAMP_PERIOD          (float) 100e-3 ///< voltage ramp-up period in [sec]
-#define BOOST_IRAMP_PERIOD          (float) 100e-3 ///< output current ramp-up period in [sec]
-#define BOOST_POWER_GOOD_DELAY      (float) 200e-3 ///< power good delay in [sec]
-
-#define BOOST_CHARGEUP_PERIOD       (float)  50e-3 ///< output capacitor charge up monitor period in [sec]
-#define BOOST_CHARGEUP_TIMEOUT      (float) 200e-3 ///< output capacitor charge up monitor timeout in [sec]
-    
-/** @} */ // end of group startup-timing-settings ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/** 
- * @ingroup startup-timing-macros
- * @{ 
- * @brief Conversion Macros of Startup Timing Settings
- * 
- * @details
- * These conversion macros are used to convert user settings defined as physical 
- * quantities into binary (integer) numbers, which will be written to registers and
- * variables and used in calculations throughout the firmware.
- */
-
-#define BOOST_POD       (uint16_t)(((float)BOOST_POWER_ON_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0)
-#define BOOST_VRAMP_PER (uint16_t)(((float)BOOST_VRAMP_PERIOD / (float)MAIN_EXECUTION_PERIOD)-1.0)
-#define BOOST_VREF_STEP (uint16_t)((float)BOOST_VOUT_REF / (float)(BOOST_VRAMP_PER + 1.0))
-#define BOOST_IRAMP_PER (uint16_t)(((float)BOOST_IRAMP_PERIOD / (float)MAIN_EXECUTION_PERIOD)-1.0)
-#define BOOST_IREF_STEP (uint16_t)((float)BOOST_ISNS_REF / (float)(BOOST_VRAMP_PER + 1.0))
-#define BOOST_PGD       (uint16_t)(((float)BOOST_POWER_GOOD_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0)
-#define BOOST_CHRG_PER  (uint16_t)(((float)BOOST_CHARGEUP_PERIOD / (float)MAIN_EXECUTION_PERIOD)-1.0)
-#define BOOST_CHRG_TOUT (uint16_t)(((float)BOOST_CHARGEUP_TIMEOUT / (float)MAIN_EXECUTION_PERIOD)-1.0)
-
-/** @} */ // end of group startup-timing-macros ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-/**************************************************************************************************
- * @ingroup fault-response-settings
- * @{
- * @brief Global defines for fault-monitor related parameters
- * 
- * @details
- * This section is used to define power supply fault object timing settings. The fault monitor 
- * is continuously monitoring declared data objects at the high-priority task frequency defined by 
- * \ref MAIN_EXECUTION_PERIOD. Based on this known interval, filtering delays for fault trip and 
- * fault recovery events to allow users to adjust the fault detection sensitivity.
- * 
- * - Fault Trip Event Delay   
- * This setting defines for how long a fault condition has to be continuously active before the 
- * effective fault trip status/event will be triggered.
- * 
- * - Fault Recovery Event Delay   
- * This setting defines for how long a fault condition has to be continuously cleared before the 
- * effective fault recovery status/event will be triggered.
- * 
- *************************************************************************************************/
-
-#define BOOST_UVLO_TRIP_DELAY         (float) 5e-3   ///< under voltage lock out trip delay in [sec]
-#define BOOST_UVLO_RECOVERY_DELAY     (float) 500e-3 ///< under voltage lock out recovery delay in [sec]
-#define BOOST_OVLO_TRIP_DELAY         (float) 5e-3   ///< over voltage lock out trip delay in [sec]
-#define BOOST_OVLO_RECOVERY_DELAY     (float) 500e-3 ///< over voltage lock out recovery delay in [sec]
-#define BOOST_REGERR_TRIP_DELAY       (float) 25e-3  ///< regulation error trip delay in [sec]
-#define BOOST_REGERR_RECOVERY_DELAY   (float) 500e-3 ///< regulation error recovery delay in [sec]
-#define BOOST_OCP_TRIP_DELAY          (float) 2e-3   ///< over current proection trip delay in [sec]
-#define BOOST_OCP_RECOVERY_DELAY      (float) 500e-3 ///< over current proection recovery delay in [sec]
-
-/** @} */ // end of group fault-response-settings ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/** 
- * @ingroup fault-response-macros
- * @{ 
- * @brief Conversion Macros of Fault Response Timing Settings
- * 
- * @details
- * These conversion macros are used to convert user settings defined as physical 
- * quantities into binary (integer) numbers, which will be written to registers and
- * variables and used in calculations throughout the firmware.
- */
-
-#define BOOST_UVLO_TDLY   (uint16_t)(((float)      BOOST_UVLO_TRIP_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< under voltage lock out trip delay conversion nacro
-#define BOOST_UVLO_RDLY   (uint16_t)(((float)  BOOST_UVLO_RECOVERY_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< under voltage lock out recovery delay conversion nacro
-#define BOOST_OVLO_TDLY   (uint16_t)(((float)      BOOST_OVLO_TRIP_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< over voltage lock out trip delay conversion nacro
-#define BOOST_OVLO_RDLY   (uint16_t)(((float)  BOOST_OVLO_RECOVERY_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< over voltage lock out recovery delay conversion nacro
-#define BOOST_REGERR_TDLY (uint16_t)(((float)    BOOST_REGERR_TRIP_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< regulation error trip delay conversion macro
-#define BOOST_REGERR_RDLY (uint16_t)(((float)BOOST_REGERR_RECOVERY_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< regulation error recovery delay conversion macro
-#define BOOST_OCP_TDLY    (uint16_t)(((float)       BOOST_OCP_TRIP_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< over current protection trip Delay conversion macro
-#define BOOST_OCP_RDLY    (uint16_t)(((float)   BOOST_OCP_RECOVERY_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< over current protection recovery delay conversion nacro
-
-/** @} */ // end of group fault-response-macros ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    
-/**************************************************************************************************
- * @ingroup control-interrupt-vector-declarations
+ * @ingroup isr-settings-boost
  * @{
  * @brief Control loop Interrupt Vector Settings
  * 
@@ -1604,8 +1370,205 @@
 
 #endif
 
-/** @} */ // end of group control-interrupt-vector-declarations
+/** @} */ // end of group isr-settings-boost ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+/**************************************************************************************************
+ * @ingroup startup-timing-settings-boost
+ * @{
+ * @brief Global defines for soft-start specific parameters
+ * 
+ * @details
+ * This section is used to define power supply startup timing settings. The soft-start sequence 
+ * is part of the power controller. It allows to program specific timings for 
+ *   - Power On Delay
+ *   - Ramp Period 
+ *   - Power Good Delay
+ * 
+ * After the startup has passed these three timing periods, the power supply is ending up in 
+ * "normal" operation, continuously regulating the output until a fault is detected or the 
+ * operating state is changed for any other reason. When the output voltage reference is changed, 
+ * the power control state machine will use the voltage ramp slope defined here to tune from the 
+ * recent voltage reference to the new reference value. During this period the BUSY-bit of the 
+ * power controller (status word, bit #7) will be set. This status bit will be cleared automatically
+ * by the power controller state machine once the new reference value has been applied and the 
+ * converter is back in constant regulation mode.
+ * 
+ * Pre-compiler macros are used to translate physical values into binary (integer) numbers to 
+ * be written to SFRs and variables.  
+ * (see \ref startup-timing-macros-boost for details)
+ * 
+ * @note
+ * On DPSK3 it takes roughly 500 ms until the auxiliary power has been started, the 
+ * PIC24 housekeeping controller on the bottom side of the board resets the protection
+ * logic and allows the dsPIC to run. After this period the dsPIC controller starts to 
+ * execute its firmware.
+ *  
+ * This additional startup delay of ~500 ms is not considered in the settings below and 
+ * needs to be taken into account when adjusting startup timing. Use an independent debugging
+ * pin toggle at the beginning of the firmware to verify the specified startup timing is 
+ * applied as desired.
+ **************************************************************************************************/
+
+#define BOOST_POWER_ON_DELAY        (float) 200e-3 ///< power on delay in [sec]
+#define BOOST_VRAMP_PERIOD          (float) 100e-3 ///< voltage ramp-up period in [sec]
+#define BOOST_IRAMP_PERIOD          (float) 100e-3 ///< output current ramp-up period in [sec]
+#define BOOST_POWER_GOOD_DELAY      (float) 200e-3 ///< power good delay in [sec]
+
+#define BOOST_CHARGEUP_PERIOD       (float)  50e-3 ///< output capacitor charge up monitor period in [sec]
+#define BOOST_CHARGEUP_TIMEOUT      (float) 200e-3 ///< output capacitor charge up monitor timeout in [sec]
+    
+/** @} */ // end of group startup-timing-settings-boost ~~~~~~~~~~~~~~~~~~~~~~~
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/** 
+ * @ingroup startup-timing-macros-boost
+ * @{
+ * @brief Conversion Macros of Startup Timing Settings
+ * 
+ * @details
+ * These conversion macros are used to convert user settings defined as physical 
+ * quantities into binary (integer) numbers, which will be written to registers and
+ * variables and used in calculations throughout the firmware.
+ */
+
+#define BOOST_POD       (uint16_t)(((float)BOOST_POWER_ON_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0)
+#define BOOST_VRAMP_PER (uint16_t)(((float)BOOST_VRAMP_PERIOD / (float)MAIN_EXECUTION_PERIOD)-1.0)
+#define BOOST_VREF_STEP (uint16_t)((float)BOOST_VOUT_REF / (float)(BOOST_VRAMP_PER + 1.0))
+#define BOOST_IRAMP_PER (uint16_t)(((float)BOOST_IRAMP_PERIOD / (float)MAIN_EXECUTION_PERIOD)-1.0)
+#define BOOST_IREF_STEP (uint16_t)((float)BOOST_ISNS_REF / (float)(BOOST_VRAMP_PER + 1.0))
+#define BOOST_PGD       (uint16_t)(((float)BOOST_POWER_GOOD_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0)
+#define BOOST_CHRG_PER  (uint16_t)(((float)BOOST_CHARGEUP_PERIOD / (float)MAIN_EXECUTION_PERIOD)-1.0)
+#define BOOST_CHRG_TOUT (uint16_t)(((float)BOOST_CHARGEUP_TIMEOUT / (float)MAIN_EXECUTION_PERIOD)-1.0)
+
+/** @} */ // end of group startup-timing-macros-boost ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+/**************************************************************************************************
+ * @ingroup fault-response-settings-boost
+ * @{
+ * @brief Global defines for fault-monitor related parameters
+ * 
+ * @details
+ * This section is used to define power supply fault object timing settings. The fault monitor 
+ * is continuously monitoring declared data objects at the high-priority task frequency defined by 
+ * \ref MAIN_EXECUTION_PERIOD. Based on this known interval, filtering delays for fault trip and 
+ * fault recovery events to allow users to adjust the fault detection sensitivity.
+ * 
+ * - Fault Trip Event Delay   
+ * This setting defines for how long a fault condition has to be continuously active before the 
+ * effective fault trip status/event will be triggered.
+ * 
+ * - Fault Recovery Event Delay   
+ * This setting defines for how long a fault condition has to be continuously cleared before the 
+ * effective fault recovery status/event will be triggered.
+ * 
+ *************************************************************************************************/
+
+#define BOOST_UVLO_TRIP_DELAY         (float) 5e-3   ///< under voltage lock out trip delay in [sec]
+#define BOOST_UVLO_RECOVERY_DELAY     (float) 500e-3 ///< under voltage lock out recovery delay in [sec]
+#define BOOST_OVLO_TRIP_DELAY         (float) 5e-3   ///< over voltage lock out trip delay in [sec]
+#define BOOST_OVLO_RECOVERY_DELAY     (float) 500e-3 ///< over voltage lock out recovery delay in [sec]
+#define BOOST_REGERR_TRIP_DELAY       (float) 25e-3  ///< regulation error trip delay in [sec]
+#define BOOST_REGERR_RECOVERY_DELAY   (float) 500e-3 ///< regulation error recovery delay in [sec]
+#define BOOST_OCP_TRIP_DELAY          (float) 2e-3   ///< over current proection trip delay in [sec]
+#define BOOST_OCP_RECOVERY_DELAY      (float) 500e-3 ///< over current proection recovery delay in [sec]
+
+/** @} */ // end of group fault-response-settings-boost ~~~~~~~~~~~~~~~~~~~~~~~
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/** 
+ * @ingroup fault-response-macros-boost
+ * @{
+ * @brief Conversion Macros of Fault Response Timing Settings
+ * 
+ * @details
+ * These conversion macros are used to convert user settings defined as physical 
+ * quantities into binary (integer) numbers, which will be written to registers and
+ * variables and used in calculations throughout the firmware.
+ */
+
+#define BOOST_UVLO_TDLY   (uint16_t)(((float)      BOOST_UVLO_TRIP_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< under voltage lock out trip delay conversion nacro
+#define BOOST_UVLO_RDLY   (uint16_t)(((float)  BOOST_UVLO_RECOVERY_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< under voltage lock out recovery delay conversion nacro
+#define BOOST_OVLO_TDLY   (uint16_t)(((float)      BOOST_OVLO_TRIP_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< over voltage lock out trip delay conversion nacro
+#define BOOST_OVLO_RDLY   (uint16_t)(((float)  BOOST_OVLO_RECOVERY_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< over voltage lock out recovery delay conversion nacro
+#define BOOST_REGERR_TDLY (uint16_t)(((float)    BOOST_REGERR_TRIP_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< regulation error trip delay conversion macro
+#define BOOST_REGERR_RDLY (uint16_t)(((float)BOOST_REGERR_RECOVERY_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< regulation error recovery delay conversion macro
+#define BOOST_OCP_TDLY    (uint16_t)(((float)       BOOST_OCP_TRIP_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< over current protection trip Delay conversion macro
+#define BOOST_OCP_RDLY    (uint16_t)(((float)   BOOST_OCP_RECOVERY_DELAY / (float)MAIN_EXECUTION_PERIOD)-1.0) ///< over current protection recovery delay conversion nacro
+
+/** @} */ // end of group fault-response-macros-boost ~~~~~~~~~~~~~~~~~~~~~~~~~
+    
+
+/** @endcond */
+#endif  /* INCLUDE_BOOST */
+
+
+/**************************************************************************************************
+ * @ingroup temperature-feedback-settings
+ * @{
+ * @brief Declaration of temperature feedback properties
+ * 
+ * @details
+ * In this section the temperature feedback signal scaling, gain and valid signal limits are 
+ * specified. Physical quantities are used to define parameter values to ease the system 
+ * configuration. 
+ * 
+ * As DPSK3 has one, central on-board temperature sensor between the load resistor banks 
+ * indicating the worst case system temperature.
+ * 
+ * Macros are used to convert given physical values into binary (integer) number to be written
+ * into SFRs and variables and being used in runtime calculations.  
+ * (see \ref temperature-feedback-macros for details)
+ * *************************************************************************************************/
+
+#define TEMP_CAL_ZERO       (float) 0.500   // Temperature sense signal zero point voltage in [V]
+#define TEMP_CAL_SLOPE      (float) 0.010   // Temperature sense signal slope in [V/K]
+
+/** @} */ // end of group temperature-feedback-settings
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/** 
+ * @ingroup temperature-feedback-macros
+ * @{
+ * @brief Conversion macros of temperature feedback parameters
+ * 
+ * @details
+ * These conversion macros are used to convert user settings defined as physical 
+ * quantities into binary (integer) numbers, which will be written to registers and
+ * variables and used in calculations throughout the firmware.
+ */
+
+#define TEMP_FB_ZERO            (uint16_t)(TEMP_CAL_ZERO / ADC_GRANULARITY)
+#define TEMP_FB_SLOPE           (float)(TEMP_CAL_SLOPE / ADC_GRANULARITY)
+
+/** @} */ // end of group temperature-feedback-macros
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/** 
+ * @ingroup temperature-feedback-mcal
+ * @{
+ * @brief ADC input assignments of temperature feedback signals
+ * 
+ * @details
+ * In this section the ADC input channels, related ADC result buffers, trigger
+ * sources and interrupt vectors are defined. These settings allow the fast 
+ * re-assignments of feedback signals in case of hardware changes.
+ */
+
+#define _TEMP_ADCInterrupt          _ADCAN2Interrupt ///< Interrupt Service Routine function name
+#define _TEMP_ADCISR_IF             _ADCAN2IF   ///< Interrupt Service Routine Flag Bit
+
+#define TEMP_ANSEL                  _ANSELB7    ///< GPIO analog function mode enable bit
+#define TEMP_ADCCORE                8           // 0=Dedicated Core #0, 1=Dedicated Core #1, 8=Shared ADC Core
+#define TEMP_ADCIN                  2           // Analog input number (e.g. '5' for 'AN5')
+#define TEMP_ADCBUF                 ADCBUF2     ///< GPIO analog function mode enable bit
+#define TEMP_ADCTRIG                BUCK_PWM_PGxTRIGB    ///< Register used for trigger placement
+#define TEMP_TRGSRC                 BUCK_PWM_TRGSRC_TRG2    // PWM2 Trigger 2 via PG1TRIGB
+    
+/** @} */ // end of group temperature-feedback-mcal
+
+
+#if (INCLUDE_LCD == true)
+/** @cond INCLUDE_LCD */
 
 /**************************************************************************************************
  * @ingroup lcd-interface-declarations
@@ -1654,6 +1617,8 @@
 
 /** @} */ // end of group lcd-interface-declarations
 
+/** @endcond */ // Doxygen section
+#endif /* INCLUDE_LCD */
 
 #endif	/* DPSK3_HARDWARE_DESCRIPTOR_H */
 
