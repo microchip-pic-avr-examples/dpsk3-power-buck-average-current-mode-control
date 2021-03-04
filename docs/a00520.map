@@ -1,5 +1,7 @@
-<map id="Firmware Architecture" name="Firmware Architecture">
-<area shape="rect" id="node1" href="$a00522.html" title="Main Loop." alt="" coords="217,5,300,31"/>
-<area shape="rect" id="node2" title="Firmware Flowchart." alt="" coords="5,31,155,56"/>
-<area shape="rect" id="node3" href="$a00521.html" title="Device Start Up." alt="" coords="203,55,315,80"/>
+<map id="Properties" name="Properties">
+<area shape="rect" id="node1" href="$a00518.html" title=" " alt="" coords="5,55,199,80"/>
+<area shape="rect" id="node5" title="Properties of the second library layer." alt="" coords="247,55,328,80"/>
+<area shape="rect" id="node2" href="$a00523.html" title=" " alt="" coords="383,5,521,31"/>
+<area shape="rect" id="node3" href="$a00522.html" title=" " alt="" coords="408,55,496,80"/>
+<area shape="rect" id="node4" href="$a00521.html" title=" " alt="" coords="376,104,528,129"/>
 </map>

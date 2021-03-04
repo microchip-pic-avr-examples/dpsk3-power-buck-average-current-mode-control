@@ -1,4 +1,6 @@
 var a01480 =
 [
-    [ "period", "a01480.html#a48f363c7bcd47589472b59f0a7dfb74b", null ]
+    [ "enabled", "a01480.html#a085e9fc0863cee4864cf51dcfe1e32df", null ],
+    [ "refresh", "a01480.html#adc2298ffda0c853e699e6da9098f82ae", null ],
+    [ "screen", "a01480.html#aea467a9fc04f0771215b952d26bc4392", null ]
 ];

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: P33C_DAC_INSTANCE_s Struct Reference</title>
+<title>Digital Power Starter Kit 3 Firmware: P33C_DAC_MODULE_s Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,283 +106,152 @@ $(document).ready(function(){initNavTree('a00752.html',''); initResizable(); });
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">P33C_DAC_INSTANCE_s Struct Reference</div>  </div>
+<div class="title">P33C_DAC_MODULE_s Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00035_source.html">common/p33c_pral/p33c_dac.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00047_source.html">common/p33c_pral/p33c_dac.h</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for P33C_DAC_INSTANCE_s:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for P33C_DAC_MODULE_s:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00750.svg" width="184" height="294"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00750.svg" width="175" height="191"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a329570b04db28a6a424c776cb105a176"><td class="memItemLeft" >union {</td></tr>
-<tr class="memitem:a7e0275988288c499fa3002e33bdf8deb"><td class="memItemLeft" >&#160;&#160;&#160;volatile struct tagDAC1CONLBITS&#160;&#160;&#160;<a class="el" href="a00752.html#a7e0275988288c499fa3002e33bdf8deb">bits</a></td></tr>
-<tr class="separator:a7e0275988288c499fa3002e33bdf8deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74170bc94163a939331836705eb483d6"><td class="memItemLeft" >union {</td></tr>
+<tr class="memitem:a9a368360ec65d1aa196a351efe509d42"><td class="memItemLeft" >&#160;&#160;&#160;volatile struct tagDACCTRL1LBITS&#160;&#160;&#160;<a class="el" href="a00752.html#a9a368360ec65d1aa196a351efe509d42">bits</a></td></tr>
+<tr class="separator:a9a368360ec65d1aa196a351efe509d42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f0c55f449560b03ce0ac43270c26600"><td class="memItemLeft" >&#160;&#160;&#160;volatile uint16_t&#160;&#160;&#160;<a class="el" href="a00752.html#a3f0c55f449560b03ce0ac43270c26600">value</a></td></tr>
 <tr class="separator:a3f0c55f449560b03ce0ac43270c26600"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a329570b04db28a6a424c776cb105a176"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00752.html#a329570b04db28a6a424c776cb105a176">DACxCONL</a></td></tr>
-<tr class="separator:a329570b04db28a6a424c776cb105a176"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa03d37becb5071012ee03e7fe3210277"><td class="memItemLeft" >union {</td></tr>
-<tr class="memitem:a8b02ffae1554826e02af0bacc8a03a60"><td class="memItemLeft" >&#160;&#160;&#160;volatile struct tagDAC1CONHBITS&#160;&#160;&#160;<a class="el" href="a00752.html#a8b02ffae1554826e02af0bacc8a03a60">bits</a></td></tr>
-<tr class="separator:a8b02ffae1554826e02af0bacc8a03a60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74170bc94163a939331836705eb483d6"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00752.html#a74170bc94163a939331836705eb483d6">DacModuleCtrl1L</a></td></tr>
+<tr class="separator:a74170bc94163a939331836705eb483d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32e93b068e309da5a319a7a69f3b3ff5"><td class="memItemLeft" align="right" valign="top">volatile&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00752.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a>: 16</td></tr>
+<tr class="separator:a32e93b068e309da5a319a7a69f3b3ff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2003fcea6fd21215a750554db3720f69"><td class="memItemLeft" >union {</td></tr>
+<tr class="memitem:a0201d2f641e8868681c8d1095fc05190"><td class="memItemLeft" >&#160;&#160;&#160;volatile struct tagDACCTRL2LBITS&#160;&#160;&#160;<a class="el" href="a00752.html#a0201d2f641e8868681c8d1095fc05190">bits</a></td></tr>
+<tr class="separator:a0201d2f641e8868681c8d1095fc05190"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f0c55f449560b03ce0ac43270c26600"><td class="memItemLeft" >&#160;&#160;&#160;volatile uint16_t&#160;&#160;&#160;<a class="el" href="a00752.html#a3f0c55f449560b03ce0ac43270c26600">value</a></td></tr>
 <tr class="separator:a3f0c55f449560b03ce0ac43270c26600"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa03d37becb5071012ee03e7fe3210277"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00752.html#aa03d37becb5071012ee03e7fe3210277">DACxCONH</a></td></tr>
-<tr class="separator:aa03d37becb5071012ee03e7fe3210277"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afff33468f83ed3f49334ac197fb2d098"><td class="memItemLeft" >union {</td></tr>
-<tr class="memitem:ab3d6a290d83618d23fea1715a9892dab"><td class="memItemLeft" >&#160;&#160;&#160;volatile struct tagDAC1DATLBITS&#160;&#160;&#160;<a class="el" href="a00752.html#ab3d6a290d83618d23fea1715a9892dab">bits</a></td></tr>
-<tr class="separator:ab3d6a290d83618d23fea1715a9892dab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2003fcea6fd21215a750554db3720f69"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00752.html#a2003fcea6fd21215a750554db3720f69">DacModuleCtrl2L</a></td></tr>
+<tr class="separator:a2003fcea6fd21215a750554db3720f69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7ab72a1cf234269a757d6f667eb7039"><td class="memItemLeft" >union {</td></tr>
+<tr class="memitem:ad1fac645b4e21cfcfd7fddb718c1e843"><td class="memItemLeft" >&#160;&#160;&#160;volatile struct tagDACCTRL2HBITS&#160;&#160;&#160;<a class="el" href="a00752.html#ad1fac645b4e21cfcfd7fddb718c1e843">bits</a></td></tr>
+<tr class="separator:ad1fac645b4e21cfcfd7fddb718c1e843"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f0c55f449560b03ce0ac43270c26600"><td class="memItemLeft" >&#160;&#160;&#160;volatile uint16_t&#160;&#160;&#160;<a class="el" href="a00752.html#a3f0c55f449560b03ce0ac43270c26600">value</a></td></tr>
 <tr class="separator:a3f0c55f449560b03ce0ac43270c26600"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afff33468f83ed3f49334ac197fb2d098"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00752.html#afff33468f83ed3f49334ac197fb2d098">DACxDATL</a></td></tr>
-<tr class="separator:afff33468f83ed3f49334ac197fb2d098"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4803a3e57cbe0d9869ad9fd5e22c7f53"><td class="memItemLeft" >union {</td></tr>
-<tr class="memitem:a88d0ceb4d0a8f21e0bbbd6dcfb72c33e"><td class="memItemLeft" >&#160;&#160;&#160;volatile struct tagDAC1DATHBITS&#160;&#160;&#160;<a class="el" href="a00752.html#a88d0ceb4d0a8f21e0bbbd6dcfb72c33e">bits</a></td></tr>
-<tr class="separator:a88d0ceb4d0a8f21e0bbbd6dcfb72c33e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f0c55f449560b03ce0ac43270c26600"><td class="memItemLeft" >&#160;&#160;&#160;volatile uint16_t&#160;&#160;&#160;<a class="el" href="a00752.html#a3f0c55f449560b03ce0ac43270c26600">value</a></td></tr>
-<tr class="separator:a3f0c55f449560b03ce0ac43270c26600"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4803a3e57cbe0d9869ad9fd5e22c7f53"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00752.html#a4803a3e57cbe0d9869ad9fd5e22c7f53">DACxDATH</a></td></tr>
-<tr class="separator:a4803a3e57cbe0d9869ad9fd5e22c7f53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42658cee554957366e00a7aa59fbf8dd"><td class="memItemLeft" >union {</td></tr>
-<tr class="memitem:a03bce9e6d253e70afcee281d3d8b97be"><td class="memItemLeft" >&#160;&#160;&#160;volatile struct tagSLP1CONLBITS&#160;&#160;&#160;<a class="el" href="a00752.html#a03bce9e6d253e70afcee281d3d8b97be">bits</a></td></tr>
-<tr class="separator:a03bce9e6d253e70afcee281d3d8b97be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f0c55f449560b03ce0ac43270c26600"><td class="memItemLeft" >&#160;&#160;&#160;volatile uint16_t&#160;&#160;&#160;<a class="el" href="a00752.html#a3f0c55f449560b03ce0ac43270c26600">value</a></td></tr>
-<tr class="separator:a3f0c55f449560b03ce0ac43270c26600"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42658cee554957366e00a7aa59fbf8dd"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00752.html#a42658cee554957366e00a7aa59fbf8dd">SLPxCONL</a></td></tr>
-<tr class="separator:a42658cee554957366e00a7aa59fbf8dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a311ad21c14b7d9f41a2771ae84ac0b90"><td class="memItemLeft" >union {</td></tr>
-<tr class="memitem:a03d90a4b98600a42fa50a91cdaa86dd3"><td class="memItemLeft" >&#160;&#160;&#160;volatile struct tagSLP1CONHBITS&#160;&#160;&#160;<a class="el" href="a00752.html#a03d90a4b98600a42fa50a91cdaa86dd3">bits</a></td></tr>
-<tr class="separator:a03d90a4b98600a42fa50a91cdaa86dd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f0c55f449560b03ce0ac43270c26600"><td class="memItemLeft" >&#160;&#160;&#160;volatile uint16_t&#160;&#160;&#160;<a class="el" href="a00752.html#a3f0c55f449560b03ce0ac43270c26600">value</a></td></tr>
-<tr class="separator:a3f0c55f449560b03ce0ac43270c26600"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a311ad21c14b7d9f41a2771ae84ac0b90"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00752.html#a311ad21c14b7d9f41a2771ae84ac0b90">SLPxCONH</a></td></tr>
-<tr class="separator:a311ad21c14b7d9f41a2771ae84ac0b90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4afd05643aec4782705efa50f3ffc8f6"><td class="memItemLeft" >union {</td></tr>
-<tr class="memitem:a2340898e3b8cba53d929b1d366e80872"><td class="memItemLeft" >&#160;&#160;&#160;volatile struct tagSLP1DATBITS&#160;&#160;&#160;<a class="el" href="a00752.html#a2340898e3b8cba53d929b1d366e80872">bits</a></td></tr>
-<tr class="separator:a2340898e3b8cba53d929b1d366e80872"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f0c55f449560b03ce0ac43270c26600"><td class="memItemLeft" >&#160;&#160;&#160;volatile uint16_t&#160;&#160;&#160;<a class="el" href="a00752.html#a3f0c55f449560b03ce0ac43270c26600">value</a></td></tr>
-<tr class="separator:a3f0c55f449560b03ce0ac43270c26600"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4afd05643aec4782705efa50f3ffc8f6"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00752.html#a4afd05643aec4782705efa50f3ffc8f6">SLPxDAT</a></td></tr>
-<tr class="separator:a4afd05643aec4782705efa50f3ffc8f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7ab72a1cf234269a757d6f667eb7039"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00752.html#aa7ab72a1cf234269a757d6f667eb7039">DacModuleCtrl2H</a></td></tr>
+<tr class="separator:aa7ab72a1cf234269a757d6f667eb7039"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="a00035_source.html#l00072">72</a> of file <a class="el" href="a00035_source.html">p33c_dac.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00047_source.html#l00051">51</a> of file <a class="el" href="a00047_source.html">p33c_dac.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="a7e0275988288c499fa3002e33bdf8deb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e0275988288c499fa3002e33bdf8deb">&#9670;&nbsp;</a></span>bits <span class="overload">[1/7]</span></h2>
+<a id="a0201d2f641e8868681c8d1095fc05190"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0201d2f641e8868681c8d1095fc05190">&#9670;&nbsp;</a></span>bits <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile struct tagDAC1CONLBITS bits</td>
+          <td class="memname">volatile struct tagDACCTRL2LBITS bits</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00035_source.html#l00011">11</a> of file <a class="el" href="a00035_source.html">p33c_dac.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00047_source.html#l00054">54</a> of file <a class="el" href="a00047_source.html">p33c_dac.h</a>.</p>
 
 </div>
 </div>
-<a id="a8b02ffae1554826e02af0bacc8a03a60"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b02ffae1554826e02af0bacc8a03a60">&#9670;&nbsp;</a></span>bits <span class="overload">[2/7]</span></h2>
+<a id="a9a368360ec65d1aa196a351efe509d42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a368360ec65d1aa196a351efe509d42">&#9670;&nbsp;</a></span>bits <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile struct tagDAC1CONHBITS bits</td>
+          <td class="memname">volatile struct tagDACCTRL1LBITS bits</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00035_source.html#l00075">75</a> of file <a class="el" href="a00035_source.html">p33c_dac.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00047_source.html#l00056">56</a> of file <a class="el" href="a00047_source.html">p33c_dac.h</a>.</p>
 
 </div>
 </div>
-<a id="ab3d6a290d83618d23fea1715a9892dab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3d6a290d83618d23fea1715a9892dab">&#9670;&nbsp;</a></span>bits <span class="overload">[3/7]</span></h2>
+<a id="ad1fac645b4e21cfcfd7fddb718c1e843"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1fac645b4e21cfcfd7fddb718c1e843">&#9670;&nbsp;</a></span>bits <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile struct tagDAC1DATLBITS bits</td>
+          <td class="memname">volatile struct tagDACCTRL2HBITS bits</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00035_source.html#l00079">79</a> of file <a class="el" href="a00035_source.html">p33c_dac.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00047_source.html#l00059">59</a> of file <a class="el" href="a00047_source.html">p33c_dac.h</a>.</p>
 
 </div>
 </div>
-<a id="a88d0ceb4d0a8f21e0bbbd6dcfb72c33e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a88d0ceb4d0a8f21e0bbbd6dcfb72c33e">&#9670;&nbsp;</a></span>bits <span class="overload">[4/7]</span></h2>
+<a id="a74170bc94163a939331836705eb483d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74170bc94163a939331836705eb483d6">&#9670;&nbsp;</a></span>DacModuleCtrl1L</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile struct tagDAC1DATHBITS bits</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00035_source.html#l00083">83</a> of file <a class="el" href="a00035_source.html">p33c_dac.h</a>.</p>
-
-</div>
-</div>
-<a id="a03bce9e6d253e70afcee281d3d8b97be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03bce9e6d253e70afcee281d3d8b97be">&#9670;&nbsp;</a></span>bits <span class="overload">[5/7]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile struct tagSLP1CONLBITS bits</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00035_source.html#l00087">87</a> of file <a class="el" href="a00035_source.html">p33c_dac.h</a>.</p>
-
-</div>
-</div>
-<a id="a03d90a4b98600a42fa50a91cdaa86dd3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03d90a4b98600a42fa50a91cdaa86dd3">&#9670;&nbsp;</a></span>bits <span class="overload">[6/7]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile struct tagSLP1CONHBITS bits</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00035_source.html#l00091">91</a> of file <a class="el" href="a00035_source.html">p33c_dac.h</a>.</p>
-
-</div>
-</div>
-<a id="a2340898e3b8cba53d929b1d366e80872"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2340898e3b8cba53d929b1d366e80872">&#9670;&nbsp;</a></span>bits <span class="overload">[7/7]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile struct tagSLP1DATBITS bits</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00035_source.html#l00095">95</a> of file <a class="el" href="a00035_source.html">p33c_dac.h</a>.</p>
-
-</div>
-</div>
-<a id="aa03d37becb5071012ee03e7fe3210277"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa03d37becb5071012ee03e7fe3210277">&#9670;&nbsp;</a></span>DACxCONH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">union { ... }  DACxCONH</td>
+          <td class="memname">union { ... }  DacModuleCtrl1L</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a329570b04db28a6a424c776cb105a176"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a329570b04db28a6a424c776cb105a176">&#9670;&nbsp;</a></span>DACxCONL</h2>
+<a id="aa7ab72a1cf234269a757d6f667eb7039"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7ab72a1cf234269a757d6f667eb7039">&#9670;&nbsp;</a></span>DacModuleCtrl2H</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">union { ... }  DACxCONL</td>
+          <td class="memname">union { ... }  DacModuleCtrl2H</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a4803a3e57cbe0d9869ad9fd5e22c7f53"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4803a3e57cbe0d9869ad9fd5e22c7f53">&#9670;&nbsp;</a></span>DACxDATH</h2>
+<a id="a2003fcea6fd21215a750554db3720f69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2003fcea6fd21215a750554db3720f69">&#9670;&nbsp;</a></span>DacModuleCtrl2L</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">union { ... }  DACxDATH</td>
+          <td class="memname">union { ... }  DacModuleCtrl2L</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="afff33468f83ed3f49334ac197fb2d098"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afff33468f83ed3f49334ac197fb2d098">&#9670;&nbsp;</a></span>DACxDATL</h2>
+<a id="a32e93b068e309da5a319a7a69f3b3ff5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32e93b068e309da5a319a7a69f3b3ff5">&#9670;&nbsp;</a></span>unsigned</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">union { ... }  DACxDATL</td>
+          <td class="memname">volatile unsigned</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a311ad21c14b7d9f41a2771ae84ac0b90"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a311ad21c14b7d9f41a2771ae84ac0b90">&#9670;&nbsp;</a></span>SLPxCONH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">union { ... }  SLPxCONH</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a42658cee554957366e00a7aa59fbf8dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42658cee554957366e00a7aa59fbf8dd">&#9670;&nbsp;</a></span>SLPxCONL</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">union { ... }  SLPxCONL</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4afd05643aec4782705efa50f3ffc8f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4afd05643aec4782705efa50f3ffc8f6">&#9670;&nbsp;</a></span>SLPxDAT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">union { ... }  SLPxDAT</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p class="definition">Definition at line <a class="el" href="a00047_source.html#l00056">56</a> of file <a class="el" href="a00047_source.html">p33c_dac.h</a>.</p>
 
 </div>
 </div>
@@ -398,12 +267,12 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00035_source.html#l00075">75</a> of file <a class="el" href="a00035_source.html">p33c_dac.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00047_source.html#l00054">54</a> of file <a class="el" href="a00047_source.html">p33c_dac.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>dpsk_buck_acmc.X/sources/common/p33c_pral/<a class="el" href="a00035_source.html">p33c_dac.h</a></li>
+<li>dpsk_buck_acmc.X/sources/common/p33c_pral/<a class="el" href="a00047_source.html">p33c_dac.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -411,7 +280,7 @@ Data Fields</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00752.html">P33C_DAC_INSTANCE_s</a></li>
+    <li class="navelem"><a class="el" href="a00752.html">P33C_DAC_MODULE_s</a></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

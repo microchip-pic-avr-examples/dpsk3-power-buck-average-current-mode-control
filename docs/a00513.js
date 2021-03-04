@@ -1,7 +1,5 @@
 var a00513 =
 [
-    [ "appPushButton_EventButtonDown", "a00513.html#ga3966fddf4ec29e64c6d51a93eee8706f", null ],
-    [ "appPushButton_EventButtonLongPress", "a00513.html#ga6192986e06dbca144461c0315a2a100f", null ],
-    [ "appPushButton_EventButtonPressed", "a00513.html#ga072bf74bda3fcd8d688515bdfedd872c", null ],
-    [ "appPushButton_EventButtonUp", "a00513.html#ga13f736396ad1222ff5cbe35947bd60ac", null ]
+    [ "CurrentSenseOffsetCalibration", "a00513.html#ga337549d1d76534d9b092d7c8bdaf686a", null ],
+    [ "drv_BuckConverter_SpecialFunctionExecute", "a00513.html#ga8573aaa632abde3518f8a4448ff73cf7", null ]
 ];

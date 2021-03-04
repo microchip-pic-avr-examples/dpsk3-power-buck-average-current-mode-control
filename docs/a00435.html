@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Data Types</title>
+<title>Digital Power Starter Kit 3 Firmware: Buck Converter</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,173 +104,213 @@ $(document).ready(function(){initNavTree('a00435.html',''); initResizable(); });
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Data Types<div class="ingroups"><a class="el" href="a00539.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00429.html">Fault Handler Library</a> &raquo; <a class="el" href="a00431.html">Public Properties</a></div></div>  </div>
+<div class="title">Buck Converter<div class="ingroups"><a class="el" href="a00565.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00429.html">Phase Current Feedback</a> &raquo; <a class="el" href="a00434.html">Microcontroller Abstraction</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Device analog output pin, register and interrupt vector assignments of phase current feedback signal(s) of the buck converter.  
+<a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Data Types:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Buck Converter:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00435.svg" width="268" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00435.svg" width="347" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
-<tr class="memitem:gaee63654a5e14dd3b2bab6179a5cbe2ab"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#gaee63654a5e14dd3b2bab6179a5cbe2ab">TRAP_ID_e</a> { <br />
-&#160;&#160;<b>TRAP_OSCILLATOR_FAIL</b> = 0x0001, 
-<b>TRAP_ADDRESS_ERROR</b> = 0x0002, 
-<b>TRAP_STACK_ERROR</b> = 0x0004, 
-<b>TRAP_MATH_ERROR</b> = 0x0008, 
-<b>TRAP_DMA_ERROR</b> = 0x0010, 
-<b>TRAP_SOFT_TRAP_ERROR</b> = 0x0020, 
-<b>TRAP_HARD_TRAP_ERROR</b> = 0x0040, 
-<b>TRAP_RESERVED_TRAP_5_ERROR</b> = 0x0080, 
-<b>TRAP_RESERVED_TRAP_7_ERROR</b> = 0x0080, 
-<b>TRAP_ALT_OSCILLATOR_FAIL</b> = 0x0100, 
-<br />
-&#160;&#160;<b>TRAP_ALT_ADDRESS_ERROR</b> = 0x0200, 
-<b>TRAP_ALT_STACK_ERROR</b> = 0x0400, 
-<b>TRAP_ALT_MATH_ERROR</b> = 0x0800, 
-<b>TRAP_ALT_DMA_ERROR</b> = 0x1000, 
-<b>TRAP_ALT_SOFT_TRAP_ERROR</b> = 0x2000, 
-<b>TRAP_ALT_HARD_TRAP_ERROR</b> = 0x4000, 
-<b>TRAP_RESET_MSK</b> = 0x7F1F
-<br />
- }</td></tr>
-<tr class="memdesc:gaee63654a5e14dd3b2bab6179a5cbe2ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">defining trap-ID for primary and secondary vectors  <a href="a00435.html#gaee63654a5e14dd3b2bab6179a5cbe2ab">More...</a><br /></td></tr>
-<tr class="separator:gaee63654a5e14dd3b2bab6179a5cbe2ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac1a3bb25ab328fe3ed0f3494dd58d41e"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="a00435.html#gaee63654a5e14dd3b2bab6179a5cbe2ab">TRAP_ID_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#gac1a3bb25ab328fe3ed0f3494dd58d41e">TRAP_ID_t</a></td></tr>
-<tr class="separator:gac1a3bb25ab328fe3ed0f3494dd58d41e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga34f8f3a66ba022a11555bcbcc1d7c143"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a01420.html">TRAP_FLAGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#ga34f8f3a66ba022a11555bcbcc1d7c143">TRAP_FLAGS_t</a></td></tr>
-<tr class="separator:ga34f8f3a66ba022a11555bcbcc1d7c143"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga35071dd1d28db260f503cf7783b8562c"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a01432.html">CPU_INTTREG_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#ga35071dd1d28db260f503cf7783b8562c">CPU_INTTREG_t</a></td></tr>
-<tr class="separator:ga35071dd1d28db260f503cf7783b8562c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga727efbb8fb2703832a116d8d7b70f9fa"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a01444.html">CPU_RCON_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#ga727efbb8fb2703832a116d8d7b70f9fa">CPU_RCON_t</a></td></tr>
-<tr class="separator:ga727efbb8fb2703832a116d8d7b70f9fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa086a924e5aaa2bed5a676106fe284c6"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a01456.html">TRAPLOG_STATUS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#gaa086a924e5aaa2bed5a676106fe284c6">TRAPLOG_STATUS_t</a></td></tr>
-<tr class="separator:gaa086a924e5aaa2bed5a676106fe284c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacab9a7bab555242c176709817ecda6f3"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a01468.html">TASK_INFO_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#gacab9a7bab555242c176709817ecda6f3">TASK_INFO_t</a></td></tr>
-<tr class="separator:gacab9a7bab555242c176709817ecda6f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa31136531ddd10f950990ce253c0de78"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a01472.html">TRAP_LOGGER_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#gaa31136531ddd10f950990ce253c0de78">TRAP_LOGGER_t</a></td></tr>
-<tr class="separator:gaa31136531ddd10f950990ce253c0de78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga50fff9c881599654f21ce9637e20c6fd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#ga50fff9c881599654f21ce9637e20c6fd">_BUCK_ISNS_ADCInterrupt</a>&#160;&#160;&#160;_ADCAN0Interrupt</td></tr>
+<tr class="memdesc:ga50fff9c881599654f21ce9637e20c6fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input assignments of phase current feedback signals.  <a href="a00435.html#ga50fff9c881599654f21ce9637e20c6fd">More...</a><br /></td></tr>
+<tr class="separator:ga50fff9c881599654f21ce9637e20c6fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7e5bdbfe2d5d96bfcd123ba6605b37cd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#ga7e5bdbfe2d5d96bfcd123ba6605b37cd">_BUCK_ISNS_ADCISR_IF</a>&#160;&#160;&#160;_ADCAN0IF</td></tr>
+<tr class="memdesc:ga7e5bdbfe2d5d96bfcd123ba6605b37cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt Service Routine Flag Bit.  <a href="a00435.html#ga7e5bdbfe2d5d96bfcd123ba6605b37cd">More...</a><br /></td></tr>
+<tr class="separator:ga7e5bdbfe2d5d96bfcd123ba6605b37cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2644d75496cf4336a8d1ac1401b3606f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#ga2644d75496cf4336a8d1ac1401b3606f">BUCK_ISNS_ANSEL</a>&#160;&#160;&#160;_ANSELA0</td></tr>
+<tr class="memdesc:ga2644d75496cf4336a8d1ac1401b3606f"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO analog function mode enable bit.  <a href="a00435.html#ga2644d75496cf4336a8d1ac1401b3606f">More...</a><br /></td></tr>
+<tr class="separator:ga2644d75496cf4336a8d1ac1401b3606f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga491168bb2ec78648209e5c0bb313bc7c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#ga491168bb2ec78648209e5c0bb313bc7c">BUCK_ISNS_ADCCORE</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:ga491168bb2ec78648209e5c0bb313bc7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">0=Dedicated Core #0, 1=Dedicated Core #1, 2=Shared ADC Core  <a href="a00435.html#ga491168bb2ec78648209e5c0bb313bc7c">More...</a><br /></td></tr>
+<tr class="separator:ga491168bb2ec78648209e5c0bb313bc7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae52bcc85235d23c59c2a0670e57358ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#gae52bcc85235d23c59c2a0670e57358ef">BUCK_ISNS_ADCIN</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:gae52bcc85235d23c59c2a0670e57358ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Analog input number (e.g. '5' for 'AN5')  <a href="a00435.html#gae52bcc85235d23c59c2a0670e57358ef">More...</a><br /></td></tr>
+<tr class="separator:gae52bcc85235d23c59c2a0670e57358ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4108e52bfa2d754db4434138565bfcdb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#ga4108e52bfa2d754db4434138565bfcdb">BUCK_ISNS_ALT_IN_SELECT</a>&#160;&#160;&#160;0b00</td></tr>
+<tr class="memdesc:ga4108e52bfa2d754db4434138565bfcdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alternative Analog Input Selection (dedicated ADC cores only)) <br  />
+  <a href="a00435.html#ga4108e52bfa2d754db4434138565bfcdb">More...</a><br /></td></tr>
+<tr class="separator:ga4108e52bfa2d754db4434138565bfcdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade3764f294b1249ee786e607ac3bac92"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#gade3764f294b1249ee786e607ac3bac92">BUCK_ISNS_ADCBUF</a>&#160;&#160;&#160;ADCBUF0</td></tr>
+<tr class="memdesc:gade3764f294b1249ee786e607ac3bac92"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input buffer of this ADC channel.  <a href="a00435.html#gade3764f294b1249ee786e607ac3bac92">More...</a><br /></td></tr>
+<tr class="separator:gade3764f294b1249ee786e607ac3bac92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4992d9f910defe9b0651f1261d829892"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#ga4992d9f910defe9b0651f1261d829892">BUCK_ISNS_ADCTRIG</a>&#160;&#160;&#160;PG1TRIGB</td></tr>
+<tr class="memdesc:ga4992d9f910defe9b0651f1261d829892"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register used for trigger placement.  <a href="a00435.html#ga4992d9f910defe9b0651f1261d829892">More...</a><br /></td></tr>
+<tr class="separator:ga4992d9f910defe9b0651f1261d829892"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2ec6249cbb929f8bfb06d8af295ab6c8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#ga2ec6249cbb929f8bfb06d8af295ab6c8">BUCK_ISNS_TRGSRC</a>&#160;&#160;&#160;<a class="el" href="a00414.html#ga58748fe2fe121d5e911032bb48743dfc">BUCK_PWM_TRGSRC_TRG2</a></td></tr>
+<tr class="memdesc:ga2ec6249cbb929f8bfb06d8af295ab6c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM1 (=PG1) Trigger 2 via PGxTRIGB.  <a href="a00435.html#ga2ec6249cbb929f8bfb06d8af295ab6c8">More...</a><br /></td></tr>
+<tr class="separator:ga2ec6249cbb929f8bfb06d8af295ab6c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>This chapter provides detailed information about the public data types provided by the fault handler library. </p>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="ga35071dd1d28db260f503cf7783b8562c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga35071dd1d28db260f503cf7783b8562c">&#9670;&nbsp;</a></span>CPU_INTTREG_t</h2>
+<p>Device analog output pin, register and interrupt vector assignments of phase current feedback signal(s) of the buck converter. </p>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga50fff9c881599654f21ce9637e20c6fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga50fff9c881599654f21ce9637e20c6fd">&#9670;&nbsp;</a></span>_BUCK_ISNS_ADCInterrupt</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef struct <a class="el" href="a01432.html">CPU_INTTREG_s</a> <a class="el" href="a00435.html#ga35071dd1d28db260f503cf7783b8562c">CPU_INTTREG_t</a></td>
+          <td class="memname">#define _BUCK_ISNS_ADCInterrupt&#160;&#160;&#160;_ADCAN0Interrupt</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>ADC input assignments of phase current feedback signals. </p>
+<p>In this section the ADC input channels, related ADC result buffers, trigger sources and interrupt vectors are defined. These settings allow the fast re-assignments of feedback signals in case of hardware changes. Interrupt Service Routine function name </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00710">710</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
 </div>
 </div>
-<a id="ga727efbb8fb2703832a116d8d7b70f9fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga727efbb8fb2703832a116d8d7b70f9fa">&#9670;&nbsp;</a></span>CPU_RCON_t</h2>
+<a id="ga7e5bdbfe2d5d96bfcd123ba6605b37cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7e5bdbfe2d5d96bfcd123ba6605b37cd">&#9670;&nbsp;</a></span>_BUCK_ISNS_ADCISR_IF</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef struct <a class="el" href="a01444.html">CPU_RCON_s</a> <a class="el" href="a00435.html#ga727efbb8fb2703832a116d8d7b70f9fa">CPU_RCON_t</a></td>
+          <td class="memname">#define _BUCK_ISNS_ADCISR_IF&#160;&#160;&#160;_ADCAN0IF</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Interrupt Service Routine Flag Bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00711">711</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
 </div>
 </div>
-<a id="gacab9a7bab555242c176709817ecda6f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gacab9a7bab555242c176709817ecda6f3">&#9670;&nbsp;</a></span>TASK_INFO_t</h2>
+<a id="gade3764f294b1249ee786e607ac3bac92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gade3764f294b1249ee786e607ac3bac92">&#9670;&nbsp;</a></span>BUCK_ISNS_ADCBUF</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef struct <a class="el" href="a01468.html">TASK_INFO_s</a> <a class="el" href="a00435.html#gacab9a7bab555242c176709817ecda6f3">TASK_INFO_t</a></td>
+          <td class="memname">#define BUCK_ISNS_ADCBUF&#160;&#160;&#160;ADCBUF0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>ADC input buffer of this ADC channel. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00717">717</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
 </div>
 </div>
-<a id="ga34f8f3a66ba022a11555bcbcc1d7c143"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga34f8f3a66ba022a11555bcbcc1d7c143">&#9670;&nbsp;</a></span>TRAP_FLAGS_t</h2>
+<a id="ga491168bb2ec78648209e5c0bb313bc7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga491168bb2ec78648209e5c0bb313bc7c">&#9670;&nbsp;</a></span>BUCK_ISNS_ADCCORE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef struct <a class="el" href="a01420.html">TRAP_FLAGS_s</a> <a class="el" href="a00435.html#ga34f8f3a66ba022a11555bcbcc1d7c143">TRAP_FLAGS_t</a></td>
+          <td class="memname">#define BUCK_ISNS_ADCCORE&#160;&#160;&#160;0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>0=Dedicated Core #0, 1=Dedicated Core #1, 2=Shared ADC Core </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00714">714</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
 </div>
 </div>
-<a id="gac1a3bb25ab328fe3ed0f3494dd58d41e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac1a3bb25ab328fe3ed0f3494dd58d41e">&#9670;&nbsp;</a></span>TRAP_ID_t</h2>
+<a id="gae52bcc85235d23c59c2a0670e57358ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae52bcc85235d23c59c2a0670e57358ef">&#9670;&nbsp;</a></span>BUCK_ISNS_ADCIN</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef enum <a class="el" href="a00435.html#gaee63654a5e14dd3b2bab6179a5cbe2ab">TRAP_ID_e</a> <a class="el" href="a00435.html#gac1a3bb25ab328fe3ed0f3494dd58d41e">TRAP_ID_t</a></td>
+          <td class="memname">#define BUCK_ISNS_ADCIN&#160;&#160;&#160;0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Analog input number (e.g. '5' for 'AN5') </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00715">715</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
 </div>
 </div>
-<a id="gaa31136531ddd10f950990ce253c0de78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa31136531ddd10f950990ce253c0de78">&#9670;&nbsp;</a></span>TRAP_LOGGER_t</h2>
+<a id="ga4992d9f910defe9b0651f1261d829892"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4992d9f910defe9b0651f1261d829892">&#9670;&nbsp;</a></span>BUCK_ISNS_ADCTRIG</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef struct <a class="el" href="a01472.html">TRAP_LOGGER_s</a> <a class="el" href="a00435.html#gaa31136531ddd10f950990ce253c0de78">TRAP_LOGGER_t</a></td>
+          <td class="memname">#define BUCK_ISNS_ADCTRIG&#160;&#160;&#160;PG1TRIGB</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Register used for trigger placement. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00718">718</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
 </div>
 </div>
-<a id="gaa086a924e5aaa2bed5a676106fe284c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa086a924e5aaa2bed5a676106fe284c6">&#9670;&nbsp;</a></span>TRAPLOG_STATUS_t</h2>
+<a id="ga4108e52bfa2d754db4434138565bfcdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4108e52bfa2d754db4434138565bfcdb">&#9670;&nbsp;</a></span>BUCK_ISNS_ALT_IN_SELECT</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef struct <a class="el" href="a01456.html">TRAPLOG_STATUS_s</a> <a class="el" href="a00435.html#gaa086a924e5aaa2bed5a676106fe284c6">TRAPLOG_STATUS_t</a></td>
+          <td class="memname">#define BUCK_ISNS_ALT_IN_SELECT&#160;&#160;&#160;0b00</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Alternative Analog Input Selection (dedicated ADC cores only)) <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00716">716</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
 </div>
 </div>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="gaee63654a5e14dd3b2bab6179a5cbe2ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaee63654a5e14dd3b2bab6179a5cbe2ab">&#9670;&nbsp;</a></span>TRAP_ID_e</h2>
+<a id="ga2644d75496cf4336a8d1ac1401b3606f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2644d75496cf4336a8d1ac1401b3606f">&#9670;&nbsp;</a></span>BUCK_ISNS_ANSEL</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="a00435.html#gaee63654a5e14dd3b2bab6179a5cbe2ab">TRAP_ID_e</a></td>
+          <td class="memname">#define BUCK_ISNS_ANSEL&#160;&#160;&#160;_ANSELA0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>defining trap-ID for primary and secondary vectors </p>
+<p>GPIO analog function mode enable bit. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00170_source.html#l00099">99</a> of file <a class="el" href="a00170_source.html">drv_trap_handler.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00713">713</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga2ec6249cbb929f8bfb06d8af295ab6c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2ec6249cbb929f8bfb06d8af295ab6c8">&#9670;&nbsp;</a></span>BUCK_ISNS_TRGSRC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_ISNS_TRGSRC&#160;&#160;&#160;<a class="el" href="a00414.html#ga58748fe2fe121d5e911032bb48743dfc">BUCK_PWM_TRGSRC_TRG2</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PWM1 (=PG1) Trigger 2 via PGxTRIGB. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00719">719</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

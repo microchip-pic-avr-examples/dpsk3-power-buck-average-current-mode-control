@@ -1,4 +1,4 @@
-<map id="Private Properties" name="Private Properties">
-<area shape="rect" id="node1" title="Private properties of the first application layer task." alt="" coords="220,13,344,38"/>
-<area shape="rect" id="node2" href="$a00424.html" title=" " alt="" coords="5,5,172,45"/>
+<map id="Buck Converter" name="Buck Converter">
+<area shape="rect" id="node1" href="$a00427.html" title="Device analog output pin, register and interrupt vector assignments of output voltage feedback signal..." alt="" coords="5,5,183,31"/>
+<area shape="rect" id="node2" title="Device analog output pin, register and interrupt vector assignments of output voltage feedback signal..." alt="" coords="231,5,341,31"/>
 </map>

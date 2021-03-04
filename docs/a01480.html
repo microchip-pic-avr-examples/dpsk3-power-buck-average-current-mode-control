@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: DEBUGGING_LED_s Struct Reference</title>
+<title>Digital Power Starter Kit 3 Firmware: LCD_s Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,52 +106,87 @@ $(document).ready(function(){initNavTree('a01480.html',''); initResizable(); });
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">DEBUGGING_LED_s Struct Reference<div class="ingroups"><a class="el" href="a00538.html">Application Layer</a> &raquo; <a class="el" href="a00455.html">Debugging LED Application Layer</a> &raquo; <a class="el" href="a00457.html">Public Properties</a></div></div>  </div>
+<div class="title">LCD_s Struct Reference<div class="ingroups"><a class="el" href="a00542.html">Application Layer</a> &raquo; <a class="el" href="a00444.html">LC-Display Application Layer</a> &raquo; <a class="el" href="a00446.html">Public Properties</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Debugging LED settings data object.  
+<p>Declaration of public LC display data object.  
  <a href="a01480.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="a00206_source.html">led/app_led.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00176_source.html">lcd/app_lcd.h</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for DEBUGGING_LED_s:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for LCD_s:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01478.svg" width="158" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a01478.svg" width="90" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a48f363c7bcd47589472b59f0a7dfb74b"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01480.html#a48f363c7bcd47589472b59f0a7dfb74b">period</a></td></tr>
-<tr class="separator:a48f363c7bcd47589472b59f0a7dfb74b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a085e9fc0863cee4864cf51dcfe1e32df"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01480.html#a085e9fc0863cee4864cf51dcfe1e32df">enabled</a></td></tr>
+<tr class="separator:a085e9fc0863cee4864cf51dcfe1e32df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc2298ffda0c853e699e6da9098f82ae"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01480.html#adc2298ffda0c853e699e6da9098f82ae">refresh</a></td></tr>
+<tr class="separator:adc2298ffda0c853e699e6da9098f82ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea467a9fc04f0771215b952d26bc4392"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01480.html#aea467a9fc04f0771215b952d26bc4392">screen</a></td></tr>
+<tr class="separator:aea467a9fc04f0771215b952d26bc4392"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Debugging LED settings data object. </p>
-<p>This data structure holds all adjustable parameters used by the debugging LED driver required to tailor the driver functions to specific application requirements. </p>
+<div class="textblock"><p>Declaration of public LC display data object. </p>
+<p>The struct <a class="el" href="a01480.html" title="Declaration of public LC display data object.">LCD_s</a> data structure defines data fields for all publicly accessible user settings required to configure and drive an on-board LC display. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00206_source.html#l00055">55</a> of file <a class="el" href="a00206_source.html">app_led.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00176_source.html#l00054">54</a> of file <a class="el" href="a00176_source.html">app_lcd.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="a48f363c7bcd47589472b59f0a7dfb74b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48f363c7bcd47589472b59f0a7dfb74b">&#9670;&nbsp;</a></span>period</h2>
+<a id="a085e9fc0863cee4864cf51dcfe1e32df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a085e9fc0863cee4864cf51dcfe1e32df">&#9670;&nbsp;</a></span>enabled</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t period</td>
+          <td class="memname">volatile bool enabled</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00206_source.html#l00056">56</a> of file <a class="el" href="a00206_source.html">app_led.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00176_source.html#l00055">55</a> of file <a class="el" href="a00176_source.html">app_lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="adc2298ffda0c853e699e6da9098f82ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc2298ffda0c853e699e6da9098f82ae">&#9670;&nbsp;</a></span>refresh</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t refresh</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00176_source.html#l00056">56</a> of file <a class="el" href="a00176_source.html">app_lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="aea467a9fc04f0771215b952d26bc4392"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea467a9fc04f0771215b952d26bc4392">&#9670;&nbsp;</a></span>screen</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t screen</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00176_source.html#l00057">57</a> of file <a class="el" href="a00176_source.html">app_lcd.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>dpsk_buck_acmc.X/sources/led/<a class="el" href="a00206_source.html">app_led.h</a></li>
+<li>dpsk_buck_acmc.X/sources/lcd/<a class="el" href="a00176_source.html">app_lcd.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -159,7 +194,7 @@ Data Fields</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a01480.html">DEBUGGING_LED_s</a></li>
+    <li class="navelem"><a class="el" href="a01480.html">LCD_s</a></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

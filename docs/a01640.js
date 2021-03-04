@@ -1,9 +1,7 @@
 var a01640 =
 [
-    [ "enabled", "a01640.html#a085e9fc0863cee4864cf51dcfe1e32df", null ],
-    [ "long_press", "a01640.html#ae6577f0794699101b84e90afcdfcaaaa", null ],
-    [ "pressed", "a01640.html#aa5848ca5944f6a2c0d6562778651629e", null ],
-    [ "sw_event", "a01640.html#a4e5a3be7a99ad29f863ea0dd636cea0a", null ],
-    [ "unsigned", "a01640.html#a32e93b068e309da5a319a7a69f3b3ff5", null ],
-    [ "value", "a01640.html#a3f0c55f449560b03ce0ac43270c26600", null ]
+    [ "ADCTriggerAOffset", "a01640.html#ac58523daa5ba4498f98f6add321b9996", null ],
+    [ "ADCTriggerBOffset", "a01640.html#aad1976c0ad1835d9c2a65e82fb3e839f", null ],
+    [ "ptrADCTriggerARegister", "a01640.html#a46f5604170f677e6036cacb5cfe51679", null ],
+    [ "ptrADCTriggerBRegister", "a01640.html#aa76168551141e6233a9006c992475d30", null ]
 ];

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Data Types</title>
+<title>Digital Power Starter Kit 3 Firmware: Conversion Macros</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,18 +104,64 @@ $(document).ready(function(){initNavTree('a00438.html',''); initResizable(); });
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Data Types<div class="ingroups"><a class="el" href="a00539.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00429.html">Fault Handler Library</a> &raquo; <a class="el" href="a00433.html">Private Properties</a></div></div>  </div>
+<div class="title">Conversion Macros<div class="ingroups"><a class="el" href="a00565.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00436.html">Temperature Feedback</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Conversion macros for user-declarations of temperature feedback parameters.  
+<a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Data Types:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Conversion Macros:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00438.svg" width="271" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00438.svg" width="346" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<table class="memberdecls">
+<tr class="memitem:gacbad9ed6159bbb29883a36aed38e2b2b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00438.html#gacbad9ed6159bbb29883a36aed38e2b2b">TEMP_FB_ZERO</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00437.html#ga9f5cda6482c73fe8c8f5ea4925f424cc">TEMP_CAL_ZERO</a> / <a class="el" href="a00393.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
+<tr class="memdesc:gacbad9ed6159bbb29883a36aed38e2b2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion macros of temperature feedback parameters.  <a href="a00438.html#gacbad9ed6159bbb29883a36aed38e2b2b">More...</a><br /></td></tr>
+<tr class="separator:gacbad9ed6159bbb29883a36aed38e2b2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga69cd256762a05d868f133e29eee6fc6b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00438.html#ga69cd256762a05d868f133e29eee6fc6b">TEMP_FB_SLOPE</a>&#160;&#160;&#160;(float)(<a class="el" href="a00437.html#ga59e106df97f7006e1ae74c6d3f684550">TEMP_CAL_SLOPE</a> / <a class="el" href="a00393.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
+<tr class="separator:ga69cd256762a05d868f133e29eee6fc6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Conversion macros for user-declarations of temperature feedback parameters. </p>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga69cd256762a05d868f133e29eee6fc6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga69cd256762a05d868f133e29eee6fc6b">&#9670;&nbsp;</a></span>TEMP_FB_SLOPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TEMP_FB_SLOPE&#160;&#160;&#160;(float)(<a class="el" href="a00437.html#ga59e106df97f7006e1ae74c6d3f684550">TEMP_CAL_SLOPE</a> / <a class="el" href="a00393.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00319">319</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
 </div>
 </div>
-<p>This chapter provides detailed information about the private data types provided by the fault handler library. </p><dl class="section note"><dt>Note</dt><dd>(this library does not use private data types) </dd></dl>
+<a id="gacbad9ed6159bbb29883a36aed38e2b2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacbad9ed6159bbb29883a36aed38e2b2b">&#9670;&nbsp;</a></span>TEMP_FB_ZERO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TEMP_FB_ZERO&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00437.html#ga9f5cda6482c73fe8c8f5ea4925f424cc">TEMP_CAL_ZERO</a> / <a class="el" href="a00393.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Conversion macros of temperature feedback parameters. </p>
+<p>These conversion macros are used to convert user settings defined as physical quantities into binary (integer) numbers, which will be written to registers and variables and used in calculations throughout the firmware. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00318">318</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

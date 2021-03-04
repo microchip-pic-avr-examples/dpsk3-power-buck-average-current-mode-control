@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Public Functions</title>
+<title>Digital Power Starter Kit 3 Firmware: Special Firmware Options</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -103,140 +103,103 @@ $(document).ready(function(){initNavTree('a00451.html',''); initResizable(); });
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Public Functions<div class="ingroups"><a class="el" href="a00540.html">Library Driver Layer</a> &raquo; <a class="el" href="a00450.html">LC-Display Interface Driver</a></div></div>  </div>
+<div class="title">Special Firmware Options<div class="ingroups"><a class="el" href="a00565.html">Hardware Abstraction Layer</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Public functions of the LC display interface driver.  
-<a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Public Functions:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Special Firmware Options:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00451.svg" width="316" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00451.svg" width="376" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:gaeb25fdecced4c325cd0d986a30d57e90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00451.html#gaeb25fdecced4c325cd0d986a30d57e90">drv_LcdInterface_Initialize</a> (void)</td></tr>
-<tr class="memdesc:gaeb25fdecced4c325cd0d986a30d57e90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the LCD interface driver.  <a href="a00451.html#gaeb25fdecced4c325cd0d986a30d57e90">More...</a><br /></td></tr>
-<tr class="separator:gaeb25fdecced4c325cd0d986a30d57e90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3f10606b6c67ff33338ab2c5c6a2d4c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00451.html#ga3f10606b6c67ff33338ab2c5c6a2d4c8">drv_LcdInterface_Reset</a> (void)</td></tr>
-<tr class="memdesc:ga3f10606b6c67ff33338ab2c5c6a2d4c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the LCD controller.  <a href="a00451.html#ga3f10606b6c67ff33338ab2c5c6a2d4c8">More...</a><br /></td></tr>
-<tr class="separator:ga3f10606b6c67ff33338ab2c5c6a2d4c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3e045335a3463f6a53e4fd91b50bb0ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00451.html#ga3e045335a3463f6a53e4fd91b50bb0ca">drv_LcdInterface_SendCmd</a> (uint8_t cmd)</td></tr>
-<tr class="memdesc:ga3e045335a3463f6a53e4fd91b50bb0ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a command to the LCD controller.  <a href="a00451.html#ga3e045335a3463f6a53e4fd91b50bb0ca">More...</a><br /></td></tr>
-<tr class="separator:ga3e045335a3463f6a53e4fd91b50bb0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0bec5510da2215eafb1e118d9dc786c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00451.html#ga0bec5510da2215eafb1e118d9dc786c7">PLANT_MEASUREMENT</a>&#160;&#160;&#160;false</td></tr>
+<tr class="memdesc:ga0bec5510da2215eafb1e118d9dc786c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global defines used to enable/disable special firmware options.  <a href="a00451.html#ga0bec5510da2215eafb1e118d9dc786c7">More...</a><br /></td></tr>
+<tr class="separator:ga0bec5510da2215eafb1e118d9dc786c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga558e9be0d6b69c99c432b0e34923921e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00451.html#ga558e9be0d6b69c99c432b0e34923921e">DBGPIN1_ENABLE</a>&#160;&#160;&#160;true</td></tr>
+<tr class="memdesc:ga558e9be0d6b69c99c432b0e34923921e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables debug pin indicating control loop execution timing.  <a href="a00451.html#ga558e9be0d6b69c99c432b0e34923921e">More...</a><br /></td></tr>
+<tr class="separator:ga558e9be0d6b69c99c432b0e34923921e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga410c4fdcc59dde5886e61f88917c88e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00451.html#ga410c4fdcc59dde5886e61f88917c88e7">DBGPIN2_ENABLE</a>&#160;&#160;&#160;true</td></tr>
+<tr class="memdesc:ga410c4fdcc59dde5886e61f88917c88e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables debug pin indicating control loop execution timing.  <a href="a00451.html#ga410c4fdcc59dde5886e61f88917c88e7">More...</a><br /></td></tr>
+<tr class="separator:ga410c4fdcc59dde5886e61f88917c88e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1fae4fbca01ef05d76f53ca54d362a14"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00451.html#ga1fae4fbca01ef05d76f53ca54d362a14">DBGDAC_ENABLE</a>&#160;&#160;&#160;true</td></tr>
+<tr class="memdesc:ga1fae4fbca01ef05d76f53ca54d362a14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables debug DAC output pin reproduing control loop output as analog signal.  <a href="a00451.html#ga1fae4fbca01ef05d76f53ca54d362a14">More...</a><br /></td></tr>
+<tr class="separator:ga1fae4fbca01ef05d76f53ca54d362a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Public functions of the LC display interface driver. </p>
-<p>This is the detailed description of public API functions of the LC display interface driver. </p>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="gaeb25fdecced4c325cd0d986a30d57e90"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaeb25fdecced4c325cd0d986a30d57e90">&#9670;&nbsp;</a></span>drv_LcdInterface_Initialize()</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga1fae4fbca01ef05d76f53ca54d362a14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1fae4fbca01ef05d76f53ca54d362a14">&#9670;&nbsp;</a></span>DBGDAC_ENABLE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void drv_LcdInterface_Initialize </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">#define DBGDAC_ENABLE&#160;&#160;&#160;true</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initializes the LCD interface driver. </p>
-<p>This function needs to be called once at startup before calling any other function of the LCD device driver </p>
+<p>Enables debug DAC output pin reproduing control loop output as analog signal. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00194_source.html#l00052">52</a> of file <a class="el" href="a00194_source.html">drv_lcd_interface.c</a>.</p>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00451_gaeb25fdecced4c325cd0d986a30d57e90_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00082">82</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga3f10606b6c67ff33338ab2c5c6a2d4c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3f10606b6c67ff33338ab2c5c6a2d4c8">&#9670;&nbsp;</a></span>drv_LcdInterface_Reset()</h2>
+<a id="ga558e9be0d6b69c99c432b0e34923921e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga558e9be0d6b69c99c432b0e34923921e">&#9670;&nbsp;</a></span>DBGPIN1_ENABLE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void drv_LcdInterface_Reset </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">#define DBGPIN1_ENABLE&#160;&#160;&#160;true</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Resets the LCD controller. </p>
-<p>This function needs to be called once after system startup to reset the LCD controller and get into a defined state. </p>
+<p>Enables debug pin indicating control loop execution timing. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00194_source.html#l00076">76</a> of file <a class="el" href="a00194_source.html">drv_lcd_interface.c</a>.</p>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00451_ga3f10606b6c67ff33338ab2c5c6a2d4c8_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00079">79</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga3e045335a3463f6a53e4fd91b50bb0ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3e045335a3463f6a53e4fd91b50bb0ca">&#9670;&nbsp;</a></span>drv_LcdInterface_SendCmd()</h2>
+<a id="ga410c4fdcc59dde5886e61f88917c88e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga410c4fdcc59dde5886e61f88917c88e7">&#9670;&nbsp;</a></span>DBGPIN2_ENABLE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void drv_LcdInterface_SendCmd </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>data</em></td><td>)</td>
-          <td></td>
+          <td class="memname">#define DBGPIN2_ENABLE&#160;&#160;&#160;true</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sends a command to the LCD controller. </p>
-<p>Sends one character to the display controller to be displayed on the LCD screen.</p>
-<p>This function sends a one byte long command via the initialized SPI interface to the LCD controller.</p>
-<p>This function sends a single character via the initialized SPI interface to the LCD controller to be displayed on the LCD screen </p>
+<p>Enables debug pin indicating control loop execution timing. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00194_source.html#l00092">92</a> of file <a class="el" href="a00194_source.html">drv_lcd_interface.c</a>.</p>
-<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00451_ga3e045335a3463f6a53e4fd91b50bb0ca_cgraph.svg" width="408" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00080">80</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
 </div>
 </div>
-<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00451_ga3e045335a3463f6a53e4fd91b50bb0ca_icgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
+<a id="ga0bec5510da2215eafb1e118d9dc786c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0bec5510da2215eafb1e118d9dc786c7">&#9670;&nbsp;</a></span>PLANT_MEASUREMENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PLANT_MEASUREMENT&#160;&#160;&#160;false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Global defines used to enable/disable special firmware options. </p>
+<p>This section is used to enable/disable special options useful during development, debugging, troubleshooting the recent firmware or to tailor special functions of this application. If enabled, replaces the common voltage control loop by a simple P-control loop to perform measurements of the plant transfer function. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00077">77</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

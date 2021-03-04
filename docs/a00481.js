@@ -1,7 +1,4 @@
 var a00481 =
 [
-    [ "BuckConverterRampUpSubStateMachine", "a00481.html#gad90aaba79b75de05468a961a39c9c018", null ],
-    [ "BuckConverterStateMachine", "a00481.html#ga34e9e076d0bb91ad7b4ce328bc03dfee", null ],
-    [ "BuckRampUpSubStateList_size", "a00481.html#gaf52bd106cdf677965715261049bbc072", null ],
-    [ "BuckStateList_size", "a00481.html#ga908907079f862f9793ac00bd89d653ce", null ]
+    [ "drv_LcdInterface_SpiSend", "a00481.html#ga50b8734fca19fc75dd778a9902c63082", null ]
 ];

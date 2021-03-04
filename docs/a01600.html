@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: NPNZ_FILTER_PARAMS_s Struct Reference</title>
+<title>Digital Power Starter Kit 3 Firmware: NPNZ_FLAGS_s Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,364 +106,180 @@ $(document).ready(function(){initNavTree('a01600.html',''); initResizable(); });
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">NPNZ_FILTER_PARAMS_s Struct Reference<div class="ingroups"><a class="el" href="a00540.html">Library Driver Layer</a> &raquo; <a class="el" href="a00502.html">Power Converter Control Driver</a> &raquo; <a class="el" href="a00505.html">Properties</a> &raquo; <a class="el" href="a00507.html">Data Object Members</a></div></div>  </div>
+<div class="title">NPNZ_FLAGS_s Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Filter Coefficient Arrays, Number Format Handling and Input/Output History Parameters.  
+<p>Consolidated list of status bit value enumerations.  
  <a href="a01600.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="a00302_source.html">power_control/drivers/npnz16b.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00311_source.html">power_control/drivers/npnz16b.h</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for NPNZ_FILTER_PARAMS_s:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for NPNZ_FLAGS_s:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01599.svg" width="194" height="522"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for NPNZ_FILTER_PARAMS_s:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a01598.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a01598.svg" width="163" height="176"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a9fbf6375472798ae4d35533dd776822c"><td class="memItemLeft" align="right" valign="top">volatile int32_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01600.html#a9fbf6375472798ae4d35533dd776822c">ptrACoefficients</a></td></tr>
-<tr class="memdesc:a9fbf6375472798ae4d35533dd776822c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to A coefficients located in X-space.  <a href="a01600.html#a9fbf6375472798ae4d35533dd776822c">More...</a><br /></td></tr>
-<tr class="separator:a9fbf6375472798ae4d35533dd776822c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e6c1af0f3825567c454a36a5b3a2846"><td class="memItemLeft" align="right" valign="top">volatile int32_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01600.html#a5e6c1af0f3825567c454a36a5b3a2846">ptrBCoefficients</a></td></tr>
-<tr class="memdesc:a5e6c1af0f3825567c454a36a5b3a2846"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to B coefficients located in X-space.  <a href="a01600.html#a5e6c1af0f3825567c454a36a5b3a2846">More...</a><br /></td></tr>
-<tr class="separator:a5e6c1af0f3825567c454a36a5b3a2846"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1437871fb5511f4e29c692a96d7c9914"><td class="memItemLeft" align="right" valign="top">volatile fractional *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01600.html#a1437871fb5511f4e29c692a96d7c9914">ptrControlHistory</a></td></tr>
-<tr class="memdesc:a1437871fb5511f4e29c692a96d7c9914"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to n delay-line samples located in Y-space with first sample being the most recent.  <a href="a01600.html#a1437871fb5511f4e29c692a96d7c9914">More...</a><br /></td></tr>
-<tr class="separator:a1437871fb5511f4e29c692a96d7c9914"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7c80466342f19512e67e9855374b04d"><td class="memItemLeft" align="right" valign="top">volatile fractional *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01600.html#af7c80466342f19512e67e9855374b04d">ptrErrorHistory</a></td></tr>
-<tr class="memdesc:af7c80466342f19512e67e9855374b04d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to n+1 delay-line samples located in Y-space with first sample being the most recent.  <a href="a01600.html#af7c80466342f19512e67e9855374b04d">More...</a><br /></td></tr>
-<tr class="separator:af7c80466342f19512e67e9855374b04d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac531fd3e581ecf7941a112346f956800"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01600.html#ac531fd3e581ecf7941a112346f956800">ACoefficientsArraySize</a></td></tr>
-<tr class="memdesc:ac531fd3e581ecf7941a112346f956800"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the A coefficients array in X-space.  <a href="a01600.html#ac531fd3e581ecf7941a112346f956800">More...</a><br /></td></tr>
-<tr class="separator:ac531fd3e581ecf7941a112346f956800"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f44a7f281b9831c9a01cb0145f1f49d"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01600.html#a0f44a7f281b9831c9a01cb0145f1f49d">BCoefficientsArraySize</a></td></tr>
-<tr class="memdesc:a0f44a7f281b9831c9a01cb0145f1f49d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the B coefficients array in X-space.  <a href="a01600.html#a0f44a7f281b9831c9a01cb0145f1f49d">More...</a><br /></td></tr>
-<tr class="separator:a0f44a7f281b9831c9a01cb0145f1f49d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae142fcfc24877087d89007045ced6563"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01600.html#ae142fcfc24877087d89007045ced6563">ControlHistoryArraySize</a></td></tr>
-<tr class="memdesc:ae142fcfc24877087d89007045ced6563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the control history array in Y-space.  <a href="a01600.html#ae142fcfc24877087d89007045ced6563">More...</a><br /></td></tr>
-<tr class="separator:ae142fcfc24877087d89007045ced6563"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b7d0877bab7259c8f922a1c47ea23b1"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01600.html#a1b7d0877bab7259c8f922a1c47ea23b1">ErrorHistoryArraySize</a></td></tr>
-<tr class="memdesc:a1b7d0877bab7259c8f922a1c47ea23b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the error history array in Y-space.  <a href="a01600.html#a1b7d0877bab7259c8f922a1c47ea23b1">More...</a><br /></td></tr>
-<tr class="separator:a1b7d0877bab7259c8f922a1c47ea23b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7053a95a1e3e02b0750539bcf37a35f"><td class="memItemLeft" align="right" valign="top">volatile int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01600.html#af7053a95a1e3e02b0750539bcf37a35f">normPreShift</a></td></tr>
-<tr class="memdesc:af7053a95a1e3e02b0750539bcf37a35f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalization of ADC-resolution to Q15 (R/W)  <a href="a01600.html#af7053a95a1e3e02b0750539bcf37a35f">More...</a><br /></td></tr>
-<tr class="separator:af7053a95a1e3e02b0750539bcf37a35f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee6e82426868c37660937ece5aa56d75"><td class="memItemLeft" align="right" valign="top">volatile int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01600.html#aee6e82426868c37660937ece5aa56d75">normPostShiftA</a></td></tr>
-<tr class="memdesc:aee6e82426868c37660937ece5aa56d75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalization of A-term control output to Q15 (R/W)  <a href="a01600.html#aee6e82426868c37660937ece5aa56d75">More...</a><br /></td></tr>
-<tr class="separator:aee6e82426868c37660937ece5aa56d75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1797ab1804ff7c8d4ea95092a1809739"><td class="memItemLeft" align="right" valign="top">volatile int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01600.html#a1797ab1804ff7c8d4ea95092a1809739">normPostShiftB</a></td></tr>
-<tr class="memdesc:a1797ab1804ff7c8d4ea95092a1809739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalization of B-term control output to Q15 (R/W)  <a href="a01600.html#a1797ab1804ff7c8d4ea95092a1809739">More...</a><br /></td></tr>
-<tr class="separator:a1797ab1804ff7c8d4ea95092a1809739"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26dfdfdfeac973f78fcd8a9cefc81ee2"><td class="memItemLeft" align="right" valign="top">volatile int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01600.html#a26dfdfdfeac973f78fcd8a9cefc81ee2">normPostScaler</a></td></tr>
-<tr class="memdesc:a26dfdfdfeac973f78fcd8a9cefc81ee2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control output normalization factor (Q15) (R/W)  <a href="a01600.html#a26dfdfdfeac973f78fcd8a9cefc81ee2">More...</a><br /></td></tr>
-<tr class="separator:a26dfdfdfeac973f78fcd8a9cefc81ee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83313da545ad8473d436b087f4ff29b8"><td class="memItemLeft" align="right" valign="top">volatile int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01600.html#a83313da545ad8473d436b087f4ff29b8">PTermScaler</a></td></tr>
-<tr class="memdesc:a83313da545ad8473d436b087f4ff29b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Q15 P-Term Coefficient Bit-Shift Scaler (R/W)  <a href="a01600.html#a83313da545ad8473d436b087f4ff29b8">More...</a><br /></td></tr>
-<tr class="separator:a83313da545ad8473d436b087f4ff29b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b848b9fb90925fa803fea3196346506"><td class="memItemLeft" align="right" valign="top">volatile int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01600.html#a1b848b9fb90925fa803fea3196346506">PTermFactor</a></td></tr>
-<tr class="memdesc:a1b848b9fb90925fa803fea3196346506"><td class="mdescLeft">&#160;</td><td class="mdescRight">Q15 P-Term Coefficient Factor (R/W)  <a href="a01600.html#a1b848b9fb90925fa803fea3196346506">More...</a><br /></td></tr>
-<tr class="separator:a1b848b9fb90925fa803fea3196346506"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_attribs_a01628"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_a01628')"><img src="closed.png" alt="-"/>&#160;Data Fields inherited from <a class="el" href="a01628.html">NPNZ16b_s</a></td></tr>
-<tr class="memitem:a38a4b2427f4b2b06c112385e722e1419 inherit pub_attribs_a01628"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01576.html">NPNZ_STATUS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01628.html#a38a4b2427f4b2b06c112385e722e1419">status</a></td></tr>
-<tr class="memdesc:a38a4b2427f4b2b06c112385e722e1419 inherit pub_attribs_a01628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control Loop Status and Control flags.  <a href="a01628.html#a38a4b2427f4b2b06c112385e722e1419">More...</a><br /></td></tr>
-<tr class="separator:a38a4b2427f4b2b06c112385e722e1419 inherit pub_attribs_a01628"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae834fa9c7338d08d0fa927c901c2503f inherit pub_attribs_a01628"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01596.html">NPNZ_PORTS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01628.html#ae834fa9c7338d08d0fa927c901c2503f">Ports</a></td></tr>
-<tr class="memdesc:ae834fa9c7338d08d0fa927c901c2503f inherit pub_attribs_a01628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controller input and output ports.  <a href="a01628.html#ae834fa9c7338d08d0fa927c901c2503f">More...</a><br /></td></tr>
-<tr class="separator:ae834fa9c7338d08d0fa927c901c2503f inherit pub_attribs_a01628"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa98db9224dce165f72d861acc8558419 inherit pub_attribs_a01628"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01600.html">NPNZ_FILTER_PARAMS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01628.html#aa98db9224dce165f72d861acc8558419">Filter</a></td></tr>
-<tr class="memdesc:aa98db9224dce165f72d861acc8558419 inherit pub_attribs_a01628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter parameters such as pointer to history and coefficient arrays and number scaling.  <a href="a01628.html#aa98db9224dce165f72d861acc8558419">More...</a><br /></td></tr>
-<tr class="separator:aa98db9224dce165f72d861acc8558419 inherit pub_attribs_a01628"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c9fc0a5e04a384801d066b95dc27f5d inherit pub_attribs_a01628"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01604.html">NPNZ_GAIN_CONTROL_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01628.html#a3c9fc0a5e04a384801d066b95dc27f5d">GainControl</a></td></tr>
-<tr class="memdesc:a3c9fc0a5e04a384801d066b95dc27f5d inherit pub_attribs_a01628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameter section for advanced control options.  <a href="a01628.html#a3c9fc0a5e04a384801d066b95dc27f5d">More...</a><br /></td></tr>
-<tr class="separator:a3c9fc0a5e04a384801d066b95dc27f5d inherit pub_attribs_a01628"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6127947619eb634f1a3c3650529e092c inherit pub_attribs_a01628"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01608.html">NPNZ_LIMITS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01628.html#a6127947619eb634f1a3c3650529e092c">Limits</a></td></tr>
-<tr class="memdesc:a6127947619eb634f1a3c3650529e092c inherit pub_attribs_a01628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input and output clamping values.  <a href="a01628.html#a6127947619eb634f1a3c3650529e092c">More...</a><br /></td></tr>
-<tr class="separator:a6127947619eb634f1a3c3650529e092c inherit pub_attribs_a01628"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa708a44ef3b59a931f929bc6c72e07fc inherit pub_attribs_a01628"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01612.html">NPNZ_ADC_TRGCTRL_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01628.html#aa708a44ef3b59a931f929bc6c72e07fc">ADCTriggerControl</a></td></tr>
-<tr class="memdesc:aa708a44ef3b59a931f929bc6c72e07fc inherit pub_attribs_a01628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automatic ADC trigger placement options for ADC Trigger A and B.  <a href="a01628.html#aa708a44ef3b59a931f929bc6c72e07fc">More...</a><br /></td></tr>
-<tr class="separator:aa708a44ef3b59a931f929bc6c72e07fc inherit pub_attribs_a01628"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a971260b757f0c8822315d8c82a603142 inherit pub_attribs_a01628"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01616.html">NPNZ_DATA_PROVIDERS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01628.html#a971260b757f0c8822315d8c82a603142">DataProviders</a></td></tr>
-<tr class="memdesc:a971260b757f0c8822315d8c82a603142 inherit pub_attribs_a01628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automated data sources pushing recent data points to user-defined variables.  <a href="a01628.html#a971260b757f0c8822315d8c82a603142">More...</a><br /></td></tr>
-<tr class="separator:a971260b757f0c8822315d8c82a603142 inherit pub_attribs_a01628"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a486610694a9aac008ab8c01a0ab88090 inherit pub_attribs_a01628"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01620.html">NPNZ_EXTENSION_HOOKS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01628.html#a486610694a9aac008ab8c01a0ab88090">ExtensionHooks</a></td></tr>
-<tr class="memdesc:a486610694a9aac008ab8c01a0ab88090 inherit pub_attribs_a01628"><td class="mdescLeft">&#160;</td><td class="mdescRight">User extension function triggers using function pointers with parameters.  <a href="a01628.html#a486610694a9aac008ab8c01a0ab88090">More...</a><br /></td></tr>
-<tr class="separator:a486610694a9aac008ab8c01a0ab88090 inherit pub_attribs_a01628"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae10c373e7000ff11abbb151f019793e0 inherit pub_attribs_a01628"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01624.html">NPNZ_USER_DATA_BUFFER_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01628.html#ae10c373e7000ff11abbb151f019793e0">Advanced</a></td></tr>
-<tr class="memdesc:ae10c373e7000ff11abbb151f019793e0 inherit pub_attribs_a01628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameter section for advanced user control options.  <a href="a01628.html#ae10c373e7000ff11abbb151f019793e0">More...</a><br /></td></tr>
-<tr class="separator:ae10c373e7000ff11abbb151f019793e0 inherit pub_attribs_a01628"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6586f76d74993183527cf0de35d0f04e"><td class="memItemLeft" align="right" valign="top">enum NPNZ_STATUS_FLAGS_e&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01600.html#a6586f76d74993183527cf0de35d0f04e">StatusWordFlags</a></td></tr>
+<tr class="memdesc:a6586f76d74993183527cf0de35d0f04e"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of all status and control flags of the NPNZ status word.  <a href="a01600.html#a6586f76d74993183527cf0de35d0f04e">More...</a><br /></td></tr>
+<tr class="separator:a6586f76d74993183527cf0de35d0f04e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6760cf02dc71a0b14083bc8a82046dfe"><td class="memItemLeft" align="right" valign="top">enum NPNZ_STATUS_SATURATION_e&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01600.html#a6760cf02dc71a0b14083bc8a82046dfe">flagSaturation</a></td></tr>
+<tr class="memdesc:a6760cf02dc71a0b14083bc8a82046dfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of all status and control flags of the NPNZ status word.  <a href="a01600.html#a6760cf02dc71a0b14083bc8a82046dfe">More...</a><br /></td></tr>
+<tr class="separator:a6760cf02dc71a0b14083bc8a82046dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5468f367294e1d45dad1f2e5d0ed028"><td class="memItemLeft" align="right" valign="top">enum NPNZ_STATUS_AGC_ENABLE_e&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01600.html#aa5468f367294e1d45dad1f2e5d0ed028">flagAgcControl</a></td></tr>
+<tr class="memdesc:aa5468f367294e1d45dad1f2e5d0ed028"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of all status and control flags of the NPNZ status word.  <a href="a01600.html#aa5468f367294e1d45dad1f2e5d0ed028">More...</a><br /></td></tr>
+<tr class="separator:aa5468f367294e1d45dad1f2e5d0ed028"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e810d470000f5730292beed3ecb4081"><td class="memItemLeft" align="right" valign="top">enum NPNZ_STATUS_SOURCE_SWAP_e&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01600.html#a9e810d470000f5730292beed3ecb4081">flagSourceSwap</a></td></tr>
+<tr class="memdesc:a9e810d470000f5730292beed3ecb4081"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of State Machine Operating State IDs.  <a href="a01600.html#a9e810d470000f5730292beed3ecb4081">More...</a><br /></td></tr>
+<tr class="separator:a9e810d470000f5730292beed3ecb4081"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afeb53052025a7c6d748d98c2c18c9dbe"><td class="memItemLeft" align="right" valign="top">enum NPNZ_STATUS_TARGET_SWAP_e&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01600.html#afeb53052025a7c6d748d98c2c18c9dbe">flagTargetSwap</a></td></tr>
+<tr class="memdesc:afeb53052025a7c6d748d98c2c18c9dbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of State Machine Sub-State IDs.  <a href="a01600.html#afeb53052025a7c6d748d98c2c18c9dbe">More...</a><br /></td></tr>
+<tr class="separator:afeb53052025a7c6d748d98c2c18c9dbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc62c1d8e452ee7df323444d1e310f35"><td class="memItemLeft" align="right" valign="top">enum NPNZ_STATUS_INPUT_INV_e&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01600.html#abc62c1d8e452ee7df323444d1e310f35">flagCtrlInputInversion</a></td></tr>
+<tr class="memdesc:abc62c1d8e452ee7df323444d1e310f35"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of State Machine Operating State Return Values.  <a href="a01600.html#abc62c1d8e452ee7df323444d1e310f35">More...</a><br /></td></tr>
+<tr class="separator:abc62c1d8e452ee7df323444d1e310f35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89d7fde025ce70bd8ae63a08e9a46e38"><td class="memItemLeft" align="right" valign="top">enum NPNZ_STATUS_ENABLE_e&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01600.html#a89d7fde025ce70bd8ae63a08e9a46e38">flagControlEnable</a></td></tr>
+<tr class="memdesc:a89d7fde025ce70bd8ae63a08e9a46e38"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of Supported Control Modes.  <a href="a01600.html#a89d7fde025ce70bd8ae63a08e9a46e38">More...</a><br /></td></tr>
+<tr class="separator:a89d7fde025ce70bd8ae63a08e9a46e38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Filter Coefficient Arrays, Number Format Handling and Input/Output History Parameters. </p>
-<p>The NPNZ_FILTER_PARAMS_t data object holds all configuration parameters of the compensation filter. These parameters include pointers to external arrays of filter coefficients, error and control history as well as number format normalization parameters like pre- and post- scalers. </p>
+<div class="textblock"><p>Consolidated list of status bit value enumerations. </p>
+<p>Structure providing all public enumerated lists of constants through a common data structure. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00284">284</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00311_source.html#l00147">147</a> of file <a class="el" href="a00311_source.html">npnz16b.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="ac531fd3e581ecf7941a112346f956800"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac531fd3e581ecf7941a112346f956800">&#9670;&nbsp;</a></span>ACoefficientsArraySize</h2>
+<a id="aa5468f367294e1d45dad1f2e5d0ed028"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5468f367294e1d45dad1f2e5d0ed028">&#9670;&nbsp;</a></span>flagAgcControl</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t ACoefficientsArraySize</td>
+          <td class="memname">enum NPNZ_STATUS_AGC_ENABLE_e flagAgcControl</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Size of the A coefficients array in X-space. </p>
+<p>List of all status and control flags of the NPNZ status word. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00292">292</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00311_source.html#l00001">1</a> of file <a class="el" href="a00311_source.html">npnz16b.h</a>.</p>
 
 </div>
 </div>
-<a id="a0f44a7f281b9831c9a01cb0145f1f49d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f44a7f281b9831c9a01cb0145f1f49d">&#9670;&nbsp;</a></span>BCoefficientsArraySize</h2>
+<a id="a89d7fde025ce70bd8ae63a08e9a46e38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89d7fde025ce70bd8ae63a08e9a46e38">&#9670;&nbsp;</a></span>flagControlEnable</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t BCoefficientsArraySize</td>
+          <td class="memname">enum NPNZ_STATUS_ENABLE_e flagControlEnable</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Size of the B coefficients array in X-space. </p>
+<p>List of Supported Control Modes. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00293">293</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00311_source.html#l00001">1</a> of file <a class="el" href="a00311_source.html">npnz16b.h</a>.</p>
 
 </div>
 </div>
-<a id="ae142fcfc24877087d89007045ced6563"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae142fcfc24877087d89007045ced6563">&#9670;&nbsp;</a></span>ControlHistoryArraySize</h2>
+<a id="abc62c1d8e452ee7df323444d1e310f35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc62c1d8e452ee7df323444d1e310f35">&#9670;&nbsp;</a></span>flagCtrlInputInversion</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t ControlHistoryArraySize</td>
+          <td class="memname">enum NPNZ_STATUS_INPUT_INV_e flagCtrlInputInversion</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Size of the control history array in Y-space. </p>
+<p>List of State Machine Operating State Return Values. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00294">294</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00311_source.html#l00001">1</a> of file <a class="el" href="a00311_source.html">npnz16b.h</a>.</p>
 
 </div>
 </div>
-<a id="a1b7d0877bab7259c8f922a1c47ea23b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b7d0877bab7259c8f922a1c47ea23b1">&#9670;&nbsp;</a></span>ErrorHistoryArraySize</h2>
+<a id="a6760cf02dc71a0b14083bc8a82046dfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6760cf02dc71a0b14083bc8a82046dfe">&#9670;&nbsp;</a></span>flagSaturation</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t ErrorHistoryArraySize</td>
+          <td class="memname">enum NPNZ_STATUS_SATURATION_e flagSaturation</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Size of the error history array in Y-space. </p>
+<p>List of all status and control flags of the NPNZ status word. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00295">295</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00311_source.html#l00001">1</a> of file <a class="el" href="a00311_source.html">npnz16b.h</a>.</p>
 
 </div>
 </div>
-<a id="a26dfdfdfeac973f78fcd8a9cefc81ee2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26dfdfdfeac973f78fcd8a9cefc81ee2">&#9670;&nbsp;</a></span>normPostScaler</h2>
+<a id="a9e810d470000f5730292beed3ecb4081"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e810d470000f5730292beed3ecb4081">&#9670;&nbsp;</a></span>flagSourceSwap</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile int16_t normPostScaler</td>
+          <td class="memname">enum NPNZ_STATUS_SOURCE_SWAP_e flagSourceSwap</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Control output normalization factor (Q15) (R/W) </p>
+<p>List of State Machine Operating State IDs. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00301">301</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00311_source.html#l00001">1</a> of file <a class="el" href="a00311_source.html">npnz16b.h</a>.</p>
 
 </div>
 </div>
-<a id="aee6e82426868c37660937ece5aa56d75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee6e82426868c37660937ece5aa56d75">&#9670;&nbsp;</a></span>normPostShiftA</h2>
+<a id="afeb53052025a7c6d748d98c2c18c9dbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afeb53052025a7c6d748d98c2c18c9dbe">&#9670;&nbsp;</a></span>flagTargetSwap</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile int16_t normPostShiftA</td>
+          <td class="memname">enum NPNZ_STATUS_TARGET_SWAP_e flagTargetSwap</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Normalization of A-term control output to Q15 (R/W) </p>
+<p>List of State Machine Sub-State IDs. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00299">299</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00311_source.html#l00001">1</a> of file <a class="el" href="a00311_source.html">npnz16b.h</a>.</p>
 
 </div>
 </div>
-<a id="a1797ab1804ff7c8d4ea95092a1809739"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1797ab1804ff7c8d4ea95092a1809739">&#9670;&nbsp;</a></span>normPostShiftB</h2>
+<a id="a6586f76d74993183527cf0de35d0f04e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6586f76d74993183527cf0de35d0f04e">&#9670;&nbsp;</a></span>StatusWordFlags</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile int16_t normPostShiftB</td>
+          <td class="memname">enum NPNZ_STATUS_FLAGS_e StatusWordFlags</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Normalization of B-term control output to Q15 (R/W) </p>
+<p>List of all status and control flags of the NPNZ status word. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00300">300</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
-
-</div>
-</div>
-<a id="af7053a95a1e3e02b0750539bcf37a35f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7053a95a1e3e02b0750539bcf37a35f">&#9670;&nbsp;</a></span>normPreShift</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile int16_t normPreShift</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Normalization of ADC-resolution to Q15 (R/W) </p>
-
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00298">298</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
-
-</div>
-</div>
-<a id="a1b848b9fb90925fa803fea3196346506"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b848b9fb90925fa803fea3196346506">&#9670;&nbsp;</a></span>PTermFactor</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile int16_t PTermFactor</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Q15 P-Term Coefficient Factor (R/W) </p>
-
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00305">305</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
-
-</div>
-</div>
-<a id="a83313da545ad8473d436b087f4ff29b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83313da545ad8473d436b087f4ff29b8">&#9670;&nbsp;</a></span>PTermScaler</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile int16_t PTermScaler</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Q15 P-Term Coefficient Bit-Shift Scaler (R/W) </p>
-
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00304">304</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
-
-</div>
-</div>
-<a id="a9fbf6375472798ae4d35533dd776822c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9fbf6375472798ae4d35533dd776822c">&#9670;&nbsp;</a></span>ptrACoefficients</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile int32_t* ptrACoefficients</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Pointer to A coefficients located in X-space. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00286">286</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
-
-</div>
-</div>
-<a id="a5e6c1af0f3825567c454a36a5b3a2846"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e6c1af0f3825567c454a36a5b3a2846">&#9670;&nbsp;</a></span>ptrBCoefficients</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile int32_t* ptrBCoefficients</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Pointer to B coefficients located in X-space. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00287">287</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
-
-</div>
-</div>
-<a id="a1437871fb5511f4e29c692a96d7c9914"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1437871fb5511f4e29c692a96d7c9914">&#9670;&nbsp;</a></span>ptrControlHistory</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile fractional* ptrControlHistory</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Pointer to n delay-line samples located in Y-space with first sample being the most recent. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00288">288</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
-
-</div>
-</div>
-<a id="af7c80466342f19512e67e9855374b04d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7c80466342f19512e67e9855374b04d">&#9670;&nbsp;</a></span>ptrErrorHistory</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile fractional* ptrErrorHistory</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Pointer to n+1 delay-line samples located in Y-space with first sample being the most recent. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00289">289</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00311_source.html#l00001">1</a> of file <a class="el" href="a00311_source.html">npnz16b.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>dpsk_buck_acmc.X/sources/power_control/drivers/<a class="el" href="a00302_source.html">npnz16b.h</a></li>
+<li>dpsk_buck_acmc.X/sources/power_control/drivers/<a class="el" href="a00311_source.html">npnz16b.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -471,7 +287,7 @@ Data Fields</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a01600.html">NPNZ_FILTER_PARAMS_s</a></li>
+    <li class="navelem"><a class="el" href="a01600.html">NPNZ_FLAGS_s</a></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

@@ -1,7 +1,6 @@
 var a01504 =
 [
-    [ "bits", "a01504.html#aa07db595f2d408f4dbc4d3c401d2b6f8", null ],
-    [ "opstate_id", "a01504.html#a9b9c59079d9b7f6ccbe8e83fa7f23d18", null ],
-    [ "substate_id", "a01504.html#a5fdd0244512bf8d99ecfb02ee0fd4b8e", null ],
-    [ "value", "a01504.html#ac394992c7d47027da1de259f501bff0e", null ]
+    [ "enabled", "a01504.html#a085e9fc0863cee4864cf51dcfe1e32df", null ],
+    [ "refresh", "a01504.html#adc2298ffda0c853e699e6da9098f82ae", null ],
+    [ "screen", "a01504.html#aea467a9fc04f0771215b952d26bc4392", null ]
 ];

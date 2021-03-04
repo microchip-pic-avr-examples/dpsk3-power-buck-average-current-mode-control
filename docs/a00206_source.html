@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: dpsk_buck_acmc.X/sources/led/app_led.h Source File</title>
+<title>Digital Power Starter Kit 3 Firmware: dpsk_buck_acmc.X/sources/lcd/drivers/drv_lcd_interface.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,81 +104,53 @@ $(document).ready(function(){initNavTree('a00206_source.html',''); initResizable
 
 <div class="header">
   <div class="headertitle">
-<div class="title">app_led.h</div>  </div>
+<div class="title">drv_lcd_interface.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* Microchip Technology Inc. and its subsidiaries.  You may use this software </span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * and any derivatives exclusively with Microchip products. </span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * </span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * THIS SOFTWARE IS SUPPLIED BY MICROCHIP &quot;AS IS&quot;.  NO WARRANTIES, WHETHER </span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED </span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A </span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * PARTICULAR PURPOSE, OR ITS INTERACTION WITH MICROCHIP PRODUCTS, COMBINATION </span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * WITH ANY OTHER PRODUCTS, OR USE IN ANY APPLICATION. </span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, </span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND </span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS </span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE.  TO THE </span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP&#39;S TOTAL LIABILITY ON ALL CLAIMS </span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF </span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE </span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * TERMS. </span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/* </span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * File:   app_led.h</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * Author: M91406</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * Comments: LED application layer</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * Revision history: </span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// This is a guard condition so that contents of this file are not included</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// more than once.  </span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#ifndef APPLICATION_LAYER_DEBUGGING_LED_H</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define APPLICATION_LAYER_DEBUGGING_LED_H</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//======================================================================================================================</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Copyright(c) 2018 Microchip Technology Inc. and its subsidiaries.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Subject to your compliance with these terms, you may use Microchip software and any derivatives exclusively with</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Microchip products. It is your responsibility to comply with third party license terms applicable to your use of</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// third-party software (including open source software) that may accompany Microchip software.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// THIS SOFTWARE IS SUPPLIED BY MICROCHIP &quot;AS IS&quot;. NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, APPLY TO</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// PURPOSE.</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE,</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS BEEN ADVISED</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP&#39;S TOTAL LIABILITY</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// ON ALL CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, THAT YOU HAVE</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//======================================================================================================================</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//======================================================================================================================</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// @file drv_lcd_interface.h</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// @brief driver for the spi-interface to access the lcd controller</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//======================================================================================================================</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#ifndef _DRV_LCD_INTERFACE_H_</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#define _DRV_LCD_INTERFACE_H_</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00479.html#gaeb25fdecced4c325cd0d986a30d57e90">drv_LcdInterface_Initialize</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00479.html#ga3f10606b6c67ff33338ab2c5c6a2d4c8">drv_LcdInterface_Reset</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00479.html#ga3e045335a3463f6a53e4fd91b50bb0ca">drv_LcdInterface_SendCmd</a>(<span class="keyword">const</span> uint8_t cmd);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> drv_LcdInterface_SendChar(<span class="keyword">const</span> <span class="keywordtype">char</span> c);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;xc.h&gt;</span> <span class="comment">// include processor files - each processor file is guarded.  </span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span> <span class="comment">// include standard integer data types</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span> <span class="comment">// include standard boolean data types</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;stddef.h&gt;</span> <span class="comment">// include standard definition data types</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">// CUSTOM DECLARATIONS</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define DBGLED_PERIOD_FAST      2499</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#define DBGLED_PERIOD_DEFAULT   4999</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#define DBGLED_PERIOD_STANDBY   9999</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="a01480.html">   55</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="a01480.html">DEBUGGING_LED_s</a>{</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="a01480.html#a48f363c7bcd47589472b59f0a7dfb74b">   56</a></span>&#160;    <span class="keyword">volatile</span> uint16_t <a class="code" href="a01480.html#a48f363c7bcd47589472b59f0a7dfb74b">period</a>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}<a class="code" href="a01480.html">DEBUGGING_LED_t</a>;    </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">// PUBLIC VARIABLE DECLARATION</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> <a class="code" href="a01480.html">DEBUGGING_LED_t</a> debug_led;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">// PUBLIC FUNCTION PROTOTYPE DECLARATION</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> uint16_t <a class="code" href="a00456.html#ga900c95201f101cb3c8644bcf7aab8af9">appLED_Initialize</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> uint16_t <a class="code" href="a00456.html#gaaa8c86cbd692a090f955022c93593a68">appLED_Execute</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> uint16_t <a class="code" href="a00456.html#ga038f968f3d5544cfe50faa2079d7daf6">appLED_Dispose</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* APPLICATION_LAYER_DEBUGGING_LED_H */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif // _DRV_LCD_INTERFACE_H_</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa00456_html_ga900c95201f101cb3c8644bcf7aab8af9"><div class="ttname"><a href="a00456.html#ga900c95201f101cb3c8644bcf7aab8af9">appLED_Initialize</a></div><div class="ttdeci">volatile uint16_t appLED_Initialize(void)</div><div class="ttdoc">Initializes the LED driving GPIO.</div><div class="ttdef"><b>Definition:</b> <a href="a00203_source.html#l00029">app_led.c:29</a></div></div>
-<div class="ttc" id="aa01480_html"><div class="ttname"><a href="a01480.html">DEBUGGING_LED_s</a></div><div class="ttdoc">Debugging LED settings data object.</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00055">app_led.h:55</a></div></div>
-<div class="ttc" id="aa01480_html_a48f363c7bcd47589472b59f0a7dfb74b"><div class="ttname"><a href="a01480.html#a48f363c7bcd47589472b59f0a7dfb74b">DEBUGGING_LED_s::period</a></div><div class="ttdeci">volatile uint16_t period</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00056">app_led.h:56</a></div></div>
-<div class="ttc" id="aa00456_html_gaaa8c86cbd692a090f955022c93593a68"><div class="ttname"><a href="a00456.html#gaaa8c86cbd692a090f955022c93593a68">appLED_Execute</a></div><div class="ttdeci">volatile uint16_t appLED_Execute(void)</div><div class="ttdoc">Executes the debugging LED driver.</div><div class="ttdef"><b>Definition:</b> <a href="a00203_source.html#l00052">app_led.c:52</a></div></div>
-<div class="ttc" id="aa00456_html_ga038f968f3d5544cfe50faa2079d7daf6"><div class="ttname"><a href="a00456.html#ga038f968f3d5544cfe50faa2079d7daf6">appLED_Dispose</a></div><div class="ttdeci">volatile uint16_t appLED_Dispose(void)</div><div class="ttdoc">Frees the resources of the debugging LED driver.</div><div class="ttdef"><b>Definition:</b> <a href="a00203_source.html#l00076">app_led.c:76</a></div></div>
+<div class="ttc" id="aa00479_html_gaeb25fdecced4c325cd0d986a30d57e90"><div class="ttname"><a href="a00479.html#gaeb25fdecced4c325cd0d986a30d57e90">drv_LcdInterface_Initialize</a></div><div class="ttdeci">void drv_LcdInterface_Initialize(void)</div><div class="ttdoc">Initializes the LCD interface driver.</div><div class="ttdef"><b>Definition:</b> <a href="a00203_source.html#l00052">drv_lcd_interface.c:52</a></div></div>
+<div class="ttc" id="aa00479_html_ga3e045335a3463f6a53e4fd91b50bb0ca"><div class="ttname"><a href="a00479.html#ga3e045335a3463f6a53e4fd91b50bb0ca">drv_LcdInterface_SendCmd</a></div><div class="ttdeci">void drv_LcdInterface_SendCmd(const uint8_t cmd)</div><div class="ttdoc">Sends a command to the LCD controller.</div><div class="ttdef"><b>Definition:</b> <a href="a00203_source.html#l00092">drv_lcd_interface.c:92</a></div></div>
+<div class="ttc" id="aa00479_html_ga3f10606b6c67ff33338ab2c5c6a2d4c8"><div class="ttname"><a href="a00479.html#ga3f10606b6c67ff33338ab2c5c6a2d4c8">drv_LcdInterface_Reset</a></div><div class="ttdeci">void drv_LcdInterface_Reset(void)</div><div class="ttdoc">Resets the LCD controller.</div><div class="ttdef"><b>Definition:</b> <a href="a00203_source.html#l00076">drv_lcd_interface.c:76</a></div></div>
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_5c9e57b9bcd9b7f50d88ecfbd194c0ae.html">dpsk_buck_acmc.X</a></li><li class="navelem"><a class="el" href="dir_0b7fd148aa9e0e6d20cdcee736988614.html">sources</a></li><li class="navelem"><a class="el" href="dir_eecd70a8254b8e8bab3e5dedb5b39850.html">led</a></li><li class="navelem"><b>app_led.h</b></li>
+    <li class="navelem"><a class="el" href="dir_5c9e57b9bcd9b7f50d88ecfbd194c0ae.html">dpsk_buck_acmc.X</a></li><li class="navelem"><a class="el" href="dir_0b7fd148aa9e0e6d20cdcee736988614.html">sources</a></li><li class="navelem"><a class="el" href="dir_173fc3f985a10fdb16f26d689cd8f89a.html">lcd</a></li><li class="navelem"><a class="el" href="dir_7c90bf38f0dfb62e4bd102acba54b9c5.html">drivers</a></li><li class="navelem"><b>drv_lcd_interface.h</b></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

@@ -1,5 +1,6 @@
 var a00504 =
 [
-    [ "i_loop", "a00504.html#ga40bc05625cfe6e56ef6572dfe0938abe", null ],
-    [ "v_loop", "a00504.html#gafbcd1a3463a71ed45375fa8f6053ee28", null ]
+    [ "DEBUGGING_LED_s", "a01527.html", [
+      [ "period", "a01527.html#a48f363c7bcd47589472b59f0a7dfb74b", null ]
+    ] ]
 ];

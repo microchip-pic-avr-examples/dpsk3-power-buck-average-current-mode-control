@@ -1,15 +1,7 @@
 var a01620 =
 [
-    [ "ExtHookEndFunctionParam", "a01620.html#a0d0cec76368160a68c746460fb0c78de", null ],
-    [ "ExtHookPreAntiWindupFunctionParam", "a01620.html#a4751deec1568e355ede04519aca1163f", null ],
-    [ "ExtHookSourceFunctionParam", "a01620.html#a49056496daa1b372d8fc77fa0277cb7a", null ],
-    [ "ExtHookStartFunctionParam", "a01620.html#ac55c0abd3786fbced0f295d0643e860c", null ],
-    [ "ExtHookStopFunctionParam", "a01620.html#a7c0021aa8f168054383cc2c5348be89f", null ],
-    [ "ExtHookTargetFunctionParam", "a01620.html#a2a5b9d17e4385cc94016be30e5ef8a04", null ],
-    [ "ptrExtHookEndFunction", "a01620.html#ad4d47362ccc41eac37c4efbea81667ec", null ],
-    [ "ptrExtHookPreAntiWindupFunction", "a01620.html#a0a886a12a39dcf68dff8d6b17569e278", null ],
-    [ "ptrExtHookSourceFunction", "a01620.html#a56cc6ba084187143b28ed5ae3a722ab3", null ],
-    [ "ptrExtHookStartFunction", "a01620.html#aa9ccf832637ed7b72fafc3e3bc3dec1f", null ],
-    [ "ptrExtHookStopFunction", "a01620.html#a13aa0323b5f553a04526ebd4562d43f8", null ],
-    [ "ptrExtHookTargetFunction", "a01620.html#aba021e28e8aa8c60fdf0d0ad8a586bc2", null ]
+    [ "NormFactor", "a01620.html#a337a5aff8a1ccc3c7c13dde864a0a59c", null ],
+    [ "NormScaler", "a01620.html#abb43ba3046080953e2c35a68eb471193", null ],
+    [ "Offset", "a01620.html#a7da24ddfbcba445de2da4ac0468f7a06", null ],
+    [ "ptrAddress", "a01620.html#aa37b174ac35fcbc1a22f5a8e221700e2", null ]
 ];

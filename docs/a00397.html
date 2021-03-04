@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Conversion Macros</title>
+<title>Digital Power Starter Kit 3 Firmware: Device Peripheral Assignments</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,360 +104,133 @@ $(document).ready(function(){initNavTree('a00397.html',''); initResizable(); });
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Conversion Macros<div class="ingroups"><a class="el" href="a00537.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00395.html">PWM Settings</a></div></div>  </div>
+<div class="title">Device Peripheral Assignments<div class="ingroups"><a class="el" href="a00565.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00394.html">State Machine Settings</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Conversion macros converting physical quantities of parameters into binary (integer) numbers for registers and variables.  
+<p>Assignment of microcontroller device specific chip-resources to circuit functions and signals.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Conversion Macros:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Device Peripheral Assignments:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00397.svg" width="298" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00397.svg" width="420" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
-<tr class="memitem:gaeee647e1d9ee7976f26810db539bf3d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00397.html#gaeee647e1d9ee7976f26810db539bf3d2">BUCK_SWITCHING_PERIOD</a>&#160;&#160;&#160;(float)(1.0/<a class="el" href="a00396.html#gadecc3fb9cc6da0d2add11d577d50d5b5">BUCK_SWITCHING_FREQUENCY</a>)</td></tr>
-<tr class="memdesc:gaeee647e1d9ee7976f26810db539bf3d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion macros for user-declarations of PWM parameters.  <a href="a00397.html#gaeee647e1d9ee7976f26810db539bf3d2">More...</a><br /></td></tr>
-<tr class="separator:gaeee647e1d9ee7976f26810db539bf3d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf74e7d1749ac835a5c6be8c3faa8be80"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00397.html#gaf74e7d1749ac835a5c6be8c3faa8be80">BUCK_PWM_PERIOD</a>&#160;&#160;&#160;(uint16_t)(float)(<a class="el" href="a00397.html#gaeee647e1d9ee7976f26810db539bf3d2">BUCK_SWITCHING_PERIOD</a> / <a class="el" href="a00384.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td></tr>
-<tr class="memdesc:gaf74e7d1749ac835a5c6be8c3faa8be80"><td class="mdescLeft">&#160;</td><td class="mdescRight">This sets the switching period of the converter.  <a href="a00397.html#gaf74e7d1749ac835a5c6be8c3faa8be80">More...</a><br /></td></tr>
-<tr class="separator:gaf74e7d1749ac835a5c6be8c3faa8be80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8d1f73f218b93bd2301373cf458f8c85"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00397.html#ga8d1f73f218b93bd2301373cf458f8c85">BUCK_PWM_PHASE_SHIFT</a>&#160;&#160;&#160;(uint16_t)((float)<a class="el" href="a00397.html#gaf74e7d1749ac835a5c6be8c3faa8be80">BUCK_PWM_PERIOD</a> / (float)<a class="el" href="a00396.html#ga353ba60329e90d1aca97deba7e0bd669">BUCK_NO_OF_PHASES</a>)</td></tr>
-<tr class="memdesc:ga8d1f73f218b93bd2301373cf458f8c85"><td class="mdescLeft">&#160;</td><td class="mdescRight">This sets the phase shift between phase #1 and #2.  <a href="a00397.html#ga8d1f73f218b93bd2301373cf458f8c85">More...</a><br /></td></tr>
-<tr class="separator:ga8d1f73f218b93bd2301373cf458f8c85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae2647a90f6c1fd8f7a3bb2a236a3b187"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00397.html#gae2647a90f6c1fd8f7a3bb2a236a3b187">BUCK_PWM_DC_MIN</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00396.html#gabcc43f4201492160173351db97ddcfda">BUCK_PWM_DUTY_CYCLE_MIN</a> * (float)<a class="el" href="a00397.html#gaf74e7d1749ac835a5c6be8c3faa8be80">BUCK_PWM_PERIOD</a>)</td></tr>
-<tr class="memdesc:gae2647a90f6c1fd8f7a3bb2a236a3b187"><td class="mdescLeft">&#160;</td><td class="mdescRight">This sets the minimum duty cycle.  <a href="a00397.html#gae2647a90f6c1fd8f7a3bb2a236a3b187">More...</a><br /></td></tr>
-<tr class="separator:gae2647a90f6c1fd8f7a3bb2a236a3b187"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1d48ac69185f603b84967ce0e8d41713"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00397.html#ga1d48ac69185f603b84967ce0e8d41713">BUCK_PWM_DC_MAX</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00396.html#ga355fe35bc08bc0f4657be7f638a643a6">BUCK_PWM_DUTY_CYCLE_MAX</a> * (float)<a class="el" href="a00397.html#gaf74e7d1749ac835a5c6be8c3faa8be80">BUCK_PWM_PERIOD</a>)</td></tr>
-<tr class="memdesc:ga1d48ac69185f603b84967ce0e8d41713"><td class="mdescLeft">&#160;</td><td class="mdescRight">This sets the maximum duty cycle.  <a href="a00397.html#ga1d48ac69185f603b84967ce0e8d41713">More...</a><br /></td></tr>
-<tr class="separator:ga1d48ac69185f603b84967ce0e8d41713"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab995ebe4d204b2618814cea80f7d6eb0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00397.html#gab995ebe4d204b2618814cea80f7d6eb0">BUCK_LEB_PERIOD</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00396.html#ga53e830102be3559594f1f107c42e3cb2">BUCK_LEADING_EDGE_BLANKING</a> / (float)<a class="el" href="a00384.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td></tr>
-<tr class="memdesc:gab995ebe4d204b2618814cea80f7d6eb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leading Edge Blanking = n x PWM resolution (here: 50 x 2ns = 100ns)  <a href="a00397.html#gab995ebe4d204b2618814cea80f7d6eb0">More...</a><br /></td></tr>
-<tr class="separator:gab995ebe4d204b2618814cea80f7d6eb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gace85e0df46d4d83380cdd555d5e572bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00397.html#gace85e0df46d4d83380cdd555d5e572bb">BUCK_PWM_DEAD_TIME_LE</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00396.html#gaee8430cb24cfc1cdd3b12dd3c40b09d5">BUCK_DEAD_TIME_LEADING_EDGE</a> / (float)<a class="el" href="a00384.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td></tr>
-<tr class="memdesc:gace85e0df46d4d83380cdd555d5e572bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rising edge dead time [tick = 250ps].  <a href="a00397.html#gace85e0df46d4d83380cdd555d5e572bb">More...</a><br /></td></tr>
-<tr class="separator:gace85e0df46d4d83380cdd555d5e572bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2887c277f2ac42c326c2ccf61b3b1f3d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00397.html#ga2887c277f2ac42c326c2ccf61b3b1f3d">BUCK_PWM_DEAD_TIME_FE</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00396.html#gafe895b572c7fdeced04221d53c18695d">BUCK_DEAD_TIME_FALLING_EDGE</a> / (float)<a class="el" href="a00384.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td></tr>
-<tr class="memdesc:ga2887c277f2ac42c326c2ccf61b3b1f3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Falling edge dead time [tick = 250ps].  <a href="a00397.html#ga2887c277f2ac42c326c2ccf61b3b1f3d">More...</a><br /></td></tr>
-<tr class="separator:ga2887c277f2ac42c326c2ccf61b3b1f3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9761ffc82ba31b2d74dc97f7fa9e59d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00397.html#ga9761ffc82ba31b2d74dc97f7fa9e59d3">BOOST_SWITCHING_PERIOD</a>&#160;&#160;&#160;(float)(1.0/<a class="el" href="a00396.html#ga190c68d192a604d70087146623fedd1d">BOOST_SWITCHING_FREQUENCY</a>)</td></tr>
-<tr class="memdesc:ga9761ffc82ba31b2d74dc97f7fa9e59d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion macros for user-declarations of PWM parameters.  <a href="a00397.html#ga9761ffc82ba31b2d74dc97f7fa9e59d3">More...</a><br /></td></tr>
-<tr class="separator:ga9761ffc82ba31b2d74dc97f7fa9e59d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaea6976b3f447778b9ad2fa13f59d1b6c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00397.html#gaea6976b3f447778b9ad2fa13f59d1b6c">BOOST_PWM_PERIOD</a>&#160;&#160;&#160;(uint16_t)(float)(<a class="el" href="a00397.html#ga9761ffc82ba31b2d74dc97f7fa9e59d3">BOOST_SWITCHING_PERIOD</a> / <a class="el" href="a00384.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td></tr>
-<tr class="memdesc:gaea6976b3f447778b9ad2fa13f59d1b6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This sets the switching period of the converter.  <a href="a00397.html#gaea6976b3f447778b9ad2fa13f59d1b6c">More...</a><br /></td></tr>
-<tr class="separator:gaea6976b3f447778b9ad2fa13f59d1b6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9307dbea0e54e2e63f9e16474d52cc27"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00397.html#ga9307dbea0e54e2e63f9e16474d52cc27">BOOST_PWM_PHASE_SHIFT</a>&#160;&#160;&#160;(uint16_t)((float)<a class="el" href="a00397.html#gaea6976b3f447778b9ad2fa13f59d1b6c">BOOST_PWM_PERIOD</a> / (float)<a class="el" href="a00396.html#ga5208c54df1cdb14e00e62eb7957820f6">BOOST_NO_OF_PHASES</a>)</td></tr>
-<tr class="memdesc:ga9307dbea0e54e2e63f9e16474d52cc27"><td class="mdescLeft">&#160;</td><td class="mdescRight">This sets the phase shift between phase #1 and #2.  <a href="a00397.html#ga9307dbea0e54e2e63f9e16474d52cc27">More...</a><br /></td></tr>
-<tr class="separator:ga9307dbea0e54e2e63f9e16474d52cc27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2b04d5efbae62e16fd8dfe59f186e0e4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00397.html#ga2b04d5efbae62e16fd8dfe59f186e0e4">BOOST_PWM_DC_MIN</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00396.html#gaf4b6b5baf07ba17e75f66ec5305c68fb">BOOST_PWM_DUTY_CYCLE_MIN</a> * (float)<a class="el" href="a00397.html#gaea6976b3f447778b9ad2fa13f59d1b6c">BOOST_PWM_PERIOD</a>)</td></tr>
-<tr class="memdesc:ga2b04d5efbae62e16fd8dfe59f186e0e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This sets the minimum duty cycle.  <a href="a00397.html#ga2b04d5efbae62e16fd8dfe59f186e0e4">More...</a><br /></td></tr>
-<tr class="separator:ga2b04d5efbae62e16fd8dfe59f186e0e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga80b5db734cfd87c6c86e129cebc41e7d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00397.html#ga80b5db734cfd87c6c86e129cebc41e7d">BOOST_PWM_DC_MAX</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00396.html#gafe2eededed4304c44e47642b9093beda">BOOST_PWM_DUTY_CYCLE_MAX</a> * (float)<a class="el" href="a00397.html#gaea6976b3f447778b9ad2fa13f59d1b6c">BOOST_PWM_PERIOD</a>)</td></tr>
-<tr class="memdesc:ga80b5db734cfd87c6c86e129cebc41e7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This sets the maximum duty cycle.  <a href="a00397.html#ga80b5db734cfd87c6c86e129cebc41e7d">More...</a><br /></td></tr>
-<tr class="separator:ga80b5db734cfd87c6c86e129cebc41e7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8a933141f646bbc652df2cd125537355"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00397.html#ga8a933141f646bbc652df2cd125537355">BOOST_LEB_PERIOD</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00396.html#gadef417fa6e9b29f43fc1b26321f07750">BOOST_LEADING_EDGE_BLANKING</a> / (float)<a class="el" href="a00384.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td></tr>
-<tr class="memdesc:ga8a933141f646bbc652df2cd125537355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leading Edge Blanking = n x PWM resolution (here: 50 x 2ns = 100ns)  <a href="a00397.html#ga8a933141f646bbc652df2cd125537355">More...</a><br /></td></tr>
-<tr class="separator:ga8a933141f646bbc652df2cd125537355"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa09f46099993bd71d6af50f3432826e9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00397.html#gaa09f46099993bd71d6af50f3432826e9">BOOST_PWM_DEAD_TIME_LE</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00396.html#ga30bc95c5be03be162bd08c04706e34b2">BOOST_DEAD_TIME_LEADING_EDGE</a> / (float)<a class="el" href="a00384.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td></tr>
-<tr class="memdesc:gaa09f46099993bd71d6af50f3432826e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rising edge dead time [tick = 250ps].  <a href="a00397.html#gaa09f46099993bd71d6af50f3432826e9">More...</a><br /></td></tr>
-<tr class="separator:gaa09f46099993bd71d6af50f3432826e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8941ff7355e606ac980fc5002fcb9844"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00397.html#ga8941ff7355e606ac980fc5002fcb9844">BOOST_PWM_DEAD_TIME_FE</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00396.html#gacc7415a2a9fd14abe19588dac5804b22">BOOST_DEAD_TIME_FALLING_EDGE</a> / (float)<a class="el" href="a00384.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td></tr>
-<tr class="memdesc:ga8941ff7355e606ac980fc5002fcb9844"><td class="mdescLeft">&#160;</td><td class="mdescRight">Falling edge dead time [tick = 250ps].  <a href="a00397.html#ga8941ff7355e606ac980fc5002fcb9844">More...</a><br /></td></tr>
-<tr class="separator:ga8941ff7355e606ac980fc5002fcb9844"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga197f587a79697441cb15f08ffe527e56"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00397.html#ga197f587a79697441cb15f08ffe527e56">_OsTimerInterrupt</a>&#160;&#160;&#160;_T1Interrupt</td></tr>
+<tr class="memdesc:ga197f587a79697441cb15f08ffe527e56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global state-machine peripheral assignments.  <a href="a00397.html#ga197f587a79697441cb15f08ffe527e56">More...</a><br /></td></tr>
+<tr class="separator:ga197f587a79697441cb15f08ffe527e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9e2f08edcbbe0b28c502b3b024572962"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00397.html#ga9e2f08edcbbe0b28c502b3b024572962">_OSTIMER_IP</a>&#160;&#160;&#160;_T1IP</td></tr>
+<tr class="memdesc:ga9e2f08edcbbe0b28c502b3b024572962"><td class="mdescLeft">&#160;</td><td class="mdescRight">interrupt priority register  <a href="a00397.html#ga9e2f08edcbbe0b28c502b3b024572962">More...</a><br /></td></tr>
+<tr class="separator:ga9e2f08edcbbe0b28c502b3b024572962"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf169ca56f95334f16dd2bca15dc108d5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00397.html#gaf169ca56f95334f16dd2bca15dc108d5">_OSTIMER_IE</a>&#160;&#160;&#160;_T1IE</td></tr>
+<tr class="memdesc:gaf169ca56f95334f16dd2bca15dc108d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">interrupt enable bit  <a href="a00397.html#gaf169ca56f95334f16dd2bca15dc108d5">More...</a><br /></td></tr>
+<tr class="separator:gaf169ca56f95334f16dd2bca15dc108d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf0c6fb4644dc461d279c70028eeb0e0a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00397.html#gaf0c6fb4644dc461d279c70028eeb0e0a">_OSTIMER_IF</a>&#160;&#160;&#160;_T1IF</td></tr>
+<tr class="memdesc:gaf0c6fb4644dc461d279c70028eeb0e0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">interrupt flag bit  <a href="a00397.html#gaf0c6fb4644dc461d279c70028eeb0e0a">More...</a><br /></td></tr>
+<tr class="separator:gaf0c6fb4644dc461d279c70028eeb0e0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae01b52fce8c5689574bfa3ad07c29f4e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00397.html#gae01b52fce8c5689574bfa3ad07c29f4e">_OSTIMER_PRIORITY</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memdesc:gae01b52fce8c5689574bfa3ad07c29f4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">interrupt priority (1 ... 7, default = 2)  <a href="a00397.html#gae01b52fce8c5689574bfa3ad07c29f4e">More...</a><br /></td></tr>
+<tr class="separator:gae01b52fce8c5689574bfa3ad07c29f4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Conversion macros converting physical quantities of parameters into binary (integer) numbers for registers and variables. </p>
+<p>Assignment of microcontroller device specific chip-resources to circuit functions and signals. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga8a933141f646bbc652df2cd125537355"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8a933141f646bbc652df2cd125537355">&#9670;&nbsp;</a></span>BOOST_LEB_PERIOD</h2>
+<a id="gaf169ca56f95334f16dd2bca15dc108d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf169ca56f95334f16dd2bca15dc108d5">&#9670;&nbsp;</a></span>_OSTIMER_IE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_LEB_PERIOD&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00396.html#gadef417fa6e9b29f43fc1b26321f07750">BOOST_LEADING_EDGE_BLANKING</a> / (float)<a class="el" href="a00384.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td>
+          <td class="memname">#define _OSTIMER_IE&#160;&#160;&#160;_T1IE</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Leading Edge Blanking = n x PWM resolution (here: 50 x 2ns = 100ns) </p>
+<p>interrupt enable bit </p>
 
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00995">995</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00176">176</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga80b5db734cfd87c6c86e129cebc41e7d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga80b5db734cfd87c6c86e129cebc41e7d">&#9670;&nbsp;</a></span>BOOST_PWM_DC_MAX</h2>
+<a id="gaf0c6fb4644dc461d279c70028eeb0e0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf0c6fb4644dc461d279c70028eeb0e0a">&#9670;&nbsp;</a></span>_OSTIMER_IF</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_PWM_DC_MAX&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00396.html#gafe2eededed4304c44e47642b9093beda">BOOST_PWM_DUTY_CYCLE_MAX</a> * (float)<a class="el" href="a00397.html#gaea6976b3f447778b9ad2fa13f59d1b6c">BOOST_PWM_PERIOD</a>)</td>
+          <td class="memname">#define _OSTIMER_IF&#160;&#160;&#160;_T1IF</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>This sets the maximum duty cycle. </p>
+<p>interrupt flag bit </p>
 
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00994">994</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00177">177</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga2b04d5efbae62e16fd8dfe59f186e0e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2b04d5efbae62e16fd8dfe59f186e0e4">&#9670;&nbsp;</a></span>BOOST_PWM_DC_MIN</h2>
+<a id="ga9e2f08edcbbe0b28c502b3b024572962"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9e2f08edcbbe0b28c502b3b024572962">&#9670;&nbsp;</a></span>_OSTIMER_IP</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_PWM_DC_MIN&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00396.html#gaf4b6b5baf07ba17e75f66ec5305c68fb">BOOST_PWM_DUTY_CYCLE_MIN</a> * (float)<a class="el" href="a00397.html#gaea6976b3f447778b9ad2fa13f59d1b6c">BOOST_PWM_PERIOD</a>)</td>
+          <td class="memname">#define _OSTIMER_IP&#160;&#160;&#160;_T1IP</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>This sets the minimum duty cycle. </p>
+<p>interrupt priority register </p>
 
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00993">993</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00175">175</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga8941ff7355e606ac980fc5002fcb9844"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8941ff7355e606ac980fc5002fcb9844">&#9670;&nbsp;</a></span>BOOST_PWM_DEAD_TIME_FE</h2>
+<a id="gae01b52fce8c5689574bfa3ad07c29f4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae01b52fce8c5689574bfa3ad07c29f4e">&#9670;&nbsp;</a></span>_OSTIMER_PRIORITY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_PWM_DEAD_TIME_FE&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00396.html#gacc7415a2a9fd14abe19588dac5804b22">BOOST_DEAD_TIME_FALLING_EDGE</a> / (float)<a class="el" href="a00384.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td>
+          <td class="memname">#define _OSTIMER_PRIORITY&#160;&#160;&#160;2</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Falling edge dead time [tick = 250ps]. </p>
+<p>interrupt priority (1 ... 7, default = 2) </p>
 
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00997">997</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00178">178</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gaa09f46099993bd71d6af50f3432826e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa09f46099993bd71d6af50f3432826e9">&#9670;&nbsp;</a></span>BOOST_PWM_DEAD_TIME_LE</h2>
+<a id="ga197f587a79697441cb15f08ffe527e56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga197f587a79697441cb15f08ffe527e56">&#9670;&nbsp;</a></span>_OsTimerInterrupt</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_PWM_DEAD_TIME_LE&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00396.html#ga30bc95c5be03be162bd08c04706e34b2">BOOST_DEAD_TIME_LEADING_EDGE</a> / (float)<a class="el" href="a00384.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td>
+          <td class="memname">void _OsTimerInterrupt</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">void</td><td>)</td>
+          <td>&#160;&#160;&#160;_T1Interrupt</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Rising edge dead time [tick = 250ps]. </p>
+<p>Global state-machine peripheral assignments. </p>
+<p>High priority task sequence executed on a fixed 100us pace.</p>
+<p>The main task scheduler time base required a timer interrupt to separate high-priority from low-priority tasks. The high priority task timer interrupt is configured here. Interrupt serivce routine label</p>
+<p>This interrupt is used to call the high priority task sequence at a fixed repetition frequency of 10 kHz (= 100 us period). </p>
 
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00996">996</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gaea6976b3f447778b9ad2fa13f59d1b6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaea6976b3f447778b9ad2fa13f59d1b6c">&#9670;&nbsp;</a></span>BOOST_PWM_PERIOD</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BOOST_PWM_PERIOD&#160;&#160;&#160;(uint16_t)(float)(<a class="el" href="a00397.html#ga9761ffc82ba31b2d74dc97f7fa9e59d3">BOOST_SWITCHING_PERIOD</a> / <a class="el" href="a00384.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This sets the switching period of the converter. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00991">991</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga9307dbea0e54e2e63f9e16474d52cc27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9307dbea0e54e2e63f9e16474d52cc27">&#9670;&nbsp;</a></span>BOOST_PWM_PHASE_SHIFT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BOOST_PWM_PHASE_SHIFT&#160;&#160;&#160;(uint16_t)((float)<a class="el" href="a00397.html#gaea6976b3f447778b9ad2fa13f59d1b6c">BOOST_PWM_PERIOD</a> / (float)<a class="el" href="a00396.html#ga5208c54df1cdb14e00e62eb7957820f6">BOOST_NO_OF_PHASES</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This sets the phase shift between phase #1 and #2. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00992">992</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga9761ffc82ba31b2d74dc97f7fa9e59d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9761ffc82ba31b2d74dc97f7fa9e59d3">&#9670;&nbsp;</a></span>BOOST_SWITCHING_PERIOD</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BOOST_SWITCHING_PERIOD&#160;&#160;&#160;(float)(1.0/<a class="el" href="a00396.html#ga190c68d192a604d70087146623fedd1d">BOOST_SWITCHING_FREQUENCY</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Conversion macros for user-declarations of PWM parameters. </p>
-<p>These conversion macros are used to convert user settings defined as physical quantities into binary (integer) numbers, which will be written to registers and variables and used in calculations throughout the firmware. Switching period in [sec] </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00990">990</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gab995ebe4d204b2618814cea80f7d6eb0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab995ebe4d204b2618814cea80f7d6eb0">&#9670;&nbsp;</a></span>BUCK_LEB_PERIOD</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_LEB_PERIOD&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00396.html#ga53e830102be3559594f1f107c42e3cb2">BUCK_LEADING_EDGE_BLANKING</a> / (float)<a class="el" href="a00384.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Leading Edge Blanking = n x PWM resolution (here: 50 x 2ns = 100ns) </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00362">362</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga1d48ac69185f603b84967ce0e8d41713"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga1d48ac69185f603b84967ce0e8d41713">&#9670;&nbsp;</a></span>BUCK_PWM_DC_MAX</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_PWM_DC_MAX&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00396.html#ga355fe35bc08bc0f4657be7f638a643a6">BUCK_PWM_DUTY_CYCLE_MAX</a> * (float)<a class="el" href="a00397.html#gaf74e7d1749ac835a5c6be8c3faa8be80">BUCK_PWM_PERIOD</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This sets the maximum duty cycle. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00361">361</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gae2647a90f6c1fd8f7a3bb2a236a3b187"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae2647a90f6c1fd8f7a3bb2a236a3b187">&#9670;&nbsp;</a></span>BUCK_PWM_DC_MIN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_PWM_DC_MIN&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00396.html#gabcc43f4201492160173351db97ddcfda">BUCK_PWM_DUTY_CYCLE_MIN</a> * (float)<a class="el" href="a00397.html#gaf74e7d1749ac835a5c6be8c3faa8be80">BUCK_PWM_PERIOD</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This sets the minimum duty cycle. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00360">360</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga2887c277f2ac42c326c2ccf61b3b1f3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2887c277f2ac42c326c2ccf61b3b1f3d">&#9670;&nbsp;</a></span>BUCK_PWM_DEAD_TIME_FE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_PWM_DEAD_TIME_FE&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00396.html#gafe895b572c7fdeced04221d53c18695d">BUCK_DEAD_TIME_FALLING_EDGE</a> / (float)<a class="el" href="a00384.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Falling edge dead time [tick = 250ps]. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00364">364</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gace85e0df46d4d83380cdd555d5e572bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gace85e0df46d4d83380cdd555d5e572bb">&#9670;&nbsp;</a></span>BUCK_PWM_DEAD_TIME_LE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_PWM_DEAD_TIME_LE&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00396.html#gaee8430cb24cfc1cdd3b12dd3c40b09d5">BUCK_DEAD_TIME_LEADING_EDGE</a> / (float)<a class="el" href="a00384.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Rising edge dead time [tick = 250ps]. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00363">363</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gaf74e7d1749ac835a5c6be8c3faa8be80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf74e7d1749ac835a5c6be8c3faa8be80">&#9670;&nbsp;</a></span>BUCK_PWM_PERIOD</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_PWM_PERIOD&#160;&#160;&#160;(uint16_t)(float)(<a class="el" href="a00397.html#gaeee647e1d9ee7976f26810db539bf3d2">BUCK_SWITCHING_PERIOD</a> / <a class="el" href="a00384.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This sets the switching period of the converter. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00358">358</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga8d1f73f218b93bd2301373cf458f8c85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8d1f73f218b93bd2301373cf458f8c85">&#9670;&nbsp;</a></span>BUCK_PWM_PHASE_SHIFT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_PWM_PHASE_SHIFT&#160;&#160;&#160;(uint16_t)((float)<a class="el" href="a00397.html#gaf74e7d1749ac835a5c6be8c3faa8be80">BUCK_PWM_PERIOD</a> / (float)<a class="el" href="a00396.html#ga353ba60329e90d1aca97deba7e0bd669">BUCK_NO_OF_PHASES</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This sets the phase shift between phase #1 and #2. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00359">359</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gaeee647e1d9ee7976f26810db539bf3d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaeee647e1d9ee7976f26810db539bf3d2">&#9670;&nbsp;</a></span>BUCK_SWITCHING_PERIOD</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_SWITCHING_PERIOD&#160;&#160;&#160;(float)(1.0/<a class="el" href="a00396.html#gadecc3fb9cc6da0d2add11d577d50d5b5">BUCK_SWITCHING_FREQUENCY</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Conversion macros for user-declarations of PWM parameters. </p>
-<p>These conversion macros are used to convert user settings defined as physical quantities into binary (integer) numbers, which will be written to registers and variables and used in calculations throughout the firmware. Switching period in [sec] </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00357">357</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00174">174</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

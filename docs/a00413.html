@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Temperature Feedback</title>
+<title>Digital Power Starter Kit 3 Firmware: Microcontroller Abstraction</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,35 +106,29 @@ $(document).ready(function(){initNavTree('a00413.html',''); initResizable(); });
   <div class="summary">
 <a href="#groups">Modules</a>  </div>
   <div class="headertitle">
-<div class="title">Temperature Feedback<div class="ingroups"><a class="el" href="a00537.html">Hardware Abstraction Layer</a></div></div>  </div>
+<div class="title">Microcontroller Abstraction<div class="ingroups"><a class="el" href="a00565.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00408.html">PWM Settings</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Declaration of temperature feedback parameters.  
+<p>PWM peripheral output pins, control signals and register assignments.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Temperature Feedback:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Microcontroller Abstraction:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00413.svg" width="586" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00413.svg" width="502" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
 Modules</h2></td></tr>
-<tr class="memitem:a00414"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html">User Settings</a></td></tr>
-<tr class="memdesc:a00414"><td class="mdescLeft">&#160;</td><td class="mdescRight">User-declaration of temperature feedback parameters using physical quantities. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00415"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00415.html">Conversion Macros</a></td></tr>
-<tr class="memdesc:a00415"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion macros for user-declarations of temperature feedback parameters. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00416"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html">Microcontroller Abstraction</a></td></tr>
-<tr class="memdesc:a00416"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device analog input pin, register and interrupt vector assignments of temperature feedback signal(s) <br /></td></tr>
+<tr class="memitem:a00414"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html">Buck Converter</a></td></tr>
+<tr class="memdesc:a00414"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM peripheral output pins, control signals and register assignments used to drive the buck converter. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Declaration of temperature feedback parameters. </p>
+<p>PWM peripheral output pins, control signals and register assignments. </p>
+<p>In this section generic labels are assigned to dedicated device pins and peripheral registers of PWM generators used to commutate the power supply plant switching node. These settings allow the fast re-assignments of feedback signals in case of hardware changes and make the code more readable. </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

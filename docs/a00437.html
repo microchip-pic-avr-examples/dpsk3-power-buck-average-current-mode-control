@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Variables</title>
+<title>Digital Power Starter Kit 3 Firmware: User Settings</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -103,64 +103,65 @@ $(document).ready(function(){initNavTree('a00437.html',''); initResizable(); });
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">Variables<div class="ingroups"><a class="el" href="a00539.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00429.html">Fault Handler Library</a> &raquo; <a class="el" href="a00433.html">Private Properties</a></div></div>  </div>
+<div class="title">User Settings<div class="ingroups"><a class="el" href="a00565.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00436.html">Temperature Feedback</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>User-declaration of temperature feedback parameters using physical quantities.  
+<a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Variables:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for User Settings:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00437.svg" width="259" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00437.svg" width="315" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:gae156cbea82542eb60e237bc105e94f3e"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01416.html">FAULT_OBJECT_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00437.html#gae156cbea82542eb60e237bc105e94f3e">fltObjectClear</a></td></tr>
-<tr class="memdesc:gae156cbea82542eb60e237bc105e94f3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the fault objects.  <a href="a00437.html#gae156cbea82542eb60e237bc105e94f3e">More...</a><br /></td></tr>
-<tr class="separator:gae156cbea82542eb60e237bc105e94f3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9f5cda6482c73fe8c8f5ea4925f424cc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00437.html#ga9f5cda6482c73fe8c8f5ea4925f424cc">TEMP_CAL_ZERO</a>&#160;&#160;&#160;(float) 0.500</td></tr>
+<tr class="memdesc:ga9f5cda6482c73fe8c8f5ea4925f424cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration of temperature feedback properties.  <a href="a00437.html#ga9f5cda6482c73fe8c8f5ea4925f424cc">More...</a><br /></td></tr>
+<tr class="separator:ga9f5cda6482c73fe8c8f5ea4925f424cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga59e106df97f7006e1ae74c6d3f684550"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00437.html#ga59e106df97f7006e1ae74c6d3f684550">TEMP_CAL_SLOPE</a>&#160;&#160;&#160;(float) 0.010</td></tr>
+<tr class="separator:ga59e106df97f7006e1ae74c6d3f684550"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>This chapter provides detailed information about the private variables provided by the fault handler library. </p>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="gae156cbea82542eb60e237bc105e94f3e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae156cbea82542eb60e237bc105e94f3e">&#9670;&nbsp;</a></span>fltObjectClear</h2>
+<p>User-declaration of temperature feedback parameters using physical quantities. </p>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga59e106df97f7006e1ae74c6d3f684550"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga59e106df97f7006e1ae74c6d3f684550">&#9670;&nbsp;</a></span>TEMP_CAL_SLOPE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a01416.html">FAULT_OBJECT_s</a> fltObjectClear</td>
+          <td class="memname">#define TEMP_CAL_SLOPE&#160;&#160;&#160;(float) 0.010</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= </div>
-<div class="line">{</div>
-<div class="line">        .Status.bits.CompareType = FLTCMP_NONE,     </div>
-<div class="line">        .Status.bits.Enabled = <span class="keyword">false</span>,               </div>
-<div class="line">        .Status.bits.FaultActive = <span class="keyword">true</span>,            </div>
-<div class="line">        .Status.bits.FaultStatus = <span class="keyword">true</span>,            </div>
-<div class="line">        .Counter = 0,                               </div>
-<div class="line">        .SourceObject.ptrObject = NULL,             </div>
-<div class="line">        .SourceObject.bitMask = 0xFFFF,             </div>
-<div class="line">        .ReferenceObject.ptrObject = NULL,          </div>
-<div class="line">        .ReferenceObject.bitMask = 0xFFFF,          </div>
-<div class="line">        .TripResponse.compareThreshold = 0,         </div>
-<div class="line">        .TripResponse.eventThreshold = 0,           </div>
-<div class="line">        .TripResponse.ptrResponseFunction = NULL,   </div>
-<div class="line">        .RecoveryResponse.compareThreshold = 0,     </div>
-<div class="line">        .RecoveryResponse.eventThreshold = 0,       </div>
-<div class="line">        .RecoveryResponse.ptrResponseFunction = NULL,  </div>
-<div class="line">    }</div>
-</div><!-- fragment -->
-<p>Clears the fault objects. </p>
-<p>The fltObjectClear object is used during pre-initialization of user-defined fault pbjects, clearing all settings and setting the FaultActive and FaultStatus fault object status flag bts. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00161_source.html#l00001">1</a> of file <a class="el" href="a00161_source.html">drv_fault_handler.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00302">302</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga9f5cda6482c73fe8c8f5ea4925f424cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9f5cda6482c73fe8c8f5ea4925f424cc">&#9670;&nbsp;</a></span>TEMP_CAL_ZERO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TEMP_CAL_ZERO&#160;&#160;&#160;(float) 0.500</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Declaration of temperature feedback properties. </p>
+<p>In this section the temperature feedback signal scaling, gain and valid signal limits are specified. Physical quantities are used to define parameter values to ease the system configuration.</p>
+<p>As DPSK3 has one, central on-board temperature sensor between the load resistor banks indicating the worst case system temperature.</p>
+<p>Macros are used to convert given physical values into binary (integer) number to be written into SFRs and variables and being used in runtime calculations. <br  />
+ (see <a class="el" href="a00438.html">Conversion Macros</a> for details) </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00301">301</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

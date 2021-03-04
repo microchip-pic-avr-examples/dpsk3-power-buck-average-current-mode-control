@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Power Supply Control</title>
+<title>Digital Power Starter Kit 3 Firmware: NPNZ_LIMITS_s Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -102,88 +102,167 @@ $(document).ready(function(){initNavTree('a01654.html',''); initResizable(); });
 </iframe>
 </div>
 
-<div class="PageDoc"><div class="header">
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">Power Supply Control </div>  </div>
+<div class="title">NPNZ_LIMITS_s Struct Reference<div class="ingroups"><a class="el" href="a00586.html">Library Driver Layer</a> &raquo; <a class="el" href="a00548.html">Power Converter Control Driver</a> &raquo; <a class="el" href="a00551.html">Properties</a> &raquo; <a class="el" href="a00553.html">Data Object Members</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><span id="startDoc"> </span> </p><div style="text-align:left"> <img src="images/startbanner.png" alt="Firmware Quick-Start Guide" height="70" width="880" class="inline"/> </div><h1><a class="anchor" id="autotoc_md21"></a>
-Table of Contents</h1>
-<ul>
-<li><a href="#vmc_1">DPSK3 Buck Converter Average Current Mode Control Implementation</a></li>
-<li><a href="#vmc_2">Control Loop Block Diagram</a></li>
-<li><a href="#vmc_3">Control Loop Timing</a></li>
-<li><a href="#vmc_4">Control Loop Flow Chart</a></li>
-<li><a href="#vmc_5">Control Loop Firmware Implementation</a></li>
+
+<p>System Anti-Windup (Output Clamping) Thresholds.  
+ <a href="a01654.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="a00311_source.html">power_control/drivers/npnz16b.h</a>&gt;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for NPNZ_LIMITS_s:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a01653.svg" width="152" height="375"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for NPNZ_LIMITS_s:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a01652.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a4a0b0ed45a1400930c789f007bed7270"><td class="memItemLeft" align="right" valign="top">volatile int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01654.html#a4a0b0ed45a1400930c789f007bed7270">MinOutput</a></td></tr>
+<tr class="memdesc:a4a0b0ed45a1400930c789f007bed7270"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum output value used for clamping (R/W)  <a href="a01654.html#a4a0b0ed45a1400930c789f007bed7270">More...</a><br /></td></tr>
+<tr class="separator:a4a0b0ed45a1400930c789f007bed7270"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ff4148e12916cb65656b9d3387a6e71"><td class="memItemLeft" align="right" valign="top">volatile int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01654.html#a0ff4148e12916cb65656b9d3387a6e71">MaxOutput</a></td></tr>
+<tr class="memdesc:a0ff4148e12916cb65656b9d3387a6e71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum output value used for clamping (R/W)  <a href="a01654.html#a0ff4148e12916cb65656b9d3387a6e71">More...</a><br /></td></tr>
+<tr class="separator:a0ff4148e12916cb65656b9d3387a6e71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28fe2b583e16d86badea77dbdc199104"><td class="memItemLeft" align="right" valign="top">volatile int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01654.html#a28fe2b583e16d86badea77dbdc199104">AltMinOutput</a></td></tr>
+<tr class="memdesc:a28fe2b583e16d86badea77dbdc199104"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alternate minimum output value used for clamping (R/W)  <a href="a01654.html#a28fe2b583e16d86badea77dbdc199104">More...</a><br /></td></tr>
+<tr class="separator:a28fe2b583e16d86badea77dbdc199104"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e923dee71273b4a3b30c6ee8f7a489d"><td class="memItemLeft" align="right" valign="top">volatile int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01654.html#a5e923dee71273b4a3b30c6ee8f7a489d">AltMaxOutput</a></td></tr>
+<tr class="memdesc:a5e923dee71273b4a3b30c6ee8f7a489d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alternate maximum output value used for clamping (R/W)  <a href="a01654.html#a5e923dee71273b4a3b30c6ee8f7a489d">More...</a><br /></td></tr>
+<tr class="separator:a5e923dee71273b4a3b30c6ee8f7a489d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_a01674"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_a01674')"><img src="closed.png" alt="-"/>&#160;Data Fields inherited from <a class="el" href="a01674.html">NPNZ16b_s</a></td></tr>
+<tr class="memitem:a38a4b2427f4b2b06c112385e722e1419 inherit pub_attribs_a01674"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01622.html">NPNZ_STATUS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01674.html#a38a4b2427f4b2b06c112385e722e1419">status</a></td></tr>
+<tr class="memdesc:a38a4b2427f4b2b06c112385e722e1419 inherit pub_attribs_a01674"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control Loop Status and Control flags.  <a href="a01674.html#a38a4b2427f4b2b06c112385e722e1419">More...</a><br /></td></tr>
+<tr class="separator:a38a4b2427f4b2b06c112385e722e1419 inherit pub_attribs_a01674"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae834fa9c7338d08d0fa927c901c2503f inherit pub_attribs_a01674"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01642.html">NPNZ_PORTS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01674.html#ae834fa9c7338d08d0fa927c901c2503f">Ports</a></td></tr>
+<tr class="memdesc:ae834fa9c7338d08d0fa927c901c2503f inherit pub_attribs_a01674"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controller input and output ports.  <a href="a01674.html#ae834fa9c7338d08d0fa927c901c2503f">More...</a><br /></td></tr>
+<tr class="separator:ae834fa9c7338d08d0fa927c901c2503f inherit pub_attribs_a01674"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa98db9224dce165f72d861acc8558419 inherit pub_attribs_a01674"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01646.html">NPNZ_FILTER_PARAMS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01674.html#aa98db9224dce165f72d861acc8558419">Filter</a></td></tr>
+<tr class="memdesc:aa98db9224dce165f72d861acc8558419 inherit pub_attribs_a01674"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter parameters such as pointer to history and coefficient arrays and number scaling.  <a href="a01674.html#aa98db9224dce165f72d861acc8558419">More...</a><br /></td></tr>
+<tr class="separator:aa98db9224dce165f72d861acc8558419 inherit pub_attribs_a01674"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c9fc0a5e04a384801d066b95dc27f5d inherit pub_attribs_a01674"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01650.html">NPNZ_GAIN_CONTROL_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01674.html#a3c9fc0a5e04a384801d066b95dc27f5d">GainControl</a></td></tr>
+<tr class="memdesc:a3c9fc0a5e04a384801d066b95dc27f5d inherit pub_attribs_a01674"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameter section for advanced control options.  <a href="a01674.html#a3c9fc0a5e04a384801d066b95dc27f5d">More...</a><br /></td></tr>
+<tr class="separator:a3c9fc0a5e04a384801d066b95dc27f5d inherit pub_attribs_a01674"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6127947619eb634f1a3c3650529e092c inherit pub_attribs_a01674"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01654.html">NPNZ_LIMITS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01674.html#a6127947619eb634f1a3c3650529e092c">Limits</a></td></tr>
+<tr class="memdesc:a6127947619eb634f1a3c3650529e092c inherit pub_attribs_a01674"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input and output clamping values.  <a href="a01674.html#a6127947619eb634f1a3c3650529e092c">More...</a><br /></td></tr>
+<tr class="separator:a6127947619eb634f1a3c3650529e092c inherit pub_attribs_a01674"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa708a44ef3b59a931f929bc6c72e07fc inherit pub_attribs_a01674"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01658.html">NPNZ_ADC_TRGCTRL_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01674.html#aa708a44ef3b59a931f929bc6c72e07fc">ADCTriggerControl</a></td></tr>
+<tr class="memdesc:aa708a44ef3b59a931f929bc6c72e07fc inherit pub_attribs_a01674"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automatic ADC trigger placement options for ADC Trigger A and B.  <a href="a01674.html#aa708a44ef3b59a931f929bc6c72e07fc">More...</a><br /></td></tr>
+<tr class="separator:aa708a44ef3b59a931f929bc6c72e07fc inherit pub_attribs_a01674"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a971260b757f0c8822315d8c82a603142 inherit pub_attribs_a01674"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01662.html">NPNZ_DATA_PROVIDERS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01674.html#a971260b757f0c8822315d8c82a603142">DataProviders</a></td></tr>
+<tr class="memdesc:a971260b757f0c8822315d8c82a603142 inherit pub_attribs_a01674"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automated data sources pushing recent data points to user-defined variables.  <a href="a01674.html#a971260b757f0c8822315d8c82a603142">More...</a><br /></td></tr>
+<tr class="separator:a971260b757f0c8822315d8c82a603142 inherit pub_attribs_a01674"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a486610694a9aac008ab8c01a0ab88090 inherit pub_attribs_a01674"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01666.html">NPNZ_EXTENSION_HOOKS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01674.html#a486610694a9aac008ab8c01a0ab88090">ExtensionHooks</a></td></tr>
+<tr class="memdesc:a486610694a9aac008ab8c01a0ab88090 inherit pub_attribs_a01674"><td class="mdescLeft">&#160;</td><td class="mdescRight">User extension function triggers using function pointers with parameters.  <a href="a01674.html#a486610694a9aac008ab8c01a0ab88090">More...</a><br /></td></tr>
+<tr class="separator:a486610694a9aac008ab8c01a0ab88090 inherit pub_attribs_a01674"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae10c373e7000ff11abbb151f019793e0 inherit pub_attribs_a01674"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01670.html">NPNZ_USER_DATA_BUFFER_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01674.html#ae10c373e7000ff11abbb151f019793e0">Advanced</a></td></tr>
+<tr class="memdesc:ae10c373e7000ff11abbb151f019793e0 inherit pub_attribs_a01674"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameter section for advanced user control options.  <a href="a01674.html#ae10c373e7000ff11abbb151f019793e0">More...</a><br /></td></tr>
+<tr class="separator:ae10c373e7000ff11abbb151f019793e0 inherit pub_attribs_a01674"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>System Anti-Windup (Output Clamping) Thresholds. </p>
+<p>The NPNZ_LIMITS_t data object holds all parameters required to automatically clamp the most recent control output to user-defined thresholds. This data type allows the definition of individual minimum and maximum output values for the NPNZ controller primary and alternate output port.</p>
+<p>This feature is optional and needs to be enabled, configured and managed manually in user code. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00311_source.html#l00355">355</a> of file <a class="el" href="a00311_source.html">npnz16b.h</a>.</p>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a id="a5e923dee71273b4a3b30c6ee8f7a489d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e923dee71273b4a3b30c6ee8f7a489d">&#9670;&nbsp;</a></span>AltMaxOutput</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile int16_t AltMaxOutput</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alternate maximum output value used for clamping (R/W) </p>
+
+<p class="definition">Definition at line <a class="el" href="a00311_source.html#l00360">360</a> of file <a class="el" href="a00311_source.html">npnz16b.h</a>.</p>
+
+</div>
+</div>
+<a id="a28fe2b583e16d86badea77dbdc199104"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28fe2b583e16d86badea77dbdc199104">&#9670;&nbsp;</a></span>AltMinOutput</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile int16_t AltMinOutput</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alternate minimum output value used for clamping (R/W) </p>
+
+<p class="definition">Definition at line <a class="el" href="a00311_source.html#l00359">359</a> of file <a class="el" href="a00311_source.html">npnz16b.h</a>.</p>
+
+</div>
+</div>
+<a id="a0ff4148e12916cb65656b9d3387a6e71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ff4148e12916cb65656b9d3387a6e71">&#9670;&nbsp;</a></span>MaxOutput</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile int16_t MaxOutput</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maximum output value used for clamping (R/W) </p>
+
+<p class="definition">Definition at line <a class="el" href="a00311_source.html#l00358">358</a> of file <a class="el" href="a00311_source.html">npnz16b.h</a>.</p>
+
+</div>
+</div>
+<a id="a4a0b0ed45a1400930c789f007bed7270"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a0b0ed45a1400930c789f007bed7270">&#9670;&nbsp;</a></span>MinOutput</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile int16_t MinOutput</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Minimum output value used for clamping (R/W) </p>
+
+<p class="definition">Definition at line <a class="el" href="a00311_source.html#l00357">357</a> of file <a class="el" href="a00311_source.html">npnz16b.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>dpsk_buck_acmc.X/sources/power_control/drivers/<a class="el" href="a00311_source.html">npnz16b.h</a></li>
 </ul>
-<p><span id="vmc_1"> </span></p>
-<h1><a class="anchor" id="autotoc_md22"></a>
-1) DPSK3 Buck Converter Average Current Mode Control Implementation</h1>
-<p>This firmware demonstrates the implementation of a typical dual-loop average current mode controller used to regulate the constant output voltage of the on-board step-down converter of the Digital Power Starter Kit 3 (DPSK3). The implementation of the Current Mode Feedback Loop requires two Analog-to-Digital Converter (ADC) inputs oversampling the output voltage and inductor current of the converter and two PWM outputs (PWM high and PWM low) to drive the power converter half-bridge switch-node in synchronous mode.</p>
-<p>[<a href="#startDoc">back</a>] <span id="vmc_2"> </span></p>
-<h1><a class="anchor" id="autotoc_md23"></a>
-2) Control Loop Block Diagram</h1>
-<p><em>Figure 1</em> shows the block diagram of the buck converter average current mode controller, comprised of an outer voltage loop providing the control reference to an inner current loop. The first ADC input is used to sample the most recent level of the output voltage feedback signal. Once converted, the value is then compared against the internal voltage reference value and the inverse of the deviation between reference and feedback (= <em>error</em>) is pushed through the first discrete compensation filter stage. An Anti-Windup Limiter is used to limit the control loop output range to user-specified minimum and maximum limits.</p>
-<p>The output of the outer voltage loop is passed on to the current reference input of the inner loop, where it gets compared against the most recent current feedback input read through the second ADC input. The inverse of the deviation between reference and feedback (= <em>error</em>) is pushed through the second discrete compensation filter stage. The output of the inner current loop is also passed through an Anti-Windup limiter, limiting the current loop control output to a user-specified range. The limiter output value is then written directly to the PWM duty cycle register of the PWM logic.</p>
-<div style="text-align:center"> <img src="images/average-current-mode-control.png" alt="Firmware Quick-Start Guide" width="800" class="inline"/> <br  />
-<em>Figure 1: Control Loop Block Diagram of Dual-Loop Average Current Mode Control Loop</em><br  />
- </div><p> <br  />
-</p>
-<h1><a class="anchor" id="autotoc_md24"></a>
-3) Control Loop Timing</h1>
-<p>The average current mode control loop block is triggered by the PWM counter at 50% of the off-time. At this point the outer voltage loop controller is called in parallel with the output voltage ADC trigger. The first stage of the control loop is executing the overhead code of calculating the first part of the compensation filter term (= <em>A-Term</em>) until the most recent ADC sample is available to be processed in the later part of the compensation filter term computation (= <em>B-Term</em>). This approach helps to shorten the overall response time of the controller measured between ADC trigger and write back event of the most recent controller result to the duty cycle register of the PWM generator.</p>
-<p>The output of the first stage of the control loop is then passed on to the second stage, the inner current loop. This part of the loop compares the new reference with the most recent inductor current feedback value, which was acquired previously at 50% on-time. The reciprocal of the deviation is passed through the second discrete time domain filter H<sub>C</sub>(z) and Anti-Windup Limiter. The new controller output value will then be divided by two. This value will be used to set the ADC trigger of the current loop at 50% of the on-time and added to half of the period value to place the new ADC trigger point at 50% of the off-time for the voltage loop. If the user has specified additional offsets to compensate FET driver propagation delays, this constant time-offset is added before the ADC trigger locations are updated.</p>
-<p>The new output of the current loop will be written to the PWM duty cycle register and will be updated immediately when the new value of the ADC trigger location of the voltage loop is written to the PWM generator logic.</p>
-<div style="text-align:center"> <img src="images/control_timing_acmc.png" alt="Firmware Quick-Start Guide" width="800" class="inline"/> <br  />
-<em>Figure 2: Control Loop Timing</em><br  />
- </div><p> <br  />
-</p>
-<p>[<a href="#startDoc">back</a>] <span id="vmc_4"> </span></p>
-<h1><a class="anchor" id="autotoc_md25"></a>
-4) Control Loop Flow Chart</h1>
-<p><em>Figure 4</em> shows a typical flow chart of a discrete software feedback loop called at the desired control frequency. It covers the loop path from ADC trigger to PWM output shown in the block diagram above (see <em>Figure 2 and 3</em>) while supporting additional features like an <em>Enable/Disable Bypass Switch</em> or advanced features like <em>Adaptive Gain Control (AGC)</em>.</p>
-<ul>
-<li><span style="color:green"> <b>[green]</b></span> boxes represent default building blocks</li>
-<li><span style="color:grey"> <b>[grey]</b> </span> boxes represent unused optional features</li>
-<li><span style="color:blue"> <b>[blue]</b> </span> boxes represent active optional features</li>
-</ul>
-<div style="text-align:center"> <img src="images/npnz16b-flowchart.png" alt="Firmware Quick-Start Guide" width="460" class="inline"/> <br  />
-<em>Figure 3: Single Control Loop Flow Chart</em><br  />
- </div><p> <br  />
-</p>
-<p>[<a href="#startDoc">back</a>] <span id="vmc_5"> </span></p>
-<h1><a class="anchor" id="autotoc_md26"></a>
-5) Control Loop Firmware Implementation</h1>
-<p><em>Figure 5</em> shows a typical implementation of the power converter state machine and the high-speed control loop in a task scheduler based firmware environment (order right to left of Figure 5).</p>
-<ul>
-<li><span style="color:darkorange"> <b>Real Time Control Loop and Low Level Drivers</b> </span> The control loop is called in an independent high priority Interrupt Service Routine (ISR) by the PWM module simultaneously with triggering the ADC input. Thus, the control loop is tightly coupled to the PWM switching signal and synchronized to the most recent ADC conversion process, allowing a highly deterministic arrangement of code execution, peripheral module activity and external analog circuit operation. The interrupt priority needs to be high enough to override all other software tasks of the firmware to ensure jitter-free execution of the control loop. <br  />
-<br  />
-</li>
-<li><span style="color:green"> <b>Topology-Specific State Machine Library</b></span> Each converter topology requires a specifically tailored configuration of related chip resources as well as start-up, control and monitoring procedures. <em>Topology State Machine Libraries</em> support a wide range of circuit configurations, control modes and functional features. Build-in peripheral configuration drivers are used to ease the configuration of required chip resources, such as number of PWM channels and their signal configuration, number of Analog-to-Digital (ADC) inputs, analog comparators, Digital-to-Analog Converter (DAC) channels, etc. All user configurations of a topology specific power converter are encapsulated in a comprehensive data object. This approach allows the definition of multiple power supplies of the same type being included, monitored and run independently from each other. Each of these power converter objects also include the declaration of the high-speed control loop object described above, enabling it to control peripherals and control loop code to be synchronized to time-critical states. <br  />
-<br  />
-</li>
-<li><span style="color:darkblue"> <b>Application Layer of the Power Supply Control Task</b> </span> The application layer of this task is the proprietary firmware component covering the application-specific configuration of library data objects and high-speed control loops. It also allows to add and tailor functions, which are not covered by the default features of library modules. <br  />
-<br  />
-</li>
-<li><span style="color:grey"> <b>Scheduler Level</b> </span> The scheduler level organizes all tasks of the firmware. Besides the power control and related fault handler task, this DPSK3 code example includes the on-board LC display data output, the on-board push-button control of the LC display screens and the on-board debugging LED, which are considered less time critical, low-priority tasks. The main task scheduler in this firmware example therefore supports two priority levels, one for power control and fault handling, executed at a rate of 10 kHz (= 100 us interval) and the low priority tasks, executed at rates between 0.5 ms and 250 ms. <br  />
-<br  />
-</li>
-</ul>
-<div style="text-align:center"> <img src="images/control-flow-chart.png" alt="Firmware Quick-Start Guide" width="960" class="inline"/> <br  />
-<em>Figure 4: Control Loop Firmware Implementation</em><br  />
- </div><p><br  />
- <br  />
- More detailed information on the library implementation, such as task and library APIs, can be found in the chapter <em>Software Overview</em> on the left side of this window.</p>
-<p>[<a href="#startDoc">back</a>]</p>
-<hr  />
-<p> (c) 2021, Microchip Technology Inc. </p>
-</div></div><!-- contents -->
-</div><!-- PageDoc -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="a01654.html">NPNZ_LIMITS_s</a></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

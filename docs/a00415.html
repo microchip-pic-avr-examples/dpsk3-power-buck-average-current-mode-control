@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Conversion Macros</title>
+<title>Digital Power Starter Kit 3 Firmware: Input Voltage Feedback</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -103,106 +103,37 @@ $(document).ready(function(){initNavTree('a00415.html',''); initResizable(); });
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#groups">Modules</a>  </div>
   <div class="headertitle">
-<div class="title">Conversion Macros<div class="ingroups"><a class="el" href="a00537.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00413.html">Temperature Feedback</a></div></div>  </div>
+<div class="title">Input Voltage Feedback<div class="ingroups"><a class="el" href="a00565.html">Hardware Abstraction Layer</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Conversion macros for user-declarations of temperature feedback parameters.  
+<p>Declaration of input voltage feedback parameters.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Conversion Macros:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Input Voltage Feedback:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00415.svg" width="346" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00415.svg" width="590" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
-<tr class="memitem:gacde6c3fa85c34fe5414566acd2e77ca8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00415.html#gacde6c3fa85c34fe5414566acd2e77ca8">BUCK_FB_TEMP_ZERO</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00414.html#gae1bfd432f4281610523780a3c7dea8c2">BUCK_TEMPCAL_ZERO</a> / <a class="el" href="a00384.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:gacde6c3fa85c34fe5414566acd2e77ca8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion macros of temperature feedback parameters.  <a href="a00415.html#gacde6c3fa85c34fe5414566acd2e77ca8">More...</a><br /></td></tr>
-<tr class="separator:gacde6c3fa85c34fe5414566acd2e77ca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga014133f88cd82218241bf16985302cd4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00415.html#ga014133f88cd82218241bf16985302cd4">BUCK_FB_TEMP_SLOPE</a>&#160;&#160;&#160;(float)(<a class="el" href="a00414.html#gabb9a63a36610e526480fce9dbe4e77d7">BUCK_TEMPCAL_SLOPE</a> / <a class="el" href="a00384.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="separator:ga014133f88cd82218241bf16985302cd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga093804711059cf01cdb3113365ec8ea3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00415.html#ga093804711059cf01cdb3113365ec8ea3">BOOST_FB_TEMP_ZERO</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00414.html#ga6c73550242695c13f4019492d7782fc2">BOOST_TEMPCAL_ZERO</a> / <a class="el" href="a00384.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="memdesc:ga093804711059cf01cdb3113365ec8ea3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion macros of temperature feedback parameters.  <a href="a00415.html#ga093804711059cf01cdb3113365ec8ea3">More...</a><br /></td></tr>
-<tr class="separator:ga093804711059cf01cdb3113365ec8ea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaabab1ff0ffe06204aa20f33caec4f6ce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00415.html#gaabab1ff0ffe06204aa20f33caec4f6ce">BOOST_FB_TEMP_SLOPE</a>&#160;&#160;&#160;(float)(<a class="el" href="a00414.html#gaa3973a312a9169505ae4ee1f19f8ec87">BOOST_TEMPCAL_SLOPE</a> / <a class="el" href="a00384.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td></tr>
-<tr class="separator:gaabab1ff0ffe06204aa20f33caec4f6ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
+Modules</h2></td></tr>
+<tr class="memitem:a00416"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html">User Settings</a></td></tr>
+<tr class="memdesc:a00416"><td class="mdescLeft">&#160;</td><td class="mdescRight">User-declaration of input voltage feedback parameters using physical quantities. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00418"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00418.html">Conversion Macros</a></td></tr>
+<tr class="memdesc:a00418"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion macros for user-declarations of input voltage feedback parameters. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00420"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00420.html">Microcontroller Abstraction</a></td></tr>
+<tr class="memdesc:a00420"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device analog input pin, register and interrupt vector assignments of input voltage feedback signal(s) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Conversion macros for user-declarations of temperature feedback parameters. </p>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="gaabab1ff0ffe06204aa20f33caec4f6ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaabab1ff0ffe06204aa20f33caec4f6ce">&#9670;&nbsp;</a></span>BOOST_FB_TEMP_SLOPE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BOOST_FB_TEMP_SLOPE&#160;&#160;&#160;(float)(<a class="el" href="a00414.html#gaa3973a312a9169505ae4ee1f19f8ec87">BOOST_TEMPCAL_SLOPE</a> / <a class="el" href="a00384.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01325">1325</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga093804711059cf01cdb3113365ec8ea3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga093804711059cf01cdb3113365ec8ea3">&#9670;&nbsp;</a></span>BOOST_FB_TEMP_ZERO</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BOOST_FB_TEMP_ZERO&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00414.html#ga6c73550242695c13f4019492d7782fc2">BOOST_TEMPCAL_ZERO</a> / <a class="el" href="a00384.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Conversion macros of temperature feedback parameters. </p>
-<p>These conversion macros are used to convert user settings defined as physical quantities into binary (integer) numbers, which will be written to registers and variables and used in calculations throughout the firmware. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01324">1324</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga014133f88cd82218241bf16985302cd4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga014133f88cd82218241bf16985302cd4">&#9670;&nbsp;</a></span>BUCK_FB_TEMP_SLOPE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_FB_TEMP_SLOPE&#160;&#160;&#160;(float)(<a class="el" href="a00414.html#gabb9a63a36610e526480fce9dbe4e77d7">BUCK_TEMPCAL_SLOPE</a> / <a class="el" href="a00384.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00691">691</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gacde6c3fa85c34fe5414566acd2e77ca8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gacde6c3fa85c34fe5414566acd2e77ca8">&#9670;&nbsp;</a></span>BUCK_FB_TEMP_ZERO</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_FB_TEMP_ZERO&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00414.html#gae1bfd432f4281610523780a3c7dea8c2">BUCK_TEMPCAL_ZERO</a> / <a class="el" href="a00384.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Conversion macros of temperature feedback parameters. </p>
-<p>These conversion macros are used to convert user settings defined as physical quantities into binary (integer) numbers, which will be written to registers and variables and used in calculations throughout the firmware. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00690">690</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
+<p>Declaration of input voltage feedback parameters. </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

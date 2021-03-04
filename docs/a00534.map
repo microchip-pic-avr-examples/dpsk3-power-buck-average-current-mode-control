@@ -1,6 +1,4 @@
-<map id="Initializing Firmware Tasks" name="Initializing Firmware Tasks">
-<area shape="rect" id="node1" href="$a00536.html" title=" " alt="" coords="369,5,523,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="165,23,301,63"/>
-<area shape="rect" id="node3" href="$a00535.html" title=" " alt="" coords="349,55,543,80"/>
-<area shape="rect" id="node4" href="$a00521.html" title="Device Start Up." alt="" coords="5,31,117,56"/>
+<map id="Data Objects" name="Data Objects">
+<area shape="rect" id="node1" title="Public properties of the Power Converter Control driver." alt="" coords="135,5,233,31"/>
+<area shape="rect" id="node2" href="$a00533.html" title="Public properties of the Power Converter Control driver." alt="" coords="5,5,87,31"/>
 </map>

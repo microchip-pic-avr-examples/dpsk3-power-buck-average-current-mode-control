@@ -1,4 +1,7 @@
 var a00523 =
 [
-    [ "sysLowPriorityTasks_Execute", "a00523.html#gaa1ec8154dbf983b02b3b2dc186c5079d", null ]
+    [ "Buck Converter State Machine", "a00524.html", "a00524" ],
+    [ "Buck Special Functions", "a00530.html", "a00530" ],
+    [ "Buck Peripheral Configuration", "a00536.html", "a00536" ],
+    [ "Buck Peripheral Templates", "a00542.html", "a00542" ]
 ];

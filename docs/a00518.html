@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Private Functions</title>
+<title>Digital Power Starter Kit 3 Firmware: Buck Peripheral Configuration</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -103,24 +103,31 @@ $(document).ready(function(){initNavTree('a00518.html',''); initResizable(); });
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#groups">Modules</a>  </div>
   <div class="headertitle">
-<div class="title">Private Functions<div class="ingroups"><a class="el" href="a00539.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00515.html">Push-Button Library</a></div></div>  </div>
+<div class="title">Buck Peripheral Configuration<div class="ingroups"><a class="el" href="a00567.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00494.html">Buck Converter Library</a> &raquo; <a class="el" href="a00505.html">Buck Converter Library Modules</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Private functions of the push button device driver library.  
-<a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Private Functions:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Buck Peripheral Configuration:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00518.svg" width="319" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00518.svg" width="535" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-</div>
-<p>Private functions of the push button device driver library. </p>
-<p>This is the detailed description of private functions of the push button device driver library.</p>
-<dl class="section note"><dt>Note</dt><dd>This module doesn't have any private functions </dd></dl>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
+Modules</h2></td></tr>
+<tr class="memitem:a00519"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00519.html">Functions</a></td></tr>
+<tr class="memdesc:a00519"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functions of the second library layer. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00520"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00520.html">Properties</a></td></tr>
+<tr class="memdesc:a00520"><td class="mdescLeft">&#160;</td><td class="mdescRight">Properties of the second library layer. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>The buck converter device driver self-manages its chip resources required to initialize and drive the converter stage and related control loops. The device driver provides standard configurations for all peripherals which are loaded into the respective Special Function Registers of each peripheral. The generic configuraitons are sublemented by the user-settings written to the converter data structure in the application layer initialization routine. </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

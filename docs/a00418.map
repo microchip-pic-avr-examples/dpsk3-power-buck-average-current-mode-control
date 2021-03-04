@@ -1,4 +1,5 @@
-<map id="Control Interrupt Vector Declarations" name="Control Interrupt Vector Declarations">
-<area shape="rect" id="node1" href="$a00537.html" title="Hardware Abstraction Layer Declarations." alt="" coords="5,5,152,45"/>
-<area shape="rect" id="node2" title=" " alt="" coords="200,5,356,45"/>
+<map id="Conversion Macros" name="Conversion Macros">
+<area shape="rect" id="node1" title="Conversion macros for user&#45;declarations of input voltage feedback parameters." alt="" coords="212,5,344,31"/>
+<area shape="rect" id="node3" href="$a00419.html" title="Conversion macros for user&#45;declarations of input voltage feedback parameters of the buck converter." alt="" coords="392,5,503,31"/>
+<area shape="rect" id="node2" href="$a00415.html" title="Declaration of input voltage feedback parameters." alt="" coords="5,5,164,31"/>
 </map>

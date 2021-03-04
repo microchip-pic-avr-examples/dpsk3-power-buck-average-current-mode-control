@@ -1,5 +1,7 @@
 var a01556 =
 [
-    [ "EnableInput", "a01556.html#a5eee16f1d70e687a21eb8a5c66d84970", null ],
-    [ "PowerGood", "a01556.html#a734cbe6494d398c56fc249ded4953ea2", null ]
+    [ "control_mode", "a01556.html#a87ffbab0a97e0b24bf304a8829041dab", null ],
+    [ "i_ref", "a01556.html#a0e321445042c37cbb7283d5de4583c09", null ],
+    [ "no_of_phases", "a01556.html#ae002814d52c388ce7d51c8d566d63489", null ],
+    [ "v_ref", "a01556.html#a1c39765936057b7b2b1b90a4126d3f80", null ]
 ];

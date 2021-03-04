@@ -1,24 +1,9 @@
 var a01420 =
 [
-    [ "ADDRERR", "a01420.html#af8aec47fb352c203e084c74faec9d203", null ],
-    [ "APLL", "a01420.html#ab1e4efce2581aa94f22ef865e6ec4a68", null ],
-    [ "CAN", "a01420.html#ab1b536a0b66488fe3567ed766f458b34", null ],
-    [ "CAN2", "a01420.html#ab233a4896dfd7c96b827ca3fc3fe7278", null ],
-    [ "COVAERR", "a01420.html#ae00834b4ecc5e26f69480264de43ec07", null ],
-    [ "COVBERR", "a01420.html#a1a65a8268196f50bb2198e3cf76c1a36", null ],
-    [ "DIV0ERR", "a01420.html#a1281beb6ca8a711b6b6937318b0b0c88", null ],
-    [ "DMACERR", "a01420.html#adaf9bca42fbaf44a4c9e4a41a81e3fca", null ],
-    [ "DOOVR", "a01420.html#a2b0813f968289bb04f95731834a5c404", null ],
-    [ "ECCDBE", "a01420.html#ad57b2339165b0ad43cd3d29b8bc113b2", null ],
-    [ "MATHERR", "a01420.html#ad2b7b3e6c766746ab9be78ce49af5ded", null ],
-    [ "NAE", "a01420.html#ad5855027eb7296bdccdc647c64fa6e13", null ],
-    [ "OSCFAIL", "a01420.html#a620f125069b86e73e57e22145b64c379", null ],
-    [ "OVAERR", "a01420.html#a30c32f037f64d9c2397f405435794df6", null ],
-    [ "OVBERR", "a01420.html#a62dee09ca5bb1da52405aae81c1c14e3", null ],
-    [ "SFTACERR", "a01420.html#a4424f8d4e37af608412acf4722885078", null ],
-    [ "SGHT", "a01420.html#aadd85c7c9844fbc3cd0211e8c28deea9", null ],
-    [ "STKERR", "a01420.html#a2b63851f6cc54b16c631b0842e106493", null ],
-    [ "SWTRAP", "a01420.html#a0ea7db44e3cb773bce8843d9cabc246d", null ],
-    [ "unsigned", "a01420.html#a32e93b068e309da5a319a7a69f3b3ff5", null ],
-    [ "value", "a01420.html#ac394992c7d47027da1de259f501bff0e", null ]
+    [ "Counter", "a01420.html#a9e9b3f9102ce573dc6ac2e1058140322", null ],
+    [ "RecoveryResponse", "a01420.html#af9e053ccdb2ca7c1cff5fcbe4596bf9c", null ],
+    [ "ReferenceObject", "a01420.html#a9e234a289ec2e7de63ab9095222086eb", null ],
+    [ "SourceObject", "a01420.html#ab5f1eb31220187b74ffb14a15e10ce54", null ],
+    [ "Status", "a01420.html#a5682be08ea825740d924680de9b7af60", null ],
+    [ "TripResponse", "a01420.html#aa749f7fba8875502ddb95b0235f7264b", null ]
 ];

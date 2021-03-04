@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: LCD_s Struct Reference</title>
+<title>Digital Power Starter Kit 3 Firmware: TRAP_LOGGER_s Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,88 +106,207 @@ $(document).ready(function(){initNavTree('a01476.html',''); initResizable(); });
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">LCD_s Struct Reference<div class="ingroups"><a class="el" href="a00538.html">Application Layer</a> &raquo; <a class="el" href="a00440.html">LC-Display Application Layer</a> &raquo; <a class="el" href="a00442.html">Public Properties</a></div></div>  </div>
+<div class="title">TRAP_LOGGER_s Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Declaration of public LC display data object.  
+<p>Global data structure for trap event capturing.  
  <a href="a01476.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="a00179_source.html">lcd/app_lcd.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00167_source.html">fault_handler/drivers/drv_trap_handler.h</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for LCD_s:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for TRAP_LOGGER_s:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01474.svg" width="90" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a01475.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for TRAP_LOGGER_s:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a01474.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a085e9fc0863cee4864cf51dcfe1e32df"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01476.html#a085e9fc0863cee4864cf51dcfe1e32df">enabled</a></td></tr>
-<tr class="separator:a085e9fc0863cee4864cf51dcfe1e32df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc2298ffda0c853e699e6da9098f82ae"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01476.html#adc2298ffda0c853e699e6da9098f82ae">refresh</a></td></tr>
-<tr class="separator:adc2298ffda0c853e699e6da9098f82ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea467a9fc04f0771215b952d26bc4392"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01476.html#aea467a9fc04f0771215b952d26bc4392">screen</a></td></tr>
-<tr class="separator:aea467a9fc04f0771215b952d26bc4392"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67fe8ce905ea66883a557013c4069068"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01460.html">TRAPLOG_STATUS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01476.html#a67fe8ce905ea66883a557013c4069068">status</a></td></tr>
+<tr class="memdesc:a67fe8ce905ea66883a557013c4069068"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status word of the Trap Logger object.  <a href="a01476.html#a67fe8ce905ea66883a557013c4069068">More...</a><br /></td></tr>
+<tr class="separator:a67fe8ce905ea66883a557013c4069068"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95744ea4cf032674585b4e25a114c31a"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01476.html#a95744ea4cf032674585b4e25a114c31a">reset_count</a></td></tr>
+<tr class="memdesc:a95744ea4cf032674585b4e25a114c31a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counter of CPU RESET events (read/write)  <a href="a01476.html#a95744ea4cf032674585b4e25a114c31a">More...</a><br /></td></tr>
+<tr class="separator:a95744ea4cf032674585b4e25a114c31a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e7be26899e4fa61a356b5e7eeec83d1"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="a00439.html#gaee63654a5e14dd3b2bab6179a5cbe2ab">TRAP_ID_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01476.html#a6e7be26899e4fa61a356b5e7eeec83d1">trap_id</a></td></tr>
+<tr class="memdesc:a6e7be26899e4fa61a356b5e7eeec83d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trap-ID of the captured incident.  <a href="a01476.html#a6e7be26899e4fa61a356b5e7eeec83d1">More...</a><br /></td></tr>
+<tr class="separator:a6e7be26899e4fa61a356b5e7eeec83d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9216196898128a7f976617aabd34ba77"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01476.html#a9216196898128a7f976617aabd34ba77">trap_count</a></td></tr>
+<tr class="memdesc:a9216196898128a7f976617aabd34ba77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counter tracking the number of occurrences.  <a href="a01476.html#a9216196898128a7f976617aabd34ba77">More...</a><br /></td></tr>
+<tr class="separator:a9216196898128a7f976617aabd34ba77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5a997d3d4260463e5998191af6a24cb"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01424.html">TRAP_FLAGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01476.html#ac5a997d3d4260463e5998191af6a24cb">trap_flags</a></td></tr>
+<tr class="memdesc:ac5a997d3d4260463e5998191af6a24cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Complete list of trap flags (showing all trap flags)  <a href="a01476.html#ac5a997d3d4260463e5998191af6a24cb">More...</a><br /></td></tr>
+<tr class="separator:ac5a997d3d4260463e5998191af6a24cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a622b54af34934b9ed58310984866f335"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01448.html">CPU_RCON_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01476.html#a622b54af34934b9ed58310984866f335">rcon_reg</a></td></tr>
+<tr class="memdesc:a622b54af34934b9ed58310984866f335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Captures the RESET CONTROL register.  <a href="a01476.html#a622b54af34934b9ed58310984866f335">More...</a><br /></td></tr>
+<tr class="separator:a622b54af34934b9ed58310984866f335"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee75cee827a498ec0f8db43c25fe1de7"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01436.html">CPU_INTTREG_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01476.html#aee75cee827a498ec0f8db43c25fe1de7">inttreg</a></td></tr>
+<tr class="memdesc:aee75cee827a498ec0f8db43c25fe1de7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt Vector and Priority register capture.  <a href="a01476.html#aee75cee827a498ec0f8db43c25fe1de7">More...</a><br /></td></tr>
+<tr class="separator:aee75cee827a498ec0f8db43c25fe1de7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0738b0afe33da51a74ec003d4a2d7656"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01472.html">TASK_INFO_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01476.html#a0738b0afe33da51a74ec003d4a2d7656">task_capture</a></td></tr>
+<tr class="memdesc:a0738b0afe33da51a74ec003d4a2d7656"><td class="mdescLeft">&#160;</td><td class="mdescRight">Information of last task executed.  <a href="a01476.html#a0738b0afe33da51a74ec003d4a2d7656">More...</a><br /></td></tr>
+<tr class="separator:a0738b0afe33da51a74ec003d4a2d7656"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Declaration of public LC display data object. </p>
-<p>The struct <a class="el" href="a01476.html" title="Declaration of public LC display data object.">LCD_s</a> data structure defines data fields for all publicly accessible user settings required to configure and drive an on-board LC display. </p>
+<div class="textblock"><p>Global data structure for trap event capturing. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00054">54</a> of file <a class="el" href="a00179_source.html">app_lcd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00167_source.html#l00280">280</a> of file <a class="el" href="a00167_source.html">drv_trap_handler.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="a085e9fc0863cee4864cf51dcfe1e32df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a085e9fc0863cee4864cf51dcfe1e32df">&#9670;&nbsp;</a></span>enabled</h2>
+<a id="aee75cee827a498ec0f8db43c25fe1de7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee75cee827a498ec0f8db43c25fe1de7">&#9670;&nbsp;</a></span>inttreg</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile bool enabled</td>
+          <td class="memname">volatile struct <a class="el" href="a01436.html">CPU_INTTREG_s</a> inttreg</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00055">55</a> of file <a class="el" href="a00179_source.html">app_lcd.h</a>.</p>
+<p>Interrupt Vector and Priority register capture. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00167_source.html#l00285">285</a> of file <a class="el" href="a00167_source.html">drv_trap_handler.h</a>.</p>
 
 </div>
 </div>
-<a id="adc2298ffda0c853e699e6da9098f82ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc2298ffda0c853e699e6da9098f82ae">&#9670;&nbsp;</a></span>refresh</h2>
+<a id="a622b54af34934b9ed58310984866f335"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a622b54af34934b9ed58310984866f335">&#9670;&nbsp;</a></span>rcon_reg</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t refresh</td>
+          <td class="memname">volatile struct <a class="el" href="a01448.html">CPU_RCON_s</a> rcon_reg</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00056">56</a> of file <a class="el" href="a00179_source.html">app_lcd.h</a>.</p>
+<p>Captures the RESET CONTROL register. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00167_source.html#l00285">285</a> of file <a class="el" href="a00167_source.html">drv_trap_handler.h</a>.</p>
 
 </div>
 </div>
-<a id="aea467a9fc04f0771215b952d26bc4392"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea467a9fc04f0771215b952d26bc4392">&#9670;&nbsp;</a></span>screen</h2>
+<a id="a95744ea4cf032674585b4e25a114c31a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95744ea4cf032674585b4e25a114c31a">&#9670;&nbsp;</a></span>reset_count</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t screen</td>
+          <td class="memname">volatile uint16_t reset_count</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00179_source.html#l00057">57</a> of file <a class="el" href="a00179_source.html">app_lcd.h</a>.</p>
+<p>Counter of CPU RESET events (read/write) </p>
+
+<p class="definition">Definition at line <a class="el" href="a00167_source.html#l00283">283</a> of file <a class="el" href="a00167_source.html">drv_trap_handler.h</a>.</p>
+
+</div>
+</div>
+<a id="a67fe8ce905ea66883a557013c4069068"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67fe8ce905ea66883a557013c4069068">&#9670;&nbsp;</a></span>status</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile struct <a class="el" href="a01460.html">TRAPLOG_STATUS_s</a> status</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Status word of the Trap Logger object. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00167_source.html#l00267">267</a> of file <a class="el" href="a00167_source.html">drv_trap_handler.h</a>.</p>
+
+</div>
+</div>
+<a id="a0738b0afe33da51a74ec003d4a2d7656"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0738b0afe33da51a74ec003d4a2d7656">&#9670;&nbsp;</a></span>task_capture</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile struct <a class="el" href="a01472.html">TASK_INFO_s</a> task_capture</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Information of last task executed. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00167_source.html#l00285">285</a> of file <a class="el" href="a00167_source.html">drv_trap_handler.h</a>.</p>
+
+</div>
+</div>
+<a id="a9216196898128a7f976617aabd34ba77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9216196898128a7f976617aabd34ba77">&#9670;&nbsp;</a></span>trap_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t trap_count</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Counter tracking the number of occurrences. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00167_source.html#l00285">285</a> of file <a class="el" href="a00167_source.html">drv_trap_handler.h</a>.</p>
+
+</div>
+</div>
+<a id="ac5a997d3d4260463e5998191af6a24cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5a997d3d4260463e5998191af6a24cb">&#9670;&nbsp;</a></span>trap_flags</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile struct <a class="el" href="a01424.html">TRAP_FLAGS_s</a> trap_flags</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Complete list of trap flags (showing all trap flags) </p>
+
+<p class="definition">Definition at line <a class="el" href="a00167_source.html#l00285">285</a> of file <a class="el" href="a00167_source.html">drv_trap_handler.h</a>.</p>
+
+</div>
+</div>
+<a id="a6e7be26899e4fa61a356b5e7eeec83d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e7be26899e4fa61a356b5e7eeec83d1">&#9670;&nbsp;</a></span>trap_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="a00439.html#gaee63654a5e14dd3b2bab6179a5cbe2ab">TRAP_ID_e</a> trap_id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Trap-ID of the captured incident. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00167_source.html#l00283">283</a> of file <a class="el" href="a00167_source.html">drv_trap_handler.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>dpsk_buck_acmc.X/sources/lcd/<a class="el" href="a00179_source.html">app_lcd.h</a></li>
+<li>dpsk_buck_acmc.X/sources/fault_handler/drivers/<a class="el" href="a00167_source.html">drv_trap_handler.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -195,7 +314,7 @@ Data Fields</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a01476.html">LCD_s</a></li>
+    <li class="navelem"><a class="el" href="a01476.html">TRAP_LOGGER_s</a></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

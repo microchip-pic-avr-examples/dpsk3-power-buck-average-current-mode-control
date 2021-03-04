@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: dpsk_buck_acmc.X/sources/common/p33c_pral/p33c_dsp.c Source File</title>
+<title>Digital Power Starter Kit 3 Firmware: dpsk_buck_acmc.X/sources/common/p33c_pral/p33c_ccp.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,81 +104,94 @@ $(document).ready(function(){initNavTree('a00038_source.html',''); initResizable
 
 <div class="header">
   <div class="headertitle">
-<div class="title">p33c_dsp.c</div>  </div>
+<div class="title">p33c_ccp.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*LICENSE *****************************************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Software License Agreement</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Copyright (R) 2017 Microchip Technology Inc.  All rights reserved. Microchip licenses to you the</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * right to use, modify, copy and distribute Software only when embedded on a Microchip </span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * microcontroller or digital signal controller, which is integrated into your product or third </span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * party product (pursuant to the sublicense terms in the accompanying license agreement).</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * You should refer to the license agreement accompanying this Software for additional information </span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * regarding your rights and obligations.</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * SOFTWARE AND DOCUMENTATION ARE PROVIDED &quot;AS IS&quot; WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR </span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * IMPLIED, INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE, NON-INFRINGEMENT </span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL MICROCHIP OR ITS LICENSORS BE LIABLE OR</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * OBLIGATED UNDER CONTRACT, NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR </span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * OTHER LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES INCLUDING BUT NOT  </span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE OR CONSEQUENTIAL DAMAGES, LOST PROFITS  </span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * OR LOST DATA, COST OF PROCUREMENT OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY  </span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * THIRD PARTIES (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * ***********************************************************************************************/</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// Include Header Files</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;xc.h&gt;</span> <span class="comment">// include processor files - each processor file is guarded.  </span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span> <span class="comment">// include standard integer number data types</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span> <span class="comment">// include standard boolean data types (true/false)</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;p33c_dsp.h&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="a00367.html#gaf288dad5df78426690b7296f0a38bce4">   53</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00367.html#gaf288dad5df78426690b7296f0a38bce4">Dsp_SetConfig</a>(<span class="keyword">volatile</span> <span class="keyword">struct</span> <a class="code" href="a00812.html">DSP_CONFIG_s</a> dsp_cfg)</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">volatile</span> uint16_t retval = 0;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    CORCON = dsp_cfg.<a class="code" href="a00812.html#a3f0c55f449560b03ce0ac43270c26600">value</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span>(CORCON == (dsp_cfg.<a class="code" href="a00812.html#a3f0c55f449560b03ce0ac43270c26600">value</a> &amp; REG_CORCON_VALID_DATA_WRITE_MSK)) </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        retval = 1;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span>(retval);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;} </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00812.html">DSP_CONFIG_s</a> <a class="code" href="a00367.html#gaa6137620b2ae63fce63701725d97ee89">Dsp_GetConfig</a>(void)</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00812.html">DSP_CONFIG_s</a> dsp_cfg;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    dsp_cfg.<a class="code" href="a00812.html#a3f0c55f449560b03ce0ac43270c26600">value</a> = (<span class="keyword">volatile</span> uint16_t)(CORCON); <span class="comment">// &amp; REG_CORCON_VALID_DATA_READ_MSK);</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">return</span>(dsp_cfg);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;} </div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="a00382.html#gaace96580ebc36260c1b6072178f25987">    1</a></span>&#160;<span class="preprocessor">#include &lt;xc.h&gt;</span> <span class="comment">// include processor files - each processor file is guarded.  </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span> <span class="comment">// include standard integer data types</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span> <span class="comment">// include standard boolean data types</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stddef.h&gt;</span> <span class="comment">// include standard definition data types</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;p33c_ccp.h&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00572.html">P33C_CCP_INSTANCE_SFRSET_s</a> <a class="code" href="a00382.html#gaace96580ebc36260c1b6072178f25987">ccpConfigDefault</a> = { </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    .<a class="code" href="a00572.html#a537d44d6baaa4008aa4ccd19f81b5610">CCPxTMRL</a>.<a class="code" href="a00572.html#a900b69af7d674b8db3bceae754b4955a">value</a> = 0,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    .CCPxTMRH.value = 0,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    .CCPxBUFH.value = 0,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    .CCPxBUFL.value = 0,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    .CCPxPRH.value  = 0,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    .CCPxPRL.value = 0,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    .CCPxRAL.value = 0,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    .CCPxRBL.value = 0,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    .CCPxCON1H.value= 0,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    .CCPxCON1L.value = 0x0000,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    .CCPxCON2H.value = 0,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    .CCPxCON2L.value = 0,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    .CCPxCON3H.value= 0,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    .CCPxSTATL.value= 0</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;   };</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">/* PRIVATE FUNCTION CALL PROTOTYPES*/</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//    (none)</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="a00374.html#ga2b27b6ad1318677db2816e0a2020481a">   60</a></span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00572.html">P33C_CCP_INSTANCE_SFRSET_s</a>* <a class="code" href="a00374.html#ga2b27b6ad1318677db2816e0a2020481a">p33c_CcpInstance_GetHandle</a>(<span class="keyword">volatile</span> uint16_t ccpInstance){</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; <span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00572.html">P33C_CCP_INSTANCE_SFRSET_s</a>* ccp;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// Capture Handle: set pointer to memory address of desired PWM instance</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    ccp = (<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00572.html">P33C_CCP_INSTANCE_SFRSET_s</a>*) </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;         ((<span class="keyword">volatile</span> uint8_t*)&amp;CCP1CON1L + ((ccpInstance - 1) * P33C_CCPGEN_SFR_OFFSET));</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span>(ccp);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00572.html">P33C_CCP_INSTANCE_SFRSET_s</a> <a class="code" href="a00374.html#gad6952d3b506333e2642341c309ee7cdc">p33c_CcpInstance_ConfigRead</a>(volatile uint16_t ccpInstance){</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">// end of file</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; <span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00572.html">P33C_CCP_INSTANCE_SFRSET_s</a>* ccp;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">// Capture Handle: set pointer to memory address of desired PWM instance</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    ccp = (<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00572.html">P33C_CCP_INSTANCE_SFRSET_s</a>*) </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;         ((<span class="keyword">volatile</span> uint8_t*)&amp;CCP1CON1L + ((ccpInstance - 1) * P33C_CCPGEN_SFR_OFFSET));</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">return</span>(*ccp);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="a00374.html#gadf02a542682e9ac5d9038529261b9ef0">  116</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00374.html#gadf02a542682e9ac5d9038529261b9ef0">p33c_CcpInstance_ConfigWrite</a>(<span class="keyword">volatile</span> uint16_t ccpInstance, </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                                <span class="keyword">volatile</span> <span class="keyword">struct</span> <a class="code" href="a00572.html">P33C_CCP_INSTANCE_SFRSET_s</a> ccpConfig)</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;{</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">volatile</span> uint16_t retval=1;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00572.html">P33C_CCP_INSTANCE_SFRSET_s</a>* ccp;    </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="comment">// Set pointer to memory address of desired PWM instance</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    ccp = (<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a00572.html">P33C_CCP_INSTANCE_SFRSET_s</a>*) </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        ((<span class="keyword">volatile</span> uint8_t*)&amp;CCP1CON1L + ((ccpInstance - 1) * P33C_CCPGEN_SFR_OFFSET));</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    *ccp = ccpConfig;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">return</span>(retval);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment">// end of file</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa00367_html_gaf288dad5df78426690b7296f0a38bce4"><div class="ttname"><a href="a00367.html#gaf288dad5df78426690b7296f0a38bce4">Dsp_SetConfig</a></div><div class="ttdeci">volatile uint16_t Dsp_SetConfig(volatile struct DSP_CONFIG_s dsp_cfg)</div><div class="ttdoc">Initializes the DSP engine in accordance to user settings.</div><div class="ttdef"><b>Definition:</b> <a href="a00038_source.html#l00053">p33c_dsp.c:53</a></div></div>
-<div class="ttc" id="aa00812_html_a3f0c55f449560b03ce0ac43270c26600"><div class="ttname"><a href="a00812.html#a3f0c55f449560b03ce0ac43270c26600">DSP_CONFIG_s::value</a></div><div class="ttdeci">volatile uint16_t value</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00177">p33c_dsp.h:177</a></div></div>
-<div class="ttc" id="aa00812_html"><div class="ttname"><a href="a00812.html">DSP_CONFIG_s</a></div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00157">p33c_dsp.h:158</a></div></div>
-<div class="ttc" id="aa00367_html_gaa6137620b2ae63fce63701725d97ee89"><div class="ttname"><a href="a00367.html#gaa6137620b2ae63fce63701725d97ee89">Dsp_GetConfig</a></div><div class="ttdeci">volatile struct DSP_CONFIG_s Dsp_GetConfig(void)</div><div class="ttdoc">Reads the DSP engine configuration.</div><div class="ttdef"><b>Definition:</b> <a href="a00038_source.html#l00053">p33c_dsp.c:78</a></div></div>
+<div class="ttc" id="aa00572_html"><div class="ttname"><a href="a00572.html">P33C_CCP_INSTANCE_SFRSET_s</a></div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00033">p33c_ccp.h:33</a></div></div>
+<div class="ttc" id="aa00572_html_a537d44d6baaa4008aa4ccd19f81b5610"><div class="ttname"><a href="a00572.html#a537d44d6baaa4008aa4ccd19f81b5610">P33C_CCP_INSTANCE_SFRSET_s::CCPxTMRL</a></div><div class="ttdeci">union P33C_CCP_INSTANCE_SFRSET_s::@6 CCPxTMRL</div></div>
+<div class="ttc" id="aa00374_html_ga2b27b6ad1318677db2816e0a2020481a"><div class="ttname"><a href="a00374.html#ga2b27b6ad1318677db2816e0a2020481a">p33c_CcpInstance_GetHandle</a></div><div class="ttdeci">volatile struct P33C_CCP_INSTANCE_SFRSET_s * p33c_CcpInstance_GetHandle(volatile uint16_t ccpInstance)</div><div class="ttdoc">Gets pointer to CCP instance SFR set.</div><div class="ttdef"><b>Definition:</b> <a href="a00038_source.html#l00060">p33c_ccp.c:60</a></div></div>
+<div class="ttc" id="aa00572_html_a900b69af7d674b8db3bceae754b4955a"><div class="ttname"><a href="a00572.html#a900b69af7d674b8db3bceae754b4955a">P33C_CCP_INSTANCE_SFRSET_s::value</a></div><div class="ttdeci">uint16_t value</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00037">p33c_ccp.h:37</a></div></div>
+<div class="ttc" id="aa00374_html_gadf02a542682e9ac5d9038529261b9ef0"><div class="ttname"><a href="a00374.html#gadf02a542682e9ac5d9038529261b9ef0">p33c_CcpInstance_ConfigWrite</a></div><div class="ttdeci">volatile uint16_t p33c_CcpInstance_ConfigWrite(volatile uint16_t ccpInstance, volatile struct P33C_CCP_INSTANCE_SFRSET_s ccpConfig)</div><div class="ttdoc">Writes a user-defined configuration to the CCP instance registers.</div><div class="ttdef"><b>Definition:</b> <a href="a00038_source.html#l00116">p33c_ccp.c:116</a></div></div>
+<div class="ttc" id="aa00374_html_gad6952d3b506333e2642341c309ee7cdc"><div class="ttname"><a href="a00374.html#gad6952d3b506333e2642341c309ee7cdc">p33c_CcpInstance_ConfigRead</a></div><div class="ttdeci">volatile struct P33C_CCP_INSTANCE_SFRSET_s p33c_CcpInstance_ConfigRead(volatile uint16_t ccpInstance)</div><div class="ttdoc">Read the current configuration from the CCP instance registers.</div><div class="ttdef"><b>Definition:</b> <a href="a00038_source.html#l00060">p33c_ccp.c:86</a></div></div>
+<div class="ttc" id="aa00382_html_gaace96580ebc36260c1b6072178f25987"><div class="ttname"><a href="a00382.html#gaace96580ebc36260c1b6072178f25987">ccpConfigDefault</a></div><div class="ttdeci">volatile struct P33C_CCP_INSTANCE_SFRSET_s ccpConfigDefault</div><div class="ttdoc">CCP Register Set reset state template.</div><div class="ttdef"><b>Definition:</b> <a href="a00038_source.html#l00001">p33c_ccp.c:23</a></div></div>
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_5c9e57b9bcd9b7f50d88ecfbd194c0ae.html">dpsk_buck_acmc.X</a></li><li class="navelem"><a class="el" href="dir_0b7fd148aa9e0e6d20cdcee736988614.html">sources</a></li><li class="navelem"><a class="el" href="dir_afa4bbc4f9900f05b441b3d1aa1db3d6.html">common</a></li><li class="navelem"><a class="el" href="dir_a137f7f23f7f036da728e37ee9a15b2e.html">p33c_pral</a></li><li class="navelem"><b>p33c_dsp.c</b></li>
+    <li class="navelem"><a class="el" href="dir_5c9e57b9bcd9b7f50d88ecfbd194c0ae.html">dpsk_buck_acmc.X</a></li><li class="navelem"><a class="el" href="dir_0b7fd148aa9e0e6d20cdcee736988614.html">sources</a></li><li class="navelem"><a class="el" href="dir_afa4bbc4f9900f05b441b3d1aa1db3d6.html">common</a></li><li class="navelem"><a class="el" href="dir_a137f7f23f7f036da728e37ee9a15b2e.html">p33c_pral</a></li><li class="navelem"><b>p33c_ccp.c</b></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

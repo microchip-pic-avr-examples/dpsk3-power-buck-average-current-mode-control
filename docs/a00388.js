@@ -1,8 +1,7 @@
 var a00388 =
 [
-    [ "_OSTIMER_IE", "a00388.html#gaf169ca56f95334f16dd2bca15dc108d5", null ],
-    [ "_OSTIMER_IF", "a00388.html#gaf0c6fb4644dc461d279c70028eeb0e0a", null ],
-    [ "_OSTIMER_IP", "a00388.html#ga9e2f08edcbbe0b28c502b3b024572962", null ],
-    [ "_OSTIMER_PRIORITY", "a00388.html#gae01b52fce8c5689574bfa3ad07c29f4e", null ],
-    [ "_OsTimerInterrupt", "a00388.html#ga197f587a79697441cb15f08ffe527e56", null ]
+    [ "BUCK_IRAMP_PERIOD", "a00388.html#ga97ee7cbed4a1ed9ebae5c8576d292103", null ],
+    [ "BUCK_POWER_GOOD_DELAY", "a00388.html#ga4cf9c52e0a9c20641018ebdd2679f3c1", null ],
+    [ "BUCK_POWER_ON_DELAY", "a00388.html#ga4308ebf74c3332bd1edfdb6952629eaa", null ],
+    [ "BUCK_VRAMP_PERIOD", "a00388.html#ga5adf9fb727870e57bf02ead3ac7c63ac", null ]
 ];

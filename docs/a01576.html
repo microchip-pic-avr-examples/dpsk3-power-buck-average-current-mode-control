@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: NPNZ_STATUS_s Struct Reference</title>
+<title>Digital Power Starter Kit 3 Firmware: BUCK_FEEDBACK_SETTINGS_s Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -103,243 +103,159 @@ $(document).ready(function(){initNavTree('a01576.html',''); initResizable(); });
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">NPNZ_STATUS_s Struct Reference<div class="ingroups"><a class="el" href="a00540.html">Library Driver Layer</a> &raquo; <a class="el" href="a00502.html">Power Converter Control Driver</a> &raquo; <a class="el" href="a00505.html">Properties</a> &raquo; <a class="el" href="a00507.html">Data Object Members</a></div></div>  </div>
+<div class="title">BUCK_FEEDBACK_SETTINGS_s Struct Reference<div class="ingroups"><a class="el" href="a00567.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00494.html">Buck Converter Library</a> &raquo; <a class="el" href="a00495.html">Buck Converter Library API</a> &raquo; <a class="el" href="a00501.html">Private Properties</a> &raquo; <a class="el" href="a00503.html">Data Types</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>NPNZ16b controller object status and control word.  
+<p>Buck converter feedback declarations.  
  <a href="a01576.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="a00302_source.html">power_control/drivers/npnz16b.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00278_source.html">power_control/devices/dev_buck_typedef.h</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for NPNZ_STATUS_s:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for BUCK_FEEDBACK_SETTINGS_s:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01575.svg" width="178" height="448"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a01575.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for NPNZ_STATUS_s:</div>
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for BUCK_FEEDBACK_SETTINGS_s:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a01574.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a01574.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_attribs_a01628"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_a01628')"><img src="closed.png" alt="-"/>&#160;Data Fields inherited from <a class="el" href="a01628.html">NPNZ16b_s</a></td></tr>
-<tr class="memitem:a38a4b2427f4b2b06c112385e722e1419 inherit pub_attribs_a01628"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01576.html">NPNZ_STATUS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01628.html#a38a4b2427f4b2b06c112385e722e1419">status</a></td></tr>
-<tr class="memdesc:a38a4b2427f4b2b06c112385e722e1419 inherit pub_attribs_a01628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control Loop Status and Control flags.  <a href="a01628.html#a38a4b2427f4b2b06c112385e722e1419">More...</a><br /></td></tr>
-<tr class="separator:a38a4b2427f4b2b06c112385e722e1419 inherit pub_attribs_a01628"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae834fa9c7338d08d0fa927c901c2503f inherit pub_attribs_a01628"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01596.html">NPNZ_PORTS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01628.html#ae834fa9c7338d08d0fa927c901c2503f">Ports</a></td></tr>
-<tr class="memdesc:ae834fa9c7338d08d0fa927c901c2503f inherit pub_attribs_a01628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controller input and output ports.  <a href="a01628.html#ae834fa9c7338d08d0fa927c901c2503f">More...</a><br /></td></tr>
-<tr class="separator:ae834fa9c7338d08d0fa927c901c2503f inherit pub_attribs_a01628"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa98db9224dce165f72d861acc8558419 inherit pub_attribs_a01628"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01600.html">NPNZ_FILTER_PARAMS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01628.html#aa98db9224dce165f72d861acc8558419">Filter</a></td></tr>
-<tr class="memdesc:aa98db9224dce165f72d861acc8558419 inherit pub_attribs_a01628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter parameters such as pointer to history and coefficient arrays and number scaling.  <a href="a01628.html#aa98db9224dce165f72d861acc8558419">More...</a><br /></td></tr>
-<tr class="separator:aa98db9224dce165f72d861acc8558419 inherit pub_attribs_a01628"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c9fc0a5e04a384801d066b95dc27f5d inherit pub_attribs_a01628"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01604.html">NPNZ_GAIN_CONTROL_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01628.html#a3c9fc0a5e04a384801d066b95dc27f5d">GainControl</a></td></tr>
-<tr class="memdesc:a3c9fc0a5e04a384801d066b95dc27f5d inherit pub_attribs_a01628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameter section for advanced control options.  <a href="a01628.html#a3c9fc0a5e04a384801d066b95dc27f5d">More...</a><br /></td></tr>
-<tr class="separator:a3c9fc0a5e04a384801d066b95dc27f5d inherit pub_attribs_a01628"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6127947619eb634f1a3c3650529e092c inherit pub_attribs_a01628"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01608.html">NPNZ_LIMITS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01628.html#a6127947619eb634f1a3c3650529e092c">Limits</a></td></tr>
-<tr class="memdesc:a6127947619eb634f1a3c3650529e092c inherit pub_attribs_a01628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input and output clamping values.  <a href="a01628.html#a6127947619eb634f1a3c3650529e092c">More...</a><br /></td></tr>
-<tr class="separator:a6127947619eb634f1a3c3650529e092c inherit pub_attribs_a01628"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa708a44ef3b59a931f929bc6c72e07fc inherit pub_attribs_a01628"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01612.html">NPNZ_ADC_TRGCTRL_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01628.html#aa708a44ef3b59a931f929bc6c72e07fc">ADCTriggerControl</a></td></tr>
-<tr class="memdesc:aa708a44ef3b59a931f929bc6c72e07fc inherit pub_attribs_a01628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automatic ADC trigger placement options for ADC Trigger A and B.  <a href="a01628.html#aa708a44ef3b59a931f929bc6c72e07fc">More...</a><br /></td></tr>
-<tr class="separator:aa708a44ef3b59a931f929bc6c72e07fc inherit pub_attribs_a01628"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a971260b757f0c8822315d8c82a603142 inherit pub_attribs_a01628"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01616.html">NPNZ_DATA_PROVIDERS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01628.html#a971260b757f0c8822315d8c82a603142">DataProviders</a></td></tr>
-<tr class="memdesc:a971260b757f0c8822315d8c82a603142 inherit pub_attribs_a01628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automated data sources pushing recent data points to user-defined variables.  <a href="a01628.html#a971260b757f0c8822315d8c82a603142">More...</a><br /></td></tr>
-<tr class="separator:a971260b757f0c8822315d8c82a603142 inherit pub_attribs_a01628"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a486610694a9aac008ab8c01a0ab88090 inherit pub_attribs_a01628"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01620.html">NPNZ_EXTENSION_HOOKS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01628.html#a486610694a9aac008ab8c01a0ab88090">ExtensionHooks</a></td></tr>
-<tr class="memdesc:a486610694a9aac008ab8c01a0ab88090 inherit pub_attribs_a01628"><td class="mdescLeft">&#160;</td><td class="mdescRight">User extension function triggers using function pointers with parameters.  <a href="a01628.html#a486610694a9aac008ab8c01a0ab88090">More...</a><br /></td></tr>
-<tr class="separator:a486610694a9aac008ab8c01a0ab88090 inherit pub_attribs_a01628"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae10c373e7000ff11abbb151f019793e0 inherit pub_attribs_a01628"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01624.html">NPNZ_USER_DATA_BUFFER_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01628.html#ae10c373e7000ff11abbb151f019793e0">Advanced</a></td></tr>
-<tr class="memdesc:ae10c373e7000ff11abbb151f019793e0 inherit pub_attribs_a01628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameter section for advanced user control options.  <a href="a01628.html#ae10c373e7000ff11abbb151f019793e0">More...</a><br /></td></tr>
-<tr class="separator:ae10c373e7000ff11abbb151f019793e0 inherit pub_attribs_a01628"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a5b2dc4caf0113cd2fd142a46750a1b53"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01572.html">BUCK_ADC_INPUT_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01576.html#a5b2dc4caf0113cd2fd142a46750a1b53">ad_vin</a></td></tr>
+<tr class="memdesc:a5b2dc4caf0113cd2fd142a46750a1b53"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input sampling input voltage.  <a href="a01576.html#a5b2dc4caf0113cd2fd142a46750a1b53">More...</a><br /></td></tr>
+<tr class="separator:a5b2dc4caf0113cd2fd142a46750a1b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad59de826ef732a92cec6f00ff84c8d01"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01572.html">BUCK_ADC_INPUT_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01576.html#ad59de826ef732a92cec6f00ff84c8d01">ad_vout</a></td></tr>
+<tr class="memdesc:ad59de826ef732a92cec6f00ff84c8d01"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input sampling output voltage.  <a href="a01576.html#ad59de826ef732a92cec6f00ff84c8d01">More...</a><br /></td></tr>
+<tr class="separator:ad59de826ef732a92cec6f00ff84c8d01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb1d3c84c495fdc88de3bd38ec28c139"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01572.html">BUCK_ADC_INPUT_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01576.html#aeb1d3c84c495fdc88de3bd38ec28c139">ad_isns</a> [<a class="el" href="a00500.html#ga74df4d33c3d762495bc67b88bb6aa524">BUCK_MPHASE_COUNT</a>]</td></tr>
+<tr class="memdesc:aeb1d3c84c495fdc88de3bd38ec28c139"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input sampling phase current.  <a href="a01576.html#aeb1d3c84c495fdc88de3bd38ec28c139">More...</a><br /></td></tr>
+<tr class="separator:aeb1d3c84c495fdc88de3bd38ec28c139"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2720dbc3213b84c266064217dcc53ae"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01572.html">BUCK_ADC_INPUT_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01576.html#ab2720dbc3213b84c266064217dcc53ae">ad_temp</a></td></tr>
+<tr class="memdesc:ab2720dbc3213b84c266064217dcc53ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC input sampling temperature.  <a href="a01576.html#ab2720dbc3213b84c266064217dcc53ae">More...</a><br /></td></tr>
+<tr class="separator:ab2720dbc3213b84c266064217dcc53ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_a01588"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_a01588')"><img src="closed.png" alt="-"/>&#160;Data Fields inherited from <a class="el" href="a01588.html">BUCK_CONVERTER_s</a></td></tr>
+<tr class="memitem:a3f64d0961e6a7e4534dafa86d60348b1 inherit pub_attribs_a01588"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01520.html">BUCK_CONVERTER_STATUS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01588.html#a3f64d0961e6a7e4534dafa86d60348b1">status</a></td></tr>
+<tr class="memdesc:a3f64d0961e6a7e4534dafa86d60348b1 inherit pub_attribs_a01588"><td class="mdescLeft">&#160;</td><td class="mdescRight">BUCK operation status bits.  <a href="a01588.html#a3f64d0961e6a7e4534dafa86d60348b1">More...</a><br /></td></tr>
+<tr class="separator:a3f64d0961e6a7e4534dafa86d60348b1 inherit pub_attribs_a01588"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39dcaff2683f776cab8d19f12e4ee7a5 inherit pub_attribs_a01588"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01532.html">BUCK_STATE_ID_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01588.html#a39dcaff2683f776cab8d19f12e4ee7a5">state_id</a></td></tr>
+<tr class="memdesc:a39dcaff2683f776cab8d19f12e4ee7a5 inherit pub_attribs_a01588"><td class="mdescLeft">&#160;</td><td class="mdescRight">BUCK state machine operating state ID.  <a href="a01588.html#a39dcaff2683f776cab8d19f12e4ee7a5">More...</a><br /></td></tr>
+<tr class="separator:a39dcaff2683f776cab8d19f12e4ee7a5 inherit pub_attribs_a01588"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6f84e16ed482dd002e9e109ccede1b0 inherit pub_attribs_a01588"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01548.html">BUCK_CONVERTER_STARTUP_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01588.html#ae6f84e16ed482dd002e9e109ccede1b0">startup</a></td></tr>
+<tr class="memdesc:ae6f84e16ed482dd002e9e109ccede1b0 inherit pub_attribs_a01588"><td class="mdescLeft">&#160;</td><td class="mdescRight">BUCK startup timing settings.  <a href="a01588.html#ae6f84e16ed482dd002e9e109ccede1b0">More...</a><br /></td></tr>
+<tr class="separator:ae6f84e16ed482dd002e9e109ccede1b0 inherit pub_attribs_a01588"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf310bb58637ce822a55aea5e6ee80de inherit pub_attribs_a01588"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01556.html">BUCK_CONVERTER_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01588.html#acf310bb58637ce822a55aea5e6ee80de">set_values</a></td></tr>
+<tr class="memdesc:acf310bb58637ce822a55aea5e6ee80de inherit pub_attribs_a01588"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control field for global access to references.  <a href="a01588.html#acf310bb58637ce822a55aea5e6ee80de">More...</a><br /></td></tr>
+<tr class="separator:acf310bb58637ce822a55aea5e6ee80de inherit pub_attribs_a01588"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace365e404e1a839717de3d05ee55d27a inherit pub_attribs_a01588"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01552.html">BUCK_CONVERTER_DATA_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01588.html#ace365e404e1a839717de3d05ee55d27a">data</a></td></tr>
+<tr class="memdesc:ace365e404e1a839717de3d05ee55d27a inherit pub_attribs_a01588"><td class="mdescLeft">&#160;</td><td class="mdescRight">BUCK runtime data.  <a href="a01588.html#ace365e404e1a839717de3d05ee55d27a">More...</a><br /></td></tr>
+<tr class="separator:ace365e404e1a839717de3d05ee55d27a inherit pub_attribs_a01588"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bdf290e23328593c3529fc00cb5d988 inherit pub_attribs_a01588"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01576.html">BUCK_FEEDBACK_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01588.html#a4bdf290e23328593c3529fc00cb5d988">feedback</a></td></tr>
+<tr class="memdesc:a4bdf290e23328593c3529fc00cb5d988 inherit pub_attribs_a01588"><td class="mdescLeft">&#160;</td><td class="mdescRight">BUCK converter feedback settings.  <a href="a01588.html#a4bdf290e23328593c3529fc00cb5d988">More...</a><br /></td></tr>
+<tr class="separator:a4bdf290e23328593c3529fc00cb5d988 inherit pub_attribs_a01588"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17d0c1176b7be906e4e009e2cf10e3ff inherit pub_attribs_a01588"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01564.html">BUCK_SWITCH_NODE_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01588.html#a17d0c1176b7be906e4e009e2cf10e3ff">sw_node</a> [<a class="el" href="a00500.html#ga74df4d33c3d762495bc67b88bb6aa524">BUCK_MPHASE_COUNT</a>]</td></tr>
+<tr class="memdesc:a17d0c1176b7be906e4e009e2cf10e3ff inherit pub_attribs_a01588"><td class="mdescLeft">&#160;</td><td class="mdescRight">BUCK converter switch node settings.  <a href="a01588.html#a17d0c1176b7be906e4e009e2cf10e3ff">More...</a><br /></td></tr>
+<tr class="separator:a17d0c1176b7be906e4e009e2cf10e3ff inherit pub_attribs_a01588"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9655fde1811cf7e7a047c1db518e43b2 inherit pub_attribs_a01588"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01584.html">BUCK_GPIO_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01588.html#a9655fde1811cf7e7a047c1db518e43b2">gpio</a></td></tr>
+<tr class="memdesc:a9655fde1811cf7e7a047c1db518e43b2 inherit pub_attribs_a01588"><td class="mdescLeft">&#160;</td><td class="mdescRight">BUCK converter additional GPIO specification.  <a href="a01588.html#a9655fde1811cf7e7a047c1db518e43b2">More...</a><br /></td></tr>
+<tr class="separator:a9655fde1811cf7e7a047c1db518e43b2 inherit pub_attribs_a01588"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc8ce31db94494416ddda164332a40c9 inherit pub_attribs_a01588"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01560.html">BUCK_LOOP_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01588.html#acc8ce31db94494416ddda164332a40c9">v_loop</a></td></tr>
+<tr class="memdesc:acc8ce31db94494416ddda164332a40c9 inherit pub_attribs_a01588"><td class="mdescLeft">&#160;</td><td class="mdescRight">BUCK voltage control loop object.  <a href="a01588.html#acc8ce31db94494416ddda164332a40c9">More...</a><br /></td></tr>
+<tr class="separator:acc8ce31db94494416ddda164332a40c9 inherit pub_attribs_a01588"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae543a879ec2d43fb4047319426c431b4 inherit pub_attribs_a01588"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01560.html">BUCK_LOOP_SETTINGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01588.html#ae543a879ec2d43fb4047319426c431b4">i_loop</a> [<a class="el" href="a00500.html#ga74df4d33c3d762495bc67b88bb6aa524">BUCK_MPHASE_COUNT</a>]</td></tr>
+<tr class="memdesc:ae543a879ec2d43fb4047319426c431b4 inherit pub_attribs_a01588"><td class="mdescLeft">&#160;</td><td class="mdescRight">BUCK Current control loop objects.  <a href="a01588.html#ae543a879ec2d43fb4047319426c431b4">More...</a><br /></td></tr>
+<tr class="separator:ae543a879ec2d43fb4047319426c431b4 inherit pub_attribs_a01588"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>NPNZ16b controller object status and control word. </p>
-<p>The <a class="el" href="a01628.html" title="Global NPNZ controller data object.">NPNZ16b_s</a> status word is providing status flag bits for monitoring and controlling the NPNZ16b control library code execution from outside the library module.</p>
-<p>1) Status Byte The low byte of the <a class="el" href="a01628.html" title="Global NPNZ controller data object.">NPNZ16b_s</a> status word is used for READ ONLY status flags, set and cleared automatically by the control loop library routine.</p>
-<p>2) Control Byte The high byte of the status word is used for control flags, through which users can control the control loop execution. This includes enabling/disabling the control loop execution, switch between different input and output sources, invert input values or enable/disable advanced functions. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00183">183</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
+<div class="textblock"><p>Buck converter feedback declarations. </p>
+<p>Power converter feedback input channel declarations.</p>
+<hr  />
+ 
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00449">449</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="a2586f148981aa257903e8e8c220be49f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2586f148981aa257903e8e8c220be49f">&#9670;&nbsp;</a></span>agc_enabled</h2>
+<a id="aeb1d3c84c495fdc88de3bd38ec28c139"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb1d3c84c495fdc88de3bd38ec28c139">&#9670;&nbsp;</a></span>ad_isns</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile bool agc_enabled</td>
+          <td class="memname">volatile struct <a class="el" href="a01572.html">BUCK_ADC_INPUT_SETTINGS_s</a> ad_isns[<a class="el" href="a00500.html#ga74df4d33c3d762495bc67b88bb6aa524">BUCK_MPHASE_COUNT</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Bit 11: when set, Adaptive Gain Control Modulation is enabled. </p>
+<p>ADC input sampling phase current. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00198">198</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00437">437</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
 
 </div>
 </div>
-<a id="a085e9fc0863cee4864cf51dcfe1e32df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a085e9fc0863cee4864cf51dcfe1e32df">&#9670;&nbsp;</a></span>enabled</h2>
+<a id="ab2720dbc3213b84c266064217dcc53ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2720dbc3213b84c266064217dcc53ae">&#9670;&nbsp;</a></span>ad_temp</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile bool enabled</td>
+          <td class="memname">volatile struct <a class="el" href="a01572.html">BUCK_ADC_INPUT_SETTINGS_s</a> ad_temp</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Bit 15: enables/disables control loop execution. </p>
+<p>ADC input sampling temperature. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00202">202</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00437">437</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
 
 </div>
 </div>
-<a id="a87a4d49caab529c62352ee8e36739705"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87a4d49caab529c62352ee8e36739705">&#9670;&nbsp;</a></span>invert_input</h2>
+<a id="a5b2dc4caf0113cd2fd142a46750a1b53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b2dc4caf0113cd2fd142a46750a1b53">&#9670;&nbsp;</a></span>ad_vin</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile bool invert_input</td>
+          <td class="memname">volatile struct <a class="el" href="a01572.html">BUCK_ADC_INPUT_SETTINGS_s</a> ad_vin</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Bit 14: when set, most recent error input value to controller is inverted. </p>
+<p>ADC input sampling input voltage. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00201">201</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00437">437</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
 
 </div>
 </div>
-<a id="a54de55df60f9214cecb0d0210f1633ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54de55df60f9214cecb0d0210f1633ab">&#9670;&nbsp;</a></span>lower_saturation_event</h2>
+<a id="ad59de826ef732a92cec6f00ff84c8d01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad59de826ef732a92cec6f00ff84c8d01">&#9670;&nbsp;</a></span>ad_vout</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile bool lower_saturation_event</td>
+          <td class="memname">volatile struct <a class="el" href="a01572.html">BUCK_ADC_INPUT_SETTINGS_s</a> ad_vout</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Bit 0: control loop is clamped at minimum output level. </p>
+<p>ADC input sampling output voltage. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00186">186</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
-
-</div>
-</div>
-<a id="ac0e5228116af2eb515feaae87f10473c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0e5228116af2eb515feaae87f10473c">&#9670;&nbsp;</a></span>swap_source</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile bool swap_source</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bit 13: when set, AltSource is used as data input to controller. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00200">200</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
-
-</div>
-</div>
-<a id="aa6704f24bbe78d8899af231051a73b6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6704f24bbe78d8899af231051a73b6b">&#9670;&nbsp;</a></span>swap_target</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile bool swap_target</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bit 12: when set, AltTarget is used as data output of controller. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00199">199</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
-
-</div>
-</div>
-<a id="a32e93b068e309da5a319a7a69f3b3ff5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32e93b068e309da5a319a7a69f3b3ff5">&#9670;&nbsp;</a></span>unsigned</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile unsigned</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bit 2: reserved. </p>
-<p>Bit 11: reserved.</p>
-<p>Bit 9: reserved.</p>
-<p>Bit 8: reserved.</p>
-<p>Bit 7: reserved.</p>
-<p>Bit 6: reserved.</p>
-<p>Bit 5: reserved.</p>
-<p>Bit 4: reserved.</p>
-<p>Bit 3: reserved. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00188">188</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
-
-</div>
-</div>
-<a id="afa922f84528fb8c9b073548653220d9a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa922f84528fb8c9b073548653220d9a">&#9670;&nbsp;</a></span>upper_saturation_event</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile bool upper_saturation_event</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bit 1: control loop is clamped at maximum output level. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00187">187</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
-
-</div>
-</div>
-<a id="a3f0c55f449560b03ce0ac43270c26600"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f0c55f449560b03ce0ac43270c26600">&#9670;&nbsp;</a></span>value</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t value</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Controller status full register access. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00302_source.html#l00204">204</a> of file <a class="el" href="a00302_source.html">npnz16b.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00278_source.html#l00437">437</a> of file <a class="el" href="a00278_source.html">dev_buck_typedef.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>dpsk_buck_acmc.X/sources/power_control/drivers/<a class="el" href="a00302_source.html">npnz16b.h</a></li>
+<li>dpsk_buck_acmc.X/sources/power_control/devices/<a class="el" href="a00278_source.html">dev_buck_typedef.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -347,7 +263,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a01576.html">NPNZ_STATUS_s</a></li>
+    <li class="navelem"><a class="el" href="a01576.html">BUCK_FEEDBACK_SETTINGS_s</a></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

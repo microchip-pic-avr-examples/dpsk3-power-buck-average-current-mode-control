@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: CPU_INTTREG_s Struct Reference</title>
+<title>Digital Power Starter Kit 3 Firmware: FAULT_OBJECT_s Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -103,157 +103,168 @@ $(document).ready(function(){initNavTree('a01432.html',''); initResizable(); });
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">CPU_INTTREG_s Struct Reference</div>  </div>
+<div class="title">FAULT_OBJECT_s Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>defining the CPU interrupt for primary and secondary vectors  
+<p>This data structure is a collection of data structures for fault handling.  
  <a href="a01432.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="a00170_source.html">fault_handler/drivers/drv_trap_handler.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00161_source.html">fault_handler/drivers/drv_fault_handler.h</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for CPU_INTTREG_s:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for FAULT_OBJECT_s:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01431.svg" width="143" height="375"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a01431.svg" width="607" height="375"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for CPU_INTTREG_s:</div>
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for FAULT_OBJECT_s:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a01430.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a01430.svg" width="607" height="331"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_attribs_a01472"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_a01472')"><img src="closed.png" alt="-"/>&#160;Data Fields inherited from <a class="el" href="a01472.html">TRAP_LOGGER_s</a></td></tr>
-<tr class="memitem:a67fe8ce905ea66883a557013c4069068 inherit pub_attribs_a01472"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01456.html">TRAPLOG_STATUS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01472.html#a67fe8ce905ea66883a557013c4069068">status</a></td></tr>
-<tr class="memdesc:a67fe8ce905ea66883a557013c4069068 inherit pub_attribs_a01472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status word of the Trap Logger object.  <a href="a01472.html#a67fe8ce905ea66883a557013c4069068">More...</a><br /></td></tr>
-<tr class="separator:a67fe8ce905ea66883a557013c4069068 inherit pub_attribs_a01472"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95744ea4cf032674585b4e25a114c31a inherit pub_attribs_a01472"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01472.html#a95744ea4cf032674585b4e25a114c31a">reset_count</a></td></tr>
-<tr class="memdesc:a95744ea4cf032674585b4e25a114c31a inherit pub_attribs_a01472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counter of CPU RESET events (read/write)  <a href="a01472.html#a95744ea4cf032674585b4e25a114c31a">More...</a><br /></td></tr>
-<tr class="separator:a95744ea4cf032674585b4e25a114c31a inherit pub_attribs_a01472"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e7be26899e4fa61a356b5e7eeec83d1 inherit pub_attribs_a01472"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="a00435.html#gaee63654a5e14dd3b2bab6179a5cbe2ab">TRAP_ID_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01472.html#a6e7be26899e4fa61a356b5e7eeec83d1">trap_id</a></td></tr>
-<tr class="memdesc:a6e7be26899e4fa61a356b5e7eeec83d1 inherit pub_attribs_a01472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trap-ID of the captured incident.  <a href="a01472.html#a6e7be26899e4fa61a356b5e7eeec83d1">More...</a><br /></td></tr>
-<tr class="separator:a6e7be26899e4fa61a356b5e7eeec83d1 inherit pub_attribs_a01472"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9216196898128a7f976617aabd34ba77 inherit pub_attribs_a01472"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01472.html#a9216196898128a7f976617aabd34ba77">trap_count</a></td></tr>
-<tr class="memdesc:a9216196898128a7f976617aabd34ba77 inherit pub_attribs_a01472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counter tracking the number of occurrences.  <a href="a01472.html#a9216196898128a7f976617aabd34ba77">More...</a><br /></td></tr>
-<tr class="separator:a9216196898128a7f976617aabd34ba77 inherit pub_attribs_a01472"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5a997d3d4260463e5998191af6a24cb inherit pub_attribs_a01472"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01420.html">TRAP_FLAGS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01472.html#ac5a997d3d4260463e5998191af6a24cb">trap_flags</a></td></tr>
-<tr class="memdesc:ac5a997d3d4260463e5998191af6a24cb inherit pub_attribs_a01472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Complete list of trap flags (showing all trap flags)  <a href="a01472.html#ac5a997d3d4260463e5998191af6a24cb">More...</a><br /></td></tr>
-<tr class="separator:ac5a997d3d4260463e5998191af6a24cb inherit pub_attribs_a01472"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a622b54af34934b9ed58310984866f335 inherit pub_attribs_a01472"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01444.html">CPU_RCON_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01472.html#a622b54af34934b9ed58310984866f335">rcon_reg</a></td></tr>
-<tr class="memdesc:a622b54af34934b9ed58310984866f335 inherit pub_attribs_a01472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Captures the RESET CONTROL register.  <a href="a01472.html#a622b54af34934b9ed58310984866f335">More...</a><br /></td></tr>
-<tr class="separator:a622b54af34934b9ed58310984866f335 inherit pub_attribs_a01472"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee75cee827a498ec0f8db43c25fe1de7 inherit pub_attribs_a01472"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01432.html">CPU_INTTREG_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01472.html#aee75cee827a498ec0f8db43c25fe1de7">inttreg</a></td></tr>
-<tr class="memdesc:aee75cee827a498ec0f8db43c25fe1de7 inherit pub_attribs_a01472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt Vector and Priority register capture.  <a href="a01472.html#aee75cee827a498ec0f8db43c25fe1de7">More...</a><br /></td></tr>
-<tr class="separator:aee75cee827a498ec0f8db43c25fe1de7 inherit pub_attribs_a01472"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0738b0afe33da51a74ec003d4a2d7656 inherit pub_attribs_a01472"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01468.html">TASK_INFO_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01472.html#a0738b0afe33da51a74ec003d4a2d7656">task_capture</a></td></tr>
-<tr class="memdesc:a0738b0afe33da51a74ec003d4a2d7656 inherit pub_attribs_a01472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Information of last task executed.  <a href="a01472.html#a0738b0afe33da51a74ec003d4a2d7656">More...</a><br /></td></tr>
-<tr class="separator:a0738b0afe33da51a74ec003d4a2d7656 inherit pub_attribs_a01472"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a5682be08ea825740d924680de9b7af60"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01412.html">FLT_OBJECT_STATUS_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01432.html#a5682be08ea825740d924680de9b7af60">Status</a></td></tr>
+<tr class="memdesc:a5682be08ea825740d924680de9b7af60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status word of this fault object.  <a href="a01432.html#a5682be08ea825740d924680de9b7af60">More...</a><br /></td></tr>
+<tr class="separator:a5682be08ea825740d924680de9b7af60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e9b3f9102ce573dc6ac2e1058140322"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01432.html#a9e9b3f9102ce573dc6ac2e1058140322">Counter</a></td></tr>
+<tr class="memdesc:a9e9b3f9102ce573dc6ac2e1058140322"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fault event counter (controlled by FAULT HANDLER)  <a href="a01432.html#a9e9b3f9102ce573dc6ac2e1058140322">More...</a><br /></td></tr>
+<tr class="separator:a9e9b3f9102ce573dc6ac2e1058140322"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5f1eb31220187b74ffb14a15e10ce54"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01424.html">FLT_COMPARE_OBJECT_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01432.html#ab5f1eb31220187b74ffb14a15e10ce54">SourceObject</a></td></tr>
+<tr class="memdesc:ab5f1eb31220187b74ffb14a15e10ce54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Object which should be monitored.  <a href="a01432.html#ab5f1eb31220187b74ffb14a15e10ce54">More...</a><br /></td></tr>
+<tr class="separator:ab5f1eb31220187b74ffb14a15e10ce54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e234a289ec2e7de63ab9095222086eb"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01424.html">FLT_COMPARE_OBJECT_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01432.html#a9e234a289ec2e7de63ab9095222086eb">ReferenceObject</a></td></tr>
+<tr class="memdesc:a9e234a289ec2e7de63ab9095222086eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference object the source should be compared with.  <a href="a01432.html#a9e234a289ec2e7de63ab9095222086eb">More...</a><br /></td></tr>
+<tr class="separator:a9e234a289ec2e7de63ab9095222086eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa749f7fba8875502ddb95b0235f7264b"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01428.html">FLT_EVENT_RESPONSE_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01432.html#aa749f7fba8875502ddb95b0235f7264b">TripResponse</a></td></tr>
+<tr class="memdesc:aa749f7fba8875502ddb95b0235f7264b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Settings defining the fault trip event.  <a href="a01432.html#aa749f7fba8875502ddb95b0235f7264b">More...</a><br /></td></tr>
+<tr class="separator:aa749f7fba8875502ddb95b0235f7264b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9e053ccdb2ca7c1cff5fcbe4596bf9c"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="a01428.html">FLT_EVENT_RESPONSE_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01432.html#af9e053ccdb2ca7c1cff5fcbe4596bf9c">RecoveryResponse</a></td></tr>
+<tr class="memdesc:af9e053ccdb2ca7c1cff5fcbe4596bf9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Settings defining the fault recovery event.  <a href="a01432.html#af9e053ccdb2ca7c1cff5fcbe4596bf9c">More...</a><br /></td></tr>
+<tr class="separator:af9e053ccdb2ca7c1cff5fcbe4596bf9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>defining the CPU interrupt for primary and secondary vectors </p>
+<div class="textblock"><p>This data structure is a collection of data structures for fault handling. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00170_source.html#l00169">169</a> of file <a class="el" href="a00170_source.html">drv_trap_handler.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00161_source.html#l00131">131</a> of file <a class="el" href="a00161_source.html">drv_fault_handler.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="afc91a8fcf8325fbe0059152da64a96f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc91a8fcf8325fbe0059152da64a96f8">&#9670;&nbsp;</a></span>ILR</h2>
+<a id="a9e9b3f9102ce573dc6ac2e1058140322"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e9b3f9102ce573dc6ac2e1058140322">&#9670;&nbsp;</a></span>Counter</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile <a class="el" href="a01432.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> ILR</td>
+          <td class="memname">volatile uint16_t Counter</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Bit #8-11: New Interrupt Priority Level. </p>
+<p>Fault event counter (controlled by FAULT HANDLER) </p>
 
-<p class="definition">Definition at line <a class="el" href="a00170_source.html#l00174">174</a> of file <a class="el" href="a00170_source.html">drv_trap_handler.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00161_source.html#l00134">134</a> of file <a class="el" href="a00161_source.html">drv_fault_handler.h</a>.</p>
 
 </div>
 </div>
-<a id="a32e93b068e309da5a319a7a69f3b3ff5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32e93b068e309da5a319a7a69f3b3ff5">&#9670;&nbsp;</a></span>unsigned</h2>
+<a id="af9e053ccdb2ca7c1cff5fcbe4596bf9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9e053ccdb2ca7c1cff5fcbe4596bf9c">&#9670;&nbsp;</a></span>RecoveryResponse</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile unsigned</td>
+          <td class="memname">volatile struct <a class="el" href="a01428.html">FLT_EVENT_RESPONSE_s</a> RecoveryResponse</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Bit #12: Reserved. </p>
-<p>Bit #15: Reserved.</p>
-<p>Bit #14: Reserved. </p>
+<p>Settings defining the fault recovery event. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00170_source.html#l00175">175</a> of file <a class="el" href="a00170_source.html">drv_trap_handler.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00161_source.html#l00134">134</a> of file <a class="el" href="a00161_source.html">drv_fault_handler.h</a>.</p>
 
 </div>
 </div>
-<a id="a3f0c55f449560b03ce0ac43270c26600"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f0c55f449560b03ce0ac43270c26600">&#9670;&nbsp;</a></span>value</h2>
+<a id="a9e234a289ec2e7de63ab9095222086eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e234a289ec2e7de63ab9095222086eb">&#9670;&nbsp;</a></span>ReferenceObject</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile uint16_t value</td>
+          <td class="memname">volatile struct <a class="el" href="a01424.html">FLT_COMPARE_OBJECT_s</a> ReferenceObject</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00170_source.html#l00181">181</a> of file <a class="el" href="a00170_source.html">drv_trap_handler.h</a>.</p>
+<p>Reference object the source should be compared with. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00161_source.html#l00134">134</a> of file <a class="el" href="a00161_source.html">drv_fault_handler.h</a>.</p>
 
 </div>
 </div>
-<a id="a0f6921c4b6f0f47e319bdebb707e0e3a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f6921c4b6f0f47e319bdebb707e0e3a">&#9670;&nbsp;</a></span>VECNUM</h2>
+<a id="ab5f1eb31220187b74ffb14a15e10ce54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5f1eb31220187b74ffb14a15e10ce54">&#9670;&nbsp;</a></span>SourceObject</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile <a class="el" href="a01432.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> VECNUM</td>
+          <td class="memname">volatile struct <a class="el" href="a01424.html">FLT_COMPARE_OBJECT_s</a> SourceObject</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Bit #0-7: Pending Interrupt Number List. </p>
+<p>Object which should be monitored. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00170_source.html#l00173">173</a> of file <a class="el" href="a00170_source.html">drv_trap_handler.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00161_source.html#l00134">134</a> of file <a class="el" href="a00161_source.html">drv_fault_handler.h</a>.</p>
 
 </div>
 </div>
-<a id="a82fd17775a72ed7c16b5f0df5b752a6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a82fd17775a72ed7c16b5f0df5b752a6c">&#9670;&nbsp;</a></span>VHOLD</h2>
+<a id="a5682be08ea825740d924680de9b7af60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5682be08ea825740d924680de9b7af60">&#9670;&nbsp;</a></span>Status</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile <a class="el" href="a01432.html#a32e93b068e309da5a319a7a69f3b3ff5">unsigned</a> VHOLD</td>
+          <td class="memname">volatile struct <a class="el" href="a01412.html">FLT_OBJECT_STATUS_s</a> Status</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Bit #13: Vector Number Capture Enable bit. </p>
+<p>Status word of this fault object. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00170_source.html#l00176">176</a> of file <a class="el" href="a00170_source.html">drv_trap_handler.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00161_source.html#l00122">122</a> of file <a class="el" href="a00161_source.html">drv_fault_handler.h</a>.</p>
+
+</div>
+</div>
+<a id="aa749f7fba8875502ddb95b0235f7264b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa749f7fba8875502ddb95b0235f7264b">&#9670;&nbsp;</a></span>TripResponse</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile struct <a class="el" href="a01428.html">FLT_EVENT_RESPONSE_s</a> TripResponse</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Settings defining the fault trip event. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00161_source.html#l00134">134</a> of file <a class="el" href="a00161_source.html">drv_fault_handler.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>dpsk_buck_acmc.X/sources/fault_handler/drivers/<a class="el" href="a00170_source.html">drv_trap_handler.h</a></li>
+<li>dpsk_buck_acmc.X/sources/fault_handler/drivers/<a class="el" href="a00161_source.html">drv_fault_handler.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -261,7 +272,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a01432.html">CPU_INTTREG_s</a></li>
+    <li class="navelem"><a class="el" href="a01432.html">FAULT_OBJECT_s</a></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

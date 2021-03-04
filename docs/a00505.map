@@ -1,8 +1,8 @@
-<map id="Properties" name="Properties">
-<area shape="rect" id="node1" href="$a00502.html" title=" " alt="" coords="5,73,167,113"/>
-<area shape="rect" id="node4" title="Public properties of the Power Converter Control driver." alt="" coords="215,80,296,105"/>
-<area shape="rect" id="node2" href="$a00506.html" title="Public properties of the Power Converter Control driver." alt="" coords="369,5,468,31"/>
-<area shape="rect" id="node3" href="$a00509.html" title="Public variables of the Power Converter Control driver." alt="" coords="381,55,457,80"/>
-<area shape="rect" id="node5" href="$a00507.html" title="Public properties of the Power Converter Control driver." alt="" coords="344,104,493,129"/>
-<area shape="rect" id="node6" href="$a00508.html" title="Public properties of the Power Converter Control driver." alt="" coords="356,153,481,179"/>
+<map id="Buck Converter Library Modules" name="Buck Converter Library Modules">
+<area shape="rect" id="node1" href="$a00518.html" title=" " alt="" coords="408,5,601,31"/>
+<area shape="rect" id="node2" href="$a00512.html" title=" " alt="" coords="425,55,585,80"/>
+<area shape="rect" id="node3" href="$a00494.html" title=" " alt="" coords="5,84,159,109"/>
+<area shape="rect" id="node4" title=" " alt="" coords="207,77,360,117"/>
+<area shape="rect" id="node5" href="$a00506.html" title="Description of the Buck Converter Library State Machine library module." alt="" coords="432,105,577,145"/>
+<area shape="rect" id="node6" href="$a00524.html" title=" " alt="" coords="415,169,594,195"/>
 </map>

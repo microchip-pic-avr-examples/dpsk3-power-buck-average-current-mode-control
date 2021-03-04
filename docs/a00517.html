@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Public Properties</title>
+<title>Digital Power Starter Kit 3 Firmware: Defines and Macros</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,62 +104,46 @@ $(document).ready(function(){initNavTree('a00517.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle">
-<div class="title">Public Properties<div class="ingroups"><a class="el" href="a00539.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00515.html">Push-Button Library</a></div></div>  </div>
+<div class="title">Defines and Macros<div class="ingroups"><a class="el" href="a00567.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00494.html">Buck Converter Library</a> &raquo; <a class="el" href="a00505.html">Buck Converter Library Modules</a> &raquo; <a class="el" href="a00512.html">Buck Special Functions</a> &raquo; <a class="el" href="a00514.html">Properties</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Public properties of the push button device driver library.  
+<p>List of defines and macros of the Special Function state machine extensions.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Public Properties:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Defines and Macros:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00517.svg" width="318" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00517.svg" width="278" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01640.html">PUSH_BUTTON_STATUS_s</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status word of the push button driver.  <a href="a01640.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01652.html">PUSH_BUTTON_OBJECT_s</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push button function driver data object.  <a href="a01652.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:gabd8e0fa892ee3bfb88dea4e13b3ded87"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00517.html#gabd8e0fa892ee3bfb88dea4e13b3ded87">SWITCH_STATUS_FLAGS_e</a> { <b>SWITCH_STAT_PRESSED</b> = 0b1100000000000001, 
-<b>SWITCH_STAT_LONG_PRESS</b> = 0b1110000000000001, 
-<b>SWITCH_STAT_RELEASED</b> = 0b1000000000000001
- }</td></tr>
-<tr class="memdesc:gabd8e0fa892ee3bfb88dea4e13b3ded87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of push button states.  <a href="a00517.html#gabd8e0fa892ee3bfb88dea4e13b3ded87">More...</a><br /></td></tr>
-<tr class="separator:gabd8e0fa892ee3bfb88dea4e13b3ded87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:gac3e84f17fbb5a9d23a0e089b210cb080"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00517.html#gac3e84f17fbb5a9d23a0e089b210cb080">CS_CALIB_STEPS</a>&#160;&#160;&#160;8</td></tr>
+<tr class="memdesc:gac3e84f17fbb5a9d23a0e089b210cb080"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of signal oversampling steps used to determine the calibration value.  <a href="a00517.html#gac3e84f17fbb5a9d23a0e089b210cb080">More...</a><br /></td></tr>
+<tr class="separator:gac3e84f17fbb5a9d23a0e089b210cb080"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Public properties of the push button device driver library. </p>
-<p>This is the detailed description of public variables, data types, enumerations, defines and macros of the push button device driver library. </p>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="gabd8e0fa892ee3bfb88dea4e13b3ded87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabd8e0fa892ee3bfb88dea4e13b3ded87">&#9670;&nbsp;</a></span>SWITCH_STATUS_FLAGS_e</h2>
+<p>List of defines and macros of the Special Function state machine extensions. </p>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="gac3e84f17fbb5a9d23a0e089b210cb080"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac3e84f17fbb5a9d23a0e089b210cb080">&#9670;&nbsp;</a></span>CS_CALIB_STEPS</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="a00517.html#gabd8e0fa892ee3bfb88dea4e13b3ded87">SWITCH_STATUS_FLAGS_e</a></td>
+          <td class="memname">#define CS_CALIB_STEPS&#160;&#160;&#160;8</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Enumeration of push button states. </p>
-<p>This enumeration lists the different conditions of the push button connected to the specified GPIO of the device, which can be detecting by this push button function driver. </p>
+<p>Number of signal oversampling steps used to determine the calibration value. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00338_source.html#l00049">49</a> of file <a class="el" href="a00338_source.html">drv_push_button.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00263_source.html#l00053">53</a> of file <a class="el" href="a00263_source.html">dev_buck_special_functions.c</a>.</p>
 
 </div>
 </div>

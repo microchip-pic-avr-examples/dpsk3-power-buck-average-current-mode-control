@@ -1,7 +1,4 @@
-<map id="Properties" name="Properties">
-<area shape="rect" id="node1" href="$a00488.html" title="List of data types of the Special Function state machine extensions." alt="" coords="375,5,463,31"/>
-<area shape="rect" id="node2" href="$a00484.html" title=" " alt="" coords="5,55,165,80"/>
-<area shape="rect" id="node3" title="Public properties of the second library layer." alt="" coords="213,55,295,80"/>
-<area shape="rect" id="node4" href="$a00487.html" title="List of variables of the Special Function state machine extensions." alt="" coords="343,55,495,80"/>
-<area shape="rect" id="node5" href="$a00489.html" title="List of defines and macros of the Special Function state machine extensions." alt="" coords="350,104,487,129"/>
+<map id="Private Functions" name="Private Functions">
+<area shape="rect" id="node1" title="Private functions of the application layer of the debugging LED task." alt="" coords="233,13,356,38"/>
+<area shape="rect" id="node2" href="$a00483.html" title=" " alt="" coords="5,5,185,45"/>
 </map>

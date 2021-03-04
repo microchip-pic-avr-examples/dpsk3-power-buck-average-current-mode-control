@@ -1,4 +1,4 @@
-<map id="Device GPIO Assignments" name="Device GPIO Assignments">
-<area shape="rect" id="node1" href="$a00420.html" title=" " alt="" coords="5,5,159,31"/>
-<area shape="rect" id="node2" title="Assignment of microcontroller device pins to circuit functions and signals." alt="" coords="207,5,383,31"/>
+<map id="Buck Converter" name="Buck Converter">
+<area shape="rect" id="node1" href="$a00420.html" title="Device analog input pin, register and interrupt vector assignments of input voltage feedback signal(s..." alt="" coords="5,5,183,31"/>
+<area shape="rect" id="node2" title="Device analog input pin, register and interrupt vector assignments of input voltage feedback signal(s..." alt="" coords="231,5,341,31"/>
 </map>

@@ -1,4 +1,4 @@
-<map id="PUSH_BUTTON_STATUS_s" name="PUSH_BUTTON_STATUS_s">
-<area shape="rect" id="node1" title="Status word of the push button driver." alt="" coords="5,219,192,384"/>
-<area shape="rect" id="node2" href="$a01652.html" title="Push button function driver data object." alt="" coords="5,5,192,171"/>
+<map id="NPNZ_ADC_TRGCTRL_s" name="NPNZ_ADC_TRGCTRL_s">
+<area shape="rect" id="node1" title="Automated ADC Trigger handling." alt="" coords="5,248,177,369"/>
+<area shape="rect" id="node2" href="$a01656.html" title="Global NPNZ controller data object." alt="" coords="21,5,162,200"/>
 </map>

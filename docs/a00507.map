@@ -1,4 +1,4 @@
-<map id="Data Object Members" name="Data Object Members">
-<area shape="rect" id="node1" href="$a00505.html" title="Public properties of the Power Converter Control driver." alt="" coords="5,5,87,31"/>
-<area shape="rect" id="node2" title="Public properties of the Power Converter Control driver." alt="" coords="135,5,284,31"/>
+<map id="Functions" name="Functions">
+<area shape="rect" id="node1" title="Functions of the second library layer." alt="" coords="199,13,277,38"/>
+<area shape="rect" id="node2" href="$a00506.html" title="Description of the Buck Converter Library State Machine library module." alt="" coords="5,5,151,45"/>
 </map>

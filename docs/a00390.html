@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: User Settings</title>
+<title>Digital Power Starter Kit 3 Firmware: Hardware Version ID</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,254 +104,46 @@ $(document).ready(function(){initNavTree('a00390.html',''); initResizable(); });
 
 <div class="header">
   <div class="headertitle">
-<div class="title">User Settings<div class="ingroups"><a class="el" href="a00537.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00389.html">Startup Timing Settings</a></div></div>  </div>
+<div class="title">Hardware Version ID<div class="ingroups"><a class="el" href="a00565.html">Hardware Abstraction Layer</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>User-declaration of startup timing periods using physical quantities.  
+<p>Global identified to the hardware version used.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for User Settings:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Hardware Version ID:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00390.svg" width="319" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00390.svg" width="346" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
-<tr class="memitem:ga4308ebf74c3332bd1edfdb6952629eaa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga4308ebf74c3332bd1edfdb6952629eaa">BUCK_POWER_ON_DELAY</a>&#160;&#160;&#160;(float) 200e-3</td></tr>
-<tr class="memdesc:ga4308ebf74c3332bd1edfdb6952629eaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global defines for soft-start specific parameters.  <a href="a00390.html#ga4308ebf74c3332bd1edfdb6952629eaa">More...</a><br /></td></tr>
-<tr class="separator:ga4308ebf74c3332bd1edfdb6952629eaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5adf9fb727870e57bf02ead3ac7c63ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga5adf9fb727870e57bf02ead3ac7c63ac">BUCK_VRAMP_PERIOD</a>&#160;&#160;&#160;(float) 100e-3</td></tr>
-<tr class="memdesc:ga5adf9fb727870e57bf02ead3ac7c63ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">voltage ramp-up period in [sec]  <a href="a00390.html#ga5adf9fb727870e57bf02ead3ac7c63ac">More...</a><br /></td></tr>
-<tr class="separator:ga5adf9fb727870e57bf02ead3ac7c63ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga97ee7cbed4a1ed9ebae5c8576d292103"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga97ee7cbed4a1ed9ebae5c8576d292103">BUCK_IRAMP_PERIOD</a>&#160;&#160;&#160;(float) 100e-3</td></tr>
-<tr class="memdesc:ga97ee7cbed4a1ed9ebae5c8576d292103"><td class="mdescLeft">&#160;</td><td class="mdescRight">output current ramp-up period in [sec]  <a href="a00390.html#ga97ee7cbed4a1ed9ebae5c8576d292103">More...</a><br /></td></tr>
-<tr class="separator:ga97ee7cbed4a1ed9ebae5c8576d292103"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4cf9c52e0a9c20641018ebdd2679f3c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga4cf9c52e0a9c20641018ebdd2679f3c1">BUCK_POWER_GOOD_DELAY</a>&#160;&#160;&#160;(float) 200e-3</td></tr>
-<tr class="memdesc:ga4cf9c52e0a9c20641018ebdd2679f3c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">power good delay in [sec]  <a href="a00390.html#ga4cf9c52e0a9c20641018ebdd2679f3c1">More...</a><br /></td></tr>
-<tr class="separator:ga4cf9c52e0a9c20641018ebdd2679f3c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0c3f62393119606cf410bc110c3485c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga0c3f62393119606cf410bc110c3485c1">BOOST_POWER_ON_DELAY</a>&#160;&#160;&#160;(float) 200e-3</td></tr>
-<tr class="memdesc:ga0c3f62393119606cf410bc110c3485c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration of additional hardware-specific defines required for adaptive gain control.  <a href="a00390.html#ga0c3f62393119606cf410bc110c3485c1">More...</a><br /></td></tr>
-<tr class="separator:ga0c3f62393119606cf410bc110c3485c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga96ef5acd0b4aa670827cb7b418fee8a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga96ef5acd0b4aa670827cb7b418fee8a9">BOOST_VRAMP_PERIOD</a>&#160;&#160;&#160;(float) 100e-3</td></tr>
-<tr class="memdesc:ga96ef5acd0b4aa670827cb7b418fee8a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">voltage ramp-up period in [sec]  <a href="a00390.html#ga96ef5acd0b4aa670827cb7b418fee8a9">More...</a><br /></td></tr>
-<tr class="separator:ga96ef5acd0b4aa670827cb7b418fee8a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga37bef3bc61987dfa7912227dcd2e8475"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga37bef3bc61987dfa7912227dcd2e8475">BOOST_IRAMP_PERIOD</a>&#160;&#160;&#160;(float) 100e-3</td></tr>
-<tr class="memdesc:ga37bef3bc61987dfa7912227dcd2e8475"><td class="mdescLeft">&#160;</td><td class="mdescRight">output current ramp-up period in [sec]  <a href="a00390.html#ga37bef3bc61987dfa7912227dcd2e8475">More...</a><br /></td></tr>
-<tr class="separator:ga37bef3bc61987dfa7912227dcd2e8475"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8a44fb1bbfee2714f51174f5ec741c01"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga8a44fb1bbfee2714f51174f5ec741c01">BOOST_POWER_GOOD_DELAY</a>&#160;&#160;&#160;(float) 200e-3</td></tr>
-<tr class="memdesc:ga8a44fb1bbfee2714f51174f5ec741c01"><td class="mdescLeft">&#160;</td><td class="mdescRight">power good delay in [sec]  <a href="a00390.html#ga8a44fb1bbfee2714f51174f5ec741c01">More...</a><br /></td></tr>
-<tr class="separator:ga8a44fb1bbfee2714f51174f5ec741c01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga54fa6c219dce9de5f816617ce4716b35"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#ga54fa6c219dce9de5f816617ce4716b35">BOOST_CHARGEUP_PERIOD</a>&#160;&#160;&#160;(float)  50e-3</td></tr>
-<tr class="memdesc:ga54fa6c219dce9de5f816617ce4716b35"><td class="mdescLeft">&#160;</td><td class="mdescRight">output capacitor charge up monitor period in [sec]  <a href="a00390.html#ga54fa6c219dce9de5f816617ce4716b35">More...</a><br /></td></tr>
-<tr class="separator:ga54fa6c219dce9de5f816617ce4716b35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae3597efdac20bf9aee16420f6f6d8be4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#gae3597efdac20bf9aee16420f6f6d8be4">BOOST_CHARGEUP_TIMEOUT</a>&#160;&#160;&#160;(float) 200e-3</td></tr>
-<tr class="memdesc:gae3597efdac20bf9aee16420f6f6d8be4"><td class="mdescLeft">&#160;</td><td class="mdescRight">output capacitor charge up monitor timeout in [sec]  <a href="a00390.html#gae3597efdac20bf9aee16420f6f6d8be4">More...</a><br /></td></tr>
-<tr class="separator:gae3597efdac20bf9aee16420f6f6d8be4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafff853e38ff5aca0cdf027be10f6a043"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00390.html#gafff853e38ff5aca0cdf027be10f6a043">__DPSK3_R30__</a></td></tr>
+<tr class="memdesc:gafff853e38ff5aca0cdf027be10f6a043"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global macro identifying the hardware version supported by.  <a href="a00390.html#gafff853e38ff5aca0cdf027be10f6a043">More...</a><br /></td></tr>
+<tr class="separator:gafff853e38ff5aca0cdf027be10f6a043"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>User-declaration of startup timing periods using physical quantities. </p>
+<p>Global identified to the hardware version used. </p>
+<p>The main purpose of a hardware abstraction layer is to provide one central point in complex firmware architectures where hardware dependencies can be specified, signal scalings can be defined and specific chip resources can be assigned to support/ connect generic software functions to the hardware.</p>
+<p>This central definitions allow fast modifications and optimizations but also support fast code migration between different hardware platforms. Thus, fast adaptation of new hardware can be achieved by modifying this set of centralized definitions.</p>
+<p>By including a hardware abstraction header file in a project results in an automated adaptation of all parameters available. To ensure no conflicts occur, each hardware abstraction layer header file needs a unique identifier. This unique identifier is provided by the so-called Hardware Version ID. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga54fa6c219dce9de5f816617ce4716b35"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga54fa6c219dce9de5f816617ce4716b35">&#9670;&nbsp;</a></span>BOOST_CHARGEUP_PERIOD</h2>
+<a id="gafff853e38ff5aca0cdf027be10f6a043"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafff853e38ff5aca0cdf027be10f6a043">&#9670;&nbsp;</a></span>__DPSK3_R30__</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_CHARGEUP_PERIOD&#160;&#160;&#160;(float)  50e-3</td>
+          <td class="memname">#define __DPSK3_R30__</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>output capacitor charge up monitor period in [sec] </p>
+<p>Global macro identifying the hardware version supported by. </p>
+<p>This global macro is used to identify the hardware version supported by this hardware abstraction layer header file. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01427">1427</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gae3597efdac20bf9aee16420f6f6d8be4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae3597efdac20bf9aee16420f6f6d8be4">&#9670;&nbsp;</a></span>BOOST_CHARGEUP_TIMEOUT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BOOST_CHARGEUP_TIMEOUT&#160;&#160;&#160;(float) 200e-3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>output capacitor charge up monitor timeout in [sec] </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01428">1428</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga37bef3bc61987dfa7912227dcd2e8475"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga37bef3bc61987dfa7912227dcd2e8475">&#9670;&nbsp;</a></span>BOOST_IRAMP_PERIOD</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BOOST_IRAMP_PERIOD&#160;&#160;&#160;(float) 100e-3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>output current ramp-up period in [sec] </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01424">1424</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga8a44fb1bbfee2714f51174f5ec741c01"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8a44fb1bbfee2714f51174f5ec741c01">&#9670;&nbsp;</a></span>BOOST_POWER_GOOD_DELAY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BOOST_POWER_GOOD_DELAY&#160;&#160;&#160;(float) 200e-3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>power good delay in [sec] </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01425">1425</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga0c3f62393119606cf410bc110c3485c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0c3f62393119606cf410bc110c3485c1">&#9670;&nbsp;</a></span>BOOST_POWER_ON_DELAY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BOOST_POWER_ON_DELAY&#160;&#160;&#160;(float) 200e-3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Declaration of additional hardware-specific defines required for adaptive gain control. </p>
-<p>In this section additional macros are defined to calculate constant parameters for the adaptive gain modulation algorithm using user defined settings declared in their respective sections. Any change of these parameters will also result in a change of the values of the gain modulation parameters of this section.</p>
-<p>Global defines for soft-start specific parameters</p>
-<p>This section is used to define power supply startup timing settings. The soft-start sequence is part of the power controller. It allows to program specific timings for</p><ul>
-<li>Power On Delay</li>
-<li>Ramp Period</li>
-<li>Power Good Delay</li>
-</ul>
-<p>After the startup has passed these three timing periods, the power supply is ending up in "normal" operation, continuously regulating the output until a fault is detected or the operating state is changed for any other reason. When the output voltage reference is changed, the power control state machine will use the voltage ramp slope defined here to tune from the recent voltage reference to the new reference value. During this period the BUSY-bit of the power controller (status word, bit #7) will be set. This status bit will be cleared automatically by the power controller state machine once the new reference value has been applied and the converter is back in constant regulation mode.</p>
-<p>Pre-compiler macros are used to translate physical values into binary (integer) numbers to be written to SFRs and variables. <br  />
- (see <a class="el" href="a00391.html">Conversion Macros</a> for details)</p>
-<dl class="section note"><dt>Note</dt><dd>On DPSK3 it takes roughly 500 ms until the auxiliary power has been started, the PIC24 housekeeping controller on the bottom side of the board resets the protection logic and allows the dsPIC to run. After this period the dsPIC controller starts to execute its firmware.</dd></dl>
-<p>This additional startup delay of ~500 ms is not considered in the settings below and needs to be taken into account when adjusting startup timing. Use an independent debugging pin toggle at the beginning of the firmware to verify the specified startup timing is applied as desired. power on delay in [sec] </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01422">1422</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga96ef5acd0b4aa670827cb7b418fee8a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga96ef5acd0b4aa670827cb7b418fee8a9">&#9670;&nbsp;</a></span>BOOST_VRAMP_PERIOD</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BOOST_VRAMP_PERIOD&#160;&#160;&#160;(float) 100e-3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>voltage ramp-up period in [sec] </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01423">1423</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga97ee7cbed4a1ed9ebae5c8576d292103"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga97ee7cbed4a1ed9ebae5c8576d292103">&#9670;&nbsp;</a></span>BUCK_IRAMP_PERIOD</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_IRAMP_PERIOD&#160;&#160;&#160;(float) 100e-3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>output current ramp-up period in [sec] </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00790">790</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga4cf9c52e0a9c20641018ebdd2679f3c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4cf9c52e0a9c20641018ebdd2679f3c1">&#9670;&nbsp;</a></span>BUCK_POWER_GOOD_DELAY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_POWER_GOOD_DELAY&#160;&#160;&#160;(float) 200e-3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>power good delay in [sec] </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00791">791</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga4308ebf74c3332bd1edfdb6952629eaa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4308ebf74c3332bd1edfdb6952629eaa">&#9670;&nbsp;</a></span>BUCK_POWER_ON_DELAY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_POWER_ON_DELAY&#160;&#160;&#160;(float) 200e-3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Global defines for soft-start specific parameters. </p>
-<p>This section is used to define power supply startup timing settings. The soft-start sequence is part of the power controller. It allows to program specific timings for</p><ul>
-<li>Power On Delay</li>
-<li>Ramp Period</li>
-<li>Power Good Delay</li>
-</ul>
-<p>After the startup has passed these three timing periods, the power supply is ending up in "normal" operation, continuously regulating the output until a fault is detected or the operating state is changed for any other reason. When the output voltage reference is changed, the power control state machine will use the voltage ramp slope defined here to tune from the recent voltage reference to the new reference value. During this period the BUSY-bit of the power controller (status word, bit #7) will be set. This status bit will be cleared automatically by the power controller state machine once the new reference value has been applied and the converter is back in constant regulation mode.</p>
-<p>Pre-compiler macros are used to translate physical values into binary (integer) numbers to be written to SFRs and variables. <br  />
- (see <a class="el" href="a00391.html">Conversion Macros</a> for details)</p>
-<dl class="section note"><dt>Note</dt><dd>On DPSK3 it takes roughly 500 ms until the auxiliary power has been started, the PIC24 housekeeping controller on the bottom side of the board resets the protection logic and allows the dsPIC to run. After this period the dsPIC controller starts to execute its firmware.</dd></dl>
-<p>This additional startup delay of ~500 ms is not considered in the settings below and needs to be taken into account when adjusting startup timing. Use an independent debugging pin toggle at the beginning of the firmware to verify the specified startup timing is applied as desired. power on delay in [sec] </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00788">788</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga5adf9fb727870e57bf02ead3ac7c63ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5adf9fb727870e57bf02ead3ac7c63ac">&#9670;&nbsp;</a></span>BUCK_VRAMP_PERIOD</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_VRAMP_PERIOD&#160;&#160;&#160;(float) 100e-3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>voltage ramp-up period in [sec] </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00789">789</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00059">59</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

@@ -1,8 +1,5 @@
 var a01596 =
 [
-    [ "AltSource", "a01596.html#a3a379c646ec42095e042129a3d5be4c6", null ],
-    [ "AltTarget", "a01596.html#a6b05be809e02d6df3543491ac1b0a33f", null ],
-    [ "ptrControlReference", "a01596.html#a306222c526fd3d513d6b71a8bb81fbb2", null ],
-    [ "Source", "a01596.html#ae15e31196b49064de35eff167eb5d2fa", null ],
-    [ "Target", "a01596.html#adea3417126acdc7fcc1f1dac45b7dd83", null ]
+    [ "ControlHistory", "a01596.html#ab21f5973323867274125b8e65db7f612", null ],
+    [ "ErrorHistory", "a01596.html#addb316289a6a9e1b14999976b7b74761", null ]
 ];

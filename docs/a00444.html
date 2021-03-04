@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Private Properties</title>
+<title>Digital Power Starter Kit 3 Firmware: Buck Converter</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,93 +104,255 @@ $(document).ready(function(){initNavTree('a00444.html',''); initResizable(); });
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Private Properties<div class="ingroups"><a class="el" href="a00538.html">Application Layer</a> &raquo; <a class="el" href="a00440.html">LC-Display Application Layer</a></div></div>  </div>
+<div class="title">Buck Converter<div class="ingroups"><a class="el" href="a00565.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00440.html">Adaptive Gain Control Feed Forward</a> &raquo; <a class="el" href="a00443.html">Conversion Macros</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Private properties of the LC display task.  
+<p>Conversion macros for user-declarations of Adaptive Gain Modulation parameters of the buck converter.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Private Properties:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Buck Converter:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00444.svg" width="336" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00444.svg" width="302" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
-<tr class="memitem:ga6d471f8bdd24d951c86a09ec25f74ef2"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00444.html#ga6d471f8bdd24d951c86a09ec25f74ef2">lcd_cnt</a> = 0</td></tr>
-<tr class="memdesc:ga6d471f8bdd24d951c86a09ec25f74ef2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Local counter used to trigger LCD refresh event.  <a href="a00444.html#ga6d471f8bdd24d951c86a09ec25f74ef2">More...</a><br /></td></tr>
-<tr class="separator:ga6d471f8bdd24d951c86a09ec25f74ef2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga064b0f92f54c1aab1e6731ff24b4cce7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00444.html#ga064b0f92f54c1aab1e6731ff24b4cce7">LCD_STARTUP</a>&#160;&#160;&#160;30000</td></tr>
-<tr class="memdesc:ga064b0f92f54c1aab1e6731ff24b4cce7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Startup screen delay compare value.  <a href="a00444.html#ga064b0f92f54c1aab1e6731ff24b4cce7">More...</a><br /></td></tr>
-<tr class="separator:ga064b0f92f54c1aab1e6731ff24b4cce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8f1bba8cbdf98ed2ac6e10cc8739e56f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00444.html#ga8f1bba8cbdf98ed2ac6e10cc8739e56f">LCD_REFRESH</a>&#160;&#160;&#160;2000</td></tr>
-<tr class="memdesc:ga8f1bba8cbdf98ed2ac6e10cc8739e56f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Screen refresh delay compare value.  <a href="a00444.html#ga8f1bba8cbdf98ed2ac6e10cc8739e56f">More...</a><br /></td></tr>
-<tr class="separator:ga8f1bba8cbdf98ed2ac6e10cc8739e56f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga41af1de3fe8252ea181dc05f33c14b68"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00444.html#ga41af1de3fe8252ea181dc05f33c14b68">BUCK_VL_MINIMUM</a>&#160;&#160;&#160;(float)(<a class="el" href="a00417.html#ga5bb8349b54c2abdb048d8c6cb5abb97a">BUCK_VIN_UNDER_VOLTAGE</a> - <a class="el" href="a00424.html#ga61f64155f1dbabff64e636b9fd4a1792">BUCK_VOUT_MAXIMUM</a>)</td></tr>
+<tr class="memdesc:ga41af1de3fe8252ea181dc05f33c14b68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion macros of phase current feedback parameters.  <a href="a00444.html#ga41af1de3fe8252ea181dc05f33c14b68">More...</a><br /></td></tr>
+<tr class="separator:ga41af1de3fe8252ea181dc05f33c14b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6999c379d5a1a2c4fb81902bfc1fe3b1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00444.html#ga6999c379d5a1a2c4fb81902bfc1fe3b1">BUCK_VL_NOMINAL</a>&#160;&#160;&#160;(float)(<a class="el" href="a00417.html#ga5c7772209d64e3a378005e91041e4909">BUCK_VIN_NOMINAL</a>       - <a class="el" href="a00424.html#ga28660f68fd69aa1cf4c352f88634060c">BUCK_VOUT_NOMINAL</a>)</td></tr>
+<tr class="memdesc:ga6999c379d5a1a2c4fb81902bfc1fe3b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nominal input voltage - nominal output voltage.  <a href="a00444.html#ga6999c379d5a1a2c4fb81902bfc1fe3b1">More...</a><br /></td></tr>
+<tr class="separator:ga6999c379d5a1a2c4fb81902bfc1fe3b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga16553be6e8fe8ab34f6d078ff6e39cd7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00444.html#ga16553be6e8fe8ab34f6d078ff6e39cd7">BUCK_VL_MAXIMUM</a>&#160;&#160;&#160;(float)(<a class="el" href="a00419.html#ga9d3deddd69546a95751204fe12f2a30c">BUCK_VIN_RANGE_MAX</a>     - 0)</td></tr>
+<tr class="memdesc:ga16553be6e8fe8ab34f6d078ff6e39cd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum input voltage - output voltage = 0V.  <a href="a00444.html#ga16553be6e8fe8ab34f6d078ff6e39cd7">More...</a><br /></td></tr>
+<tr class="separator:ga16553be6e8fe8ab34f6d078ff6e39cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga30083345d8b122bce51aa372bc4ce148"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00444.html#ga30083345d8b122bce51aa372bc4ce148">BUCK_AGC_FACTOR_MAX</a>&#160;&#160;&#160;(float)(<a class="el" href="a00444.html#ga6999c379d5a1a2c4fb81902bfc1fe3b1">BUCK_VL_NOMINAL</a> / <a class="el" href="a00444.html#ga41af1de3fe8252ea181dc05f33c14b68">BUCK_VL_MINIMUM</a>)</td></tr>
+<tr class="memdesc:ga30083345d8b122bce51aa372bc4ce148"><td class="mdescLeft">&#160;</td><td class="mdescRight">Floating point number of the maximumm limit of the adaptive gain modulation factor (float)  <a href="a00444.html#ga30083345d8b122bce51aa372bc4ce148">More...</a><br /></td></tr>
+<tr class="separator:ga30083345d8b122bce51aa372bc4ce148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2f08303f166365f97a7390fa1ef1503d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00444.html#ga2f08303f166365f97a7390fa1ef1503d">BUCK_AGC_NOM_SCALER</a>&#160;&#160;&#160;(uint16_t)(ceil(log(<a class="el" href="a00444.html#ga30083345d8b122bce51aa372bc4ce148">BUCK_AGC_FACTOR_MAX</a>)/log(2)))</td></tr>
+<tr class="memdesc:ga2f08303f166365f97a7390fa1ef1503d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit-shift scaler of the floating point number of the maimum limit of the adaptive gain modulation factor.  <a href="a00444.html#ga2f08303f166365f97a7390fa1ef1503d">More...</a><br /></td></tr>
+<tr class="separator:ga2f08303f166365f97a7390fa1ef1503d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac099d403afaf30b093a91400740b5737"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00444.html#gac099d403afaf30b093a91400740b5737">BUCK_AGC_NOM_FACTOR</a>&#160;&#160;&#160;(uint16_t)(0x7FFF &gt;&gt; <a class="el" href="a00444.html#ga2f08303f166365f97a7390fa1ef1503d">BUCK_AGC_NOM_SCALER</a>)</td></tr>
+<tr class="memdesc:gac099d403afaf30b093a91400740b5737"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fractional of the floating point number of the maimum limit of the adaptive gain modulation factor.  <a href="a00444.html#gac099d403afaf30b093a91400740b5737">More...</a><br /></td></tr>
+<tr class="separator:gac099d403afaf30b093a91400740b5737"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab66099c12e6b9f4153aeb8ef6e8487d5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00444.html#gab66099c12e6b9f4153aeb8ef6e8487d5">BUCK_AGC_MEDIAN</a>&#160;&#160;&#160;(int16_t)(((int16_t)(((float)<a class="el" href="a00419.html#gab5fe8834938982fdd2e9c6773866542b">BUCK_VIN_NOM</a> * <a class="el" href="a00444.html#ga64367e1b5414f4ab9ce0bd5f8a7ec618">BUCK_VIN_NORM_FCT</a>) - <a class="el" href="a00426.html#ga2f6b12d2606761c0b8a9bfdb446d2543">BUCK_VOUT_NOM</a>))&gt;&gt;<a class="el" href="a00444.html#ga2f08303f166365f97a7390fa1ef1503d">BUCK_AGC_NOM_SCALER</a>)</td></tr>
+<tr class="memdesc:gab66099c12e6b9f4153aeb8ef6e8487d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adaptive gain modulation factor at nominal operating point.  <a href="a00444.html#gab66099c12e6b9f4153aeb8ef6e8487d5">More...</a><br /></td></tr>
+<tr class="separator:gab66099c12e6b9f4153aeb8ef6e8487d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga64367e1b5414f4ab9ce0bd5f8a7ec618"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00444.html#ga64367e1b5414f4ab9ce0bd5f8a7ec618">BUCK_VIN_NORM_FCT</a>&#160;&#160;&#160;(float)(<a class="el" href="a00426.html#ga78e303e825ebbb38c8f61ddcb0a0d718">BUCK_VOUT_FEEDBACK_GAIN</a> / <a class="el" href="a00419.html#ga0400a9956f7aa27d775cdfb00cd12e5d">BUCK_VIN_FEEDBACK_GAIN</a>)</td></tr>
+<tr class="memdesc:ga64367e1b5414f4ab9ce0bd5f8a7ec618"><td class="mdescLeft">&#160;</td><td class="mdescRight">VIN-2-VOUT Normalization Factor.  <a href="a00444.html#ga64367e1b5414f4ab9ce0bd5f8a7ec618">More...</a><br /></td></tr>
+<tr class="separator:ga64367e1b5414f4ab9ce0bd5f8a7ec618"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafbaa80db67366c907a4dcc3a27e63ff1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00444.html#gafbaa80db67366c907a4dcc3a27e63ff1">BUCK_AGC_IO_NORM_SCALER</a>&#160;&#160;&#160;(int16_t)(ceil(log(<a class="el" href="a00444.html#ga64367e1b5414f4ab9ce0bd5f8a7ec618">BUCK_VIN_NORM_FCT</a>)/log(2)))</td></tr>
+<tr class="memdesc:gafbaa80db67366c907a4dcc3a27e63ff1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nominal VL Q15 scaler <br  />
+  <a href="a00444.html#gafbaa80db67366c907a4dcc3a27e63ff1">More...</a><br /></td></tr>
+<tr class="separator:gafbaa80db67366c907a4dcc3a27e63ff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabdbb5d2baae550abbc0c8d5cfa515e05"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00444.html#gabdbb5d2baae550abbc0c8d5cfa515e05">BUCK_AGC_IO_NORM_FACTOR</a>&#160;&#160;&#160;(int16_t)((<a class="el" href="a00444.html#ga64367e1b5414f4ab9ce0bd5f8a7ec618">BUCK_VIN_NORM_FCT</a> / pow(2.0, <a class="el" href="a00444.html#gafbaa80db67366c907a4dcc3a27e63ff1">BUCK_AGC_IO_NORM_SCALER</a>)) * (pow(2.0, 15)-1))</td></tr>
+<tr class="memdesc:gabdbb5d2baae550abbc0c8d5cfa515e05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nominal VL Q15 factor.  <a href="a00444.html#gabdbb5d2baae550abbc0c8d5cfa515e05">More...</a><br /></td></tr>
+<tr class="separator:gabdbb5d2baae550abbc0c8d5cfa515e05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga583bf4c01fc704d1e81ab3ff89734523"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00444.html#ga583bf4c01fc704d1e81ab3ff89734523">BUCK_AGC_EXEC_DLY</a>&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00442.html#ga4dee18365281cbd4a7a916676d76389f">BUCK_AGC_EXECUTION_DELAY</a> / <a class="el" href="a00393.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td></tr>
+<tr class="memdesc:ga583bf4c01fc704d1e81ab3ff89734523"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro calculating the integer number equivalent of the AGC algorithm computation time.  <a href="a00444.html#ga583bf4c01fc704d1e81ab3ff89734523">More...</a><br /></td></tr>
+<tr class="separator:ga583bf4c01fc704d1e81ab3ff89734523"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Private properties of the LC display task. </p>
-<p>This is the detailed description of public variables, data types, enumerations, defines and macros of the LC display task. </p>
+<p>Conversion macros for user-declarations of Adaptive Gain Modulation parameters of the buck converter. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga8f1bba8cbdf98ed2ac6e10cc8739e56f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8f1bba8cbdf98ed2ac6e10cc8739e56f">&#9670;&nbsp;</a></span>LCD_REFRESH</h2>
+<a id="ga583bf4c01fc704d1e81ab3ff89734523"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga583bf4c01fc704d1e81ab3ff89734523">&#9670;&nbsp;</a></span>BUCK_AGC_EXEC_DLY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LCD_REFRESH&#160;&#160;&#160;2000</td>
+          <td class="memname">#define BUCK_AGC_EXEC_DLY&#160;&#160;&#160;(uint16_t)(<a class="el" href="a00442.html#ga4dee18365281cbd4a7a916676d76389f">BUCK_AGC_EXECUTION_DELAY</a> / <a class="el" href="a00393.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Screen refresh delay compare value. </p>
-<p>Value of 30000 equals a period of 200 milliseconds.</p>
-<p>Period counter compare value determining the LCD refresh rate </p>
+<p>Macro calculating the integer number equivalent of the AGC algorithm computation time. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00176_source.html#l00059">59</a> of file <a class="el" href="a00176_source.html">app_lcd.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00786">786</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga064b0f92f54c1aab1e6731ff24b4cce7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga064b0f92f54c1aab1e6731ff24b4cce7">&#9670;&nbsp;</a></span>LCD_STARTUP</h2>
+<a id="ga30083345d8b122bce51aa372bc4ce148"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga30083345d8b122bce51aa372bc4ce148">&#9670;&nbsp;</a></span>BUCK_AGC_FACTOR_MAX</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LCD_STARTUP&#160;&#160;&#160;30000</td>
+          <td class="memname">#define BUCK_AGC_FACTOR_MAX&#160;&#160;&#160;(float)(<a class="el" href="a00444.html#ga6999c379d5a1a2c4fb81902bfc1fe3b1">BUCK_VL_NOMINAL</a> / <a class="el" href="a00444.html#ga41af1de3fe8252ea181dc05f33c14b68">BUCK_VL_MINIMUM</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Startup screen delay compare value. </p>
-<p>Value of 30000 equals a period of 3 seconds.</p>
-<p>Period counter compare value determining how long the startup screen will be shown </p>
+<p>Floating point number of the maximumm limit of the adaptive gain modulation factor (float) </p>
 
-<p class="definition">Definition at line <a class="el" href="a00176_source.html#l00047">47</a> of file <a class="el" href="a00176_source.html">app_lcd.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00774">774</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="ga6d471f8bdd24d951c86a09ec25f74ef2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6d471f8bdd24d951c86a09ec25f74ef2">&#9670;&nbsp;</a></span>lcd_cnt</h2>
+<a id="gabdbb5d2baae550abbc0c8d5cfa515e05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabdbb5d2baae550abbc0c8d5cfa515e05">&#9670;&nbsp;</a></span>BUCK_AGC_IO_NORM_FACTOR</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">lcd_cnt = 0</td>
+          <td class="memname">#define BUCK_AGC_IO_NORM_FACTOR&#160;&#160;&#160;(int16_t)((<a class="el" href="a00444.html#ga64367e1b5414f4ab9ce0bd5f8a7ec618">BUCK_VIN_NORM_FCT</a> / pow(2.0, <a class="el" href="a00444.html#gafbaa80db67366c907a4dcc3a27e63ff1">BUCK_AGC_IO_NORM_SCALER</a>)) * (pow(2.0, 15)-1))</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Local counter used to trigger LCD refresh event. </p>
-<p>LCD driver time-base counter.</p>
-<p>The LCD driver screen update is performed with a fixed frequency generated by counting task scheduler ticks. The time-base counter 'lcd_cnt' is incremented with every task scheduler call of function <a class="el" href="a00441.html#gacd8e3f8ca8af94f13f7efa0df7ced6f5" title="Refreshes the LC display.">appLCD_Execute()</a>. If the time-base counter value matches or exceeds the constant user value defined by LCD_STARTUP, the startup screen will be switched to the first default LCD screen and regular screen updates will be performed. If the time-base counter value matches or exceeds the constant user value defined by LCD_STARTUP, the screen update will be performed. </p>
+<p>Nominal VL Q15 factor. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00176_source.html#l00035">35</a> of file <a class="el" href="a00176_source.html">app_lcd.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00783">783</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gafbaa80db67366c907a4dcc3a27e63ff1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafbaa80db67366c907a4dcc3a27e63ff1">&#9670;&nbsp;</a></span>BUCK_AGC_IO_NORM_SCALER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_AGC_IO_NORM_SCALER&#160;&#160;&#160;(int16_t)(ceil(log(<a class="el" href="a00444.html#ga64367e1b5414f4ab9ce0bd5f8a7ec618">BUCK_VIN_NORM_FCT</a>)/log(2)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Nominal VL Q15 scaler <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00782">782</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gab66099c12e6b9f4153aeb8ef6e8487d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab66099c12e6b9f4153aeb8ef6e8487d5">&#9670;&nbsp;</a></span>BUCK_AGC_MEDIAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_AGC_MEDIAN&#160;&#160;&#160;(int16_t)(((int16_t)(((float)<a class="el" href="a00419.html#gab5fe8834938982fdd2e9c6773866542b">BUCK_VIN_NOM</a> * <a class="el" href="a00444.html#ga64367e1b5414f4ab9ce0bd5f8a7ec618">BUCK_VIN_NORM_FCT</a>) - <a class="el" href="a00426.html#ga2f6b12d2606761c0b8a9bfdb446d2543">BUCK_VOUT_NOM</a>))&gt;&gt;<a class="el" href="a00444.html#ga2f08303f166365f97a7390fa1ef1503d">BUCK_AGC_NOM_SCALER</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adaptive gain modulation factor at nominal operating point. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00777">777</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="gac099d403afaf30b093a91400740b5737"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac099d403afaf30b093a91400740b5737">&#9670;&nbsp;</a></span>BUCK_AGC_NOM_FACTOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_AGC_NOM_FACTOR&#160;&#160;&#160;(uint16_t)(0x7FFF &gt;&gt; <a class="el" href="a00444.html#ga2f08303f166365f97a7390fa1ef1503d">BUCK_AGC_NOM_SCALER</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fractional of the floating point number of the maimum limit of the adaptive gain modulation factor. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00776">776</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga2f08303f166365f97a7390fa1ef1503d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2f08303f166365f97a7390fa1ef1503d">&#9670;&nbsp;</a></span>BUCK_AGC_NOM_SCALER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_AGC_NOM_SCALER&#160;&#160;&#160;(uint16_t)(ceil(log(<a class="el" href="a00444.html#ga30083345d8b122bce51aa372bc4ce148">BUCK_AGC_FACTOR_MAX</a>)/log(2)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit-shift scaler of the floating point number of the maimum limit of the adaptive gain modulation factor. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00775">775</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga64367e1b5414f4ab9ce0bd5f8a7ec618"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga64367e1b5414f4ab9ce0bd5f8a7ec618">&#9670;&nbsp;</a></span>BUCK_VIN_NORM_FCT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_VIN_NORM_FCT&#160;&#160;&#160;(float)(<a class="el" href="a00426.html#ga78e303e825ebbb38c8f61ddcb0a0d718">BUCK_VOUT_FEEDBACK_GAIN</a> / <a class="el" href="a00419.html#ga0400a9956f7aa27d775cdfb00cd12e5d">BUCK_VIN_FEEDBACK_GAIN</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>VIN-2-VOUT Normalization Factor. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00781">781</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga16553be6e8fe8ab34f6d078ff6e39cd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga16553be6e8fe8ab34f6d078ff6e39cd7">&#9670;&nbsp;</a></span>BUCK_VL_MAXIMUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_VL_MAXIMUM&#160;&#160;&#160;(float)(<a class="el" href="a00419.html#ga9d3deddd69546a95751204fe12f2a30c">BUCK_VIN_RANGE_MAX</a>     - 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maximum input voltage - output voltage = 0V. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00770">770</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga41af1de3fe8252ea181dc05f33c14b68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga41af1de3fe8252ea181dc05f33c14b68">&#9670;&nbsp;</a></span>BUCK_VL_MINIMUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_VL_MINIMUM&#160;&#160;&#160;(float)(<a class="el" href="a00417.html#ga5bb8349b54c2abdb048d8c6cb5abb97a">BUCK_VIN_UNDER_VOLTAGE</a> - <a class="el" href="a00424.html#ga61f64155f1dbabff64e636b9fd4a1792">BUCK_VOUT_MAXIMUM</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Conversion macros of phase current feedback parameters. </p>
+<p>These conversion macros are used to convert user settings defined as physical quantities into binary (integer) numbers, which will be written to registers and variables and used in calculations throughout the firmware. Minimum input voltage - maximum output voltage </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00768">768</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga6999c379d5a1a2c4fb81902bfc1fe3b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6999c379d5a1a2c4fb81902bfc1fe3b1">&#9670;&nbsp;</a></span>BUCK_VL_NOMINAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_VL_NOMINAL&#160;&#160;&#160;(float)(<a class="el" href="a00417.html#ga5c7772209d64e3a378005e91041e4909">BUCK_VIN_NOMINAL</a>       - <a class="el" href="a00424.html#ga28660f68fd69aa1cf4c352f88634060c">BUCK_VOUT_NOMINAL</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Nominal input voltage - nominal output voltage. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00769">769</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

@@ -1,12 +1,17 @@
 var a01628 =
 [
-    [ "ADCTriggerControl", "a01628.html#aa708a44ef3b59a931f929bc6c72e07fc", null ],
-    [ "Advanced", "a01628.html#ae10c373e7000ff11abbb151f019793e0", null ],
-    [ "DataProviders", "a01628.html#a971260b757f0c8822315d8c82a603142", null ],
-    [ "ExtensionHooks", "a01628.html#a486610694a9aac008ab8c01a0ab88090", null ],
-    [ "Filter", "a01628.html#aa98db9224dce165f72d861acc8558419", null ],
-    [ "GainControl", "a01628.html#a3c9fc0a5e04a384801d066b95dc27f5d", null ],
-    [ "Limits", "a01628.html#a6127947619eb634f1a3c3650529e092c", null ],
-    [ "Ports", "a01628.html#ae834fa9c7338d08d0fa927c901c2503f", null ],
-    [ "status", "a01628.html#a38a4b2427f4b2b06c112385e722e1419", null ]
+    [ "ACoefficientsArraySize", "a01628.html#ac531fd3e581ecf7941a112346f956800", null ],
+    [ "BCoefficientsArraySize", "a01628.html#a0f44a7f281b9831c9a01cb0145f1f49d", null ],
+    [ "ControlHistoryArraySize", "a01628.html#ae142fcfc24877087d89007045ced6563", null ],
+    [ "ErrorHistoryArraySize", "a01628.html#a1b7d0877bab7259c8f922a1c47ea23b1", null ],
+    [ "normPostScaler", "a01628.html#a26dfdfdfeac973f78fcd8a9cefc81ee2", null ],
+    [ "normPostShiftA", "a01628.html#aee6e82426868c37660937ece5aa56d75", null ],
+    [ "normPostShiftB", "a01628.html#a1797ab1804ff7c8d4ea95092a1809739", null ],
+    [ "normPreShift", "a01628.html#af7053a95a1e3e02b0750539bcf37a35f", null ],
+    [ "PTermFactor", "a01628.html#a1b848b9fb90925fa803fea3196346506", null ],
+    [ "PTermScaler", "a01628.html#a83313da545ad8473d436b087f4ff29b8", null ],
+    [ "ptrACoefficients", "a01628.html#a9fbf6375472798ae4d35533dd776822c", null ],
+    [ "ptrBCoefficients", "a01628.html#a5e6c1af0f3825567c454a36a5b3a2846", null ],
+    [ "ptrControlHistory", "a01628.html#a1437871fb5511f4e29c692a96d7c9914", null ],
+    [ "ptrErrorHistory", "a01628.html#af7c80466342f19512e67e9855374b04d", null ]
 ];

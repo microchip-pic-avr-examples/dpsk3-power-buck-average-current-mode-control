@@ -1,4 +1,4 @@
-<map id="Private Properties" name="Private Properties">
-<area shape="rect" id="node1" title="Private properties of the LC display device driver library." alt="" coords="181,5,305,31"/>
-<area shape="rect" id="node2" href="$a00445.html" title=" " alt="" coords="5,5,133,31"/>
+<map id="Device GPIO Assignments" name="Device GPIO Assignments">
+<area shape="rect" id="node1" href="$a00448.html" title=" " alt="" coords="5,5,159,31"/>
+<area shape="rect" id="node2" title="Assignment of microcontroller device pins to circuit functions and signals." alt="" coords="207,5,383,31"/>
 </map>

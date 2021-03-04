@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: Data Types</title>
+<title>Digital Power Starter Kit 3 Firmware: Private Properties</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,22 +104,100 @@ $(document).ready(function(){initNavTree('a00482.html',''); initResizable(); });
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Data Types<div class="ingroups"><a class="el" href="a00539.html">Device Driver Library Layer</a> &raquo; <a class="el" href="a00466.html">Buck Converter Library</a> &raquo; <a class="el" href="a00477.html">Buck Converter Library Modules</a> &raquo; <a class="el" href="a00478.html">Buck Converter State Machine</a> &raquo; <a class="el" href="a00480.html">Properties</a></div></div>  </div>
+<div class="title">Private Properties<div class="ingroups"><a class="el" href="a00568.html">Library Driver Layer</a> &raquo; <a class="el" href="a00478.html">LC-Display Interface Driver</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Data types of the buck converter state machine.  
+<p>Private properties of the LC display interface driver.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Data Types:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Private Properties:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00482.svg" width="228" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00482.svg" width="322" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<table class="memberdecls">
+<tr class="memitem:ga54b80311c5aac1052284a52ad5824fc9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00482.html#ga54b80311c5aac1052284a52ad5824fc9">LCD_CS_nSELECTED</a>&#160;&#160;&#160;<a class="el" href="a00447.html#gaac69a266bd88f02fbe10059aee1566f6">LCD_CS_SetHigh</a></td></tr>
+<tr class="memdesc:ga54b80311c5aac1052284a52ad5824fc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial interface pin state conditions.  <a href="a00482.html#ga54b80311c5aac1052284a52ad5824fc9">More...</a><br /></td></tr>
+<tr class="separator:ga54b80311c5aac1052284a52ad5824fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab579f782fdb44ac74dd8c2681503f71a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00482.html#gab579f782fdb44ac74dd8c2681503f71a">LCD_CS_SELECTED</a>&#160;&#160;&#160;<a class="el" href="a00447.html#gab4f0f052518d81d65830b216d68a8300">LCD_CS_SetLow</a></td></tr>
+<tr class="separator:gab579f782fdb44ac74dd8c2681503f71a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6f7c55d9c8246fa677ae8d8d2c88df9e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00482.html#ga6f7c55d9c8246fa677ae8d8d2c88df9e">LCD_RS_COMMAND</a>&#160;&#160;&#160;<a class="el" href="a00447.html#ga4e073e0e85a0e0abdc1de7d883274daa">LCD_RS_SetLow</a></td></tr>
+<tr class="separator:ga6f7c55d9c8246fa677ae8d8d2c88df9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9993ce43cdf8d8cb194c2e23c3d2698d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00482.html#ga9993ce43cdf8d8cb194c2e23c3d2698d">LCD_RS_DATA</a>&#160;&#160;&#160;<a class="el" href="a00447.html#ga19c41c1494a15bd66a0af8a1a8c864dd">LCD_RS_SetHigh</a></td></tr>
+<tr class="separator:ga9993ce43cdf8d8cb194c2e23c3d2698d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Private properties of the LC display interface driver. </p>
+<p>This is the detailed description of public variables, data types, enumerations, defines and macros of the LC display interface driver. </p>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga54b80311c5aac1052284a52ad5824fc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga54b80311c5aac1052284a52ad5824fc9">&#9670;&nbsp;</a></span>LCD_CS_nSELECTED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CS_nSELECTED&#160;&#160;&#160;<a class="el" href="a00447.html#gaac69a266bd88f02fbe10059aee1566f6">LCD_CS_SetHigh</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initial interface pin state conditions. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00203_source.html#l00035">35</a> of file <a class="el" href="a00203_source.html">drv_lcd_interface.c</a>.</p>
+
 </div>
 </div>
-<p>Data types of the buck converter state machine. </p>
-<dl class="section note"><dt>Note</dt><dd>This library module does not provide any data types </dd></dl>
+<a id="gab579f782fdb44ac74dd8c2681503f71a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab579f782fdb44ac74dd8c2681503f71a">&#9670;&nbsp;</a></span>LCD_CS_SELECTED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CS_SELECTED&#160;&#160;&#160;<a class="el" href="a00447.html#gab4f0f052518d81d65830b216d68a8300">LCD_CS_SetLow</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00203_source.html#l00036">36</a> of file <a class="el" href="a00203_source.html">drv_lcd_interface.c</a>.</p>
+
+</div>
+</div>
+<a id="ga6f7c55d9c8246fa677ae8d8d2c88df9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6f7c55d9c8246fa677ae8d8d2c88df9e">&#9670;&nbsp;</a></span>LCD_RS_COMMAND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_RS_COMMAND&#160;&#160;&#160;<a class="el" href="a00447.html#ga4e073e0e85a0e0abdc1de7d883274daa">LCD_RS_SetLow</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00203_source.html#l00038">38</a> of file <a class="el" href="a00203_source.html">drv_lcd_interface.c</a>.</p>
+
+</div>
+</div>
+<a id="ga9993ce43cdf8d8cb194c2e23c3d2698d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9993ce43cdf8d8cb194c2e23c3d2698d">&#9670;&nbsp;</a></span>LCD_RS_DATA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_RS_DATA&#160;&#160;&#160;<a class="el" href="a00447.html#ga19c41c1494a15bd66a0af8a1a8c864dd">LCD_RS_SetHigh</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00203_source.html#l00039">39</a> of file <a class="el" href="a00203_source.html">drv_lcd_interface.c</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.20-->

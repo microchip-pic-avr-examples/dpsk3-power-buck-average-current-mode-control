@@ -1,5 +1,6 @@
 var a00389 =
 [
-    [ "User Settings", "a00390.html", "a00390" ],
-    [ "Conversion Macros", "a00391.html", "a00391" ]
+    [ "pgConfigClear", "a00389.html#ga75ca6374eb31a3224a8e7bcfd4cd56a0", null ],
+    [ "pwmConfigClear", "a00389.html#gafeca0163f581790a35cef7b99a276adc", null ],
+    [ "pwmConfigDefault", "a00389.html#gaf8f0ea73e96ecddb846d1361098c09fe", null ]
 ];

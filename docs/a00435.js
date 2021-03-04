@@ -1,11 +1,12 @@
 var a00435 =
 [
-    [ "CPU_INTTREG_t", "a00435.html#ga35071dd1d28db260f503cf7783b8562c", null ],
-    [ "CPU_RCON_t", "a00435.html#ga727efbb8fb2703832a116d8d7b70f9fa", null ],
-    [ "TASK_INFO_t", "a00435.html#gacab9a7bab555242c176709817ecda6f3", null ],
-    [ "TRAP_FLAGS_t", "a00435.html#ga34f8f3a66ba022a11555bcbcc1d7c143", null ],
-    [ "TRAP_ID_t", "a00435.html#gac1a3bb25ab328fe3ed0f3494dd58d41e", null ],
-    [ "TRAP_LOGGER_t", "a00435.html#gaa31136531ddd10f950990ce253c0de78", null ],
-    [ "TRAPLOG_STATUS_t", "a00435.html#gaa086a924e5aaa2bed5a676106fe284c6", null ],
-    [ "TRAP_ID_e", "a00435.html#gaee63654a5e14dd3b2bab6179a5cbe2ab", null ]
+    [ "_BUCK_ISNS_ADCInterrupt", "a00435.html#ga50fff9c881599654f21ce9637e20c6fd", null ],
+    [ "_BUCK_ISNS_ADCISR_IF", "a00435.html#ga7e5bdbfe2d5d96bfcd123ba6605b37cd", null ],
+    [ "BUCK_ISNS_ADCBUF", "a00435.html#gade3764f294b1249ee786e607ac3bac92", null ],
+    [ "BUCK_ISNS_ADCCORE", "a00435.html#ga491168bb2ec78648209e5c0bb313bc7c", null ],
+    [ "BUCK_ISNS_ADCIN", "a00435.html#gae52bcc85235d23c59c2a0670e57358ef", null ],
+    [ "BUCK_ISNS_ADCTRIG", "a00435.html#ga4992d9f910defe9b0651f1261d829892", null ],
+    [ "BUCK_ISNS_ALT_IN_SELECT", "a00435.html#ga4108e52bfa2d754db4434138565bfcdb", null ],
+    [ "BUCK_ISNS_ANSEL", "a00435.html#ga2644d75496cf4336a8d1ac1401b3606f", null ],
+    [ "BUCK_ISNS_TRGSRC", "a00435.html#ga2ec6249cbb929f8bfb06d8af295ab6c8", null ]
 ];

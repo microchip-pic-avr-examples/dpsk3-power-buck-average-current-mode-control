@@ -1,4 +1,5 @@
-<map id="Private Functions" name="Private Functions">
-<area shape="rect" id="node1" href="$a00424.html" title=" " alt="" coords="5,5,172,45"/>
-<area shape="rect" id="node2" title="Private functions of the first application layer task." alt="" coords="220,13,343,38"/>
+<map id="Microcontroller Abstraction" name="Microcontroller Abstraction">
+<area shape="rect" id="node1" title="Device analog output pin, register and interrupt vector assignments of output voltage feedback signal..." alt="" coords="224,5,401,31"/>
+<area shape="rect" id="node2" href="$a00428.html" title="Device analog output pin, register and interrupt vector assignments of output voltage feedback signal..." alt="" coords="449,5,560,31"/>
+<area shape="rect" id="node3" href="$a00422.html" title="Declaration of output voltage feedback parameters." alt="" coords="5,5,176,31"/>
 </map>

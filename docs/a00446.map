@@ -1,4 +1,4 @@
-<map id="Public Functions" name="Public Functions">
-<area shape="rect" id="node1" title="Public functions of the LC display device driver library." alt="" coords="181,5,300,31"/>
-<area shape="rect" id="node2" href="$a00445.html" title=" " alt="" coords="5,5,133,31"/>
+<map id="Buck Converter" name="Buck Converter">
+<area shape="rect" id="node1" href="$a00445.html" title="Real&#45;time control loop interrupt service routine declarations." alt="" coords="5,5,161,45"/>
+<area shape="rect" id="node2" title="Control loop Interrupt Vector Settings of the buck converter." alt="" coords="209,13,320,38"/>
 </map>

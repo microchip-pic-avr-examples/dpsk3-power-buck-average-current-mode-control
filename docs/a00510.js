@@ -1,7 +1,4 @@
 var a00510 =
 [
-    [ "Public Functions", "a00511.html", "a00511" ],
-    [ "Public Properties", "a00512.html", null ],
-    [ "Private Functions", "a00513.html", "a00513" ],
-    [ "Private Properties", "a00514.html", null ]
+    [ "_BUCK_VLOOP_Interrupt", "a00464.html#ga4d26e0585523e4ab162ca9868517b878", null ]
 ];

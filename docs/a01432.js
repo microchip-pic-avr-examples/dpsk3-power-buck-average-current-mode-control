@@ -1,8 +1,9 @@
 var a01432 =
 [
-    [ "ILR", "a01432.html#afc91a8fcf8325fbe0059152da64a96f8", null ],
-    [ "unsigned", "a01432.html#a32e93b068e309da5a319a7a69f3b3ff5", null ],
-    [ "value", "a01432.html#a3f0c55f449560b03ce0ac43270c26600", null ],
-    [ "VECNUM", "a01432.html#a0f6921c4b6f0f47e319bdebb707e0e3a", null ],
-    [ "VHOLD", "a01432.html#a82fd17775a72ed7c16b5f0df5b752a6c", null ]
+    [ "Counter", "a01432.html#a9e9b3f9102ce573dc6ac2e1058140322", null ],
+    [ "RecoveryResponse", "a01432.html#af9e053ccdb2ca7c1cff5fcbe4596bf9c", null ],
+    [ "ReferenceObject", "a01432.html#a9e234a289ec2e7de63ab9095222086eb", null ],
+    [ "SourceObject", "a01432.html#ab5f1eb31220187b74ffb14a15e10ce54", null ],
+    [ "Status", "a01432.html#a5682be08ea825740d924680de9b7af60", null ],
+    [ "TripResponse", "a01432.html#aa749f7fba8875502ddb95b0235f7264b", null ]
 ];

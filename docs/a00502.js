@@ -1,6 +1,7 @@
 var a00502 =
 [
-    [ "Functions", "a00503.html", "a00503" ],
-    [ "Objects", "a00504.html", "a00504" ],
-    [ "Properties", "a00505.html", "a00505" ]
+    [ "Public Functions", "a00503.html", "a00503" ],
+    [ "Public Properties", "a00504.html", "a00504" ],
+    [ "Private Functions", "a00505.html", null ],
+    [ "Private Properties", "a00506.html", null ]
 ];

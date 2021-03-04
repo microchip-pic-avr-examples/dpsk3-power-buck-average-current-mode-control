@@ -1,6 +1,4 @@
 var a00395 =
 [
-    [ "User Settings", "a00396.html", "a00396" ],
-    [ "Conversion Macros", "a00397.html", "a00397" ],
-    [ "Microcontroller Abstraction", "a00398.html", "a00398" ]
+    [ "MAIN_EXECUTION_PERIOD", "a00395.html#gac8489c3fb9bb5db0d15a2e870c3e5def", null ]
 ];

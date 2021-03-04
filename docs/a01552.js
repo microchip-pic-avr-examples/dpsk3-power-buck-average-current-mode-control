@@ -1,8 +1,11 @@
 var a01552 =
 [
-    [ "enabled", "a01552.html#a085e9fc0863cee4864cf51dcfe1e32df", null ],
-    [ "io_type", "a01552.html#a3451100070bc5449a21daa618dca87cd", null ],
-    [ "pin", "a01552.html#ac64e25be1a4e0e3f4db659fff41763b0", null ],
-    [ "polarity", "a01552.html#a98d20232971d53a8992b562306df4cbb", null ],
-    [ "port", "a01552.html#a5790090efaaa7d01ec029fb7da620b38", null ]
+    [ "control_error", "a01552.html#ac8075e097d2f5b01f5e19a1c088b2765", null ],
+    [ "control_input", "a01552.html#a1f1df1b6b181796635627d10d720dd4f", null ],
+    [ "control_output", "a01552.html#ac7ce35c7ae4977118fe839759bf34518", null ],
+    [ "i_out", "a01552.html#a9e418d7d3d756a1d9e0b63765d5392a4", null ],
+    [ "i_sns", "a01552.html#a18db7120ea66987ec70729258c2126e0", null ],
+    [ "temp", "a01552.html#aa9f24b0c02dbbc6659649c7b7a124dc4", null ],
+    [ "v_in", "a01552.html#af34b61c0a55244bf4aa166666a322efa", null ],
+    [ "v_out", "a01552.html#a81d40bc6e9f5a711379a1d3d40123bd9", null ]
 ];

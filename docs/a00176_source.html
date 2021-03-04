@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: dpsk_buck_acmc.X/sources/lcd/app_lcd.c Source File</title>
+<title>Digital Power Starter Kit 3 Firmware: dpsk_buck_acmc.X/sources/fault_handler/drivers/drv_trap_handler.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,197 +104,236 @@ $(document).ready(function(){initNavTree('a00176_source.html',''); initResizable
 
 <div class="header">
   <div class="headertitle">
-<div class="title">app_lcd.c</div>  </div>
+<div class="title">drv_trap_handler.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:   app_lcd.c</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Author: M91406</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created on March 12, 2020, 12:10 PM</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;lcd/app_lcd.h&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// Additional header files required by this task</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;config/apps.h&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;config/hal.h&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// PRIVATE VARIABLE DELARATIONS</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a01476.html">LCD_s</a> lcd;      <span class="comment">// declare one LCD data object</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a00444.html#ga6d471f8bdd24d951c86a09ec25f74ef2">   35</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00444.html#ga6d471f8bdd24d951c86a09ec25f74ef2">lcd_cnt</a> = 0;  </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; <span class="comment">// end of group app-layer-lcd-properties-private</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="a00444.html#ga064b0f92f54c1aab1e6731ff24b4cce7">   47</a></span>&#160;<span class="preprocessor">#define LCD_STARTUP   30000     </span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor"></span> </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; <span class="comment">// end of group app-layer-lcd-properties-private</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="a00444.html#ga8f1bba8cbdf98ed2ac6e10cc8739e56f">   59</a></span>&#160;<span class="preprocessor">#define LCD_REFRESH   2000      </span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor"></span> </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; <span class="comment">// end of group app-layer-lcd-properties-private</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="a00441.html#gab93992748ced72fdc2989d0b0f369e54">   76</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00441.html#gab93992748ced72fdc2989d0b0f369e54">appLCD_Initialize</a>(<span class="keywordtype">void</span>) </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">volatile</span> uint16_t retval = 1;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">if</span> (lcd.<a class="code" href="a01476.html#adc2298ffda0c853e699e6da9098f82ae">refresh</a> == 0)</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        lcd.<a class="code" href="a01476.html#adc2298ffda0c853e699e6da9098f82ae">refresh</a> = <a class="code" href="a00444.html#ga064b0f92f54c1aab1e6731ff24b4cce7">LCD_STARTUP</a>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="a00446.html#ga5d8f09855e28846e87400692d186781a">dev_Lcd_Initialize</a>();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="a00446.html#ga24701a4c3ae760e7e0b9c70d93370ff3">dev_Lcd_WriteStringXY</a>(0,0,<span class="stringliteral">&quot;==== DPSK-3 ====&quot;</span>);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="a00446.html#ga24701a4c3ae760e7e0b9c70d93370ff3">dev_Lcd_WriteStringXY</a>(0,1,<span class="stringliteral">&quot;   BUCK  ACMC   &quot;</span>);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="a00444.html#ga6d471f8bdd24d951c86a09ec25f74ef2">lcd_cnt</a> = 0;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    lcd.<a class="code" href="a01476.html#a085e9fc0863cee4864cf51dcfe1e32df">enabled</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span>(retval);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="a00441.html#gacd8e3f8ca8af94f13f7efa0df7ced6f5">  106</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00441.html#gacd8e3f8ca8af94f13f7efa0df7ced6f5">appLCD_Execute</a>(<span class="keywordtype">void</span>) </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;{</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keyword">volatile</span> uint16_t retval = 1;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">volatile</span> <span class="keywordtype">float</span> vi=0.0, vo=0.0, isns=0.0, temp=0.0;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">// IF LCD output is disabled, exit here</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">if</span>(!lcd.<a class="code" href="a01476.html#a085e9fc0863cee4864cf51dcfe1e32df">enabled</a>)</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">return</span>(retval);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">// Refresh LCD and reset refresh counter</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="a00444.html#ga6d471f8bdd24d951c86a09ec25f74ef2">lcd_cnt</a>++;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">// If REFRESH period has expired, update LCD contents</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="a00444.html#ga6d471f8bdd24d951c86a09ec25f74ef2">lcd_cnt</a> == lcd.<a class="code" href="a01476.html#adc2298ffda0c853e699e6da9098f82ae">refresh</a>) {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="comment">// Calculate output values</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        vi = ((<a class="code" href="a00462.html#gad251307f33c9d1fd60c1a55535d61955">buck</a>.<a class="code" href="a01560.html#ace365e404e1a839717de3d05ee55d27a">data</a>.<a class="code" href="a01524.html#af34b61c0a55244bf4aa166666a322efa">v_in</a> &lt;&lt; 3) * <a class="code" href="a00384.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>); <span class="comment">// Scale ADC value to physical unit</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        vi = (float)(<span class="keywordtype">int</span>)(100.0 * vi);      <span class="comment">// Rounding operation required to prevent display</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        vi /= 100.0;                        <span class="comment">// rounding issues around 9.99 and 10.0 ° C</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="comment">// Input voltage display</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">if</span>((<span class="keywordtype">double</span>)vi &lt; 10.000)</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <a class="code" href="a00447.html#gaeabde9cf4c09da1935c1dff5f1bda0c1">PrintLcd</a>(0, <span class="stringliteral">&quot;VIN     = %2.2f V&quot;</span>, (<span class="keywordtype">double</span>)vi);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <a class="code" href="a00447.html#gaeabde9cf4c09da1935c1dff5f1bda0c1">PrintLcd</a>(0, <span class="stringliteral">&quot;VIN     = %2.1f V&quot;</span>, (<span class="keywordtype">double</span>)vi);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">switch</span> (lcd.<a class="code" href="a01476.html#aea467a9fc04f0771215b952d26bc4392">screen</a>)</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        {</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="keywordflow">case</span> 1:     <span class="comment">// Show Temperature Output</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                temp = ((float)(<a class="code" href="a00462.html#gad251307f33c9d1fd60c1a55535d61955">buck</a>.<a class="code" href="a01560.html#ace365e404e1a839717de3d05ee55d27a">data</a>.<a class="code" href="a01524.html#aa9f24b0c02dbbc6659649c7b7a124dc4">temp</a> - <a class="code" href="a00415.html#gacde6c3fa85c34fe5414566acd2e77ca8">BUCK_FB_TEMP_ZERO</a>) / <a class="code" href="a00415.html#ga014133f88cd82218241bf16985302cd4">BUCK_FB_TEMP_SLOPE</a>); <span class="comment">// Scale ADC value to physical unit</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                temp = (float)(<span class="keywordtype">int</span>)(100.0 * temp);  <span class="comment">// Rounding operation required to prevent display </span></div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                temp /= 100.0;                      <span class="comment">// rounding issues around 9.99 and 10.0 V</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                <span class="keywordflow">if</span>((<span class="keywordtype">double</span>)temp &lt; 10.000)</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                    <a class="code" href="a00447.html#gaeabde9cf4c09da1935c1dff5f1bda0c1">PrintLcd</a>(1, <span class="stringliteral">&quot;TEMP    = %2.2f C&quot;</span>, (<span class="keywordtype">double</span>)temp);</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                    <a class="code" href="a00447.html#gaeabde9cf4c09da1935c1dff5f1bda0c1">PrintLcd</a>(1, <span class="stringliteral">&quot;TEMP    = %2.1f C&quot;</span>, (<span class="keywordtype">double</span>)temp);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <span class="keywordflow">case</span> 2:     <span class="comment">// Show Current Output</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="a00462.html#ga952a98e41cf813dc50567ad60b3e860c">    1</a></span>&#160;<span class="comment">/* **************************************************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * © 2006 Microchip Technology Inc.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * FileName:        fdrv_TrapHandler.c</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Dependencies:    Header file dvr_trap_handler.h</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Processor:       dsPIC33FJxxx/dsPIC33EPxxx/dsPIC33CXxxx</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * Compiler:        MPLAB® X16 v1.36 or higher</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * SOFTWARE LICENSE AGREEMENT:</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * Microchip Technology Incorporated (&quot;Microchip&quot;) retains all ownership and intellectual property </span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * rights in the code accompanying this message and in all derivatives hereto.  You may use this </span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * code, and any derivatives created by any person or entity by or on your behalf, exclusively with </span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * Microchip&#39;s proprietary products.  Your acceptance and/or use of this code constitutes agreement </span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * to the terms and conditions of this notice.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * CODE ACCOMPANYING THIS MESSAGE IS SUPPLIED BY MICROCHIP &quot;AS IS&quot;.  NO WARRANTIES, WHETHER EXPRESS, </span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * IMPLIED OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF NON-INFRINGEMENT, </span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE APPLY TO THIS CODE, ITS INTERACTION WITH </span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * MICROCHIP&#39;S PRODUCTS, COMBINATION WITH ANY OTHER PRODUCTS, OR USE IN ANY APPLICATION. </span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * YOU ACKNOWLEDGE AND AGREE THAT, IN NO EVENT, SHALL MICROCHIP BE LIABLE, WHETHER IN CONTRACT, </span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * WARRANTY, TORT (INCLUDING NEGLIGENCE OR BREACH OF STATUTORY DUTY), STRICT LIABILITY, INDEMNITY, </span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * CONTRIBUTION, OR OTHERWISE, FOR ANY INDIRECT, SPECIAL, PUNITIVE, EXEMPLARY, INCIDENTAL OR </span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * CONSEQUENTIAL LOSS, DAMAGE, FOR COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE CODE, </span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * HOWSOEVER CAUSED, EVEN IF MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE </span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * FORESEEABLE.  TO THE FULLEST EXTENT ALLOWABLE BY LAW, MICROCHIP&#39;S TOTAL LIABILITY ON ALL CLAIMS </span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> * IN ANY WAY RELATED TO THIS CODE, SHALL NOT EXCEED THE PRICE YOU PAID DIRECTLY TO MICROCHIP </span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> * SPECIFICALLY TO HAVE THIS CODE DEVELOPED.</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> * You agree that you are solely responsible for testing the code and determining its suitability.  </span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> * Microchip has no obligation to modify, test, certify, or support the code.</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> * REVISION HISTORY:</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> *  Date        Autor               Company Version Comments</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> * 03/09/2006   D. Settu            MCHP    1.0     First Release</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> * 10/07/2009   Andreas Reiter      HPC     1.1     added a header file and a default trap handler</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> *                                                  routine for better integration</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> * 07/19/2016   Andreas Reiter      MCHP    1.2     Added data structure for trap monitoring</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> * 05/17/2019   M91406              MCHP    1.3     Added support for dsPIC33C and removed support for C30 C Complier</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> * ADDITIONAL NOTES:</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"> * 1. This file contains trap service routines (handlers) for hardware exceptions generated by </span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"> *   the dsPIC33F device.</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"> * 2. All trap service routines in this file simply ensure that device continuously executes code </span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"> *   within the trap service routine. Users may modify the basic framework provided here to suit </span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"> *   to the needs of their application.</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment"> * **************************************************************************************************/</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#include &lt;xc.h&gt;</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#include &quot;drv_trap_handler.h&quot;</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code" href="a01500.html">TRAP_LOGGER_s</a> <a class="code" href="a00462.html#ga952a98e41cf813dc50567ad60b3e860c">traplog</a>; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="a00458.html#ga3b96ecc924931497bada0ea1957f0634">   90</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00458.html#ga3b96ecc924931497bada0ea1957f0634">drv_TrapHandler_SoftTrapsInitialize</a>(</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="keywordtype">bool</span> accumulator_a_overflow_trap_enable, </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <span class="keywordtype">bool</span> accumulator_b_overflow_trap_enable, </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="keywordtype">bool</span> accumulator_catastrophic_overflow_trap_enable)</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;{</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    _OVATE = accumulator_a_overflow_trap_enable; <span class="comment">// Enable Accumulator A Overflow Trap Enable bit</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    _OVBTE = accumulator_b_overflow_trap_enable; <span class="comment">// Enable Accumulator B Overflow Trap Enable bit</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    _COVTE = accumulator_catastrophic_overflow_trap_enable; <span class="comment">// Enable Catastrophic Overflow Trap Enable bit</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">return</span>(1);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="a00458.html#ga0250f20caa12da59ca4f42c807cff152">  116</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00458.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(<span class="keyword">enum</span> <a class="code" href="a00463.html#gaee63654a5e14dd3b2bab6179a5cbe2ab">TRAP_ID_e</a> <a class="code" href="a01500.html#a6e7be26899e4fa61a356b5e7eeec83d1">trap_id</a>) {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">// Capture Trap logger values</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="a00462.html#ga952a98e41cf813dc50567ad60b3e860c">traplog</a>.<a class="code" href="a01500.html#a6e7be26899e4fa61a356b5e7eeec83d1">trap_id</a> = <a class="code" href="a01500.html#a6e7be26899e4fa61a356b5e7eeec83d1">trap_id</a>; <span class="comment">// Capture Trap ID</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="a00462.html#ga952a98e41cf813dc50567ad60b3e860c">traplog</a>.<a class="code" href="a01500.html#a9216196898128a7f976617aabd34ba77">trap_count</a>++; <span class="comment">// Capture occurrence </span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="comment">// These Nop()s can be used to place breakpoints </span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="comment">// during debugging.</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    Nop();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    Nop();</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    Nop();</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    Nop();</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    Nop();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    Nop();</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="comment">// If the CPU RESET TRIGGER is enabled, reset CPU here</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="a00462.html#ga952a98e41cf813dc50567ad60b3e860c">traplog</a>.<a class="code" href="a01500.html#a67fe8ce905ea66883a557013c4069068">status</a>.bits.<a class="code" href="a01484.html#a121370958c3700325011062cf1ac9895">cpu_reset_trigger</a>)</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <a class="code" href="a00462.html#ga952a98e41cf813dc50567ad60b3e860c">traplog</a>.<a class="code" href="a01500.html#a95744ea4cf032674585b4e25a114c31a">reset_count</a>++; <span class="comment">// Capture RESET occurrence </span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keyword">asm</span> <span class="keyword">volatile</span> (<span class="stringliteral">&quot;RESET\n&quot;</span>); <span class="comment">// Reset CPU</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment">// =================================================================================================</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment">// PRIMARY EXCEPTION VECTOR HANDLERS</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment">// =================================================================================================</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                isns = ((<a class="code" href="a00462.html#gad251307f33c9d1fd60c1a55535d61955">buck</a>.<a class="code" href="a01560.html#ace365e404e1a839717de3d05ee55d27a">data</a>.<a class="code" href="a01524.html#a9e418d7d3d756a1d9e0b63765d5392a4">i_out</a> * <a class="code" href="a00384.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>) /  <a class="code" href="a00410.html#ga4b80ef68401d82252de9b596cc7a9300">BUCK_ISNS_FEEDBACK_GAIN</a>); <span class="comment">// Scale ADC value to physical unit</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                <span class="keywordflow">if</span>((<span class="keywordtype">double</span>)isns &lt; 1.000)</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                {</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                    isns *= 1000.0;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                    <a class="code" href="a00447.html#gaeabde9cf4c09da1935c1dff5f1bda0c1">PrintLcd</a>(1, <span class="stringliteral">&quot;ISNS    = %3d mA&quot;</span>, (<span class="keywordtype">int</span>)isns);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                }</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                {</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                    <a class="code" href="a00447.html#gaeabde9cf4c09da1935c1dff5f1bda0c1">PrintLcd</a>(1, <span class="stringliteral">&quot;ISNS    = %1.2f A&quot;</span>, (<span class="keywordtype">double</span>)isns);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                }</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <span class="keywordflow">case</span> 3:     <span class="comment">// Firmware Version Number</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                <a class="code" href="a00447.html#gaeabde9cf4c09da1935c1dff5f1bda0c1">PrintLcd</a>(1, <span class="stringliteral">&quot;Firmware: v1.0.0&quot;</span>);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="keywordflow">default</span>:    <span class="comment">// Output voltage display</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                vo = ((<a class="code" href="a00462.html#gad251307f33c9d1fd60c1a55535d61955">buck</a>.<a class="code" href="a01560.html#ace365e404e1a839717de3d05ee55d27a">data</a>.<a class="code" href="a01524.html#a81d40bc6e9f5a711379a1d3d40123bd9">v_out</a> &lt;&lt; 1) * <a class="code" href="a00384.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>); <span class="comment">// Scale ADC value to physical unit</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                <span class="keywordflow">if</span>((<span class="keywordtype">double</span>)vo &lt; 10.000)</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                    <a class="code" href="a00447.html#gaeabde9cf4c09da1935c1dff5f1bda0c1">PrintLcd</a>(1, <span class="stringliteral">&quot;VOUT    = %2.2f V&quot;</span>, (<span class="keywordtype">double</span>)vo);</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                    <a class="code" href="a00447.html#gaeabde9cf4c09da1935c1dff5f1bda0c1">PrintLcd</a>(1, <span class="stringliteral">&quot;VOUT    = %2.1f V&quot;</span>, (<span class="keywordtype">double</span>)vo);</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="a00462.html#gad251307f33c9d1fd60c1a55535d61955">buck</a>.<a class="code" href="a01560.html#a3f64d0961e6a7e4534dafa86d60348b1">status</a>.bits.<a class="code" href="a01492.html#ac1c13a249f66fa45797ad435bf8ee402">fault_active</a>)</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                {</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                    <span class="keywordflow">if</span> (<a class="code" href="a00426.html#ga295ec0d409fed7ec6f9104a238c686fb">fltobj_BuckUVLO</a>.<a class="code" href="a01416.html#a5682be08ea825740d924680de9b7af60">Status</a>.bits.<a class="code" href="a01396.html#a028f8fd8c38c1a2669efbf670ee1d222">FaultStatus</a>)</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                        <a class="code" href="a00446.html#ga24701a4c3ae760e7e0b9c70d93370ff3">dev_Lcd_WriteStringXY</a>(4, 1, <span class="stringliteral">&quot;(UV)&quot;</span>);</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="a00426.html#ga96ccc7eb53ed10fa68fbe5aae4793d32">fltobj_BuckOVLO</a>.<a class="code" href="a01416.html#a5682be08ea825740d924680de9b7af60">Status</a>.bits.<a class="code" href="a01396.html#a028f8fd8c38c1a2669efbf670ee1d222">FaultStatus</a>)</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                        <a class="code" href="a00446.html#ga24701a4c3ae760e7e0b9c70d93370ff3">dev_Lcd_WriteStringXY</a>(4, 1, <span class="stringliteral">&quot;(OV)&quot;</span>);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="a00426.html#ga9a42288edd61441b896e9caa0ebd8303">fltobj_BuckRegErr</a>.<a class="code" href="a01416.html#a5682be08ea825740d924680de9b7af60">Status</a>.bits.<a class="code" href="a01396.html#a028f8fd8c38c1a2669efbf670ee1d222">FaultStatus</a>)</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                        <a class="code" href="a00446.html#ga24701a4c3ae760e7e0b9c70d93370ff3">dev_Lcd_WriteStringXY</a>(4, 1, <span class="stringliteral">&quot;(RE)&quot;</span>);</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                }</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        }</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        </div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        lcd.<a class="code" href="a01476.html#adc2298ffda0c853e699e6da9098f82ae">refresh</a> = <a class="code" href="a00444.html#ga8f1bba8cbdf98ed2ac6e10cc8739e56f">LCD_REFRESH</a>;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        </div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <a class="code" href="a00444.html#ga6d471f8bdd24d951c86a09ec25f74ef2">lcd_cnt</a> = 0; <span class="comment">// Reset internal interval counter</span></div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    }</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    </div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordflow">return</span>(retval);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;}</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
-<div class="line"><a name="l00207"></a><span class="lineno"><a class="line" href="a00441.html#ga38c10d91e208e9eb081d0341792954d7">  207</a></span>&#160;<span class="keyword">volatile</span> uint16_t <a class="code" href="a00441.html#ga38c10d91e208e9eb081d0341792954d7">appLCD_Dispose</a>(<span class="keywordtype">void</span>) </div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;{</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keyword">volatile</span> uint16_t retval = 1;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    </div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="comment">/* PLACE DISPOSE CODE HERE */</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">return</span>(retval);</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;}</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment">// end of file</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _ReservedTrap5(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <a class="code" href="a00458.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_RESERVED_TRAP_5_ERROR); <span class="comment">// Call default trap handler</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;}</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _ReservedTrap7(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <a class="code" href="a00458.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_RESERVED_TRAP_7_ERROR); <span class="comment">// Call default trap handler</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;}</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _HardTrapError(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <a class="code" href="a00458.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_HARD_TRAP_ERROR); <span class="comment">// Call default trap handler</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;}</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _SoftTrapError(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <a class="code" href="a00458.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_SOFT_TRAP_ERROR);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;}</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _OscillatorFail(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <a class="code" href="a00458.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_OSCILLATOR_FAIL);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;}</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _AddressError(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <a class="code" href="a00458.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_ADDRESS_ERROR);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;}</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _StackError(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <a class="code" href="a00458.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_STACK_ERROR);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;}</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _MathError(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <a class="code" href="a00458.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_MATH_ERROR);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;}</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="preprocessor">#if (TRAP_DMA_SUPPORT == 1)</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="preprocessor">#if defined (_DMACError)</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="comment">// =================================================================================================</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="comment">// DMA Error Trap is captured, when an access error of the dual ported RAM occurred</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="comment">// =================================================================================================</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _DMACError(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <a class="code" href="a00458.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_DMA_ERROR);</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;}</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="comment">// =================================================================================================</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="comment">// ALTERNATE EXCEPTION VECTOR HANDLERS</span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="comment">// =================================================================================================</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="comment">// These routines are used if INTCON2bits.ALTIVT = 1. All trap service routines in this file </span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="comment">// simply ensure that device continuously executes code within the trap service routine. </span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="comment">// Users may modify the basic framework provided here to suit to the needs of their application.</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="comment">// =================================================================================================</span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="preprocessor">#if (__XC16_VERSION &lt; 1030)</span></div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _AltHardTrapError(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <a class="code" href="a00458.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_ALT_HARD_TRAP_ERROR); <span class="comment">// Call default trap handler</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;}</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _AltSoftTrapError(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <a class="code" href="a00458.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_ALT_SOFT_TRAP_ERROR);</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;}</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _AltOscillatorFail(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <a class="code" href="a00458.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_ALT_OSCILLATOR_FAIL);</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;}</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _AltAddressError(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <a class="code" href="a00458.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_ALT_ADDRESS_ERROR);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;}</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _AltStackError(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <a class="code" href="a00458.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_ALT_STACK_ERROR);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;}</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _AltMathError(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <a class="code" href="a00458.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_ALT_MATH_ERROR);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;}</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="preprocessor">#if (TRAP_DMA_SUPPORT == 1)</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="keywordtype">void</span> __attribute__((interrupt, no_auto_psv)) _AltDMACError(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <a class="code" href="a00458.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a>(TRAP_ALT_DMA_ERROR);</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;}</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="comment">// EOF</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa01560_html_ace365e404e1a839717de3d05ee55d27a"><div class="ttname"><a href="a01560.html#ace365e404e1a839717de3d05ee55d27a">BUCK_CONVERTER_s::data</a></div><div class="ttdeci">volatile struct BUCK_CONVERTER_DATA_s data</div><div class="ttdoc">BUCK runtime data.</div><div class="ttdef"><b>Definition:</b> <a href="a00269_source.html#l00476">dev_buck_typedef.h:506</a></div></div>
-<div class="ttc" id="aa00410_html_ga4b80ef68401d82252de9b596cc7a9300"><div class="ttname"><a href="a00410.html#ga4b80ef68401d82252de9b596cc7a9300">BUCK_ISNS_FEEDBACK_GAIN</a></div><div class="ttdeci">#define BUCK_ISNS_FEEDBACK_GAIN</div><div class="ttdoc">Current Gain in V/A.</div><div class="ttdef"><b>Definition:</b> <a href="a00095_source.html#l00560">dpsk3_hwdescr.h:560</a></div></div>
-<div class="ttc" id="aa00441_html_gacd8e3f8ca8af94f13f7efa0df7ced6f5"><div class="ttname"><a href="a00441.html#gacd8e3f8ca8af94f13f7efa0df7ced6f5">appLCD_Execute</a></div><div class="ttdeci">volatile uint16_t appLCD_Execute(void)</div><div class="ttdoc">Refreshes the LC display.</div><div class="ttdef"><b>Definition:</b> <a href="a00176_source.html#l00106">app_lcd.c:106</a></div></div>
-<div class="ttc" id="aa00441_html_ga38c10d91e208e9eb081d0341792954d7"><div class="ttname"><a href="a00441.html#ga38c10d91e208e9eb081d0341792954d7">appLCD_Dispose</a></div><div class="ttdeci">volatile uint16_t appLCD_Dispose(void)</div><div class="ttdoc">Unloads the LC display data object and resources.</div><div class="ttdef"><b>Definition:</b> <a href="a00176_source.html#l00207">app_lcd.c:207</a></div></div>
-<div class="ttc" id="aa00446_html_ga5d8f09855e28846e87400692d186781a"><div class="ttname"><a href="a00446.html#ga5d8f09855e28846e87400692d186781a">dev_Lcd_Initialize</a></div><div class="ttdeci">void dev_Lcd_Initialize(void)</div><div class="ttdoc">Initializes the LCD Device.</div><div class="ttdef"><b>Definition:</b> <a href="a00185_source.html#l00126">dev_lcd.c:126</a></div></div>
-<div class="ttc" id="aa01476_html_aea467a9fc04f0771215b952d26bc4392"><div class="ttname"><a href="a01476.html#aea467a9fc04f0771215b952d26bc4392">LCD_s::screen</a></div><div class="ttdeci">volatile uint16_t screen</div><div class="ttdef"><b>Definition:</b> <a href="a00179_source.html#l00057">app_lcd.h:57</a></div></div>
-<div class="ttc" id="aa00462_html_gad251307f33c9d1fd60c1a55535d61955"><div class="ttname"><a href="a00462.html#gad251307f33c9d1fd60c1a55535d61955">buck</a></div><div class="ttdeci">volatile struct BUCK_CONVERTER_s buck</div><div class="ttdoc">Global data object for a BUCK CONVERTER.</div><div class="ttdef"><b>Definition:</b> <a href="a00221_source.html#l00001">app_power_control.c:28</a></div></div>
-<div class="ttc" id="aa01396_html_a028f8fd8c38c1a2669efbf670ee1d222"><div class="ttname"><a href="a01396.html#a028f8fd8c38c1a2669efbf670ee1d222">FLT_OBJECT_STATUS_s::FaultStatus</a></div><div class="ttdeci">volatile bool FaultStatus</div><div class="ttdoc">Bit 0: Flag bit indicating if FAULT has been tripped.</div><div class="ttdef"><b>Definition:</b> <a href="a00164_source.html#l00084">drv_fault_handler.h:84</a></div></div>
-<div class="ttc" id="aa00446_html_ga24701a4c3ae760e7e0b9c70d93370ff3"><div class="ttname"><a href="a00446.html#ga24701a4c3ae760e7e0b9c70d93370ff3">dev_Lcd_WriteStringXY</a></div><div class="ttdeci">void dev_Lcd_WriteStringXY(volatile uint8_t column_index, volatile uint8_t line_index, const char *str)</div><div class="ttdoc">Sets the cursor position to the given x- and y-coordinates and writes the given string on the lcd scr...</div><div class="ttdef"><b>Definition:</b> <a href="a00185_source.html#l00305">dev_lcd.c:305</a></div></div>
-<div class="ttc" id="aa01524_html_a9e418d7d3d756a1d9e0b63765d5392a4"><div class="ttname"><a href="a01524.html#a9e418d7d3d756a1d9e0b63765d5392a4">BUCK_CONVERTER_DATA_s::i_out</a></div><div class="ttdeci">volatile uint16_t i_out</div><div class="ttdoc">BUCK common output current.</div><div class="ttdef"><b>Definition:</b> <a href="a00269_source.html#l00299">dev_buck_typedef.h:299</a></div></div>
-<div class="ttc" id="aa01524_html_aa9f24b0c02dbbc6659649c7b7a124dc4"><div class="ttname"><a href="a01524.html#aa9f24b0c02dbbc6659649c7b7a124dc4">BUCK_CONVERTER_DATA_s::temp</a></div><div class="ttdeci">volatile uint16_t temp</div><div class="ttdoc">BUCK board temperature.</div><div class="ttdef"><b>Definition:</b> <a href="a00269_source.html#l00302">dev_buck_typedef.h:302</a></div></div>
-<div class="ttc" id="aa00426_html_ga9a42288edd61441b896e9caa0ebd8303"><div class="ttname"><a href="a00426.html#ga9a42288edd61441b896e9caa0ebd8303">fltobj_BuckRegErr</a></div><div class="ttdeci">volatile struct FAULT_OBJECT_s fltobj_BuckRegErr</div><div class="ttdoc">Regulation Error Fault Object.</div><div class="ttdef"><b>Definition:</b> <a href="a00152_source.html#l00001">app_fault_monitor.c:53</a></div></div>
-<div class="ttc" id="aa00415_html_gacde6c3fa85c34fe5414566acd2e77ca8"><div class="ttname"><a href="a00415.html#gacde6c3fa85c34fe5414566acd2e77ca8">BUCK_FB_TEMP_ZERO</a></div><div class="ttdeci">#define BUCK_FB_TEMP_ZERO</div><div class="ttdoc">Conversion macros of temperature feedback parameters.</div><div class="ttdef"><b>Definition:</b> <a href="a00095_source.html#l00690">dpsk3_hwdescr.h:690</a></div></div>
-<div class="ttc" id="aa00415_html_ga014133f88cd82218241bf16985302cd4"><div class="ttname"><a href="a00415.html#ga014133f88cd82218241bf16985302cd4">BUCK_FB_TEMP_SLOPE</a></div><div class="ttdeci">#define BUCK_FB_TEMP_SLOPE</div><div class="ttdef"><b>Definition:</b> <a href="a00095_source.html#l00691">dpsk3_hwdescr.h:691</a></div></div>
-<div class="ttc" id="aa01416_html_a5682be08ea825740d924680de9b7af60"><div class="ttname"><a href="a01416.html#a5682be08ea825740d924680de9b7af60">FAULT_OBJECT_s::Status</a></div><div class="ttdeci">volatile struct FLT_OBJECT_STATUS_s Status</div><div class="ttdoc">Status word of this fault object.</div><div class="ttdef"><b>Definition:</b> <a href="a00164_source.html#l00122">drv_fault_handler.h:133</a></div></div>
-<div class="ttc" id="aa01492_html_ac1c13a249f66fa45797ad435bf8ee402"><div class="ttname"><a href="a01492.html#ac1c13a249f66fa45797ad435bf8ee402">BUCK_CONVERTER_STATUS_s::fault_active</a></div><div class="ttdeci">volatile bool fault_active</div><div class="ttdoc">Bit #5: Flag bit indicating system is in enforced shut down mode (usually due to a fault condition)</div><div class="ttdef"><b>Definition:</b> <a href="a00269_source.html#l00213">dev_buck_typedef.h:213</a></div></div>
-<div class="ttc" id="aa01524_html_a81d40bc6e9f5a711379a1d3d40123bd9"><div class="ttname"><a href="a01524.html#a81d40bc6e9f5a711379a1d3d40123bd9">BUCK_CONVERTER_DATA_s::v_out</a></div><div class="ttdeci">volatile uint16_t v_out</div><div class="ttdoc">BUCK output voltage.</div><div class="ttdef"><b>Definition:</b> <a href="a00269_source.html#l00301">dev_buck_typedef.h:301</a></div></div>
-<div class="ttc" id="aa00441_html_gab93992748ced72fdc2989d0b0f369e54"><div class="ttname"><a href="a00441.html#gab93992748ced72fdc2989d0b0f369e54">appLCD_Initialize</a></div><div class="ttdeci">volatile uint16_t appLCD_Initialize(void)</div><div class="ttdoc">Initializes the LC display.</div><div class="ttdef"><b>Definition:</b> <a href="a00176_source.html#l00076">app_lcd.c:76</a></div></div>
-<div class="ttc" id="aa00384_html_gaa8be0a86b0847147a521dd1efec43d1c"><div class="ttname"><a href="a00384.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a></div><div class="ttdeci">#define ADC_GRANULARITY</div><div class="ttdoc">ADC granularity in [V/tick].</div><div class="ttdef"><b>Definition:</b> <a href="a00095_source.html#l00118">dpsk3_hwdescr.h:118</a></div></div>
-<div class="ttc" id="aa01476_html"><div class="ttname"><a href="a01476.html">LCD_s</a></div><div class="ttdoc">Declaration of public LC display data object.</div><div class="ttdef"><b>Definition:</b> <a href="a00179_source.html#l00054">app_lcd.h:54</a></div></div>
-<div class="ttc" id="aa00447_html_gaeabde9cf4c09da1935c1dff5f1bda0c1"><div class="ttname"><a href="a00447.html#gaeabde9cf4c09da1935c1dff5f1bda0c1">PrintLcd</a></div><div class="ttdeci">#define PrintLcd(LINE,...)</div><div class="ttdoc">Writes a complete line to the LC display.</div><div class="ttdef"><b>Definition:</b> <a href="a00188_source.html#l00045">dev_lcd.h:45</a></div></div>
-<div class="ttc" id="aa00444_html_ga6d471f8bdd24d951c86a09ec25f74ef2"><div class="ttname"><a href="a00444.html#ga6d471f8bdd24d951c86a09ec25f74ef2">lcd_cnt</a></div><div class="ttdeci">volatile uint16_t lcd_cnt</div><div class="ttdoc">Local counter used to trigger LCD refresh event.</div><div class="ttdef"><b>Definition:</b> <a href="a00176_source.html#l00035">app_lcd.c:35</a></div></div>
-<div class="ttc" id="aa01476_html_a085e9fc0863cee4864cf51dcfe1e32df"><div class="ttname"><a href="a01476.html#a085e9fc0863cee4864cf51dcfe1e32df">LCD_s::enabled</a></div><div class="ttdeci">volatile bool enabled</div><div class="ttdef"><b>Definition:</b> <a href="a00179_source.html#l00055">app_lcd.h:55</a></div></div>
-<div class="ttc" id="aa01476_html_adc2298ffda0c853e699e6da9098f82ae"><div class="ttname"><a href="a01476.html#adc2298ffda0c853e699e6da9098f82ae">LCD_s::refresh</a></div><div class="ttdeci">volatile uint16_t refresh</div><div class="ttdef"><b>Definition:</b> <a href="a00179_source.html#l00056">app_lcd.h:56</a></div></div>
-<div class="ttc" id="aa01524_html_af34b61c0a55244bf4aa166666a322efa"><div class="ttname"><a href="a01524.html#af34b61c0a55244bf4aa166666a322efa">BUCK_CONVERTER_DATA_s::v_in</a></div><div class="ttdeci">volatile uint16_t v_in</div><div class="ttdoc">BUCK input voltage.</div><div class="ttdef"><b>Definition:</b> <a href="a00269_source.html#l00300">dev_buck_typedef.h:300</a></div></div>
-<div class="ttc" id="aa01560_html_a3f64d0961e6a7e4534dafa86d60348b1"><div class="ttname"><a href="a01560.html#a3f64d0961e6a7e4534dafa86d60348b1">BUCK_CONVERTER_s::status</a></div><div class="ttdeci">volatile struct BUCK_CONVERTER_STATUS_s status</div><div class="ttdoc">BUCK operation status bits.</div><div class="ttdef"><b>Definition:</b> <a href="a00269_source.html#l00476">dev_buck_typedef.h:502</a></div></div>
-<div class="ttc" id="aa00444_html_ga064b0f92f54c1aab1e6731ff24b4cce7"><div class="ttname"><a href="a00444.html#ga064b0f92f54c1aab1e6731ff24b4cce7">LCD_STARTUP</a></div><div class="ttdeci">#define LCD_STARTUP</div><div class="ttdoc">Startup screen delay compare value.</div><div class="ttdef"><b>Definition:</b> <a href="a00176_source.html#l00047">app_lcd.c:47</a></div></div>
-<div class="ttc" id="aa00444_html_ga8f1bba8cbdf98ed2ac6e10cc8739e56f"><div class="ttname"><a href="a00444.html#ga8f1bba8cbdf98ed2ac6e10cc8739e56f">LCD_REFRESH</a></div><div class="ttdeci">#define LCD_REFRESH</div><div class="ttdoc">Screen refresh delay compare value.</div><div class="ttdef"><b>Definition:</b> <a href="a00176_source.html#l00059">app_lcd.c:59</a></div></div>
-<div class="ttc" id="aa00426_html_ga96ccc7eb53ed10fa68fbe5aae4793d32"><div class="ttname"><a href="a00426.html#ga96ccc7eb53ed10fa68fbe5aae4793d32">fltobj_BuckOVLO</a></div><div class="ttdeci">volatile struct FAULT_OBJECT_s fltobj_BuckOVLO</div><div class="ttdoc">Over Voltage Lock Out Fault Object.</div><div class="ttdef"><b>Definition:</b> <a href="a00152_source.html#l00001">app_fault_monitor.c:51</a></div></div>
-<div class="ttc" id="aa00426_html_ga295ec0d409fed7ec6f9104a238c686fb"><div class="ttname"><a href="a00426.html#ga295ec0d409fed7ec6f9104a238c686fb">fltobj_BuckUVLO</a></div><div class="ttdeci">volatile struct FAULT_OBJECT_s fltobj_BuckUVLO</div><div class="ttdoc">Under Voltage Lock Out Fault Object.</div><div class="ttdef"><b>Definition:</b> <a href="a00152_source.html#l00001">app_fault_monitor.c:50</a></div></div>
+<div class="ttc" id="aa01500_html_a95744ea4cf032674585b4e25a114c31a"><div class="ttname"><a href="a01500.html#a95744ea4cf032674585b4e25a114c31a">TRAP_LOGGER_s::reset_count</a></div><div class="ttdeci">volatile uint16_t reset_count</div><div class="ttdoc">Counter of CPU RESET events (read/write)</div><div class="ttdef"><b>Definition:</b> <a href="a00179_source.html#l00283">drv_trap_handler.h:283</a></div></div>
+<div class="ttc" id="aa01500_html_a6e7be26899e4fa61a356b5e7eeec83d1"><div class="ttname"><a href="a01500.html#a6e7be26899e4fa61a356b5e7eeec83d1">TRAP_LOGGER_s::trap_id</a></div><div class="ttdeci">enum TRAP_ID_e trap_id</div><div class="ttdoc">Trap-ID of the captured incident.</div><div class="ttdef"><b>Definition:</b> <a href="a00179_source.html#l00283">drv_trap_handler.h:284</a></div></div>
+<div class="ttc" id="aa01484_html_a121370958c3700325011062cf1ac9895"><div class="ttname"><a href="a01484.html#a121370958c3700325011062cf1ac9895">TRAPLOG_STATUS_s::cpu_reset_trigger</a></div><div class="ttdeci">volatile bool cpu_reset_trigger</div><div class="ttdef"><b>Definition:</b> <a href="a00179_source.html#l00231">drv_trap_handler.h:231</a></div></div>
+<div class="ttc" id="aa00458_html_ga0250f20caa12da59ca4f42c807cff152"><div class="ttname"><a href="a00458.html#ga0250f20caa12da59ca4f42c807cff152">DefaultTrapHandler</a></div><div class="ttdeci">void DefaultTrapHandler(enum TRAP_ID_e trap_id)</div><div class="ttdoc">Centralized trap handler routine.</div><div class="ttdef"><b>Definition:</b> <a href="a00176_source.html#l00116">drv_trap_handler.c:116</a></div></div>
+<div class="ttc" id="aa00458_html_ga3b96ecc924931497bada0ea1957f0634"><div class="ttname"><a href="a00458.html#ga3b96ecc924931497bada0ea1957f0634">drv_TrapHandler_SoftTrapsInitialize</a></div><div class="ttdeci">volatile uint16_t drv_TrapHandler_SoftTrapsInitialize(bool accumulator_a_overflow_trap_enable, bool accumulator_b_overflow_trap_enable, bool accumulator_catastrophic_overflow_trap_enable)</div><div class="ttdoc">Configures the software-configurable traps.</div><div class="ttdef"><b>Definition:</b> <a href="a00176_source.html#l00090">drv_trap_handler.c:90</a></div></div>
+<div class="ttc" id="aa00463_html_gaee63654a5e14dd3b2bab6179a5cbe2ab"><div class="ttname"><a href="a00463.html#gaee63654a5e14dd3b2bab6179a5cbe2ab">TRAP_ID_e</a></div><div class="ttdeci">TRAP_ID_e</div><div class="ttdoc">defining trap-ID for primary and secondary vectors</div><div class="ttdef"><b>Definition:</b> <a href="a00179_source.html#l00099">drv_trap_handler.h:100</a></div></div>
+<div class="ttc" id="aa01500_html_a9216196898128a7f976617aabd34ba77"><div class="ttname"><a href="a01500.html#a9216196898128a7f976617aabd34ba77">TRAP_LOGGER_s::trap_count</a></div><div class="ttdeci">volatile uint16_t trap_count</div><div class="ttdoc">Counter tracking the number of occurrences.</div><div class="ttdef"><b>Definition:</b> <a href="a00179_source.html#l00285">drv_trap_handler.h:285</a></div></div>
+<div class="ttc" id="aa00462_html_ga952a98e41cf813dc50567ad60b3e860c"><div class="ttname"><a href="a00462.html#ga952a98e41cf813dc50567ad60b3e860c">traplog</a></div><div class="ttdeci">volatile struct TRAP_LOGGER_s traplog</div><div class="ttdoc">data structure used as buffer for trap monitoring</div><div class="ttdef"><b>Definition:</b> <a href="a00176_source.html#l00001">drv_trap_handler.c:72</a></div></div>
+<div class="ttc" id="aa01500_html"><div class="ttname"><a href="a01500.html">TRAP_LOGGER_s</a></div><div class="ttdoc">Global data structure for trap event capturing.</div><div class="ttdef"><b>Definition:</b> <a href="a00179_source.html#l00280">drv_trap_handler.h:281</a></div></div>
+<div class="ttc" id="aa01500_html_a67fe8ce905ea66883a557013c4069068"><div class="ttname"><a href="a01500.html#a67fe8ce905ea66883a557013c4069068">TRAP_LOGGER_s::status</a></div><div class="ttdeci">volatile struct TRAPLOG_STATUS_s status</div><div class="ttdoc">Status word of the Trap Logger object.</div><div class="ttdef"><b>Definition:</b> <a href="a00179_source.html#l00267">drv_trap_handler.h:282</a></div></div>
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_5c9e57b9bcd9b7f50d88ecfbd194c0ae.html">dpsk_buck_acmc.X</a></li><li class="navelem"><a class="el" href="dir_0b7fd148aa9e0e6d20cdcee736988614.html">sources</a></li><li class="navelem"><a class="el" href="dir_173fc3f985a10fdb16f26d689cd8f89a.html">lcd</a></li><li class="navelem"><b>app_lcd.c</b></li>
+    <li class="navelem"><a class="el" href="dir_5c9e57b9bcd9b7f50d88ecfbd194c0ae.html">dpsk_buck_acmc.X</a></li><li class="navelem"><a class="el" href="dir_0b7fd148aa9e0e6d20cdcee736988614.html">sources</a></li><li class="navelem"><a class="el" href="dir_d5befb491116c02525cd8031c73d3ab0.html">fault_handler</a></li><li class="navelem"><a class="el" href="dir_23e1e1341183ceb18e1ad68d1876a4f7.html">drivers</a></li><li class="navelem"><b>drv_trap_handler.c</b></li>
     <p style="height: 12px; padding-bottom: 8px; padding-right: 12px; vertical-align: bottom; text-align: right; font-size: 90%;">Â© 2021, Microchip Technology Inc.</p>
   </ul>
 </div>

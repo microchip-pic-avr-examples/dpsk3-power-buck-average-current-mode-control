@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Digital Power Starter Kit 3 Firmware: User Settings</title>
+<title>Digital Power Starter Kit 3 Firmware: Conversion Macros</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,372 +104,103 @@ $(document).ready(function(){initNavTree('a00393.html',''); initResizable(); });
 
 <div class="header">
   <div class="headertitle">
-<div class="title">User Settings<div class="ingroups"><a class="el" href="a00537.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00392.html">Fault Response Settings</a></div></div>  </div>
+<div class="title">Conversion Macros<div class="ingroups"><a class="el" href="a00565.html">Hardware Abstraction Layer</a> &raquo; <a class="el" href="a00391.html">Microcontroller Device Abstraction</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>User-declaration of fault object trip and recovery delays using physical quantities.  
+<p>Conversion macros converting physical quantities of parameters into binary (integer) numbers for registers and variables.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for User Settings:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Conversion Macros:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00393.svg" width="326" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00393.svg" width="340" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
-<tr class="memitem:gad91c6030149a6a40c03c236c6245195b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#gad91c6030149a6a40c03c236c6245195b">BUCK_UVLO_TRIP_DELAY</a>&#160;&#160;&#160;(float) 5e-3</td></tr>
-<tr class="memdesc:gad91c6030149a6a40c03c236c6245195b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global defines for fault-monitor related parameters.  <a href="a00393.html#gad91c6030149a6a40c03c236c6245195b">More...</a><br /></td></tr>
-<tr class="separator:gad91c6030149a6a40c03c236c6245195b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8fc5cc0b86b1896492fba096f1177c9e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#ga8fc5cc0b86b1896492fba096f1177c9e">BUCK_UVLO_RECOVERY_DELAY</a>&#160;&#160;&#160;(float) 500e-3</td></tr>
-<tr class="memdesc:ga8fc5cc0b86b1896492fba096f1177c9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">under voltage lock out recovery delay in [sec]  <a href="a00393.html#ga8fc5cc0b86b1896492fba096f1177c9e">More...</a><br /></td></tr>
-<tr class="separator:ga8fc5cc0b86b1896492fba096f1177c9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga486d5b4101d10ebea3f97ec009cf779d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#ga486d5b4101d10ebea3f97ec009cf779d">BUCK_OVLO_TRIP_DELAY</a>&#160;&#160;&#160;(float) 5e-3</td></tr>
-<tr class="memdesc:ga486d5b4101d10ebea3f97ec009cf779d"><td class="mdescLeft">&#160;</td><td class="mdescRight">over voltage lock out trip delay in [sec]  <a href="a00393.html#ga486d5b4101d10ebea3f97ec009cf779d">More...</a><br /></td></tr>
-<tr class="separator:ga486d5b4101d10ebea3f97ec009cf779d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5c7756adddc4911f015fedb890f8270d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#ga5c7756adddc4911f015fedb890f8270d">BUCK_OVLO_RECOVERY_DELAY</a>&#160;&#160;&#160;(float) 500e-3</td></tr>
-<tr class="memdesc:ga5c7756adddc4911f015fedb890f8270d"><td class="mdescLeft">&#160;</td><td class="mdescRight">over voltage lock out recovery delay in [sec]  <a href="a00393.html#ga5c7756adddc4911f015fedb890f8270d">More...</a><br /></td></tr>
-<tr class="separator:ga5c7756adddc4911f015fedb890f8270d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga916bec2e79815eb2364e14fc9926e551"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#ga916bec2e79815eb2364e14fc9926e551">BUCK_REGERR_TRIP_DELAY</a>&#160;&#160;&#160;(float) 25e-3</td></tr>
-<tr class="memdesc:ga916bec2e79815eb2364e14fc9926e551"><td class="mdescLeft">&#160;</td><td class="mdescRight">regulation error trip delay in [sec]  <a href="a00393.html#ga916bec2e79815eb2364e14fc9926e551">More...</a><br /></td></tr>
-<tr class="separator:ga916bec2e79815eb2364e14fc9926e551"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabcc3a6cdf3286b554f1c01d64871b016"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#gabcc3a6cdf3286b554f1c01d64871b016">BUCK_REGERR_RECOVERY_DELAY</a>&#160;&#160;&#160;(float) 500e-3</td></tr>
-<tr class="memdesc:gabcc3a6cdf3286b554f1c01d64871b016"><td class="mdescLeft">&#160;</td><td class="mdescRight">regulation error recovery delay in [sec]  <a href="a00393.html#gabcc3a6cdf3286b554f1c01d64871b016">More...</a><br /></td></tr>
-<tr class="separator:gabcc3a6cdf3286b554f1c01d64871b016"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga401ff320085d325a621e3482bb1b3810"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#ga401ff320085d325a621e3482bb1b3810">BUCK_OCP_TRIP_DELAY</a>&#160;&#160;&#160;(float) 2e-3</td></tr>
-<tr class="memdesc:ga401ff320085d325a621e3482bb1b3810"><td class="mdescLeft">&#160;</td><td class="mdescRight">over current proection trip delay in [sec]  <a href="a00393.html#ga401ff320085d325a621e3482bb1b3810">More...</a><br /></td></tr>
-<tr class="separator:ga401ff320085d325a621e3482bb1b3810"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6cc849023abc581aad3e0fc9175bf6b7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#ga6cc849023abc581aad3e0fc9175bf6b7">BUCK_OCP_RECOVERY_DELAY</a>&#160;&#160;&#160;(float) 500e-3</td></tr>
-<tr class="memdesc:ga6cc849023abc581aad3e0fc9175bf6b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">over current proection recovery delay in [sec]  <a href="a00393.html#ga6cc849023abc581aad3e0fc9175bf6b7">More...</a><br /></td></tr>
-<tr class="separator:ga6cc849023abc581aad3e0fc9175bf6b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3b1fff439d1fc72471a4bd5f9f9d13ee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#ga3b1fff439d1fc72471a4bd5f9f9d13ee">BOOST_UVLO_TRIP_DELAY</a>&#160;&#160;&#160;(float) 5e-3</td></tr>
-<tr class="memdesc:ga3b1fff439d1fc72471a4bd5f9f9d13ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global defines for fault-monitor related parameters.  <a href="a00393.html#ga3b1fff439d1fc72471a4bd5f9f9d13ee">More...</a><br /></td></tr>
-<tr class="separator:ga3b1fff439d1fc72471a4bd5f9f9d13ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga54f72937fe8f99c6ceb4d115d4d913f3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#ga54f72937fe8f99c6ceb4d115d4d913f3">BOOST_UVLO_RECOVERY_DELAY</a>&#160;&#160;&#160;(float) 500e-3</td></tr>
-<tr class="memdesc:ga54f72937fe8f99c6ceb4d115d4d913f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">under voltage lock out recovery delay in [sec]  <a href="a00393.html#ga54f72937fe8f99c6ceb4d115d4d913f3">More...</a><br /></td></tr>
-<tr class="separator:ga54f72937fe8f99c6ceb4d115d4d913f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad5600ac9bfc38bec9b7bfe5be02540f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#gad5600ac9bfc38bec9b7bfe5be02540f2">BOOST_OVLO_TRIP_DELAY</a>&#160;&#160;&#160;(float) 5e-3</td></tr>
-<tr class="memdesc:gad5600ac9bfc38bec9b7bfe5be02540f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">over voltage lock out trip delay in [sec]  <a href="a00393.html#gad5600ac9bfc38bec9b7bfe5be02540f2">More...</a><br /></td></tr>
-<tr class="separator:gad5600ac9bfc38bec9b7bfe5be02540f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf80ca0477099dc8e4c20d0e20bdd96a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#gaf80ca0477099dc8e4c20d0e20bdd96a2">BOOST_OVLO_RECOVERY_DELAY</a>&#160;&#160;&#160;(float) 500e-3</td></tr>
-<tr class="memdesc:gaf80ca0477099dc8e4c20d0e20bdd96a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">over voltage lock out recovery delay in [sec]  <a href="a00393.html#gaf80ca0477099dc8e4c20d0e20bdd96a2">More...</a><br /></td></tr>
-<tr class="separator:gaf80ca0477099dc8e4c20d0e20bdd96a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6020ebc1bd9132e1127b17c461d78189"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#ga6020ebc1bd9132e1127b17c461d78189">BOOST_REGERR_TRIP_DELAY</a>&#160;&#160;&#160;(float) 25e-3</td></tr>
-<tr class="memdesc:ga6020ebc1bd9132e1127b17c461d78189"><td class="mdescLeft">&#160;</td><td class="mdescRight">regulation error trip delay in [sec]  <a href="a00393.html#ga6020ebc1bd9132e1127b17c461d78189">More...</a><br /></td></tr>
-<tr class="separator:ga6020ebc1bd9132e1127b17c461d78189"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaabf755c80166ab949147643eb8ea5ba1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#gaabf755c80166ab949147643eb8ea5ba1">BOOST_REGERR_RECOVERY_DELAY</a>&#160;&#160;&#160;(float) 500e-3</td></tr>
-<tr class="memdesc:gaabf755c80166ab949147643eb8ea5ba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">regulation error recovery delay in [sec]  <a href="a00393.html#gaabf755c80166ab949147643eb8ea5ba1">More...</a><br /></td></tr>
-<tr class="separator:gaabf755c80166ab949147643eb8ea5ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga679b8b944ffd26351d12e757af8b37a7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#ga679b8b944ffd26351d12e757af8b37a7">BOOST_OCP_TRIP_DELAY</a>&#160;&#160;&#160;(float) 2e-3</td></tr>
-<tr class="memdesc:ga679b8b944ffd26351d12e757af8b37a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">over current proection trip delay in [sec]  <a href="a00393.html#ga679b8b944ffd26351d12e757af8b37a7">More...</a><br /></td></tr>
-<tr class="separator:ga679b8b944ffd26351d12e757af8b37a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga21aabda6c863b4f02b903056dd51a886"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#ga21aabda6c863b4f02b903056dd51a886">BOOST_OCP_RECOVERY_DELAY</a>&#160;&#160;&#160;(float) 500e-3</td></tr>
-<tr class="memdesc:ga21aabda6c863b4f02b903056dd51a886"><td class="mdescLeft">&#160;</td><td class="mdescRight">over current proection recovery delay in [sec]  <a href="a00393.html#ga21aabda6c863b4f02b903056dd51a886">More...</a><br /></td></tr>
-<tr class="separator:ga21aabda6c863b4f02b903056dd51a886"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf0b0f736eb24034cd2a3643b584c9f7e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#gaf0b0f736eb24034cd2a3643b584c9f7e">CPU_TCY</a>&#160;&#160;&#160;(float)(1.0/<a class="el" href="a00392.html#gaf73acdf7fb3be35ff98322b7e827d349">CPU_FREQUENCY</a>)</td></tr>
+<tr class="memdesc:gaf0b0f736eb24034cd2a3643b584c9f7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion macros of fundamental microcontroller device settings.  <a href="a00393.html#gaf0b0f736eb24034cd2a3643b584c9f7e">More...</a><br /></td></tr>
+<tr class="separator:gaf0b0f736eb24034cd2a3643b584c9f7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa8be0a86b0847147a521dd1efec43d1c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#gaa8be0a86b0847147a521dd1efec43d1c">ADC_GRANULARITY</a>&#160;&#160;&#160;(float)(<a class="el" href="a00392.html#ga317868c528ebe27fbca094a8bc2d910c">ADC_REFERENCE</a> / pow(2.0, <a class="el" href="a00392.html#ga00978ca9e8220475258dcbbbb7d29129">ADC_RESOLUTION</a>))</td></tr>
+<tr class="memdesc:gaa8be0a86b0847147a521dd1efec43d1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC granularity in [V/tick].  <a href="a00393.html#gaa8be0a86b0847147a521dd1efec43d1c">More...</a><br /></td></tr>
+<tr class="separator:gaa8be0a86b0847147a521dd1efec43d1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa5d1dacef95564076ecd32adb0774ac3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#gaa5d1dacef95564076ecd32adb0774ac3">ADC_VALUE_MAX</a>&#160;&#160;&#160;(uint16_t) (pow(2.0, <a class="el" href="a00392.html#ga00978ca9e8220475258dcbbbb7d29129">ADC_RESOLUTION</a>) - 1.0)</td></tr>
+<tr class="separator:gaa5d1dacef95564076ecd32adb0774ac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafd17199da18b5a3321b37016464983b0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00393.html#gafd17199da18b5a3321b37016464983b0">PWM_CLOCK_PERIOD</a>&#160;&#160;&#160;(float)(1.0/<a class="el" href="a00392.html#gaf4bf7a89bb59df42a846b9532dce8db9">PWM_CLOCK_FREQUENCY</a>)</td></tr>
+<tr class="memdesc:gafd17199da18b5a3321b37016464983b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM Clock Period in [sec].  <a href="a00393.html#gafd17199da18b5a3321b37016464983b0">More...</a><br /></td></tr>
+<tr class="separator:gafd17199da18b5a3321b37016464983b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>User-declaration of fault object trip and recovery delays using physical quantities. </p>
+<p>Conversion macros converting physical quantities of parameters into binary (integer) numbers for registers and variables. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga21aabda6c863b4f02b903056dd51a886"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga21aabda6c863b4f02b903056dd51a886">&#9670;&nbsp;</a></span>BOOST_OCP_RECOVERY_DELAY</h2>
+<a id="gaa8be0a86b0847147a521dd1efec43d1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa8be0a86b0847147a521dd1efec43d1c">&#9670;&nbsp;</a></span>ADC_GRANULARITY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_OCP_RECOVERY_DELAY&#160;&#160;&#160;(float) 500e-3</td>
+          <td class="memname">#define ADC_GRANULARITY&#160;&#160;&#160;(float)(<a class="el" href="a00392.html#ga317868c528ebe27fbca094a8bc2d910c">ADC_REFERENCE</a> / pow(2.0, <a class="el" href="a00392.html#ga00978ca9e8220475258dcbbbb7d29129">ADC_RESOLUTION</a>))</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>over current proection recovery delay in [sec] </p>
+<p>ADC granularity in [V/tick]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01482">1482</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00126">126</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="ga679b8b944ffd26351d12e757af8b37a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga679b8b944ffd26351d12e757af8b37a7">&#9670;&nbsp;</a></span>BOOST_OCP_TRIP_DELAY</h2>
+<a id="gaa5d1dacef95564076ecd32adb0774ac3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa5d1dacef95564076ecd32adb0774ac3">&#9670;&nbsp;</a></span>ADC_VALUE_MAX</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_OCP_TRIP_DELAY&#160;&#160;&#160;(float) 2e-3</td>
+          <td class="memname">#define ADC_VALUE_MAX&#160;&#160;&#160;(uint16_t) (pow(2.0, <a class="el" href="a00392.html#ga00978ca9e8220475258dcbbbb7d29129">ADC_RESOLUTION</a>) - 1.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>over current proection trip delay in [sec] </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01481">1481</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00127">127</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gaf80ca0477099dc8e4c20d0e20bdd96a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf80ca0477099dc8e4c20d0e20bdd96a2">&#9670;&nbsp;</a></span>BOOST_OVLO_RECOVERY_DELAY</h2>
+<a id="gaf0b0f736eb24034cd2a3643b584c9f7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf0b0f736eb24034cd2a3643b584c9f7e">&#9670;&nbsp;</a></span>CPU_TCY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_OVLO_RECOVERY_DELAY&#160;&#160;&#160;(float) 500e-3</td>
+          <td class="memname">#define CPU_TCY&#160;&#160;&#160;(float)(1.0/<a class="el" href="a00392.html#gaf73acdf7fb3be35ff98322b7e827d349">CPU_FREQUENCY</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>over voltage lock out recovery delay in [sec] </p>
+<p>Conversion macros of fundamental microcontroller device settings. </p>
+<p>This section is used to convert device specific parameters like ADC reference and resolution, main execution clock frequency and peripheral time base settings, declared in physical quantities, into binary (integer) numbers to be written to variables and SFRs. Instruction period </p>
 
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01478">1478</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00125">125</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
-<a id="gad5600ac9bfc38bec9b7bfe5be02540f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad5600ac9bfc38bec9b7bfe5be02540f2">&#9670;&nbsp;</a></span>BOOST_OVLO_TRIP_DELAY</h2>
+<a id="gafd17199da18b5a3321b37016464983b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafd17199da18b5a3321b37016464983b0">&#9670;&nbsp;</a></span>PWM_CLOCK_PERIOD</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BOOST_OVLO_TRIP_DELAY&#160;&#160;&#160;(float) 5e-3</td>
+          <td class="memname">#define PWM_CLOCK_PERIOD&#160;&#160;&#160;(float)(1.0/<a class="el" href="a00392.html#gaf4bf7a89bb59df42a846b9532dce8db9">PWM_CLOCK_FREQUENCY</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>over voltage lock out trip delay in [sec] </p>
+<p>PWM Clock Period in [sec]. </p>
 
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01477">1477</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gaabf755c80166ab949147643eb8ea5ba1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaabf755c80166ab949147643eb8ea5ba1">&#9670;&nbsp;</a></span>BOOST_REGERR_RECOVERY_DELAY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BOOST_REGERR_RECOVERY_DELAY&#160;&#160;&#160;(float) 500e-3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>regulation error recovery delay in [sec] </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01480">1480</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga6020ebc1bd9132e1127b17c461d78189"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6020ebc1bd9132e1127b17c461d78189">&#9670;&nbsp;</a></span>BOOST_REGERR_TRIP_DELAY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BOOST_REGERR_TRIP_DELAY&#160;&#160;&#160;(float) 25e-3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>regulation error trip delay in [sec] </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01479">1479</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga54f72937fe8f99c6ceb4d115d4d913f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga54f72937fe8f99c6ceb4d115d4d913f3">&#9670;&nbsp;</a></span>BOOST_UVLO_RECOVERY_DELAY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BOOST_UVLO_RECOVERY_DELAY&#160;&#160;&#160;(float) 500e-3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>under voltage lock out recovery delay in [sec] </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01476">1476</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga3b1fff439d1fc72471a4bd5f9f9d13ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3b1fff439d1fc72471a4bd5f9f9d13ee">&#9670;&nbsp;</a></span>BOOST_UVLO_TRIP_DELAY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BOOST_UVLO_TRIP_DELAY&#160;&#160;&#160;(float) 5e-3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Global defines for fault-monitor related parameters. </p>
-<p>This section is used to define power supply fault object timing settings. The fault monitor is continuously monitoring declared data objects at the high-priority task frequency defined by <a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>. Based on this known interval, filtering delays for fault trip and fault recovery events to allow users to adjust the fault detection sensitivity.</p>
-<ul>
-<li>Fault Trip Event Delay <br  />
- This setting defines for how long a fault condition has to be continuously active before the effective fault trip status/event will be triggered.</li>
-<li>Fault Recovery Event Delay <br  />
- This setting defines for how long a fault condition has to be continuously cleared before the effective fault recovery status/event will be triggered. under voltage lock out trip delay in [sec] </li>
-</ul>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l01475">1475</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga6cc849023abc581aad3e0fc9175bf6b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6cc849023abc581aad3e0fc9175bf6b7">&#9670;&nbsp;</a></span>BUCK_OCP_RECOVERY_DELAY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_OCP_RECOVERY_DELAY&#160;&#160;&#160;(float) 500e-3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>over current proection recovery delay in [sec] </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00843">843</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga401ff320085d325a621e3482bb1b3810"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga401ff320085d325a621e3482bb1b3810">&#9670;&nbsp;</a></span>BUCK_OCP_TRIP_DELAY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_OCP_TRIP_DELAY&#160;&#160;&#160;(float) 2e-3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>over current proection trip delay in [sec] </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00842">842</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga5c7756adddc4911f015fedb890f8270d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5c7756adddc4911f015fedb890f8270d">&#9670;&nbsp;</a></span>BUCK_OVLO_RECOVERY_DELAY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_OVLO_RECOVERY_DELAY&#160;&#160;&#160;(float) 500e-3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>over voltage lock out recovery delay in [sec] </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00839">839</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga486d5b4101d10ebea3f97ec009cf779d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga486d5b4101d10ebea3f97ec009cf779d">&#9670;&nbsp;</a></span>BUCK_OVLO_TRIP_DELAY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_OVLO_TRIP_DELAY&#160;&#160;&#160;(float) 5e-3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>over voltage lock out trip delay in [sec] </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00838">838</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gabcc3a6cdf3286b554f1c01d64871b016"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabcc3a6cdf3286b554f1c01d64871b016">&#9670;&nbsp;</a></span>BUCK_REGERR_RECOVERY_DELAY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_REGERR_RECOVERY_DELAY&#160;&#160;&#160;(float) 500e-3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>regulation error recovery delay in [sec] </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00841">841</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga916bec2e79815eb2364e14fc9926e551"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga916bec2e79815eb2364e14fc9926e551">&#9670;&nbsp;</a></span>BUCK_REGERR_TRIP_DELAY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_REGERR_TRIP_DELAY&#160;&#160;&#160;(float) 25e-3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>regulation error trip delay in [sec] </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00840">840</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="ga8fc5cc0b86b1896492fba096f1177c9e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8fc5cc0b86b1896492fba096f1177c9e">&#9670;&nbsp;</a></span>BUCK_UVLO_RECOVERY_DELAY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_UVLO_RECOVERY_DELAY&#160;&#160;&#160;(float) 500e-3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>under voltage lock out recovery delay in [sec] </p>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00837">837</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
-
-</div>
-</div>
-<a id="gad91c6030149a6a40c03c236c6245195b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad91c6030149a6a40c03c236c6245195b">&#9670;&nbsp;</a></span>BUCK_UVLO_TRIP_DELAY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUCK_UVLO_TRIP_DELAY&#160;&#160;&#160;(float) 5e-3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Global defines for fault-monitor related parameters. </p>
-<p>This section is used to define power supply fault object timing settings. The fault monitor is continuously monitoring declared data objects at the high-priority task frequency defined by <a class="el" href="a00386.html#gac8489c3fb9bb5db0d15a2e870c3e5def">MAIN_EXECUTION_PERIOD</a>. Based on this known interval, filtering delays for fault trip and fault recovery events to allow users to adjust the fault detection sensitivity.</p>
-<ul>
-<li>Fault Trip Event Delay <br  />
- This setting defines for how long a fault condition has to be continuously active before the effective fault trip status/event will be triggered.</li>
-<li>Fault Recovery Event Delay <br  />
- This setting defines for how long a fault condition has to be continuously cleared before the effective fault recovery status/event will be triggered. under voltage lock out trip delay in [sec] </li>
-</ul>
-
-<p class="definition">Definition at line <a class="el" href="a00095_source.html#l00836">836</a> of file <a class="el" href="a00095_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00128">128</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
