@@ -291,8 +291,6 @@ process of the firmware.
  The task layer covers all user tasks executed by the task scheduler. Each task is an independent entity 
  called on its respective priority level defined by the user. Tasks are proprietary user code modules 
  representing specific functions of the application or end-product. 
-
-
 */
 
 
@@ -320,5 +318,4 @@ process of the firmware.
   the API and public data objects holding the library driver settings.
 
   Please refer to the specific library driver for more information.
-
 */ 
