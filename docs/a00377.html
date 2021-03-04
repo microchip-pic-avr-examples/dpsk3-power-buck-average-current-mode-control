@@ -117,7 +117,8 @@ $(document).ready(function(){initNavTree('a00377.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00377.svg" width="328" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00377.svg" width="328" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -160,7 +161,7 @@ Functions</h2></td></tr>
  </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">uint16_t</td><td>gpioInstance </td></tr>
+    <tr><td class="paramname">gpioInstance</td><td>Index of the selected GPIO Instance (1=Port A, 2=Port B, etc.) </td></tr>
   </table>
   </dd>
 </dl>
@@ -203,8 +204,8 @@ n = success, reading GPIO instance was successful (returns 16-bit wide pointer)<
 <p>Writes a user-defined configuration to the GPIO instance registers. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">uint16_t</td><td>gpioInstance </td></tr>
-    <tr><td class="paramname">struct</td><td><a class="el" href="a00852.html">P33C_GPIO_INSTANCE_s</a> gpioConfig </td></tr>
+    <tr><td class="paramname">gpioInstance</td><td>Index of the selected GPIO Instance (1=Port A, 2=Port B, etc.) </td></tr>
+    <tr><td class="paramname">gpioConfig</td><td>GPIO peripheral instance SFR object of type struct <a class="el" href="a00852.html">P33C_GPIO_INSTANCE_s</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -219,7 +220,8 @@ n = success, reading GPIO instance was successful (returns 16-bit wide pointer)<
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00377_gadf3bba95ba8b4f2c34af8678ea5e7ff0_icgraph.svg" width="422" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00377_gadf3bba95ba8b4f2c34af8678ea5e7ff0_icgraph.svg" width="422" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -243,7 +245,7 @@ n = success, reading GPIO instance was successful (returns 16-bit wide pointer)<
 <p>Resets all GPIO Instance registers to their RESET default values. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">uint16_t</td><td>gpioInstance </td></tr>
+    <tr><td class="paramname">gpioInstance</td><td>Index of the selected GPIO Instance (1=Port A, 2=Port B, etc.) </td></tr>
   </table>
   </dd>
 </dl>
@@ -265,7 +267,8 @@ n = success, reading GPIO instance was successful (returns 16-bit wide pointer)<
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00377_gaa1640e884e367bc54c91864dc3a3d7ed_cgraph.svg" width="422" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00377_gaa1640e884e367bc54c91864dc3a3d7ed_cgraph.svg" width="422" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -289,11 +292,11 @@ n = success, reading GPIO instance was successful (returns 16-bit wide pointer)<
 <p>Gets pointer to GPIO Instance SFR set. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">uint16_t</td><td>gpioInstance: Index of the selected GPIO Instance (1=Port A, 2=Port B, etc.) </td></tr>
+    <tr><td class="paramname">gpioInstance</td><td>Index of the selected GPIO Instance (1=Port A, 2=Port B, etc.) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>struct <a class="el" href="a00852.html">P33C_GPIO_INSTANCE_s</a>: GPIO instance object of the selected GPIO instance</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to GPIO instance object of type struct <a class="el" href="a00852.html">P33C_GPIO_INSTANCE_s</a> of the selected GPIO instance</dd></dl>
 <p>This function returns the pointer to a GPIO instance register set in Special Function Register memory space. This pointer can be used to directly write to/read from the Special Function Registers of a given peripheral instance. </p>
 
 <p class="definition">Definition at line <a class="el" href="a00056_source.html#l00045">45</a> of file <a class="el" href="a00056_source.html">p33c_gpio.c</a>.</p>
@@ -302,7 +305,8 @@ n = success, reading GPIO instance was successful (returns 16-bit wide pointer)<
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00377_ga4d67af688d8f7f911d79107974e11e6b_icgraph.svg" width="100%" height="578"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="a00377_ga4d67af688d8f7f911d79107974e11e6b_icgraph.svg" width="100%" height="578"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 
 </div>

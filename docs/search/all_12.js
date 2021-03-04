@@ -12,7 +12,7 @@ var searchData=
   ['user_20settings_1208',['User Settings',['../a00437.html',1,'']]],
   ['unsigned_1209',['unsigned',['../a00572.html#a32e93b068e309da5a319a7a69f3b3ff5',1,'P33C_CCP_INSTANCE_SFRSET_s::unsigned()'],['../a00752.html#a32e93b068e309da5a319a7a69f3b3ff5',1,'P33C_DAC_MODULE_s::unsigned()'],['../a00840.html#a32e93b068e309da5a319a7a69f3b3ff5',1,'DSP_CONFIG_s::unsigned()'],['../a01424.html#a32e93b068e309da5a319a7a69f3b3ff5',1,'FLT_OBJECT_STATUS_s::unsigned()'],['../a01448.html#a32e93b068e309da5a319a7a69f3b3ff5',1,'TRAP_FLAGS_s::unsigned()'],['../a01460.html#a32e93b068e309da5a319a7a69f3b3ff5',1,'CPU_INTTREG_s::unsigned()'],['../a01472.html#a32e93b068e309da5a319a7a69f3b3ff5',1,'CPU_RCON_s::unsigned()'],['../a01484.html#a32e93b068e309da5a319a7a69f3b3ff5',1,'TRAPLOG_STATUS_s::unsigned()'],['../a01520.html#a32e93b068e309da5a319a7a69f3b3ff5',1,'BUCK_CONVERTER_STATUS_s::unsigned()'],['../a01604.html#a32e93b068e309da5a319a7a69f3b3ff5',1,'NPNZ_STATUS_s::unsigned()'],['../a01668.html#a32e93b068e309da5a319a7a69f3b3ff5',1,'PUSH_BUTTON_STATUS_s::unsigned()']]],
   ['upper_5fsaturation_5fevent_1210',['upper_saturation_event',['../a01604.html#afa922f84528fb8c9b073548653220d9a',1,'NPNZ_STATUS_s']]],
-  ['us_1211',['US',['../a00840.html#aeb667368d90b1e8f7bbc3d8d7b7c3d0a',1,'DSP_CONFIG_s']]],
+  ['us_1211',['US',['../a00840.html#a66fa34c648c876d2048d9d78b7ea686b',1,'DSP_CONFIG_s']]],
   ['user_20peripheral_20initialization_1212',['User Peripheral Initialization',['../a00559.html',1,'']]],
   ['user_20task_20initialization_1213',['User Task Initialization',['../a00564.html',1,'']]],
   ['usrparam0_1214',['usrParam0',['../a01652.html#a5bd554258d0a885c9fad89cc9f778716',1,'NPNZ_USER_DATA_BUFFER_s']]],

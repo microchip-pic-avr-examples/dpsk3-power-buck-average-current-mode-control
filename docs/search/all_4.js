@@ -65,7 +65,7 @@ var searchData=
   ['device_20start_20up_490',['Device Start Up',['../a00549.html',1,'']]],
   ['differential_5finput_491',['differential_input',['../a01572.html#ac22ebd6bfde052a5134c47bec2396bbc',1,'BUCK_ADC_INPUT_SETTINGS_s']]],
   ['div0err_492',['DIV0ERR',['../a01448.html#a1281beb6ca8a711b6b6937318b0b0c88',1,'TRAP_FLAGS_s']]],
-  ['dl_493',['DL',['../a00840.html#a3d1186b6dc12a08d88e3678344cab22c',1,'DSP_CONFIG_s']]],
+  ['dl_493',['DL',['../a00840.html#a2c1fcbae3e0c80d07acb52b3f777a23c',1,'DSP_CONFIG_s']]],
   ['dmacerr_494',['DMACERR',['../a01448.html#adaf9bca42fbaf44a4c9e4a41a81e3fca',1,'TRAP_FLAGS_s']]],
   ['doovr_495',['DOOVR',['../a01448.html#a2b0813f968289bb04f95731834a5c404',1,'TRAP_FLAGS_s']]],
   ['drv_5fbuckconverter_5fexecute_496',['drv_BuckConverter_Execute',['../a00496.html#gab9877f90ffb129964ae42ce2921b3fe1',1,'drv_BuckConverter_Execute(volatile struct BUCK_CONVERTER_s *buckInstance):&#160;dev_buck_converter.c'],['../a00496.html#gab9877f90ffb129964ae42ce2921b3fe1',1,'drv_BuckConverter_Execute(volatile struct BUCK_CONVERTER_s *buckInstance):&#160;dev_buck_converter.c']]],

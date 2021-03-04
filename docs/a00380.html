@@ -117,7 +117,8 @@ $(document).ready(function(){initNavTree('a00380.html',''); initResizable(); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00380.svg" width="322" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00380.svg" width="322" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -200,8 +201,8 @@ Functions</h2></td></tr>
 <p>Assigns a pin to a digital function input. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">uint8_t</td><td>pinno: Number of the RPx-pin, which should be assigned to the function </td></tr>
-    <tr><td class="paramname">uint8_t</td><td>*peripheral: Pointer to peripheral, which should be assigned to the pin </td></tr>
+    <tr><td class="paramname">pinno</td><td>Index number of the RPx-pin of type uint8_t, which should be assigned to the function </td></tr>
+    <tr><td class="paramname">peripheral</td><td>Pointer to peripheral/function of type uint8_t, which should be assigned to the pin </td></tr>
   </table>
   </dd>
 </dl>
@@ -217,7 +218,8 @@ Functions</h2></td></tr>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00380_ga6be1f27b70496503b7bda6edc2cfb59b_icgraph.svg" width="310" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00380_ga6be1f27b70496503b7bda6edc2cfb59b_icgraph.svg" width="310" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -251,8 +253,8 @@ Functions</h2></td></tr>
 <p>Assigns a digital function output to a pin. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">uint8_t</td><td>pinno: Number of the RPx-pin, which should be assigned to the function </td></tr>
-    <tr><td class="paramname">uint8_t</td><td>peripheral: Function, which should be assigned to the pin </td></tr>
+    <tr><td class="paramname">pinno</td><td>Index number of the RPx-pin of type uint8_t, which should be assigned to the function </td></tr>
+    <tr><td class="paramname">peripheral</td><td>Peripheral/Function ID of type uint8_t, which should be assigned to the pin </td></tr>
   </table>
   </dd>
 </dl>
@@ -268,7 +270,8 @@ Functions</h2></td></tr>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00380_ga592e485a9574eeebc2e1dc6993de1f55_icgraph.svg" width="331" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00380_ga592e485a9574eeebc2e1dc6993de1f55_icgraph.svg" width="331" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -318,7 +321,7 @@ Functions</h2></td></tr>
 <p>Disconnects a pin from a digital function input. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">uint8_t</td><td>*peripheral: Pointer to peripheral, which should be assigned to the pin </td></tr>
+    <tr><td class="paramname">peripheral</td><td>Pointer to peripheral of type uint8_t, which should be assigned to the pin </td></tr>
   </table>
   </dd>
 </dl>
@@ -335,7 +338,8 @@ Functions</h2></td></tr>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00380_ga76a2264a280f74b1e66ff047241e7a5c_cgraph.svg" width="310" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00380_ga76a2264a280f74b1e66ff047241e7a5c_cgraph.svg" width="310" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -359,7 +363,7 @@ Functions</h2></td></tr>
 <p>Disconnects a pin from a digital function output. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">uint8_t</td><td>pinno: Number of the RPx-pin </td></tr>
+    <tr><td class="paramname">pinno</td><td>Index number of the RPx-pin of type uint8_t, which should be assigned to the function </td></tr>
   </table>
   </dd>
 </dl>
@@ -376,7 +380,8 @@ Functions</h2></td></tr>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00380_gac40d40430a5237549eaafb4aa6ab3a24_cgraph.svg" width="331" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00380_gac40d40430a5237549eaafb4aa6ab3a24_cgraph.svg" width="331" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>

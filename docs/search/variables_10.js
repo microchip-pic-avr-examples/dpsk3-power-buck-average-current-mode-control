@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['sata_1814',['SATA',['../a00840.html#a362f08368b4e385577771e45e76f4947',1,'DSP_CONFIG_s']]],
-  ['satb_1815',['SATB',['../a00840.html#aeae4ae5e746a02e93c151fc147341b4d',1,'DSP_CONFIG_s']]],
-  ['satdw_1816',['SATDW',['../a00840.html#aa359987b3a6b8a237805885b966dc81a',1,'DSP_CONFIG_s']]],
+  ['sata_1814',['SATA',['../a00840.html#af53bfab89b9aada9cd4600d06ff9c410',1,'DSP_CONFIG_s']]],
+  ['satb_1815',['SATB',['../a00840.html#a4630d9527b3bae7b7a8e9fef16eaf8f8',1,'DSP_CONFIG_s']]],
+  ['satdw_1816',['SATDW',['../a00840.html#aa19d08b83e73991dc281b98d59e06ab7',1,'DSP_CONFIG_s']]],
   ['scaler_1817',['scaler',['../a01568.html#aefa09a3fb2e5db126ad75513aede5fb3',1,'BUCK_ADC_INPUT_SCALING_s']]],
   ['scaling_1818',['scaling',['../a01572.html#a4595b4aea36a52a012da734de0b9eb3c',1,'BUCK_ADC_INPUT_SETTINGS_s']]],
   ['screen_1819',['screen',['../a01504.html#aea467a9fc04f0771215b952d26bc4392',1,'LCD_s']]],
   ['set_5fvalues_1820',['set_values',['../a01588.html#acf310bb58637ce822a55aea5e6ee80de',1,'BUCK_CONVERTER_s']]],
-  ['sfa_1821',['SFA',['../a00840.html#aac4dba9a1e3289e7319aeb0daed2019c',1,'DSP_CONFIG_s']]],
+  ['sfa_1821',['SFA',['../a00840.html#a6546794ab4cff147105087deeba459cd',1,'DSP_CONFIG_s']]],
   ['sftacerr_1822',['SFTACERR',['../a01448.html#a4424f8d4e37af608412acf4722885078',1,'TRAP_FLAGS_s']]],
   ['sght_1823',['SGHT',['../a01448.html#aadd85c7c9844fbc3cd0211e8c28deea9',1,'TRAP_FLAGS_s']]],
   ['signed_5fresult_1824',['signed_result',['../a01572.html#aad3977aa344b7d6cd2f0d88693a8ccde',1,'BUCK_ADC_INPUT_SETTINGS_s']]],

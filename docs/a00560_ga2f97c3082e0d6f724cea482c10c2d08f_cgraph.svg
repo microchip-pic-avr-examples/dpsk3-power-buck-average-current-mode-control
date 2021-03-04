@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="a00375.html#gaa9d8777696f0891e9001213e981df7c5" target="_top" xlink:title="Gets pointer to DAC Instance SFR set.">
+<g id="a_node2"><a xlink:href="a00375.html#gac98f16c744b3712654c1bbb58acb4e33" target="_top" xlink:title="Gets pointer to DAC Instance SFR set.">
 <polygon fill="white" stroke="black" points="150,-38.5 150,-57.5 298,-57.5 298,-38.5 150,-38.5"/>
 <text text-anchor="middle" x="224" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">p33c_DacInstance_GetHandle</text>
 </a>
@@ -36,7 +36,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="a00375.html#ga53de75da823cd978cbe5693ae8d2204a" target="_top" xlink:title="Gets pointer to DAC Module SFR set.">
+<g id="a_node3"><a xlink:href="a00375.html#ga72e7cdf4177d0403e8ff925314ec1bc7" target="_top" xlink:title="Gets pointer to DAC Module SFR set.">
 <polygon fill="white" stroke="black" points="152.5,-0.5 152.5,-19.5 295.5,-19.5 295.5,-0.5 152.5,-0.5"/>
 <text text-anchor="middle" x="224" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">p33c_DacModule_GetHandle</text>
 </a>

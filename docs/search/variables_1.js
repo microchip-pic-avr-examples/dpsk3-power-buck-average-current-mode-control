@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['accsat_1478',['ACCSAT',['../a00840.html#a486090beb639cc281df3c06bef63f766',1,'DSP_CONFIG_s']]],
+  ['accsat_1478',['ACCSAT',['../a00840.html#a5c2c7428e9312492055207da7c8de5ca',1,'DSP_CONFIG_s']]],
   ['acoefficients_1479',['ACoefficients',['../a01592.html#a304476deb28c1d04d2b57f27d78b7e91',1,'I_LOOP_CONTROL_LOOP_COEFFICIENTS_s::ACoefficients()'],['../a01660.html#ae35beb5531d5f8d35ef4ff4c55049a7c',1,'V_LOOP_CONTROL_LOOP_COEFFICIENTS_s::ACoefficients()']]],
   ['acoefficientsarraysize_1480',['ACoefficientsArraySize',['../a01628.html#ac531fd3e581ecf7941a112346f956800',1,'NPNZ_FILTER_PARAMS_s']]],
   ['ad_5fisns_1481',['ad_isns',['../a01576.html#aeb1d3c84c495fdc88de3bd38ec28c139',1,'BUCK_FEEDBACK_SETTINGS_s']]],
