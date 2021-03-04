@@ -172,10 +172,10 @@ volatile uint16_t appPowerSupply_ConverterObjectInitialize(void)
     
     buck.feedback.ad_temp.enabled = true;   // Use this channel
 
-    buck.feedback.ad_temp.adc_input = BUCK_TEMP_ADCIN;
-    buck.feedback.ad_temp.adc_core = BUCK_TEMP_ADCCORE;
-    buck.feedback.ad_temp.adc_buffer = &BUCK_TEMP_ADCBUF;
-    buck.feedback.ad_temp.trigger_source = BUCK_TEMP_TRGSRC;
+    buck.feedback.ad_temp.adc_input = TEMP_ADCIN;
+    buck.feedback.ad_temp.adc_core = TEMP_ADCCORE;
+    buck.feedback.ad_temp.adc_buffer = &TEMP_ADCBUF;
+    buck.feedback.ad_temp.trigger_source = TEMP_TRGSRC;
 
     buck.feedback.ad_temp.differential_input = false;
     buck.feedback.ad_temp.interrupt_enable = false;
@@ -183,7 +183,7 @@ volatile uint16_t appPowerSupply_ConverterObjectInitialize(void)
     buck.feedback.ad_temp.level_trigger = false;
     buck.feedback.ad_temp.signed_result = false;
 
-    BUCK_TEMP_ANSEL = buck.feedback.ad_temp.enabled;
+    TEMP_ANSEL = buck.feedback.ad_temp.enabled;
     
     // ~~~ TEMPERATURE FEEDBACK END ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

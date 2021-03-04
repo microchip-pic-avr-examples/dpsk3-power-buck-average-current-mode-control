@@ -133,7 +133,7 @@ volatile uint16_t appLCD_Execute(void)
         {
             case 1:     // Show Temperature Output
 
-				temp = ((float)(buck.data.temp - BUCK_FB_TEMP_ZERO) / BUCK_FB_TEMP_SLOPE); // Scale ADC value to physical unit
+				temp = ((float)(buck.data.temp - TEMP_FB_ZERO) / TEMP_FB_SLOPE); // Scale ADC value to physical unit
 				temp = (float)(int)(100.0 * temp);  // Rounding operation required to prevent display 
 				temp /= 100.0;                      // rounding issues around 9.99 and 10.0 V
 
