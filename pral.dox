@@ -4,16 +4,16 @@
 
 /**
 @defgroup device-abstraction-pral Peripheral Register Abstraction Layer (PRAL) Library
-@ingroup lib-layer
+@ingroup lib-driver-layer
 @details
     The Peripheral Register Abstraction Layer (PRAL) Library is used to provide abstracted (virtual)
-    versions of periperhal specific Special Function Register (SFR) sets of specific peripherals. 
+    versions of peripheral specific Special Function Register (SFR) sets of specific peripherals. 
     
     For each supported peripheral type a Peripheral Module Special Function Register Abstraction Driver
-    provides a specific set of standardized functions and properties allowing applicaitons to access and 
-    control specific instances of this peripehral using indirect addressing of registers. 
+    provides a specific set of standardized functions and properties allowing applications to access and 
+    control specific instances of this peripheral using indirect addressing of registers. 
     
-    This abstraction allows to create and apply templates of peripehral configurations, which can be 
+    This abstraction allows to create and apply templates of peripheral configurations, which can be 
     written to specific instances of a peripheral at runtime. Further, these PRAL drivers provide a mechanism
     to write generic code utilizing peripheral functions without direct association to specific peripheral
     instances. This mechanism is vital to support easy code migration across devices and are the basis of

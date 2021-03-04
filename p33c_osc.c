@@ -34,7 +34,7 @@ volatile struct OSCILLATOR_SYSTEM_FREQUENCIES_s  system_frequencies;
 /*************************************************************************************************
  * @fn uint16_t p33c_OscFrc_DefaultInitialize(volatile enum CPU_SPEED_DEFAULTS_e cpu_speed)
  * @ingroup lib-layer-pral-functions-public-osc
- * @param   enum CPU_SPEED_DEFAULTS_e cpu_speed
+ * @param   cpu_speed CPU speed setting of type enum CPU_SPEED_DEFAULTS_e
  * @return  unsigned integer
  * 0 = unspecified clock failure detected
  * 1 = clock switch successful
@@ -61,7 +61,7 @@ volatile struct OSCILLATOR_SYSTEM_FREQUENCIES_s  system_frequencies;
 
 volatile uint16_t p33c_OscFrc_DefaultInitialize(volatile enum CPU_SPEED_DEFAULTS_e cpu_speed)
 {
-    volatile int16_t fres = 0;
+    volatile int16_t retval = 0;
     volatile struct OSC_CONFIG_s osc;
     
     osc.osc_type = OSCCON_xOSC_FRCPLL;
@@ -103,17 +103,17 @@ volatile uint16_t p33c_OscFrc_DefaultInitialize(volatile enum CPU_SPEED_DEFAULTS
     osc.N2 = PLLDIV_POST2DIV_N2N3_2;
     osc.N3 = PLLDIV_POST2DIV_N2N3_1; 
     
-    fres = p33c_Osc_Initialize(osc);
+    retval = p33c_Osc_Initialize(osc);
 
-    return(fres);
+    return(retval);
 }
 
 /*************************************************************************************************
  * @fn uint16_t p33c_OscFrc_Initialize(volatile enum CLKDIV_FRCDIVN_e frc_div, volatile enum OSCTUN_TUN_e frc_tune)
  * @ingroup lib-layer-pral-functions-public-osc
  * @brief Initializes the internal RC oscillator divider and tuning register
- * @param enum CLKDIV_FRCDIVN_e frc_div
- * @param enum OSCTUN_TUN_e frc_tune
+ * @param frc_div  Internal RC Oscillator frequency divider of type enum CLKDIV_FRCDIVN_e
+ * @param frc_tune Internal RC Oscillator tuning register value of type enum OSCTUN_TUN_e 
  * @return
  *  0 = unspecified clock failure detected
  *  1 = clock switch successful
@@ -166,10 +166,9 @@ volatile uint16_t p33c_OscFrc_Initialize(volatile enum CLKDIV_FRCDIVN_e frc_div,
  * Initializes the major oscillator and the PLL module step by step by using clock switching
  * in software. Each step is tested and verified
  *
- * @param
- *	struct P33C_OSC_CONFIG_s osc_config (includes oscillator type and PLL configuration)
+ * @param  osc_config  Main oscillator and PLL configuration of type struct P33C_OSC_CONFIG_s
  *
- * @return
+ * @return unsigned integer
  *  0 = unspecified clock failure detected
  *  1 = clock switch successful
  *  2 = clock switch failed
@@ -277,11 +276,12 @@ volatile uint16_t p33c_Osc_Initialize(volatile struct OSC_CONFIG_s osc_config)
 /*************************************************************************************************
  * @fn      uint16_t p33c_OscAuxClk_Initialize(volatile struct AUXOSC_CONFIG_s aux_clock_config)
  * @ingroup lib-layer-pral-functions-public-osc
- * @param   struct AUXOSC_CONFIG_s aux_clock_config: Auxiliary oscillator configuration
  * @brief
  * Initializes the auxiliary clock and its PLL module step by step 
  * in software. Each step is tested and verified
  *
+ * @param aux_clock_config  Auxiliary oscillator configuration of type struct AUXOSC_CONFIG_s
+ * 
  * @return
  *  0 = unspecified clock failure detected
  *  1 = clock switch successful
@@ -325,14 +325,13 @@ volatile uint16_t p33c_OscAuxClk_Initialize(volatile struct AUXOSC_CONFIG_s aux_
 }
  
 /*************************************************************************************************
- * @fn uint16_t p33c_OscAuxClk_DefaultInitialize(volatile AUX_PLL_DEFAULTS_e afpllo_frequency)
+ * @fn uint16_t p33c_OscAuxClk_DefaultInitialize(volatile enum AUX_PLL_DEFAULTS_e afpllo_frequency)
  * @ingroup lib-layer-pral-functions-public-osc
  * @brief
  * Initializes the auxiliary clock and its PLL module step by step 
  * in software. Each step is tested and verified
  *
- * @param
- *	AUX_PLL_DEFAULTS_e afpllo_frequency
+ * @param afpllo_frequency  Auxiliary PLL output frequency of type enum AUX_PLL_DEFAULTS_e
  *
  * @return
  *  0 = unspecified clock failure detected
@@ -352,7 +351,7 @@ volatile uint16_t p33c_OscAuxClk_Initialize(volatile struct AUXOSC_CONFIG_s aux_
 
  volatile uint16_t p33c_OscAuxClk_DefaultInitialize(volatile enum AUX_PLL_DEFAULTS_e afpllo_frequency)
  {
-    volatile uint16_t fres = 1;
+    volatile uint16_t retval = 1;
     volatile struct AUXOSC_CONFIG_s aux_clock_config;
 
     // Set FRC as clock input to auxiliary PLL module
@@ -377,9 +376,9 @@ volatile uint16_t p33c_OscAuxClk_Initialize(volatile struct AUXOSC_CONFIG_s aux_
     aux_clock_config.APLLEN = ACLKCON_APLLEN_ENABLED;
     
     // Call auxiliary PLL configuration to apply new settings
-    fres &= p33c_OscAuxClk_Initialize(aux_clock_config);
+    retval &= p33c_OscAuxClk_Initialize(aux_clock_config);
     
-    return(fres);
+    return(retval);
  }
 
 
@@ -392,14 +391,13 @@ volatile uint16_t p33c_OscAuxClk_Initialize(volatile struct AUXOSC_CONFIG_s aux_
  * across clock domains. These frequencies are broadcasted in the global data structure 
  * 'system_frequencies'.
  *
- * @param
- *	uint32_t main_osc_frequency: external oscillator frequency in [Hz] as 32-bit number
- *                               Set to 0 if no external oscillator is used
+ * @param main_osc_frequency  Frequency of external oscillator frequency in [Hz] of type unsigned integer.
+ *                            Set to '0' if no external oscillator is used.
  *
  * @return
- *  unsigned integer
- *  0 = reading oscillator settings failed
- *  1 = reading oscillator settings successfully
+ * unsigned integer
+ * 0 = reading oscillator settings failed
+ * 1 = reading oscillator settings successfully
  *
  * @details
  * Microchip's 16-Bit devices offer multiple clock sources to clock the CPU. This routine 

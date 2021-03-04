@@ -19,19 +19,16 @@
  * TERMS. 
  */
 
-/*@@p33c_dac.h
- * ************************************************************************************************
- * Summary:
- * Generic Digital-To-Analog Converter Driver Module (header file)
- *
- * Description:
+/**************************************************************************************************
+ * @file p33c_dac.h
+ * @see  p33c_dac.c
+ * @brief Generic Digital-To-Analog Converter Driver Module (header file)
+ * @details
  * This additional header file contains defines for all required bit-settings of all related 
  * special function registers of a peripheral module and/or instance. 
  * This file is an additional header file on top of the generic device header file.
  * 
- * See Also:
- *	p33c_dac.c
- * ***********************************************************************************************/
+ *************************************************************************************************/
 
 // This is a guard condition so that contents of this file are not included
 // more than once.  
@@ -48,7 +45,19 @@
 // GENERIC PDM DAC MODULE SPECIAL FUNCTION REGISTER SET
 #ifndef P33C_DAC_MODULE_s
 
-    typedef struct P33C_DAC_MODULE_s{
+/***********************************************************************************
+ * @ingroup lib-layer-pral-properties-public-dac
+ * @struct P33C_DAC_MODULE_s
+ * @brief Abstracted set of Special Function Registers of a Digital-to-Analog Converter peripheral
+ * @details
+ * This structure defines an abstracted set of Special Function Registers of 
+ * Digital-to-Analog Converter peripheral module base registers. Users can use this 
+ * abstracted set of registers to capture register settings from or write generic  
+ * register settings to these peripheral base registers.
+ * 
+ **********************************************************************************/
+
+    struct P33C_DAC_MODULE_s{
         union {
             volatile struct tagDACCTRL1LBITS bits; // Register bit-field
             volatile uint16_t value; // 16-bit wide register value
@@ -62,14 +71,27 @@
             volatile struct tagDACCTRL2HBITS bits; // Register bit-field
             volatile uint16_t value; // 16-bit wide register value
         } DacModuleCtrl2H;    // (DACCTRL2H) DAC CONTROL 2 REGISTER HIGH
-    } __attribute__((packed)) obj_P33C_DAC_MODULE_t; // PDM DAC MODULE REGISTER SET
-
+    } __attribute__((packed));
+    typedef struct P33C_DAC_MODULE_s P33C_DAC_MODULE_t; // PDM DAC MODULE REGISTER SET
+    
 #endif
 
 // GENERIC PDM DAC INSTANCE SPECIAL FUNCTION REGISTER SET
 #ifndef P33C_DAC_INSTANCE_s    
+
+/***********************************************************************************
+ * @ingroup lib-layer-pral-properties-public-dac
+ * @struct P33C_DAC_MODULE_s
+ * @brief Abstracted set of Special Function Registers of a Digital-to-Analog Converter peripheral instance
+ * @details
+ * This structure defines an abstracted set of Special Function Registers of
+ * Digital-to-Analog Converter peripheral instance registers. It provides an 
+ * abstracted set of registers to capture register settings from or write generic  
+ * register settings to this peripheral instance.
+ * 
+ **********************************************************************************/
     
-    typedef struct P33C_DAC_INSTANCE_s{
+    struct P33C_DAC_INSTANCE_s{
         union {
             volatile struct tagDAC1CONLBITS bits; // Register bit-field
             volatile uint16_t value; // 16-bit wide register value
@@ -98,8 +120,18 @@
             volatile struct tagSLP1DATBITS bits; // Register bit-field
             volatile uint16_t value; // 16-bit wide register value
         } SLPxDAT;  // SLPxDAT: DACx SLOPE DATA REGISTER
-    } __attribute__((packed)) obj_P33C_DAC_INSTANCE_t; // PDM DAC INSTANCE REGISTER SET
+    } __attribute__((packed));
+    typedef struct P33C_DAC_INSTANCE_s P33C_DAC_INSTANCE_t; // PDM DAC INSTANCE REGISTER SET
     
+/*********************************************************************************
+ * @ingroup lib-layer-pral-properties-public-dac
+ * @def     P33C_CCPGEN_SFR_OFFSET
+ * @brief   Derives the address offset between two peripheral instances
+ * @details
+ * This macro derives the address offset between two peripheral instances. 
+ * Users can use this address offset to derive the start address to/from which
+ * the register set should be written or read.
+ **********************************************************************************/
     #define P33C_DAC_SFR_OFFSET  ((volatile uint16_t)&DAC2CONL - (volatile uint16_t)&DAC1CONL)
 
 #endif
@@ -120,7 +152,7 @@ extern volatile uint16_t p33c_DacModule_ConfigWrite(
 
 
 extern volatile struct P33C_DAC_INSTANCE_s* p33c_DacInstance_GetHandle(
-                    volatile uint16_t dac_Instance
+                    volatile uint16_t dacInstance
                 );
 
 extern volatile uint16_t p33c_DacInstance_Dispose(

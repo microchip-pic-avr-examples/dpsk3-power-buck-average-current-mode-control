@@ -110,8 +110,8 @@ volatile uint16_t PPS_UnlockIO(void){
  * @fn uint16_t PPS_RemapOutput(volatile uint8_t pinno, volatile uint8_t peripheral)
  * @ingroup lib-layer-pral-functions-public-pps
  * @brief Assigns a digital function output to a pin
- * @param uint8_t pinno: Number of the RPx-pin, which should be assigned to the function
- * @param uint8_t peripheral: Function, which should be assigned to the pin
+ * @param pinno: Index number of the RPx-pin of type uint8_t, which should be assigned to the function
+ * @param peripheral: Peripheral/Function ID of type uint8_t, which should be assigned to the pin
  * @return
  *  unsigned integer 
  *  1: Success
@@ -150,8 +150,8 @@ volatile uint16_t PPS_RemapOutput(volatile uint8_t pinno, volatile uint8_t perip
  * @fn uint16_t PPS_RemapInput(volatile uint8_t pinno, volatile uint8_t *peripheral)
  * @ingroup lib-layer-pral-functions-public-pps
  * @brief Assigns a pin to a digital function input
- * @param uint8_t pinno: Number of the RPx-pin, which should be assigned to the function
- * @param uint8_t *peripheral: Pointer to peripheral, which should be assigned to the pin
+ * @param pinno: Index number of the RPx-pin of type uint8_t, which should be assigned to the function
+ * @param peripheral: Pointer to peripheral/function of type uint8_t, which should be assigned to the pin
  * @return 
  *  unsigned integer 
  *  1: Success
@@ -185,7 +185,7 @@ volatile uint16_t PPS_RemapInput(volatile uint8_t pinno, volatile uint8_t *perip
  * @fn uint16_t PPS_UnmapOutput(volatile uint8_t pinno)
  * @ingroup lib-layer-pral-functions-public-pps
  * @brief   Disconnects a pin from a digital function output
- * @param   uint8_t pinno: Number of the RPx-pin
+ * @param   pinno: Index number of the RPx-pin of type uint8_t, which should be assigned to the function
  * @return
  *  unsigned integer  
  *	1: Success
@@ -218,7 +218,7 @@ volatile uint16_t PPS_UnmapOutput(volatile uint8_t pinno)
  * @fn uint16_t PPS_UnmapInput(volatile uint8_t *peripheral)
  * @ingroup lib-layer-pral-functions-public-pps
  * @brief  Disconnects a pin from a digital function input
- * @param uint8_t *peripheral: Pointer to peripheral, which should be assigned to the pin
+ * @param  peripheral: Pointer to peripheral of type uint8_t, which should be assigned to the pin
  * @return 
  *  unsigned integer  
  *	1: Success
