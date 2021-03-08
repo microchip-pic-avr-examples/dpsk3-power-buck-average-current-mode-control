@@ -1,16 +1,16 @@
 [GUI]
 CreateDate=08/26/2020 14:07:37
-SaveDate=02/25/2021 15:02:51
+SaveDate=03/08/2021 19:16:00
 Name=PowerSmart™ Digital Control Library Designer
 Version=0.9.12.672
 VersionKey=912
 AGS Version=2.0.23
-CGS Version=3.0.6
-WindowState=2
-Top=-8
-Left=1912
-Height=1066
-Width=1936
+CGS Version=3.0.7
+WindowState=0
+Top=60
+Left=268
+Height=954
+Width=1384
 TabHeight=370
 [ControlSetup]
 ControlType=2
