@@ -299,11 +299,11 @@
 #define BUCK_NO_OF_PHASES              1U ///< Number of power converter phases of this design
 
 #define BUCK_SWITCHING_FREQUENCY       (float)500.0e+3 ///< Fixed Switching frequency in [Hz]
-#define BUCK_PWM_DUTY_CYCLE_MIN        (float)0.010 ///< Minimum on/off-time ratio (duty ratio) in [%]
-#define BUCK_PWM_DUTY_CYCLE_MAX        (float)0.900 ///< Maximum on/off-time ratio (duty ratio) in [%]
+#define BUCK_PWM_DUTY_CYCLE_MIN        (float)  0.010  ///< Minimum on/off-time ratio (duty ratio) in [%]
+#define BUCK_PWM_DUTY_CYCLE_MAX        (float)  0.900  ///< Maximum on/off-time ratio (duty ratio) in [%]
 #define BUCK_LEADING_EDGE_BLANKING     (float)120.0e-9 ///< Leading Edge Blanking period in [sec]
-#define BUCK_DEAD_TIME_LEADING_EDGE    (float)20.0e-9 ///< Leading Edge Dead Time delay in [sec]
-#define BUCK_DEAD_TIME_FALLING_EDGE    (float)60.0e-9 ///< Falling Edge Dead Time delay in [sec]
+#define BUCK_DEAD_TIME_LEADING_EDGE    (float) 20.0e-9 ///< Leading Edge Dead Time delay in [sec]
+#define BUCK_DEAD_TIME_FALLING_EDGE    (float) 60.0e-9 ///< Falling Edge Dead Time delay in [sec]
 
 /** @} */ // end of group pwm-settings-buck ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -482,7 +482,7 @@
 #define BUCK_VOUT_MAXIMUM           (float) 4.000   ///< Absolute maximum output voltage (Over Voltage Protection)
 #define BUCK_VOUT_HYSTERESIS        (float) 0.500   ///< Over Voltage Protection Hysteresis
 
-#define BUCK_VOUT_TOLERANCE_MAX     (float) 0.500   ///< Output voltage tolerance at nominal operating point [+/-]
+#define BUCK_VOUT_TOLERANCE_MAX     (float) 0.200   ///< Output voltage tolerance at nominal operating point [+/-]
 #define BUCK_VOUT_TOLERANCE_MIN     (float) 0.100   ///< Output voltage tolerance at nominal operating point [+/-]
     
 #define BUCK_VOUT_DIV_R1            (float) 1.000  ///< Upper voltage divider resistor in kOhm
@@ -843,16 +843,24 @@
  * This setting defines for how long a fault condition has to be continuously cleared before the 
  * effective fault recovery status/event will be triggered.
  * 
+ * - Restart Cycle Limit
+ * In case of a persistent fault condition (e.g continuous short circuit or unstable feedback loop)
+ * the fault monitor will limit the number of restart attempts specified by FAULT_RESTART_CYCLES.
+ * When this threshold is exceeded, the power supply will latch in save state (off) and a CPU or 
+ * power cycle is required to start-up the power supply again.
+ * 
  *************************************************************************************************/
 
-#define BUCK_UVLO_TRIP_DELAY         (float) 5e-3   ///< under voltage lock out trip delay in [sec]
-#define BUCK_UVLO_RECOVERY_DELAY     (float) 500e-3 ///< under voltage lock out recovery delay in [sec]
-#define BUCK_OVLO_TRIP_DELAY         (float) 5e-3   ///< over voltage lock out trip delay in [sec]
-#define BUCK_OVLO_RECOVERY_DELAY     (float) 500e-3 ///< over voltage lock out recovery delay in [sec]
-#define BUCK_REGERR_TRIP_DELAY       (float) 25e-3  ///< regulation error trip delay in [sec]
-#define BUCK_REGERR_RECOVERY_DELAY   (float) 500e-3 ///< regulation error recovery delay in [sec]
-#define BUCK_OCP_TRIP_DELAY          (float) 2e-3   ///< over current proection trip delay in [sec]
-#define BUCK_OCP_RECOVERY_DELAY      (float) 500e-3 ///< over current proection recovery delay in [sec]
+#define BUCK_UVLO_TRIP_DELAY        (float) 5e-3   ///< under voltage lock out trip delay in [sec]
+#define BUCK_UVLO_RECOVERY_DELAY    (float) 500e-3 ///< under voltage lock out recovery delay in [sec]
+#define BUCK_OVLO_TRIP_DELAY        (float) 5e-3   ///< over voltage lock out trip delay in [sec]
+#define BUCK_OVLO_RECOVERY_DELAY    (float) 500e-3 ///< over voltage lock out recovery delay in [sec]
+#define BUCK_REGERR_TRIP_DELAY      (float) 25e-3  ///< regulation error trip delay in [sec]
+#define BUCK_REGERR_RECOVERY_DELAY  (float) 2000e-3 ///< regulation error recovery delay in [sec]
+#define BUCK_OCP_TRIP_DELAY         (float) 2e-3   ///< over current proection trip delay in [sec]
+#define BUCK_OCP_RECOVERY_DELAY     (float) 2000e-3 ///< over current proection recovery delay in [sec]
+
+#define BUCK_FAULT_RESTART_CYCLES   10  ///< Maximum number of restart cycles: Fault state will be latched until CPU reset or power cycle
 
 /** @} */ // end of group fault-response-settings-buck ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -901,11 +909,11 @@
 #define BOOST_NO_OF_PHASES              1U ///< Number of power converter phases of this design
 
 #define BOOST_SWITCHING_FREQUENCY       (float)500.0e+3 ///< Fixed Switching frequency in [Hz]
-#define BOOST_PWM_DUTY_CYCLE_MIN        (float)0.040 ///< Minimum on/off-time ratio (duty ratio) in [%]
-#define BOOST_PWM_DUTY_CYCLE_MAX        (float)0.850 ///< Maximum on/off-time ratio (duty ratio) in [%]
+#define BOOST_PWM_DUTY_CYCLE_MIN        (float)  0.030  ///< Minimum on/off-time ratio (duty ratio) in [%]
+#define BOOST_PWM_DUTY_CYCLE_MAX        (float)  0.900  ///< Maximum on/off-time ratio (duty ratio) in [%]
 #define BOOST_LEADING_EDGE_BLANKING     (float)120.0e-9 ///< Leading Edge Blanking period in [sec]
-#define BOOST_DEAD_TIME_LEADING_EDGE    (float) 0.0e-9 ///< Leading Edge Dead Time delay in [sec]
-#define BOOST_DEAD_TIME_FALLING_EDGE    (float) 0.0e-9 ///< Falling Edge Dead Time delay in [sec]
+#define BOOST_DEAD_TIME_LEADING_EDGE    (float)  0.0e-9 ///< Leading Edge Dead Time delay in [sec]
+#define BOOST_DEAD_TIME_FALLING_EDGE    (float)  0.0e-9 ///< Falling Edge Dead Time delay in [sec]
 
 /** @} */ // end of group pwm-settings-boost ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1461,16 +1469,24 @@
  * This setting defines for how long a fault condition has to be continuously cleared before the 
  * effective fault recovery status/event will be triggered.
  * 
+ * - Restart Cycle Limit
+ * In case of a persistent fault condition (e.g continuous short circuit or unstable feedback loop)
+ * the fault monitor will limit the number of restart attempts specified by FAULT_RESTART_CYCLES.
+ * When this threshold is exceeded, the power supply will latch in save state (off) and a CPU or 
+ * power cycle is required to start-up the power supply again.
+ * 
  *************************************************************************************************/
 
-#define BOOST_UVLO_TRIP_DELAY         (float) 5e-3   ///< under voltage lock out trip delay in [sec]
-#define BOOST_UVLO_RECOVERY_DELAY     (float) 500e-3 ///< under voltage lock out recovery delay in [sec]
-#define BOOST_OVLO_TRIP_DELAY         (float) 5e-3   ///< over voltage lock out trip delay in [sec]
-#define BOOST_OVLO_RECOVERY_DELAY     (float) 500e-3 ///< over voltage lock out recovery delay in [sec]
-#define BOOST_REGERR_TRIP_DELAY       (float) 25e-3  ///< regulation error trip delay in [sec]
-#define BOOST_REGERR_RECOVERY_DELAY   (float) 500e-3 ///< regulation error recovery delay in [sec]
-#define BOOST_OCP_TRIP_DELAY          (float) 2e-3   ///< over current proection trip delay in [sec]
-#define BOOST_OCP_RECOVERY_DELAY      (float) 500e-3 ///< over current proection recovery delay in [sec]
+#define BOOST_UVLO_TRIP_DELAY       (float) 5e-3   ///< under voltage lock out trip delay in [sec]
+#define BOOST_UVLO_RECOVERY_DELAY   (float) 500e-3 ///< under voltage lock out recovery delay in [sec]
+#define BOOST_OVLO_TRIP_DELAY       (float) 5e-3   ///< over voltage lock out trip delay in [sec]
+#define BOOST_OVLO_RECOVERY_DELAY   (float) 500e-3 ///< over voltage lock out recovery delay in [sec]
+#define BOOST_REGERR_TRIP_DELAY     (float) 25e-3  ///< regulation error trip delay in [sec]
+#define BOOST_REGERR_RECOVERY_DELAY (float)2000e-3 ///< regulation error recovery delay in [sec]
+#define BOOST_OCP_TRIP_DELAY        (float) 2e-3   ///< over current proection trip delay in [sec]
+#define BOOST_OCP_RECOVERY_DELAY    (float)2000e-3 ///< over current proection recovery delay in [sec]
+
+#define BOOST_FAULT_RESTART_CYCLES  10  ///< Maximum number of restart cycles: Fault state will be latched until CPU reset or power cycle
 
 /** @} */ // end of group fault-response-settings-boost ~~~~~~~~~~~~~~~~~~~~~~~
 
