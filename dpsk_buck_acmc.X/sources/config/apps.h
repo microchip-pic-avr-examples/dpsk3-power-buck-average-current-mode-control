@@ -44,6 +44,7 @@
 #include "lcd/app_lcd.h"
 #include "push_button/app_push_button.h"
 
+#define FIRMWARE_VERSION_STRING "v1.0.0"
 
 #endif	/* APPLICATION_GLOBALS_HEADER_H */
 
