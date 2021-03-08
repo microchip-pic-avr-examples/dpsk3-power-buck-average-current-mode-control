@@ -6,12 +6,13 @@
  */
 
 
-#include "led/app_led.h"
+#include "config/apps.h"
 #include "config/hal.h"
 
 // PRIVATE VARIABLE DELARATIONS
 volatile uint16_t tgl_cnt = 0;  // local counter of LED toggle loops
-#define TGL_INTERVAL    4999    // LED toggle interval of (4999 + 1) x 100usec = 100ms
+#define TGL_INTERVAL     4999   // LED toggle interval of (4999 + 1) x 100usec = 500ms
+#define TGL_INTERVAL_ERR  999   // LED toggle interval of ( 999 + 1) x 100usec = 100ms
 
 volatile DEBUGGING_LED_t debug_led;
 
@@ -53,6 +54,12 @@ volatile uint16_t appLED_Execute(void)
 {
     volatile uint16_t retval = 1;
 
+    // Change LED toggle frequency when power supply is in fault state
+    if (buck.status.bits.fault_active)
+        debug_led.period = TGL_INTERVAL_ERR;
+    else
+        debug_led.period = TGL_INTERVAL;
+    
 	// Toggle LED, refresh LCD and reset toggle counter
 	if (tgl_cnt++ > debug_led.period) { // Count n loops until LED toggle interval is exceeded
 		DBGLED_Toggle();
