@@ -31,12 +31,12 @@ var hierarchy =
     [ "I_LOOP_CONTROL_LOOP_HISTORIES_s", "a01596.html", null ],
     [ "LCD_s", "a01504.html", null ],
     [ "NPNZ16b_s", "a01656.html", [
-      [ "NPNZ_ADC_TRGCTRL_s", "a01640.html", null ],
-      [ "NPNZ_DATA_PROVIDERS_s", "a01644.html", null ],
-      [ "NPNZ_EXTENSION_HOOKS_s", "a01648.html", null ],
+      [ "NPNZ_ADC_TRGCTRL_s", "a01636.html", null ],
+      [ "NPNZ_DATA_PROVIDERS_s", "a01640.html", null ],
+      [ "NPNZ_EXTENSION_HOOKS_s", "a01644.html", null ],
       [ "NPNZ_FILTER_PARAMS_s", "a01628.html", null ],
-      [ "NPNZ_GAIN_CONTROL_s", "a01632.html", null ],
-      [ "NPNZ_LIMITS_s", "a01636.html", null ],
+      [ "NPNZ_GAIN_CONTROL_s", "a01648.html", null ],
+      [ "NPNZ_LIMITS_s", "a01632.html", null ],
       [ "NPNZ_PORTS_s", "a01624.html", [
         [ "NPNZ_PORT_s", "a01620.html", null ]
       ] ],

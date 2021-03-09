@@ -1,5 +1,6 @@
 var a00405 =
 [
+    [ "BUCK_FAULT_RESTART_CYCLES", "a00405.html#ga6eaf3775cb0203365a684871ad42d411", null ],
     [ "BUCK_OCP_RECOVERY_DELAY", "a00405.html#ga6cc849023abc581aad3e0fc9175bf6b7", null ],
     [ "BUCK_OCP_TRIP_DELAY", "a00405.html#ga401ff320085d325a621e3482bb1b3810", null ],
     [ "BUCK_OVLO_RECOVERY_DELAY", "a00405.html#ga5c7756adddc4911f015fedb890f8270d", null ],

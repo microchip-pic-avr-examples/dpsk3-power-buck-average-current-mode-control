@@ -1,8 +1,8 @@
 ; **********************************************************************************
 ;  SDK Version: PowerSmart™ Digital Control Library Designer v0.9.12.672
-;  CGS Version: Code Generator Script v3.0.6 (02/03/2021)
+;  CGS Version: Code Generator Script v3.0.7 (03/07/2021)
 ;  Author:      M91406
-;  Date/Time:   02/25/2021 14:55:34
+;  Date/Time:   03/08/2021 19:14:02
 ; **********************************************************************************
 ;  2P2Z Control Library File (Dual Bitshift-Scaling Mode)
 ; **********************************************************************************
@@ -101,11 +101,11 @@
     
 ;------------------------------------------------------------------------------
 ; Controller Anti-Windup (control output value clamping)
-    
+     
 ; Check for lower limit violation
     mov [w0 + #MinOutput], w6               ; load lower limit value
     cpsgt w4, w6                            ; compare values and skip next instruction if control output is within operating range (control output > lower limit)
-    clr w4                                  ; clear working register holding most recent control output value
+    mov w6, w4                              ; override controller output
     I_LOOP_CLAMP_MIN_EXIT:
      
 ; Check for upper limit violation

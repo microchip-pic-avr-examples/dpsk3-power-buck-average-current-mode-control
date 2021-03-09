@@ -55,6 +55,7 @@ typedef struct LCD_s{
     volatile bool enabled;
     volatile uint16_t refresh;
     volatile uint16_t screen;
+    volatile uint16_t screens;
 }LCD_t;
     
 

@@ -60,6 +60,18 @@ volatile uint16_t lcd_cnt = 0;  ///< Local counter used to trigger LCD refresh e
 
 /** @} */ // end of group app-layer-lcd-properties-private
 
+/***********************************************************************************
+ * @ingroup app-layer-lcd-properties-private
+ * @{
+ * @def LCD_NO_OF_SCREENS
+ * @brief Number of screens which can be selected
+ * @details
+ *  This application supports multiple different screens which can be selected by
+ *  the user to display different runtime data fields.
+ ***********************************************************************************/
+#define LCD_NO_OF_SCREENS   3   ///< Number of screens which can be selected
+
+/** @} */ // end of group app-layer-lcd-properties-private
 
 /*********************************************************************************
  * @ingroup app-layer-lcd-functions-public
@@ -80,6 +92,8 @@ volatile uint16_t appLCD_Initialize(void)
     if (lcd.refresh == 0)
         lcd.refresh = LCD_STARTUP;
     
+    lcd.screens = LCD_NO_OF_SCREENS;
+
     dev_Lcd_Initialize();
     dev_Lcd_WriteStringXY(0,0,"==== DPSK-3 ====");
     dev_Lcd_WriteStringXY(0,1,"   BUCK  ACMC   ");
@@ -159,7 +173,7 @@ volatile uint16_t appLCD_Execute(void)
                 break;
 
             case 3:     // Firmware Version Number
-                PrintLcd(1, "Firmware: v1.0.0");
+                PrintLcd(1, "Firmware: %s", FIRMWARE_VERSION_STRING);
                 break;
 
             default:    // Output voltage display
@@ -171,20 +185,26 @@ volatile uint16_t appLCD_Execute(void)
                 else
                     PrintLcd(1, "VOUT    = %2.1f V", (double)vo);
 
-                if (buck.status.bits.fault_active)
-                {
-                    if (fltobj_BuckUVLO.Status.bits.FaultStatus)
-                        dev_Lcd_WriteStringXY(4, 1, "(UV)");
-                    else if (fltobj_BuckOVLO.Status.bits.FaultStatus)
-                        dev_Lcd_WriteStringXY(4, 1, "(OV)");
-                    else if (fltobj_BuckRegErr.Status.bits.FaultStatus)
-                        dev_Lcd_WriteStringXY(4, 1, "(RE)");
-                }
                 break;
         }
         
+        // Add Error Indicators
+        if ((lcd.screen<3) && (buck.status.bits.fault_active))
+        {
+            if (fltobj_BuckUVLO.Status.bits.FaultStatus)
+                dev_Lcd_WriteStringXY(4, 1, "(UV)");
+            else if (fltobj_BuckOVLO.Status.bits.FaultStatus)
+                dev_Lcd_WriteStringXY(4, 1, "(OV)");
+            else if (fltobj_BuckRegErr.Status.bits.FaultStatus)
+                dev_Lcd_WriteStringXY(4, 1, "(RE)");
+            else if (fltobj_BuckOCP.Status.bits.FaultStatus)
+                dev_Lcd_WriteStringXY(4, 1, "(OC)");
+            else 
+                dev_Lcd_WriteStringXY(4, 1, "(LA)");
+        }
+
+        // Trigger LCD Refresh
         lcd.refresh = LCD_REFRESH;
-        
         lcd_cnt = 0; // Reset internal interval counter
     }
     

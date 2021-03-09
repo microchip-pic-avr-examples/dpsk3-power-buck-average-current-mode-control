@@ -118,6 +118,7 @@ When pressing the on-board button `USER` for one second or longer, the screen ca
 - Output Voltage View
 - Temperature View
 - Output Current View
+- Firmware Version
 
 By pressing the `Buck Load` on-board push button on the right edge of the board for ***less*** than a second, changes the static load level in four steps:
 

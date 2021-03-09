@@ -133,19 +133,40 @@ $(document).ready(function(){initNavTree('a00405.html',''); initResizable(); });
 <tr class="memitem:ga916bec2e79815eb2364e14fc9926e551"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#ga916bec2e79815eb2364e14fc9926e551">BUCK_REGERR_TRIP_DELAY</a>&#160;&#160;&#160;(float) 25e-3</td></tr>
 <tr class="memdesc:ga916bec2e79815eb2364e14fc9926e551"><td class="mdescLeft">&#160;</td><td class="mdescRight">regulation error trip delay in [sec]  <a href="a00405.html#ga916bec2e79815eb2364e14fc9926e551">More...</a><br /></td></tr>
 <tr class="separator:ga916bec2e79815eb2364e14fc9926e551"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabcc3a6cdf3286b554f1c01d64871b016"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#gabcc3a6cdf3286b554f1c01d64871b016">BUCK_REGERR_RECOVERY_DELAY</a>&#160;&#160;&#160;(float) 500e-3</td></tr>
+<tr class="memitem:gabcc3a6cdf3286b554f1c01d64871b016"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#gabcc3a6cdf3286b554f1c01d64871b016">BUCK_REGERR_RECOVERY_DELAY</a>&#160;&#160;&#160;(float) 2000e-3</td></tr>
 <tr class="memdesc:gabcc3a6cdf3286b554f1c01d64871b016"><td class="mdescLeft">&#160;</td><td class="mdescRight">regulation error recovery delay in [sec]  <a href="a00405.html#gabcc3a6cdf3286b554f1c01d64871b016">More...</a><br /></td></tr>
 <tr class="separator:gabcc3a6cdf3286b554f1c01d64871b016"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga401ff320085d325a621e3482bb1b3810"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#ga401ff320085d325a621e3482bb1b3810">BUCK_OCP_TRIP_DELAY</a>&#160;&#160;&#160;(float) 2e-3</td></tr>
 <tr class="memdesc:ga401ff320085d325a621e3482bb1b3810"><td class="mdescLeft">&#160;</td><td class="mdescRight">over current proection trip delay in [sec]  <a href="a00405.html#ga401ff320085d325a621e3482bb1b3810">More...</a><br /></td></tr>
 <tr class="separator:ga401ff320085d325a621e3482bb1b3810"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6cc849023abc581aad3e0fc9175bf6b7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#ga6cc849023abc581aad3e0fc9175bf6b7">BUCK_OCP_RECOVERY_DELAY</a>&#160;&#160;&#160;(float) 500e-3</td></tr>
+<tr class="memitem:ga6cc849023abc581aad3e0fc9175bf6b7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#ga6cc849023abc581aad3e0fc9175bf6b7">BUCK_OCP_RECOVERY_DELAY</a>&#160;&#160;&#160;(float) 2000e-3</td></tr>
 <tr class="memdesc:ga6cc849023abc581aad3e0fc9175bf6b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">over current proection recovery delay in [sec]  <a href="a00405.html#ga6cc849023abc581aad3e0fc9175bf6b7">More...</a><br /></td></tr>
 <tr class="separator:ga6cc849023abc581aad3e0fc9175bf6b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6eaf3775cb0203365a684871ad42d411"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html#ga6eaf3775cb0203365a684871ad42d411">BUCK_FAULT_RESTART_CYCLES</a>&#160;&#160;&#160;10</td></tr>
+<tr class="memdesc:ga6eaf3775cb0203365a684871ad42d411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of restart cycles: Fault state will be latched until CPU reset or power cycle.  <a href="a00405.html#ga6eaf3775cb0203365a684871ad42d411">More...</a><br /></td></tr>
+<tr class="separator:ga6eaf3775cb0203365a684871ad42d411"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>User-declaration of fault object trip and recovery delays of the buck converter using physical quantities. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga6eaf3775cb0203365a684871ad42d411"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6eaf3775cb0203365a684871ad42d411">&#9670;&nbsp;</a></span>BUCK_FAULT_RESTART_CYCLES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCK_FAULT_RESTART_CYCLES&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maximum number of restart cycles: Fault state will be latched until CPU reset or power cycle. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00863">863</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+
+</div>
+</div>
 <a id="ga6cc849023abc581aad3e0fc9175bf6b7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga6cc849023abc581aad3e0fc9175bf6b7">&#9670;&nbsp;</a></span>BUCK_OCP_RECOVERY_DELAY</h2>
 
@@ -153,14 +174,14 @@ $(document).ready(function(){initNavTree('a00405.html',''); initResizable(); });
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_OCP_RECOVERY_DELAY&#160;&#160;&#160;(float) 500e-3</td>
+          <td class="memname">#define BUCK_OCP_RECOVERY_DELAY&#160;&#160;&#160;(float) 2000e-3</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>over current proection recovery delay in [sec] </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00855">855</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00861">861</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -178,7 +199,7 @@ $(document).ready(function(){initNavTree('a00405.html',''); initResizable(); });
 
 <p>over current proection trip delay in [sec] </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00854">854</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00860">860</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -196,7 +217,7 @@ $(document).ready(function(){initNavTree('a00405.html',''); initResizable(); });
 
 <p>over voltage lock out recovery delay in [sec] </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00851">851</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00857">857</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -214,7 +235,7 @@ $(document).ready(function(){initNavTree('a00405.html',''); initResizable(); });
 
 <p>over voltage lock out trip delay in [sec] </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00850">850</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00856">856</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -225,14 +246,14 @@ $(document).ready(function(){initNavTree('a00405.html',''); initResizable(); });
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUCK_REGERR_RECOVERY_DELAY&#160;&#160;&#160;(float) 500e-3</td>
+          <td class="memname">#define BUCK_REGERR_RECOVERY_DELAY&#160;&#160;&#160;(float) 2000e-3</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>regulation error recovery delay in [sec] </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00853">853</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00859">859</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -250,7 +271,7 @@ $(document).ready(function(){initNavTree('a00405.html',''); initResizable(); });
 
 <p>regulation error trip delay in [sec] </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00852">852</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00858">858</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -268,7 +289,7 @@ $(document).ready(function(){initNavTree('a00405.html',''); initResizable(); });
 
 <p>under voltage lock out recovery delay in [sec] </p>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00849">849</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00855">855</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>
@@ -290,10 +311,11 @@ $(document).ready(function(){initNavTree('a00405.html',''); initResizable(); });
 <li>Fault Trip Event Delay <br  />
  This setting defines for how long a fault condition has to be continuously active before the effective fault trip status/event will be triggered.</li>
 <li>Fault Recovery Event Delay <br  />
- This setting defines for how long a fault condition has to be continuously cleared before the effective fault recovery status/event will be triggered. under voltage lock out trip delay in [sec] </li>
+ This setting defines for how long a fault condition has to be continuously cleared before the effective fault recovery status/event will be triggered.</li>
+<li>Restart Cycle Limit In case of a persistent fault condition (e.g continuous short circuit or unstable feedback loop) the fault monitor will limit the number of restart attempts specified by FAULT_RESTART_CYCLES. When this threshold is exceeded, the power supply will latch in save state (off) and a CPU or power cycle is required to start-up the power supply again. under voltage lock out trip delay in [sec] </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00848">848</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00854">854</a> of file <a class="el" href="a00104_source.html">dpsk3_hwdescr.h</a>.</p>
 
 </div>
 </div>

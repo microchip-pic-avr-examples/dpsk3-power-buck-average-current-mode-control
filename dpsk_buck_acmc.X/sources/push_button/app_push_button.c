@@ -201,7 +201,7 @@ volatile uint16_t appPushButton_EventButtonPressed(void)
 volatile uint16_t appPushButton_EventButtonLongPress(void) {
     
     lcd.screen += 1;    // increment screen index
-    if (lcd.screen > 3) // Roll-over after screen #3
+    if (lcd.screen > lcd.screens) // Roll-over after screen #3
         lcd.screen = 0; // Reset to default view
     return(1);
 }

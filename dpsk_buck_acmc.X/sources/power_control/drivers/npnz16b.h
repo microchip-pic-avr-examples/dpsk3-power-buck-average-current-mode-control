@@ -2,8 +2,8 @@
  * PowerSmart™ Digital Control Library Designer, Version 0.9.12.672
  * *********************************************************************************
  * Generic library header for z-domain compensation filter assembly functions
- * CGS Version: 3.0.6
- * CGS Date:    02/03/2021
+ * CGS Version: 3.0.7
+ * CGS Date:    03/07/2021
  * ********************************************************************************/
 // This is a guard condition so that contents of this file are not included
 // more than once.
@@ -141,14 +141,14 @@ typedef enum NPNZ_STATUS_ENABLE_e NPNZ_STATUS_ENABLE_t; ///< NPNZ Controller Ena
 extern volatile enum NPNZ_STATUS_ENABLE_e npnzEnumControlEnable; ///< List Object Control Enable
 
 /****************************************************************************************************
- * @struct  NPNZ_FLAGS_s
- * @brief   Structure providing all public enumerated lists of constants through a common data structure
+ * @struct  BUCK_CONVERTER_CONSTANTS_s
+ * @brief   Structure providing all public enumerated lists of constants
  **************************************************************************************************** */
 struct NPNZ_FLAGS_s
 {
-    volatile enum NPNZ_STATUS_FLAGS_e       StatusWordFlags; ///< List of all status and control flags of the NPNZ status word
-    volatile enum NPNZ_STATUS_SATURATION_e  flagSaturation; ///< List of all status and control flags of the NPNZ status word
-    volatile enum NPNZ_STATUS_AGC_ENABLE_e  flagAgcControl; ///< List of all status and control flags of the NPNZ status word
+    volatile enum NPNZ_STATUS_FLAGS_e       StatusWordFlags; ///< List of all status and control flags of the Buck Converter status word
+    volatile enum NPNZ_STATUS_SATURATION_e  flagSaturation; ///< List of all status and control flags of the Buck Converter status word
+    volatile enum NPNZ_STATUS_AGC_ENABLE_e  flagAgcControl; ///< List of all status and control flags of the Buck Converter status word
     volatile enum NPNZ_STATUS_SOURCE_SWAP_e flagSourceSwap; ///< List of State Machine Operating State IDs
     volatile enum NPNZ_STATUS_TARGET_SWAP_e flagTargetSwap; ///< List of State Machine Sub-State IDs
     volatile enum NPNZ_STATUS_INPUT_INV_e   flagCtrlInputInversion; ///< List of State Machine Operating State Return Values
@@ -309,34 +309,6 @@ typedef struct NPNZ_FILTER_PARAMS_s NPNZ_FILTER_PARAMS_t; ///< Data structure fo
 
 /***************************************************************************************************
  * @ingroup special-function-layer-npnz16-object-members
- * @struct  NPNZ_GAIN_CONTROL_s
- * @brief   Adaptive Gain Control Modulation Parameters
- * @extends NPNZ16b_s
- *
- * @details
- * The NPNZ_GAIN_CONTROL_t data object holds all parameters required to perform real-time
- * gain modulation of the z-domain feedback loop. The loop gain is modulated by multiplying
- * the result of the NPNZ controller B-term with an additional scaling factor. This scaling
- * factor is represented by a fast floating point number, consisting of a factional factor
- * <AgcFactor> between -1 and 1 and an integer bit-shift scaler <AgcScaler>.
- *
- * This feature is optional and needs to be enabled, configured and managed manually in
- * user code.
- *
- ***************************************************************************************************/
-
-struct NPNZ_GAIN_CONTROL_s{
-
-    volatile uint16_t AgcScaler;                  ///< Bit-shift scaler of Adaptive Gain Modulation factor
-    volatile fractional AgcFactor;                ///< Q15 value of Adaptive Gain Modulation factor
-    volatile fractional AgcMedian;                ///< Q15 value of Adaptive Gain Modulation nominal operating point
-    volatile uint16_t ptrAgcObserverFunction;     ///< Function Pointer to Observer function updating the AGC modulation factor
-
-} __attribute__((packed));                        ///< Data structure holding parameters required for adaptive or manual loop gain manipulation during runtime
-typedef struct NPNZ_GAIN_CONTROL_s NPNZ_GAIN_CONTROL_t; ///< Data structure data type holding parameters required for adaptive or manual loop gain manipulation during runtime
-
-/***************************************************************************************************
- * @ingroup special-function-layer-npnz16-object-members
  * @struct  NPNZ_LIMITS_s
  * @brief   System Anti-Windup (Output Clamping) Thresholds
  * @extends NPNZ16b_s
@@ -457,6 +429,34 @@ struct NPNZ_EXTENSION_HOOKS_s{
 
 } __attribute__((packed));                        ///< Set of function pointers and parameters used to tie in user-defined, external extension functions at specific points of the control loop execution
 typedef struct NPNZ_EXTENSION_HOOKS_s NPNZ_EXTENSION_HOOKS_t; ///< Function pointers and parameters used to tie in user-defined, external extension functions at specific points of the control loop execution
+
+/***************************************************************************************************
+ * @ingroup special-function-layer-npnz16-object-members
+ * @struct  NPNZ_GAIN_CONTROL_s
+ * @brief   Adaptive Gain Control Modulation Parameters
+ * @extends NPNZ16b_s
+ *
+ * @details
+ * The NPNZ_GAIN_CONTROL_t data object holds all parameters required to perform real-time
+ * gain modulation of the z-domain feedback loop. The loop gain is modulated by multiplying
+ * the result of the NPNZ controller B-term with an additional scaling factor. This scaling
+ * factor is represented by a fast floating point number, consisting of a factional factor
+ * <AgcFactor> between -1 and 1 and an integer bit-shift scaler <AgcScaler>.
+ *
+ * This feature is optional and needs to be enabled, configured and managed manually in
+ * user code.
+ *
+ ***************************************************************************************************/
+
+struct NPNZ_GAIN_CONTROL_s{
+
+    volatile uint16_t AgcScaler;                  ///< Bit-shift scaler of Adaptive Gain Modulation factor
+    volatile fractional AgcFactor;                ///< Q15 value of Adaptive Gain Modulation factor
+    volatile fractional AgcMedian;                ///< Q15 value of Adaptive Gain Modulation nominal operating point
+    volatile uint16_t ptrAgcObserverFunction;     ///< Function Pointer to Observer function updating the AGC modulation factor
+
+} __attribute__((packed));                        ///< Data structure holding parameters required for adaptive or manual loop gain manipulation during runtime
+typedef struct NPNZ_GAIN_CONTROL_s NPNZ_GAIN_CONTROL_t; ///< Data structure data type holding parameters required for adaptive or manual loop gain manipulation during runtime
 
 /***************************************************************************************************
  * @ingroup special-function-layer-npnz16-object-members
