@@ -4,8 +4,9 @@
 This is the initial release of the average current mode control code example demonstrating how to establish a 
 digital dual-loop average current mode control implementation regulating the output voltage of a synchronous buck converter. 
 
-This example is based on the basic voltage mode code examples for the synchronous buck converter on the 
-Digital Power Starter Kit 3.
+This example is based on the code example demonstrating basic voltage mode control of the synchronous buck converter on the 
+Digital Power Starter Kit 3. The firmware remains almost identical with the exception of the current loop controller configuration
+in file `app_power_config.c` and the control loop library extension `i_loop`.
 
 ### Features Added\Updated
 This code example runs automatically after power has been applied to the development board. In this initial version 
