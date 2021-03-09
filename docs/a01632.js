@@ -1,7 +1,7 @@
 var a01632 =
 [
-    [ "AgcFactor", "a01632.html#a33a039fe8965b322341074ddefe53881", null ],
-    [ "AgcMedian", "a01632.html#a3c0670b2b7a0412426c46eed6d621e77", null ],
-    [ "AgcScaler", "a01632.html#ac97f6143fca6e6fc9f433dfe402666b3", null ],
-    [ "ptrAgcObserverFunction", "a01632.html#ab4475a4c794f6fe13b0bd7c17190cfe0", null ]
+    [ "AltMaxOutput", "a01632.html#a5e923dee71273b4a3b30c6ee8f7a489d", null ],
+    [ "AltMinOutput", "a01632.html#a28fe2b583e16d86badea77dbdc199104", null ],
+    [ "MaxOutput", "a01632.html#a0ff4148e12916cb65656b9d3387a6e71", null ],
+    [ "MinOutput", "a01632.html#a4a0b0ed45a1400930c789f007bed7270", null ]
 ];
