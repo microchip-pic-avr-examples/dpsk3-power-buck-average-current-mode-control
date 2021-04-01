@@ -1,12 +1,8 @@
 var a01656 =
 [
-    [ "ADCTriggerControl", "a01656.html#aa708a44ef3b59a931f929bc6c72e07fc", null ],
-    [ "Advanced", "a01656.html#ae10c373e7000ff11abbb151f019793e0", null ],
-    [ "DataProviders", "a01656.html#a971260b757f0c8822315d8c82a603142", null ],
-    [ "ExtensionHooks", "a01656.html#a486610694a9aac008ab8c01a0ab88090", null ],
-    [ "Filter", "a01656.html#aa98db9224dce165f72d861acc8558419", null ],
-    [ "GainControl", "a01656.html#a3c9fc0a5e04a384801d066b95dc27f5d", null ],
-    [ "Limits", "a01656.html#a6127947619eb634f1a3c3650529e092c", null ],
-    [ "Ports", "a01656.html#ae834fa9c7338d08d0fa927c901c2503f", null ],
-    [ "status", "a01656.html#a38a4b2427f4b2b06c112385e722e1419", null ]
+    [ "enabled", "a01656.html#a085e9fc0863cee4864cf51dcfe1e32df", null ],
+    [ "io_type", "a01656.html#a3451100070bc5449a21daa618dca87cd", null ],
+    [ "pin", "a01656.html#ac64e25be1a4e0e3f4db659fff41763b0", null ],
+    [ "polarity", "a01656.html#a98d20232971d53a8992b562306df4cbb", null ],
+    [ "port", "a01656.html#a5790090efaaa7d01ec029fb7da620b38", null ]
 ];

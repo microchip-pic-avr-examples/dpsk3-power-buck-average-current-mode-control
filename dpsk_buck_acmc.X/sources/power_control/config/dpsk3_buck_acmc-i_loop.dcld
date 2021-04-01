@@ -1,16 +1,16 @@
 [GUI]
 CreateDate=02/10/2021 21:47:19
-SaveDate=03/08/2021 19:14:17
+SaveDate=04/02/2021 00:59:14
 Name=PowerSmart™ Digital Control Library Designer
-Version=0.9.12.672
-VersionKey=912
-CGS Version=3.0.7
+Version=0.9.14.676
+VersionKey=914
+CGS Version=3.0.8
 WindowState=0
 Top=60
 Left=268
-Height=954
-Width=1384
-TabHeight=370
+Height=930
+Width=1570
+TabHeight=352
 [ControlSetup]
 TargetDevice=dsPIC33CK256MP505
 ControlType=1
@@ -144,7 +144,7 @@ IncludeUnsusedSettingsInTemplate=0
 [BodePlot]
 ShowSDomain=0
 XAxisMin=100e+0
-XAxisMax=250e+3
+XAxisMax=500e+3
 DataPoints=801
 GainAxisMin=-60e+0
 GainAxisMax=60e+0

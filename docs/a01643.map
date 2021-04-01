@@ -1,4 +1,6 @@
-<map id="NPNZ_EXTENSION_HOOKS_s" name="NPNZ_EXTENSION_HOOKS_s">
-<area shape="rect" id="node1" title="User Extension Function Call Parameters." alt="" coords="5,248,241,501"/>
-<area shape="rect" id="node2" href="$a01656.html" title="Global NPNZ controller data object." alt="" coords="53,5,194,200"/>
+<map id="BUCK_ADC_INPUT_SCALING_s" name="BUCK_ADC_INPUT_SCALING_s">
+<area shape="rect" id="node1" title="ADC input signal scaling = (ADCBUF &#45; &lt;offset&gt;) * &lt;factor&gt; &gt;&gt; 2^&lt;scaler&gt;" alt="" coords="9,719,222,825"/>
+<area shape="rect" id="node2" href="$a01648.html" title="ADC input channel configuration." alt="" coords="5,432,225,671"/>
+<area shape="rect" id="node3" href="$a01652.html" title="Buck converter feedback declarations." alt="" coords="5,263,225,384"/>
+<area shape="rect" id="node4" href="$a01664.html" title="BUCK control &amp; monitoring data structure." alt="" coords="36,5,195,215"/>
 </map>

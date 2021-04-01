@@ -1,3 +1,13 @@
+# dpsk3-power-buck-average-current-mode-control, release v1.0.1
+
+### Features Added\Updated
+
+In MPLAB&reg; PowerSmart&trade; Digital Control Library Designer, release 0.9.14.676 labels of user extension function hooks changed, causing the compiler to fail when new control code is generated. This firmware release ensures compatibility with the latest version of this code generating tool.
+
+When you download this version of the firmware, please also update your version of PowerSmart&trade; Digital Control Library Designer to version 0.9.14 or higher:
+[MPLAB&reg; PowerSmart&trade; Digital Control Library Designer v0.9.14](https://microchip-pic-avr-tools.github.io/powersmart-dcld/)
+
+
 # dpsk3-power-buck-average-current-mode-control, release v1.0.0
 
 ### Release Highlights

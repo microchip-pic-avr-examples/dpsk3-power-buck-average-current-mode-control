@@ -1,9 +1,9 @@
 /* *********************************************************************************
- * PowerSmart™ Digital Control Library Designer, Version 0.9.12.672
+ * PowerSmart™ Digital Control Library Designer, Version 0.9.14.676
  * *********************************************************************************
  * Generic library header for z-domain compensation filter assembly functions
- * CGS Version: 3.0.7
- * CGS Date:    03/07/2021
+ * CGS Version: 3.0.8
+ * CGS Date:    03/12/2021
  * ********************************************************************************/
 // This is a guard condition so that contents of this file are not included
 // more than once.
@@ -36,7 +36,7 @@
  ***************************************************************************************************/
 
 #ifndef __PSDCLD_VERSION
-    #define __PSDCLD_VERSION    912
+    #define __PSDCLD_VERSION    914
 #endif
 
 /***************************************************************************************************
@@ -141,14 +141,14 @@ typedef enum NPNZ_STATUS_ENABLE_e NPNZ_STATUS_ENABLE_t; ///< NPNZ Controller Ena
 extern volatile enum NPNZ_STATUS_ENABLE_e npnzEnumControlEnable; ///< List Object Control Enable
 
 /****************************************************************************************************
- * @struct  BUCK_CONVERTER_CONSTANTS_s
+ * @struct  NPNZ_FLAGS_s
  * @brief   Structure providing all public enumerated lists of constants
  **************************************************************************************************** */
 struct NPNZ_FLAGS_s
 {
-    volatile enum NPNZ_STATUS_FLAGS_e       StatusWordFlags; ///< List of all status and control flags of the Buck Converter status word
-    volatile enum NPNZ_STATUS_SATURATION_e  flagSaturation; ///< List of all status and control flags of the Buck Converter status word
-    volatile enum NPNZ_STATUS_AGC_ENABLE_e  flagAgcControl; ///< List of all status and control flags of the Buck Converter status word
+    volatile enum NPNZ_STATUS_FLAGS_e       StatusWordFlags; ///< List of all status and control flags of the NPNZ16b status word
+    volatile enum NPNZ_STATUS_SATURATION_e  flagSaturation; ///< List of all status and control flags of the NPNZ16b status word
+    volatile enum NPNZ_STATUS_AGC_ENABLE_e  flagAgcControl; ///< List of all status and control flags of the NPNZ16b status word
     volatile enum NPNZ_STATUS_SOURCE_SWAP_e flagSourceSwap; ///< List of State Machine Operating State IDs
     volatile enum NPNZ_STATUS_TARGET_SWAP_e flagTargetSwap; ///< List of State Machine Sub-State IDs
     volatile enum NPNZ_STATUS_INPUT_INV_e   flagCtrlInputInversion; ///< List of State Machine Operating State Return Values
@@ -409,23 +409,23 @@ typedef struct NPNZ_DATA_PROVIDERS_s NPNZ_DATA_PROVIDERS_t; ///< Automated data 
 
 struct NPNZ_EXTENSION_HOOKS_s{
 
-    volatile uint16_t ptrExtHookStartFunction;    ///< Pointer to Function which will be called at the beginning of the control loop
-    volatile uint16_t ExtHookStartFunctionParam;  ///< Parameter of function called (can be a variable or pointer to a data structure)
+    volatile uint16_t ptrExtHookStartFunction;    ///< Pointer to Function which will be called at the beginning of the control loop. This function pointer is stored in the data field as common unsigned integer value and needs to be casted as such. Example: my_loop.ExtensionHooks.ptrExtHookStartFunction = (uint16_t)(&my_StartHookFunction).
+    volatile uint16_t ExtHookStartFunctionParam;  ///< Parameter of function called (can be a variable or pointer to a data structure). This parameter is optional and needs to be supported by the assembly routine to be pushed to the user function. Parameter support can be enabled/disabled for each hook function by selecting the respective option in PS-DCLD.
 
-    volatile uint16_t ptrExtHookSourceFunction;   ///< Pointer to Function which will be called after the source has been read and compensated
-    volatile uint16_t ExtHookSourceFunctionParam; ///< Parameter of function called (can be a variable or a pointer to a data structure)
+    volatile uint16_t ptrExtHookSourceFunction;   ///< Pointer to Function which will be called after the source has been read and compensated. This function pointer is stored in the data field as common unsigned integer value and needs to be casted as such. Example: my_loop.ExtensionHooks.ptrExtHookSourceFunction = (uint16_t)(&my_SourceHookFunction).
+    volatile uint16_t ExtHookSourceFunctionParam; ///< Parameter of function called (can be a variable or a pointer to a data structure). This parameter is optional and needs to be supported by the assembly routine to be pushed to the user function. Parameter support can be enabled/disabled for each hook function by selecting the respective option in PS-DCLD.
 
-    volatile uint16_t ptrExtHookPreAntiWindupFunction; ///< Pointer to Function which will be called after the compensation filter computation is complete and before anti-windup clamping is applied
-    volatile uint16_t ExtHookPreAntiWindupFunctionParam; ///< Parameter of function called (can be a variable or a pointer to a data structure)
+    volatile uint16_t ptrExtHookPreAntiWindupFunction; ///< Pointer to Function which will be called after the compensation filter computation is complete and before anti-windup clamping is applied. This function pointer is stored in the data field as common unsigned integer value and needs to be casted as such. Example: my_loop.ExtensionHooks.ptrExtHookPreAntiWindupFunction = (uint16_t)(&my_PreAntiWindupHookFunction).
+    volatile uint16_t ExtHookPreAntiWindupFunctionParam; ///< Parameter of function called (can be a variable or a pointer to a data structure). This parameter is optional and needs to be supported by the assembly routine to be pushed to the user function. Parameter support can be enabled/disabled for each hook function by selecting the respective option in PS-DCLD.
 
-    volatile uint16_t ptrExtHookTargetFunction;   ///< Pointer to Function which will be called before the most recent control output is written to target
-    volatile uint16_t ExtHookTargetFunctionParam; ///< Parameter of function called (can be a variable or a pointer to a data structure)
+    volatile uint16_t ptrExtHookPreTargetWriteFunction; ///< Pointer to Function which will be called before the most recent control output is written to target. This function pointer is stored in the data field as common unsigned integer value and needs to be casted as such. Example: my_loop.ExtensionHooks.ptrExtHookPreTargetWriteFunction = (uint16_t)(&my_PreTargetWriteHookFunction).
+    volatile uint16_t ExtHookPreTargetWriteFunctionParam; ///< Parameter of function called (can be a variable or a pointer to a data structure). This parameter is optional and needs to be supported by the assembly routine to be pushed to the user function. Parameter support can be enabled/disabled for each hook function by selecting the respective option in PS-DCLD.
 
-    volatile uint16_t ptrExtHookStopFunction;     ///< Pointer to Function which is called at the end of the control loop but will be bypassed when the control loop is disabled
-    volatile uint16_t ExtHookStopFunctionParam;   ///< Parameter of function called (can be a variable or a pointer to a data structure)
+    volatile uint16_t ptrExtHookEndOfLoopFunction; ///< Pointer to Function which is called at the end of the control loop but will be bypassed when the control loop is disabled. This function pointer is stored in the data field as common unsigned integer value and needs to be casted as such. Example: my_loop.ExtensionHooks.ptrExtHookEndOfLoopFunction = (uint16_t)(&my_EndOfLoopHookFunction).
+    volatile uint16_t ExtHookEndOfLoopFunctionParam; ///< Parameter of function called (can be a variable or a pointer to a data structure). This parameter is optional and needs to be supported by the assembly routine to be pushed to the user function. Parameter support can be enabled/disabled for each hook function by selecting the respective option in PS-DCLD.
 
-    volatile uint16_t ptrExtHookEndFunction;      ///< Pointer to Function which is called at the end of the control loop and will also be called when the control loop is disabled
-    volatile uint16_t ExtHookEndFunctionParam;    ///< Parameter of function called (can be a variable or a pointer to a data structure)
+    volatile uint16_t ptrExtHookExitFunction;     ///< Pointer to Function which is called at the end of the control loop and will also be called when the control loop is disabled. This function pointer is stored in the data field as common unsigned integer value and needs to be casted as such. Example: my_loop.ExtensionHooks.ptrExtHookExitFunction = (uint16_t)(&my_ExitHookFunction).
+    volatile uint16_t ExtHookExitFunctionParam;   ///< Parameter of function called (can be a variable or a pointer to a data structure). This parameter is optional and needs to be supported by the assembly routine to be pushed to the user function. Parameter support can be enabled/disabled for each hook function by selecting the respective option in PS-DCLD.
 
 } __attribute__((packed));                        ///< Set of function pointers and parameters used to tie in user-defined, external extension functions at specific points of the control loop execution
 typedef struct NPNZ_EXTENSION_HOOKS_s NPNZ_EXTENSION_HOOKS_t; ///< Function pointers and parameters used to tie in user-defined, external extension functions at specific points of the control loop execution
@@ -453,7 +453,7 @@ struct NPNZ_GAIN_CONTROL_s{
     volatile uint16_t AgcScaler;                  ///< Bit-shift scaler of Adaptive Gain Modulation factor
     volatile fractional AgcFactor;                ///< Q15 value of Adaptive Gain Modulation factor
     volatile fractional AgcMedian;                ///< Q15 value of Adaptive Gain Modulation nominal operating point
-    volatile uint16_t ptrAgcObserverFunction;     ///< Function Pointer to Observer function updating the AGC modulation factor
+    volatile uint16_t ptrAgcObserverFunction;     ///< Function Pointer to Observer function updating the AGC modulation factor. This function pointer is stored in the data field as common unsigned integer value and needs to be casted as such. Example: my_loop.GainControl.ptrAgcObserverFunction = (uint16_t)(&my_AGCFactorUpdate);
 
 } __attribute__((packed));                        ///< Data structure holding parameters required for adaptive or manual loop gain manipulation during runtime
 typedef struct NPNZ_GAIN_CONTROL_s NPNZ_GAIN_CONTROL_t; ///< Data structure data type holding parameters required for adaptive or manual loop gain manipulation during runtime

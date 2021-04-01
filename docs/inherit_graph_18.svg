@@ -12,7 +12,7 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
-<g id="a_node1"><a xlink:href="a01680.html" target="_top" xlink:title="Push button function driver data object.">
+<g id="a_node1"><a xlink:href="a01760.html" target="_top" xlink:title="Push button function driver data object.">
 <polygon fill="white" stroke="black" points="0,-0.5 0,-19.5 140,-19.5 140,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="70" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">PUSH_BUTTON_OBJECT_s</text>
 </a>
@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="a01668.html" target="_top" xlink:title="Status word of the push button driver.">
+<g id="a_node2"><a xlink:href="a01748.html" target="_top" xlink:title="Status word of the push button driver.">
 <polygon fill="white" stroke="black" points="176,-0.5 176,-19.5 316,-19.5 316,-0.5 176,-0.5"/>
 <text text-anchor="middle" x="246" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">PUSH_BUTTON_STATUS_s</text>
 </a>
