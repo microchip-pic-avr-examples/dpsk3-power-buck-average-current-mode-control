@@ -54,7 +54,7 @@ This code example also includes the LCD driver allowing users to observe runtime
 - [MPLAB&reg; X IDE v5.45](https://www.microchip.com/mplabx-ide-windows-installer)
 - [MPLAB&reg; XC16 Compiler v1.61](https://www.microchip.com/mplabxc16windows)
 - [Microchip Code Configurator v4.0.2](https://www.microchip.com/mplab/mplab-code-configurator)
-- [MPLAB&reg; PowerSmart&trade; Digital Control Library Designer v0.9.12](https://areiter128.github.io/DCLD)
+- [MPLAB&reg; PowerSmart&trade; Digital Control Library Designer v0.9.14](https://microchip-pic-avr-tools.github.io/powersmart-dcld/)
 
 ## Hardware Used
 - dsPIC33C Digital Power Starter Kit, Part-No. [DM330017-3](https://www.microchip.com/DM330017-3)

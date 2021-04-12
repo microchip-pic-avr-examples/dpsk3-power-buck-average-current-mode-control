@@ -1,11 +1,9 @@
 var a01500 =
 [
-    [ "inttreg", "a01500.html#aee75cee827a498ec0f8db43c25fe1de7", null ],
-    [ "rcon_reg", "a01500.html#a622b54af34934b9ed58310984866f335", null ],
-    [ "reset_count", "a01500.html#a95744ea4cf032674585b4e25a114c31a", null ],
-    [ "status", "a01500.html#a67fe8ce905ea66883a557013c4069068", null ],
-    [ "task_capture", "a01500.html#a0738b0afe33da51a74ec003d4a2d7656", null ],
-    [ "trap_count", "a01500.html#a9216196898128a7f976617aabd34ba77", null ],
-    [ "trap_flags", "a01500.html#ac5a997d3d4260463e5998191af6a24cb", null ],
-    [ "trap_id", "a01500.html#a6e7be26899e4fa61a356b5e7eeec83d1", null ]
+    [ "CompareType", "a01500.html#ac50da7114724506e8c99fd332aca7385", null ],
+    [ "Enabled", "a01500.html#a91f07b208b80c8fe7aa98a8db60eb0da", null ],
+    [ "FaultActive", "a01500.html#a1bc02388766479b8ec8ac2dfcd4d83b2", null ],
+    [ "FaultStatus", "a01500.html#a028f8fd8c38c1a2669efbf670ee1d222", null ],
+    [ "unsigned", "a01500.html#a32e93b068e309da5a319a7a69f3b3ff5", null ],
+    [ "value", "a01500.html#a3f0c55f449560b03ce0ac43270c26600", null ]
 ];

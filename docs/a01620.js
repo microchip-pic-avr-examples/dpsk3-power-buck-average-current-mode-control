@@ -1,7 +1,7 @@
 var a01620 =
 [
-    [ "NormFactor", "a01620.html#a337a5aff8a1ccc3c7c13dde864a0a59c", null ],
-    [ "NormScaler", "a01620.html#abb43ba3046080953e2c35a68eb471193", null ],
-    [ "Offset", "a01620.html#a7da24ddfbcba445de2da4ac0468f7a06", null ],
-    [ "ptrAddress", "a01620.html#aa37b174ac35fcbc1a22f5a8e221700e2", null ]
+    [ "counter", "a01620.html#a8544f2f5b43d21d6a0a586fc81f9ce92", null ],
+    [ "period", "a01620.html#a48f363c7bcd47589472b59f0a7dfb74b", null ],
+    [ "ref_inc_step", "a01620.html#a832c6be5021565e3da55cbc0a523e744", null ],
+    [ "reference", "a01620.html#aad7bda3be2c1e6a89bd7093086bbeec8", null ]
 ];

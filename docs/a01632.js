@@ -1,7 +1,7 @@
 var a01632 =
 [
-    [ "AltMaxOutput", "a01632.html#a5e923dee71273b4a3b30c6ee8f7a489d", null ],
-    [ "AltMinOutput", "a01632.html#a28fe2b583e16d86badea77dbdc199104", null ],
-    [ "MaxOutput", "a01632.html#a0ff4148e12916cb65656b9d3387a6e71", null ],
-    [ "MinOutput", "a01632.html#a4a0b0ed45a1400930c789f007bed7270", null ]
+    [ "control_mode", "a01632.html#a87ffbab0a97e0b24bf304a8829041dab", null ],
+    [ "i_ref", "a01632.html#a0e321445042c37cbb7283d5de4583c09", null ],
+    [ "no_of_phases", "a01632.html#ae002814d52c388ce7d51c8d566d63489", null ],
+    [ "v_ref", "a01632.html#a1c39765936057b7b2b1b90a4126d3f80", null ]
 ];

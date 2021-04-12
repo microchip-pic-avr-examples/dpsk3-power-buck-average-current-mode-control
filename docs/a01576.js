@@ -1,7 +1,11 @@
 var a01576 =
 [
-    [ "ad_isns", "a01576.html#aeb1d3c84c495fdc88de3bd38ec28c139", null ],
-    [ "ad_temp", "a01576.html#ab2720dbc3213b84c266064217dcc53ae", null ],
-    [ "ad_vin", "a01576.html#a5b2dc4caf0113cd2fd142a46750a1b53", null ],
-    [ "ad_vout", "a01576.html#ad59de826ef732a92cec6f00ff84c8d01", null ]
+    [ "inttreg", "a01576.html#aee75cee827a498ec0f8db43c25fe1de7", null ],
+    [ "rcon_reg", "a01576.html#a622b54af34934b9ed58310984866f335", null ],
+    [ "reset_count", "a01576.html#a95744ea4cf032674585b4e25a114c31a", null ],
+    [ "status", "a01576.html#a67fe8ce905ea66883a557013c4069068", null ],
+    [ "task_capture", "a01576.html#a0738b0afe33da51a74ec003d4a2d7656", null ],
+    [ "trap_count", "a01576.html#a9216196898128a7f976617aabd34ba77", null ],
+    [ "trap_flags", "a01576.html#ac5a997d3d4260463e5998191af6a24cb", null ],
+    [ "trap_id", "a01576.html#a6e7be26899e4fa61a356b5e7eeec83d1", null ]
 ];

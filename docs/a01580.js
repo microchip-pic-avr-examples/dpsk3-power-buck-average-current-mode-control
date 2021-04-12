@@ -1,8 +1,7 @@
 var a01580 =
 [
     [ "enabled", "a01580.html#a085e9fc0863cee4864cf51dcfe1e32df", null ],
-    [ "io_type", "a01580.html#a3451100070bc5449a21daa618dca87cd", null ],
-    [ "pin", "a01580.html#ac64e25be1a4e0e3f4db659fff41763b0", null ],
-    [ "polarity", "a01580.html#a98d20232971d53a8992b562306df4cbb", null ],
-    [ "port", "a01580.html#a5790090efaaa7d01ec029fb7da620b38", null ]
+    [ "refresh", "a01580.html#adc2298ffda0c853e699e6da9098f82ae", null ],
+    [ "screen", "a01580.html#aea467a9fc04f0771215b952d26bc4392", null ],
+    [ "screens", "a01580.html#a3f7d208ef77de45e114269798078e05b", null ]
 ];
