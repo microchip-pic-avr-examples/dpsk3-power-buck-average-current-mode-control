@@ -1,10 +1,12 @@
 var a01680 =
 [
-    [ "debounce_delay", "a01680.html#a78437774e630c432a18d708b25955f0f", null ],
-    [ "event_btn_down", "a01680.html#a5ec310dc3aa8f6b3c0635719fdf6062a", null ],
-    [ "event_btn_up", "a01680.html#aa2f2ef2afa1e13d9a26d222a716226ec", null ],
-    [ "event_long_press", "a01680.html#ab6ccfc633b01bf4d5aba1121b52cbe16", null ],
-    [ "event_pressed", "a01680.html#a4aec1837a6756f26ba5b7a95721e2f53", null ],
-    [ "long_press_delay", "a01680.html#a92322dfa9ee932050da2a695bc5fe160", null ],
-    [ "status", "a01680.html#a16a03dc6d0fd95cb3dffee0f76de5cd9", null ]
+    [ "agc_enabled", "a01680.html#a2586f148981aa257903e8e8c220be49f", null ],
+    [ "enabled", "a01680.html#a085e9fc0863cee4864cf51dcfe1e32df", null ],
+    [ "invert_input", "a01680.html#a87a4d49caab529c62352ee8e36739705", null ],
+    [ "lower_saturation_event", "a01680.html#a54de55df60f9214cecb0d0210f1633ab", null ],
+    [ "swap_source", "a01680.html#ac0e5228116af2eb515feaae87f10473c", null ],
+    [ "swap_target", "a01680.html#aa6704f24bbe78d8899af231051a73b6b", null ],
+    [ "unsigned", "a01680.html#a32e93b068e309da5a319a7a69f3b3ff5", null ],
+    [ "upper_saturation_event", "a01680.html#afa922f84528fb8c9b073548653220d9a", null ],
+    [ "value", "a01680.html#a3f0c55f449560b03ce0ac43270c26600", null ]
 ];

@@ -1,8 +1,8 @@
 ; **********************************************************************************
-;  SDK Version: PowerSmart™ Digital Control Library Designer v0.9.12.672
-;  CGS Version: Code Generator Script v3.0.7 (03/07/2021)
+;  SDK Version: PowerSmart™ Digital Control Library Designer v0.9.14.676
+;  CGS Version: Code Generator Script v3.0.8 (03/12/2021)
 ;  Author:      M91406
-;  Date/Time:   03/08/2021 19:15:10
+;  Date/Time:   04/02/2021 00:59:29
 ; **********************************************************************************
 ;  3P3Z Control Library File (Dual Bitshift-Scaling Mode)
 ; **********************************************************************************
@@ -109,13 +109,13 @@
 ; Check for lower limit violation
     mov [w0 + #MinOutput], w6               ; load lower limit value
     cpsgt w4, w6                            ; compare values and skip next instruction if control output is within operating range (control output > lower limit)
-    mov w6, w4                              ; override controller output
+    mov w6, w4                              ; override most recent controller output
     V_LOOP_CLAMP_MIN_EXIT:
      
 ; Check for upper limit violation
     mov [w0 + #MaxOutput], w6               ; load upper limit value
     cpslt w4, w6                            ; compare values and skip next instruction if control output is within operating range (control output < upper limit)
-    mov w6, w4                              ; override controller output
+    mov w6, w4                              ; override most recent controller output
     V_LOOP_CLAMP_MAX_EXIT:
     
 ;------------------------------------------------------------------------------
@@ -147,8 +147,8 @@
     
 ;------------------------------------------------------------------------------
 ; Call next function of cascade even if compensator is disabled
-    mov [w0 + #ptrExtHookEndFunction], w1   ; load function pointer to cascaded, extern function
-    mov [w0 + #ExtHookEndFunctionParam], w0 ; load single parameter or pointer to parameter data structure
+    mov [w0 + #ptrExtHookExitFunction], w1  ; load function pointer to cascaded, extern function
+    mov [w0 + #ExtHookExitFunctionParam], w0 ; load single parameter or pointer to parameter data structure
     call w1                                 ; call function
     
 ;------------------------------------------------------------------------------
@@ -274,13 +274,13 @@
 ; Check for lower limit violation
     mov [w0 + #MinOutput], w6               ; load lower limit value
     cpsgt w4, w6                            ; compare values and skip next instruction if control output is within operating range (control output > lower limit)
-    mov w6, w4                              ; override controller output
+    mov w6, w4                              ; override most recent controller output
     V_LOOP_PTERM_CLAMP_MIN_EXIT:
      
 ; Check for upper limit violation
     mov [w0 + #MaxOutput], w6               ; load upper limit value
     cpslt w4, w6                            ; compare values and skip next instruction if control output is within operating range (control output < upper limit)
-    mov w6, w4                              ; override controller output
+    mov w6, w4                              ; override most recent controller output
     V_LOOP_PTERM_CLAMP_MAX_EXIT:
     
 ;------------------------------------------------------------------------------
@@ -300,8 +300,8 @@
     
 ;------------------------------------------------------------------------------
 ; Call next function of cascade even if compensator is disabled
-    mov [w0 + #ptrExtHookEndFunction], w1   ; load function pointer to cascaded, extern function
-    mov [w0 + #ExtHookEndFunctionParam], w0 ; load single parameter or pointer to parameter data structure
+    mov [w0 + #ptrExtHookExitFunction], w1  ; load function pointer to cascaded, extern function
+    mov [w0 + #ExtHookExitFunctionParam], w0 ; load single parameter or pointer to parameter data structure
     call w1                                 ; call function
     
 ;------------------------------------------------------------------------------

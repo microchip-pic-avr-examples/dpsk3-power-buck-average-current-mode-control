@@ -337,12 +337,12 @@ volatile uint16_t appPowerSupply_ControllerInitialize(void)
     buck.v_loop.controller->ExtensionHooks.ExtHookSourceFunctionParam = 0;
     buck.v_loop.controller->ExtensionHooks.ptrExtHookPreAntiWindupFunction = NULL;
     buck.v_loop.controller->ExtensionHooks.ExtHookPreAntiWindupFunctionParam = 0;
-    buck.v_loop.controller->ExtensionHooks.ptrExtHookTargetFunction = NULL;
-    buck.v_loop.controller->ExtensionHooks.ExtHookTargetFunctionParam = 0;
-    buck.v_loop.controller->ExtensionHooks.ptrExtHookStopFunction = NULL;
-    buck.v_loop.controller->ExtensionHooks.ExtHookStopFunctionParam = 0;
-    buck.v_loop.controller->ExtensionHooks.ptrExtHookEndFunction = (uint16_t)&i_loop_Update;
-    buck.v_loop.controller->ExtensionHooks.ExtHookEndFunctionParam = (uint16_t)&i_loop;
+    buck.v_loop.controller->ExtensionHooks.ptrExtHookPreTargetWriteFunction = NULL;
+    buck.v_loop.controller->ExtensionHooks.ExtHookPreTargetWriteFunctionParam = 0;
+    buck.v_loop.controller->ExtensionHooks.ptrExtHookEndOfLoopFunction = NULL;
+    buck.v_loop.controller->ExtensionHooks.ExtHookEndOfLoopFunctionParam = 0;
+    buck.v_loop.controller->ExtensionHooks.ptrExtHookExitFunction = (uint16_t)&i_loop_Update;
+    buck.v_loop.controller->ExtensionHooks.ExtHookExitFunctionParam = (uint16_t)&i_loop;
     
     // Adaptive Gain Control configuration
     buck.v_loop.controller->GainControl.AgcFactor = 0;
@@ -465,12 +465,12 @@ volatile uint16_t appPowerSupply_ControllerInitialize(void)
     buck.i_loop[0].controller->ExtensionHooks.ExtHookSourceFunctionParam = 0;
     buck.i_loop[0].controller->ExtensionHooks.ptrExtHookPreAntiWindupFunction = NULL;
     buck.i_loop[0].controller->ExtensionHooks.ExtHookPreAntiWindupFunctionParam = 0;
-    buck.i_loop[0].controller->ExtensionHooks.ptrExtHookTargetFunction = NULL;
-    buck.i_loop[0].controller->ExtensionHooks.ExtHookTargetFunctionParam = 0;
-    buck.i_loop[0].controller->ExtensionHooks.ptrExtHookStopFunction = NULL;
-    buck.i_loop[0].controller->ExtensionHooks.ExtHookStopFunctionParam = 0;
-    buck.i_loop[0].controller->ExtensionHooks.ptrExtHookEndFunction = NULL;
-    buck.i_loop[0].controller->ExtensionHooks.ExtHookEndFunctionParam = 0;
+    buck.i_loop[0].controller->ExtensionHooks.ptrExtHookPreTargetWriteFunction = NULL;
+    buck.i_loop[0].controller->ExtensionHooks.ExtHookPreTargetWriteFunctionParam = 0;
+    buck.i_loop[0].controller->ExtensionHooks.ptrExtHookEndOfLoopFunction = NULL;
+    buck.i_loop[0].controller->ExtensionHooks.ExtHookEndOfLoopFunctionParam = 0;
+    buck.i_loop[0].controller->ExtensionHooks.ptrExtHookExitFunction = NULL;
+    buck.i_loop[0].controller->ExtensionHooks.ExtHookExitFunctionParam = 0;
     
     // Adaptive Gain Control configuration
     buck.i_loop[0].controller->GainControl.AgcFactor = 0;

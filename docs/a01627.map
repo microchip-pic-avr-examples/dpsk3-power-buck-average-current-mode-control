@@ -1,4 +1,4 @@
-<map id="NPNZ_FILTER_PARAMS_s" name="NPNZ_FILTER_PARAMS_s">
-<area shape="rect" id="node1" title="Filter Coefficient Arrays, Number Format Handling and Input/Output History Parameters." alt="" coords="5,248,188,516"/>
-<area shape="rect" id="node2" href="$a01656.html" title="Global NPNZ controller data object." alt="" coords="26,5,167,200"/>
+<map id="BUCK_CONVERTER_DATA_s" name="BUCK_CONVERTER_DATA_s">
+<area shape="rect" id="node1" title="Publicly accessible data buffer of most recent runtime data values." alt="" coords="5,263,205,443"/>
+<area shape="rect" id="node2" href="$a01664.html" title="BUCK control &amp; monitoring data structure." alt="" coords="26,5,185,215"/>
 </map>

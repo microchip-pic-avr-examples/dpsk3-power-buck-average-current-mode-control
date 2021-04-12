@@ -1,5 +1,5 @@
-<map id="NPNZ_PORT_s" name="NPNZ_PORT_s">
-<area shape="rect" id="node1" title="Data Input/Output Port declaration of memory addresses, signal offsets and normalization settings." alt="" coords="23,432,135,553"/>
-<area shape="rect" id="node2" href="$a01624.html" title="Filter Coefficient Arrays, Number Format Handling and Input/Output History Parameters." alt="" coords="5,248,153,384"/>
-<area shape="rect" id="node3" href="$a01656.html" title="Global NPNZ controller data object." alt="" coords="9,5,150,200"/>
+<map id="BUCK_STARTUP_PERIOD_HANDLER_s" name="BUCK_STARTUP_PERIOD_HANDLER_s">
+<area shape="rect" id="node1" title="Generic power controller startup period settings." alt="" coords="28,432,208,568"/>
+<area shape="rect" id="node2" href="$a01624.html" title="Power Converter Startup Timing Settings." alt="" coords="5,263,231,384"/>
+<area shape="rect" id="node3" href="$a01664.html" title="BUCK control &amp; monitoring data structure." alt="" coords="39,5,197,215"/>
 </map>

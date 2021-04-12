@@ -1,5 +1,5 @@
 var a01660 =
 [
-    [ "ACoefficients", "a01660.html#ae35beb5531d5f8d35ef4ff4c55049a7c", null ],
-    [ "BCoefficients", "a01660.html#add551471b8f6e1a3552faaacd1097d09", null ]
+    [ "EnableInput", "a01660.html#a5eee16f1d70e687a21eb8a5c66d84970", null ],
+    [ "PowerGood", "a01660.html#a734cbe6494d398c56fc249ded4953ea2", null ]
 ];

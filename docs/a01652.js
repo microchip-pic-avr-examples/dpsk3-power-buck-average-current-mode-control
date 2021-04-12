@@ -1,11 +1,7 @@
 var a01652 =
 [
-    [ "usrParam0", "a01652.html#a5bd554258d0a885c9fad89cc9f778716", null ],
-    [ "usrParam1", "a01652.html#a66e5d765668368155e21aca057a51453", null ],
-    [ "usrParam2", "a01652.html#a656de07b84f049f79e3767ebf7aba5e5", null ],
-    [ "usrParam3", "a01652.html#ad0a419ebac95b9011ea00b5ec961526d", null ],
-    [ "usrParam4", "a01652.html#a1076864c16222d2a777a8c5a389ea105", null ],
-    [ "usrParam5", "a01652.html#aed8b13880b683311397efaa001a21534", null ],
-    [ "usrParam6", "a01652.html#a02056d0ee788862701d11d0f59adfefd", null ],
-    [ "usrParam7", "a01652.html#a5be6d54a965fcc6128aec07587ccb6ad", null ]
+    [ "ad_isns", "a01652.html#aeb1d3c84c495fdc88de3bd38ec28c139", null ],
+    [ "ad_temp", "a01652.html#ab2720dbc3213b84c266064217dcc53ae", null ],
+    [ "ad_vin", "a01652.html#a5b2dc4caf0113cd2fd142a46750a1b53", null ],
+    [ "ad_vout", "a01652.html#ad59de826ef732a92cec6f00ff84c8d01", null ]
 ];

@@ -1,5 +1,5 @@
 /* *********************************************************************************
- * PowerSmart™ Digital Control Library Designer, Version 0.9.12.672
+ * PowerSmart™ Digital Control Library Designer, Version 0.9.14.676
  * *********************************************************************************
  * 3p3z controller function declarations and compensation filter coefficients
  * derived for following operating conditions:
@@ -12,11 +12,11 @@
  *  Input Gain:         0.5
  *
  * *********************************************************************************
- * CGS Version:         3.0.7
- * CGS Date:            03/07/2021
+ * CGS Version:         3.0.8
+ * CGS Date:            03/12/2021
  * *********************************************************************************
  * User:                M91406
- * Date/Time:           03/08/2021 19:15:09
+ * Date/Time:           04/02/2021 00:59:29
  * ********************************************************************************/
 
 // This is a guard condition so that contents of this file are not included
@@ -126,7 +126,7 @@ extern volatile uint16_t v_loop_Initialize(       // v_loop initialization funct
  * @details
  * This Assembly function clears the NPNZ16b controller output and
  * error histories by settings all elements of the delay lines to zero. This
- * resets the controller to ist default state. This function should be called
+ * resets the controller to its default state. This function should be called
  * every time before the control loop is started from a disabled, unbiased output.
  * @note
  * Use function 'v_loop_Precharge' to start the feedback loop controller when
